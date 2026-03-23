@@ -139,12 +139,16 @@ Each resolved event record contains:
 
 ---
 
+## ❗ Disclaimer
+This tool is provided "as is" without warranty of any kind, express or implied. The author assumes no responsibility for any damages, data loss, or other adverse effects resulting from the use or misuse of this tool. Use it at your own risk.
+This tool is intended solely for legitimate purposes such as security research, reverse engineering, and incident response. The author is not liable for any consequences arising from the use of this tool in unauthorized or illegal activities.
+
+---
 ## 📜 License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
+## 🙏 Acknowledgements
 
----
-## ⚠️ Disclaimer
-This tool is provided "as is" without warranty of any kind, express or implied. The author assumes no responsibility for any damages, data loss, or other adverse effects resulting from the use or misuse of this tool. Use it at your own risk.
-This tool is intended solely for legitimate purposes such as security research, reverse engineering, and incident response. The author is not liable for any consequences arising from the use of this tool in unauthorized or illegal activities.
+- [Matt Graeber](https://github.com/mattifestation) — Matt's [TraceLogging metadata blob parser](https://gist.github.com/mattifestation/edbac1614694886c8ef4583149f53658) was invaluable during the development of this tool and served as a key reference for understanding the internal structure of TraceLogging provider and event blobs.
+- [John Uhlmann](https://github.com/jdu2600) — This tool would not exist without Him. He sparked the original idea behind this research, generously shared his deep expertise on ETW internals. His [API-To-ETW](https://github.com/jdu2600/API-To-ETW) project, which maps Windows API calls to their underlying ETW events, was a direct inspiration for TLGMapper's design and approach.

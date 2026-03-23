@@ -128,7 +128,7 @@ Each resolved event record contains:
 
 ---
 
-<video src="assets/demo.mp4" controls width="500" height="300"></video>
+<video src="./assets/demo.mp4" controls width="500" height="300" controls></video>
 
 ## ⚠️ Limitations
 
@@ -142,3 +142,9 @@ Each resolved event record contains:
 ## 📜 License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+
+---
+## ⚠️ Disclaimer
+This tool is provided "as is" without warranty of any kind, express or implied. The author assumes no responsibility for any damages, data loss, or other adverse effects resulting from the use or misuse of this tool. Use it at your own risk.
+This tool is intended solely for legitimate purposes such as security research, reverse engineering, and incident response. The author is not liable for any consequences arising from the use of this tool in unauthorized or illegal activities.

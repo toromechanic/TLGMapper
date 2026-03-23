@@ -1,0 +1,90 @@
+{
+  "providerName": "Microsoft.Windows.Power.Intelligence",
+  "guid": "{B949D480-830E-5EBC-A818-32B64D6E95E7}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "umpoext.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "BatteryDischargeEstimateWISE",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "__TlgCV__:AnsiString",
+            "WISEinferenceStatus:UInt32(NTStatus)",
+            "publishedDischargeEstimate:UInt64",
+            "isValidPowerState:Bool32",
+            "predictedValueWithinBounds:Bool32",
+            "wnfPublishStatus:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?EstimateDischargeTime@@YAXPEAU_WNF_PO_COMPOSITE_BATTERY_PAYLOAD@@@Z",
+              "ea": "0x180021151",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "WISEinferenceStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "isValidPowerState",
+          "type": "Bool32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "predictedValueWithinBounds",
+          "type": "Bool32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "publishedDischargeEstimate",
+          "type": "UInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "wnfPublishStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

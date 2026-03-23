@@ -1,0 +1,369 @@
+{
+  "providerName": "Microsoft.Windows.P9Rdr",
+  "guid": "{BB1D36F0-E0E0-48CC-9493-FEF0E3D0B28C}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "p9rdr.sys",
+    "p9rdrservice.dll"
+  ],
+  "uniqueEventCount": 8,
+  "events": [
+    {
+      "eventName": "9PRdrService starting",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "p9rdrservice.dll",
+              "function": "?ServiceMain@@YAXKPEAPEAG@Z",
+              "ea": "0x1800069e8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "9PRdrService stopping",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "p9rdrservice.dll",
+              "function": "?StopService@@YAXXZ",
+              "ea": "0x180006cea",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "9PRdrServiceException",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "File:AnsiString",
+            "FunctionName:AnsiString",
+            "Line number:UInt32",
+            "Type:UInt32",
+            "HRESULT:HexInt32",
+            "Message:UnicodeString",
+            "Code:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "p9rdrservice.dll",
+              "function": "_lambda_bfee42d9fd35d61b9a29ba526e9606f7_::operator()",
+              "ea": "0x1800066b8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Code",
+          "type": "AnsiString",
+          "seenIn": [
+            "p9rdrservice.dll"
+          ]
+        },
+        {
+          "fieldName": "File",
+          "type": "AnsiString",
+          "seenIn": [
+            "p9rdrservice.dll"
+          ]
+        },
+        {
+          "fieldName": "FunctionName",
+          "type": "AnsiString",
+          "seenIn": [
+            "p9rdrservice.dll"
+          ]
+        },
+        {
+          "fieldName": "HRESULT",
+          "type": "HexInt32",
+          "seenIn": [
+            "p9rdrservice.dll"
+          ]
+        },
+        {
+          "fieldName": "Line number",
+          "type": "UInt32",
+          "seenIn": [
+            "p9rdrservice.dll"
+          ]
+        },
+        {
+          "fieldName": "Message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "p9rdrservice.dll"
+          ]
+        },
+        {
+          "fieldName": "Type",
+          "type": "UInt32",
+          "seenIn": [
+            "p9rdrservice.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "9PRdrServiceVerboseLog",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "File:AnsiString",
+            "FunctionName:AnsiString",
+            "Line number:UInt32",
+            "Type:UInt32",
+            "HRESULT:HexInt32",
+            "Message:UnicodeString",
+            "Code:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "p9rdrservice.dll",
+              "function": "_lambda_bfee42d9fd35d61b9a29ba526e9606f7_::operator()",
+              "ea": "0x180006624",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Code",
+          "type": "AnsiString",
+          "seenIn": [
+            "p9rdrservice.dll"
+          ]
+        },
+        {
+          "fieldName": "File",
+          "type": "AnsiString",
+          "seenIn": [
+            "p9rdrservice.dll"
+          ]
+        },
+        {
+          "fieldName": "FunctionName",
+          "type": "AnsiString",
+          "seenIn": [
+            "p9rdrservice.dll"
+          ]
+        },
+        {
+          "fieldName": "HRESULT",
+          "type": "HexInt32",
+          "seenIn": [
+            "p9rdrservice.dll"
+          ]
+        },
+        {
+          "fieldName": "Line number",
+          "type": "UInt32",
+          "seenIn": [
+            "p9rdrservice.dll"
+          ]
+        },
+        {
+          "fieldName": "Message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "p9rdrservice.dll"
+          ]
+        },
+        {
+          "fieldName": "Type",
+          "type": "UInt32",
+          "seenIn": [
+            "p9rdrservice.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AttemptLaunchInstance",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "distro:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "p9rdrservice.dll",
+              "function": "_anonymous_namespace_::AttemptLaunchInstance",
+              "ea": "0x1800070d7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "distro",
+          "type": "UnicodeString",
+          "seenIn": [
+            "p9rdrservice.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Error",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "filename:AnsiString",
+            "lineNumber:Int32",
+            "status:UInt32(NTStatus)",
+            "message:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "p9rdr.sys",
+              "function": "?TraceLogHelper@@YAXAEBUErrorSite@@JPEAD@Z",
+              "ea": "0x1c00075b3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "filename",
+          "type": "AnsiString",
+          "seenIn": [
+            "p9rdr.sys"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "Int32",
+          "seenIn": [
+            "p9rdr.sys"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "AnsiString",
+          "seenIn": [
+            "p9rdr.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "p9rdr.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Info",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "filename:AnsiString",
+            "lineNumber:Int32",
+            "message:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "p9rdr.sys",
+              "function": "?TraceLogHelper@@YAXAEBUErrorSite@@JPEAD@Z",
+              "ea": "0x1c000763f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "filename",
+          "type": "AnsiString",
+          "seenIn": [
+            "p9rdr.sys"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "Int32",
+          "seenIn": [
+            "p9rdr.sys"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "AnsiString",
+          "seenIn": [
+            "p9rdr.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InstancedLaunched",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "distro:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "p9rdrservice.dll",
+              "function": "_anonymous_namespace_::AttemptLaunchInstance",
+              "ea": "0x1800071bc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "distro",
+          "type": "UnicodeString",
+          "seenIn": [
+            "p9rdrservice.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

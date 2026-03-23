@@ -1,0 +1,868 @@
+{
+  "providerName": "Microsoft.Windows.Diagnostics.OfflineMemDiag",
+  "guid": "{8C928130-6BE2-5278-A045-D933959CC5A8}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "MemoryDiagnostic.dll"
+  ],
+  "uniqueEventCount": 8,
+  "events": [
+    {
+      "eventName": "AOMDEscalationStatus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PromptResult:UInt32",
+            "NotificationSetting:UInt32",
+            "hr:Int32",
+            "LastScanDecisionTime:FileTime",
+            "NumScanOffersSinceLastDecision:UInt32",
+            "LastScanOfferedTime:FileTime",
+            "MdSchedLastRunTime:FileTime",
+            "ThresholdMask:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "??$AOMDEscalationStatus@IIAEBJU_FILETIME@@IU1@U1@I@TlgHelper@@SAX$$QEAI0AEBJ$$QEAU_FILETIME@@0220@Z",
+              "ea": "0x180003ced",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "LastScanDecisionTime",
+          "type": "FileTime",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "LastScanOfferedTime",
+          "type": "FileTime",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "MdSchedLastRunTime",
+          "type": "FileTime",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "NotificationSetting",
+          "type": "UInt32",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "NumScanOffersSinceLastDecision",
+          "type": "UInt32",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "PromptResult",
+          "type": "UInt32",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "ThresholdMask",
+          "type": "UInt32",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Error",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x2",
+          "fields": [
+            "msg:CountedString",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?LogIfFailedExpected@TlgHelper@@SA_NV?$basic_string_view@GU?$char_traits@G@std@@@std@@J@Z",
+              "ea": "0x18000e0c2",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "msg",
+          "type": "CountedString",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FallbackError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilResult:Struct(Signed)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "failureId:UInt32",
+            "failureCount:UInt32",
+            "function:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?WilFallbackTelemetryCallback@TlgHelper@@SAX_NAEBUFailureInfo@wil@@@Z",
+              "ea": "0x18001db37",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "callContext",
+          "type": "AnsiString",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "failureCount",
+          "type": "UInt32",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "failureId",
+          "type": "UInt32",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "function",
+          "type": "AnsiString",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "wilResult",
+          "type": "Struct(Signed)",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogInfo",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x2",
+          "fields": [
+            "msg:UnicodeString",
+            "value:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "??$LogInfo@AEAY0CB@$$CBGAEAK@TlgHelper@@SAXAEAY0CB@$$CBGAEAK@Z",
+              "ea": "0x180003e47",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?InitializeConfig@AOMDHandler@@AEAAXXZ",
+              "ea": "0x18000dab7",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?InitializeConfig@AOMDHandler@@AEAAXXZ",
+              "ea": "0x18000db17",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?InitializeConfig@AOMDHandler@@AEAAXXZ",
+              "ea": "0x18000db71",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?InitializeConfig@AOMDHandler@@AEAAXXZ",
+              "ea": "0x18000dbcb",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?InitializeConfig@AOMDHandler@@AEAAXXZ",
+              "ea": "0x18000dc25",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?InitializeConfig@AOMDHandler@@AEAAXXZ",
+              "ea": "0x18000dc7f",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?InitializeConfig@AOMDHandler@@AEAAXXZ",
+              "ea": "0x18000dd45",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?IsTpmProtectedVolume@@YAJPEAUHINSTANCE__@@PEAXPEA_N@Z",
+              "ea": "0x18000df83",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?Stop@AOMDHandler@@MEAAJPEAJ@Z",
+              "ea": "0x1800133e3",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x2",
+          "fields": [
+            "msg:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?AOMDTipTestsExpirationTimerCallback@@YAXPEAXE@Z",
+              "ea": "0x18000854d",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?BitLockerCompatibilityCheck@@YAJAEA_N@Z",
+              "ea": "0x180008eda",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?BitLockerCompatibilityCheck@@YAJAEA_N@Z",
+              "ea": "0x1800094a8",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?BitLockerCompatibilityCheck@@YAJAEA_N@Z",
+              "ea": "0x180009566",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?BitLockerCompatibilityCheck@@YAJAEA_N@Z",
+              "ea": "0x18000966b",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?CleanupToastsOnExit@AOMDHandler@@AEAAJXZ",
+              "ea": "0x180009a3d",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?DoWork@AOMDHandler@@AEAAJXZ",
+              "ea": "0x18000a143",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?DoWork@AOMDHandler@@AEAAJXZ",
+              "ea": "0x18000a1d7",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?DoWork@AOMDHandler@@AEAAJXZ",
+              "ea": "0x18000a220",
+              "confidence": "CallGraph-d3"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?DoWork@AOMDHandler@@AEAAJXZ",
+              "ea": "0x18000a3a2",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?DoWork@AOMDHandler@@AEAAJXZ",
+              "ea": "0x18000a43c",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?DoWork@AOMDHandler@@AEAAJXZ",
+              "ea": "0x18000a4ce",
+              "confidence": "CallGraph-d3"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?EventScanCriteriaMet@AOMDHandler@@AEAAJAEA_N@Z",
+              "ea": "0x18000a8e8",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?EventScanCriteriaMet@AOMDHandler@@AEAAJAEA_N@Z",
+              "ea": "0x18000a9cc",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?EventScanCriteriaMet@AOMDHandler@@AEAAJAEA_N@Z",
+              "ea": "0x18000aaa3",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?EventScanCriteriaMet@AOMDHandler@@AEAAJAEA_N@Z",
+              "ea": "0x18000ab81",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?EventThresholdMet@AOMDHandler@@AEAAJV?$basic_string_view@GU?$char_traits@G@std@@@std@@0KAEA_N@Z",
+              "ea": "0x18000b202",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?IsTpmProtectedVolume@@YAJPEAUHINSTANCE__@@PEAXPEA_N@Z",
+              "ea": "0x18000dfdf",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?IsTpmProtectedVolume@@YAJPEAUHINSTANCE__@@PEAXPEA_N@Z",
+              "ea": "0x18000e028",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?SaveStateToRegistry@AOMDHandler@@AEAAJXZ",
+              "ea": "0x180010bb1",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?ShowToast@AOMDHandler@@AEAAJXZ",
+              "ea": "0x180012be0",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?ShowToast@AOMDHandler@@AEAAJXZ",
+              "ea": "0x180012c49",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?ShowToast@AOMDHandler@@AEAAJXZ",
+              "ea": "0x180012c9f",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?ShowToast@AOMDHandler@@AEAAJXZ",
+              "ea": "0x180012cfe",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?ShowToast@AOMDHandler@@AEAAJXZ",
+              "ea": "0x180012d58",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?ShowToast@AOMDHandler@@AEAAJXZ",
+              "ea": "0x180012efd",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?ToastActivatedCallback@@YAJPEAUIToastNotification@Notifications@UI@Windows@@PEAUIInspectable@@@Z",
+              "ea": "0x180013dcf",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?ToastActivatedCallback@@YAJPEAUIToastNotification@Notifications@UI@Windows@@PEAUIInspectable@@@Z",
+              "ea": "0x180013e96",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?ToastActivatedCallback@@YAJPEAUIToastNotification@Notifications@UI@Windows@@PEAUIInspectable@@@Z",
+              "ea": "0x180013f4e",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?ToastActivatedCallback@@YAJPEAUIToastNotification@Notifications@UI@Windows@@PEAUIInspectable@@@Z",
+              "ea": "0x180014003",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?ToastDismissedCallback@@YAJPEAUIToastNotification@Notifications@UI@Windows@@PEAUIToastDismissedEventArgs@234@@Z",
+              "ea": "0x180014355",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?ToastDismissedCallback@@YAJPEAUIToastNotification@Notifications@UI@Windows@@PEAUIToastDismissedEventArgs@234@@Z",
+              "ea": "0x1800143d1",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?ToastDismissedCallback@@YAJPEAUIToastNotification@Notifications@UI@Windows@@PEAUIToastDismissedEventArgs@234@@Z",
+              "ea": "0x180014432",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?UpdateStatsOnExit@AOMDHandler@@AEAAJXZ",
+              "ea": "0x180014cb4",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "msg",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "value",
+          "type": "UInt32",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogInfoFiletime",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x2",
+          "fields": [
+            "msg:UnicodeString",
+            "time:FileTime"
+          ],
+          "callers": [
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "??$LogInfoFiletime@AEAY0CE@$$CBGU_FILETIME@@@TlgHelper@@SAXAEAY0CE@$$CBG$$QEAU_FILETIME@@@Z",
+              "ea": "0x180003eb8",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "??$LogInfoFiletime@AEAY0CF@$$CBGU_FILETIME@@@TlgHelper@@SAXAEAY0CF@$$CBG$$QEAU_FILETIME@@@Z",
+              "ea": "0x180003f2c",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "??$LogInfoFiletime@AEAY0CG@$$CBGU_FILETIME@@@TlgHelper@@SAXAEAY0CG@$$CBG$$QEAU_FILETIME@@@Z",
+              "ea": "0x180003fa0",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x2",
+          "fields": [
+            "msg:UnicodeString",
+            "time:FileTime",
+            "time2:FileTime"
+          ],
+          "callers": [
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "??$LogInfoFiletime@AEAY0CK@$$CBGAEAU_FILETIME@@U1@@TlgHelper@@SAXAEAY0CK@$$CBGAEAU_FILETIME@@$$QEAU1@@Z",
+              "ea": "0x18000401c",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "??$LogInfoFiletime@AEAY0DA@$$CBGAEAU_FILETIME@@U1@@TlgHelper@@SAXAEAY0DA@$$CBGAEAU_FILETIME@@$$QEAU1@@Z",
+              "ea": "0x1800040ac",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "msg",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "time2",
+          "type": "FileTime",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "time",
+          "type": "FileTime",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogInfoString",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x2",
+          "fields": [
+            "msg:UnicodeString",
+            "value:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "??$LogInfoString@AEAY0CJ@$$CBGPEBG@TlgHelper@@SAXAEAY0CJ@$$CBG$$QEAPEBG@Z",
+              "ea": "0x180004134",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "??$LogInfoString@AEAY0DB@$$CBGPEBG@TlgHelper@@SAXAEAY0DB@$$CBG$$QEAPEBG@Z",
+              "ea": "0x1800041a8",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "??$LogInfoString@AEAY0DH@$$CBGPEBG@TlgHelper@@SAXAEAY0DH@$$CBG$$QEAPEBG@Z",
+              "ea": "0x18000421c",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "msg",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        },
+        {
+          "fieldName": "value",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogLifetimeInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "msg:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?DoWork@AOMDHandler@@AEAAJXZ",
+              "ea": "0x18000a2e3",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?DoWork@AOMDHandler@@AEAAJXZ",
+              "ea": "0x18000a33b",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?Stop@AOMDHandler@@MEAAJPEAJ@Z",
+              "ea": "0x18001335a",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?WaitForDebugger@@YAXXZ",
+              "ea": "0x18001da4f",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "DllGetClassObject",
+              "ea": "0x18001e43a",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "DllGetClassObject",
+              "ea": "0x18001e4bc",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "DllGetClassObject",
+              "ea": "0x18001e57f",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "DllMain",
+              "ea": "0x18001e660",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "DllMain",
+              "ea": "0x18001e6af",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "msg",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogWarning",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x2",
+          "fields": [
+            "msg:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?BitLockerCompatibilityCheck@@YAJAEA_N@Z",
+              "ea": "0x180009734",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MemoryDiagnostic.dll",
+              "function": "?BitLockerCompatibilityCheck@@YAJAEA_N@Z",
+              "ea": "0x180009776",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "msg",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MemoryDiagnostic.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

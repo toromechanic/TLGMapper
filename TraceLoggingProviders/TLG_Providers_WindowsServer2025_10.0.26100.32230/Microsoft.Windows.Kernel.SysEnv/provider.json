@@ -1,0 +1,333 @@
+{
+  "providerName": "Microsoft.Windows.Kernel.SysEnv",
+  "guid": "{A9FDF37B-D72D-4051-A3CD-D422103CE079}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "ntkrla57.exe",
+    "ntoskrnl.exe"
+  ],
+  "uniqueEventCount": 5,
+  "events": [
+    {
+      "eventName": "EnumerateVariables",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "informationClass:UInt32",
+            "requiredLength:UInt32",
+            "status:UInt32(NTStatus)",
+            "filterProvided:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "IoEnumerateEnvironmentVariablesEx",
+              "ea": "0x1407548c6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "IoEnumerateEnvironmentVariablesEx",
+              "ea": "0x140b1fa84",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "filterProvided",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "informationClass",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "requiredLength",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FirmwareTableAccessDenied",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "ProviderSignature:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "ExpGetSystemFirmwareTableInformation",
+              "ea": "0x14091991f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "ExpGetSystemFirmwareTableInformation",
+              "ea": "0x140af75cb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ProviderSignature",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GetVariable",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "variableName:UnicodeString",
+            "vendorGuid:GUID",
+            "valueLength:UInt32",
+            "attributes:UInt32",
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "IoGetEnvironmentVariableEx",
+              "ea": "0x1406f920a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "IoGetEnvironmentVariableEx",
+              "ea": "0x140968911",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "attributes",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "valueLength",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "variableName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "vendorGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "QueryVariables",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "attributes:UInt32",
+            "maximumVariableStorageSize:UInt64",
+            "remainingVariableStorageSize:UInt64",
+            "maximumVariableSize:UInt64",
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "IoQueryEnvironmentVariableInfoEx",
+              "ea": "0x140754a4c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "IoQueryEnvironmentVariableInfoEx",
+              "ea": "0x14070fad0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "attributes",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "maximumVariableSize",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "maximumVariableStorageSize",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "remainingVariableStorageSize",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SetVariable",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "variableName:UnicodeString",
+            "vendorGuid:GUID",
+            "valueLength:UInt32",
+            "attributes:UInt32",
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "IoSetEnvironmentVariableEx",
+              "ea": "0x140754bb5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "IoSetEnvironmentVariableEx",
+              "ea": "0x140b2d69d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "attributes",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "valueLength",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "variableName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "vendorGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

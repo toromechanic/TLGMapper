@@ -1,0 +1,60 @@
+{
+  "providerName": "Microsoft.Windows.Utc.WatchdogProvider",
+  "guid": "{319FDC69-A626-5289-BE4D-1F508A8C9A3B}",
+  "os": "WindowsServer2025",
+  "binaryCount": 3,
+  "binaries": [
+    "AggregatorHost.exe",
+    "diagtrack.dll",
+    "tellib.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "AggregatorManager_UtcWatchdogReply",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "AggregatorHost.exe",
+              "function": "_Microsoft::Diagnostics::Aggregation::AggregatorManager::InputRemoteEventList_::_2_::_lambda_1_::operator()",
+              "ea": "0x140018023",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "UtcWatchdogPoke",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "diagtrack.dll",
+              "function": "?FirePokeEvent@UtcWatchdog@Diagnostics@Microsoft@@QEAAXXZ",
+              "ea": "0x1800ed7d5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "tellib.dll",
+              "function": "?FirePokeEvent@UtcWatchdog@Diagnostics@Microsoft@@QEAAXXZ",
+              "ea": "0x1800f6f8e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    }
+  ]
+}

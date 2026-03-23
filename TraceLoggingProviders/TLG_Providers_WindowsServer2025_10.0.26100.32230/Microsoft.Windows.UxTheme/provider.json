@@ -1,0 +1,78 @@
+{
+  "providerName": "Microsoft.Windows.UxTheme",
+  "guid": "{673CF800-208A-5327-3F4B-2BE44A66627A}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "uxtheme.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "ProcessThemeDisabled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "uxtheme.dll",
+              "function": "?DisableThemeForProcessTelemetryEvent@UxThemeTelemetry@@SAXXZ",
+              "ea": "0x180062961",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "TextScalingRequestNotAllowed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "WindowHandle:HexInt64",
+            "StyleClassName:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "uxtheme.dll",
+              "function": "??$TextScalingRequestNotAllowed@AEAPEAUHWND__@@AEAPEBG@UxThemeTelemetry@@SAXAEAPEAUHWND__@@AEAPEBG@Z",
+              "ea": "0x1800628bc",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "uxtheme.dll"
+          ]
+        },
+        {
+          "fieldName": "StyleClassName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "uxtheme.dll"
+          ]
+        },
+        {
+          "fieldName": "WindowHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "uxtheme.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

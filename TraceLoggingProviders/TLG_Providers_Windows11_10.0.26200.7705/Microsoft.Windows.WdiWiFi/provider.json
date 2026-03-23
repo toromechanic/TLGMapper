@@ -1,0 +1,1042 @@
+{
+  "providerName": "Microsoft.Windows.WdiWiFi",
+  "guid": "{1FB5FF90-A110-5110-3FA7-5E54B1E386FE}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "WdiWiFi.sys"
+  ],
+  "uniqueEventCount": 13,
+  "events": [
+    {
+      "eventName": "InvalidConfigurationTimeoutOnOutgoingP2PActionFrame",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "IhvWdiVersion:UInt32",
+            "WdiP2PActionFrameType:UInt32",
+            "ExpectedGOTimeout:UInt16",
+            "ExpectedClientTimeout:UInt16",
+            "ActualGOTimeout:UInt16",
+            "ActualClientTimeout:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "WdiWiFi.sys",
+              "function": "?ValidateConfigurationTimeoutInternal@CP2PActionFrameHelpers@@CAXPEAVCAdapter@@PEBEKGGW4_WDI_P2P_ACTION_FRAME_TYPE@@@Z",
+              "ea": "0x1400d34ab",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActualClientTimeout",
+          "type": "UInt16",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "ActualGOTimeout",
+          "type": "UInt16",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "ExpectedClientTimeout",
+          "type": "UInt16",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "ExpectedGOTimeout",
+          "type": "UInt16",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "IhvWdiVersion",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "WdiP2PActionFrameType",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ResetRecovery",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "InterfaceGuid:GUID",
+            "DiagnosisDurationMs:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "WdiWiFi.sys",
+              "function": "?TraceLoggingDiagnosisDuration@CAdapter@@QEAAXK@Z",
+              "ea": "0x1400a6467",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DiagnosisDurationMs",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "InterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ResetRecoveryStorm",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "InterfaceGuid:GUID",
+            "ResetRecoveryPeriodInSeconds:UInt64",
+            "ActualStormMinTimestamp:UInt64",
+            "ActualStormMaxTimestamp:UInt64",
+            "ActualStormPeriodInMinutes_x100:UInt64",
+            "ResetRecoveryAttemptsPerMinute_x100:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "WdiWiFi.sys",
+              "function": "?TraceLoggingResetRecoveryStorm@CAdapter@@QEAAXPEB_KI_K@Z",
+              "ea": "0x1400a66d2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActualStormMaxTimestamp",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "ActualStormMinTimestamp",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "ActualStormPeriodInMinutes_x100",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "InterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "ResetRecoveryAttemptsPerMinute_x100",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "ResetRecoveryPeriodInSeconds",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WdiCsExcessiveRoamDetected",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "interfaceGuid:GUID",
+            "RoamAttempts:UInt64",
+            "Start:UInt64",
+            "StartLinkQuality:UInt32",
+            "End:UInt64",
+            "EndLinkQuality:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "WdiWiFi.sys",
+              "function": "?IsExcessiveRoamDetected@CBssidConnectHistory@@QEAA_NQEAY05EAEBU_GUID@@_N@Z",
+              "ea": "0x1400824d8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WdiWiFi.sys",
+              "function": "?IsExcessiveRoamDetected@CBssidConnectHistory@@QEAA_NQEAY05EAEBU_GUID@@_N@Z",
+              "ea": "0x140082586",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "End",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "EndLinkQuality",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "RoamAttempts",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "Start",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "StartLinkQuality",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "interfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WdiCsExcessiveRoamDisabled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "interfaceGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "WdiWiFi.sys",
+              "function": "?Initialize@CPort@@QEAAHPEAVCAdapter@@W4_WFC_PORT_TYPE@@KGQEAE@Z",
+              "ea": "0x140066bc6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "interfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WdiCsExcessiveRoamLinkQualityReset",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "interfaceGuid:GUID",
+            "RoamAttempts:UInt64",
+            "Start:UInt64",
+            "End:UInt64",
+            "MinLinkQuality:UInt32",
+            "MaxLinkQuality:UInt32",
+            "CurrentLinkQuality:UInt32",
+            "MaxLinkQualityDeviation:UInt32",
+            "LinkQualityThreshold:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "WdiWiFi.sys",
+              "function": "?AddEntry@CBssidConnectHistory@@QEAAXAEAY05$$CBEKAEBU_GUID@@@Z",
+              "ea": "0x1400dbf99",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CurrentLinkQuality",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "End",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "LinkQualityThreshold",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "MaxLinkQuality",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "MaxLinkQualityDeviation",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "MinLinkQuality",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "RoamAttempts",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "Start",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "interfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WdiOldFrameStateChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "interfaceGuid:GUID",
+            "isOldFrameDetected:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "WdiWiFi.sys",
+              "function": "?LogOldFrameStateChangeTelemetryEvent@CTxMgr@@AEAAX_N@Z",
+              "ea": "0x14009dc94",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WdiWiFi.sys",
+              "function": "?LogOldFrameStateChangeTelemetryEvent@CTxMgr@@AEAAX_N@Z",
+              "ea": "0x14009dcc9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "interfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "isOldFrameDetected",
+          "type": "Bool32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WdiResetRecovery",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "InterfaceGuid:GUID",
+            "EventCode:UInt32",
+            "WdiCommand:UInt32",
+            "ResetRecoveryCount:UInt32",
+            "OemPldrSupported:UInt32",
+            "ResetRecoveryOff:UInt8(Boolean)",
+            "IHVMiniportResetSupported:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "WdiWiFi.sys",
+              "function": "?TraceLoggingResetRecovery@CAdapter@@QEAAXKKKKE@Z",
+              "ea": "0x1400a6515",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EventCode",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "IHVMiniportResetSupported",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "InterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "OemPldrSupported",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "ResetRecoveryCount",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "ResetRecoveryOff",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "WdiCommand",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WdiRoamCompleted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "interfaceGuid:GUID",
+            "roamTrigger:UInt32",
+            "roamconfigFlags:HexInt32",
+            "roamReason:UInt32",
+            "errorCode:HexInt32",
+            "roamDebugCode:UInt32",
+            "wasRoamDeferred:Bool32",
+            "roamDeferCount:UInt32",
+            "isCancelled:Bool32",
+            "associationStatusCode:HexInt32",
+            "is11rFastTransitionRoam:Bool32",
+            "isFastTransitionSupportedByNetwork:Bool32",
+            "lastScanType:UInt8",
+            "isNeighborReportSupported:Bool32",
+            "isAPChannelReportSupported:Bool32",
+            "isMBOSupportedByNetwork:Bool32",
+            "bssCandidateCount:UInt32",
+            "linkQualityPreviousConnect:UInt8",
+            "linkQualityDuringRoam:UInt8",
+            "linkQualityCurrent:UInt8",
+            "channel:UInt32",
+            "bandID:UInt32",
+            "roamAPRank:UInt32",
+            "currentAPRanking:UInt32",
+            "bestCandidateRanking:UInt32",
+            "assocFailureCount:UInt32",
+            "initialConnectJobStartTime:UInt64",
+            "connectJobStartTime:UInt64",
+            "connectJobEndTime:UInt64",
+            "connectRoamTaskStartTime:UInt64",
+            "connectRoamTaskEndTime:UInt64",
+            "disassociationIndicationTime:UInt64",
+            "setCipherKeysTime:UInt64",
+            "privacyExemptionListSetDoneMS:UInt64",
+            "bssListUpdateDoneMS:UInt64",
+            "scanJobCompletionDoneMS:UInt64",
+            "pmkidUpdateDoneMS:UInt64",
+            "FipsOffloadUpdateMS:UInt64",
+            "FipsEncapsulationUpdateMS:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "WdiWiFi.sys",
+              "function": "?TraceLoggingRoamFinished@CPort@@QEAAXH@Z",
+              "ea": "0x14007f45c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WdiWiFi.sys",
+              "function": "?TraceLoggingRoamFinished@CPort@@QEAAXH@Z",
+              "ea": "0x14007f7b6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FipsEncapsulationUpdateMS",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "FipsOffloadUpdateMS",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "assocFailureCount",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "associationStatusCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "bandID",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "bestCandidateRanking",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "bssCandidateCount",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "bssListUpdateDoneMS",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "channel",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "connectJobEndTime",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "connectJobStartTime",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "connectRoamTaskEndTime",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "connectRoamTaskStartTime",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "currentAPRanking",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "disassociationIndicationTime",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "errorCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "initialConnectJobStartTime",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "interfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "is11rFastTransitionRoam",
+          "type": "Bool32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "isAPChannelReportSupported",
+          "type": "Bool32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "isCancelled",
+          "type": "Bool32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "isFastTransitionSupportedByNetwork",
+          "type": "Bool32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "isMBOSupportedByNetwork",
+          "type": "Bool32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "isNeighborReportSupported",
+          "type": "Bool32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "lastScanType",
+          "type": "UInt8",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "linkQualityCurrent",
+          "type": "UInt8",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "linkQualityDuringRoam",
+          "type": "UInt8",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "linkQualityPreviousConnect",
+          "type": "UInt8",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "pmkidUpdateDoneMS",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "privacyExemptionListSetDoneMS",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "roamAPRank",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "roamDebugCode",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "roamDeferCount",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "roamReason",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "roamTrigger",
+          "type": "UInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "roamconfigFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "scanJobCompletionDoneMS",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "setCipherKeysTime",
+          "type": "UInt64",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "wasRoamDeferred",
+          "type": "Bool32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WdiSuspectFrameInWDIQueue",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "interfaceGuid:GUID",
+            "SetPowerJobRunning:Bool32",
+            "numFrames:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "WdiWiFi.sys",
+              "function": "?LogSuspectFramesInWDIQueue@CTxMgr@@AEAAXG@Z",
+              "ea": "0x14009dd58",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WdiWiFi.sys",
+              "function": "?LogSuspectFramesInWDIQueue@CTxMgr@@AEAAXG@Z",
+              "ea": "0x14009dd8d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SetPowerJobRunning",
+          "type": "Bool32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "interfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "numFrames",
+          "type": "UInt16",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "[DeviceService] Failed to generate TLV buffer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ErrorCode:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "WdiWiFi.sys",
+              "function": "?GetDeviceCommandData_Bugfix_DeviceServiceCommandOidParser@CDeviceServiceCommandJob@@AEAAHPEAXIPEAI1IPEAK2PEAPEAE@Z",
+              "ea": "0x1400b2753",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "[DeviceService] Failed to parse Device Service Command OID parameters",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ErrorCode:HexInt32",
+            "InputBufferLength:HexInt32",
+            "BytesNeeded:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "WdiWiFi.sys",
+              "function": "?GetDeviceCommandData_Bugfix_DeviceServiceCommandOidParser@CDeviceServiceCommandJob@@AEAAHPEAXIPEAI1IPEAK2PEAPEAE@Z",
+              "ea": "0x1400b264c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BytesNeeded",
+          "type": "HexInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        },
+        {
+          "fieldName": "InputBufferLength",
+          "type": "HexInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "[DeviceService] Failed to split command blob into TLVs",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ErrorCode:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "WdiWiFi.sys",
+              "function": "?GetDeviceCommandData_Bugfix_DeviceServiceCommandOidParser@CDeviceServiceCommandJob@@AEAAHPEAXIPEAI1IPEAK2PEAPEAE@Z",
+              "ea": "0x1400b2718",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "WdiWiFi.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

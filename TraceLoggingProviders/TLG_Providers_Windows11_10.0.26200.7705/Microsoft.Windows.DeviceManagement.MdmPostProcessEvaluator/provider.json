@@ -1,0 +1,489 @@
+{
+  "providerName": "Microsoft.Windows.DeviceManagement.MdmPostProcessEvaluator",
+  "guid": "{8F453BA5-F19E-531D-071B-72BA1C501406}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "EDPCleanup.exe",
+    "mdmpostprocessevaluator.dll"
+  ],
+  "uniqueEventCount": 8,
+  "events": [
+    {
+      "eventName": "ConfigManagerService",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "resultValue:Int32",
+            "stringParamValue:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "mdmpostprocessevaluator.dll",
+              "function": "?StartConfigManagerService@PostProcessEvaluator@@CAJPEAPEAX@Z",
+              "ea": "0x180007e4b",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "mdmpostprocessevaluator.dll",
+              "function": "?StopConfigManagerService@PostProcessEvaluator@@CAJAEAPEAX@Z",
+              "ea": "0x180007ec6",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "resultValue",
+          "type": "Int32",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "stringParamValue",
+          "type": "UnicodeString",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EdpEvaluatorRun",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "resultValue:Int32(HResult)",
+            "statusValue:HexInt32",
+            "__TlgCV__:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "EDPCleanup.exe",
+              "function": "?EdpEvaluatorRun@MdmEvaluatorTraceProvider@@SAXJK@Z",
+              "ea": "0x14000d32a",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "EDPCleanup.exe"
+          ]
+        },
+        {
+          "fieldName": "resultValue",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EDPCleanup.exe"
+          ]
+        },
+        {
+          "fieldName": "statusValue",
+          "type": "HexInt32",
+          "seenIn": [
+            "EDPCleanup.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EvaluatorLoadScenariosResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "resultValue:Int32",
+            "stringParamValue:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "mdmpostprocessevaluator.dll",
+              "function": "wil::details::ScopeExitFn__lambda_f0c761b3c4731aab0761ec34cd0e10e8___::_ScopeExitFn__lambda_f0c761b3c4731aab0761ec34cd0e10e8___",
+              "ea": "0x1800041a0",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "resultValue",
+          "type": "Int32",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "stringParamValue",
+          "type": "UnicodeString",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EvaluatorRunResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "resultValue:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "mdmpostprocessevaluator.dll",
+              "function": "??$EvaluatorRunResult@AEBJ@MdmEvaluatorTraceProvider@@SAXAEBJ@Z",
+              "ea": "0x180002c68",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "resultValue",
+          "type": "Int32",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FallbackError",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilResult:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "mdmpostprocessevaluator.dll",
+              "function": "?ReportTelemetryFailure@TraceLoggingProvider@wil@@IEAAXAEBUFailureInfo@2@@Z",
+              "ea": "0x180006eec",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilResult:Struct(Signed)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "failureId:UInt32",
+            "failureCount:UInt32",
+            "function:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "mdmpostprocessevaluator.dll",
+              "function": "?ReportTraceLoggingFailure@TraceLoggingProvider@wil@@IEAAXAEBUFailureInfo@2@@Z",
+              "ea": "0x18000703b",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "callContext",
+          "type": "AnsiString",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "failureCount",
+          "type": "UInt32",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "failureId",
+          "type": "UInt32",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "function",
+          "type": "AnsiString",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "wilResult",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "wilResult",
+          "type": "Struct(Signed)",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InitScenarioResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "resultValue:Int32",
+            "scenarioNameParam:UnicodeString",
+            "isScenarioEnabledParam:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "mdmpostprocessevaluator.dll",
+              "function": "??$InitScenarioResult@AEAJAEAPEBGAEAH@MdmEvaluatorTraceProvider@@SAXAEAJAEAPEBGAEAH@Z",
+              "ea": "0x180002d61",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "isScenarioEnabledParam",
+          "type": "Int32",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "resultValue",
+          "type": "Int32",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        },
+        {
+          "fieldName": "scenarioNameParam",
+          "type": "UnicodeString",
+          "seenIn": [
+            "mdmpostprocessevaluator.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StartEdpEvaluatorTraceEnd",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "resultValue:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "EDPCleanup.exe",
+              "function": "??$StartEdpEvaluatorTraceEnd@AEBJ@MdmEvaluatorTraceProvider@@SAXAEBJ@Z",
+              "ea": "0x1400114dc",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "resultValue",
+          "type": "Int32",
+          "seenIn": [
+            "EDPCleanup.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StartEdpEvaluatorTraceStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "stringParamValue:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EDPCleanup.exe",
+              "function": "??$StartEdpEvaluatorTraceStart@AEAPEBG@MdmEvaluatorTraceProvider@@SAXAEAPEBG@Z",
+              "ea": "0x14001154e",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "stringParamValue",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EDPCleanup.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,428 @@
+{
+  "providerName": "Microsoft.Windows.Security.Kdc",
+  "guid": "{F2C3D846-1D17-5388-62FA-3839E9C67C80}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "localkdcsvc.dll"
+  ],
+  "uniqueEventCount": 7,
+  "events": [
+    {
+      "eventName": "KdcCertStrongNameMatch",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "isASTicket:Bool32",
+            "isUserAccount:Bool32",
+            "Kerberr:Int32",
+            "Reason:Int32",
+            "StrongNameMappingRequired:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "localkdcsvc.dll",
+              "function": "?I_GetASTicket@@YAJHPEAUsockaddr@@PEAUKERB_KDC_REQUEST@@PEAU_UNICODE_STRING@@PEAU_KERB_MESSAGE_BUFFER@@33PEAUKERB_EXT_ERROR@@222PEAUKrbFastReq@@PEAU_KERB_ENCRYPTION_KEY@@PEAPEAUKERB_KDC_REQUEST_preauth_data_s@@PEAU_KDC_AP_REQUEST_INFO@@PEAU_PDC_RSO@@@Z",
+              "ea": "0x180047ab5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "localkdcsvc.dll",
+              "function": "_lambda_7e74af097a46c735cd44b3add9e57504_::operator()",
+              "ea": "0x180065364",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Kerberr",
+          "type": "Int32",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "Int32",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "StrongNameMappingRequired",
+          "type": "Bool32",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "isASTicket",
+          "type": "Bool32",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "isUserAccount",
+          "type": "Bool32",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KdcCertStrongNameMatchPolicyUsage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "Status:UInt32(NTStatus)",
+            "KdcUseStrongNameMatches:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "localkdcsvc.dll",
+              "function": "?KerbGetKdcRegParams@@YAXPEAUHKEY__@@H@Z",
+              "ea": "0x18001e420",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "KdcUseStrongNameMatches",
+          "type": "Bool32",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KdcPkinitEncModeUsage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Count:Int64",
+            "AlgorithmOid:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "localkdcsvc.dll",
+              "function": "?KdcCheckPkinitPreAuthData@@YAJPEAU_KERB_MESSAGE_BUFFER@@PEAU_KDC_TICKET_INFO@@PEAXKPEAUKERB_KDC_REQUEST_preauth_data_s@@PEAUKERB_KDC_REQUEST_BODY@@3PEBU_CERT_CONTEXT@@PEAUKdcPackedAuthenticator@@2PEBU_CERT_CHAIN_CONTEXT@@PEAUsockaddr@@PEAPEAU3@9PEAKPEAU_KERB_ENCRYPTION_KEY@@PEAU_UNICODE_STRING@@PEAU_KDC_PKI_AUDIT_INFO@@PEAUKERB_EXT_ERROR@@0AEAUKERB_ERR_REASON@@@Z",
+              "ea": "0x1800587ec",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AlgorithmOid",
+          "type": "AnsiString",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KdcPkinitHashAlgorithm",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Count:Int64",
+            "HashAlgorithmOid:AnsiString",
+            "IsDHUsed:Bool32",
+            "EncryptionAlgorithmOid:AnsiString",
+            "UseEcc:Int32",
+            "KerbErr:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "localkdcsvc.dll",
+              "function": "?KdcCheckPkinitPreAuthData@@YAJPEAU_KERB_MESSAGE_BUFFER@@PEAU_KDC_TICKET_INFO@@PEAXKPEAUKERB_KDC_REQUEST_preauth_data_s@@PEAUKERB_KDC_REQUEST_BODY@@3PEBU_CERT_CONTEXT@@PEAUKdcPackedAuthenticator@@2PEBU_CERT_CHAIN_CONTEXT@@PEAUsockaddr@@PEAPEAU3@9PEAKPEAU_KERB_ENCRYPTION_KEY@@PEAU_UNICODE_STRING@@PEAU_KDC_PKI_AUDIT_INFO@@PEAUKERB_EXT_ERROR@@0AEAUKERB_ERR_REASON@@@Z",
+              "ea": "0x1800578b4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "EncryptionAlgorithmOid",
+          "type": "AnsiString",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "HashAlgorithmOid",
+          "type": "AnsiString",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDHUsed",
+          "type": "Bool32",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "KerbErr",
+          "type": "Int32",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "UseEcc",
+          "type": "Int32",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KdcPkinitHashpolicy",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Count:Int64",
+            "HashPolicy:UInt32",
+            "IsPolicyValid:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "localkdcsvc.dll",
+              "function": "?KdcConfigureHashAlgorithmPolicy@@YAX_KPEAUPkinitAddAlgorithmParam@@@Z",
+              "ea": "0x18001c340",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "HashPolicy",
+          "type": "UInt32",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "IsPolicyValid",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PkinitDHParameters",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Count:Int64",
+            "MODPDHModulusSize:UInt32",
+            "IsDHAlgIdGenerated:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "localkdcsvc.dll",
+              "function": "?KerbGenerateDHAlgorithmId@@YAHKHPEAU_CERT_X942_DH_PARAMETERS@@PEAU_CRYPT_ALGORITHM_IDENTIFIER@@@Z",
+              "ea": "0x180083430",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDHAlgIdGenerated",
+          "type": "Bool32",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "MODPDHModulusSize",
+          "type": "UInt32",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ScCspToCngAliasUnavailable",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Count:Int64",
+            "CspProviderName:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "localkdcsvc.dll",
+              "function": "ScHelperCryptAcquireCertificatePrivateKey",
+              "ea": "0x180079247",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "CspProviderName",
+          "type": "AnsiString",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "localkdcsvc.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

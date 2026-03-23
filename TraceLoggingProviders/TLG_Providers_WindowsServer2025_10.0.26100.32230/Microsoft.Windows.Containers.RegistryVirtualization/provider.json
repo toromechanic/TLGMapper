@@ -1,0 +1,1005 @@
+{
+  "providerName": "Microsoft.Windows.Containers.RegistryVirtualization",
+  "guid": "{252D9ECC-1C9F-4917-8760-F872A83BF018}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "ntkrla57.exe",
+    "ntoskrnl.exe"
+  ],
+  "uniqueEventCount": 23,
+  "events": [
+    {
+      "eventName": "DriverUnload",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpRegistryUnload",
+              "ea": "0x140a31db8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpRegistryUnload",
+              "ea": "0x14081f1b8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "FlushKey Bypassed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpPreFlushKey",
+              "ea": "0x140a35205",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpRegistryCallback",
+              "ea": "0x14083f59d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpRegistryCallback",
+              "ea": "0x14083f5d5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "FlushKey Success",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpPreFlushKey",
+              "ea": "0x140a35242",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpRegistryCallback",
+              "ea": "0x14083f638",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpRegistryCallback",
+              "ea": "0x14083f670",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "IOCTL Called from inside Container",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "IoControlCode:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpIoctlDeviceDispatch",
+              "ea": "0x140a3180a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpIoctlDeviceDispatch",
+              "ea": "0x140b058a5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IoControlCode",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IoCtl",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "IoControlCode:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpIoctlDeviceDispatch",
+              "ea": "0x140a3186a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpIoctlDeviceDispatch",
+              "ea": "0x140921754",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IoControlCode",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IoCtlComplete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpIoctlDeviceDispatch",
+              "ea": "0x140a31a0f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpIoctlDeviceDispatch",
+              "ea": "0x1409217c4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PostEnumerateKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "InformationClass:HexInt32",
+            "EnumeratedKey_ContainerPath:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpPostEnumerateKey",
+              "ea": "0x140a34384",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpPostEnumerateKey",
+              "ea": "0x140b05537",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EnumeratedKey_ContainerPath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "InformationClass",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PostEnumerateKeyFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "InformationClass:HexInt32",
+            "EnumeratedKey_ContainerPath:CountedString",
+            "FullEnumeratedKey_ContainerPath:CountedString",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpPostEnumerateKey",
+              "ea": "0x140a348f5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpPostEnumerateKey",
+              "ea": "0x140920c9c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpPostEnumerateKey",
+              "ea": "0x140920cd0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EnumeratedKey_ContainerPath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "FullEnumeratedKey_ContainerPath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "InformationClass",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PostOpenOrCreateFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "HostPath:CountedString",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpPostOpenOrCreate",
+              "ea": "0x140a34c3b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpPostOpenOrCreate",
+              "ea": "0x140adadbb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HostPath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PostOpenOrCreateReparseDetected",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "HostPath:CountedString",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpPostOpenOrCreate",
+              "ea": "0x140a34d3c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpPostOpenOrCreate",
+              "ea": "0x140adaebc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HostPath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PostQueryKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "InformationClass:HexInt32",
+            "ContainerPath:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpPostQueryKey",
+              "ea": "0x140a34e9e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpPostQueryKey",
+              "ea": "0x140b05351",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ContainerPath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "InformationClass",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PostQueryKeyFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "ContainerPath:CountedString",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpPostQueryKey",
+              "ea": "0x140a35096",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpPostQueryKey",
+              "ea": "0x140b053a0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ContainerPath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PostQueryKeyFinished",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ContainerPath:CountedString",
+            "InformationClass:HexInt32",
+            "PostInfo->ReturnStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpPostQueryKey",
+              "ea": "0x140a35015",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpPostQueryKey",
+              "ea": "0x1409204e7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpPostQueryKey",
+              "ea": "0x140920542",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ContainerPath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "InformationClass",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PostInfo->ReturnStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PreLoadKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "AbsolutePath:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpPreLoadKey",
+              "ea": "0x140a35460",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpPreLoadKey",
+              "ea": "0x140b2c120",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AbsolutePath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PreLoadKeyFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpPreLoadKey",
+              "ea": "0x140a35c8a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpPreLoadKey",
+              "ea": "0x140a6b692",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PreLoadKeySuccess",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "AbsolutePath:CountedString",
+            "HostMountPath:CountedString",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpPreLoadKey",
+              "ea": "0x140a35bd6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpPreLoadKey",
+              "ea": "0x140b2c864",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AbsolutePath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "HostMountPath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PreOpenOrCreateFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "Key:CountedString",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpPreOpenOrCreate",
+              "ea": "0x140a35f2d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpPreOpenOrCreate",
+              "ea": "0x14091f90b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Key",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PreOpenOrCreateGlobalReparse",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "NewPath:CountedString",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpPreOpenOrCreate",
+              "ea": "0x140a35e68",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpPreOpenOrCreate",
+              "ea": "0x14091f9bd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NewPath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PreQueryKeyName",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "ContainerPath:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpPreQueryKeyName",
+              "ea": "0x140a362af",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpPreQueryKeyName",
+              "ea": "0x140b1e6fd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ContainerPath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PreQueryKeyNameFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "ContainerPath:CountedString",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpPreQueryKeyName",
+              "ea": "0x140a3638c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpPreQueryKeyName",
+              "ea": "0x140a041b7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ContainerPath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PreQueryKeyNameSuccess",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ContainerPath:CountedString",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpPreQueryKeyName",
+              "ea": "0x140a363af",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpPreQueryKeyName",
+              "ea": "0x140a041cb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ContainerPath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RenameKey denied on a namespace node.",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ContainerPath:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpPreRenameKey",
+              "ea": "0x140a364ea",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpRegistryCallback",
+              "ea": "0x14083f71b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpRegistryCallback",
+              "ea": "0x14083f75e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ContainerPath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnknownIoCtl",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "IoControlCode:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "VrpIoctlDeviceDispatch",
+              "ea": "0x140a318eb",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VrpIoctlDeviceDispatch",
+              "ea": "0x140b058e7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IoControlCode",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

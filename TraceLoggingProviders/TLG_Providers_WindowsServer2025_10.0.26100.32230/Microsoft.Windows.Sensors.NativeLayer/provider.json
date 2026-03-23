@@ -1,0 +1,285 @@
+{
+  "providerName": "Microsoft.Windows.Sensors.NativeLayer",
+  "guid": "{DD685AA3-9E8C-5E0C-819D-A3D24D221AF1}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "SensorsNativeApi.dll"
+  ],
+  "uniqueEventCount": 4,
+  "events": [
+    {
+      "eventName": "SensorAPITelemetry",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "MethodLayer:Int32",
+            "MethodName:Int32",
+            "Handle:HexInt64",
+            "ErrCode:Int32",
+            "InternalErrCode:Int32",
+            "Interface:UnicodeString",
+            "SensorGuid:GUID",
+            "SensorClassName:Int32",
+            "Count:UInt32",
+            "Version:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SensorsNativeApi.dll",
+              "function": "?LogTelemetry@CSensorAPIEventValues@@UEAAXXZ",
+              "ea": "0x18000d742",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "MethodName:Int32",
+            "MethodLayer:Int32",
+            "ErrCode:Int32",
+            "InternalErrCode:Int32",
+            "InterfaceGuid:GUID",
+            "Interface:UnicodeString",
+            "SensorName:UnicodeString",
+            "Version:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "SensorsNativeApi.dll",
+              "function": "?WriteEvent@CSensorAPITelemetry@@SAXPEBQEBU_tlgProvider_t@@W4SENSORS_METHOD_TYPE@@W4SENSORS_METHOD@@JJAEBU_GUID@@PEAGPEBG@Z",
+              "ea": "0x18000d8b9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "UInt32",
+          "seenIn": [
+            "SensorsNativeApi.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrCode",
+          "type": "Int32",
+          "seenIn": [
+            "SensorsNativeApi.dll"
+          ]
+        },
+        {
+          "fieldName": "Handle",
+          "type": "HexInt64",
+          "seenIn": [
+            "SensorsNativeApi.dll"
+          ]
+        },
+        {
+          "fieldName": "Interface",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SensorsNativeApi.dll"
+          ]
+        },
+        {
+          "fieldName": "InterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "SensorsNativeApi.dll"
+          ]
+        },
+        {
+          "fieldName": "InternalErrCode",
+          "type": "Int32",
+          "seenIn": [
+            "SensorsNativeApi.dll"
+          ]
+        },
+        {
+          "fieldName": "MethodLayer",
+          "type": "Int32",
+          "seenIn": [
+            "SensorsNativeApi.dll"
+          ]
+        },
+        {
+          "fieldName": "MethodName",
+          "type": "Int32",
+          "seenIn": [
+            "SensorsNativeApi.dll"
+          ]
+        },
+        {
+          "fieldName": "SensorClassName",
+          "type": "Int32",
+          "seenIn": [
+            "SensorsNativeApi.dll"
+          ]
+        },
+        {
+          "fieldName": "SensorGuid",
+          "type": "GUID",
+          "seenIn": [
+            "SensorsNativeApi.dll"
+          ]
+        },
+        {
+          "fieldName": "SensorName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SensorsNativeApi.dll"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "Int32",
+          "seenIn": [
+            "SensorsNativeApi.dll"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "UInt32",
+          "seenIn": [
+            "SensorsNativeApi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SensorAPITelemetryEventOverflow",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "IsEventsOverflow:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "SensorsNativeApi.dll",
+              "function": "?AddData@CSensorAPIEventValues@@UEAAXEUSensorAPIEvent@@@Z",
+              "ea": "0x18000d62a",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsEventsOverflow",
+          "type": "Int32",
+          "seenIn": [
+            "SensorsNativeApi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SensorAPITelemetryEventThrottled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "IsEventsThrottled:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "SensorsNativeApi.dll",
+              "function": "?AddEvent@CSensorAPITelemetry@@QEAAXW4SENSORS_METHOD_TYPE@@W4SENSORS_METHOD@@JJ@Z",
+              "ea": "0x18000d6c7",
+              "confidence": "GlobalFallback"
+            },
+            {
+              "binary": "SensorsNativeApi.dll",
+              "function": "?WriteEvent@CSensorAPITelemetry@@SAXPEBQEBU_tlgProvider_t@@W4SENSORS_METHOD_TYPE@@W4SENSORS_METHOD@@JJAEBU_GUID@@PEAGPEBG@Z",
+              "ea": "0x18000d977",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsEventsThrottled",
+          "type": "Int32",
+          "seenIn": [
+            "SensorsNativeApi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SensorsAPITracing",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "MethodName:AnsiString",
+            "MethodLayer:AnsiString",
+            "SensorHandle:HexInt64",
+            "ErrorCode:UInt32",
+            "ReturnValue:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SensorsNativeApi.dll",
+              "function": "?LogUsage@@YAXPEADPEAXKK@Z",
+              "ea": "0x18000d570",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "SensorsNativeApi.dll"
+          ]
+        },
+        {
+          "fieldName": "MethodLayer",
+          "type": "AnsiString",
+          "seenIn": [
+            "SensorsNativeApi.dll"
+          ]
+        },
+        {
+          "fieldName": "MethodName",
+          "type": "AnsiString",
+          "seenIn": [
+            "SensorsNativeApi.dll"
+          ]
+        },
+        {
+          "fieldName": "ReturnValue",
+          "type": "UInt32",
+          "seenIn": [
+            "SensorsNativeApi.dll"
+          ]
+        },
+        {
+          "fieldName": "SensorHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "SensorsNativeApi.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

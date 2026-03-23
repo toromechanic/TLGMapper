@@ -1,0 +1,59 @@
+{
+  "providerName": "Microsoft.Windows.UpdateStoreModel",
+  "guid": "{1FB0F6FC-4C5B-435D-9AB5-63E738CFA370}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "Magnify.exe",
+    "Narrator.exe"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "LanguageModelUpdated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "allLanguagesUpdated:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "Magnify.exe",
+              "function": "??$LanguageModelUpdated@_N@UpdateStoreModelLogging@@SAX$$QEA_N@Z",
+              "ea": "0x14005a1a0",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Narrator.exe",
+              "function": "??$LanguageModelUpdated@_N@UpdateStoreModelLogging@@SAX$$QEA_N@Z",
+              "ea": "0x140029274",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Magnify.exe",
+            "Narrator.exe"
+          ]
+        },
+        {
+          "fieldName": "allLanguagesUpdated",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "Magnify.exe",
+            "Narrator.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "providerName": "Microsoft.Windows.Networking.Tunnel",
+  "guid": "{444943B7-3A0F-45C9-B7CB-D2A2DE9EB852}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "tunnel.sys"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "DriverInitialization",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "DriverEntryStatus:UInt32",
+            "DriverEntryError:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "tunnel.sys",
+              "function": "TunnelTelemetryDriverInitialization",
+              "ea": "0x1c000cc29",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DriverEntryError",
+          "type": "UInt32",
+          "seenIn": [
+            "tunnel.sys"
+          ]
+        },
+        {
+          "fieldName": "DriverEntryStatus",
+          "type": "UInt32",
+          "seenIn": [
+            "tunnel.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MiniportHalt",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "TunnelType:UInt32",
+            "TotalSentPackets:UInt32",
+            "TotalReceivedPackets:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "tunnel.sys",
+              "function": "TunnelTelemetryMiniportHalt",
+              "ea": "0x1c000b16d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "TotalReceivedPackets",
+          "type": "UInt32",
+          "seenIn": [
+            "tunnel.sys"
+          ]
+        },
+        {
+          "fieldName": "TotalSentPackets",
+          "type": "UInt32",
+          "seenIn": [
+            "tunnel.sys"
+          ]
+        },
+        {
+          "fieldName": "TunnelType",
+          "type": "UInt32",
+          "seenIn": [
+            "tunnel.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MiniportInitialization",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "MiniportInitializeTunnelType:UInt32",
+            "MiniportInitializeStatus:UInt32",
+            "MiniportInitializeError:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "tunnel.sys",
+              "function": "TunnelTelemetryMiniportInitialization",
+              "ea": "0x1c000bdac",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "MiniportInitializeError",
+          "type": "UInt32",
+          "seenIn": [
+            "tunnel.sys"
+          ]
+        },
+        {
+          "fieldName": "MiniportInitializeStatus",
+          "type": "UInt32",
+          "seenIn": [
+            "tunnel.sys"
+          ]
+        },
+        {
+          "fieldName": "MiniportInitializeTunnelType",
+          "type": "UInt32",
+          "seenIn": [
+            "tunnel.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

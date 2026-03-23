@@ -1,0 +1,139 @@
+{
+  "providerName": "Microsoft.Windows.DeviceManagement.ConfigManager2LockService",
+  "guid": "{A109A7C6-D975-46CC-B593-2B079B604E34}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "dcsvc.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "API",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Op:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "?CloseContext@@YAJPEAPEAX@Z",
+              "ea": "0x1800dda27",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Op:AnsiString",
+            "Hresult:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "?CreateContext@@YAJPEAXPEAPEAX@Z",
+              "ea": "0x1800ddb65",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Op:AnsiString",
+            "Path:UnicodeString",
+            "Hresult:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "?CreateNamedProvisioningLock@@YAJPEAXPEBGPEAPEAG2@Z",
+              "ea": "0x1800de063",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "dcsvc.dll",
+              "function": "?ReleaseNamedProvisioningLock@@YAJPEAXPEBG@Z",
+              "ea": "0x1800de712",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Hresult",
+          "type": "HexInt32",
+          "seenIn": [
+            "dcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Op",
+          "type": "AnsiString",
+          "seenIn": [
+            "dcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Path",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dcsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SVC",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Op:AnsiString",
+            "Hresult:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "?CmLockSvcInitialize@@YAJXZ",
+              "ea": "0x1800dcdb7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "dcsvc.dll",
+              "function": "?CmLockSvcUninitialize@@YAJJ@Z",
+              "ea": "0x1800dce52",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Hresult",
+          "type": "HexInt32",
+          "seenIn": [
+            "dcsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Op",
+          "type": "AnsiString",
+          "seenIn": [
+            "dcsvc.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

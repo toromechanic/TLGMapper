@@ -1,0 +1,210 @@
+{
+  "providerName": "Microsoft.Windows.Storage.StorageHealthMonitor",
+  "guid": "{8FF0D739-D7BF-5DD3-8A3F-F45C6DAC756D}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "StorSvc.dll"
+  ],
+  "uniqueEventCount": 5,
+  "events": [
+    {
+      "eventName": "NVMeStorageHealthMonitor",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Status:AnsiString",
+            "ErrorCode:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?TraceLoggingWriteEventWithOneParam@StorageHealthMonitorTelemetry@@SAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@K@Z",
+              "ea": "0x180080478",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "AnsiString",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NVMeStorageHealthMonitor::ComponentStarted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?TraceLoggingWriteComponentStarted@StorageHealthMonitorTelemetry@@SAXXZ",
+              "ea": "0x180080411",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NVMeStorageHealthMonitor::NotifyAllUsersFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Status:AnsiString",
+            "ErrorCode:UInt32",
+            "DiskGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?TraceLoggingWriteNotifyAllUsers@StorageHealthMonitorTelemetry@@SAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@KPEAU_GUID@@@Z",
+              "ea": "0x180080536",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DiskGuid",
+          "type": "GUID",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "AnsiString",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NVMeStorageHealthMonitor::StatusErrorCode",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Status:AnsiString",
+            "ErrorCode:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?TraceLoggingWriteStatusErrorCode@StorageHealthMonitorTelemetry@@SAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@K@Z",
+              "ea": "0x1800805e4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "AnsiString",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NVMeStorageHealthMonitorDisabled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?IsStorageHealthMonitorEnabled@RegistryHelpers@@SAEXZ",
+              "ea": "0x18008083c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

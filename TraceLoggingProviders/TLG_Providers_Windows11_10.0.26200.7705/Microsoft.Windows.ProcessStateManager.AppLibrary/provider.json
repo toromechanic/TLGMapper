@@ -1,0 +1,590 @@
+{
+  "providerName": "Microsoft.Windows.ProcessStateManager.AppLibrary",
+  "guid": "{BC71577F-76E9-583A-ECD6-62D0250D900F}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "twinapi.appcore.dll"
+  ],
+  "uniqueEventCount": 13,
+  "events": [
+    {
+      "eventName": "CallAppStateChangeRoutines",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpHandleQuiesceRequest",
+              "ea": "0x1800611a0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpHandleQuiesceRequest",
+              "ea": "0x1800611d7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "FlushHeaps",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpHandleQuiesceRequest",
+              "ea": "0x1800610d1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpHandleQuiesceRequest",
+              "ea": "0x18006110b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "InitiallySuspended",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpHandleQuiesceRequest",
+              "ea": "0x180061596",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "QuiesceSummary",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "HandlerTimeMs:UInt64",
+            "TrimTimeMs:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpHandleQuiesceRequest",
+              "ea": "0x1800614bb",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpHandleQuiesceRequest",
+              "ea": "0x1800614f5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HandlerTimeMs",
+          "type": "UInt64",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "TrimTimeMs",
+          "type": "UInt64",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Registration_Block",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x3",
+          "fields": [
+            "Id:HexInt32",
+            "ChangeRoutine:HexInt64(CodePointer)",
+            "NewBarrierCount:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmBlockAppStateChangeCompletion",
+              "ea": "0x1800186c5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmBlockAppStateChangeCompletion",
+              "ea": "0x180018709",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ChangeRoutine",
+          "type": "HexInt64(CodePointer)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "Id",
+          "type": "HexInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "NewBarrierCount",
+          "type": "HexInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Registration_ChangeRoutine",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Id:HexInt32",
+            "ChangeRoutine:HexInt64(CodePointer)",
+            "Suspend:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpCallAppStateChangeRoutines",
+              "ea": "0x1800618d5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpCallAppStateChangeRoutines",
+              "ea": "0x18006191b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpCallAppStateChangeRoutines",
+              "ea": "0x180061a00",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpCallAppStateChangeRoutines",
+              "ea": "0x180061a50",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ChangeRoutine",
+          "type": "HexInt64(CodePointer)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "Id",
+          "type": "HexInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "Suspend",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Registration_Create",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpRegisterAppStateChangeNotification",
+              "ea": "0x18003b7d3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpRegisterAppStateChangeNotification",
+              "ea": "0x18003b807",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "Id:HexInt32",
+            "ChangeRoutine:HexInt64(CodePointer)",
+            "Flags:HexInt32",
+            "Category:UInt32",
+            "ResumePending:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpRegisterAppStateChangeNotification",
+              "ea": "0x18003bb1e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpRegisterAppStateChangeNotification",
+              "ea": "0x18003bb6d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Category",
+          "type": "UInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "ChangeRoutine",
+          "type": "HexInt64(CodePointer)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "Id",
+          "type": "HexInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "ResumePending",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Registration_Destroy",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmUnregisterAppStateChangeNotification",
+              "ea": "0x18006a44c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmUnregisterAppStateChangeNotification",
+              "ea": "0x18006a47c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Id:HexInt32",
+            "ChangeRoutine:HexInt64(CodePointer)"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmUnregisterAppStateChangeNotification",
+              "ea": "0x18006a5a0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmUnregisterAppStateChangeNotification",
+              "ea": "0x18006a5cd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ChangeRoutine",
+          "type": "HexInt64(CodePointer)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "Id",
+          "type": "HexInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Registration_Unblock",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x3",
+          "fields": [
+            "Id:HexInt32",
+            "ChangeRoutine:HexInt64(CodePointer)",
+            "NewBarrierCount:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmUnblockAppStateChangeCompletion",
+              "ea": "0x18001a201",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmUnblockAppStateChangeCompletion",
+              "ea": "0x18001a240",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ChangeRoutine",
+          "type": "HexInt64(CodePointer)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "Id",
+          "type": "HexInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "NewBarrierCount",
+          "type": "HexInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ResetEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpCallAppStateChangeRoutines",
+              "ea": "0x180061c94",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpCallAppStateChangeRoutines",
+              "ea": "0x180061ccb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "RpcQuiesceCompleteResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpHandleQuiesceRequest",
+              "ea": "0x180061370",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpHandleQuiesceRequest",
+              "ea": "0x1800613aa",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SuspendResume",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Suspend:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpCallAppStateChangeRoutines",
+              "ea": "0x180061aee",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpCallAppStateChangeRoutines",
+              "ea": "0x180061b1b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpCallAppStateChangeRoutines",
+              "ea": "0x180061baa",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpCallAppStateChangeRoutines",
+              "ea": "0x180061bea",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Suspend",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TrimPools",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpHandleQuiesceRequest",
+              "ea": "0x18006127a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "PsmpHandleQuiesceRequest",
+              "ea": "0x1800612b4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    }
+  ]
+}

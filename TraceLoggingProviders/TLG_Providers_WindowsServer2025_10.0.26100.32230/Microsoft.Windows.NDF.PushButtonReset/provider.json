@@ -1,0 +1,94 @@
+{
+  "providerName": "Microsoft.Windows.NDF.PushButtonReset",
+  "guid": "{6A586350-E749-49D6-A5B7-855290398C6B}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "ndfapi.dll",
+    "nettrace.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "PushButtonResetFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ActionName:UnicodeString",
+            "ErrorCode:UInt32",
+            "MoreInfo:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "ndfapi.dll",
+              "function": "?LogPushButtonResetFailure@CPushButtonReset@@CAXPEBGK@Z",
+              "ea": "0x180025445",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "nettrace.dll",
+              "function": "?LogPushButtonResetFailure@CPushButtonReset@@CAXPEBGK@Z",
+              "ea": "0x1800274ed",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActionName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ndfapi.dll",
+            "nettrace.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "ndfapi.dll",
+            "nettrace.dll"
+          ]
+        },
+        {
+          "fieldName": "MoreInfo",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ndfapi.dll",
+            "nettrace.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PushButtonResetPerformed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ndfapi.dll",
+              "function": "?Execute@CPushButtonReset@@SAJXZ",
+              "ea": "0x180024ff9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "nettrace.dll",
+              "function": "?Execute@CPushButtonReset@@SAJXZ",
+              "ea": "0x1800272a4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    }
+  ]
+}

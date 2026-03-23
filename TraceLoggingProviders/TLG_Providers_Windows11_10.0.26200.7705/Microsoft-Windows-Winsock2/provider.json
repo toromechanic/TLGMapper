@@ -1,0 +1,664 @@
+{
+  "providerName": "Microsoft-Windows-Winsock2",
+  "guid": "{D0F1A5C6-FC43-48AE-99BF-EFB1C38BE9D1}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "ws2_32.dll"
+  ],
+  "uniqueEventCount": 7,
+  "events": [
+    {
+      "eventName": "Ws2IPv6ConnectFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "ConnectSuccessCount:Int32",
+            "ConnectSuccessCountWithIPv6Preferred:Int32",
+            "ConnectSuccessCountWithIPv6Failed:Int32",
+            "ConnectSuccessCountWithIPv6FailFastOn:Int32",
+            "IPv6FailFastAttemptsInConnectSuccess:Int32",
+            "IPv6SuccessfulFailFastAttemptsInConnectSuccess:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "ws2_32.dll",
+              "function": "DllMain",
+              "ea": "0x18002329c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConnectSuccessCount",
+          "type": "Int32",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "ConnectSuccessCountWithIPv6FailFastOn",
+          "type": "Int32",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "ConnectSuccessCountWithIPv6Failed",
+          "type": "Int32",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "ConnectSuccessCountWithIPv6Preferred",
+          "type": "Int32",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "IPv6FailFastAttemptsInConnectSuccess",
+          "type": "Int32",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "IPv6SuccessfulFailFastAttemptsInConnectSuccess",
+          "type": "Int32",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Ws2LSPAndChainsInstallation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "ProviderId:GUID",
+            "Path:UnicodeString",
+            "Path32:UnicodeString",
+            "Name:UnicodeString",
+            "IFS:UInt8(Boolean)",
+            "InstallType:UInt32",
+            "Result:UInt32(Win32Error)"
+          ],
+          "callers": [
+            {
+              "binary": "ws2_32.dll",
+              "function": "WSCInstallProviderAndChains64_32",
+              "ea": "0x180038391",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IFS",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "InstallType",
+          "type": "UInt32",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "Name",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "Path32",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "Path",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "ProviderId",
+          "type": "GUID",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Ws2LspBypass",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "ProviderId:GUID",
+            "Filename:UnicodeString",
+            "Protocol:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ws2_32.dll",
+              "function": "?LspFilterIteratorProc@@YAHPEAXPEAVPROTO_CATALOG_ITEM@@@Z",
+              "ea": "0x18002a381",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Filename",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "Protocol",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "ProviderId",
+          "type": "GUID",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Ws2NameSpaceInstallation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "ProviderId:GUID",
+            "Path:UnicodeString",
+            "Identifier:UnicodeString",
+            "NameSpace:UInt32",
+            "ExAPI:UInt8(Boolean)",
+            "InstallType:UInt32",
+            "Result:UInt32(Win32Error)"
+          ],
+          "callers": [
+            {
+              "binary": "ws2_32.dll",
+              "function": "WSCInstallNameSpace",
+              "ea": "0x1800436d7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "WSCInstallNameSpace32",
+              "ea": "0x1800441e7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "WSCInstallNameSpaceEx",
+              "ea": "0x18004380a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "WSCInstallNameSpaceEx32",
+              "ea": "0x18004431a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ExAPI",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "Identifier",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "InstallType",
+          "type": "UInt32",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "NameSpace",
+          "type": "UInt32",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "Path",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "ProviderId",
+          "type": "GUID",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Ws2ProtocolInstallation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "ProviderId:GUID",
+            "Path:UnicodeString",
+            "BSP:UInt8(Boolean)",
+            "IFS:UInt8(Boolean)",
+            "ND:UInt8(Boolean)",
+            "AF:Int32",
+            "ST:Int32",
+            "Protocol:Int32",
+            "InstallType:UInt32",
+            "Result:UInt32(Win32Error)"
+          ],
+          "callers": [
+            {
+              "binary": "ws2_32.dll",
+              "function": "?WSCInstallProvider32@@YAHPEAU_GUID@@PEBGQEAU_WSAPROTOCOL_INFOW@@KPEAH@Z",
+              "ea": "0x180042efc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "WSCInstallProvider",
+              "ea": "0x1800418b1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "WSCInstallProvider64_32",
+              "ea": "0x180043165",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AF",
+          "type": "Int32",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "BSP",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "IFS",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "InstallType",
+          "type": "UInt32",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "ND",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "Path",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "Protocol",
+          "type": "Int32",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "ProviderId",
+          "type": "GUID",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "ST",
+          "type": "Int32",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Ws2ProviderLoadFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "ProviderId:GUID",
+            "Path:UnicodeString",
+            "BSP:UInt8(Boolean)",
+            "IFS:UInt8(Boolean)",
+            "ND:UInt8(Boolean)",
+            "AF:Int32",
+            "ST:Int32",
+            "Protocol:Int32",
+            "FailurePoint:Int32",
+            "ErrorCode:UInt32(Win32Error)"
+          ],
+          "callers": [
+            {
+              "binary": "ws2_32.dll",
+              "function": "?Initialize@DPROVIDER@@QEAAHPEBGPEAU_WSAPROTOCOL_INFOW@@@Z",
+              "ea": "0x18001356a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "?Initialize@DPROVIDER@@QEAAHPEBGPEAU_WSAPROTOCOL_INFOW@@@Z",
+              "ea": "0x180013867",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "?Initialize@DPROVIDER@@QEAAHPEBGPEAU_WSAPROTOCOL_INFOW@@@Z",
+              "ea": "0x180013983",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "?Initialize@DPROVIDER@@QEAAHPEBGPEAU_WSAPROTOCOL_INFOW@@@Z",
+              "ea": "0x180013aa9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "?Initialize@DPROVIDER@@QEAAHPEBGPEAU_WSAPROTOCOL_INFOW@@@Z",
+              "ea": "0x180013bfd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "?Initialize@DPROVIDER@@QEAAHPEBGPEAU_WSAPROTOCOL_INFOW@@@Z",
+              "ea": "0x180013d65",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "?Initialize@DPROVIDER@@QEAAHPEBGPEAU_WSAPROTOCOL_INFOW@@@Z",
+              "ea": "0x180013ec0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AF",
+          "type": "Int32",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "BSP",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "FailurePoint",
+          "type": "Int32",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "IFS",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "ND",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "Path",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "Protocol",
+          "type": "Int32",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "ProviderId",
+          "type": "GUID",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        },
+        {
+          "fieldName": "ST",
+          "type": "Int32",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Ws2TrackedFunction",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Name:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "ws2_32.dll",
+              "function": "WSCGetApplicationCategory",
+              "ea": "0x180041795",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "WSCGetProviderInfo",
+              "ea": "0x18002c5f5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "WSCGetProviderInfo",
+              "ea": "0x18002c625",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "WSCGetProviderInfo32",
+              "ea": "0x180043055",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "WSCSetApplicationCategory",
+              "ea": "0x180042385",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "WSCSetProviderInfo",
+              "ea": "0x180042aa5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "WSCSetProviderInfo32",
+              "ea": "0x180043295",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "WSCUpdateProvider",
+              "ea": "0x180042df6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "WSCUpdateProvider32",
+              "ea": "0x180043336",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "WSCWriteNameSpaceOrder",
+              "ea": "0x180043d93",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "WSCWriteNameSpaceOrder32",
+              "ea": "0x180044413",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "WSCWriteProviderOrder",
+              "ea": "0x180030567",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ws2_32.dll",
+              "function": "WSCWriteProviderOrder32",
+              "ea": "0x1800433c7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Name",
+          "type": "AnsiString",
+          "seenIn": [
+            "ws2_32.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

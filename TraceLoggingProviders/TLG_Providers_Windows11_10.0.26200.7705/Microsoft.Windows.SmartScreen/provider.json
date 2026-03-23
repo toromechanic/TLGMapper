@@ -1,0 +1,187 @@
+{
+  "providerName": "Microsoft.Windows.SmartScreen",
+  "guid": "{39BD9805-3945-4878-AECC-096A23369F68}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "CHXSmartScreen.exe",
+    "NisSrv.exe"
+  ],
+  "uniqueEventCount": 4,
+  "events": [
+    {
+      "eventName": "DismissWindowErr",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "CHXSmartScreen.exe",
+              "function": "?OnActivated@?QIApplicationOverrides@Xaml@UI@Windows@@App@CHXSmartScreen@@ME$AAAXPE$AAUIActivatedEventArgs@Activation@ApplicationModel@4@@Z",
+              "ea": "0x140032ea9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "Exception",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32",
+            "module:AnsiString",
+            "file:AnsiString",
+            "lineNumber:UInt32",
+            "failureType:Int32",
+            "message:UnicodeString",
+            "function:AnsiString",
+            "code:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "NisSrv.exe",
+              "function": "?handle_failure@failure_logger@stdext@@AEBAXAEBUFailureInfo@wil@@@Z",
+              "ea": "0x14007add0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "code",
+          "type": "AnsiString",
+          "seenIn": [
+            "NisSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "Int32",
+          "seenIn": [
+            "NisSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "file",
+          "type": "AnsiString",
+          "seenIn": [
+            "NisSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "function",
+          "type": "AnsiString",
+          "seenIn": [
+            "NisSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "NisSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "NisSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "NisSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "NisSrv.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NavigationError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Code:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "CHXSmartScreen.exe",
+              "function": "?smartScreenWebView_NavigationCompleted@MainPage@CHXSmartScreen@@AE$AAAXPE$AAVWebView@Controls@Xaml@UI@Windows@@PE$AAVWebViewNavigationCompletedEventArgs@4567@@Z",
+              "ea": "0x1400237ca",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Code",
+          "type": "UnicodeString",
+          "seenIn": [
+            "CHXSmartScreen.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ScriptNotifyError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Code:Int32(HResult)",
+            "Message:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "CHXSmartScreen.exe",
+              "function": "?smartScreenWebView_ScriptNotify@MainPage@CHXSmartScreen@@AE$AAAXPE$AAVObject@Platform@@PE$AAVNotifyEventArgs@Controls@Xaml@UI@Windows@@@Z",
+              "ea": "0x140034418",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Code",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "CHXSmartScreen.exe"
+          ]
+        },
+        {
+          "fieldName": "Message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "CHXSmartScreen.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

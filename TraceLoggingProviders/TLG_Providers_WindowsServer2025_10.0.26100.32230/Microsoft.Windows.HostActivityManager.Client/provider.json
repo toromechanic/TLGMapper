@@ -1,0 +1,355 @@
+{
+  "providerName": "Microsoft.Windows.HostActivityManager.Client",
+  "guid": "{C973CAD7-01C4-51BD-FAAD-50CAC8EBAFE4}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "rmclient.dll"
+  ],
+  "uniqueEventCount": 6,
+  "events": [
+    {
+      "eventName": "Activity_Callback",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "rmclient.dll",
+              "function": "HampConnectionDeliverPayload",
+              "ea": "0x18000b1fc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rmclient.dll",
+              "function": "HampConnectionDeliverPayload",
+              "ea": "0x18000b22f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x3",
+          "fields": [
+            "Activity:HexInt64",
+            "Subject:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "rmclient.dll",
+              "function": "HampConnectionDeliverPayload",
+              "ea": "0x18000b2f0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rmclient.dll",
+              "function": "HampConnectionDeliverPayload",
+              "ea": "0x18000b32b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Activity",
+          "type": "HexInt64",
+          "seenIn": [
+            "rmclient.dll"
+          ]
+        },
+        {
+          "fieldName": "Subject",
+          "type": "UInt8",
+          "seenIn": [
+            "rmclient.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "App_QueryUsageInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "PackageFamilyName:UnicodeString",
+            "AppId:UnicodeString",
+            "CreateTime:UInt64",
+            "TerminateTime:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rmclient.dll",
+              "function": "HamQueryPackageUsageInfo",
+              "ea": "0x18000b61f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rmclient.dll",
+              "function": "HamQueryPackageUsageInfo",
+              "ea": "0x18000b660",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rmclient.dll"
+          ]
+        },
+        {
+          "fieldName": "CreateTime",
+          "type": "UInt64",
+          "seenIn": [
+            "rmclient.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFamilyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rmclient.dll"
+          ]
+        },
+        {
+          "fieldName": "TerminateTime",
+          "type": "UInt64",
+          "seenIn": [
+            "rmclient.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Client_AssociateActivity",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "rmclient.dll",
+              "function": "HamAssociateActivityContext",
+              "ea": "0x18001a506",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x3",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "Connection:HexInt64",
+            "Activity:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rmclient.dll",
+              "function": "HamAssociateActivityContext",
+              "ea": "0x18001a61f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Activity",
+          "type": "HexInt64",
+          "seenIn": [
+            "rmclient.dll"
+          ]
+        },
+        {
+          "fieldName": "Connection",
+          "type": "HexInt64",
+          "seenIn": [
+            "rmclient.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "rmclient.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Client_CompleteRestore",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "rmclient.dll",
+              "function": "HamCompleteActivityRestore",
+              "ea": "0x1800027fe",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x3",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "Connection:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rmclient.dll",
+              "function": "HamCompleteActivityRestore",
+              "ea": "0x1800029ff",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Connection",
+          "type": "HexInt64",
+          "seenIn": [
+            "rmclient.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "rmclient.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Client_Connect",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "rmclient.dll",
+              "function": "HamConnectToServerEx",
+              "ea": "0x180011b13",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x3",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "Connection:HexInt64",
+            "Name:UnicodeString",
+            "InProcessConnection:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "rmclient.dll",
+              "function": "HamConnectToServerEx",
+              "ea": "0x180011c08",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Connection",
+          "type": "HexInt64",
+          "seenIn": [
+            "rmclient.dll"
+          ]
+        },
+        {
+          "fieldName": "InProcessConnection",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "rmclient.dll"
+          ]
+        },
+        {
+          "fieldName": "Name",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rmclient.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "rmclient.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Client_Disconnect",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "rmclient.dll",
+              "function": "HamDisconnectFromServer",
+              "ea": "0x1800050d8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x3",
+          "fields": [
+            "Connection:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rmclient.dll",
+              "function": "HamDisconnectFromServer",
+              "ea": "0x18000510c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Connection",
+          "type": "HexInt64",
+          "seenIn": [
+            "rmclient.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

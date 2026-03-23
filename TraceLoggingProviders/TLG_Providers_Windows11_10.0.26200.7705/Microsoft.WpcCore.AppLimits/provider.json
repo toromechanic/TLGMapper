@@ -1,0 +1,444 @@
+{
+  "providerName": "Microsoft.WpcCore.AppLimits",
+  "guid": "{3E23BF66-C4BB-5B52-16F3-F216271E4142}",
+  "os": "Windows 11",
+  "binaryCount": 3,
+  "binaries": [
+    "Wpc.dll",
+    "WpcDesktopMonSvc.dll",
+    "WpcMon.exe"
+  ],
+  "uniqueEventCount": 9,
+  "events": [
+    {
+      "eventName": "AppBlocked",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "User:SID",
+            "App:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "WpcMon.exe",
+              "function": "?AppPolicyLogAppBlocked@AppLimitsEnforcementEvents@@SAXAEBVSid@@AEBVAnyRuntimeApp@appids@@@Z",
+              "ea": "0x1400303a3",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "App",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WpcMon.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WpcMon.exe"
+          ]
+        },
+        {
+          "fieldName": "User",
+          "type": "SID",
+          "seenIn": [
+            "WpcMon.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AppPolicySetBlockedApps",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "User:SID",
+            "BlockedApps:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "WpcDesktopMonSvc.dll",
+              "function": "?AppPolicyLogBlockedApps@AppLimitsSettingsChangeEvents@@SAXAEBVSid@@AEBV?$vector@VAnyRuntimeApp@appids@@V?$allocator@VAnyRuntimeApp@appids@@@std@@@std@@@Z",
+              "ea": "0x18007f5c2",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BlockedApps",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WpcDesktopMonSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WpcDesktopMonSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "User",
+          "type": "SID",
+          "seenIn": [
+            "WpcDesktopMonSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContentPolicyDesktopAppBlocked",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "User:SID",
+            "FileName:UnicodeString",
+            "Publisher:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "Wpc.dll",
+              "function": "?ContentPolicyLogDesktopAppBlocked@AppLimitsEnforcementEvents@@SAXAEBVSid@@AEBVDesktopApplication@@@Z",
+              "ea": "0x18004e121",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Wpc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Wpc.dll"
+          ]
+        },
+        {
+          "fieldName": "Publisher",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Wpc.dll"
+          ]
+        },
+        {
+          "fieldName": "User",
+          "type": "SID",
+          "seenIn": [
+            "Wpc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContentPolicyPackageAppBlocked",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "User:SID",
+            "App:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "Wpc.dll",
+              "function": "?ContentPolicyLogPackageAppBlocked@AppLimitsEnforcementEvents@@SAXAEBVSid@@AEBVPackageFamilyName@appids@@@Z",
+              "ea": "0x18004e284",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "App",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Wpc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Wpc.dll"
+          ]
+        },
+        {
+          "fieldName": "User",
+          "type": "SID",
+          "seenIn": [
+            "Wpc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContentPolicySetAgeBlockedApps",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "User:SID",
+            "MaxAge:UInt16",
+            "AppsAndAges:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "WpcDesktopMonSvc.dll",
+              "function": "?AppPolicyLogAppsBlockedByAge@AppLimitsDynamicPolicyEvents@@SAXAEBVSid@@AEBV?$IntegerRange@$0A@$0BF@I@@AEBV?$vector@U?$pair@VPackageFamilyName@appids@@V?$IntegerRange@$0A@$0BF@I@@@std@@V?$allocator@U?$pair@VPackageFamilyName@appids@@V?$IntegerRange@$0A@$0BF@I@@@std@@@2@@std@@@Z",
+              "ea": "0x18005dadb",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppsAndAges",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WpcDesktopMonSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "MaxAge",
+          "type": "UInt16",
+          "seenIn": [
+            "WpcDesktopMonSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WpcDesktopMonSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "User",
+          "type": "SID",
+          "seenIn": [
+            "WpcDesktopMonSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContentPolicySetBlockedDesktopApps",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "User:SID",
+            "BlockedApps:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "WpcDesktopMonSvc.dll",
+              "function": "?ContentPolicyLogBlockedDesktopApps@AppLimitsSettingsChangeEvents@@SAXAEBVSid@@AEBV?$vector@VUnsignedDesktopApp@wpc@@V?$allocator@VUnsignedDesktopApp@wpc@@@std@@@std@@@Z",
+              "ea": "0x18007f6e2",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BlockedApps",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WpcDesktopMonSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WpcDesktopMonSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "User",
+          "type": "SID",
+          "seenIn": [
+            "WpcDesktopMonSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContentPolicySetBlockedPackageApps",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "User:SID",
+            "BlockedApps:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "WpcDesktopMonSvc.dll",
+              "function": "?ContentPolicyLogBlockedPackageApps@AppLimitsSettingsChangeEvents@@SAXAEBVSid@@AEBV?$vector@VPackageFamilyName@appids@@V?$allocator@VPackageFamilyName@appids@@@std@@@std@@@Z",
+              "ea": "0x18007f802",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BlockedApps",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WpcDesktopMonSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WpcDesktopMonSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "User",
+          "type": "SID",
+          "seenIn": [
+            "WpcDesktopMonSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContentPolicySetBlockedSignedDesktopApps",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "User:SID",
+            "BlockedApps:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "WpcDesktopMonSvc.dll",
+              "function": "?ContentPolicyLogBlockedSignedDesktopApps@AppLimitsSettingsChangeEvents@@SAXAEBVSid@@AEBV?$vector@USignedDesktopApplication@wpc@@V?$allocator@USignedDesktopApplication@wpc@@@std@@@std@@@Z",
+              "ea": "0x18007f922",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BlockedApps",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WpcDesktopMonSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WpcDesktopMonSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "User",
+          "type": "SID",
+          "seenIn": [
+            "WpcDesktopMonSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContentPolicySetBlockedXboxApps",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "User:SID",
+            "BlockedApps:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "WpcDesktopMonSvc.dll",
+              "function": "?ContentPolicyLogBlockedXboxApps@AppLimitsSettingsChangeEvents@@SAXAEBVSid@@AEBV?$vector@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@V?$allocator@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@@2@@std@@@Z",
+              "ea": "0x18007fa42",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BlockedApps",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WpcDesktopMonSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WpcDesktopMonSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "User",
+          "type": "SID",
+          "seenIn": [
+            "WpcDesktopMonSvc.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

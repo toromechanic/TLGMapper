@@ -1,0 +1,480 @@
+{
+  "providerName": "Microsoft.Windows.Kasan",
+  "guid": "{BA5EDDDD-4A50-4D56-C010-55A15A1AD500}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "ntkrla57.exe",
+    "ntoskrnl.exe"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "DriverLoad",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "DriverName:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "KasaniSendTelemetryDriver",
+              "ea": "0x1403a2a88",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "KasaniSendTelemetryDriver",
+              "ea": "0x1403a2af7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "KasaniSendTelemetryDriver",
+              "ea": "0x1405aa018",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "KasaniSendTelemetryDriver",
+              "ea": "0x1405aa087",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DriverName",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IllegalAccess",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Address:Struct(Hex)",
+            "Module:UnicodeString",
+            "Offset:HexInt32",
+            "TimeStamp:HexInt32",
+            "ImageSize:HexInt32",
+            "AccessSize:UInt64",
+            "IsWrite:UInt8(Boolean)",
+            "Pc:Struct(Hex)",
+            "Module:UnicodeString",
+            "Offset:HexInt32",
+            "TimeStamp:HexInt32",
+            "ImageSize:HexInt32",
+            "Code:UInt8(Hex)",
+            "CallStack:Struct(FileTime)",
+            "0:Struct(Hex)",
+            "Module:UnicodeString",
+            "Offset:HexInt32",
+            "TimeStamp:HexInt32",
+            "ImageSize:HexInt32",
+            "1:Struct(Hex)",
+            "Module:UnicodeString",
+            "Offset:HexInt32",
+            "TimeStamp:HexInt32",
+            "ImageSize:HexInt32",
+            "2:Struct(Hex)",
+            "Module:UnicodeString",
+            "Offset:HexInt32",
+            "TimeStamp:HexInt32",
+            "ImageSize:HexInt32",
+            "3:Struct(Hex)",
+            "Module:UnicodeString",
+            "Offset:HexInt32",
+            "TimeStamp:HexInt32",
+            "ImageSize:HexInt32",
+            "4:Struct(Hex)",
+            "Module:UnicodeString",
+            "Offset:HexInt32",
+            "TimeStamp:HexInt32",
+            "ImageSize:HexInt32",
+            "5:Struct(Hex)",
+            "Module:UnicodeString",
+            "Offset:HexInt32",
+            "TimeStamp:HexInt32",
+            "ImageSize:HexInt32",
+            "6:Struct(Hex)",
+            "Module:UnicodeString",
+            "Offset:HexInt32",
+            "TimeStamp:HexInt32",
+            "ImageSize:HexInt32",
+            "7:Struct(Hex)",
+            "Module:UnicodeString",
+            "Offset:HexInt32",
+            "TimeStamp:HexInt32",
+            "ImageSize:HexInt32",
+            "8:Struct(Hex)",
+            "Module:UnicodeString",
+            "Offset:HexInt32",
+            "TimeStamp:HexInt32",
+            "ImageSize:HexInt32",
+            "9:Struct(Hex)",
+            "Module:UnicodeString",
+            "Offset:HexInt32",
+            "TimeStamp:HexInt32",
+            "ImageSize:HexInt32",
+            "10:Struct(Hex)",
+            "Module:UnicodeString",
+            "Offset:HexInt32",
+            "TimeStamp:HexInt32",
+            "ImageSize:HexInt32",
+            "11:Struct(Hex)",
+            "Module:UnicodeString",
+            "Offset:HexInt32",
+            "TimeStamp:HexInt32",
+            "ImageSize:HexInt32",
+            "12:Struct(Hex)",
+            "Module:UnicodeString",
+            "Offset:HexInt32",
+            "TimeStamp:HexInt32",
+            "ImageSize:HexInt32",
+            "13:Struct(Hex)",
+            "Module:UnicodeString",
+            "Offset:HexInt32",
+            "TimeStamp:HexInt32",
+            "ImageSize:HexInt32",
+            "14:Struct(Hex)",
+            "Module:UnicodeString",
+            "Offset:HexInt32",
+            "TimeStamp:HexInt32",
+            "ImageSize:HexInt32",
+            "15:Struct(Hex)",
+            "Module:UnicodeString",
+            "Offset:HexInt32",
+            "TimeStamp:HexInt32",
+            "ImageSize:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "KasaniSendReport",
+              "ea": "0x1403a290c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "KasaniSendReport",
+              "ea": "0x1403a295e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "KasaniSendReport",
+              "ea": "0x1405a9e9f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "KasaniSendReport",
+              "ea": "0x1405a9eef",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "0",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "10",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "11",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "12",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "13",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "14",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "15",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "1",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "2",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "3",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "4",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "5",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "6",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "7",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "8",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "9",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "AccessSize",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Address",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "CallStack",
+          "type": "Struct(FileTime)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Code",
+          "type": "UInt8(Hex)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ImageSize",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "IsWrite",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Module",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Offset",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Pc",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "TimeStamp",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NtBoot",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Flags:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "KasanInitSystem",
+              "ea": "0x140b424f3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "KasanInitSystem",
+              "ea": "0x140b42533",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "KasanInitSystem",
+              "ea": "0x140c1c764",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "KasanInitSystem",
+              "ea": "0x140c1c7a4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

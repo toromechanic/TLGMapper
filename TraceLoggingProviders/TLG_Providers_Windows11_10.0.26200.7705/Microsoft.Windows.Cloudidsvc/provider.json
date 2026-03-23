@@ -1,0 +1,166 @@
+{
+  "providerName": "Microsoft.Windows.Cloudidsvc",
+  "guid": "{DD127371-1245-54F5-5091-B9CD6D791A08}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "cloudidsvc.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "AutoMeasureLogger",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "EventName:AnsiString",
+            "hr:HexInt32",
+            "externalWin32Err:UInt32(Win32Error)",
+            "File:AnsiString",
+            "LineNumber:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "cloudidsvc.dll",
+              "function": "??1AutoMeasureLogger@TenantRestrictionsLoggers@@UEAA@XZ",
+              "ea": "0x18000469a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EventName",
+          "type": "AnsiString",
+          "seenIn": [
+            "cloudidsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "File",
+          "type": "AnsiString",
+          "seenIn": [
+            "cloudidsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "LineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "cloudidsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "cloudidsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "externalWin32Err",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "cloudidsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "HexInt32",
+          "seenIn": [
+            "cloudidsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "O365APICall",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "HTTPStatusCode:UInt32",
+            "Instance:UnicodeString",
+            "Route:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "cloudidsvc.dll",
+              "function": "?GetTenantRestrictionsO365ApiData@TenantRestrictionsHelpers@@YA?AV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@PEBG00K@Z",
+              "ea": "0x18000f5db",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HTTPStatusCode",
+          "type": "UInt32",
+          "seenIn": [
+            "cloudidsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Instance",
+          "type": "UnicodeString",
+          "seenIn": [
+            "cloudidsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "cloudidsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Route",
+          "type": "UnicodeString",
+          "seenIn": [
+            "cloudidsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TenantRestrictionsListUpdateFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ExponentialBackoffTimeInMilliseconds:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "cloudidsvc.dll",
+              "function": "?UpdateTenantRestrictionsListTimerRoutine@@YAXPEAXE@Z",
+              "ea": "0x18000c0f5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ExponentialBackoffTimeInMilliseconds",
+          "type": "UInt32",
+          "seenIn": [
+            "cloudidsvc.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "providerName": "Microsoft.Windows.Networking.NCA",
+  "guid": "{63AC12D9-F21B-402D-BD67-8E415AA896AA}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "NcaSvc.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "DirectAccessCensus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "deploymentId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "NcaSvc.dll",
+              "function": "?NcaTelemetryEventWriteDirectAccessCensus@@YAXXZ",
+              "ea": "0x180016422",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "deploymentId",
+          "type": "UInt32",
+          "seenIn": [
+            "NcaSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DirectAccessDiagnostic",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "owner:UInt32",
+            "epoch:UInt64",
+            "lastStatusType:UInt32",
+            "lastStatusSubType:UInt32",
+            "type:UInt32",
+            "subType:UInt32",
+            "sessionId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "NcaSvc.dll",
+              "function": "?NcaTelemetryEventWriteDirectAccessDiag@@YAXQEAUNCA_DAP_USER_EVSNPSHT_@@PEBUNCA_STATUS_EVENT_@@K@Z",
+              "ea": "0x1800164bb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "epoch",
+          "type": "UInt64",
+          "seenIn": [
+            "NcaSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "lastStatusSubType",
+          "type": "UInt32",
+          "seenIn": [
+            "NcaSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "lastStatusType",
+          "type": "UInt32",
+          "seenIn": [
+            "NcaSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "owner",
+          "type": "UInt32",
+          "seenIn": [
+            "NcaSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "NcaSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "subType",
+          "type": "UInt32",
+          "seenIn": [
+            "NcaSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "type",
+          "type": "UInt32",
+          "seenIn": [
+            "NcaSvc.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

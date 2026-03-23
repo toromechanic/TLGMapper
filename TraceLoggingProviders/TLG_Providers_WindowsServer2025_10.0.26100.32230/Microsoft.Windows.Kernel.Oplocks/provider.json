@@ -1,0 +1,3489 @@
+{
+  "providerName": "Microsoft.Windows.Kernel.Oplocks",
+  "guid": "{107CF38F-B01B-4FFC-BF6B-D0ED96D8ECC6}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "ntkrla57.exe",
+    "ntoskrnl.exe"
+  ],
+  "uniqueEventCount": 51,
+  "events": [
+    {
+      "eventName": "BreakOplockOnWritableMappedSection",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "SyncType:UInt32",
+            "PageProtection:HexInt32",
+            "OplockState:HexInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlCheckOplockForFsFilterCallback",
+              "ea": "0x14073629f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlCheckOplockForFsFilterCallback",
+              "ea": "0x1409f3b37",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PageProtection",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "SyncType",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ClosingDeleteOnClose",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlCheckOplockEx2",
+              "ea": "0x14024e564",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlCheckOplockEx2",
+              "ea": "0x1402fa968",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DenyExclusiveOplockForWritableMappedSection",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "NextOplockState:HexInt32",
+            "OplockState:HexInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpRequestExclusiveOplock",
+              "ea": "0x140361105",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpRequestExclusiveOplock",
+              "ea": "0x1404e6cf9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "NextOplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DenySharableOplockForWritableMappedSection",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "DesiredOplock:HexInt32",
+            "OplockState:HexInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpRequestShareableOplock",
+              "ea": "0x1403619fe",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpRequestShareableOplock",
+              "ea": "0x1404e75eb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "DesiredOplock",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpAcknowledgeOplockBreakByCacheFlags_Enter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "NewOplockLevel:HexInt32",
+            "LowerOplockLevel:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpAcknowledgeOplockBreakByCacheFlags",
+              "ea": "0x14035b17d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpAcknowledgeOplockBreakByCacheFlags",
+              "ea": "0x1404e2b3d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "LowerOplockLevel",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "NewOplockLevel",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpAcknowledgeOplockBreakByCacheFlags_Exclusive_SetCompleteAckOnClose",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "OriginalFileObject:HexInt64",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpAcknowledgeOplockBreakByCacheFlags",
+              "ea": "0x14035ba7d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpAcknowledgeOplockBreakByCacheFlags",
+              "ea": "0x1404e343d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OriginalFileObject",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpAcknowledgeOplockBreakByCacheFlags_Exit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "NTSTATUS:UInt32(NTStatus)",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpAcknowledgeOplockBreakByCacheFlags",
+              "ea": "0x14035bd62",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpAcknowledgeOplockBreakByCacheFlags",
+              "ea": "0x140659856",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpAcknowledgeOplockBreakByCacheFlags",
+              "ea": "0x1404e3722",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpAcknowledgeOplockBreakByCacheFlags",
+              "ea": "0x1406c5d06",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpAcknowledgeOplockBreakByCacheFlags_RH_SetCompleteAckOnClose",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "OriginalFileObject:HexInt64",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpAcknowledgeOplockBreakByCacheFlags",
+              "ea": "0x14035b679",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpAcknowledgeOplockBreakByCacheFlags",
+              "ea": "0x1404e3039",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OriginalFileObject",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpCancelOplockRHIrp_Enter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ReleaseWaitingIrps:UInt8(Boolean)",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpCancelOplockRHIrp",
+              "ea": "0x14035bf9d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpCancelOplockRHIrp",
+              "ea": "0x14040c209",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ReleaseWaitingIrps",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpCancelOplockRHIrp_Exit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ReleaseWaitingIrps:UInt8(Boolean)",
+            "CancelledIrp:UInt8(Boolean)",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpCancelOplockRHIrp",
+              "ea": "0x14035c122",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpCancelOplockRHIrp",
+              "ea": "0x14065998c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpCancelOplockRHIrp",
+              "ea": "0x14040c38e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpCancelOplockRHIrp",
+              "ea": "0x1406c31b7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CancelledIrp",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ReleaseWaitingIrps",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpCancelWaitingIrp_Enter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpCancelWaitingIrp",
+              "ea": "0x14035c2db",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpCancelWaitingIrp",
+              "ea": "0x14041977f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpCancelWaitingIrp_Exit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpCancelWaitingIrp",
+              "ea": "0x14035c4a0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpCancelWaitingIrp",
+              "ea": "0x140659a66",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpCancelWaitingIrp",
+              "ea": "0x140419944",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpCancelWaitingIrp",
+              "ea": "0x1406c342c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpCancelWaitingIrp_LoopTop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32",
+            "WaitingIrp->Irp:HexInt64",
+            "Irp canceled:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpCancelWaitingIrp",
+              "ea": "0x14035c3e9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpCancelWaitingIrp",
+              "ea": "0x14041988d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Irp canceled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "WaitingIrp->Irp",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpComputeShareableOplockState_Enter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpComputeShareableOplockState",
+              "ea": "0x14035c6e1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpComputeShareableOplockState",
+              "ea": "0x14035c715",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpComputeShareableOplockState",
+              "ea": "0x140416ad3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpComputeShareableOplockState_Exit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32",
+            "Oplock->WaitingIrps.Flink:HexInt64",
+            "Oplock->WaitingIrps.Blink:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpComputeShareableOplockState",
+              "ea": "0x14035c946",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpComputeShareableOplockState",
+              "ea": "0x14035c987",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpComputeShareableOplockState",
+              "ea": "0x140416b98",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Oplock->WaitingIrps.Blink",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock->WaitingIrps.Flink",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpGrantAnyOplockFromExclusive_SetCompleteAckOnClose",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "OriginalFileObject:HexInt64",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpGrantAnyOplockFromExclusive",
+              "ea": "0x14035ccae",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpGrantAnyOplockFromExclusive",
+              "ea": "0x14058042e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OriginalFileObject",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035d2b7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035d2ef",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e38ca",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "NTSTATUS:UInt32(NTStatus)",
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035d496",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035d4d0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035d763",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035dd16",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035e010",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035e436",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035e5ae",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035e79f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035f3a6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e3a18",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e3c27",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e3ee4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e484e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e4c87",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e4df0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e4fca",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e5708",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_CompleteAckOnClose",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035f537",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e5274",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_InvalidState",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035f60b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e5354",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_MatchingKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "NTSTATUS:UInt32(NTStatus)",
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035d65c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e3b3b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_MayWaitForAtomic",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035e274",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e4abf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_NothingToBreak",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "NTSTATUS:UInt32(NTStatus)",
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035f993",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e5cd8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockR",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035de9b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e46e6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockRH",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035e0ff",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e4933",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockRHtoNone",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035f28b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e5603",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockRHtoR",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035db8a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e3d7b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockRW",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035d888",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e4436",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockRWH",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035e8e3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e4059",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockRWHtoNone",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035f6da",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e5422",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockRWHtoR",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035f1b1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e5b2d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockRWHtoRH",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035ee84",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e5866",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockRWHtoRW",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035f027",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e59ca",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockRWtoNone",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035f7a9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e5535",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockRWtoR",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x14035ed39",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e5123",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockCleanup_Enter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockCleanup",
+              "ea": "0x1403600c2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockCleanup",
+              "ea": "0x1404e6078",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockCleanup_Exit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32",
+            "Oplock->WaitingIrps.Flink:HexInt64",
+            "Oplock->WaitingIrps.Blink:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockCleanup",
+              "ea": "0x140360680",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockCleanup",
+              "ea": "0x1404e662b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Oplock->WaitingIrps.Blink",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock->WaitingIrps.Flink",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockCleanup_RemoveWaitingIrps_CompleteAckOnClose",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "OriginalFileObject:HexInt64",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockCleanup",
+              "ea": "0x14036019b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockCleanup",
+              "ea": "0x1404e6155",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OriginalFileObject",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpReleaseIrpsWaitingForRH_Enter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpReleaseIrpsWaitingForRH",
+              "ea": "0x14024ffc4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpReleaseIrpsWaitingForRH",
+              "ea": "0x14024fff9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpReleaseIrpsWaitingForRH",
+              "ea": "0x1404156f4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpReleaseIrpsWaitingForRH",
+              "ea": "0x140415729",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpReleaseIrpsWaitingForRH_Exit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "WaitingIrpsFound:UInt32",
+            "NonMatchingKeysFound:UInt32",
+            "WaitingIrpsCompleted:UInt32",
+            "WaitingIrpsSkipped:UInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpReleaseIrpsWaitingForRH",
+              "ea": "0x1402501a6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpReleaseIrpsWaitingForRH",
+              "ea": "0x140250204",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpReleaseIrpsWaitingForRH",
+              "ea": "0x140415802",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpReleaseIrpsWaitingForRH",
+              "ea": "0x140415860",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NonMatchingKeysFound",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "WaitingIrpsCompleted",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "WaitingIrpsFound",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "WaitingIrpsSkipped",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpRemoveAndBreakRHIrp_Enter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "CompletionStatus:UInt32(NTStatus)",
+            "NewOplockLevel:HexInt32",
+            "OutputFlags:HexInt32",
+            "AccessMode:HexInt32",
+            "ShareMode:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpRemoveAndCompleteRHIrp",
+              "ea": "0x1403607e4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpRemoveAndCompleteRHIrp",
+              "ea": "0x1404e6738",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AccessMode",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "CompletionStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "NewOplockLevel",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OutputFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ShareMode",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpRemoveAndBreakRHIrp_Exit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "CompletionStatus:UInt32(NTStatus)",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpRemoveAndCompleteRHIrp",
+              "ea": "0x1403609ec",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpRemoveAndCompleteRHIrp",
+              "ea": "0x1404e6940",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CompletionStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpRemoveAndCompleteReadOnlyIrp_Enter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "CompletionStatus:UInt32(NTStatus)",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32",
+            "NewOplockLevel:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpRemoveAndCompleteReadOnlyIrp",
+              "ea": "0x140360ad7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpRemoveAndCompleteReadOnlyIrp",
+              "ea": "0x1406cfcf3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CompletionStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "NewOplockLevel",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpRemoveAndCompleteReadOnlyIrp_Exit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "CompletionStatus:UInt32(NTStatus)",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpRemoveAndCompleteReadOnlyIrp",
+              "ea": "0x140360c2f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpRemoveAndCompleteReadOnlyIrp",
+              "ea": "0x1406cfd84",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CompletionStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpRemoveAndCompleteWaitingIrp",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "WaitingIrp->Irp:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpRemoveAndCompleteWaitingIrp",
+              "ea": "0x140360cfd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpRemoveAndCompleteWaitingIrp",
+              "ea": "0x140415999",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "WaitingIrp->Irp",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpRequestShareableOplock_RH",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "DesiredOplock:HexInt32",
+            "GrantingInAck:UInt8(Boolean)",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpRequestShareableOplock",
+              "ea": "0x140361ed8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpRequestShareableOplock",
+              "ea": "0x1404e7a6d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DesiredOplock",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "GrantingInAck",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpWaitOnIrp_Enter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Waiting Irp:HexInt64",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpWaitOnIrp",
+              "ea": "0x14036236c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpWaitOnIrp",
+              "ea": "0x140417c08",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Waiting Irp",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpWaitOnIrp_Exit",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "NTSTATUS:UInt32(NTStatus)",
+            "PerformedInlineWait:UInt8(Boolean)",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpWaitOnIrp",
+              "ea": "0x140362768",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpWaitOnIrp",
+              "ea": "0x140659c09",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpWaitOnIrp",
+              "ea": "0x1406c32c4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpWaitOnIrp",
+              "ea": "0x1406ddad9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "NTSTATUS:UInt32(NTStatus)",
+            "PerformedInlineWait:UInt8(Boolean)",
+            "Oplock_ptr:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpWaitOnIrp",
+              "ea": "0x14036280e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpWaitOnIrp",
+              "ea": "0x140659cc4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpWaitOnIrp",
+              "ea": "0x1406c337f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpWaitOnIrp",
+              "ea": "0x1406ddb67",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PerformedInlineWait",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NeedTwoBreaks",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "OplockAcquired:UInt8(Boolean)",
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlCheckUpperOplock",
+              "ea": "0x14073679b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlCheckUpperOplock",
+              "ea": "0x1407023db",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockAcquired",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OplockBreakAckMissingData",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "TelemetryFlags:HexInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockPerfSendData",
+              "ea": "0x1407374d0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockPerfSendData",
+              "ea": "0x140702f30",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "TelemetryFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OplockBreakAckTimeout",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "AckWasDone:UInt8(Boolean)",
+            "AckTimeoutMs:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockAckTimeoutWorker",
+              "ea": "0x14035d0f5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockAckTimeoutWorker",
+              "ea": "0x140580875",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AckTimeoutMs",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "AckWasDone",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OplockBreakAcknowledgment",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Version:UInt32",
+            "intervalDurationMilliseconds:UInt64",
+            "totalCount:UInt64",
+            "totalTimeNanoseconds:UInt64",
+            "averageLatencyNanoseconds:UInt64",
+            "averageLatencyBucketNanoseconds:UInt64",
+            "medianLatencyBucketNanoseconds:UInt64",
+            "maxLatencyNanoseconds:UInt64",
+            "maxLatencyBucketNanoseconds:UInt64",
+            "latencyLevelsNanoseconds:Int64[]",
+            "breakCountArray:UInt64[]",
+            "totalDurationNanosecondsArray:UInt64[]"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "FsRtlpOplockPerfSendData",
+              "ea": "0x14073776b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockPerfSendData",
+              "ea": "0x1407031cb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "averageLatencyBucketNanoseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "averageLatencyNanoseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "breakCountArray",
+          "type": "UInt64[]",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "intervalDurationMilliseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "latencyLevelsNanoseconds",
+          "type": "Int64[]",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "maxLatencyBucketNanoseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "maxLatencyNanoseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "medianLatencyBucketNanoseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "totalCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "totalDurationNanosecondsArray",
+          "type": "UInt64[]",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "totalTimeNanoseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

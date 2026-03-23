@@ -1,0 +1,791 @@
+{
+  "providerName": "Microsoft.Windows.Compatibility.Asl",
+  "guid": "{18608E62-A628-49D9-8C02-55972E097D24}",
+  "os": "WindowsServer2025",
+  "binaryCount": 30,
+  "binaries": [
+    "CompatAggregator.dll",
+    "CompatTelRunner.exe",
+    "DeviceCensus.exe",
+    "InventorySvc.dll",
+    "Win32CompatibilityAppraiserCSP.dll",
+    "acmigration.dll",
+    "aeinv.dll",
+    "aemarebackup.dll",
+    "aepic.dll",
+    "ahcache.sys",
+    "aitstatic.exe",
+    "apisampling.dll",
+    "appfootprint.dll",
+    "apphelp.dll",
+    "appraiser.dll",
+    "dcntel.dll",
+    "devinv.dll",
+    "generaltel.dll",
+    "hwreqchk.dll",
+    "installmon.dll",
+    "invagent.dll",
+    "pcacli.dll",
+    "pcadm.dll",
+    "pcalua.exe",
+    "pcasvc.dll",
+    "pcaui.dll",
+    "pcaui.exe",
+    "pcwutl.dll",
+    "sdbinst.exe",
+    "win32appinventorycsp.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "Error",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "Time:SystemTime",
+            "PCFP:UnicodeString",
+            "SourceLine:UInt32",
+            "SourceFile:AnsiString",
+            "FunctionName:AnsiString",
+            "Hresult:HexInt32",
+            "Message:AnsiString",
+            "__TlgCV__:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "appraiser.dll",
+              "function": "?WriteLogV@Appraiser@Compat@Windows@@YAX_NKPEBD1J1PEAD@Z",
+              "ea": "0x18003bc77",
+              "confidence": "CallGraph-d3"
+            },
+            {
+              "binary": "appraiser.dll",
+              "function": "?WriteLogV@Appraiser@Compat@Windows@@YAX_NKPEBD1J1PEAD@Z",
+              "ea": "0x18003bd3c",
+              "confidence": "CallGraph-d3"
+            },
+            {
+              "binary": "Win32CompatibilityAppraiserCSP.dll",
+              "function": "?WriteLogV@Appraiser@Compat@Windows@@YAX_NKPEBD1J1PEAD@Z",
+              "ea": "0x180033c27",
+              "confidence": "CallGraph-d3"
+            },
+            {
+              "binary": "Win32CompatibilityAppraiserCSP.dll",
+              "function": "?WriteLogV@Appraiser@Compat@Windows@@YAX_NKPEBD1J1PEAD@Z",
+              "ea": "0x180033cec",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FunctionName",
+          "type": "AnsiString",
+          "seenIn": [
+            "Win32CompatibilityAppraiserCSP.dll",
+            "appraiser.dll"
+          ]
+        },
+        {
+          "fieldName": "Hresult",
+          "type": "HexInt32",
+          "seenIn": [
+            "Win32CompatibilityAppraiserCSP.dll",
+            "appraiser.dll"
+          ]
+        },
+        {
+          "fieldName": "Message",
+          "type": "AnsiString",
+          "seenIn": [
+            "Win32CompatibilityAppraiserCSP.dll",
+            "appraiser.dll"
+          ]
+        },
+        {
+          "fieldName": "PCFP",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Win32CompatibilityAppraiserCSP.dll",
+            "appraiser.dll"
+          ]
+        },
+        {
+          "fieldName": "SourceFile",
+          "type": "AnsiString",
+          "seenIn": [
+            "Win32CompatibilityAppraiserCSP.dll",
+            "appraiser.dll"
+          ]
+        },
+        {
+          "fieldName": "SourceLine",
+          "type": "UInt32",
+          "seenIn": [
+            "Win32CompatibilityAppraiserCSP.dll",
+            "appraiser.dll"
+          ]
+        },
+        {
+          "fieldName": "Time",
+          "type": "SystemTime",
+          "seenIn": [
+            "Win32CompatibilityAppraiserCSP.dll",
+            "appraiser.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "Win32CompatibilityAppraiserCSP.dll",
+            "appraiser.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TelemetryClient",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "BinFileVersion:UInt64",
+            "ChannelName:AnsiString",
+            "CorrelationVectors:AnsiString",
+            "Types:AnsiString",
+            "Names:AnsiString",
+            "Counts:AnsiString",
+            "Metrics:AnsiString",
+            "Messages:UnicodeString",
+            "ActivityResults:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "acmigration.dll",
+              "function": "AslTelemetryFlush",
+              "ea": "0x18004c274",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "aeinv.dll",
+              "function": "AslTelemetryFlush",
+              "ea": "0x180026045",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "aemarebackup.dll",
+              "function": "AslTelemetryFlush",
+              "ea": "0x180050fd7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "aepic.dll",
+              "function": "AslTelemetryFlush",
+              "ea": "0x18002e46a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ahcache.sys",
+              "function": "AslTelemetryFlush",
+              "ea": "0x140031e5e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ahcache.sys",
+              "function": "AslTelemetryTrackErrorLean",
+              "ea": "0x14005372c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "aitstatic.exe",
+              "function": "AslTelemetryFlush",
+              "ea": "0x140007d0f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "apisampling.dll",
+              "function": "AslTelemetryFlush",
+              "ea": "0x180038e87",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "appfootprint.dll",
+              "function": "AslTelemetryFlush",
+              "ea": "0x180027aa4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "apphelp.dll",
+              "function": "AslTelemetryFlush",
+              "ea": "0x180012830",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "apphelp.dll",
+              "function": "AslTelemetryTrackErrorLean",
+              "ea": "0x1800583e0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "appraiser.dll",
+              "function": "AslTelemetryFlush",
+              "ea": "0x18001df77",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "CompatTelRunner.exe",
+              "function": "AslTelemetryFlush",
+              "ea": "0x1400123a2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "dcntel.dll",
+              "function": "AslTelemetryFlush",
+              "ea": "0x18012abda",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DeviceCensus.exe",
+              "function": "AslTelemetryFlush",
+              "ea": "0x14000752f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "devinv.dll",
+              "function": "AslTelemetryFlush",
+              "ea": "0x18006cb12",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "generaltel.dll",
+              "function": "AslTelemetryFlush",
+              "ea": "0x18005822f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "hwreqchk.dll",
+              "function": "AslTelemetryFlush",
+              "ea": "0x18003258c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "installmon.dll",
+              "function": "AslTelemetryFlush",
+              "ea": "0x1800de046",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "invagent.dll",
+              "function": "AslTelemetryFlush",
+              "ea": "0x18002cfaa",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "InventorySvc.dll",
+              "function": "AslTelemetryFlush",
+              "ea": "0x180015d36",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "pcacli.dll",
+              "function": "AslTelemetryFlush",
+              "ea": "0x180004155",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "pcadm.dll",
+              "function": "AslTelemetryFlush",
+              "ea": "0x180006a49",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "pcalua.exe",
+              "function": "AslTelemetryFlush",
+              "ea": "0x14000e2a6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "pcasvc.dll",
+              "function": "AslTelemetryFlush",
+              "ea": "0x18001e591",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "pcaui.dll",
+              "function": "AslTelemetryFlush",
+              "ea": "0x18002b520",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "pcaui.exe",
+              "function": "AslTelemetryFlush",
+              "ea": "0x14001479d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "pcwutl.dll",
+              "function": "AslTelemetryFlush",
+              "ea": "0x18001932e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "sdbinst.exe",
+              "function": "AslTelemetryFlush",
+              "ea": "0x14000d5df",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "win32appinventorycsp.dll",
+              "function": "AslTelemetryFlush",
+              "ea": "0x1800117a2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "Win32CompatibilityAppraiserCSP.dll",
+              "function": "AslTelemetryFlush",
+              "ea": "0x18002157c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "BinFileVersion:UInt64",
+            "ChannelName:UnicodeString",
+            "CorrelationVectors:UnicodeString",
+            "Types:UnicodeString",
+            "Names:UnicodeString",
+            "Counts:UnicodeString",
+            "Metrics:UnicodeString",
+            "Messages:UnicodeString",
+            "ActivityResults:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "CompatAggregator.dll",
+              "function": "?ConstructAndSendEvent@CAslEventAggregator@Diagnostics@Microsoft@@CAXAEAU?$pair@$$CBU?$pair@_KV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@std@@V?$vector@UAslEvent@CAslEventAggregator@Diagnostics@Microsoft@@V?$allocator@UAslEvent@CAslEventAggregator@Diagnostics@Microsoft@@@std@@@2@@std@@_N@Z",
+              "ea": "0x18000b210",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityResults",
+          "type": "AnsiString",
+          "seenIn": [
+            "CompatTelRunner.exe",
+            "DeviceCensus.exe",
+            "InventorySvc.dll",
+            "Win32CompatibilityAppraiserCSP.dll",
+            "acmigration.dll",
+            "aeinv.dll",
+            "aemarebackup.dll",
+            "aepic.dll",
+            "ahcache.sys",
+            "aitstatic.exe",
+            "apisampling.dll",
+            "appfootprint.dll",
+            "apphelp.dll",
+            "appraiser.dll",
+            "dcntel.dll",
+            "devinv.dll",
+            "generaltel.dll",
+            "hwreqchk.dll",
+            "installmon.dll",
+            "invagent.dll",
+            "pcacli.dll",
+            "pcadm.dll",
+            "pcalua.exe",
+            "pcasvc.dll",
+            "pcaui.dll",
+            "pcaui.exe",
+            "pcwutl.dll",
+            "sdbinst.exe",
+            "win32appinventorycsp.dll"
+          ]
+        },
+        {
+          "fieldName": "ActivityResults",
+          "type": "UnicodeString",
+          "seenIn": [
+            "CompatAggregator.dll"
+          ]
+        },
+        {
+          "fieldName": "BinFileVersion",
+          "type": "UInt64",
+          "seenIn": [
+            "CompatAggregator.dll",
+            "CompatTelRunner.exe",
+            "DeviceCensus.exe",
+            "InventorySvc.dll",
+            "Win32CompatibilityAppraiserCSP.dll",
+            "acmigration.dll",
+            "aeinv.dll",
+            "aemarebackup.dll",
+            "aepic.dll",
+            "ahcache.sys",
+            "aitstatic.exe",
+            "apisampling.dll",
+            "appfootprint.dll",
+            "apphelp.dll",
+            "appraiser.dll",
+            "dcntel.dll",
+            "devinv.dll",
+            "generaltel.dll",
+            "hwreqchk.dll",
+            "installmon.dll",
+            "invagent.dll",
+            "pcacli.dll",
+            "pcadm.dll",
+            "pcalua.exe",
+            "pcasvc.dll",
+            "pcaui.dll",
+            "pcaui.exe",
+            "pcwutl.dll",
+            "sdbinst.exe",
+            "win32appinventorycsp.dll"
+          ]
+        },
+        {
+          "fieldName": "ChannelName",
+          "type": "AnsiString",
+          "seenIn": [
+            "CompatTelRunner.exe",
+            "DeviceCensus.exe",
+            "InventorySvc.dll",
+            "Win32CompatibilityAppraiserCSP.dll",
+            "acmigration.dll",
+            "aeinv.dll",
+            "aemarebackup.dll",
+            "aepic.dll",
+            "ahcache.sys",
+            "aitstatic.exe",
+            "apisampling.dll",
+            "appfootprint.dll",
+            "apphelp.dll",
+            "appraiser.dll",
+            "dcntel.dll",
+            "devinv.dll",
+            "generaltel.dll",
+            "hwreqchk.dll",
+            "installmon.dll",
+            "invagent.dll",
+            "pcacli.dll",
+            "pcadm.dll",
+            "pcalua.exe",
+            "pcasvc.dll",
+            "pcaui.dll",
+            "pcaui.exe",
+            "pcwutl.dll",
+            "sdbinst.exe",
+            "win32appinventorycsp.dll"
+          ]
+        },
+        {
+          "fieldName": "ChannelName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "CompatAggregator.dll"
+          ]
+        },
+        {
+          "fieldName": "CorrelationVectors",
+          "type": "AnsiString",
+          "seenIn": [
+            "CompatTelRunner.exe",
+            "DeviceCensus.exe",
+            "InventorySvc.dll",
+            "Win32CompatibilityAppraiserCSP.dll",
+            "acmigration.dll",
+            "aeinv.dll",
+            "aemarebackup.dll",
+            "aepic.dll",
+            "ahcache.sys",
+            "aitstatic.exe",
+            "apisampling.dll",
+            "appfootprint.dll",
+            "apphelp.dll",
+            "appraiser.dll",
+            "dcntel.dll",
+            "devinv.dll",
+            "generaltel.dll",
+            "hwreqchk.dll",
+            "installmon.dll",
+            "invagent.dll",
+            "pcacli.dll",
+            "pcadm.dll",
+            "pcalua.exe",
+            "pcasvc.dll",
+            "pcaui.dll",
+            "pcaui.exe",
+            "pcwutl.dll",
+            "sdbinst.exe",
+            "win32appinventorycsp.dll"
+          ]
+        },
+        {
+          "fieldName": "CorrelationVectors",
+          "type": "UnicodeString",
+          "seenIn": [
+            "CompatAggregator.dll"
+          ]
+        },
+        {
+          "fieldName": "Counts",
+          "type": "AnsiString",
+          "seenIn": [
+            "CompatTelRunner.exe",
+            "DeviceCensus.exe",
+            "InventorySvc.dll",
+            "Win32CompatibilityAppraiserCSP.dll",
+            "acmigration.dll",
+            "aeinv.dll",
+            "aemarebackup.dll",
+            "aepic.dll",
+            "ahcache.sys",
+            "aitstatic.exe",
+            "apisampling.dll",
+            "appfootprint.dll",
+            "apphelp.dll",
+            "appraiser.dll",
+            "dcntel.dll",
+            "devinv.dll",
+            "generaltel.dll",
+            "hwreqchk.dll",
+            "installmon.dll",
+            "invagent.dll",
+            "pcacli.dll",
+            "pcadm.dll",
+            "pcalua.exe",
+            "pcasvc.dll",
+            "pcaui.dll",
+            "pcaui.exe",
+            "pcwutl.dll",
+            "sdbinst.exe",
+            "win32appinventorycsp.dll"
+          ]
+        },
+        {
+          "fieldName": "Counts",
+          "type": "UnicodeString",
+          "seenIn": [
+            "CompatAggregator.dll"
+          ]
+        },
+        {
+          "fieldName": "Messages",
+          "type": "UnicodeString",
+          "seenIn": [
+            "CompatAggregator.dll",
+            "CompatTelRunner.exe",
+            "DeviceCensus.exe",
+            "InventorySvc.dll",
+            "Win32CompatibilityAppraiserCSP.dll",
+            "acmigration.dll",
+            "aeinv.dll",
+            "aemarebackup.dll",
+            "aepic.dll",
+            "ahcache.sys",
+            "aitstatic.exe",
+            "apisampling.dll",
+            "appfootprint.dll",
+            "apphelp.dll",
+            "appraiser.dll",
+            "dcntel.dll",
+            "devinv.dll",
+            "generaltel.dll",
+            "hwreqchk.dll",
+            "installmon.dll",
+            "invagent.dll",
+            "pcacli.dll",
+            "pcadm.dll",
+            "pcalua.exe",
+            "pcasvc.dll",
+            "pcaui.dll",
+            "pcaui.exe",
+            "pcwutl.dll",
+            "sdbinst.exe",
+            "win32appinventorycsp.dll"
+          ]
+        },
+        {
+          "fieldName": "Metrics",
+          "type": "AnsiString",
+          "seenIn": [
+            "CompatTelRunner.exe",
+            "DeviceCensus.exe",
+            "InventorySvc.dll",
+            "Win32CompatibilityAppraiserCSP.dll",
+            "acmigration.dll",
+            "aeinv.dll",
+            "aemarebackup.dll",
+            "aepic.dll",
+            "ahcache.sys",
+            "aitstatic.exe",
+            "apisampling.dll",
+            "appfootprint.dll",
+            "apphelp.dll",
+            "appraiser.dll",
+            "dcntel.dll",
+            "devinv.dll",
+            "generaltel.dll",
+            "hwreqchk.dll",
+            "installmon.dll",
+            "invagent.dll",
+            "pcacli.dll",
+            "pcadm.dll",
+            "pcalua.exe",
+            "pcasvc.dll",
+            "pcaui.dll",
+            "pcaui.exe",
+            "pcwutl.dll",
+            "sdbinst.exe",
+            "win32appinventorycsp.dll"
+          ]
+        },
+        {
+          "fieldName": "Metrics",
+          "type": "UnicodeString",
+          "seenIn": [
+            "CompatAggregator.dll"
+          ]
+        },
+        {
+          "fieldName": "Names",
+          "type": "AnsiString",
+          "seenIn": [
+            "CompatTelRunner.exe",
+            "DeviceCensus.exe",
+            "InventorySvc.dll",
+            "Win32CompatibilityAppraiserCSP.dll",
+            "acmigration.dll",
+            "aeinv.dll",
+            "aemarebackup.dll",
+            "aepic.dll",
+            "ahcache.sys",
+            "aitstatic.exe",
+            "apisampling.dll",
+            "appfootprint.dll",
+            "apphelp.dll",
+            "appraiser.dll",
+            "dcntel.dll",
+            "devinv.dll",
+            "generaltel.dll",
+            "hwreqchk.dll",
+            "installmon.dll",
+            "invagent.dll",
+            "pcacli.dll",
+            "pcadm.dll",
+            "pcalua.exe",
+            "pcasvc.dll",
+            "pcaui.dll",
+            "pcaui.exe",
+            "pcwutl.dll",
+            "sdbinst.exe",
+            "win32appinventorycsp.dll"
+          ]
+        },
+        {
+          "fieldName": "Names",
+          "type": "UnicodeString",
+          "seenIn": [
+            "CompatAggregator.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "CompatAggregator.dll",
+            "CompatTelRunner.exe",
+            "DeviceCensus.exe",
+            "InventorySvc.dll",
+            "Win32CompatibilityAppraiserCSP.dll",
+            "acmigration.dll",
+            "aeinv.dll",
+            "aemarebackup.dll",
+            "aepic.dll",
+            "ahcache.sys",
+            "aitstatic.exe",
+            "apisampling.dll",
+            "appfootprint.dll",
+            "apphelp.dll",
+            "appraiser.dll",
+            "dcntel.dll",
+            "devinv.dll",
+            "generaltel.dll",
+            "hwreqchk.dll",
+            "installmon.dll",
+            "invagent.dll",
+            "pcacli.dll",
+            "pcadm.dll",
+            "pcalua.exe",
+            "pcasvc.dll",
+            "pcaui.dll",
+            "pcaui.exe",
+            "pcwutl.dll",
+            "sdbinst.exe",
+            "win32appinventorycsp.dll"
+          ]
+        },
+        {
+          "fieldName": "Types",
+          "type": "AnsiString",
+          "seenIn": [
+            "CompatTelRunner.exe",
+            "DeviceCensus.exe",
+            "InventorySvc.dll",
+            "Win32CompatibilityAppraiserCSP.dll",
+            "acmigration.dll",
+            "aeinv.dll",
+            "aemarebackup.dll",
+            "aepic.dll",
+            "ahcache.sys",
+            "aitstatic.exe",
+            "apisampling.dll",
+            "appfootprint.dll",
+            "apphelp.dll",
+            "appraiser.dll",
+            "dcntel.dll",
+            "devinv.dll",
+            "generaltel.dll",
+            "hwreqchk.dll",
+            "installmon.dll",
+            "invagent.dll",
+            "pcacli.dll",
+            "pcadm.dll",
+            "pcalua.exe",
+            "pcasvc.dll",
+            "pcaui.dll",
+            "pcaui.exe",
+            "pcwutl.dll",
+            "sdbinst.exe",
+            "win32appinventorycsp.dll"
+          ]
+        },
+        {
+          "fieldName": "Types",
+          "type": "UnicodeString",
+          "seenIn": [
+            "CompatAggregator.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

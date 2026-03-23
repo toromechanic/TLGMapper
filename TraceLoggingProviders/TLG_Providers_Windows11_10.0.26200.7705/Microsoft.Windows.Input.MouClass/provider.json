@@ -1,0 +1,114 @@
+{
+  "providerName": "Microsoft.Windows.Input.MouClass",
+  "guid": "{D6172801-3486-5DBA-460B-73564ED30393}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "mouclass.sys",
+    "mouclass_msmouse.inf_amd64_097bbd709f0c4972_43594887.sys"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "Configuration",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "MouseDataQueueSize:UInt32",
+            "MaximumPortsServiced:UInt32",
+            "BaseClassName:CountedString",
+            "ConnectOneClassToOnePort:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "mouclass.sys",
+              "function": "MouConfiguration",
+              "ea": "0x1c0011dfd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mouclass_msmouse.inf_amd64_097bbd709f0c4972_43594887.sys",
+              "function": "MouConfiguration",
+              "ea": "0x1c0011dfd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BaseClassName",
+          "type": "CountedString",
+          "seenIn": [
+            "mouclass.sys",
+            "mouclass_msmouse.inf_amd64_097bbd709f0c4972_43594887.sys"
+          ]
+        },
+        {
+          "fieldName": "ConnectOneClassToOnePort",
+          "type": "UInt32",
+          "seenIn": [
+            "mouclass.sys",
+            "mouclass_msmouse.inf_amd64_097bbd709f0c4972_43594887.sys"
+          ]
+        },
+        {
+          "fieldName": "MaximumPortsServiced",
+          "type": "UInt32",
+          "seenIn": [
+            "mouclass.sys",
+            "mouclass_msmouse.inf_amd64_097bbd709f0c4972_43594887.sys"
+          ]
+        },
+        {
+          "fieldName": "MouseDataQueueSize",
+          "type": "UInt32",
+          "seenIn": [
+            "mouclass.sys",
+            "mouclass_msmouse.inf_amd64_097bbd709f0c4972_43594887.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DeniedCreateForReadWithSFAC",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "DesiredAccess:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "mouclass.sys",
+              "function": "MouClassTraceLoggingDeniedCreateForReadWithSFAC",
+              "ea": "0x1c00057a4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mouclass_msmouse.inf_amd64_097bbd709f0c4972_43594887.sys",
+              "function": "MouClassTraceLoggingDeniedCreateForReadWithSFAC",
+              "ea": "0x1c00057a4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DesiredAccess",
+          "type": "UInt32",
+          "seenIn": [
+            "mouclass.sys",
+            "mouclass_msmouse.inf_amd64_097bbd709f0c4972_43594887.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

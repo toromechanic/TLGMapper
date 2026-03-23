@@ -1,0 +1,530 @@
+{
+  "providerName": "Microsoft.Windows.Storage.Crashdmp",
+  "guid": "{AF2114E4-CB29-4A94-B24B-6A27BB43ED83}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "crashdmp.sys"
+  ],
+  "uniqueEventCount": 9,
+  "events": [
+    {
+      "eventName": "CrashdumpCallbackExceptionLogged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "componentName:AnsiString",
+            "callbackStage:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "crashdmp.sys",
+              "function": "CheckForLogFile",
+              "ea": "0x18001120b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "callbackStage",
+          "type": "AnsiString",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "componentName",
+          "type": "AnsiString",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CrashdumpDetected",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "crashdmpProgress:UInt32",
+            "bugCheckCode:UInt32",
+            "bugCheckParameter1:UInt64",
+            "currentBootId:UInt32",
+            "lastCrashBootId:UInt16",
+            "cumulativeCrashCount:UInt16",
+            "version:UInt8",
+            "StorageStack:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "crashdmp.sys",
+              "function": "CrashdmpTelemetryCheckForPreviousCrash",
+              "ea": "0x180013a02",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "StorageStack",
+          "type": "UInt8",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "bugCheckCode",
+          "type": "UInt32",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "bugCheckParameter1",
+          "type": "UInt64",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "crashdmpProgress",
+          "type": "UInt32",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "cumulativeCrashCount",
+          "type": "UInt16",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "currentBootId",
+          "type": "UInt32",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "lastCrashBootId",
+          "type": "UInt16",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UInt8",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CrashdumpDumpDriverLoaded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "driverName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "crashdmp.sys",
+              "function": "CrashdmpLoadDriver",
+              "ea": "0x180011a23",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "driverName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CrashdumpGenerationState",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "success:UInt8(Boolean)",
+            "dumpLogComplete:UInt8(Boolean)",
+            "ntStatus:UInt32(NTStatus)",
+            "elapsedDuration:UInt32",
+            "progressCheckpoint:UInt32",
+            "logLastLineWritten:AnsiString",
+            "callbackExceptionCount:UInt32",
+            "firstExceptionComponentName:AnsiString",
+            "firstExceptionCallbackStage:AnsiString",
+            "StorageStack:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "crashdmp.sys",
+              "function": "CheckForLogFile",
+              "ea": "0x180011505",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "StorageStack",
+          "type": "UInt8",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "callbackExceptionCount",
+          "type": "UInt32",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "dumpLogComplete",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "elapsedDuration",
+          "type": "UInt32",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "firstExceptionCallbackStage",
+          "type": "AnsiString",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "firstExceptionComponentName",
+          "type": "AnsiString",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "logLastLineWritten",
+          "type": "AnsiString",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "ntStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "progressCheckpoint",
+          "type": "UInt32",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "success",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CrashdumpInitializeFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "ntStatus:UInt32(NTStatus)",
+            "uniqueErrorValue:UInt32",
+            "StorageStack:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "crashdmp.sys",
+              "function": "CrashdmpInitialize",
+              "ea": "0x180002810",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "StorageStack",
+          "type": "UInt8",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "ntStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "uniqueErrorValue",
+          "type": "UInt32",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CrashdumpInitializeMeasure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ntStatus:UInt32(NTStatus)",
+            "uniqueErrorValue:UInt32",
+            "isSetupFirstBoot:UInt8(Boolean)",
+            "StorageStack:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "crashdmp.sys",
+              "function": "CrashdmpInitialize",
+              "ea": "0x18000296c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "StorageStack",
+          "type": "UInt8",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "isSetupFirstBoot",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "ntStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "uniqueErrorValue",
+          "type": "UInt32",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CrashdumpQueryPortDriverFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "DumpPointerStatus:UInt32(NTStatus)",
+            "DumpInfoPhaseStartStatus:UInt32(NTStatus)",
+            "DumpInfoPhaseCompleteStatus:UInt32(NTStatus)",
+            "AllocateMapRegistersFailure:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "crashdmp.sys",
+              "function": "QueryPortDriver",
+              "ea": "0x180008a64",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AllocateMapRegistersFailure",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "DumpInfoPhaseCompleteStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "DumpInfoPhaseStartStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "DumpPointerStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CrashdumpRegistrySettings",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "dumpType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "crashdmp.sys",
+              "function": "CrashdmpInitialize",
+              "ea": "0x180002298",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "dumpType",
+          "type": "UInt32",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CrashdumpSaveLastInfoFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "LastCrashProgress:UInt32",
+            "Status:UInt32",
+            "version:UInt8",
+            "LastCrashdumpInfoVersion:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "crashdmp.sys",
+              "function": "CrashdmpTelemetrySaveLastCrashdumpInfoAndSettings",
+              "ea": "0x180013f24",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "LastCrashProgress",
+          "type": "UInt32",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "LastCrashdumpInfoVersion",
+          "type": "UInt32",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UInt8",
+          "seenIn": [
+            "crashdmp.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

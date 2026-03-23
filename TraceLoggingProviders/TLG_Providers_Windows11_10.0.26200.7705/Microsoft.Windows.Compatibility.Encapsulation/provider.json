@@ -1,0 +1,582 @@
+{
+  "providerName": "Microsoft.Windows.Compatibility.Encapsulation",
+  "guid": "{40DBE1AB-6F3B-57CF-EE15-A1F3B1370EC6}",
+  "os": "Windows 11",
+  "binaryCount": 3,
+  "binaries": [
+    "appfootprint.dll",
+    "apphelp.dll",
+    "pcasvc.dll"
+  ],
+  "uniqueEventCount": 8,
+  "events": [
+    {
+      "eventName": "Api",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ver:UInt16",
+            "kind:AnsiString",
+            "final:Bool32",
+            "pid:UInt32(PID)",
+            "apis:Struct[](String)",
+            "name:AnsiString",
+            "called:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "apphelp.dll",
+              "function": "?PrivLogTraceLoggingWrite@PrivLogTelemetry@@YAXPEBDHPEAEKG@Z",
+              "ea": "0x1800551c8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "apphelp.dll"
+          ]
+        },
+        {
+          "fieldName": "apis",
+          "type": "Struct[](String)",
+          "seenIn": [
+            "apphelp.dll"
+          ]
+        },
+        {
+          "fieldName": "called",
+          "type": "UInt32",
+          "seenIn": [
+            "apphelp.dll"
+          ]
+        },
+        {
+          "fieldName": "final",
+          "type": "Bool32",
+          "seenIn": [
+            "apphelp.dll"
+          ]
+        },
+        {
+          "fieldName": "kind",
+          "type": "AnsiString",
+          "seenIn": [
+            "apphelp.dll"
+          ]
+        },
+        {
+          "fieldName": "name",
+          "type": "AnsiString",
+          "seenIn": [
+            "apphelp.dll"
+          ]
+        },
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "apphelp.dll"
+          ]
+        },
+        {
+          "fieldName": "ver",
+          "type": "UInt16",
+          "seenIn": [
+            "apphelp.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DetectorsShimLog_Applied",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ExeName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "pcasvc.dll",
+              "function": "?ResolverManagerp_ActivateDetectors@@YAKPEAXPEBU_PCA_CHAIN_DATA@@@Z",
+              "ea": "0x18003a072",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ExeName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "pcasvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "pcasvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LoggerBaseSettingsChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "IsTraceLoggingEnabled:Bool32",
+            "UseOneSettings:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "appfootprint.dll",
+              "function": "?LoggerBase_ReadGlobalSettings@@YAKAEA_N@Z",
+              "ea": "0x180018164",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsTraceLoggingEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "UseOneSettings",
+          "type": "Bool32",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LoggerBaseSystemRequirementsFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "NumProcessors:UInt32",
+            "RamGB:UInt32",
+            "MinDiskRequirementMet:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "appfootprint.dll",
+              "function": "?LoggerBase_CheckMinimumSystemRequirements@@YA_NPEBG@Z",
+              "ea": "0x1800164ec",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "MinDiskRequirementMet",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "NumProcessors",
+          "type": "UInt32",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "RamGB",
+          "type": "UInt32",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LoggerSummaryEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "AppExesTraced:UInt32",
+            "InstallerExesTraced:UInt32",
+            "TotalTicks:UInt64",
+            "ErrorCode:UInt32(Win32Error)"
+          ],
+          "callers": [
+            {
+              "binary": "appfootprint.dll",
+              "function": "?Logger_ServiceShutdown@@YAKXZ",
+              "ea": "0x1800141ca",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppExesTraced",
+          "type": "UInt32",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "InstallerExesTraced",
+          "type": "UInt32",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "TotalTicks",
+          "type": "UInt64",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessLoggedEvents",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ProcessId:UInt32(PID)",
+            "IsInstaller:UInt8(Boolean)",
+            "RegEventsCount:UInt32",
+            "RegEventsWritten:UInt32",
+            "RegWriteErrorsOccurred:UInt32",
+            "FileEventsCount:UInt32",
+            "FileEventsWritten:UInt32",
+            "FileWriteErrorsOccurred:UInt32",
+            "FileId:UnicodeString",
+            "ProgramId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "appfootprint.dll",
+              "function": "?LoggerBase_LogEventsFromProcess@@YAKPEAVLoggerProcess@Encapsulation@Compat@Windows@@@Z",
+              "ea": "0x180017cce",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FileEventsCount",
+          "type": "UInt32",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "FileEventsWritten",
+          "type": "UInt32",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "FileId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "FileWriteErrorsOccurred",
+          "type": "UInt32",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "IsInstaller",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessId",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "ProgramId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "RegEventsCount",
+          "type": "UInt32",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "RegEventsWritten",
+          "type": "UInt32",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "RegWriteErrorsOccurred",
+          "type": "UInt32",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessLoggingFile",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "FileId:UnicodeString",
+            "ProgramId:UnicodeString",
+            "ExeName:UnicodeString",
+            "IsInstaller:Bool32",
+            "pathOps:Struct[](String)",
+            "path:UnicodeString",
+            "operations:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appfootprint.dll",
+              "function": "?Output@UtcOutputter@Encapsulation@Compat@Windows@@UEAAJAEBV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@00_NW4LoggingType@234@AEBV?$map@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@KUwstringComparer@Encapsulation@Compat@Windows@@V?$allocator@U?$pair@$$CBV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@K@std@@@2@@6@AEAV?$shared_any_t@V?$event_t@V?$shared_storage@V?$unique_any_t@V?$event_t@V?$unique_storage@U?$resource_policy@PEAXP6AXPEAX@_E$1?CloseHandle@details@wil@@YAX0@ZU?$integral_constant@_K$0A@@wistd@@PEAXPEAX$0A@$$T@details@wil@@@details@wil@@Uerr_exception_policy@3@@wil@@@wil@@@details@wil@@Uerr_exception_policy@3@@wil@@@wil@@@Z",
+              "ea": "0x180026150",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ExeName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "FileId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "IsInstaller",
+          "type": "Bool32",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "ProgramId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "operations",
+          "type": "UInt32",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "path",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "pathOps",
+          "type": "Struct[](String)",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessLoggingRegistry",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "FileId:UnicodeString",
+            "ProgramId:UnicodeString",
+            "ExeName:UnicodeString",
+            "IsInstaller:Bool32",
+            "pathOps:Struct[](String)",
+            "path:UnicodeString",
+            "operations:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appfootprint.dll",
+              "function": "?Output@UtcOutputter@Encapsulation@Compat@Windows@@UEAAJAEBV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@00_NW4LoggingType@234@AEBV?$map@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@KUwstringComparer@Encapsulation@Compat@Windows@@V?$allocator@U?$pair@$$CBV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@K@std@@@2@@6@AEAV?$shared_any_t@V?$event_t@V?$shared_storage@V?$unique_any_t@V?$event_t@V?$unique_storage@U?$resource_policy@PEAXP6AXPEAX@_E$1?CloseHandle@details@wil@@YAX0@ZU?$integral_constant@_K$0A@@wistd@@PEAXPEAX$0A@$$T@details@wil@@@details@wil@@Uerr_exception_policy@3@@wil@@@wil@@@details@wil@@Uerr_exception_policy@3@@wil@@@wil@@@Z",
+              "ea": "0x18002604d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ExeName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "FileId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "IsInstaller",
+          "type": "Bool32",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "ProgramId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "operations",
+          "type": "UInt32",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "path",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        },
+        {
+          "fieldName": "pathOps",
+          "type": "Struct[](String)",
+          "seenIn": [
+            "appfootprint.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

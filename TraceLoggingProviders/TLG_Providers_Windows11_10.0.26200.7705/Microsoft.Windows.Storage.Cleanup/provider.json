@@ -1,0 +1,232 @@
+{
+  "providerName": "Microsoft.Windows.Storage.Cleanup",
+  "guid": "{265551FA-4F81-4678-8AFB-497821A795CA}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "StorSvc.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "ClientPurge",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "clsid:GUID",
+            "purgeTimeMs:UInt64",
+            "beforeBytes:UInt64",
+            "afterBytes:UInt64",
+            "requestedBytes:UInt64",
+            "totalBytes:UInt64",
+            "freeBytesBefore:UInt64",
+            "freeBytesAfter:UInt64",
+            "storageReserveBefore:Int64[N]",
+            "storageReserveAfter:Int64[N]",
+            "hresult:Int32(HResult)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?Purge@CleanMgrHelper@@QEAAJW4CLEANMGR_TYPE@@@Z",
+              "ea": "0x180081701",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "afterBytes",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "beforeBytes",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "clsid",
+          "type": "GUID",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "freeBytesAfter",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "freeBytesBefore",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "purgeTimeMs",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "requestedBytes",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "storageReserveAfter",
+          "type": "Int64[N]",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "storageReserveBefore",
+          "type": "Int64[N]",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "totalBytes",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InitClients",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "clsid:GUID",
+            "subkeyname:UnicodeString",
+            "index:UInt32",
+            "flags:UInt32",
+            "hresult:Int32(HResult)",
+            "DrivePath:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?InitializeWithType@CleanMgrHelper@@QEAAJPEBGW4CLEANMGR_TYPE@@K@Z",
+              "ea": "0x180081248",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "StorSvc.dll",
+              "function": "?InitializeWithType@CleanMgrHelper@@QEAAJPEBGW4CLEANMGR_TYPE@@K@Z",
+              "ea": "0x18008132d",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DrivePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "clsid",
+          "type": "GUID",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "flags",
+          "type": "UInt32",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "index",
+          "type": "UInt32",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "subkeyname",
+          "type": "UnicodeString",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StorageCleanupActivity",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "??0CleanMgrHelper@@QEAA@XZ",
+              "ea": "0x180080c6d",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "StorSvc.dll",
+              "function": "??1CleanMgrHelper@@UEAA@XZ",
+              "ea": "0x180080d48",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    }
+  ]
+}

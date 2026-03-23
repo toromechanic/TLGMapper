@@ -1,0 +1,445 @@
+{
+  "providerName": "Microsoft.Windows.Search.Indexer.SemanticSearch.Aggregated",
+  "guid": "{AF6B8AF2-7FFD-47D0-9754-44335352DC22}",
+  "os": "WindowsServer2025",
+  "binaryCount": 4,
+  "binaries": [
+    "SearchFilterHost.exe",
+    "SearchProtocolHost.exe",
+    "WSAIFabricHost.dll",
+    "tquery.dll"
+  ],
+  "uniqueEventCount": 7,
+  "events": [
+    {
+      "eventName": "FileExtensionIndexed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "Size:Int64",
+            "Extension:UnicodeString",
+            "IsSemanticIndexEnabled:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "SearchProtocolHost.exe",
+              "function": "?ReportExtensionUsage@SemanticSearchTelemetryAggregated@@SAX_NPEA_W_K@Z",
+              "ea": "0x140022828",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "Extension",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "IsSemanticIndexEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "Size",
+          "type": "Int64",
+          "seenIn": [
+            "SearchProtocolHost.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "QueryBlockedStatus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "Status:UInt16",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "WSAIFabricHost.dll",
+              "function": "?ReportQueryBlockedStatus@SemanticSearchTelemetryAggregated@@SAXW4QueryBlockedStatus@@@Z",
+              "ea": "0x18004939f",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "WSAIFabricHost.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WSAIFabricHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt16",
+          "seenIn": [
+            "WSAIFabricHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SemanticFilterOverwritten",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "Extension:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "SearchProtocolHost.exe",
+              "function": "?ReportSemanticFilterOverwritten@SemanticSearchTelemetryAggregated@@SAXPEB_W@Z",
+              "ea": "0x14004043f",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "Extension",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "SearchProtocolHost.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SemanticRetryRequested",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "Operation Type:UInt16",
+            "HResult:Int32(HResult)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "SearchFilterHost.exe",
+              "function": "?ReportSemanticRequeueRequested@SemanticSearchTelemetryAggregated@@SAXW4SemanticOperationType@@J@Z",
+              "ea": "0x1400344ab",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "SearchProtocolHost.exe",
+              "function": "?ReportSemanticRequeueRequested@SemanticSearchTelemetryAggregated@@SAXW4SemanticOperationType@@J@Z",
+              "ea": "0x140022a8d",
+              "confidence": "CallGraph-d3"
+            },
+            {
+              "binary": "tquery.dll",
+              "function": "?ReportSemanticRequeueRequested@SemanticSearchTelemetryAggregated@@SAXW4SemanticOperationType@@J@Z",
+              "ea": "0x180202aeb",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe",
+            "tquery.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe",
+            "tquery.dll"
+          ]
+        },
+        {
+          "fieldName": "Operation Type",
+          "type": "UInt16",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe",
+            "tquery.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe",
+            "tquery.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SemanticSearchLangSupported",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "localeName:UnicodeString",
+            "IsLanguageSupported:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "WSAIFabricHost.dll",
+              "function": "?ReportSemanticSearchLangSupported@SemanticSearchTelemetryAggregated@@SAXPEB_W_N@Z",
+              "ea": "0x1800494e5",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "WSAIFabricHost.dll"
+          ]
+        },
+        {
+          "fieldName": "IsLanguageSupported",
+          "type": "Bool32",
+          "seenIn": [
+            "WSAIFabricHost.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WSAIFabricHost.dll"
+          ]
+        },
+        {
+          "fieldName": "localeName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WSAIFabricHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SemanticSearchPassedWorkIds",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "MinWorkIdsCount:Int64",
+            "MaxWorkIdsCount:Int64",
+            "WorkIdsCount:Int64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "WSAIFabricHost.dll",
+              "function": "?ReportSemanticSearchWorkIdsCount@SemanticSearchTelemetryAggregated@@SAXI@Z",
+              "ea": "0x1800495a0",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "WSAIFabricHost.dll"
+          ]
+        },
+        {
+          "fieldName": "MaxWorkIdsCount",
+          "type": "Int64",
+          "seenIn": [
+            "WSAIFabricHost.dll"
+          ]
+        },
+        {
+          "fieldName": "MinWorkIdsCount",
+          "type": "Int64",
+          "seenIn": [
+            "WSAIFabricHost.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WSAIFabricHost.dll"
+          ]
+        },
+        {
+          "fieldName": "WorkIdsCount",
+          "type": "Int64",
+          "seenIn": [
+            "WSAIFabricHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SemanticVectorRetrived",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "FileCount:Int64",
+            "TotalSize:Int64",
+            "MinTotalSize:Int64",
+            "MaxTotalSize:Int64",
+            "EmbeddingCount:Int64",
+            "MinEmbeddingCount:Int64",
+            "MaxEmbeddingCount:Int64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "WSAIFabricHost.dll",
+              "function": "?ReportSemanticVectorSize@SemanticSearchTelemetryAggregated@@SAX_JI@Z",
+              "ea": "0x1800496b4",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EmbeddingCount",
+          "type": "Int64",
+          "seenIn": [
+            "WSAIFabricHost.dll"
+          ]
+        },
+        {
+          "fieldName": "FileCount",
+          "type": "Int64",
+          "seenIn": [
+            "WSAIFabricHost.dll"
+          ]
+        },
+        {
+          "fieldName": "MaxEmbeddingCount",
+          "type": "Int64",
+          "seenIn": [
+            "WSAIFabricHost.dll"
+          ]
+        },
+        {
+          "fieldName": "MaxTotalSize",
+          "type": "Int64",
+          "seenIn": [
+            "WSAIFabricHost.dll"
+          ]
+        },
+        {
+          "fieldName": "MinEmbeddingCount",
+          "type": "Int64",
+          "seenIn": [
+            "WSAIFabricHost.dll"
+          ]
+        },
+        {
+          "fieldName": "MinTotalSize",
+          "type": "Int64",
+          "seenIn": [
+            "WSAIFabricHost.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WSAIFabricHost.dll"
+          ]
+        },
+        {
+          "fieldName": "TotalSize",
+          "type": "Int64",
+          "seenIn": [
+            "WSAIFabricHost.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

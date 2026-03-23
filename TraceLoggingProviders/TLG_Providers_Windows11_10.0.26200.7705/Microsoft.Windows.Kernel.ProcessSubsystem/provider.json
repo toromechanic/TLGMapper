@@ -1,0 +1,320 @@
+{
+  "providerName": "Microsoft.Windows.Kernel.ProcessSubsystem",
+  "guid": "{C59673D8-B796-58DF-FBF8-A70BAD656DCA}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "ntoskrnl.exe"
+  ],
+  "uniqueEventCount": 6,
+  "events": [
+    {
+      "eventName": "NtSetInformationProcess::ProcessForegroundInformation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Foreground:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "NtSetInformationProcess",
+              "ea": "0x140b119df",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Foreground",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NtSetInformationProcess::ProcessPriorityClass",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Foreground:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "NtSetInformationProcess",
+              "ea": "0x140b117d1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Foreground",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NtSetInformationProcess::ProcessPriorityClassEx",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Foreground:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "NtSetInformationProcess",
+              "ea": "0x140b118d4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Foreground",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessOpenFailedForForcedAccessCheck",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "TargetProcessId:UInt32",
+            "DesiredAccess:HexInt32",
+            "ObjectAttributes:HexInt32",
+            "ProbeMode:UInt8",
+            "AccessMode:UInt8",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PsOpenProcess",
+              "ea": "0x140affce1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AccessMode",
+          "type": "UInt8",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "DesiredAccess",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ObjectAttributes",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ProbeMode",
+          "type": "UInt8",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "TargetProcessId",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SetProcessForegroundBackgroundRequest",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ProcessId:Int32",
+            "Foreground:UInt8(Boolean)",
+            "SystemRequest:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PspSetProcessForegroundBackgroundRequest",
+              "ea": "0x140a3485d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Foreground",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ProcessId",
+          "type": "Int32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "SystemRequest",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ThreadOpenFailedForForcedAccessCheck",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "TargetThreadId:UInt32",
+            "TargetProcessId:UInt32",
+            "DesiredAccess:HexInt32",
+            "ObjectAttributes:HexInt32",
+            "ProbeMode:UInt8",
+            "AccessMode:UInt8",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PsOpenThread",
+              "ea": "0x14083e131",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AccessMode",
+          "type": "UInt8",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "DesiredAccess",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ObjectAttributes",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ProbeMode",
+          "type": "UInt8",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "TargetProcessId",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "TargetThreadId",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

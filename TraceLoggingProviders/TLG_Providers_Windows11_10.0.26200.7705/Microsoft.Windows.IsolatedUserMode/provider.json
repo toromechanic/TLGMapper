@@ -1,0 +1,329 @@
+{
+  "providerName": "Microsoft.Windows.IsolatedUserMode",
+  "guid": "{73A33AB2-1966-4999-8ADD-868C41415269}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "ntoskrnl.exe",
+    "securekernel.exe"
+  ],
+  "uniqueEventCount": 6,
+  "events": [
+    {
+      "eventName": "EfiRuntimeServices",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Version:CountedString",
+            "PageProtection:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VslpIumInitializeTelemetry",
+              "ea": "0x140c17d2d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PageProtection",
+          "type": "Bool32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "CountedString",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IumStatus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "IsRunning:Bool32",
+            "IumEnablement:UInt32",
+            "IumPolicy:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "VslpIumInitializeTelemetry",
+              "ea": "0x140c17e0d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsRunning",
+          "type": "Bool32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "IumEnablement",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "IumPolicy",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MinidumpWrite",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ExceptionCode:UInt32(NTStatus)",
+            "TrustletIdentity:UInt64",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "securekernel.exe",
+              "function": "SkMinidumpWriteDump",
+              "ea": "0x1400b3e2f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ExceptionCode",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "securekernel.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "securekernel.exe"
+          ]
+        },
+        {
+          "fieldName": "TrustletIdentity",
+          "type": "UInt64",
+          "seenIn": [
+            "securekernel.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SecureImageImageHotPatchOperation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "BaseCheckSum:HexInt32",
+            "BaseTimeDateStamp:HexInt32",
+            "PatchCheckSum:HexInt32",
+            "PatchTimeDateStamp:HexInt32",
+            "PatchSequenceNumber:UInt32",
+            "ReverseOnly:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "securekernel.exe",
+              "function": "SkmmApplyTrustletHotPatch",
+              "ea": "0x14002eabf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BaseCheckSum",
+          "type": "HexInt32",
+          "seenIn": [
+            "securekernel.exe"
+          ]
+        },
+        {
+          "fieldName": "BaseTimeDateStamp",
+          "type": "HexInt32",
+          "seenIn": [
+            "securekernel.exe"
+          ]
+        },
+        {
+          "fieldName": "PatchCheckSum",
+          "type": "HexInt32",
+          "seenIn": [
+            "securekernel.exe"
+          ]
+        },
+        {
+          "fieldName": "PatchSequenceNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "securekernel.exe"
+          ]
+        },
+        {
+          "fieldName": "PatchTimeDateStamp",
+          "type": "HexInt32",
+          "seenIn": [
+            "securekernel.exe"
+          ]
+        },
+        {
+          "fieldName": "ReverseOnly",
+          "type": "Bool32",
+          "seenIn": [
+            "securekernel.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "securekernel.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SkhalpPciBlockUnknownConfigSpaceAccess",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "VendorID:UInt16",
+            "DeviceID:UInt16",
+            "AccessOffet:UInt32",
+            "AccessLength:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "securekernel.exe",
+              "function": "SkhalpPciAccessAlwaysNoWrite",
+              "ea": "0x140084b52",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AccessLength",
+          "type": "UInt32",
+          "seenIn": [
+            "securekernel.exe"
+          ]
+        },
+        {
+          "fieldName": "AccessOffet",
+          "type": "UInt32",
+          "seenIn": [
+            "securekernel.exe"
+          ]
+        },
+        {
+          "fieldName": "DeviceID",
+          "type": "UInt16",
+          "seenIn": [
+            "securekernel.exe"
+          ]
+        },
+        {
+          "fieldName": "VendorID",
+          "type": "UInt16",
+          "seenIn": [
+            "securekernel.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SkpLogPerfEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "BootPhase:AnsiString",
+            "PhaseIndex:UInt16",
+            "TimeInMs:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "securekernel.exe",
+              "function": "SkpLogPerfEvent",
+              "ea": "0x1400b198d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BootPhase",
+          "type": "AnsiString",
+          "seenIn": [
+            "securekernel.exe"
+          ]
+        },
+        {
+          "fieldName": "PhaseIndex",
+          "type": "UInt16",
+          "seenIn": [
+            "securekernel.exe"
+          ]
+        },
+        {
+          "fieldName": "TimeInMs",
+          "type": "UInt64",
+          "seenIn": [
+            "securekernel.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

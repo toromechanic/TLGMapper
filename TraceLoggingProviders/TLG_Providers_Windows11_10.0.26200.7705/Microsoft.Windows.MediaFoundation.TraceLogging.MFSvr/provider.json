@@ -1,0 +1,96 @@
+{
+  "providerName": "Microsoft.Windows.MediaFoundation.TraceLogging.MFSvr",
+  "guid": "{3573706C-871D-45E4-AF8F-99A6480925BB}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "mfsvr.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "SVRInit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "InFrameServerMode:Bool32",
+            "InProtectedMode:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "mfsvr.dll",
+              "function": "?Initialize@CSimpleVRStreamSink@@QEAAJPEAVCSimpleVRSink@@AEAV?$ComPtr@UIMFAttributes@@@WRL@Microsoft@@@Z",
+              "ea": "0x1800727ed",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InFrameServerMode",
+          "type": "Bool32",
+          "seenIn": [
+            "mfsvr.dll"
+          ]
+        },
+        {
+          "fieldName": "InProtectedMode",
+          "type": "Bool32",
+          "seenIn": [
+            "mfsvr.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SVRModeChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "WindowlessSwapchainMode:Bool32",
+            "Old_WindowlessSwapchainMode:Bool32",
+            "FrameServerMode:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "mfsvr.dll",
+              "function": "?EnableWindowlessSwapchainMode@CSimpleVRStreamSink@@QEAAJH@Z",
+              "ea": "0x1800b1986",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FrameServerMode",
+          "type": "Bool32",
+          "seenIn": [
+            "mfsvr.dll"
+          ]
+        },
+        {
+          "fieldName": "Old_WindowlessSwapchainMode",
+          "type": "Bool32",
+          "seenIn": [
+            "mfsvr.dll"
+          ]
+        },
+        {
+          "fieldName": "WindowlessSwapchainMode",
+          "type": "Bool32",
+          "seenIn": [
+            "mfsvr.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

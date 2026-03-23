@@ -1,0 +1,182 @@
+{
+  "providerName": "AttackSurfaceMonitor",
+  "guid": "{C4E507B1-7224-4737-BDE0-CED9284E7073}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "ntoskrnl.exe"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "Ast.DeviceCreated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "DeviceName:CountedString",
+            "DeviceType:UInt32",
+            "DeviceCharacteristics:UInt32",
+            "DeviceObject:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "AstLogDeviceCreated",
+              "ea": "0x1409abec9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DeviceCharacteristics",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "DeviceName",
+          "type": "CountedString",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "DeviceObject",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "DeviceType",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Ast.DeviceSDDLChanged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "DeviceObject:HexInt64",
+            "&DeviceSecurityDescriptor:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "AstLogDeviceSDDLUpdated",
+              "ea": "0x1409aa03e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "&DeviceSecurityDescriptor",
+          "type": "CountedString",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "DeviceObject",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Ast.IoctlCalled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "DeviceObject:HexInt64",
+            "IoControlCode:UInt32",
+            "DeviceNameTailHash:UInt64",
+            "DeviceNameLength:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "IopXxxControlFile",
+              "ea": "0x1408c14aa",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DeviceNameLength",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "DeviceNameTailHash",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "DeviceObject",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "IoControlCode",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

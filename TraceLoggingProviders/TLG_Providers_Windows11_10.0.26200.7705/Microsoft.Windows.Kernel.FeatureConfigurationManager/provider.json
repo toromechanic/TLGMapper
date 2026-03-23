@@ -1,0 +1,226 @@
+{
+  "providerName": "Microsoft.Windows.Kernel.FeatureConfigurationManager",
+  "guid": "{F7E83426-2B81-58F9-C5D4-F2DB6D0AD473}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "ntoskrnl.exe"
+  ],
+  "uniqueEventCount": 5,
+  "events": [
+    {
+      "eventName": "BootLoaderDiagnosticInformation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "OriginalBootStatusState:UInt8",
+            "NewBootStatusState:UInt8",
+            "ConfigurationLoaded:UInt8",
+            "Flags:UInt32",
+            "ConfigurationComparisonStatus:UInt32(NTStatus)",
+            "CurrentConfigurationLoadStatus:UInt32(NTStatus)",
+            "LkgConfigurationLoadStatus:UInt32(NTStatus)",
+            "UsageSubscriptionLoadStatus:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmFcInitSystem3",
+              "ea": "0x140c5d27b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConfigurationComparisonStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ConfigurationLoaded",
+          "type": "UInt8",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "CurrentConfigurationLoadStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "LkgConfigurationLoadStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "NewBootStatusState",
+          "type": "UInt8",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OriginalBootStatusState",
+          "type": "UInt8",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UsageSubscriptionLoadStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FeatureConfigurationOverwriteCorruptedBuffer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000001",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmFcManagerOverwriteFeatureConfigurationSection",
+              "ea": "0x1407e23db",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FeatureConfigurationUpdateCorruptedBuffer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000001",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmFcManagerUpdateFeatureConfigurations",
+              "ea": "0x1407e2bf0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GovernedFeatureConfigurationUpdateCorruptedBuffer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000001",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmFcManagerUpdateFeatureConfigurations",
+              "ea": "0x1407e2cff",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UsageSubscriptionUpdateCorruptedBuffer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000001",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmFcManagerUpdateFeatureUsageSubscriptions",
+              "ea": "0x140b28fe9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

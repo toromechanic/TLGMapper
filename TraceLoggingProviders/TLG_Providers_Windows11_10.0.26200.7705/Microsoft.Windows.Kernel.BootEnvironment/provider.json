@@ -1,0 +1,990 @@
+{
+  "providerName": "Microsoft.Windows.Kernel.BootEnvironment",
+  "guid": "{23B76A75-CE4F-56EF-F903-C3A2D6AE3F6B}",
+  "os": "Windows 11",
+  "binaryCount": 6,
+  "binaries": [
+    "ntoskrnl.exe",
+    "tcbloader.dll",
+    "winload.exe",
+    "winload_System32_7FD4467C.exe",
+    "winresume.exe",
+    "winresume_System32_E51FB45B.exe"
+  ],
+  "uniqueEventCount": 9,
+  "events": [
+    {
+      "eventName": "FirmwareBootData",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ResetEnd:UInt64",
+            "LoadImageStart:UInt64",
+            "StartImageStart:UInt64",
+            "ExitBootServicesEntry:UInt64",
+            "ExitBootServicesExit:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "BapdRecordFirmwareBootStats",
+              "ea": "0x140b5eee6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ExitBootServicesEntry",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ExitBootServicesExit",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "LoadImageStart",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ResetEnd",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "StartImageStart",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NativeVhdBoot",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "EventTimestamp:UInt32",
+            "BootApplicationId:GUID",
+            "BootSequence:UInt64",
+            "DiskType:UInt32",
+            "ResidesOnSystemDisk:Bool32",
+            "PhysicalSizeGB:UInt32",
+            "VirtualSizeGB:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "winload.exe",
+              "function": "OslpSqmVhdBootData",
+              "ea": "0x180020d16",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winload_System32_7FD4467C.exe",
+              "function": "OslpSqmVhdBootData",
+              "ea": "0x180020d16",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BootApplicationId",
+          "type": "GUID",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        },
+        {
+          "fieldName": "BootSequence",
+          "type": "UInt64",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        },
+        {
+          "fieldName": "DiskType",
+          "type": "UInt32",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        },
+        {
+          "fieldName": "EventTimestamp",
+          "type": "UInt32",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        },
+        {
+          "fieldName": "PhysicalSizeGB",
+          "type": "UInt32",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        },
+        {
+          "fieldName": "ResidesOnSystemDisk",
+          "type": "Bool32",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        },
+        {
+          "fieldName": "VirtualSizeGB",
+          "type": "UInt32",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OsLaunch",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x800000000000",
+          "fields": [
+            "EventTimestamp:UInt32",
+            "BootApplicationId:GUID",
+            "BootSequence:UInt64",
+            "IO:Struct(String)",
+            "BytesRead:UInt64",
+            "BytesWritten:UInt64",
+            "BootType:AnsiString",
+            "MeasuredLaunchPrepared:Bool32",
+            "TcbLaunch:Bool32",
+            "MeasuredLaunchCapable:Bool32",
+            "UserInputTime:UInt64",
+            "LastShutdownSucceeded:Bool32",
+            "LastBootSucceeded:Bool32",
+            "BootAttemptCount:UInt8",
+            "MenuPolicy:AnsiString",
+            "RecoveryEnabled:Bool32",
+            "BootStatusPolicy:UInt8",
+            "MaxBelow4GbFreeRange:UInt64",
+            "MaxAbove4GbFreeRange:UInt64",
+            "FirmwareResetReasonSupplied:Bool32",
+            "FirmwareResetReasonPch:UInt8",
+            "FirmwareResetReasonPchAdditional:UInt32",
+            "FirmwareResetReasonEmbeddedController:UInt8",
+            "FirmwareResetReasonEmbeddedControllerAdditional:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "winload.exe",
+              "function": "OslpLogLoaderTransition",
+              "ea": "0x18000c247",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winload_System32_7FD4467C.exe",
+              "function": "OslpLogLoaderTransition",
+              "ea": "0x18000c247",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x800000000000",
+          "fields": [
+            "EventTimestamp:UInt32",
+            "BootApplicationId:GUID",
+            "BootSequence:UInt64",
+            "IO:Struct(String)",
+            "BytesRead:UInt64",
+            "BytesWritten:UInt64",
+            "BootType:AnsiString",
+            "UserInputTime:UInt64",
+            "LastShutdownSucceeded:Bool32",
+            "LastBootSucceeded:Bool32",
+            "BootAttemptCount:UInt8",
+            "MenuPolicy:AnsiString",
+            "RecoveryEnabled:Bool32",
+            "BootStatusPolicy:UInt8",
+            "FirmwareResetReasonSupplied:Bool32",
+            "FirmwareResetReasonPch:UInt8",
+            "FirmwareResetReasonPchAdditional:UInt32",
+            "FirmwareResetReasonEmbeddedController:UInt8",
+            "FirmwareResetReasonEmbeddedControllerAdditional:UInt32",
+            "MeasuredLaunchResume:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "winresume.exe",
+              "function": "HbpLogLoaderTransition",
+              "ea": "0x40341f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winresume_System32_E51FB45B.exe",
+              "function": "HbpLogLoaderTransition",
+              "ea": "0x40341f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BootApplicationId",
+          "type": "GUID",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe",
+            "winresume.exe",
+            "winresume_System32_E51FB45B.exe"
+          ]
+        },
+        {
+          "fieldName": "BootAttemptCount",
+          "type": "UInt8",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe",
+            "winresume.exe",
+            "winresume_System32_E51FB45B.exe"
+          ]
+        },
+        {
+          "fieldName": "BootSequence",
+          "type": "UInt64",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe",
+            "winresume.exe",
+            "winresume_System32_E51FB45B.exe"
+          ]
+        },
+        {
+          "fieldName": "BootStatusPolicy",
+          "type": "UInt8",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe",
+            "winresume.exe",
+            "winresume_System32_E51FB45B.exe"
+          ]
+        },
+        {
+          "fieldName": "BootType",
+          "type": "AnsiString",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe",
+            "winresume.exe",
+            "winresume_System32_E51FB45B.exe"
+          ]
+        },
+        {
+          "fieldName": "BytesRead",
+          "type": "UInt64",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe",
+            "winresume.exe",
+            "winresume_System32_E51FB45B.exe"
+          ]
+        },
+        {
+          "fieldName": "BytesWritten",
+          "type": "UInt64",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe",
+            "winresume.exe",
+            "winresume_System32_E51FB45B.exe"
+          ]
+        },
+        {
+          "fieldName": "EventTimestamp",
+          "type": "UInt32",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe",
+            "winresume.exe",
+            "winresume_System32_E51FB45B.exe"
+          ]
+        },
+        {
+          "fieldName": "FirmwareResetReasonEmbeddedController",
+          "type": "UInt8",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe",
+            "winresume.exe",
+            "winresume_System32_E51FB45B.exe"
+          ]
+        },
+        {
+          "fieldName": "FirmwareResetReasonEmbeddedControllerAdditional",
+          "type": "UInt32",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe",
+            "winresume.exe",
+            "winresume_System32_E51FB45B.exe"
+          ]
+        },
+        {
+          "fieldName": "FirmwareResetReasonPch",
+          "type": "UInt8",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe",
+            "winresume.exe",
+            "winresume_System32_E51FB45B.exe"
+          ]
+        },
+        {
+          "fieldName": "FirmwareResetReasonPchAdditional",
+          "type": "UInt32",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe",
+            "winresume.exe",
+            "winresume_System32_E51FB45B.exe"
+          ]
+        },
+        {
+          "fieldName": "FirmwareResetReasonSupplied",
+          "type": "Bool32",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe",
+            "winresume.exe",
+            "winresume_System32_E51FB45B.exe"
+          ]
+        },
+        {
+          "fieldName": "IO",
+          "type": "Struct(String)",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe",
+            "winresume.exe",
+            "winresume_System32_E51FB45B.exe"
+          ]
+        },
+        {
+          "fieldName": "LastBootSucceeded",
+          "type": "Bool32",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe",
+            "winresume.exe",
+            "winresume_System32_E51FB45B.exe"
+          ]
+        },
+        {
+          "fieldName": "LastShutdownSucceeded",
+          "type": "Bool32",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe",
+            "winresume.exe",
+            "winresume_System32_E51FB45B.exe"
+          ]
+        },
+        {
+          "fieldName": "MaxAbove4GbFreeRange",
+          "type": "UInt64",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        },
+        {
+          "fieldName": "MaxBelow4GbFreeRange",
+          "type": "UInt64",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        },
+        {
+          "fieldName": "MeasuredLaunchCapable",
+          "type": "Bool32",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        },
+        {
+          "fieldName": "MeasuredLaunchPrepared",
+          "type": "Bool32",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        },
+        {
+          "fieldName": "MeasuredLaunchResume",
+          "type": "Bool32",
+          "seenIn": [
+            "winresume.exe",
+            "winresume_System32_E51FB45B.exe"
+          ]
+        },
+        {
+          "fieldName": "MenuPolicy",
+          "type": "AnsiString",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe",
+            "winresume.exe",
+            "winresume_System32_E51FB45B.exe"
+          ]
+        },
+        {
+          "fieldName": "RecoveryEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe",
+            "winresume.exe",
+            "winresume_System32_E51FB45B.exe"
+          ]
+        },
+        {
+          "fieldName": "TcbLaunch",
+          "type": "Bool32",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        },
+        {
+          "fieldName": "UserInputTime",
+          "type": "UInt64",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe",
+            "winresume.exe",
+            "winresume_System32_E51FB45B.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OslAdvancedMenu",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "EventTimestamp:UInt32",
+            "BootApplicationId:GUID",
+            "BootSequence:UInt64",
+            "MenuPolicy:AnsiString",
+            "Choice:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "winload.exe",
+              "function": "OslpDisplayAdvancedBootMenu",
+              "ea": "0x18001f8be",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winload_System32_7FD4467C.exe",
+              "function": "OslpDisplayAdvancedBootMenu",
+              "ea": "0x18001f8be",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BootApplicationId",
+          "type": "GUID",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        },
+        {
+          "fieldName": "BootSequence",
+          "type": "UInt64",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        },
+        {
+          "fieldName": "Choice",
+          "type": "CountedString",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        },
+        {
+          "fieldName": "EventTimestamp",
+          "type": "UInt32",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        },
+        {
+          "fieldName": "MenuPolicy",
+          "type": "AnsiString",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OsloaderTime",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "StartTime:UInt64",
+            "EndTime:UInt64",
+            "PreloadEndTime:UInt64",
+            "TcbLoaderStartTime:UInt64",
+            "LoadVsmTime:UInt64",
+            "LaunchVsmTime:UInt64",
+            "LoadHypervisorTime:UInt64",
+            "LaunchHypervisorTime:UInt64",
+            "Frequency:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "BapdRecordFirmwareBootStats",
+              "ea": "0x140b5f094",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EndTime",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Frequency",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "LaunchHypervisorTime",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "LaunchVsmTime",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "LoadHypervisorTime",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "LoadVsmTime",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PreloadEndTime",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "StartTime",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "TcbLoaderStartTime",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SmmIsolation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "IsolationLevel:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "tcbloader.dll",
+              "function": "OslpSetSystemBootFlags",
+              "ea": "0x18000af29",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsolationLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TcbLaunchRamDiskAllocationRetry",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "winload.exe",
+              "function": "BlTcbLaunchAllocateRamDisk",
+              "ea": "0x1800b2acf",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winload_System32_7FD4467C.exe",
+              "function": "BlTcbLaunchAllocateRamDisk",
+              "ea": "0x1800b2acf",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winresume.exe",
+              "function": "BlTcbLaunchAllocateRamDisk",
+              "ea": "0x474757",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winresume_System32_E51FB45B.exe",
+              "function": "BlTcbLaunchAllocateRamDisk",
+              "ea": "0x474757",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe",
+            "winresume.exe",
+            "winresume_System32_E51FB45B.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TxtInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x800000000000",
+          "fields": [
+            "EventTimestamp:UInt32",
+            "BootApplicationId:GUID",
+            "BootSequence:UInt64",
+            "TxtStatus:UInt32",
+            "TxtErrorCode:UInt32",
+            "TxtSupported:UInt8(Boolean)",
+            "TxtRegistersValid:UInt8(Boolean)",
+            "AcmPresent:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "winload.exe",
+              "function": "OslpTxtSetup",
+              "ea": "0x18002626f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winload_System32_7FD4467C.exe",
+              "function": "OslpTxtSetup",
+              "ea": "0x18002626f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AcmPresent",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        },
+        {
+          "fieldName": "BootApplicationId",
+          "type": "GUID",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        },
+        {
+          "fieldName": "BootSequence",
+          "type": "UInt64",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        },
+        {
+          "fieldName": "EventTimestamp",
+          "type": "UInt32",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        },
+        {
+          "fieldName": "TxtErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        },
+        {
+          "fieldName": "TxtRegistersValid",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        },
+        {
+          "fieldName": "TxtStatus",
+          "type": "UInt32",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        },
+        {
+          "fieldName": "TxtSupported",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_7FD4467C.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VSMDRTMKeyReport",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0xc00000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "DrtmBoundKeyProvisioned:UInt8(Boolean)",
+            "CachedCopyStatus:UInt32(NTStatus)",
+            "LKeyGenerationStatus:UInt32(NTStatus)",
+            "SealAndSaveStatus:UInt32(NTStatus)",
+            "UefiKeysStatus:UInt32(NTStatus)",
+            "UnlatchedCiPolicy:UInt64",
+            "LatchedCiPolicy:UInt64",
+            "LatchedAntiRollbackCounterValue:UInt64",
+            "CurrentPolicyVersion:UInt64",
+            "CurrentAntiRollbackCounterValue:UInt64",
+            "MinimumUnsealCiPolicyVersion:UInt64",
+            "AuthorizationIsDelegated:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "tcbloader.dll",
+              "function": "OslpDrtmLKeyReportEtwNew",
+              "ea": "0x180014abf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AuthorizationIsDelegated",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "CachedCopyStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "CurrentAntiRollbackCounterValue",
+          "type": "UInt64",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "CurrentPolicyVersion",
+          "type": "UInt64",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "DrtmBoundKeyProvisioned",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "LKeyGenerationStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "LatchedAntiRollbackCounterValue",
+          "type": "UInt64",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "LatchedCiPolicy",
+          "type": "UInt64",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "MinimumUnsealCiPolicyVersion",
+          "type": "UInt64",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "SealAndSaveStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "UefiKeysStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "UnlatchedCiPolicy",
+          "type": "UInt64",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "providerName": "Microsoft.Windows.Power.EnergyMeter",
+  "guid": "{845D84D3-8996-4508-8688-3FEA3A426915}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "umpoext.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "EmiChannelData",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ChannelName:UnicodeString",
+            "IsInCsSession:UInt8(Boolean)",
+            "CsSessionId:UInt64",
+            "AbsoluteEnergy:UInt64",
+            "AbsoluteTime:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?UmpoTraceEmiChannelMeasurementForTelemetry@@YAXPEAU_UMPO_EMI_DEVICE_CHANNEL@@PEAUEMI_CHANNEL_MEASUREMENT_DATA@@_KE@Z",
+              "ea": "0x18001aa21",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AbsoluteEnergy",
+          "type": "UInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "AbsoluteTime",
+          "type": "UInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "ChannelName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "CsSessionId",
+          "type": "UInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "IsInCsSession",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

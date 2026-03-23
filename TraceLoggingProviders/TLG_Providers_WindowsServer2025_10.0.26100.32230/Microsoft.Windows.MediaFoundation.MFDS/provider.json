@@ -1,0 +1,74 @@
+{
+  "providerName": "Microsoft.Windows.MediaFoundation.MFDS",
+  "guid": "{4D0B22C3-3B49-5AF6-BA09-0A1CDA1083C4}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "mfds.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "DVDGraphPartialInit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "MFMediaTelemetrySessionID:GUID",
+            "MFMediaTelemetrySessionInstance:UInt32",
+            "InitHR:Int32(HResult)",
+            "NumStreams:Int32",
+            "NumStreamsFailed:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "mfds.dll",
+              "function": "?CreateDVDGraph@CDShowWrapper@@IEAAJXZ",
+              "ea": "0x180067212",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InitHR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "mfds.dll"
+          ]
+        },
+        {
+          "fieldName": "MFMediaTelemetrySessionID",
+          "type": "GUID",
+          "seenIn": [
+            "mfds.dll"
+          ]
+        },
+        {
+          "fieldName": "MFMediaTelemetrySessionInstance",
+          "type": "UInt32",
+          "seenIn": [
+            "mfds.dll"
+          ]
+        },
+        {
+          "fieldName": "NumStreams",
+          "type": "Int32",
+          "seenIn": [
+            "mfds.dll"
+          ]
+        },
+        {
+          "fieldName": "NumStreamsFailed",
+          "type": "Int32",
+          "seenIn": [
+            "mfds.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

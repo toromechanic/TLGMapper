@@ -1,0 +1,1291 @@
+{
+  "providerName": "Microsoft.Windows.Storage.Tiering.Telemetry",
+  "guid": "{6971CAD2-D856-417F-B84D-383A6144FB11}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "TieringEngineService.exe"
+  ],
+  "uniqueEventCount": 17,
+  "events": [
+    {
+      "eventName": "FailedMigratePinnedDbToDscAttrib",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "tieredVolumeCsvGuidRootPath:CountedString",
+            "hResult:Int32(HResult)",
+            "lastSourceId:UInt8",
+            "recordCount:UInt32",
+            "failedMigrateCount:UInt32",
+            "errors:Struct[](String)",
+            "errorCode:Int32",
+            "sourceId:Int8"
+          ],
+          "callers": [
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?MigratePinnedDatabaseToDscAttribute@TieringPinnedSession@@QEAAJXZ",
+              "ea": "0x140022412",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "errorCode",
+          "type": "Int32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "errors",
+          "type": "Struct[](String)",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "failedMigrateCount",
+          "type": "UInt32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "hResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "lastSourceId",
+          "type": "UInt8",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "recordCount",
+          "type": "UInt32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "sourceId",
+          "type": "Int8",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "tieredVolumeCsvGuidRootPath",
+          "type": "CountedString",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FailedQueryPinnedFiles",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "tieredVolumeCsvGuidRootPath:CountedString",
+            "sourceId:UInt8",
+            "numberOfEntries:UInt64",
+            "failedPinRecord:UInt64",
+            "hResult:Int32(HResult)",
+            "pinRecordsError:UInt32[]"
+          ],
+          "callers": [
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?PopulatePinnedCacheFromQfl@CTieredVolume@@AEAAJPEAVTieringPinnedSession@@@Z",
+              "ea": "0x140030d3c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "failedPinRecord",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "hResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "numberOfEntries",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "pinRecordsError",
+          "type": "UInt32[]",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "sourceId",
+          "type": "UInt8",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "tieredVolumeCsvGuidRootPath",
+          "type": "CountedString",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HeatFileListForDiskOptimizer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "tieredVolumeCsvGuidRootPath:CountedString",
+            "desiredStorageTierClass:UInt32",
+            "recordCount:UInt32",
+            "continueRequired:Bool32",
+            "resumeKeyPriority:UInt32",
+            "resumeKeyFileIdHigh:UInt64",
+            "resumeKeyFileIdLow:UInt64",
+            "resumeKeyLastFileOffset:Int64",
+            "jetDBFileName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?GetMovementsListForDiskOptimizer@TieringHeatSession@@QEAAJW4_STORAGE_TIER_CLASS@@KPEAVTieringMovementSession@@PEAU_TE_ENUM_INTERNAL_RESUME_KEY@@PEAHPEAJPEAPEAU__MIDL___MIDL_itf_tieringengine_0000_0000_0005@@@Z",
+              "ea": "0x140023fe6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "continueRequired",
+          "type": "Bool32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "desiredStorageTierClass",
+          "type": "UInt32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "jetDBFileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "recordCount",
+          "type": "UInt32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "resumeKeyFileIdHigh",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "resumeKeyFileIdLow",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "resumeKeyLastFileOffset",
+          "type": "Int64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "resumeKeyPriority",
+          "type": "UInt32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "tieredVolumeCsvGuidRootPath",
+          "type": "CountedString",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InitiateTierProcessingStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "processingState:UInt16",
+            "flags:UInt32",
+            "tieredVolumeCsvGuidRootPath:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?InitiateProcessing@CTieredVolume@@AEAAJK@Z",
+              "ea": "0x140025341",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "flags",
+          "type": "UInt32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "processingState",
+          "type": "UInt16",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "tieredVolumeCsvGuidRootPath",
+          "type": "CountedString",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NewTieredVolumeMount",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "tieredVolumeGuid:GUID",
+            "tieredVolumeCsvGuidRootPath:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?OnNewVolume@CTieringEngineLib@@AEAAXPEBU_TIERING_VOLUME_INFO_EVENT_DATA@@@Z",
+              "ea": "0x140007e73",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "tieredVolumeCsvGuidRootPath",
+          "type": "CountedString",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "tieredVolumeGuid",
+          "type": "GUID",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PinnedFileListForDiskOptimizer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "tieredVolumeCsvGuidRootPath:CountedString",
+            "desiredStorageTierClass:UInt32",
+            "recordCount:UInt32",
+            "continueRequired:Bool32",
+            "resumeKeyFileIdHigh:UInt64",
+            "resumeKeyFileIdLow:UInt64",
+            "jetDBFileName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?GetPinnedFilesListForDiskOptimizer@TieringPinnedSession@@QEAAJW4_STORAGE_TIER_CLASS@@KPEAU_TE_ENUM_INTERNAL_RESUME_KEY@@PEAHPEAJPEAPEAU__MIDL___MIDL_itf_tieringengine_0000_0000_0005@@@Z",
+              "ea": "0x140024fac",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "continueRequired",
+          "type": "Bool32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "desiredStorageTierClass",
+          "type": "UInt32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "jetDBFileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "recordCount",
+          "type": "UInt32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "resumeKeyFileIdHigh",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "resumeKeyFileIdLow",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "tieredVolumeCsvGuidRootPath",
+          "type": "CountedString",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessVolumeTablesEnd",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "processingState:UInt16",
+            "tieredVolumeCsvGuidRootPath:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?ProcessVolumeTables@CTieredVolume@@AEAAJPEA_N@Z",
+              "ea": "0x140031d81",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "processingState",
+          "type": "UInt16",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "tieredVolumeCsvGuidRootPath",
+          "type": "CountedString",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessVolumeTablesStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "processingState:UInt16",
+            "tieredVolumeCsvGuidRootPath:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?ProcessVolumeTables@CTieredVolume@@AEAAJPEA_N@Z",
+              "ea": "0x140031151",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "processingState",
+          "type": "UInt16",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "tieredVolumeCsvGuidRootPath",
+          "type": "CountedString",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessingPass3End",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "tieredVolumeCsvGuidRoothPath:CountedString",
+            "heatRecordsProcessed:UInt32",
+            "flashClustersFree:Int64",
+            "diskClustersFree:Int64",
+            "totalFlashHeatClusters:UInt64",
+            "totalDiskHeatClusters:UInt64",
+            "priorityToPromote:UInt32",
+            "priorityToDemote:UInt32",
+            "priorityToRetain:UInt32",
+            "averagePriorityOnFlash:UInt32",
+            "averagePriorityOnDisk:UInt32",
+            "totalIOsPinnedDiskCurrentlyFlash:UInt64",
+            "totalIOsPinnedFlashCurrentlyDisk:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?Processing_Pass3@CTieredVolume@@AEAAJPEAXPEAVTieringHeatSession@@_K2_J32@Z",
+              "ea": "0x14003717a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "averagePriorityOnDisk",
+          "type": "UInt32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "averagePriorityOnFlash",
+          "type": "UInt32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "diskClustersFree",
+          "type": "Int64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "flashClustersFree",
+          "type": "Int64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "heatRecordsProcessed",
+          "type": "UInt32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "priorityToDemote",
+          "type": "UInt32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "priorityToPromote",
+          "type": "UInt32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "priorityToRetain",
+          "type": "UInt32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "tieredVolumeCsvGuidRoothPath",
+          "type": "CountedString",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "totalDiskHeatClusters",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "totalFlashHeatClusters",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "totalIOsPinnedDiskCurrentlyFlash",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "totalIOsPinnedFlashCurrentlyDisk",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessingPass3Start",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "tieredVolumeCsvGuidRoothPath:CountedString",
+            "maxHeatReplaceInPercentage:UInt16",
+            "totalFlashClusters:UInt64",
+            "flashClustersFree:Int64",
+            "diskClustersFree:Int64",
+            "largestPrioritySeen:UInt32",
+            "numberOfHeatBuckets:UInt32",
+            "prioritiesPerBucket:UInt32",
+            "pinnedToFlashClusterCount:UInt64",
+            "pinnedToDiskClusterCount:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?Processing_Pass3@CTieredVolume@@AEAAJPEAXPEAVTieringHeatSession@@_K2_J32@Z",
+              "ea": "0x14003464a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "diskClustersFree",
+          "type": "Int64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "flashClustersFree",
+          "type": "Int64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "largestPrioritySeen",
+          "type": "UInt32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "maxHeatReplaceInPercentage",
+          "type": "UInt16",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "numberOfHeatBuckets",
+          "type": "UInt32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "pinnedToDiskClusterCount",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "pinnedToFlashClusterCount",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "prioritiesPerBucket",
+          "type": "UInt32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "tieredVolumeCsvGuidRoothPath",
+          "type": "CountedString",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "totalFlashClusters",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StartTieringEngine",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "numberOfActiveVolumes:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?StartTieringEngine@CTieringEngineLib@@QEAAJPEAX@Z",
+              "ea": "0x140009593",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "numberOfActiveVolumes",
+          "type": "Int32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StopTieringEngine",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "numberOfActiveVolumes:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?SignalShutdownAndWait@CTieringEngineLib@@QEAAXXZ",
+              "ea": "0x1400093d1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "numberOfActiveVolumes",
+          "type": "Int32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TierOptimizationReport",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "tieredVolumeCsvGuidRootPath:CountedString",
+            "tieredVolumeBytesPerCluster:UInt32",
+            "approxBlockCountToMoveToFlash:UInt64",
+            "approxBlockCountToMoveToDisk:UInt64",
+            "blockCountToMovedToFlash:UInt64",
+            "blockCountToMovedToDisk:UInt64",
+            "processingResult:Int32(HResult)",
+            "processTimeInMinutes:UInt32",
+            "defragTimeInMinutes:UInt32",
+            "requiredSsdBytes:UInt64",
+            "flashClustersFree:Int64",
+            "diskClustersFree:Int64",
+            "currentSsdTierSize:UInt64",
+            "currentHddTierSize:UInt64",
+            "sizeOfFilesPinnedToSsdTier:UInt64",
+            "sizeOfFilesPinnedToHddTier:UInt64",
+            "numberOfFilesPinnedToSsdTier:UInt64",
+            "numberOfFilesPinnedToHddTier:UInt64",
+            "percentOfTotalIOsServedFromSsdTier:UInt64",
+            "percentOfIOsFromPinnedFileOnSsd:UInt64",
+            "percentOfIOsFromPinnedFileOnHdd:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?LogTierOptimizationReport@CTieredVolume@@AEAAJXZ",
+              "ea": "0x1400259c7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "approxBlockCountToMoveToDisk",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "approxBlockCountToMoveToFlash",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "blockCountToMovedToDisk",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "blockCountToMovedToFlash",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "currentHddTierSize",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "currentSsdTierSize",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "defragTimeInMinutes",
+          "type": "UInt32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "diskClustersFree",
+          "type": "Int64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "flashClustersFree",
+          "type": "Int64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "numberOfFilesPinnedToHddTier",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "numberOfFilesPinnedToSsdTier",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "percentOfIOsFromPinnedFileOnHdd",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "percentOfIOsFromPinnedFileOnSsd",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "percentOfTotalIOsServedFromSsdTier",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "processTimeInMinutes",
+          "type": "UInt32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "processingResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "requiredSsdBytes",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "sizeOfFilesPinnedToHddTier",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "sizeOfFilesPinnedToSsdTier",
+          "type": "UInt64",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "tieredVolumeBytesPerCluster",
+          "type": "UInt32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "tieredVolumeCsvGuidRootPath",
+          "type": "CountedString",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TieredVolumeArrival",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "tieredVolumeGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?OnVolumeInfo@CTieringEngineLib@@AEAAXPEAU_EVENT_RECORD@@@Z",
+              "ea": "0x140008035",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "tieredVolumeGuid",
+          "type": "GUID",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TieredVolumeDismount",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "tieredVolumeCsvGuidRootPath:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?HandleVolumeDismount@CTieredVolume@@AEAAJ_N@Z",
+              "ea": "0x140011127",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "tieredVolumeCsvGuidRootPath",
+          "type": "CountedString",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TieredVolumeMountHeatEventLoss",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "tieredVolumeGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?OnVolumeInfo@CTieringEngineLib@@AEAAXPEAU_EVENT_RECORD@@@Z",
+              "ea": "0x140042a81",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "tieredVolumeGuid",
+          "type": "GUID",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TieringJetError",
+      "variantCount": 4,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "tieredVolumeCsvGuidRootPath:CountedString",
+            "jetPath:UnicodeString",
+            "jetInstanceName:UnicodeString",
+            "jetError:Int32",
+            "hresult:Int32",
+            "functionName:AnsiString",
+            "operation:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?AllocateAndSetupJetInstance@CTieredVolume@@QEAAJPEAGHPEA_K@Z",
+              "ea": "0x14001a6b3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "tieredVolumeCsvGuidRootPath:CountedString",
+            "jetPath:UnicodeString",
+            "jetError:Int32",
+            "functionName:AnsiString",
+            "operation:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?CallJetTerm@CTieredVolume@@QEAAJ_KK@Z",
+              "ea": "0x14001a86b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?CallJetTerm@CTieredVolume@@QEAAJ_KK@Z",
+              "ea": "0x14001a910",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?EnableJetMultiInstance@CTieredVolume@@QEAAXPEAG@Z",
+              "ea": "0x14001b121",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?InitializeJetInstance@CTieredVolume@@QEAAJPEAGHPEA_K@Z",
+              "ea": "0x14001bc97",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?InitializeJetInstance@CTieredVolume@@QEAAJPEAGHPEA_K@Z",
+              "ea": "0x14001c375",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "tieredVolumeCsvGuidRootPath:CountedString",
+            "jetPath:UnicodeString",
+            "jetError:Int32",
+            "functionName:AnsiString",
+            "operation:UInt32",
+            "paramId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?EnableJetMultiInstance@CTieredVolume@@QEAAXPEAG@Z",
+              "ea": "0x14001b212",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "tieredVolumeCsvGuidRootPath:CountedString",
+            "jetPath:UnicodeString",
+            "jetError:Int32",
+            "functionName:AnsiString",
+            "operation:UInt32",
+            "hResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "TieringEngineService.exe",
+              "function": "?InitializeJetInstance@CTieredVolume@@QEAAJPEAGHPEA_K@Z",
+              "ea": "0x14001c848",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "functionName",
+          "type": "AnsiString",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "hResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "Int32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "jetError",
+          "type": "Int32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "jetInstanceName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "jetPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "operation",
+          "type": "UInt32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "paramId",
+          "type": "UInt32",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        },
+        {
+          "fieldName": "tieredVolumeCsvGuidRootPath",
+          "type": "CountedString",
+          "seenIn": [
+            "TieringEngineService.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

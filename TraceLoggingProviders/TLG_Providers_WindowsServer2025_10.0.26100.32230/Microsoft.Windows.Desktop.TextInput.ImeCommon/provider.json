@@ -1,0 +1,670 @@
+{
+  "providerName": "Microsoft.Windows.Desktop.TextInput.ImeCommon",
+  "guid": "{2593BDF1-313B-5C29-355C-6065BA331797}",
+  "os": "WindowsServer2025",
+  "binaryCount": 13,
+  "binaries": [
+    "IMEFILES.DLL",
+    "IMELM.DLL",
+    "IMEPADSM.DLL",
+    "IMETIP.DLL",
+    "IMJPAPI.DLL",
+    "IMJPCMLD.DLL",
+    "IMJPDAPI.DLL",
+    "IMJPDCT.EXE",
+    "IMJPLMP.DLL",
+    "IMJPPRED.DLL",
+    "ImeBroker.exe",
+    "MSCAND20.DLL",
+    "imjpuexc.exe"
+  ],
+  "uniqueEventCount": 9,
+  "events": [
+    {
+      "eventName": "CandidateMenuClosed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "menuItemId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "MSCAND20.DLL",
+              "function": "?CandidateMenuClosed@ImeCommonTraceLoggingTelemetry@@SAXI@Z",
+              "ea": "0x18003ba86",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "MSCAND20.DLL"
+          ]
+        },
+        {
+          "fieldName": "menuItemId",
+          "type": "UInt32",
+          "seenIn": [
+            "MSCAND20.DLL"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FallbackError",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilResult:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "IMELM.DLL",
+              "function": "?ReportTelemetryFailure@TraceLoggingProvider@wil@@IEAAXAEBUFailureInfo@2@@Z",
+              "ea": "0x180026569",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilResult:Struct(Signed)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "failureId:UInt32",
+            "failureCount:UInt32",
+            "function:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "IMELM.DLL",
+              "function": "?ReportTraceLoggingFailure@TraceLoggingProvider@wil@@IEAAXAEBUFailureInfo@2@@Z",
+              "ea": "0x18002672b",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "IMELM.DLL"
+          ]
+        },
+        {
+          "fieldName": "callContext",
+          "type": "AnsiString",
+          "seenIn": [
+            "IMELM.DLL"
+          ]
+        },
+        {
+          "fieldName": "currentContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "IMELM.DLL"
+          ]
+        },
+        {
+          "fieldName": "currentContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "IMELM.DLL"
+          ]
+        },
+        {
+          "fieldName": "currentContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "IMELM.DLL"
+          ]
+        },
+        {
+          "fieldName": "failureCount",
+          "type": "UInt32",
+          "seenIn": [
+            "IMELM.DLL"
+          ]
+        },
+        {
+          "fieldName": "failureId",
+          "type": "UInt32",
+          "seenIn": [
+            "IMELM.DLL"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "IMELM.DLL"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "IMELM.DLL"
+          ]
+        },
+        {
+          "fieldName": "function",
+          "type": "AnsiString",
+          "seenIn": [
+            "IMELM.DLL"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "IMELM.DLL"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "IMELM.DLL"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "IMELM.DLL"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "IMELM.DLL"
+          ]
+        },
+        {
+          "fieldName": "originatingContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "IMELM.DLL"
+          ]
+        },
+        {
+          "fieldName": "originatingContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "IMELM.DLL"
+          ]
+        },
+        {
+          "fieldName": "originatingContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "IMELM.DLL"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "IMELM.DLL"
+          ]
+        },
+        {
+          "fieldName": "wilResult",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "IMELM.DLL"
+          ]
+        },
+        {
+          "fieldName": "wilResult",
+          "type": "Struct(Signed)",
+          "seenIn": [
+            "IMELM.DLL"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FunctionTookTooLong",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "FunctionName:AnsiString",
+            "ElapsedTime:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "IMELM.DLL",
+              "function": "??$FunctionTookTooLong@AEAPEBDAEA_K@ImeCommonTraceLoggingTelemetry@@SAXAEAPEBDAEA_K@Z",
+              "ea": "0x180024cee",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "IMJPLMP.DLL",
+              "function": "??$FunctionTookTooLong@AEAPEBDAEA_K@ImeCommonTraceLoggingTelemetry@@SAXAEAPEBDAEA_K@Z",
+              "ea": "0x1800f4582",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "IMJPPRED.DLL",
+              "function": "??$FunctionTookTooLong@AEAPEBDAEA_K@ImeCommonTraceLoggingTelemetry@@SAXAEAPEBDAEA_K@Z",
+              "ea": "0x18005fa6a",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ElapsedTime",
+          "type": "UInt32",
+          "seenIn": [
+            "IMELM.DLL",
+            "IMJPLMP.DLL",
+            "IMJPPRED.DLL"
+          ]
+        },
+        {
+          "fieldName": "FunctionName",
+          "type": "AnsiString",
+          "seenIn": [
+            "IMELM.DLL",
+            "IMJPLMP.DLL",
+            "IMJPPRED.DLL"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "IMELM.DLL",
+            "IMJPLMP.DLL",
+            "IMJPPRED.DLL"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GridViewShown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "MSCAND20.DLL",
+              "function": "?GridViewShown@ImeCommonTraceLoggingTelemetry@@SAXXZ",
+              "ea": "0x18004bb72",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "MSCAND20.DLL"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ImePadCharInserted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "imeId:AnsiString",
+            "method:AnsiString",
+            "length:UInt32",
+            "unicodeRange:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "IMEPADSM.DLL",
+              "function": "?ImePadCharInserted@ImeCommonTraceLoggingTelemetry@@SAXPEBD0II@Z",
+              "ea": "0x180007886",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "IMEPADSM.DLL"
+          ]
+        },
+        {
+          "fieldName": "imeId",
+          "type": "AnsiString",
+          "seenIn": [
+            "IMEPADSM.DLL"
+          ]
+        },
+        {
+          "fieldName": "length",
+          "type": "UInt32",
+          "seenIn": [
+            "IMEPADSM.DLL"
+          ]
+        },
+        {
+          "fieldName": "method",
+          "type": "AnsiString",
+          "seenIn": [
+            "IMEPADSM.DLL"
+          ]
+        },
+        {
+          "fieldName": "unicodeRange",
+          "type": "UInt32",
+          "seenIn": [
+            "IMEPADSM.DLL"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ImePadClosed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "imeId:AnsiString",
+            "totalInputCount:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "IMEPADSM.DLL",
+              "function": "?ImePadClosed@ImeCommonTraceLoggingTelemetry@@SAXPEBDH@Z",
+              "ea": "0x180007994",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "IMEPADSM.DLL"
+          ]
+        },
+        {
+          "fieldName": "imeId",
+          "type": "AnsiString",
+          "seenIn": [
+            "IMEPADSM.DLL"
+          ]
+        },
+        {
+          "fieldName": "totalInputCount",
+          "type": "Int32",
+          "seenIn": [
+            "IMEPADSM.DLL"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ImePadOpened",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "imeId:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "IMEPADSM.DLL",
+              "function": "?ImePadOpened@ImeCommonTraceLoggingTelemetry@@SAXPEBD@Z",
+              "ea": "0x180007a76",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "IMEPADSM.DLL"
+          ]
+        },
+        {
+          "fieldName": "imeId",
+          "type": "AnsiString",
+          "seenIn": [
+            "IMEPADSM.DLL"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ImeShipAssert",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "tag:UInt32",
+            "comment:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "ImeBroker.exe",
+              "function": "?ImeShipAssertTelemetry@ImeCommonTraceLoggingTelemetry@@SAXKPEB_W@Z",
+              "ea": "0x14003c894",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "IMEFILES.DLL",
+              "function": "?ImeShipAssertTelemetry@ImeCommonTraceLoggingTelemetry@@SAXKPEBG@Z",
+              "ea": "0x1800211da",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "IMJPAPI.DLL",
+              "function": "?ImeShipAssertTelemetry@ImeCommonTraceLoggingTelemetry@@SAXKPEBG@Z",
+              "ea": "0x1800da6aa",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "IMJPCMLD.DLL",
+              "function": "?ImeShipAssertTelemetry@ImeCommonTraceLoggingTelemetry@@SAXKPEBG@Z",
+              "ea": "0x18002447a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "IMJPDAPI.DLL",
+              "function": "?ImeShipAssertTelemetry@ImeCommonTraceLoggingTelemetry@@SAXKPEBG@Z",
+              "ea": "0x18004e1fa",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "IMJPDCT.EXE",
+              "function": "?ImeShipAssertTelemetry@ImeCommonTraceLoggingTelemetry@@SAXKPEBG@Z",
+              "ea": "0x14004a4ac",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "IMJPLMP.DLL",
+              "function": "?ImeShipAssertTelemetry@ImeCommonTraceLoggingTelemetry@@SAXKPEBG@Z",
+              "ea": "0x180070396",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "IMJPPRED.DLL",
+              "function": "?ImeShipAssertTelemetry@ImeCommonTraceLoggingTelemetry@@SAXKPEB_W@Z",
+              "ea": "0x180055b0a",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "imjpuexc.exe",
+              "function": "?ImeShipAssertTelemetry@ImeCommonTraceLoggingTelemetry@@SAXKPEBG@Z",
+              "ea": "0x14004025e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "comment",
+          "type": "UnicodeString",
+          "seenIn": [
+            "IMEFILES.DLL",
+            "IMJPAPI.DLL",
+            "IMJPCMLD.DLL",
+            "IMJPDAPI.DLL",
+            "IMJPDCT.EXE",
+            "IMJPLMP.DLL",
+            "IMJPPRED.DLL",
+            "ImeBroker.exe",
+            "imjpuexc.exe"
+          ]
+        },
+        {
+          "fieldName": "tag",
+          "type": "UInt32",
+          "seenIn": [
+            "IMEFILES.DLL",
+            "IMJPAPI.DLL",
+            "IMJPCMLD.DLL",
+            "IMJPDAPI.DLL",
+            "IMJPDCT.EXE",
+            "IMJPLMP.DLL",
+            "IMJPPRED.DLL",
+            "ImeBroker.exe",
+            "imjpuexc.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ModeSwitched",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "type:AnsiString",
+            "imeOn:Int32",
+            "conversionMode:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "IMETIP.DLL",
+              "function": "?ModeSwitched@ImeCommonTraceLoggingTelemetry@@SAXPEBDHI@Z",
+              "ea": "0x18008d20f",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "IMETIP.DLL"
+          ]
+        },
+        {
+          "fieldName": "conversionMode",
+          "type": "HexInt32",
+          "seenIn": [
+            "IMETIP.DLL"
+          ]
+        },
+        {
+          "fieldName": "imeOn",
+          "type": "Int32",
+          "seenIn": [
+            "IMETIP.DLL"
+          ]
+        },
+        {
+          "fieldName": "type",
+          "type": "AnsiString",
+          "seenIn": [
+            "IMETIP.DLL"
+          ]
+        }
+      ]
+    }
+  ]
+}

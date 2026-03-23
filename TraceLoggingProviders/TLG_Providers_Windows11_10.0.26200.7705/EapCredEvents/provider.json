@@ -1,0 +1,59 @@
+{
+  "providerName": "EapCredEvents",
+  "guid": "{06C071F2-6C59-5D55-6B31-1578DD063DDC}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "TtlsAuth.dll",
+    "rastls.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "EAPSSORegKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "isFeatureEnabled:Bool32",
+            "interfaceGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "rastls.dll",
+              "function": "?WriteSSORegKeyValueEvent@@YAXHU_GUID@@@Z",
+              "ea": "0x180069c50",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "TtlsAuth.dll",
+              "function": "?WriteSSORegKeyValueEvent@@YAXHU_GUID@@@Z",
+              "ea": "0x18003250c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "interfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "TtlsAuth.dll",
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "isFeatureEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "TtlsAuth.dll",
+            "rastls.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

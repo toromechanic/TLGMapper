@@ -1,0 +1,939 @@
+{
+  "providerName": "Microsoft.Windows.Bluetooth.Telephony.AsyncPhoneController",
+  "guid": "{257D541D-16D8-433C-B421-9AE2255DF475}",
+  "os": "Windows 11",
+  "binaryCount": 4,
+  "binaries": [
+    "BTAGService.dll",
+    "HidTelephony.dll",
+    "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+    "Microsoft.Bluetooth.Audio.dll"
+  ],
+  "uniqueEventCount": 9,
+  "events": [
+    {
+      "eventName": "PhoneAcceptIncomingEx",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "HfpDeviceInterfaceId:UnicodeString",
+            "CallId1:UInt32",
+            "HResult:Int32(HResult)",
+            "BTDeviceAddress:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "BTAGService.dll",
+              "function": "?ReportPhoneAcceptIncomingEx@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJAEBUDeviceDetails@234@@Z",
+              "ea": "0x18007ed86",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "TbsDeviceInterfaceId:UnicodeString",
+            "CallId:UInt32",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "HidTelephony.dll",
+              "function": "sub_18001CEC8",
+              "ea": "0x18001cf3f",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+              "function": "?ReportPhoneAcceptIncomingEx@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJAEBUhstring@winrt@@I@Z",
+              "ea": "0x18001cf3f",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Microsoft.Bluetooth.Audio.dll",
+              "function": "?ReportPhoneAcceptIncomingEx@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJAEBUhstring@winrt@@I@Z",
+              "ea": "0x1801e4856",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BTDeviceAddress",
+          "type": "UInt64",
+          "seenIn": [
+            "BTAGService.dll"
+          ]
+        },
+        {
+          "fieldName": "CallId1",
+          "type": "UInt32",
+          "seenIn": [
+            "BTAGService.dll"
+          ]
+        },
+        {
+          "fieldName": "CallId",
+          "type": "UInt32",
+          "seenIn": [
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "BTAGService.dll",
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "HfpDeviceInterfaceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "BTAGService.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "BTAGService.dll",
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "TbsDeviceInterfaceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PhoneConference",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "CallId1:UInt32",
+            "CallId2:UInt32",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "HidTelephony.dll",
+              "function": "sub_18001CBD8",
+              "ea": "0x18001cc45",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+              "function": "?ReportConference@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJII@Z",
+              "ea": "0x18001cc45",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Microsoft.Bluetooth.Audio.dll",
+              "function": "?ReportConference@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJII@Z",
+              "ea": "0x1801e462a",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CallId1",
+          "type": "UInt32",
+          "seenIn": [
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "CallId2",
+          "type": "UInt32",
+          "seenIn": [
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PhoneDial",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "HfpDeviceInterfaceId:UnicodeString",
+            "HResult:Int32(HResult)",
+            "BTDeviceAddress:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "BTAGService.dll",
+              "function": "?ReportPhoneDial@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJAEBV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@AEB_K@Z",
+              "ea": "0x18007ee36",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "HidTelephony.dll",
+              "function": "sub_18001CF8C",
+              "ea": "0x18001d00d",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+              "function": "?ReportPhoneDial@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJ@Z",
+              "ea": "0x18001d00d",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Microsoft.Bluetooth.Audio.dll",
+              "function": "?ReportPhoneDial@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJ@Z",
+              "ea": "0x1801e48e6",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BTDeviceAddress",
+          "type": "UInt64",
+          "seenIn": [
+            "BTAGService.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "BTAGService.dll",
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "HfpDeviceInterfaceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "BTAGService.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "BTAGService.dll",
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PhoneDropAcceptEx",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "HfpDeviceInterfaceId:UnicodeString",
+            "CallId1:UInt32",
+            "CallId2:UInt32",
+            "HResult:Int32(HResult)",
+            "BTDeviceAddress:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "BTAGService.dll",
+              "function": "?ReportDropAcceptEx@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJAEBUDropAcceptDeviceDetails@234@@Z",
+              "ea": "0x18007ebe7",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "TbsDeviceInterfaceId:UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "HidTelephony.dll",
+              "function": "sub_18001CCD0",
+              "ea": "0x18001cd31",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+              "function": "?ReportDropAcceptEx@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJAEBUhstring@winrt@@@Z",
+              "ea": "0x18001cd31",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Microsoft.Bluetooth.Audio.dll",
+              "function": "?ReportDropAcceptEx@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJAEBUhstring@winrt@@@Z",
+              "ea": "0x1801e46f7",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BTDeviceAddress",
+          "type": "UInt64",
+          "seenIn": [
+            "BTAGService.dll"
+          ]
+        },
+        {
+          "fieldName": "CallId1",
+          "type": "UInt32",
+          "seenIn": [
+            "BTAGService.dll"
+          ]
+        },
+        {
+          "fieldName": "CallId2",
+          "type": "UInt32",
+          "seenIn": [
+            "BTAGService.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "BTAGService.dll",
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "HfpDeviceInterfaceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "BTAGService.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "BTAGService.dll",
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "TbsDeviceInterfaceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PhoneEndEx",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "HfpDeviceInterfaceId:UnicodeString",
+            "CallId1:UInt32",
+            "HResult:Int32(HResult)",
+            "BTDeviceAddress:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "BTAGService.dll",
+              "function": "?ReportPhoneEndEx@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJAEBUDeviceDetails@234@@Z",
+              "ea": "0x18007eefe",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "TbsDeviceInterfaceId:UnicodeString",
+            "CallId:UInt32",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "HidTelephony.dll",
+              "function": "sub_18001D050",
+              "ea": "0x18001d0c7",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+              "function": "?ReportPhoneEndEx@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJAEBUhstring@winrt@@I@Z",
+              "ea": "0x18001d0c7",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Microsoft.Bluetooth.Audio.dll",
+              "function": "?ReportPhoneEndEx@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJAEBUhstring@winrt@@I@Z",
+              "ea": "0x1801e4966",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BTDeviceAddress",
+          "type": "UInt64",
+          "seenIn": [
+            "BTAGService.dll"
+          ]
+        },
+        {
+          "fieldName": "CallId1",
+          "type": "UInt32",
+          "seenIn": [
+            "BTAGService.dll"
+          ]
+        },
+        {
+          "fieldName": "CallId",
+          "type": "UInt32",
+          "seenIn": [
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "BTAGService.dll",
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "HfpDeviceInterfaceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "BTAGService.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "BTAGService.dll",
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "TbsDeviceInterfaceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PhonePrivate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "CallId1:UInt32",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "HidTelephony.dll",
+              "function": "sub_18001D114",
+              "ea": "0x18001d176",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+              "function": "?ReportPrivate@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJI@Z",
+              "ea": "0x18001d176",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Microsoft.Bluetooth.Audio.dll",
+              "function": "?ReportPrivate@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJI@Z",
+              "ea": "0x1801e4a1b",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CallId1",
+          "type": "UInt32",
+          "seenIn": [
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PhoneRejectIncomingEx",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "HfpDeviceInterfaceId:UnicodeString",
+            "CallId1:UInt32",
+            "HResult:Int32(HResult)",
+            "BTDeviceAddress:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "BTAGService.dll",
+              "function": "?ReportRejectIncomingEx@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJAEBUDeviceDetails@234@@Z",
+              "ea": "0x18007efc2",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "TbsDeviceInterfaceId:UnicodeString",
+            "CallId:UInt32",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "HidTelephony.dll",
+              "function": "sub_18001D1F0",
+              "ea": "0x18001d267",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+              "function": "?ReportRejectIncomingEx@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJAEBUhstring@winrt@@I@Z",
+              "ea": "0x18001d267",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Microsoft.Bluetooth.Audio.dll",
+              "function": "?ReportRejectIncomingEx@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJAEBUhstring@winrt@@I@Z",
+              "ea": "0x1801e4ae2",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BTDeviceAddress",
+          "type": "UInt64",
+          "seenIn": [
+            "BTAGService.dll"
+          ]
+        },
+        {
+          "fieldName": "CallId1",
+          "type": "UInt32",
+          "seenIn": [
+            "BTAGService.dll"
+          ]
+        },
+        {
+          "fieldName": "CallId",
+          "type": "UInt32",
+          "seenIn": [
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "BTAGService.dll",
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "HfpDeviceInterfaceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "BTAGService.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "BTAGService.dll",
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "TbsDeviceInterfaceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PhoneSetHoldEx",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "CallSetToHold:Bool32",
+            "HfpDeviceInterfaceId:UnicodeString",
+            "CallId1:UInt32",
+            "HResult:Int32(HResult)",
+            "BTDeviceAddress:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "BTAGService.dll",
+              "function": "?ReportHoldEx@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJAEBUDeviceDetails@234@@Z",
+              "ea": "0x18007ecc0",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "CallSetToHold:Bool32",
+            "CallId1:UInt32",
+            "TbsDeviceInterfaceId:UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "HidTelephony.dll",
+              "function": "unknown_libname_11",
+              "ea": "0x18001ce5d",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+              "function": "?ReportHoldCallIdEx@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJI_NAEBUhstring@winrt@@@Z",
+              "ea": "0x18001ce5d",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Microsoft.Bluetooth.Audio.dll",
+              "function": "?ReportHoldCallIdEx@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJI_NAEBUhstring@winrt@@@Z",
+              "ea": "0x1801e4793",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BTDeviceAddress",
+          "type": "UInt64",
+          "seenIn": [
+            "BTAGService.dll"
+          ]
+        },
+        {
+          "fieldName": "CallId1",
+          "type": "UInt32",
+          "seenIn": [
+            "BTAGService.dll",
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "CallSetToHold",
+          "type": "Bool32",
+          "seenIn": [
+            "BTAGService.dll",
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "BTAGService.dll",
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "HfpDeviceInterfaceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "BTAGService.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "BTAGService.dll",
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "TbsDeviceInterfaceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PhoneSwapEx",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "HfpDeviceInterfaceId:UnicodeString",
+            "CallId1:UInt32",
+            "CallId2:UInt32",
+            "HResult:Int32(HResult)",
+            "BTDeviceAddress:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "BTAGService.dll",
+              "function": "?ReportCallSwapEx@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJAEBUSwapCallsDeviceDetails@234@@Z",
+              "ea": "0x18007eb0f",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "TbsDeviceInterfaceId:UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "HidTelephony.dll",
+              "function": "sub_18001CB3C",
+              "ea": "0x18001cb9d",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+              "function": "?ReportCallSwapEx@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJAEBUhstring@winrt@@@Z",
+              "ea": "0x18001cb9d",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Microsoft.Bluetooth.Audio.dll",
+              "function": "?ReportCallSwapEx@AsyncPhoneControllerTelemetry@Audio@Bluetooth@Microsoft@@SAXJAEBUhstring@winrt@@@Z",
+              "ea": "0x1801e457f",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BTDeviceAddress",
+          "type": "UInt64",
+          "seenIn": [
+            "BTAGService.dll"
+          ]
+        },
+        {
+          "fieldName": "CallId1",
+          "type": "UInt32",
+          "seenIn": [
+            "BTAGService.dll"
+          ]
+        },
+        {
+          "fieldName": "CallId2",
+          "type": "UInt32",
+          "seenIn": [
+            "BTAGService.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "BTAGService.dll",
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "HfpDeviceInterfaceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "BTAGService.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "BTAGService.dll",
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        },
+        {
+          "fieldName": "TbsDeviceInterfaceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "HidTelephony.dll",
+            "HidTelephony_hidtelephonydriver.inf_amd64_a932b4df9d59be00_0EC352B9.dll",
+            "Microsoft.Bluetooth.Audio.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

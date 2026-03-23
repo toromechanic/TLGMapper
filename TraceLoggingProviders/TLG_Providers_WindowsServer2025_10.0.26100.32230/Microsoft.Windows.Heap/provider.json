@@ -1,0 +1,358 @@
+{
+  "providerName": "Microsoft.Windows.Heap",
+  "guid": "{F0CD5B06-08C0-5CE4-09C2-17BA421985A0}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "ntdll.dll"
+  ],
+  "uniqueEventCount": 7,
+  "events": [
+    {
+      "eventName": "HeapCommitVA",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Size:UInt64",
+            "Address:UInt64",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntdll.dll",
+              "function": "RtlpHpTlLogVAChange",
+              "ea": "0x1800d4e63",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Address",
+          "type": "UInt64",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "Size",
+          "type": "UInt64",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HeapDecommitVA",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Size:UInt64",
+            "Address:UInt64",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntdll.dll",
+              "function": "RtlpHpTlLogVAChange",
+              "ea": "0x1800d4e27",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Address",
+          "type": "UInt64",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "Size",
+          "type": "UInt64",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HeapGCTimerScheduled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ntdll.dll",
+              "function": "RtlpHpEnvCompactionSchedule",
+              "ea": "0x180036237",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntdll.dll",
+              "function": "RtlpHpEnvCompactionSchedule",
+              "ea": "0x180036278",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntdll.dll",
+              "function": "RtlpHpLfhContextUpdateFreeCommitCount",
+              "ea": "0x18003c985",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntdll.dll",
+              "function": "RtlpHpLfhContextUpdateFreeCommitCount",
+              "ea": "0x18003c9c6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntdll.dll",
+              "function": "RtlpHpLfhSubsegmentDecommitPages",
+              "ea": "0x18005c85b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntdll.dll",
+              "function": "RtlpHpLfhSubsegmentDecommitPages",
+              "ea": "0x18005c898",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "HeapGcTimerRun",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ntdll.dll",
+              "function": "RtlpHpTlLogGCTimerFinished",
+              "ea": "0x18014cb7e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "HeapMemoryStats",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Heap:UInt64",
+            "ReservedPages:UInt64",
+            "CommittedPages:UInt64",
+            "FreeCommittedPages:UInt64",
+            "LfhFreeCommittedPages:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntdll.dll",
+              "function": "RtlpHpSegFreeRangeInsert",
+              "ea": "0x18003a12f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntdll.dll",
+              "function": "RtlpHpSegFreeRangeRemove",
+              "ea": "0x1800383b0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntdll.dll",
+              "function": "RtlpHpSegPageRangeCoalesce",
+              "ea": "0x18003b445",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntdll.dll",
+              "function": "RtlpHpSegPageRangeCommit",
+              "ea": "0x18003d41e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntdll.dll",
+              "function": "RtlpHpSegPageRangeShrink",
+              "ea": "0x18003adc9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntdll.dll",
+              "function": "RtlpHpTlLogMemStats",
+              "ea": "0x18010a21b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CommittedPages",
+          "type": "UInt64",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "FreeCommittedPages",
+          "type": "UInt64",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "Heap",
+          "type": "UInt64",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "LfhFreeCommittedPages",
+          "type": "UInt64",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "ReservedPages",
+          "type": "UInt64",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HeapReleaseVA",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Size:UInt64",
+            "Address:UInt64",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntdll.dll",
+              "function": "RtlpHpTlLogVAChange",
+              "ea": "0x1800d4e05",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Address",
+          "type": "UInt64",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "Size",
+          "type": "UInt64",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HeapReserveVA",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Size:UInt64",
+            "Address:UInt64",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntdll.dll",
+              "function": "RtlpHpTlLogVAChange",
+              "ea": "0x1800d4e45",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Address",
+          "type": "UInt64",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "Size",
+          "type": "UInt64",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

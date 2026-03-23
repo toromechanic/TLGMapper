@@ -1,0 +1,396 @@
+{
+  "providerName": "Microsoft.Windows.Analog.Speech",
+  "guid": "{292CE2F8-099A-5710-EF2E-18921C50346F}",
+  "os": "Windows 11",
+  "binaryCount": 9,
+  "binaries": [
+    "DictationManager.dll",
+    "SpeechModelDownload.exe",
+    "SpeechRuntime.exe",
+    "Windows.Media.Speech.dll",
+    "Windows.Speech.Dictation.dll",
+    "Windows.Speech.Pal.Desktop.dll",
+    "Windows.Speech.Shell.dll",
+    "sapi_extensions.dll",
+    "sapi_onecore.dll"
+  ],
+  "uniqueEventCount": 6,
+  "events": [
+    {
+      "eventName": "FDR: Unlikely Session ID found",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "BadGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "DictationManager.dll",
+              "function": "?CreateNewSessionId@FlightDataRecorder@Session@Speech@Windows@@IEAAXXZ",
+              "ea": "0x18002f0c4",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "sapi_extensions.dll",
+              "function": "?CreateNewSessionId@FlightDataRecorder@Session@Speech@Windows@@IEAAXXZ",
+              "ea": "0x180011e2b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "sapi_onecore.dll",
+              "function": "?CreateNewSessionId@FlightDataRecorder@Session@Speech@Windows@@IEAAXXZ",
+              "ea": "0x1800431ec",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SpeechModelDownload.exe",
+              "function": "?CreateNewSessionId@FlightDataRecorder@Session@Speech@Windows@@IEAAXXZ",
+              "ea": "0x14000589b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "SpeechRuntime.exe",
+              "function": "?CreateNewSessionId@FlightDataRecorder@Session@Speech@Windows@@IEAAXXZ",
+              "ea": "0x1400096a8",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Windows.Media.Speech.dll",
+              "function": "?CreateNewSessionId@FlightDataRecorder@Session@Speech@Windows@@IEAAXXZ",
+              "ea": "0x18003b9f8",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "Windows.Speech.Dictation.dll",
+              "function": "?CreateNewSessionId@FlightDataRecorder@Session@Speech@Windows@@IEAAXXZ",
+              "ea": "0x1800096a4",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "Windows.Speech.Pal.Desktop.dll",
+              "function": "?CreateNewSessionId@FlightDataRecorder@Session@Speech@Windows@@IEAAXXZ",
+              "ea": "0x18000f537",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "Windows.Speech.Shell.dll",
+              "function": "?CreateNewSessionId@FlightDataRecorder@Session@Speech@Windows@@IEAAXXZ",
+              "ea": "0x18000e5a3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BadGuid",
+          "type": "GUID",
+          "seenIn": [
+            "DictationManager.dll",
+            "SpeechModelDownload.exe",
+            "SpeechRuntime.exe",
+            "Windows.Media.Speech.dll",
+            "Windows.Speech.Dictation.dll",
+            "Windows.Speech.Pal.Desktop.dll",
+            "Windows.Speech.Shell.dll",
+            "sapi_extensions.dll",
+            "sapi_onecore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SharedListConstraint",
+      "variantCount": 4,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "eventTime:UInt64",
+            "fImplicitStart:Bool32",
+            "wilActivity:Struct(NoPrint)",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "Windows.Media.Speech.dll",
+              "function": "?StartEvent@SharedListConstraint@SharedListConstraintLogging@Logging@Internal@SpeechRecognition@Media@Windows@@UEAAX_K_N@Z",
+              "ea": "0x18003d199",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "eventTime:UInt64",
+            "fImplicitStart:Bool32",
+            "wilActivity:Struct(NoPrint)",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "Windows.Media.Speech.dll",
+              "function": "?StartEventLocal@SharedListConstraint@SharedListConstraintLogging@Logging@Internal@SpeechRecognition@Media@Windows@@UEAAX_K_N@Z",
+              "ea": "0x18003d244",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "eventTime:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "Windows.Media.Speech.dll",
+              "function": "?StopEvent@SharedListConstraint@SharedListConstraintLogging@Logging@Internal@SpeechRecognition@Media@Windows@@UEAAXJ_K@Z",
+              "ea": "0x18003d997",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "eventTime:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "Windows.Media.Speech.dll",
+              "function": "?StopEventLocal@SharedListConstraint@SharedListConstraintLogging@Logging@Internal@SpeechRecognition@Media@Windows@@UEAAXJ_K@Z",
+              "ea": "0x18003da42",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "eventTime",
+          "type": "UInt64",
+          "seenIn": [
+            "Windows.Media.Speech.dll"
+          ]
+        },
+        {
+          "fieldName": "fImplicitStart",
+          "type": "Bool32",
+          "seenIn": [
+            "Windows.Media.Speech.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "Windows.Media.Speech.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "Windows.Media.Speech.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(NoPrint)",
+          "seenIn": [
+            "Windows.Media.Speech.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(String)",
+          "seenIn": [
+            "Windows.Media.Speech.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SharedListConstraint_CoalesceFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "Windows.Media.Speech.dll",
+              "function": "?CoalescedSessionEvent@SharedListConstraint@SharedListConstraintLogging@Logging@Internal@SpeechRecognition@Media@Windows@@UEAAXJ@Z",
+              "ea": "0x18003b668",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "Windows.Media.Speech.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SharedListConstraint_CoalescedSession",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32(HResult)",
+            "length:UInt32",
+            "sessionJson:UnicodeString(JSON)"
+          ],
+          "callers": [
+            {
+              "binary": "Windows.Media.Speech.dll",
+              "function": "?CoalescedSessionEvent@SharedListConstraint@SharedListConstraintLogging@Logging@Internal@SpeechRecognition@Media@Windows@@UEAAXJ@Z",
+              "ea": "0x18003b77c",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "Windows.Media.Speech.dll"
+          ]
+        },
+        {
+          "fieldName": "length",
+          "type": "UInt32",
+          "seenIn": [
+            "Windows.Media.Speech.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionJson",
+          "type": "UnicodeString(JSON)",
+          "seenIn": [
+            "Windows.Media.Speech.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SharedListConstraint_InvalidRecoPhrase",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "eventTime:UInt64",
+            "phraseText:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "Windows.Media.Speech.dll",
+              "function": "??$AsimovInvalidRecoPhrase@AEAPEBG@SharedListConstraint@SharedListConstraintLogging@Logging@Internal@SpeechRecognition@Media@Windows@@QEAAX_KAEAPEBG@Z",
+              "ea": "0x18003a564",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "eventTime:UInt64",
+            "phraseText:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "Windows.Media.Speech.dll",
+              "function": "??$AsimovInvalidRecoPhraseLocal@AEAPEBG@SharedListConstraint@SharedListConstraintLogging@Logging@Internal@SpeechRecognition@Media@Windows@@QEAAX_KAEAPEBG@Z",
+              "ea": "0x18003a5eb",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "eventTime",
+          "type": "UInt64",
+          "seenIn": [
+            "Windows.Media.Speech.dll"
+          ]
+        },
+        {
+          "fieldName": "phraseText",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Windows.Media.Speech.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SharedListConstraint_InvalidRecoPhrase_Suppressed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "numSuppressed:UInt32",
+            "intervalInSeconds:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "Windows.Media.Speech.dll",
+              "function": "?AsimovInvalidRecoPhrase_Suppressed@SharedListConstraint@SharedListConstraintLogging@Logging@Internal@SpeechRecognition@Media@Windows@@QEAAXII@Z",
+              "ea": "0x18003b59e",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "intervalInSeconds",
+          "type": "UInt32",
+          "seenIn": [
+            "Windows.Media.Speech.dll"
+          ]
+        },
+        {
+          "fieldName": "numSuppressed",
+          "type": "UInt32",
+          "seenIn": [
+            "Windows.Media.Speech.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

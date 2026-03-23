@@ -1,0 +1,83 @@
+{
+  "providerName": "Microsoft.Windows.Shell.RunOnce",
+  "guid": "{1EE8BA37-11AE-3855-800A-58D6BAD1FEF8}",
+  "os": "WindowsServer2025",
+  "binaryCount": 4,
+  "binaries": [
+    "ShellAppRuntime.exe",
+    "explorer.exe",
+    "runonce.exe",
+    "servercoreshell.exe"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "RunOnceCommandLength",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "commandLength:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "explorer.exe",
+              "function": "??$RunOnceCommandLength@_K@ShellRunOnceTelemetry@@SAX$$QEA_K@Z",
+              "ea": "0x140025a97",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$RunOnceCommandLength@_K@ShellRunOnceTelemetry@@SAX$$QEA_K@Z",
+              "ea": "0x140025ad4",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "runonce.exe",
+              "function": "??$RunOnceCommandLength@_K@ShellRunOnceTelemetry@@SAX$$QEA_K@Z",
+              "ea": "0x140007009",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "servercoreshell.exe",
+              "function": "??$RunOnceCommandLength@_K@ShellRunOnceTelemetry@@SAX$$QEA_K@Z",
+              "ea": "0x140017ec9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$RunOnceCommandLength@_K@ShellRunOnceTelemetry@@SAX$$QEA_K@Z",
+              "ea": "0x1401058a2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe",
+            "runonce.exe",
+            "servercoreshell.exe"
+          ]
+        },
+        {
+          "fieldName": "commandLength",
+          "type": "UInt32",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe",
+            "runonce.exe",
+            "servercoreshell.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

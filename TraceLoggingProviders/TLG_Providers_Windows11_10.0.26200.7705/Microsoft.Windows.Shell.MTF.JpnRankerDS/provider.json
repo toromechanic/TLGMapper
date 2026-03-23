@@ -1,0 +1,397 @@
+{
+  "providerName": "Microsoft.Windows.Shell.MTF.JpnRankerDS",
+  "guid": "{B2576DDB-209B-52A9-A0D4-6F9386E15E2D}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "IMJPRANKER.DLL",
+    "jpnranker.dll"
+  ],
+  "uniqueEventCount": 4,
+  "events": [
+    {
+      "eventName": "CandidateDataSelected",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "queryId:GUID",
+            "datapointName:UnicodeString",
+            "datapointFloat:Float"
+          ],
+          "callers": [
+            {
+              "binary": "IMJPRANKER.DLL",
+              "function": "?WriteTelemetryImpl@JpnRankerDSTelemetry@@AEAAXAEBU_GUID@@@Z",
+              "ea": "0x180016aa2",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "jpnranker.dll",
+              "function": "?WriteTelemetryImpl@JpnRankerDSTelemetry@@AEAAXAEBU_GUID@@@Z",
+              "ea": "0x18000b9dd",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "queryId:GUID",
+            "datapointName:UnicodeString",
+            "datapointBool:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "jpnranker.dll",
+              "function": "?WriteTelemetryBool@JpnRankerDSTelemetry@@SAXAEBU_GUID@@QEBG_N@Z",
+              "ea": "0x18000b6c1",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "datapointBool",
+          "type": "Bool32",
+          "seenIn": [
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "datapointFloat",
+          "type": "Float",
+          "seenIn": [
+            "IMJPRANKER.DLL",
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "datapointName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "IMJPRANKER.DLL",
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "queryId",
+          "type": "GUID",
+          "seenIn": [
+            "IMJPRANKER.DLL",
+            "jpnranker.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FallbackError",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilResult:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "jpnranker.dll",
+              "function": "?ReportTelemetryFailure@TraceLoggingProvider@wil@@IEAAXAEBUFailureInfo@2@@Z",
+              "ea": "0x18000b224",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilResult:Struct(Signed)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "failureId:UInt32",
+            "failureCount:UInt32",
+            "function:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "jpnranker.dll",
+              "function": "?ReportTraceLoggingFailure@TraceLoggingProvider@wil@@IEAAXAEBUFailureInfo@2@@Z",
+              "ea": "0x18000b373",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "callContext",
+          "type": "AnsiString",
+          "seenIn": [
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "failureCount",
+          "type": "UInt32",
+          "seenIn": [
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "failureId",
+          "type": "UInt32",
+          "seenIn": [
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "function",
+          "type": "AnsiString",
+          "seenIn": [
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "wilResult",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "wilResult",
+          "type": "Struct(Signed)",
+          "seenIn": [
+            "jpnranker.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PredictedCandidateDeleted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "dataSourceGuid:GUID",
+            "deletedDisplayString:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "IMJPRANKER.DLL",
+              "function": "?WriteTelemetryForDeleteHistoryImpl@JpnRankerDSTelemetry@@AEAAXPEBG@Z",
+              "ea": "0x1800166f5",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "dataSourceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "IMJPRANKER.DLL"
+          ]
+        },
+        {
+          "fieldName": "deletedDisplayString",
+          "type": "UnicodeString",
+          "seenIn": [
+            "IMJPRANKER.DLL"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PredictedCandidateSelected",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "queryId:GUID",
+            "dataSourceGuid:GUID",
+            "posData:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "IMJPRANKER.DLL",
+              "function": "?WriteTelemetryImpl@JpnRankerDSTelemetry@@AEAAXAEBU_GUID@@@Z",
+              "ea": "0x1800169cb",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "jpnranker.dll",
+              "function": "?WriteTelemetryImpl@JpnRankerDSTelemetry@@AEAAXAEBU_GUID@@@Z",
+              "ea": "0x18000b957",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "dataSourceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "IMJPRANKER.DLL",
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "posData",
+          "type": "UnicodeString",
+          "seenIn": [
+            "IMJPRANKER.DLL",
+            "jpnranker.dll"
+          ]
+        },
+        {
+          "fieldName": "queryId",
+          "type": "GUID",
+          "seenIn": [
+            "IMJPRANKER.DLL",
+            "jpnranker.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,322 @@
+{
+  "providerName": "Microsoft.Windows.SMB.MRXSMB",
+  "guid": "{EE5C44B7-501A-5F89-A347-6629CB302A5F}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "mrxsmb.sys"
+  ],
+  "uniqueEventCount": 8,
+  "events": [
+    {
+      "eventName": "AllowInsecureGuestAuthBySetting",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "mrxsmb.sys",
+              "function": "ReadLanmanWorkStationParameters",
+              "ea": "0x1400346ec",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mrxsmb.sys",
+              "function": "ReadLanmanWorkStationParameters",
+              "ea": "0x140034724",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "AlternativePortRuleUsed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "VcEndpoint->Type:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "mrxsmb.sys",
+              "function": "RxCeDetermineAndSetConnectionPortForTransportType",
+              "ea": "0x140090a35",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "VcEndpoint->Type",
+          "type": "UInt32",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ClientConfiguration",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "SigningRequired:UInt8(Boolean)",
+            "EncryptionRequired:UInt8(Boolean)",
+            "CompressionDisabled:UInt8(Boolean)",
+            "CompressionRequested:UInt8(Boolean)",
+            "NTLMBlocked:UInt8(Boolean)",
+            "GuestAuthAllowed:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "mrxsmb.sys",
+              "function": "DriverEntry",
+              "ea": "0x14007fb15",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CompressionDisabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "CompressionRequested",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "EncryptionRequired",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "GuestAuthAllowed",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "NTLMBlocked",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "SigningRequired",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Container",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "mrxsmb.sys",
+              "function": "MRxSmbCreateVNetRoot",
+              "ea": "0x140059798",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "GlobalMapping",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "mrxsmb.sys",
+              "function": "MRxSmbCreateVNetRoot",
+              "ea": "0x14005973d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "QuicClientConnectionShutdown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Status:UInt32",
+            "Reason:UInt32",
+            "RTT:UInt32",
+            "SendTotalBytes:UInt64",
+            "RecvTotalBytes:UInt64",
+            "DisableCertValidation:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "mrxsmb.sys",
+              "function": "SmbQuicConnEventShutdown",
+              "ea": "0x140032228",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DisableCertValidation",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "RTT",
+          "type": "UInt32",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UInt32",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "RecvTotalBytes",
+          "type": "UInt64",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "SendTotalBytes",
+          "type": "UInt64",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SMB1Info",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Dialect:UInt16",
+            "SecurityMode:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "mrxsmb.sys",
+              "function": "GetDialectInfoFromNegotiateResponse",
+              "ea": "0x140022b3d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Dialect",
+          "type": "UInt16",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "SecurityMode",
+          "type": "UInt16",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SMB1NotAvailable",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "mrxsmb.sys",
+              "function": "GetDialectInfoFromNegotiateResponse",
+              "ea": "0x140022a47",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    }
+  ]
+}

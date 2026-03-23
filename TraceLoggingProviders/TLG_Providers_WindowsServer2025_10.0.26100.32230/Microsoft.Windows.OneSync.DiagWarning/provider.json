@@ -1,0 +1,1962 @@
+{
+  "providerName": "Microsoft.Windows.OneSync.DiagWarning",
+  "guid": "{7AC5EB71-3C51-5089-1B4E-87A46BD6B4DF}",
+  "os": "WindowsServer2025",
+  "binaryCount": 10,
+  "binaries": [
+    "ActiveSyncCsp.dll",
+    "ActiveSyncProvider.dll",
+    "DavSyncProvider.dll",
+    "InternetMailCsp.dll",
+    "SyncController.dll",
+    "SyncProxy.dll",
+    "accountaccessor.dll",
+    "internetmail.dll",
+    "networkhelper.dll",
+    "syncutil.dll"
+  ],
+  "uniqueEventCount": 50,
+  "events": [
+    {
+      "eventName": "AccountAccessor_DeleteAccount",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "partnershipId:GUID",
+            "isRemote:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "accountaccessor.dll",
+              "function": "?Delete@AccountAccessorBase@@UEAAJU_GUID@@@Z",
+              "ea": "0x1800188d6",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "isRemote",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "accountaccessor.dll"
+          ]
+        },
+        {
+          "fieldName": "partnershipId",
+          "type": "GUID",
+          "seenIn": [
+            "accountaccessor.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AccountConfigurationWork_Executing",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32",
+            "enginId:HexInt32",
+            "workType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?ExecuteWork@AccountConfigurationWork@@UEAAJXZ",
+              "ea": "0x18005afe1",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "enginId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "workType",
+          "type": "UInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AccountSyncController_DelayingSyncDueToPreviousFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "accountId:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?_Reschedule@AccountSyncController@@AEAAXPEAVIActivityCompletionProxy@@W4AutdRescheduleValues@@@Z",
+              "ea": "0x180055ec1",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "accountId",
+          "type": "GUID",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AccountSyncController_SubmitAutdWork",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32",
+            "engineId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?_SubmitAutdWork@AccountSyncController@@AEAAJPEAVIActivityExecutionProxy@@@Z",
+              "ea": "0x180056074",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "engineId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AccountVerifier_InvalidRegistryDelete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "accountId:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?CheckRegistryConsistency@AccountVerifier@@QEAAJPEAH@Z",
+              "ea": "0x180044a3d",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "accountId",
+          "type": "GUID",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AccountVerifier_InvalidRegistryFound",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "partnerId:HexInt32",
+            "reason:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "AccountVerifier_InvalidRegistryFound",
+              "ea": "0x180044640",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "reason",
+          "type": "UInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AccountVerifier_InvalidStoreDelete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "storeId0:HexInt32",
+            "storeId1:HexInt32",
+            "storeId2:HexInt32",
+            "storeIndex:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?CheckStoreConsistency@AccountVerifier@@QEAAJXZ",
+              "ea": "0x180044f7d",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "storeId0",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "storeId1",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "storeId2",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "storeIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AccountVerifier_InvalidStoreFound",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "partnerId:HexInt32",
+            "storeId0:HexInt32",
+            "storeId1:HexInt32",
+            "storeId2:HexInt32",
+            "reason:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "AccountVerifier_InvalidStoreFound",
+              "ea": "0x1800446ec",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "reason",
+          "type": "UInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "storeId0",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "storeId1",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "storeId2",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ActiveSyncControllerExponentialSchedule_ExitDelay",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?_HandleNonSyncTriggerRequirements@AccountSyncControllerExponentialActivitySchedule@@IEAAJXZ",
+              "ea": "0x18006f88a",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ActiveSyncProvider_SmartSend_Item_Not_Found",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ActiveSyncProvider.dll",
+              "function": "?CacheSourceServerIds@CSendMailHelper@@IEAAJW4PO_IDTYPE@@KPEBE@Z",
+              "ea": "0x18010db71",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "ActiveSyncProvider.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AutoConfig_Cancel",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "internetmail.dll",
+              "function": "?CancelAutoConfig@AutoConfigManager@@UEAAJXZ",
+              "ea": "0x180012805",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "EasPolicy_ApplyFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "policyName:UnicodeString",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "ActiveSyncProvider.dll",
+              "function": "?_ApplyPoliciesGroup@CExchangePolicyHandler@@AEAAHW4PoliciesGroup@1@PEAUIMassProvisionCmd@@@Z",
+              "ea": "0x1800c0678",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "ActiveSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "policyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ActiveSyncProvider.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EasPolicy_RemoveFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32",
+            "policyName:UnicodeString",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "ActiveSyncProvider.dll",
+              "function": "?RemovePolicyData@CExchangePolicyHandler@@QEAAHXZ",
+              "ea": "0x1800c0174",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "ActiveSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "ActiveSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "policyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ActiveSyncProvider.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HttpSettingsHandler_GetRfc1766InfoFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "details:AnsiString",
+            "locale:HexInt32",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "ActiveSyncProvider.dll",
+              "function": "?GetLanguage@CHttpSettingsHandler@@SAJPEAG_K@Z",
+              "ea": "0x1800a98cd",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "details",
+          "type": "AnsiString",
+          "seenIn": [
+            "ActiveSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "ActiveSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "locale",
+          "type": "HexInt32",
+          "seenIn": [
+            "ActiveSyncProvider.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IMAP_SocketCancel",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "details:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "internetmail.dll",
+              "function": "?CloseSocket@SocketHandle@@QEAAJXZ",
+              "ea": "0x180089da3",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "details",
+          "type": "AnsiString",
+          "seenIn": [
+            "internetmail.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ImapIdle_CancelRequested",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "internetmail.dll",
+              "function": "?Cancel@ImapIdleExecutor@@UEAAXXZ",
+              "ea": "0x180009fa8",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "internetmail.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ImapIdle_IdleSent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "internetmail.dll",
+              "function": "?_SendIdleCommandAndProcessAck@ImapIdleExecutor@@AEAAJXZ",
+              "ea": "0x18000fad8",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "internetmail.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ImapIdle_IdleTerminated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "internetmail.dll",
+              "function": "?_WaitForDoneAck@ImapIdleExecutor@@AEAAJXZ",
+              "ea": "0x18000fff6",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "internetmail.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ImapIdle_ProcessingExpunge",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "internetmail.dll",
+              "function": "?_ProcessExpunge@ImapIdleExecutor@@AEAAJAEBVIdleMessageUpdate@@@Z",
+              "ea": "0x18000e2bb",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "internetmail.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ImapIdle_ProcessingFlags",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "internetmail.dll",
+              "function": "?_ProcessFlagChange@ImapIdleExecutor@@AEAAJAEBVIdleMessageUpdate@@@Z",
+              "ea": "0x18000e3ef",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "internetmail.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ImapIdle_ResetSyncHandler",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "internetmail.dll",
+              "function": "_lambda_1084360981c16d8c0abcd8f3c73ff3ac_::operator()",
+              "ea": "0x180009c80",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "internetmail.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InternetMail_GoogleImapEnableOnServer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "internetmail.dll",
+              "function": "?_EnableImapOnGoogleAccount@ImapCommunicationManager@@CAJPEAUIMsgStore@@PEAUIMAPACCOUNTINFO@@@Z",
+              "ea": "0x18006ffc0",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "internetmail.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InvalidAutdHeartbeatOutOfRangeResponse",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "partnerGUID:GUID",
+            "minHeartbeat:Int32",
+            "maxHeartbeat:Int32",
+            "currentHeartbeat:Int32",
+            "serverHeartbeat:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ActiveSyncProvider.dll",
+              "function": "?_CheckForChanges@AUTDExecutor@@MEAAJPEAK@Z",
+              "ea": "0x180089877",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "currentHeartbeat",
+          "type": "Int32",
+          "seenIn": [
+            "ActiveSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "maxHeartbeat",
+          "type": "Int32",
+          "seenIn": [
+            "ActiveSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "minHeartbeat",
+          "type": "Int32",
+          "seenIn": [
+            "ActiveSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "partnerGUID",
+          "type": "GUID",
+          "seenIn": [
+            "ActiveSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "serverHeartbeat",
+          "type": "UInt32",
+          "seenIn": [
+            "ActiveSyncProvider.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "POP3_AuthenticationFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "accountId:GUID",
+            "mechanism:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "internetmail.dll",
+              "function": "?_AuthenticateUser@Pop3CommunicationManager@@AEAAJAEBV?$vector@V?$basic_string@DU?$char_traits@D@utl@@V?$allocator@D@2@@utl@@V?$allocator@V?$basic_string@DU?$char_traits@D@utl@@V?$allocator@D@2@@utl@@@2@@utl@@@Z",
+              "ea": "0x1800310cf",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "accountId",
+          "type": "GUID",
+          "seenIn": [
+            "internetmail.dll"
+          ]
+        },
+        {
+          "fieldName": "mechanism",
+          "type": "AnsiString",
+          "seenIn": [
+            "internetmail.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncController_AccountSyncController_AddChildSyncController",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32",
+            "engineId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?CreateChildSyncController@SyncBookkeeper@@QEAAJAEBU_GUID@@0PEAPEAVIAsyncActivity@@@Z",
+              "ea": "0x18002746e",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "engineId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncController_AccountSyncController_ContentChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32",
+            "engineId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?HandleConfigChanges@AccountSyncController@@UEAAJKPEBW4_SyncAccountConfigChange@@@Z",
+              "ea": "0x180052e90",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "engineId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncController_AccountSyncController_DeleteSyncController",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?_RemoveSyncController@SyncBookkeeper@@AEAAJAEBU_GUID@@PEAPEAVIAccountSyncController@@@Z",
+              "ea": "0x1800307f6",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncController_AccountSyncController_LoginInfoChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32",
+            "engineId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?HandleConfigChanges@AccountSyncController@@UEAAJKPEBW4_SyncAccountConfigChange@@@Z",
+              "ea": "0x180052fe0",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "engineId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncController_ConversationSync_SetConversationSyncEnabled_SetDelayed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "isEnabled:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?SetConversationSyncEnabled@@YAJH@Z",
+              "ea": "0x180043ee5",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "isEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncController_CredUtil_DeletePasswordCalledFromPurgeActiveSyncAccount",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?_PurgeActiveSyncAccount@@YAJAEBU_GUID@@PEAUHKEY__@@@Z",
+              "ea": "0x1800442c3",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncController_EndAddMeetingResponseForCalendarWork",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?ExecuteWork@HandleMeetingResponseForAppointmentWork@@UEAAJXZ",
+              "ea": "0x1800365dc",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncController_ExponentialActivitySchedule_ScreenOn",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?_HandleNonSyncTriggerRequirements@AccountSyncControllerExponentialActivitySchedule@@IEAAJXZ",
+              "ea": "0x18006f958",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncController_IgnoringAccountWithNonCurrentVersion",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32",
+            "accountVersion:Int32",
+            "currentVersion:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?ShouldCreateSyncController@SyncBookkeeper@@QEAAJAEBU_GUID@@PEAHPEAW4BootstrapAccountResult@@@Z",
+              "ea": "0x18002d29d",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "accountVersion",
+          "type": "Int32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "currentVersion",
+          "type": "Int32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncController_StartDownloadSharePointDocumentWork",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?ExecuteWork@DownloadSharePointDocumentWork@@UEAAJXZ",
+              "ea": "0x180038ee9",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncController_StartFlushAccountSettingsWork",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?ExecuteWork@FlushAccountSettingsWork@@UEAAJXZ",
+              "ea": "0x180035c14",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncController_StartSetFolderSyncStateWork",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?ExecuteWork@SetFolderSyncStateWork@@UEAAJXZ",
+              "ea": "0x180034fc6",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncController_StartUpdateContentTypesWork",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "partnerId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?ExecuteWork@UpdateContentTypesWork@@UEAAJXZ",
+              "ea": "0x180034a53",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncController_SyncWnfError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "accountId:GUID",
+            "hr:Int32(HResult)",
+            "textMessage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "SyncController_SyncWnfError",
+              "ea": "0x18002e0ee",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "accountId",
+          "type": "GUID",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "textMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncUtil_CCT_InvalidState",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "networkhelper.dll",
+              "function": "?_GetControlChannelTriggerStatus@ControlChannelTriggerManager@@IEAA?AW4CctStatus@@W4ControlChannelTriggerStatus@Sockets@Networking@Windows@@@Z",
+              "ea": "0x1800052dd",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "networkhelper.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncUtil_OAuth_GetTokensFromAuthCode",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "tokenType:UnicodeString",
+            "expirationTime:FileTime"
+          ],
+          "callers": [
+            {
+              "binary": "syncutil.dll",
+              "function": "?GetTokensUsingAuthorizationCode@OAuthHelper@@UEAAJPEBGPEAPEAGPEAU_FILETIME@@1@Z",
+              "ea": "0x18003fc86",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "expirationTime",
+          "type": "FileTime",
+          "seenIn": [
+            "syncutil.dll"
+          ]
+        },
+        {
+          "fieldName": "tokenType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "syncutil.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncUtil_XMLParse_LoadFailFilePos",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "filePos:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "syncutil.dll",
+              "function": "CheckForParseErrors",
+              "ea": "0x18001d633",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "filePos",
+          "type": "Int64",
+          "seenIn": [
+            "syncutil.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncUtil_XMLParse_LoadFailHresult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "error:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "syncutil.dll",
+              "function": "CheckForParseErrors",
+              "ea": "0x18001d401",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "error",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "syncutil.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncUtil_XMLParse_LoadFailReason",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "reason:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "syncutil.dll",
+              "function": "CheckForParseErrors",
+              "ea": "0x18001d492",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "reason",
+          "type": "UnicodeString",
+          "seenIn": [
+            "syncutil.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncUtil_XMLParse_LoadFailSrcText",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "srcText:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "syncutil.dll",
+              "function": "CheckForParseErrors",
+              "ea": "0x18001d5af",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "srcText",
+          "type": "UnicodeString",
+          "seenIn": [
+            "syncutil.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncUtil_XMLParse_LoadFailUrl",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "url:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "syncutil.dll",
+              "function": "CheckForParseErrors",
+              "ea": "0x18001d523",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "url",
+          "type": "UnicodeString",
+          "seenIn": [
+            "syncutil.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TokenBucket_Throttled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "partnerId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?_UpdateScheduleWhenOutOfTokens@?$SyncSenseAutdPrimarySchedule@VAutdPrimarySchedule@@@@IEAAJI@Z",
+              "ea": "0x180062780",
+              "confidence": "CallGraph-d3"
+            },
+            {
+              "binary": "SyncController.dll",
+              "function": "?_UpdateScheduleWhenOutOfTokens@?$SyncSenseAutdPrimarySchedule@VImapAutdPrimarySchedule@@@@IEAAJI@Z",
+              "ea": "0x18006291c",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "partnerId",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnknownDeleteAccountStoreType",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "accountId:GUID",
+            "storeType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?PurgeDeletedAccount@SyncBookkeeper@@QEAAJAEBU_GUID@@@Z",
+              "ea": "0x18002b091",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "accountId",
+          "type": "GUID",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "storeType",
+          "type": "UInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Warning",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)",
+            "file:AnsiString",
+            "line:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "accountaccessor.dll",
+              "function": "?ErrorPropagateTelemetry@SyncDiagWarningProvider@@SAXJPEBDK@Z",
+              "ea": "0x180007cf2",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ActiveSyncCsp.dll",
+              "function": "?ErrorPropagateTelemetry@SyncDiagWarningProvider@@SAXJPEBDK@Z",
+              "ea": "0x180007a40",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ActiveSyncProvider.dll",
+              "function": "?ErrorPropagateTelemetry@SyncDiagWarningProvider@@SAXJPEBDK@Z",
+              "ea": "0x180013c4c",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "InternetMailCsp.dll",
+              "function": "?ErrorPropagateTelemetry@SyncDiagWarningProvider@@SAXJPEBDK@Z",
+              "ea": "0x1800079d0",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "SyncProxy.dll",
+              "function": "?ErrorPropagateTelemetry@SyncDiagWarningProvider@@SAXJPEBDK@Z",
+              "ea": "0x18000846e",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "syncutil.dll",
+              "function": "?ErrorPropagateTelemetry@SyncDiagWarningProvider@@SAXJPEBDK@Z",
+              "ea": "0x180008f58",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "file",
+          "type": "AnsiString",
+          "seenIn": [
+            "ActiveSyncCsp.dll",
+            "ActiveSyncProvider.dll",
+            "InternetMailCsp.dll",
+            "SyncProxy.dll",
+            "accountaccessor.dll",
+            "syncutil.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "ActiveSyncCsp.dll",
+            "ActiveSyncProvider.dll",
+            "InternetMailCsp.dll",
+            "SyncProxy.dll",
+            "accountaccessor.dll",
+            "syncutil.dll"
+          ]
+        },
+        {
+          "fieldName": "line",
+          "type": "UInt32",
+          "seenIn": [
+            "ActiveSyncCsp.dll",
+            "ActiveSyncProvider.dll",
+            "InternetMailCsp.dll",
+            "SyncProxy.dll",
+            "accountaccessor.dll",
+            "syncutil.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WebDavEngineActivity",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32",
+            "__TlgCV__:AnsiString",
+            "phase:UnicodeString",
+            "partnerGUID:GUID",
+            "dataType:UInt32",
+            "syncType:UInt32",
+            "syncHResult:Int32(HResult)",
+            "downloadCount:Int64",
+            "deletedCount:Int64",
+            "updatedCount:Int64",
+            "uploadCount:Int64",
+            "syncFolderCount:Int64",
+            "folderErrorCount:Int64",
+            "itemErrorCount:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DavSyncProvider.dll",
+              "function": "?Stop@WebDavEngineActivity@WebDavEngineProvider@@QEAAXJPEAVTraceLoggingCorrelationVector@@AEBU_GUID@@KI@Z",
+              "ea": "0x180016e67",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "DavSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "DavSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "dataType",
+          "type": "UInt32",
+          "seenIn": [
+            "DavSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "deletedCount",
+          "type": "Int64",
+          "seenIn": [
+            "DavSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "downloadCount",
+          "type": "Int64",
+          "seenIn": [
+            "DavSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "folderErrorCount",
+          "type": "Int64",
+          "seenIn": [
+            "DavSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "DavSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "itemErrorCount",
+          "type": "Int64",
+          "seenIn": [
+            "DavSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "partnerGUID",
+          "type": "GUID",
+          "seenIn": [
+            "DavSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "phase",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DavSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "syncFolderCount",
+          "type": "Int64",
+          "seenIn": [
+            "DavSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "syncHResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "DavSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "syncType",
+          "type": "UInt32",
+          "seenIn": [
+            "DavSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "DavSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "updatedCount",
+          "type": "Int64",
+          "seenIn": [
+            "DavSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "uploadCount",
+          "type": "Int64",
+          "seenIn": [
+            "DavSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(String)",
+          "seenIn": [
+            "DavSyncProvider.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WnfEventNotFound",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "stateName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?_SetupActivationCondition@BaseWNFActivity@@AEAAJPEAUActivityActivationConditions@@@Z",
+              "ea": "0x180056e0c",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "stateName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

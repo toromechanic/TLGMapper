@@ -1,0 +1,123 @@
+{
+  "providerName": "Microsoft.Windows.Input.KbdClass",
+  "guid": "{084AA0DE-35A2-57D4-21DB-48C0514CA3EF}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "kbdclass.sys",
+    "kbdclass_keyboard.inf_amd64_c56788078819b951_47967CFE.sys"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "Configuration",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "KeyboardDataQueueSize:UInt32",
+            "MaximumPortsServiced:UInt32",
+            "BaseClassName:CountedString",
+            "ConnectOneClassToOnePort:UInt32",
+            "SendOutputToAllPorts:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "kbdclass.sys",
+              "function": "KbdConfiguration",
+              "ea": "0x1c0011ce2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "kbdclass_keyboard.inf_amd64_c56788078819b951_47967CFE.sys",
+              "function": "KbdConfiguration",
+              "ea": "0x1c0011ce2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BaseClassName",
+          "type": "CountedString",
+          "seenIn": [
+            "kbdclass.sys",
+            "kbdclass_keyboard.inf_amd64_c56788078819b951_47967CFE.sys"
+          ]
+        },
+        {
+          "fieldName": "ConnectOneClassToOnePort",
+          "type": "UInt32",
+          "seenIn": [
+            "kbdclass.sys",
+            "kbdclass_keyboard.inf_amd64_c56788078819b951_47967CFE.sys"
+          ]
+        },
+        {
+          "fieldName": "KeyboardDataQueueSize",
+          "type": "UInt32",
+          "seenIn": [
+            "kbdclass.sys",
+            "kbdclass_keyboard.inf_amd64_c56788078819b951_47967CFE.sys"
+          ]
+        },
+        {
+          "fieldName": "MaximumPortsServiced",
+          "type": "UInt32",
+          "seenIn": [
+            "kbdclass.sys",
+            "kbdclass_keyboard.inf_amd64_c56788078819b951_47967CFE.sys"
+          ]
+        },
+        {
+          "fieldName": "SendOutputToAllPorts",
+          "type": "UInt32",
+          "seenIn": [
+            "kbdclass.sys",
+            "kbdclass_keyboard.inf_amd64_c56788078819b951_47967CFE.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DeniedCreateForReadWithSFAC",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "DesiredAccess:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "kbdclass.sys",
+              "function": "KbdClassTraceLoggingDeniedCreateForReadWithSFAC",
+              "ea": "0x1c0005a74",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "kbdclass_keyboard.inf_amd64_c56788078819b951_47967CFE.sys",
+              "function": "KbdClassTraceLoggingDeniedCreateForReadWithSFAC",
+              "ea": "0x1c0005a74",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DesiredAccess",
+          "type": "UInt32",
+          "seenIn": [
+            "kbdclass.sys",
+            "kbdclass_keyboard.inf_amd64_c56788078819b951_47967CFE.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

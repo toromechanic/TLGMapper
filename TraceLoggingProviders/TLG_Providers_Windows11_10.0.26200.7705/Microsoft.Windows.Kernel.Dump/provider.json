@@ -1,0 +1,490 @@
+{
+  "providerName": "Microsoft.Windows.Kernel.Dump",
+  "guid": "{A51EE86B-8EA5-454C-9A7D-37B6655A535D}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "ntoskrnl.exe"
+  ],
+  "uniqueEventCount": 13,
+  "events": [
+    {
+      "eventName": "AllowCrashDumpPolicyChangeWNFNotificationSubscriptionFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "IopInitializeDumpPolicySettings",
+              "ea": "0x140710285",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AllowCrashDumpPolicyValueChanged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Status:UInt32(NTStatus)",
+            "AllowCrashDump:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "IopCrashDumpPolicyChangeWnfCallback",
+              "ea": "0x14070fb9b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AllowCrashDump",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CrashDumpDisableFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "IopDumpTraceDisableCrashDumpFailure",
+              "ea": "0x140593dc8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CrashDumpDisabled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "IopDumpTraceCrashDumpDisabled",
+              "ea": "0x140593bbd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CrashDumpDisabledByPolicy",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "AllowCrashDump:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "IopTraceCrashDumpDisabledOnBoot",
+              "ea": "0x14071045b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AllowCrashDump",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CrashDumpDumpStackInitializationFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "IopDumpTraceInitializeDumpStackFailure",
+              "ea": "0x1405940f8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CrashDumpFreeDumpStackFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "IopDumpTraceFreeDumpStackFailure",
+              "ea": "0x140593ed8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CrashDumpInitializeFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "IopDumpTraceInitializeCrashDumpFailure",
+              "ea": "0x140593fe8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CrashDumpLoadDriverFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "IopDumpTraceLoadCrashDumpDriverFailure",
+              "ea": "0x1404d8c7c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CrashDumpLoadDumpStackFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "IopDumpTraceLoadDumpStackFailure",
+              "ea": "0x140594208",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CrashDumpReconfigured",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "IopDumpTraceCrashDumpReconfiguration",
+              "ea": "0x140593cb8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ForceDumpDisabled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ForceDumpDisabled:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "IopDumpTraceForceDumpDisabled",
+              "ea": "0x14070fd77",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ForceDumpDisabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InvalidNotificationStateName",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "IopCrashDumpPolicyChangeWnfCallback",
+              "ea": "0x14070fc89",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

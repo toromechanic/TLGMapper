@@ -1,0 +1,3772 @@
+{
+  "providerName": "Microsoft.Windows.Kernel.Registry",
+  "guid": "{E9EAF418-0C07-464C-AD14-A7F353349A00}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "ntkrla57.exe",
+    "ntoskrnl.exe"
+  ],
+  "uniqueEventCount": 59,
+  "events": [
+    {
+      "eventName": "AddLogContainer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "Location:UInt32",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpTransWriteLog",
+              "ea": "0x14097f69a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpTransWriteLog",
+              "ea": "0x14097f76e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpTransWriteLog",
+              "ea": "0x140b1ec57",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpTransWriteLog",
+              "ea": "0x140b1ecdb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Location",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BounceBufferNeeded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x4",
+          "fields": [
+            "Count:Int64",
+            "Reason:UInt8",
+            "SizeBucket:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpBounceContextStart",
+              "ea": "0x140686044",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "NtQueryKey",
+              "ea": "0x140688f27",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpBounceContextStart",
+              "ea": "0x14097bc1e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "NtEnumerateValueKey",
+              "ea": "0x140904ec2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "NtQueryKey",
+              "ea": "0x14083fff1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UInt8",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "SizeBucket",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CmLoadAppHiveNonPrivate(Aggregate)",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000008",
+          "fields": [
+            "Count:Int64",
+            "Process:AnsiString",
+            "FileName:CountedString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmLoadAppKey",
+              "ea": "0x1409663df",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmLoadAppKey",
+              "ea": "0x1409267b5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "FileName",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Process",
+          "type": "AnsiString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CmLoadAppKeyFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x8",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "HiveLoadFailure:Struct(TID)",
+            "UnrecoverableLoadFailureCount:UInt16",
+            "RecoverableLoadFailureCount:UInt16",
+            "UnrecoverableLinkFailureCount:UInt16",
+            "UnrecoverableLoadFailureLocations:Struct[](Boolean)",
+            "Type:Int32",
+            "Status:UInt32",
+            "Point:UInt32",
+            "RecoverableLoadFailureLocations:Struct[](Boolean)",
+            "Type:Int32",
+            "Status:UInt32",
+            "Point:UInt32",
+            "UnrecoverableLinkFailureLocations:Struct[](String)",
+            "Status:UInt32",
+            "Point:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmLoadAppKey",
+              "ea": "0x140966a56",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmLoadAppKey",
+              "ea": "0x140b0606a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HiveLoadFailure",
+          "type": "Struct(TID)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Point",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "RecoverableLoadFailureCount",
+          "type": "UInt16",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "RecoverableLoadFailureLocations",
+          "type": "Struct[](Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Type",
+          "type": "Int32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLinkFailureCount",
+          "type": "UInt16",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLinkFailureLocations",
+          "type": "Struct[](String)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLoadFailureCount",
+          "type": "UInt16",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLoadFailureLocations",
+          "type": "Struct[](Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CmLoadAppKeyFailed(Aggregate)",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000008",
+          "fields": [
+            "Count:Int64",
+            "Status:UInt32(NTStatus)",
+            "HiveLoadFailure:Struct(TID)",
+            "UnrecoverableLoadFailureCount:UInt16",
+            "RecoverableLoadFailureCount:UInt16",
+            "UnrecoverableLinkFailureCount:UInt16",
+            "UnrecoverableLoadFailureLocations:Struct[](Boolean)",
+            "Type:Int32",
+            "Status:UInt32",
+            "Point:UInt32",
+            "RecoverableLoadFailureLocations:Struct[](Boolean)",
+            "Type:Int32",
+            "Status:UInt32",
+            "Point:UInt32",
+            "UnrecoverableLinkFailureLocations:Struct[](String)",
+            "Status:UInt32",
+            "Point:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmLoadAppKey",
+              "ea": "0x1409668d7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmLoadAppKey",
+              "ea": "0x140926445",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "HiveLoadFailure",
+          "type": "Struct(TID)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Point",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "RecoverableLoadFailureCount",
+          "type": "UInt16",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "RecoverableLoadFailureLocations",
+          "type": "Struct[](Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Type",
+          "type": "Int32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLinkFailureCount",
+          "type": "UInt16",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLinkFailureLocations",
+          "type": "Struct[](String)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLoadFailureCount",
+          "type": "UInt16",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLoadFailureLocations",
+          "type": "Struct[](Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CmLoadAppKeyFailedNoInfo(Aggregate)",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000008",
+          "fields": [
+            "Count:Int64",
+            "Status:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmLoadAppKey",
+              "ea": "0x140966774",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmLoadAppKey",
+              "ea": "0x140b05f58",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CmLoadAppKeySucceeded(Aggregate)",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000008",
+          "fields": [
+            "Count:Int64",
+            "Status:UInt32(NTStatus)",
+            "HiveAlreadyLoaded:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmLoadAppKey",
+              "ea": "0x140966b59",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmLoadAppKey",
+              "ea": "0x140926231",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "HiveAlreadyLoaded",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CmLoadKeyFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x8",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "HiveLoadFailure:Struct(TID)",
+            "UnrecoverableLoadFailureCount:UInt16",
+            "RecoverableLoadFailureCount:UInt16",
+            "UnrecoverableLinkFailureCount:UInt16",
+            "UnrecoverableLoadFailureLocations:Struct[](Boolean)",
+            "Type:Int32",
+            "Status:UInt32",
+            "Point:UInt32",
+            "RecoverableLoadFailureLocations:Struct[](Boolean)",
+            "Type:Int32",
+            "Status:UInt32",
+            "Point:UInt32",
+            "UnrecoverableLinkFailureLocations:Struct[](String)",
+            "Status:UInt32",
+            "Point:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmLoadKey",
+              "ea": "0x140967255",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmLoadKey",
+              "ea": "0x140924017",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HiveLoadFailure",
+          "type": "Struct(TID)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Point",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "RecoverableLoadFailureCount",
+          "type": "UInt16",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "RecoverableLoadFailureLocations",
+          "type": "Struct[](Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Type",
+          "type": "Int32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLinkFailureCount",
+          "type": "UInt16",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLinkFailureLocations",
+          "type": "Struct[](String)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLoadFailureCount",
+          "type": "UInt16",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLoadFailureLocations",
+          "type": "Struct[](Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CmLoadKeyFailed(Aggregate)",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000008",
+          "fields": [
+            "Count:Int64",
+            "Status:UInt32(NTStatus)",
+            "HiveLoadFailure:Struct(TID)",
+            "UnrecoverableLoadFailureCount:UInt16",
+            "RecoverableLoadFailureCount:UInt16",
+            "UnrecoverableLinkFailureCount:UInt16",
+            "UnrecoverableLoadFailureLocations:Struct[](Boolean)",
+            "Type:Int32",
+            "Status:UInt32",
+            "Point:UInt32",
+            "RecoverableLoadFailureLocations:Struct[](Boolean)",
+            "Type:Int32",
+            "Status:UInt32",
+            "Point:UInt32",
+            "UnrecoverableLinkFailureLocations:Struct[](String)",
+            "Status:UInt32",
+            "Point:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmLoadKey",
+              "ea": "0x14096710f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmLoadKey",
+              "ea": "0x140923ec7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "HiveLoadFailure",
+          "type": "Struct(TID)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Point",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "RecoverableLoadFailureCount",
+          "type": "UInt16",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "RecoverableLoadFailureLocations",
+          "type": "Struct[](Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Type",
+          "type": "Int32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLinkFailureCount",
+          "type": "UInt16",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLinkFailureLocations",
+          "type": "Struct[](String)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLoadFailureCount",
+          "type": "UInt16",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLoadFailureLocations",
+          "type": "Struct[](Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CmLoadKeyFailedNoInfo(Aggregate)",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmLoadKey",
+              "ea": "0x140966d42",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmLoadKey",
+              "ea": "0x140b05d72",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CmLoadKeySucceeded(Aggregate)",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000008",
+          "fields": [
+            "Count:Int64",
+            "Status:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmLoadKey",
+              "ea": "0x14096749c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmLoadKey",
+              "ea": "0x1409240fb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CmSaveMergedKeysAttemptToSaveMasterHive",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmSaveMergedKeys",
+              "ea": "0x14094a784",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmSaveMergedKeys",
+              "ea": "0x1407c4230",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CmpAddRemoveContainerToCLFSLog",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "AddOperation:UInt8(Boolean)",
+            "Status:UInt32(NTStatus)",
+            "ContainerName:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpAddRemoveContainerToCLFSLog",
+              "ea": "0x1409969a8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpAddRemoveContainerToCLFSLog",
+              "ea": "0x1407dc2c8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AddOperation",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ContainerName",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CmpCommitPreparedLightWeightTransaction",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpCommitPreparedLightWeightTransaction",
+              "ea": "0x1409742a5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpCommitPreparedLightWeightTransaction",
+              "ea": "0x140a08e33",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "UoW Count:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpCommitPreparedLightWeightTransaction",
+              "ea": "0x140974354",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpCommitPreparedLightWeightTransaction",
+              "ea": "0x140a08dbb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "UoW Count",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CmpLogCheckpoint",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpLogCheckpoint",
+              "ea": "0x14097e8c7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpLogCheckpoint",
+              "ea": "0x140a086c2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CmpPrepareLightWeightTransaction",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpPrepareLightWeightTransaction",
+              "ea": "0x1409744fc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpPrepareLightWeightTransaction",
+              "ea": "0x1409745ae",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpPrepareLightWeightTransaction",
+              "ea": "0x140a08f57",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpPrepareLightWeightTransaction",
+              "ea": "0x140a08fba",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "CmpSaveBootControlSetFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpSaveBootControlSet",
+              "ea": "0x140948dc5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpSaveBootControlSet",
+              "ea": "0x1407c2985",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CmpSaveBootControlSetSucceeded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "openKeysInvalidated:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpSaveBootControlSet",
+              "ea": "0x140948d91",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpSaveBootControlSet",
+              "ea": "0x1407c2951",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "openKeysInvalidated",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CmpTransLightWeightRollback",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpAbortLightWeightTransaction",
+              "ea": "0x14071cc08",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpAbortLightWeightTransaction",
+              "ea": "0x140a08947",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "UowCount:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpAbortLightWeightTransaction",
+              "ea": "0x14071cc6b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpAbortLightWeightTransaction",
+              "ea": "0x140a0896e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "UowCount",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CmpTransMgrCommit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpTransMgrCommit",
+              "ea": "0x14097d247",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpTransMgrCommit",
+              "ea": "0x14097d300",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpTransMgrCommit",
+              "ea": "0x140a06aa7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpTransMgrCommit",
+              "ea": "0x140a06b20",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "Commit delete UOW failed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpLightWeightCommitDeleteKeyUoW",
+              "ea": "0x1409931ad",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpLightWeightCommitDeleteKeyUoW",
+              "ea": "0x140b1fd24",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveFlush",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "mountPoint:CountedString",
+            "filePath:CountedString",
+            "flags:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpFlushHive",
+              "ea": "0x14095d9f2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpFlushHive",
+              "ea": "0x14097ec13",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpFlushHive",
+              "ea": "0x14097ec6b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpFlushHive",
+              "ea": "0x14095e288",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpFlushHive",
+              "ea": "0x14097eda3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpFlushHive",
+              "ea": "0x14097edd7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "filePath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "flags",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "mountPoint",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveFlushControlDataGenerated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "controlFlags:UInt32",
+            "logFileStatus:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpFlushHive",
+              "ea": "0x14095db80",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpFlushHive",
+              "ea": "0x14097eed7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpFlushHive",
+              "ea": "0x14097ef07",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "controlFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "logFileStatus",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveFlushPhase",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "phase:UInt8",
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpLogFlushPhaseEnd",
+              "ea": "0x14095e5dd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpLogFlushPhaseEnd",
+              "ea": "0x14097da97",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpLogFlushPhaseEnd",
+              "ea": "0x14097dac4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "phase:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpLogFlushPhaseStart",
+              "ea": "0x14095e66f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpLogFlushPhaseStart",
+              "ea": "0x14097db6c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpLogFlushPhaseStart",
+              "ea": "0x14097db9b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "phase",
+          "type": "UInt8",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveLoadAppHiveImpersonationRequired",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000008",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpCmdHiveOpen",
+              "ea": "0x140959877",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpCmdHiveOpen",
+              "ea": "0x140b0617d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveLoadErrorDetected",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "isRecoverable:UInt8(Boolean)",
+            "failureType:UInt32",
+            "status:UInt32(NTStatus)",
+            "location:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "SetFailureLocation",
+              "ea": "0x14029faee",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "SetFailureLocation",
+              "ea": "0x14046807c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "SetFailureLocation",
+              "ea": "0x1404680c8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "isRecoverable",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "location",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveLoadFailedToQueryLogFileSize",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "fileType:UInt8",
+            "status:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpLogFailureToGetFileSize",
+              "ea": "0x140982aba",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpLogFailureToGetFileSize",
+              "ea": "0x140984eb6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "fileType",
+          "type": "UInt8",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveLoadFileInaccessibleNoAccess",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x200000000008",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "SecurityDescriptor:UnicodeString",
+            "UserSID:SID",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpLogHiveFileInaccessible",
+              "ea": "0x140975bc6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpLogHiveFileInaccessible",
+              "ea": "0x140928c83",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "SecurityDescriptor",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UserSID",
+          "type": "SID",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveLoadFileInaccessibleOther",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x8",
+          "fields": [
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpLogHiveFileInaccessible",
+              "ea": "0x140975cf7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpLogHiveFileInaccessible",
+              "ea": "0x140928ac5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpLogHiveFileInaccessible",
+              "ea": "0x140928b09",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveLoadFileInaccessible_Aggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x200000000008",
+          "fields": [
+            "Count:Int64",
+            "Status:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpLogHiveFileInaccessible",
+              "ea": "0x140975c75",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpLogHiveFileInaccessible",
+              "ea": "0x140928a1b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveLoadFromFile",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x8",
+          "fields": [
+            "filePath:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpInitHiveFromFile",
+              "ea": "0x140987f09",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpInitHiveFromFile",
+              "ea": "0x140927049",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpInitHiveFromFile",
+              "ea": "0x140927085",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x8",
+          "fields": [
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpInitHiveFromFile",
+              "ea": "0x14098825a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpInitHiveFromFile",
+              "ea": "0x1409271ae",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpInitHiveFromFile",
+              "ea": "0x1409271ec",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "filePath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveLoadLogIneligible",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x8",
+          "fields": [
+            "logType:UInt8",
+            "minimumSequence:UInt32",
+            "sequence:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "HvpLogIneligibleLogHeader",
+              "ea": "0x14099620c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "HvpLogIneligibleLogHeader",
+              "ea": "0x1407dc074",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "logType",
+          "type": "UInt8",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "minimumSequence",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "sequence",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveLoadLogInvalid",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x8",
+          "fields": [
+            "logType:UInt8",
+            "signature:UInt32",
+            "sequence1:UInt32",
+            "sequence2:UInt32",
+            "timestamp:UInt64",
+            "expectedTimestamp:UInt64",
+            "type:UInt32",
+            "length:UInt32",
+            "checksum:UInt32",
+            "expectedChecksum:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "HvpLogInvalidLogHeader",
+              "ea": "0x1409963b1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "HvpLogInvalidLogHeader",
+              "ea": "0x1409854bc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "checksum",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "expectedChecksum",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "expectedTimestamp",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "length",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "logType",
+          "type": "UInt8",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "sequence1",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "sequence2",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "signature",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "timestamp",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "type",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveLoadLogMismatch",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x8",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "HvAnalyzeLogFiles",
+              "ea": "0x140995569",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "HvAnalyzeLogFiles",
+              "ea": "0x140984b49",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveLoadLogMismatch_Aggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000008",
+          "fields": [
+            "Count:Int64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "HvAnalyzeLogFiles",
+              "ea": "0x1409955b8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "HvAnalyzeLogFiles",
+              "ea": "0x140984bc4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveLoadLogUnreadable",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x8",
+          "fields": [
+            "logType:UInt8",
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "HvpLogUnreadableLog",
+              "ea": "0x140996495",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "HvpLogUnreadableLog",
+              "ea": "0x1409851f0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "logType",
+          "type": "UInt8",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveLoadLogsEmpty",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000008",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "HvAnalyzeLogFiles",
+              "ea": "0x1409953a8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "HvAnalyzeLogFiles",
+              "ea": "0x140b1276c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveLoadLogsFound",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x8",
+          "fields": [
+            "validLogs:UInt8",
+            "log1Type:UInt8",
+            "log2Type:UInt8",
+            "log1Sequence:UInt32",
+            "log2Sequence:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "HvAnalyzeLogFiles",
+              "ea": "0x14099541a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "HvAnalyzeLogFiles",
+              "ea": "0x140984cf6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "log1Sequence",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "log1Type",
+          "type": "UInt8",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "log2Sequence",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "log2Type",
+          "type": "UInt8",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "validLogs",
+          "type": "UInt8",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveLoadRecoverDataOrRecoverHeaderFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "RESULT:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "HvLoadHive",
+              "ea": "0x140978e24",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "HvLoadHive",
+              "ea": "0x140b121a6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "RESULT",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveReorganizationFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpReorganizeHive",
+              "ea": "0x1409766ab",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpReorganizeHive",
+              "ea": "0x140b06b4d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveReorganizationResultedInDifferentKeyCount",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "oldKeyCount:UInt32",
+            "newKeyCount:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpReorganizeHive",
+              "ea": "0x1409763fe",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpReorganizeHive",
+              "ea": "0x140b068fd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "newKeyCount",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "oldKeyCount",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveReorganizationValidationFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "checkRegistryReturnCode:UInt32(NTStatus)",
+            "hiveLoadFailure:Struct(TID)",
+            "UnrecoverableLoadFailureCount:UInt16",
+            "RecoverableLoadFailureCount:UInt16",
+            "UnrecoverableLinkFailureCount:UInt16",
+            "UnrecoverableLoadFailureLocations:Struct[](Boolean)",
+            "Type:Int32",
+            "Status:UInt32",
+            "Point:UInt32",
+            "RecoverableLoadFailureLocations:Struct[](Boolean)",
+            "Type:Int32",
+            "Status:UInt32",
+            "Point:UInt32",
+            "UnrecoverableLinkFailureLocations:Struct[](String)",
+            "Status:UInt32",
+            "Point:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpReorganizeHive",
+              "ea": "0x1409762a8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpReorganizeHive",
+              "ea": "0x140b067a7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Point",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "RecoverableLoadFailureCount",
+          "type": "UInt16",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "RecoverableLoadFailureLocations",
+          "type": "Struct[](Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Type",
+          "type": "Int32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLinkFailureCount",
+          "type": "UInt16",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLinkFailureLocations",
+          "type": "Struct[](String)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLoadFailureCount",
+          "type": "UInt16",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLoadFailureLocations",
+          "type": "Struct[](Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "checkRegistryReturnCode",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "hiveLoadFailure",
+          "type": "Struct(TID)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveReorganized",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "lastReorganizeTime:UInt64",
+            "oldSize:UInt32",
+            "newSize:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpReorganizeHive",
+              "ea": "0x1409764ec",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpReorganizeHive",
+              "ea": "0x140b069eb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "lastReorganizeTime",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "newSize",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "oldSize",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HiveSelfHealed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "CheckRegistryReturnCode:UInt32(NTStatus)",
+            "HiveLoadFailure:Struct(TID)",
+            "UnrecoverableLoadFailureCount:UInt16",
+            "RecoverableLoadFailureCount:UInt16",
+            "UnrecoverableLinkFailureCount:UInt16",
+            "UnrecoverableLoadFailureLocations:Struct[](Boolean)",
+            "Type:Int32",
+            "Status:UInt32",
+            "Point:UInt32",
+            "RecoverableLoadFailureLocations:Struct[](Boolean)",
+            "Type:Int32",
+            "Status:UInt32",
+            "Point:UInt32",
+            "UnrecoverableLinkFailureLocations:Struct[](String)",
+            "Status:UInt32",
+            "Point:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpCreateHive",
+              "ea": "0x1409753ac",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpCreateHive",
+              "ea": "0x140b063ce",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CheckRegistryReturnCode",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "HiveLoadFailure",
+          "type": "Struct(TID)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Point",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "RecoverableLoadFailureCount",
+          "type": "UInt16",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "RecoverableLoadFailureLocations",
+          "type": "Struct[](Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Type",
+          "type": "Int32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLinkFailureCount",
+          "type": "UInt16",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLinkFailureLocations",
+          "type": "Struct[](String)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLoadFailureCount",
+          "type": "UInt16",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "UnrecoverableLoadFailureLocations",
+          "type": "Struct[](Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogContainerLimitReached",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpAddRemoveRMLogContainer",
+              "ea": "0x14097e292",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpAddRemoveRMLogContainer",
+              "ea": "0x1407d6242",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "LogFileSwap",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "swapReason:UInt8",
+            "hiveLength:UInt32",
+            "volumeLogSizeCap:UInt32",
+            "effectiveLogSizeCap:UInt32",
+            "logDataLength:UInt32",
+            "logFileSize:UInt32",
+            "logEntries:UInt32",
+            "timeSinceLastSwap:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "HvSwapLogFiles",
+              "ea": "0x14098305f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "HvSwapLogFiles",
+              "ea": "0x140984907",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "effectiveLogSizeCap",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "hiveLength",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "logDataLength",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "logEntries",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "logFileSize",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "swapReason",
+          "type": "UInt8",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "timeSinceLastSwap",
+          "type": "Int64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "volumeLogSizeCap",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogSequenceNumberGapDetected",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "HvpDetermineLogFileApplicationOrder",
+              "ea": "0x140995c16",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "HvpDetermineLogFileApplicationOrder",
+              "ea": "0x140985aae",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NtReplaceKeyFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "NtReplaceKey",
+              "ea": "0x1409533bc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "NtReplaceKey",
+              "ea": "0x1407c6968",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NtReplaceKeySucceeded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "NtReplaceKey",
+              "ea": "0x140953420",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "NtReplaceKey",
+              "ea": "0x1407c69cc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegistryClfsLogfileAutoCleanupFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "PatchStatus:UInt32(NTStatus)",
+            "CountBase:UInt32",
+            "CountContainer:UInt32",
+            "CountPatch:UInt32",
+            "ContainerStartNumber:UInt32",
+            "ContainerIndex:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpDeleteCorruptedLogfile",
+              "ea": "0x140996e36",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpDeleteCorruptedLogfile",
+              "ea": "0x1407dc5de",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ContainerIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ContainerStartNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "CountBase",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "CountContainer",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "CountPatch",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PatchStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegistryLockThreadInfoIsNULL(Aggregate)",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "StackTraceOffsets:HexInt64[N]",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpThreadInfoLogStack",
+              "ea": "0x140526970",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpThreadInfoLogStack",
+              "ea": "0x1404c2a6c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "StackTraceOffsets",
+          "type": "HexInt64[N]",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SecurityDescriptorChanging",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x2",
+          "fields": [
+            "KeyPath:CountedString",
+            "OriginalSD:Binary",
+            "InformationToChange:UInt32",
+            "ChangeSD:Binary",
+            "ResultingSD:Binary"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpTraceSecurityChanging",
+              "ea": "0x1409729e9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpTraceSecurityChanging",
+              "ea": "0x140b172c2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ChangeSD",
+          "type": "Binary",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "InformationToChange",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "KeyPath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OriginalSD",
+          "type": "Binary",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ResultingSD",
+          "type": "Binary",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ServerSiloSymbolicLinkTrustCheckFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpDoParseKey",
+              "ea": "0x1409624a1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpDoParseKey",
+              "ea": "0x1409624ea",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpDoParseKey",
+              "ea": "0x1408669e2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "ServerSiloSymbolicLinkTrustCheckFailed(Aggregate)",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000010000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpDoParseKey",
+              "ea": "0x14096246b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpDoParseKey",
+              "ea": "0x14086669c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TransactionAborted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "keyPath:CountedString",
+            "reason:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpLogTransactionAbortedByName",
+              "ea": "0x14097c7d4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpLogTransactionAbortedByName",
+              "ea": "0x1407d5f04",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "keyPath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "reason",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TruncatedPrimaryHiveRecovered",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "hiveLengthFromHeader:UInt32",
+            "hiveLengthOnDisk:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "HvLoadHive",
+              "ea": "0x140978f3a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "HvLoadHive",
+              "ea": "0x140b12233",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "hiveLengthFromHeader",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "hiveLengthOnDisk",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnclassifiedReadError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "Status:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "HvpIsReadErrorTransient",
+              "ea": "0x14099614c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "HvpIsReadErrorTransient",
+              "ea": "0x140b127dc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnsupportedOperation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Operation:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpLogUnsupportedOperation",
+              "ea": "0x14098132e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpLogUnsupportedOperation",
+              "ea": "0x14097c40a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Operation",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnsupportedOperation(Aggregate)",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Operation:UInt32",
+            "Count:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CmpSendUnsupportedOperationTelemetryEvent",
+              "ea": "0x1409817bd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CmpSendUnsupportedOperationTelemetryEvent",
+              "ea": "0x1407d7241",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Operation",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

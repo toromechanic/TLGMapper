@@ -1,0 +1,66 @@
+{
+  "providerName": "Microsoft.Windows.Security.CodeIntegrity.NWActivityNoReEval",
+  "guid": "{2014F136-4001-4687-9BD2-8B8717C2A69F}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "ci.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "SACNoReEval",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "Count:Int64",
+            "FileName:CountedString",
+            "SACStatus:Int32",
+            "FlatSHA256Hash:UInt8[](Hex)"
+          ],
+          "callers": [
+            {
+              "binary": "ci.dll",
+              "function": "CiInstrumentSmartAppControlNoReEvaluation",
+              "ea": "0x180061f11",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ci.dll"
+          ]
+        },
+        {
+          "fieldName": "FileName",
+          "type": "CountedString",
+          "seenIn": [
+            "ci.dll"
+          ]
+        },
+        {
+          "fieldName": "FlatSHA256Hash",
+          "type": "UInt8[](Hex)",
+          "seenIn": [
+            "ci.dll"
+          ]
+        },
+        {
+          "fieldName": "SACStatus",
+          "type": "Int32",
+          "seenIn": [
+            "ci.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

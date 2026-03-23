@@ -1,0 +1,960 @@
+{
+  "providerName": "Microsoft.OneCore.WebThreatDefense.AppContextSensor",
+  "guid": "{75BE9E7D-DF1B-4E5E-AAD2-664599BBF5D8}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "wtd.sys"
+  ],
+  "uniqueEventCount": 21,
+  "events": [
+    {
+      "eventName": "AsCleanup",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "wtd.sys",
+              "function": "sub_140012008",
+              "ea": "0x140012037",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "EnumProcessDeleted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "UniqueId:UInt32",
+            "ImageName:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "wtd.sys",
+              "function": "sub_1400122EC",
+              "ea": "0x1400125d3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ImageName",
+          "type": "CountedString",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "UniqueId",
+          "type": "UInt32",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EnumerateSendProcessBeginError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "wtd.sys",
+              "function": "sub_1400122EC",
+              "ea": "0x140012628",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EnumerationComplete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "EnumerationTime:UInt64",
+            "NumProcesses:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtd.sys",
+              "function": "sub_1400122EC",
+              "ea": "0x1400126b3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EnumerationTime",
+          "type": "UInt64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "NumProcesses",
+          "type": "UInt64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EnumerationError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "wtd.sys",
+              "function": "sub_1400122EC",
+              "ea": "0x1400127f2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EnumerationQueryCmdLineError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtd.sys",
+              "function": "sub_1400122EC",
+              "ea": "0x140012543",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EnumerationQueryImageNameError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "wtd.sys",
+              "function": "sub_1400122EC",
+              "ea": "0x140012424",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GetParentProcessIdError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "InheritedFromUniqueProcessId:UInt32",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "wtd.sys",
+              "function": "sub_140012834",
+              "ea": "0x1400129dd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InheritedFromUniqueProcessId",
+          "type": "UInt32",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GetProcessIdError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "UniqueProcessId:UInt32",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "wtd.sys",
+              "function": "sub_140012834",
+              "ea": "0x1400128ed",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "UniqueProcessId",
+          "type": "UInt32",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GetProcessIdsError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "ProcessHandle:UInt64",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "wtd.sys",
+              "function": "sub_140012834",
+              "ea": "0x14001294d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ProcessHandle",
+          "type": "UInt64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InitializeAsError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "NotifyRegistered:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtd.sys",
+              "function": "sub_140012100",
+              "ea": "0x1400121e5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NotifyRegistered",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NoParentProcessId",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "InheritedFromUniqueProcessId:UInt32",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "wtd.sys",
+              "function": "sub_140012834",
+              "ea": "0x1400129c8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InheritedFromUniqueProcessId",
+          "type": "UInt32",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ParentProcessGetProcessIdError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "PID:UInt64",
+            "ParentPID:UInt64",
+            "ImageName:CountedString",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "wtd.sys",
+              "function": "NotifyRoutine",
+              "ea": "0x140001d7e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ImageName",
+          "type": "CountedString",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "PID",
+          "type": "UInt64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "ParentPID",
+          "type": "UInt64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessBegin",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "UniqueId:UInt32",
+            "SequenceId:UInt64",
+            "ParentUniqueId:UInt64",
+            "ParentSequenceId:UInt64",
+            "ImageName:CountedString",
+            "ImageFileNameLengthInCb:UInt32",
+            "CommandLineLengthInCb:UInt32",
+            "OrigCommandLineLengthInCb:UInt32",
+            "Rundown:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "wtd.sys",
+              "function": "sub_140012D58",
+              "ea": "0x140013080",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CommandLineLengthInCb",
+          "type": "UInt32",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "ImageFileNameLengthInCb",
+          "type": "UInt32",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "ImageName",
+          "type": "CountedString",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "OrigCommandLineLengthInCb",
+          "type": "UInt32",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "ParentSequenceId",
+          "type": "UInt64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "ParentUniqueId",
+          "type": "UInt64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "Rundown",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "SequenceId",
+          "type": "UInt64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "UniqueId",
+          "type": "UInt32",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessEndNotify",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "PID:UInt32",
+            "SequenceId:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtd.sys",
+              "function": "NotifyRoutine",
+              "ea": "0x140001c24",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PID",
+          "type": "UInt32",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "SequenceId",
+          "type": "UInt64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessNotifyError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "PID:UInt64",
+            "Create:UInt8(Boolean)",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "wtd.sys",
+              "function": "NotifyRoutine",
+              "ea": "0x140001de1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Create",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "PID",
+          "type": "UInt64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SendImmersivePackageInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ProcessId:UInt32",
+            "SequenceId:UInt64",
+            "PackageName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "wtd.sys",
+              "function": "sub_140012A98",
+              "ea": "0x140012d29",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PackageName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessId",
+          "type": "UInt32",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "SequenceId",
+          "type": "UInt64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SendImmersivePackageInfoError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ProcessId:UInt32",
+            "SequenceId:UInt64",
+            "Status:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtd.sys",
+              "function": "sub_140012A98",
+              "ea": "0x140012c07",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessId",
+          "type": "UInt32",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "SequenceId",
+          "type": "UInt64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SendProcessBeginAggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "TotalCount:Int64",
+            "TotalImageFileNameLength:Int64",
+            "MaxImageFileNameLength:Int64",
+            "TotalCommandLineLength:Int64",
+            "MaxCommandLineLength:Int64",
+            "TotalOrigCommandLineLength:Int64",
+            "MaxOrigCommandLineLength:Int64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtd.sys",
+              "function": "sub_140012D58",
+              "ea": "0x1400131b7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "MaxCommandLineLength",
+          "type": "Int64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "MaxImageFileNameLength",
+          "type": "Int64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "MaxOrigCommandLineLength",
+          "type": "Int64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "TotalCommandLineLength",
+          "type": "Int64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "TotalCount",
+          "type": "Int64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "TotalImageFileNameLength",
+          "type": "Int64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "TotalOrigCommandLineLength",
+          "type": "Int64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SendProcessBeginError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "UniqueId:UInt32",
+            "SequenceId:UInt64",
+            "Status:UInt32(NTStatus)",
+            "ImageFileNameLengthInCb:UInt64",
+            "CommandLineLengthInCb:UInt64",
+            "OrigCommandLineLengthInCb:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtd.sys",
+              "function": "sub_140012D58",
+              "ea": "0x140012ede",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CommandLineLengthInCb",
+          "type": "UInt64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "ImageFileNameLengthInCb",
+          "type": "UInt64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "OrigCommandLineLengthInCb",
+          "type": "UInt32",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "SequenceId",
+          "type": "UInt64",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        },
+        {
+          "fieldName": "UniqueId",
+          "type": "UInt32",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnregisterProcessCreationNotifyError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "wtd.sys",
+              "function": "sub_140012008",
+              "ea": "0x14001207c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "wtd.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

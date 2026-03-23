@@ -1,0 +1,772 @@
+{
+  "providerName": "DESkyBackupProvider",
+  "guid": "{00A85728-5A3D-4B9E-B24B-9A14CCE5F322}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "fveskybackup.dll"
+  ],
+  "uniqueEventCount": 7,
+  "events": [
+    {
+      "eventName": "BitLocker.AAD.Delete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ExitCode:Int32(HResult)",
+            "hrMutex:Int32(HResult)",
+            "NumKeyDeleteAttempts:Int32(HResult)",
+            "TraceGuid:GUID",
+            "RetryRequest:Int32",
+            "DidSetRetryHint:Int32",
+            "RetryHintSeconds:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fveskybackup.dll",
+              "function": "?FveDeleteRecoveryPasswordsFromCloudDomain@@YAJPEBGPEAU_FVE_AAD_DELETE_REQUEST@@KHPEAH2PEAK@Z",
+              "ea": "0x1800147d2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DidSetRetryHint",
+          "type": "Int32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "ExitCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "NumKeyDeleteAttempts",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "RetryHintSeconds",
+          "type": "UInt32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "RetryRequest",
+          "type": "Int32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "TraceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "hrMutex",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.FveApi.Set.BackupAccountInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ExitCode:Int32(HResult)",
+            "IsOSVolume:Bool32",
+            "VolumeGuid:GUID",
+            "UIAllowState:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fveskybackup.dll",
+              "function": "?FveBackupRecoveryPasswordToSkyDrive@@YAJPEAXHHW4eFveVolumeType@@PEBU_GUID@@2PEBU_FVE_AUTH_ELEMENT@@HHHH@Z",
+              "ea": "0x18000be2a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ExitCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "IsOSVolume",
+          "type": "Bool32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "UIAllowState",
+          "type": "Bool32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "VolumeGuid",
+          "type": "GUID",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Microsoft.BitLocker.FveSkyBackup.AADDeleteRequestError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32",
+            "TraceGuid:UnicodeString",
+            "AADResponseHTTPStatusCode:UInt32",
+            "AADResponseCode:UnicodeString",
+            "AADResponseSubCode:UnicodeString",
+            "RequestId:UnicodeString",
+            "AADResponseTime:UnicodeString",
+            "JSONParseHr:Int32",
+            "ErrorLine:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fveskybackup.dll",
+              "function": "?FveDeleteKeysFromAAD@@YAJPEBG_K0PEAU_FVE_AAD_DELETE_REQUEST@@KPEAH3PEAK@Z",
+              "ea": "0x1800135af",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AADResponseCode",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "AADResponseHTTPStatusCode",
+          "type": "UInt32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "AADResponseSubCode",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "AADResponseTime",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorLine",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "JSONParseHr",
+          "type": "Int32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "RequestId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "TraceGuid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Microsoft.BitLocker.FveSkyBackup.AADGetRequestError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32",
+            "hrHttpStatusCode:Int32",
+            "hrMutex:Int32",
+            "IsServerError:Int32",
+            "TraceGuid:GUID",
+            "ErrorLine:UnicodeString",
+            "RetryRequest:Int32",
+            "DidSetRetryHint:Int32",
+            "RetryHintSeconds:UInt32",
+            "AADResponseHTTPStatusCode:UInt32",
+            "AADResponseCode:UnicodeString",
+            "AADResponseSubCode:UnicodeString",
+            "RequestId:UnicodeString",
+            "AADResponseTime:UnicodeString",
+            "JSONParseHr:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fveskybackup.dll",
+              "function": "?FveGetAllRecoveryPasswordsFromCloudDomain@@YAJHPEAKPEAPEAPEAU_FVE_AAD_GET_RESPONSE@@PEAH@Z",
+              "ea": "0x18001558c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AADResponseCode",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "AADResponseHTTPStatusCode",
+          "type": "UInt32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "AADResponseSubCode",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "AADResponseTime",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "DidSetRetryHint",
+          "type": "Int32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorLine",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "IsServerError",
+          "type": "Int32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "JSONParseHr",
+          "type": "Int32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "RequestId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "RetryHintSeconds",
+          "type": "UInt32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "RetryRequest",
+          "type": "Int32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "TraceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "hrHttpStatusCode",
+          "type": "Int32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "hrMutex",
+          "type": "Int32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Microsoft.BitLocker.FveSkyBackup.CleanupStaleRPinAAD",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "hr:Int32(HResult)",
+            "hrFreeAAD:Int32(HResult)",
+            "numRecoveryPasswords:UInt32",
+            "numRecoveryPasswordsFromAAD:UInt32",
+            "numAADRPsForOSV:UInt32",
+            "numAADRPsToBeDeleted:UInt32",
+            "numAADRPsLeft:UInt32",
+            "bFailedToDeleteRP:Bool32",
+            "LineNumber:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "fveskybackup.dll",
+              "function": "?FveCleanupStaleRecoveryPasswordsInAAD@@YAJPEAXW4eFveVolumeType@@H@Z",
+              "ea": "0x180012e79",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "LineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "bFailedToDeleteRP",
+          "type": "Bool32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "hrFreeAAD",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "numAADRPsForOSV",
+          "type": "UInt32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "numAADRPsLeft",
+          "type": "UInt32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "numAADRPsToBeDeleted",
+          "type": "UInt32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "numRecoveryPasswords",
+          "type": "UInt32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "numRecoveryPasswordsFromAAD",
+          "type": "UInt32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Microsoft.BitLocker.FveSkyBackup.CloudBackup",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ExitCode:Int32(HResult)",
+            "hrTemp:Int32(HResult)",
+            "hrTemp2:Int32(HResult)",
+            "hrCleanup:Int32(HResult)",
+            "ServerFailure:Bool32",
+            "VolumeGuid:GUID",
+            "RecoveryGuid:GUID",
+            "TraceGuid:GUID",
+            "VolumeType:UInt32",
+            "AADResponseHTTPStatusCode:UInt32",
+            "AADResponseCode:UnicodeString",
+            "AADResponseSubCode:UnicodeString",
+            "RequestId:UnicodeString",
+            "AADResponseTime:UnicodeString",
+            "JSONParseHr:Int32",
+            "RetryRequest:Int32",
+            "RetryHintSeconds:UInt32",
+            "DidSetRetryHint:Int32",
+            "DidCleanup:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fveskybackup.dll",
+              "function": "?FveBackupRecoveryPasswordToCloudDomain@@YAJPEAXHHW4eFveVolumeType@@PEBU_GUID@@2PEBU_FVE_AUTH_ELEMENT@@PEBGHHH@Z",
+              "ea": "0x180012659",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AADResponseCode",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "AADResponseHTTPStatusCode",
+          "type": "UInt32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "AADResponseSubCode",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "AADResponseTime",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "DidCleanup",
+          "type": "Int32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "DidSetRetryHint",
+          "type": "Int32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "ExitCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "JSONParseHr",
+          "type": "Int32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "RecoveryGuid",
+          "type": "GUID",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "RequestId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "RetryHintSeconds",
+          "type": "UInt32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "RetryRequest",
+          "type": "Int32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "ServerFailure",
+          "type": "Bool32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "TraceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "VolumeGuid",
+          "type": "GUID",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "VolumeType",
+          "type": "UInt32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "hrCleanup",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "hrTemp2",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "hrTemp",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Microsoft.BitLocker.FveSkyBackup.OneDriveBackup",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "BackUpStatus:AnsiString",
+            "ExitCode:Int32(HResult)",
+            "IsOSVolume:Bool32",
+            "VolumeGuid:GUID",
+            "UIAllowState:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fveskybackup.dll",
+              "function": "?FveBackupRecoveryPasswordToSkyDrive@@YAJPEAXHHW4eFveVolumeType@@PEBU_GUID@@2PEBU_FVE_AUTH_ELEMENT@@HHHH@Z",
+              "ea": "0x18000c128",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fveskybackup.dll",
+              "function": "?FveBackupRecoveryPasswordToSkyDrive@@YAJPEAXHHW4eFveVolumeType@@PEBU_GUID@@2PEBU_FVE_AUTH_ELEMENT@@HHHH@Z",
+              "ea": "0x18000c178",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BackUpStatus",
+          "type": "AnsiString",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "ExitCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "IsOSVolume",
+          "type": "Bool32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "UIAllowState",
+          "type": "Bool32",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        },
+        {
+          "fieldName": "VolumeGuid",
+          "type": "GUID",
+          "seenIn": [
+            "fveskybackup.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

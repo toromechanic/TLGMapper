@@ -1,0 +1,748 @@
+{
+  "providerName": "Microsoft.Windows.Win32OpenSSH",
+  "guid": "{0D986661-0DD7-561A-B15B-FCC1CD46D2BB}",
+  "os": "WindowsServer2025",
+  "binaryCount": 3,
+  "binaries": [
+    "ssh-keyscan.exe",
+    "ssh.exe",
+    "sshd.exe"
+  ],
+  "uniqueEventCount": 10,
+  "events": [
+    {
+      "eventName": "Auth",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "success:Int16",
+            "authType:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "ssh.exe",
+              "function": "ssh_userauth2",
+              "ea": "0x1400292cc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ssh.exe",
+              "function": "ssh_userauth2",
+              "ea": "0x14002930f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ssh.exe"
+          ]
+        },
+        {
+          "fieldName": "authType",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh.exe"
+          ]
+        },
+        {
+          "fieldName": "success",
+          "type": "Int16",
+          "seenIn": [
+            "ssh.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AuthMethods",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "authMethodsConfigured:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "sshd.exe",
+              "function": "userauth_finish",
+              "ea": "0x1400106b3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "sshd.exe",
+              "function": "userauth_finish",
+              "ea": "0x1400106fd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "authMethodsConfigured",
+          "type": "AnsiString",
+          "seenIn": [
+            "sshd.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Connection",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "status:AnsiString",
+            "isCustomSSHServerPort:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "ssh.exe",
+              "function": "send_ssh_connection_telemetry",
+              "ea": "0x140049b43",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ssh.exe",
+              "function": "send_ssh_connection_telemetry",
+              "ea": "0x140049b7d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ssh.exe"
+          ]
+        },
+        {
+          "fieldName": "isCustomSSHServerPort",
+          "type": "Bool32",
+          "seenIn": [
+            "ssh.exe"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Encryption",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "direction:AnsiString",
+            "cipher:AnsiString",
+            "kex:AnsiString",
+            "mac:AnsiString",
+            "compression:AnsiString",
+            "hostKey:AnsiString",
+            "clientProposedKex:AnsiString",
+            "clientProposedHostKeys:AnsiString",
+            "clientProposedCiphersCtos:AnsiString",
+            "clientProposedCiphersStoc:AnsiString",
+            "clientProposedMACsCtos:AnsiString",
+            "clientProposedMACsStoc:AnsiString",
+            "clientProposedCompressionCtos:AnsiString",
+            "clientProposedCompressionStoc:AnsiString",
+            "serverProposedKex:AnsiString",
+            "serverProposedHostKeys:AnsiString",
+            "serverProposedCiphersCtos:AnsiString",
+            "serverProposedCiphersStoc:AnsiString",
+            "serverProposedMACsCtos:AnsiString",
+            "serverProposedMACsStoc:AnsiString",
+            "serverProposedCompressionCtos:AnsiString",
+            "serverProposedCompressionStoc:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "ssh-keyscan.exe",
+              "function": "send_encryption_telemetry",
+              "ea": "0x14003785a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ssh-keyscan.exe",
+              "function": "send_encryption_telemetry",
+              "ea": "0x1400378a0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ssh.exe",
+              "function": "send_encryption_telemetry",
+              "ea": "0x14004964a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ssh.exe",
+              "function": "send_encryption_telemetry",
+              "ea": "0x140049690",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "sshd.exe",
+              "function": "send_encryption_telemetry",
+              "ea": "0x140060c1a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "sshd.exe",
+              "function": "send_encryption_telemetry",
+              "ea": "0x140060c60",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "cipher",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "clientProposedCiphersCtos",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "clientProposedCiphersStoc",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "clientProposedCompressionCtos",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "clientProposedCompressionStoc",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "clientProposedHostKeys",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "clientProposedKex",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "clientProposedMACsCtos",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "clientProposedMACsStoc",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "compression",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "direction",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "hostKey",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "kex",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "mac",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "serverProposedCiphersCtos",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "serverProposedCiphersStoc",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "serverProposedCompressionCtos",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "serverProposedCompressionStoc",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "serverProposedHostKeys",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "serverProposedKex",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "serverProposedMACsCtos",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "serverProposedMACsStoc",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh-keyscan.exe",
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KexExchExitCodeSSHD",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "KexExchExitCodeSSHD:Int16"
+          ],
+          "callers": [
+            {
+              "binary": "sshd.exe",
+              "function": "send_kex_exch_exit_code_telemetry",
+              "ea": "0x140060d94",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "sshd.exe",
+              "function": "send_kex_exch_exit_code_telemetry",
+              "ea": "0x140060dda",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "KexExchExitCodeSSHD",
+          "type": "Int16",
+          "seenIn": [
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "sshd.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PubkeySigning",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "status:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "ssh.exe",
+              "function": "send_pubkey_sign_telemetry",
+              "ea": "0x140049975",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ssh.exe",
+              "function": "send_pubkey_sign_telemetry",
+              "ea": "0x1400499bc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ssh.exe"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PublicKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "status:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "ssh.exe",
+              "function": "send_pubkey_telemetry",
+              "ea": "0x1400497e5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ssh.exe",
+              "function": "send_pubkey_telemetry",
+              "ea": "0x14004982c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ssh.exe"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SSHD",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "connStatus:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "sshd.exe",
+              "function": "send_sshd_connection_telemetry",
+              "ea": "0x140060f25",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "sshd.exe",
+              "function": "send_sshd_connection_telemetry",
+              "ea": "0x140060f6c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "connStatus",
+          "type": "AnsiString",
+          "seenIn": [
+            "sshd.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Shell",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PTY:Int16",
+            "type:Int16"
+          ],
+          "callers": [
+            {
+              "binary": "sshd.exe",
+              "function": "do_exec_windows",
+              "ea": "0x14004524f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "sshd.exe",
+              "function": "do_exec_windows",
+              "ea": "0x140045293",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PTY",
+          "type": "Int16",
+          "seenIn": [
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "type",
+          "type": "Int16",
+          "seenIn": [
+            "sshd.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Startup",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ourVersion:AnsiString",
+            "remoteProtocolError:AnsiString",
+            "peerVersion:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "ssh.exe",
+              "function": "send_ssh_version_telemetry",
+              "ea": "0x140049d33",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ssh.exe",
+              "function": "send_ssh_version_telemetry",
+              "ea": "0x140049d6b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "sshd.exe",
+              "function": "send_ssh_version_telemetry",
+              "ea": "0x140061123",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "sshd.exe",
+              "function": "send_ssh_version_telemetry",
+              "ea": "0x14006115b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "ourVersion",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "peerVersion",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        },
+        {
+          "fieldName": "remoteProtocolError",
+          "type": "AnsiString",
+          "seenIn": [
+            "ssh.exe",
+            "sshd.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

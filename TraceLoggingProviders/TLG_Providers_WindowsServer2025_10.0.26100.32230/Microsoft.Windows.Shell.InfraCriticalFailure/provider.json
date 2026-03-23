@@ -1,0 +1,70 @@
+{
+  "providerName": "Microsoft.Windows.Shell.InfraCriticalFailure",
+  "guid": "{3EC39F17-6102-5C82-EB27-24A2D01672FF}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "shell32.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "CriticalFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "category:UInt32",
+            "cleanBootFlags:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "shell32.dll",
+              "function": "??$CriticalFailure@AEAIH@ShellInfraCriticalFailureProvider@@SAXAEAI$$QEAH@Z",
+              "ea": "0x1804c77da",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "category",
+          "type": "UInt32",
+          "seenIn": [
+            "shell32.dll"
+          ]
+        },
+        {
+          "fieldName": "cleanBootFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "shell32.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OOBECriticalFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "shell32.dll",
+              "function": "?OOBECriticalFailure@ShellInfraCriticalFailureProvider@@SAXXZ",
+              "ea": "0x1804c8763",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    }
+  ]
+}

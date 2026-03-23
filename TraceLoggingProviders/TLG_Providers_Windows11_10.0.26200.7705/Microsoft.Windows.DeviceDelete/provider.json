@@ -1,0 +1,86 @@
+{
+  "providerName": "Microsoft.Windows.DeviceDelete",
+  "guid": "{8648E819-0883-4904-B730-D76D8498B521}",
+  "os": "Windows 11",
+  "binaryCount": 3,
+  "binaries": [
+    "SettingsHandlers_SIUF.dll",
+    "diagtrack.dll",
+    "tellib.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "DeviceDelete_0",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "__TlgCV__:AnsiString",
+            "IsInitiatedByUser:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "diagtrack.dll",
+              "function": "?EmitDeviceDeleteEvent@DeviceDelete@Diagnostics@Microsoft@@SAJ_N@Z",
+              "ea": "0x18020f65a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "diagtrack.dll",
+              "function": "?EmitDeviceDeleteEvent@DeviceDelete@Diagnostics@Microsoft@@SAJ_N@Z",
+              "ea": "0x18020f6b9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "SettingsHandlers_SIUF.dll",
+              "function": "?EmitDeviceDeleteEvent@DeviceDelete@Diagnostics@Microsoft@@SAJ_N@Z",
+              "ea": "0x18001d494",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "SettingsHandlers_SIUF.dll",
+              "function": "?EmitDeviceDeleteEvent@DeviceDelete@Diagnostics@Microsoft@@SAJ_N@Z",
+              "ea": "0x18001d4f3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "tellib.dll",
+              "function": "?EmitDeviceDeleteEvent@DeviceDelete@Diagnostics@Microsoft@@SAJ_N@Z",
+              "ea": "0x1800ef454",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "tellib.dll",
+              "function": "?EmitDeviceDeleteEvent@DeviceDelete@Diagnostics@Microsoft@@SAJ_N@Z",
+              "ea": "0x1800ef4b7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsInitiatedByUser",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "SettingsHandlers_SIUF.dll",
+            "diagtrack.dll",
+            "tellib.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "SettingsHandlers_SIUF.dll",
+            "diagtrack.dll",
+            "tellib.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

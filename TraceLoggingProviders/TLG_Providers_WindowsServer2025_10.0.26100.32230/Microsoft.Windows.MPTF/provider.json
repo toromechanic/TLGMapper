@@ -1,0 +1,72 @@
+{
+  "providerName": "Microsoft.Windows.MPTF",
+  "guid": "{B2B3EB46-75EC-4EDD-BFB9-4A375AD5CE47}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "ThermalFilter.sys"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "ThermalFilterDeviceAttributes",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "BIOSName:CountedString",
+            "ThermalDeviceId:Int32",
+            "Capabilities:HexInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ThermalFilter.sys",
+              "function": "TfDiagLogThermalDevice",
+              "ea": "0x14000a456",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ThermalFilter.sys",
+              "function": "TfDiagLogThermalDevice",
+              "ea": "0x14000a4b0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BIOSName",
+          "type": "CountedString",
+          "seenIn": [
+            "ThermalFilter.sys"
+          ]
+        },
+        {
+          "fieldName": "Capabilities",
+          "type": "HexInt32",
+          "seenIn": [
+            "ThermalFilter.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ThermalFilter.sys"
+          ]
+        },
+        {
+          "fieldName": "ThermalDeviceId",
+          "type": "Int32",
+          "seenIn": [
+            "ThermalFilter.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

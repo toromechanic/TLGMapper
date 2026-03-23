@@ -1,0 +1,1408 @@
+{
+  "providerName": "Microsoft.Windows.Security.Schannel",
+  "guid": "{44492B72-A8E2-4F20-B0AE-F1D437657C92}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "schannel.dll"
+  ],
+  "uniqueEventCount": 7,
+  "events": [
+    {
+      "eventName": "TlsCredentialGroupInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "appName:UnicodeString",
+            "isKernelMode:Bool32",
+            "isServer:Bool32",
+            "credVersion:HexInt32",
+            "systemEnabledProtocols:HexInt32",
+            "systemDisabledByDefaultProtocols:HexInt32",
+            "protocolsWithCipherSuites:HexInt32",
+            "tlsParametersDisabledProtocols:HexInt32",
+            "enabledProtocols:HexInt32",
+            "isDtlsOnly:Bool32",
+            "errorState:UInt32",
+            "errorCode:UInt32",
+            "count:Int64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "schannel.dll",
+              "function": "?WriteEvent@CCredGroupTelemetryContext@@MEAAXXZ",
+              "ea": "0x18007ad0b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "schannel.dll",
+              "function": "?WriteServerEvent@CSchannelTelemetryContext@@IEAAXXZ",
+              "ea": "0x180036cda",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "appName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "credVersion",
+          "type": "HexInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "enabledProtocols",
+          "type": "HexInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "errorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "errorState",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "isDtlsOnly",
+          "type": "Bool32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "isKernelMode",
+          "type": "Bool32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "isServer",
+          "type": "Bool32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "protocolsWithCipherSuites",
+          "type": "HexInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "systemDisabledByDefaultProtocols",
+          "type": "HexInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "systemEnabledProtocols",
+          "type": "HexInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "tlsParametersDisabledProtocols",
+          "type": "HexInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TlsErrorCertKeyUsage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "keyXchAlgId:UInt32",
+            "KeySignAlgId:UInt32",
+            "targetName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "schannel.dll",
+              "function": "?LogCertKeyUsageError@CSchannelTelemetryContext@@SAXKKPEBG@Z",
+              "ea": "0x18007ab0b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "KeySignAlgId",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "keyXchAlgId",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "targetName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TlsErrorClientAggregated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "connectionCount:Int64",
+            "elapsedTimeMin:Int64",
+            "elapsedTimeMax:Int64",
+            "elapsedTimeSum:Int64",
+            "receivedSessionTicketCount:Int64",
+            "targetName:UnicodeString",
+            "domainJoined:Bool32",
+            "cipherSuite:UInt32",
+            "appName:UnicodeString",
+            "handshakeType:UInt8",
+            "contextReq:UInt64",
+            "contextFlags:UInt64",
+            "reconnectInfo:UInt16",
+            "extendedMSInfo:UInt16",
+            "tlsExtensionSent:UInt32",
+            "tlsExtensionReceived:UInt32",
+            "unknownTlsExtensionHexList:UInt16[](Hex)",
+            "unknownTlsExtensionCount:UInt16",
+            "curveType:UInt32",
+            "protocol:UInt32",
+            "keyExchangeLength:UInt32",
+            "clientMinKeyLength:UInt32",
+            "clientMaxKeyLength:UInt32",
+            "ServerMinKeyLength:UInt32",
+            "errorCode:UInt32",
+            "alertNumber:UInt8",
+            "errorState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "schannel.dll",
+              "function": "?WriteEvent@CSchannelTelemetryContext@@MEAAXXZ",
+              "ea": "0x18007b040",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ServerMinKeyLength",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "alertNumber",
+          "type": "UInt8",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "appName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "cipherSuite",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "clientMaxKeyLength",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "clientMinKeyLength",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "connectionCount",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "contextFlags",
+          "type": "UInt64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "contextReq",
+          "type": "UInt64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "curveType",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "domainJoined",
+          "type": "Bool32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeMax",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeMin",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeSum",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "errorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "errorState",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "extendedMSInfo",
+          "type": "UInt16",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "handshakeType",
+          "type": "UInt8",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "keyExchangeLength",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "protocol",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "receivedSessionTicketCount",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "reconnectInfo",
+          "type": "UInt16",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "targetName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "tlsExtensionReceived",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "tlsExtensionSent",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "unknownTlsExtensionCount",
+          "type": "UInt16",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "unknownTlsExtensionHexList",
+          "type": "UInt16[](Hex)",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TlsErrorServerAggregated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "connectionCount:Int64",
+            "issuedSessionTicketCount:Int64",
+            "appName:UnicodeString",
+            "handshakeType:UInt8",
+            "contextReq:UInt64",
+            "contextFlags:UInt64",
+            "reconnectInfo:UInt16",
+            "extendedMSInfo:UInt16",
+            "tlsExtensionSent:UInt32",
+            "tlsExtensionReceived:UInt32",
+            "unknownTlsExtensionHexList:UInt16[](Hex)",
+            "unknownTlsExtensionCount:UInt16",
+            "curveType:UInt32",
+            "protocol:UInt32",
+            "keyExchangeLength:UInt32",
+            "clientMinKeyLength:UInt32",
+            "clientMaxKeyLength:UInt32",
+            "ServerMinKeyLength:UInt32",
+            "errorCode:UInt32",
+            "alertNumber:UInt8",
+            "errorState:UInt32",
+            "clientOfferedProtocol:UInt32",
+            "clientCipherList:HexInt32[]",
+            "clientCipherListCount:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "schannel.dll",
+              "function": "?WriteEvent@CSchannelTelemetryContext@@MEAAXXZ",
+              "ea": "0x18007b261",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ServerMinKeyLength",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "alertNumber",
+          "type": "UInt8",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "appName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "clientCipherList",
+          "type": "HexInt32[]",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "clientCipherListCount",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "clientMaxKeyLength",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "clientMinKeyLength",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "clientOfferedProtocol",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "connectionCount",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "contextFlags",
+          "type": "UInt64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "contextReq",
+          "type": "UInt64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "curveType",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "errorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "errorState",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "extendedMSInfo",
+          "type": "UInt16",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "handshakeType",
+          "type": "UInt8",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "issuedSessionTicketCount",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "keyExchangeLength",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "protocol",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "reconnectInfo",
+          "type": "UInt16",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "tlsExtensionReceived",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "tlsExtensionSent",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "unknownTlsExtensionCount",
+          "type": "UInt16",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "unknownTlsExtensionHexList",
+          "type": "UInt16[](Hex)",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TlsHandshakeInfoClientAggregated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "connectionCount:Int64",
+            "elapsedTimeMin:Int64",
+            "elapsedTimeMax:Int64",
+            "elapsedTimeSum:Int64",
+            "receivedSessionTicketCount:Int64",
+            "targetName:UnicodeString",
+            "domainJoined:Bool32",
+            "cipherSuite:UInt32",
+            "appName:UnicodeString",
+            "handshakeType:UInt8",
+            "contextReq:UInt64",
+            "contextFlags:UInt64",
+            "reconnectInfo:UInt16",
+            "extendedMSInfo:UInt16",
+            "tlsExtensionSent:UInt32",
+            "tlsExtensionReceived:UInt32",
+            "unknownTlsExtensionHexList:UInt16[](Hex)",
+            "unknownTlsExtensionCount:UInt16",
+            "curveType:UInt32",
+            "protocol:UInt32",
+            "keyExchangeLength:UInt32",
+            "clientMinKeyLength:UInt32",
+            "clientMaxKeyLength:UInt32",
+            "ServerMinKeyLength:UInt32",
+            "errorCode:UInt32",
+            "alertNumber:UInt8",
+            "errorState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "schannel.dll",
+              "function": "?WriteEvent@CSchannelTelemetryContext@@MEAAXXZ",
+              "ea": "0x18007b478",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ServerMinKeyLength",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "alertNumber",
+          "type": "UInt8",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "appName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "cipherSuite",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "clientMaxKeyLength",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "clientMinKeyLength",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "connectionCount",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "contextFlags",
+          "type": "UInt64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "contextReq",
+          "type": "UInt64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "curveType",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "domainJoined",
+          "type": "Bool32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeMax",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeMin",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeSum",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "errorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "errorState",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "extendedMSInfo",
+          "type": "UInt16",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "handshakeType",
+          "type": "UInt8",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "keyExchangeLength",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "protocol",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "receivedSessionTicketCount",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "reconnectInfo",
+          "type": "UInt16",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "targetName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "tlsExtensionReceived",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "tlsExtensionSent",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "unknownTlsExtensionCount",
+          "type": "UInt16",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "unknownTlsExtensionHexList",
+          "type": "UInt16[](Hex)",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TlsHandshakeInfoServerCipherSuiteAggregated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "connectionCount:Int64",
+            "issuedSessionTicketCount:Int64",
+            "cipherSuite1:Int64",
+            "cipherSuite2:Int64",
+            "cipherSuite3:Int64",
+            "cipherSuite4:Int64",
+            "cipherSuite5:Int64",
+            "cipherSuite6:Int64",
+            "cipherSuite7:Int64",
+            "cipherSuite8:Int64",
+            "cipherSuite9:Int64",
+            "cipherSuite10:Int64",
+            "cipherSuite11:Int64",
+            "cipherSuite12:Int64",
+            "cipherSuite13:Int64",
+            "cipherSuite14:Int64",
+            "cipherSuite15:Int64",
+            "cipherSuite16:Int64",
+            "elapsedTimeSum1:Int64",
+            "elapsedTimeSum2:Int64",
+            "elapsedTimeSum3:Int64",
+            "elapsedTimeSum4:Int64",
+            "elapsedTimeSum5:Int64",
+            "elapsedTimeSum6:Int64",
+            "elapsedTimeSum7:Int64",
+            "elapsedTimeSum8:Int64",
+            "elapsedTimeSum9:Int64",
+            "elapsedTimeSum10:Int64",
+            "elapsedTimeSum11:Int64",
+            "elapsedTimeSum12:Int64",
+            "elapsedTimeSum13:Int64",
+            "elapsedTimeSum14:Int64",
+            "elapsedTimeSum15:Int64",
+            "elapsedTimeSum16:Int64",
+            "cipherGroupBaseOffest:Int32",
+            "appName:UnicodeString",
+            "handshakeType:UInt8",
+            "contextReq:UInt64",
+            "contextFlags:UInt64",
+            "reconnectInfo:UInt16",
+            "extendedMSInfo:UInt16",
+            "tlsExtensionSent:UInt32",
+            "tlsExtensionReceived:UInt32",
+            "unknownTlsExtensionHexList:UInt16[](Hex)",
+            "unknownTlsExtensionCount:UInt16",
+            "curveType:UInt32",
+            "protocol:UInt32",
+            "keyExchangeLength:UInt32",
+            "clientMinKeyLength:UInt32",
+            "clientMaxKeyLength:UInt32",
+            "ServerMinKeyLength:UInt32",
+            "errorCode:UInt32",
+            "alertNumber:UInt8",
+            "errorState:UInt32",
+            "clientOfferedProtocol:UInt32",
+            "clientCipherList:HexInt32[]",
+            "clientCipherListCount:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "schannel.dll",
+              "function": "?WriteServerEvent@CSchannelTelemetryContext@@IEAAXXZ",
+              "ea": "0x180036bf3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "schannel.dll",
+              "function": "?WriteServerEvent@CSchannelTelemetryContext@@IEAAXXZ",
+              "ea": "0x180036c6c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "schannel.dll",
+              "function": "?WriteServerEvent@CSchannelTelemetryContext@@IEAAXXZ",
+              "ea": "0x180036cbd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ServerMinKeyLength",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "alertNumber",
+          "type": "UInt8",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "appName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "cipherGroupBaseOffest",
+          "type": "Int32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "cipherSuite10",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "cipherSuite11",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "cipherSuite12",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "cipherSuite13",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "cipherSuite14",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "cipherSuite15",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "cipherSuite16",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "cipherSuite1",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "cipherSuite2",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "cipherSuite3",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "cipherSuite4",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "cipherSuite5",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "cipherSuite6",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "cipherSuite7",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "cipherSuite8",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "cipherSuite9",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "clientCipherList",
+          "type": "HexInt32[]",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "clientCipherListCount",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "clientMaxKeyLength",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "clientMinKeyLength",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "clientOfferedProtocol",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "connectionCount",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "contextFlags",
+          "type": "UInt64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "contextReq",
+          "type": "UInt64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "curveType",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeSum10",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeSum11",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeSum12",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeSum13",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeSum14",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeSum15",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeSum16",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeSum1",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeSum2",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeSum3",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeSum4",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeSum5",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeSum6",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeSum7",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeSum8",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeSum9",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "errorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "errorState",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "extendedMSInfo",
+          "type": "UInt16",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "handshakeType",
+          "type": "UInt8",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "issuedSessionTicketCount",
+          "type": "Int64",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "keyExchangeLength",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "protocol",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "reconnectInfo",
+          "type": "UInt16",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "tlsExtensionReceived",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "tlsExtensionSent",
+          "type": "UInt32",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "unknownTlsExtensionCount",
+          "type": "UInt16",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        },
+        {
+          "fieldName": "unknownTlsExtensionHexList",
+          "type": "UInt16[](Hex)",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TlsRCMPUsage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "serverRcmpUsage:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "schannel.dll",
+              "function": "?LogRCMPUsage@CSchannelTelemetryContext@@SAXG@Z",
+              "ea": "0x18007abcb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "serverRcmpUsage",
+          "type": "UInt16",
+          "seenIn": [
+            "schannel.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

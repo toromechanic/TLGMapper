@@ -1,0 +1,176 @@
+{
+  "providerName": "Microsoft.Windows.FileSystem.Fat",
+  "guid": "{CED8D3D1-C760-49A7-A709-0DE39DA17DE8}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "fastfat.sys"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "Mount",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "volumeId:GUID",
+            "mountStartTime:FileTime",
+            "status:HexInt32",
+            "bytesPerSector:HexInt32",
+            "clusterSizeBytes:HexInt32",
+            "totalClusters:HexInt32",
+            "freeClusters:HexInt32",
+            "volumeFat32:Bool32",
+            "volumeMountedDirty:Bool32",
+            "volumeMountedReadOnly:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "fastfat.sys",
+              "function": "FatTelemetryMount",
+              "ea": "0x14004f1c8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "bytesPerSector",
+          "type": "HexInt32",
+          "seenIn": [
+            "fastfat.sys"
+          ]
+        },
+        {
+          "fieldName": "clusterSizeBytes",
+          "type": "HexInt32",
+          "seenIn": [
+            "fastfat.sys"
+          ]
+        },
+        {
+          "fieldName": "freeClusters",
+          "type": "HexInt32",
+          "seenIn": [
+            "fastfat.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "fastfat.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "HexInt32",
+          "seenIn": [
+            "fastfat.sys"
+          ]
+        },
+        {
+          "fieldName": "totalClusters",
+          "type": "HexInt32",
+          "seenIn": [
+            "fastfat.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeFat32",
+          "type": "Bool32",
+          "seenIn": [
+            "fastfat.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "fastfat.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeMountedDirty",
+          "type": "Bool32",
+          "seenIn": [
+            "fastfat.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeMountedReadOnly",
+          "type": "Bool32",
+          "seenIn": [
+            "fastfat.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VolumePeriodic",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "volumeId:GUID",
+            "mountStartTime:FileTime",
+            "elapsedTimeTicks:Int64",
+            "countEncryptOnCloseCalls:Int64",
+            "countEncryptCleanUpCalls:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "fastfat.sys",
+              "function": "FatTelemetryPeriodicVolume",
+              "ea": "0x14004f414",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "countEncryptCleanUpCalls",
+          "type": "Int64",
+          "seenIn": [
+            "fastfat.sys"
+          ]
+        },
+        {
+          "fieldName": "countEncryptOnCloseCalls",
+          "type": "Int64",
+          "seenIn": [
+            "fastfat.sys"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeTicks",
+          "type": "Int64",
+          "seenIn": [
+            "fastfat.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "fastfat.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "fastfat.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,387 @@
+{
+  "providerName": "Microsoft.Windows.Print.SpoolerService",
+  "guid": "{B4D2914C-FF23-403B-BABF-F0755FB060FE}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "spoolsv.exe",
+    "spoolsvworker.exe"
+  ],
+  "uniqueEventCount": 7,
+  "events": [
+    {
+      "eventName": "DriverInstallAdminOnly",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "IsEnabled:Bool32",
+            "ErrorCode:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "spoolsv.exe",
+              "function": "?DriverInstallAdminOnly_@SpoolerServiceTelemetry@@QEAAXHK@Z",
+              "ea": "0x140029db2",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "spoolsvworker.exe",
+              "function": "?DriverInstallAdminOnly_@SpoolerServiceTelemetry@@QEAAXHK@Z",
+              "ea": "0x140012779",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "spoolsv.exe",
+            "spoolsvworker.exe"
+          ]
+        },
+        {
+          "fieldName": "IsEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "spoolsv.exe",
+            "spoolsvworker.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "spoolsv.exe",
+            "spoolsvworker.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Error",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "Function:AnsiString",
+            "Message:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "spoolsv.exe",
+              "function": "?LogDbgTraceError_@SpoolerServiceTelemetry@@QEAAXPEBDPEBG@Z",
+              "ea": "0x140021412",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "spoolsvworker.exe",
+              "function": "?WriteDbgTraceError@SpoolerServiceTelemetry@@SAXPEADPEAGZZ",
+              "ea": "0x14000803d",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Function",
+          "type": "AnsiString",
+          "seenIn": [
+            "spoolsv.exe",
+            "spoolsvworker.exe"
+          ]
+        },
+        {
+          "fieldName": "Message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "spoolsv.exe",
+            "spoolsvworker.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ForcedShutdown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Pid:UInt32",
+            "Status:HexInt32",
+            "LastError:HexInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "spoolsv.exe",
+              "function": "?ForcedShutdown_@SpoolerServiceTelemetry@@QEAAXKKK@Z",
+              "ea": "0x140031321",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "LastError",
+          "type": "HexInt32",
+          "seenIn": [
+            "spoolsv.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "spoolsv.exe"
+          ]
+        },
+        {
+          "fieldName": "Pid",
+          "type": "UInt32",
+          "seenIn": [
+            "spoolsv.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "HexInt32",
+          "seenIn": [
+            "spoolsv.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Info",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Function:AnsiString",
+            "Message:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "spoolsv.exe",
+              "function": "?LogDbgTraceInfo_@SpoolerServiceTelemetry@@QEAAXPEBDPEBG@Z",
+              "ea": "0x140021472",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "spoolsvworker.exe",
+              "function": "?WriteDbgTraceInfo@SpoolerServiceTelemetry@@SAXPEADPEAGZZ",
+              "ea": "0x140008145",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Function",
+          "type": "AnsiString",
+          "seenIn": [
+            "spoolsv.exe",
+            "spoolsvworker.exe"
+          ]
+        },
+        {
+          "fieldName": "Message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "spoolsv.exe",
+            "spoolsvworker.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LegacyDrivers",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ElevatedUser:Bool32",
+            "RestrictionsEnabled:Bool32",
+            "IsInAdministratorGroup:Bool32",
+            "Flags:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "spoolsv.exe",
+              "function": "?LegacyDrivers_@SpoolerServiceTelemetry@@QEAAXHHHK@Z",
+              "ea": "0x140022f9b",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "spoolsvworker.exe",
+              "function": "?LegacyDrivers_@SpoolerServiceTelemetry@@QEAAXHHHK@Z",
+              "ea": "0x140009ab6",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ElevatedUser",
+          "type": "Bool32",
+          "seenIn": [
+            "spoolsv.exe",
+            "spoolsvworker.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "UInt32",
+          "seenIn": [
+            "spoolsv.exe",
+            "spoolsvworker.exe"
+          ]
+        },
+        {
+          "fieldName": "IsInAdministratorGroup",
+          "type": "Bool32",
+          "seenIn": [
+            "spoolsv.exe",
+            "spoolsvworker.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "spoolsv.exe",
+            "spoolsvworker.exe"
+          ]
+        },
+        {
+          "fieldName": "RestrictionsEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "spoolsv.exe",
+            "spoolsvworker.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RpcAuthnLevelPrivacyEnabled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "IsEnabled:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "spoolsv.exe",
+              "function": "?RpcAuthnLevelPrivacyEnabled_@SpoolerServiceTelemetry@@QEAAXH@Z",
+              "ea": "0x140046fb5",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "spoolsvworker.exe",
+              "function": "?RpcAuthnLevelPrivacyEnabled_@SpoolerServiceTelemetry@@QEAAXH@Z",
+              "ea": "0x1400321df",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "spoolsv.exe",
+            "spoolsvworker.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "spoolsv.exe",
+            "spoolsvworker.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StateChanged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Pid:UInt32",
+            "PreviousStatus:HexInt32",
+            "NewStatus:HexInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "spoolsv.exe",
+              "function": "?StateChanged_@SpoolerServiceTelemetry@@QEAAXKKK@Z",
+              "ea": "0x140031585",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NewStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "spoolsv.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "spoolsv.exe"
+          ]
+        },
+        {
+          "fieldName": "Pid",
+          "type": "UInt32",
+          "seenIn": [
+            "spoolsv.exe"
+          ]
+        },
+        {
+          "fieldName": "PreviousStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "spoolsv.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

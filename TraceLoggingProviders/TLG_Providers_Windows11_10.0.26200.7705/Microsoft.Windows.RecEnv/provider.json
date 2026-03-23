@@ -1,0 +1,88 @@
+{
+  "providerName": "Microsoft.Windows.RecEnv",
+  "guid": "{DBD4A8CD-17A1-46A1-9EC8-CE9E6D253A97}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "BootMenuUX.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "RecEnvShutdownSystem",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "BootMenuUX.dll",
+              "function": "?WriteRecEnvShutdownSystemEvent@CRecEnvInstrumentation@@SAXXZ",
+              "ea": "0x18001cb24",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "BootMenuUX.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RetrievedUserCount",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "Authenticated:Int32",
+            "UserCount:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "BootMenuUX.dll",
+              "function": "?WriteRetrievedUserCount@CRecEnvInstrumentation@@SAXHK@Z",
+              "ea": "0x18001cb9f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Authenticated",
+          "type": "Int32",
+          "seenIn": [
+            "BootMenuUX.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "BootMenuUX.dll"
+          ]
+        },
+        {
+          "fieldName": "UserCount",
+          "type": "UInt32",
+          "seenIn": [
+            "BootMenuUX.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

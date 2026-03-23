@@ -1,0 +1,2305 @@
+{
+  "providerName": "Microsoft.Windows.Security.KeyGuard",
+  "guid": "{37E53459-522D-5F7D-9A19-ECFD819075C2}",
+  "os": "WindowsServer2025",
+  "binaryCount": 3,
+  "binaries": [
+    "LsaIso.exe",
+    "ncryptprov.dll",
+    "wininit.exe"
+  ],
+  "uniqueEventCount": 28,
+  "events": [
+    {
+      "eventName": "BCryptIumRpcInit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "LsaIso.exe",
+              "function": "?BCryptIumRpcInit@@YAJPEBU_LsaIsoSupportFunctions@@@Z",
+              "ea": "0x140008982",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "BCryptIumRpcInitStatus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "RpcStatus:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LsaIso.exe",
+              "function": "?BCryptIumRpcInit@@YAJPEBU_LsaIsoSupportFunctions@@@Z",
+              "ea": "0x140008a42",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "LsaIso.exe"
+          ]
+        },
+        {
+          "fieldName": "RpcStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "LsaIso.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BindingNotificationData",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "bindingAttempts:Int64",
+            "numPids:Int64",
+            "numPidsActive:Int64",
+            "numNotifyEvents:Int64",
+            "Client:UnicodeString",
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "?KGT_RundownClient@@YAXPEAUKEYGUARD_TELEMETRY_GLOBAL@@K@Z",
+              "ea": "0x18001b2fd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ncryptprov.dll",
+              "function": "?KGT_TrackClient@@YAPEAUKEYGUARD_TELEMETRY_IMAGE_T@@PEAUKEYGUARD_TELEMETRY_GLOBAL@@JH@Z",
+              "ea": "0x18001c21b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "bindingAttempts",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "numNotifyEvents",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "numPids",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "numPidsActive",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CurrentState",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x800000000000",
+          "fields": [
+            "KGStateChangeType:UInt8",
+            "Client:UnicodeString",
+            "IsDisabledInRegistry:Bool32",
+            "ServiceRpcStatus:Int32",
+            "StateChangeStatus:Int32(HResult)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "?KeyGuardTelemetryReportCurrentState@@YAXEHHJJ@Z",
+              "ea": "0x1800482d8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDisabledInRegistry",
+          "type": "Bool32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "KGStateChangeType",
+          "type": "UInt8",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "ServiceRpcStatus",
+          "type": "Int32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "StateChangeStatus",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyguardAdoption",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x800000000000",
+          "fields": [
+            "KGUsageCount:Int64",
+            "KGAttestationUsageCount:Int64",
+            "PKCS11UnwrappingCount:Int64",
+            "KeyGuardRunningInProd:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "?KeyguardTelemetryTrackApi@@YAXEJ@Z",
+              "ea": "0x18001bf6b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoDisableKeyguardProcessCallback",
+              "ea": "0x1800423f4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ncryptprov.dll",
+              "function": "I_BCryptIsoLaunchKeyGuard",
+              "ea": "0x180043e34",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ncryptprov.dll",
+              "function": "MsProvCryptVerifyClaim",
+              "ea": "0x18004f6a7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPCryptCreateClaim",
+              "ea": "0x180057278",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPCryptFinalizeKey",
+              "ea": "0x1800354c0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPCryptFinalizeKey",
+              "ea": "0x18003550a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPCryptFinalizeKey",
+              "ea": "0x180035554",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPCryptImportKey",
+              "ea": "0x180036f8b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPCryptImportKey",
+              "ea": "0x180036fc1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPCryptImportKey",
+              "ea": "0x180037009",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPCryptOpenKey",
+              "ea": "0x1800282ee",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wininit.exe",
+              "function": "WriteKeyGuardDataToRegistry",
+              "ea": "0x140044286",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "KGAttestationUsageCount",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll",
+            "wininit.exe"
+          ]
+        },
+        {
+          "fieldName": "KGUsageCount",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll",
+            "wininit.exe"
+          ]
+        },
+        {
+          "fieldName": "KeyGuardRunningInProd",
+          "type": "Bool32",
+          "seenIn": [
+            "ncryptprov.dll",
+            "wininit.exe"
+          ]
+        },
+        {
+          "fieldName": "PKCS11UnwrappingCount",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll",
+            "wininit.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll",
+            "wininit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyguardApiStatus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x800000000000",
+          "fields": [
+            "count:Int64",
+            "StatusCode:Int32(HResult)",
+            "ApiCode:UInt8",
+            "Client:UnicodeString",
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "?KeyguardTelemetryTrackApi@@YAXEJ@Z",
+              "ea": "0x18001bff5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ApiCode",
+          "type": "UInt8",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "StatusCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyguardBindingDone",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x200000000000",
+          "fields": [
+            "bindingDone:Bool32",
+            "Client:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "?KGT_TrackClient@@YAPEAUKEYGUARD_TELEMETRY_IMAGE_T@@PEAUKEYGUARD_TELEMETRY_GLOBAL@@JH@Z",
+              "ea": "0x18001c34b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "bindingDone",
+          "type": "Bool32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyguardPerformance",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "ApiCode:UInt32",
+            "Client:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoCloseAlgorithmProvider",
+              "ea": "0x18001dc09",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoDestroyKey",
+              "ea": "0x18001bad3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoDestroySecret",
+              "ea": "0x18004aa19",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoFinalizeKeyPair",
+              "ea": "0x18001ade6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoSecretAgreement",
+              "ea": "0x18004c8a8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ApiCode",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyguardPerformance_BCryptIsoCheckKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "cbEncryptedKey:UInt32",
+            "Client:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoCheckKey",
+              "ea": "0x18001a65b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "cbEncryptedKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyguardPerformance_BCryptIsoDecapsulate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "cbCipherText:UInt32",
+            "cbSecretKey:UInt32",
+            "dwFlags:UInt32",
+            "Client:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoDecapsulate",
+              "ea": "0x180049f05",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "cbCipherText",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "cbSecretKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "dwFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyguardPerformance_BCryptIsoDecrypt",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "cbInput:UInt32",
+            "sizeCalculationMode:UInt8(Boolean)",
+            "cbIV:UInt32",
+            "dwFlags:UInt32",
+            "Client:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoDecrypt",
+              "ea": "0x18004a316",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "cbIV",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "cbInput",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "dwFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "sizeCalculationMode",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyguardPerformance_BCryptIsoDeriveKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "pwszKDF:UnicodeString",
+            "cbDerivedKey:UInt32",
+            "dwFlags:UInt32",
+            "Client:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoDeriveKey",
+              "ea": "0x18004a6e8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "cbDerivedKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "dwFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "pwszKDF",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyguardPerformance_BCryptIsoDuplicateKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "cbKeyObject:UInt32",
+            "Client:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoDuplicateKey",
+              "ea": "0x18004ad8b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "cbKeyObject",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyguardPerformance_BCryptIsoEncapsulate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "cbSecretKey:UInt32",
+            "cbCipherText:UInt32",
+            "dwFlags:UInt32",
+            "Client:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoEncapsulate",
+              "ea": "0x18004b0e6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "cbCipherText",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "cbSecretKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "dwFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyguardPerformance_BCryptIsoEncrypt",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "cbInput:UInt32",
+            "sizeCalculationMode:UInt8(Boolean)",
+            "cbIV:UInt32",
+            "dwFlags:UInt32",
+            "Client:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoEncrypt",
+              "ea": "0x18004b4f6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "cbIV",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "cbInput",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "dwFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "sizeCalculationMode",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyguardPerformance_BCryptIsoExportKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "blobType:UnicodeString",
+            "sizeCalculationMode:UInt8(Boolean)",
+            "cbOutput:UInt32",
+            "Client:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoExportKey",
+              "ea": "0x18001be01",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "blobType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "cbOutput",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "sizeCalculationMode",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyguardPerformance_BCryptIsoGenerateKeyPair",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "dwLength:UInt32",
+            "Client:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoGenerateKeyPair",
+              "ea": "0x18001b72f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "dwLength",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyguardPerformance_BCryptIsoGenerateSymmetricKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "cbKeyObject:UInt32",
+            "cbSecret:UInt32",
+            "Client:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoGenerateSymmetricKey",
+              "ea": "0x18004b8e6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "cbKeyObject",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "cbSecret",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyguardPerformance_BCryptIsoGetProperty",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "pszProperty:UnicodeString",
+            "cbOutput:UInt32",
+            "dwFlags:UInt32",
+            "Client:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoGetProperty",
+              "ea": "0x18004bd48",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "cbOutput",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "dwFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "pszProperty",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyguardPerformance_BCryptIsoImportKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "wrapperKeyPresent:UInt8(Boolean)",
+            "blobType:UnicodeString",
+            "cbInput:UInt32",
+            "wrappedKeyBlob:UInt8(Boolean)",
+            "Client:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoImportKey",
+              "ea": "0x18004c199",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "blobType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "cbInput",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "wrappedKeyBlob",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "wrapperKeyPresent",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyguardPerformance_BCryptIsoImportKeyPair",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "wrapperKeyPresent:UInt8(Boolean)",
+            "blobType:UnicodeString",
+            "cbInput:UInt32",
+            "Client:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoImportKeyPair",
+              "ea": "0x18001a9f8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "blobType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "cbInput",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "wrapperKeyPresent",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyguardPerformance_BCryptIsoKeyDerivation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "cbDerivedKey:UInt32",
+            "Client:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoKeyDerivation",
+              "ea": "0x18004c515",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "cbDerivedKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyguardPerformance_BCryptIsoOpenAlgorithmProvider",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "pszAlgId:UnicodeString",
+            "dwFlags:UInt32",
+            "Client:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoOpenAlgorithmProvider",
+              "ea": "0x18001e03e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "dwFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "pszAlgId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyguardPerformance_BCryptIsoSetProperty",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "pszProperty:UnicodeString",
+            "cbInput:UInt32",
+            "Client:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoSetProperty",
+              "ea": "0x18004cbf4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "cbInput",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "pszProperty",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyguardPerformance_BCryptIsoSignHash",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "cbInput:UInt32",
+            "dwFlags:UInt32",
+            "Client:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoSignHash",
+              "ea": "0x18001b19c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "cbInput",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "dwFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyguardPerformance_BCryptIsoVerifySignature",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "cbHash:UInt32",
+            "cbSignature:UInt32",
+            "dwFlags:UInt32",
+            "Client:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "BCryptIsoVerifySignature",
+              "ea": "0x18004cfb4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "cbHash",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "cbSignature",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "dwFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Performance_SPCryptCreateClaim",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "ClaimType:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPCryptFinalizeKey",
+              "ea": "0x18003557a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClaimType",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SPCryptFinalizeKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "Count:Int64",
+            "PartA_PrivTags:UInt64",
+            "StatusCode:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPCryptImportKey",
+              "ea": "0x18003702a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "StatusCode",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

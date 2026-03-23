@@ -1,0 +1,137 @@
+{
+  "providerName": "Microsoft.Windows.DriverStore",
+  "guid": "{7DA2787C-62D1-4F99-939E-11B60C3AA761}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "drvstore.dll",
+    "setupapi.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "DriverNotFound",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "DeviceInstanceId:UnicodeString",
+            "FirstHardwareId:UnicodeString",
+            "ParentDeviceInstanceId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "setupapi.dll",
+              "function": "SetupDiReportDriverNotFoundError",
+              "ea": "0x1800bb0b4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DeviceInstanceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "setupapi.dll"
+          ]
+        },
+        {
+          "fieldName": "FirstHardwareId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "setupapi.dll"
+          ]
+        },
+        {
+          "fieldName": "ParentDeviceInstanceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "setupapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DriverPackage.FileCorruption",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "DriverPackageId:UnicodeString",
+            "Discrepancies:Struct[](Hex)",
+            "DriverFile:CountedString",
+            "Expected:CountedString",
+            "Actual:CountedString",
+            "Flags:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "drvstore.dll",
+              "function": "?LogFileDiscrepancyDataTelemetry@@YAKPEAU_INFMAN_MANIFEST_PROPERTIES@@PEAU_DISCREPANCY_CONTEXT@@@Z",
+              "ea": "0x1800bbc89",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Actual",
+          "type": "CountedString",
+          "seenIn": [
+            "drvstore.dll"
+          ]
+        },
+        {
+          "fieldName": "Discrepancies",
+          "type": "Struct[](Hex)",
+          "seenIn": [
+            "drvstore.dll"
+          ]
+        },
+        {
+          "fieldName": "DriverFile",
+          "type": "CountedString",
+          "seenIn": [
+            "drvstore.dll"
+          ]
+        },
+        {
+          "fieldName": "DriverPackageId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "drvstore.dll"
+          ]
+        },
+        {
+          "fieldName": "Expected",
+          "type": "CountedString",
+          "seenIn": [
+            "drvstore.dll"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "Int32",
+          "seenIn": [
+            "drvstore.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "drvstore.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1021 @@
+{
+  "providerName": "Microsoft.Windows.DesktopActivityModerator",
+  "guid": "{60AE66D1-1C8C-5461-5284-FE74DD01096E}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "dam.sys"
+  ],
+  "uniqueEventCount": 22,
+  "events": [
+    {
+      "eventName": "DampFreezeWorkerThread",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampFreezeWorkerThread",
+              "ea": "0x1400136a1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampFreezeWorkerThread",
+              "ea": "0x14001378a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DampIoDispatch",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "IrpSp->MajorFunction:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampIoDispatch",
+              "ea": "0x140011333",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampIoDispatch",
+              "ea": "0x1400118af",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IrpSp->MajorFunction",
+          "type": "UInt8",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExemptCheckCallbackRoutine",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "SessionId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampExemptCheckCallbackRoutine",
+              "ea": "0x140012b3a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "SessionId:UInt32",
+            "Status:UInt32(NTStatus)",
+            "ClientOwnership:UInt8",
+            "DamGroupIndex:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampExemptCheckCallbackRoutine",
+              "ea": "0x140012d17",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClientOwnership",
+          "type": "UInt8",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "DamGroupIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FreezeSession0Job",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x4",
+          "fields": [
+            "ExemptGroup:UInt8",
+            "Freeze:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampSession0JobFreeze",
+              "ea": "0x140014c68",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x4",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampSession0JobFreeze",
+              "ea": "0x140014d21",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ExemptGroup",
+          "type": "UInt8",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "Freeze",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "dam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FreezeUserSessionJob",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x2",
+          "fields": [
+            "SessionId:UInt32",
+            "ExemptGroup:UInt8",
+            "Freeze:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampFreezeUserSessionJob",
+              "ea": "0x140012e20",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x2",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampFreezeUserSessionJob",
+              "ea": "0x140012ef4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ExemptGroup",
+          "type": "UInt8",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "Freeze",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FreezeUserSessions",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x2",
+          "fields": [
+            "ExemptGroup:UInt32",
+            "Freeze:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampFreezeUserSessions",
+              "ea": "0x140012f9f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x2",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampFreezeUserSessions",
+              "ea": "0x140013060",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ExemptGroup",
+          "type": "UInt32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "Freeze",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "dam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InsertNewSession",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "SessionId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampGetSessionContext",
+              "ea": "0x140013c30",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PdcControlCallback",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x2",
+          "fields": [
+            "Flags:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampPdcControlCallback",
+              "ea": "0x14001455d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PdcResiliencyCallback",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x6",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampPdcResiliencyCallback",
+              "ea": "0x1400146a2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "PdcStateCallback",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x2",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampPdcStateCallback",
+              "ea": "0x1400147b7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "PhaseTransition",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x80",
+          "fields": [
+            "TargetPhase:Int32",
+            "CurrentPhase:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampFreezeWorkerHandleFreezeEvent",
+              "ea": "0x14001321b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x80",
+          "fields": [
+            "TargetPhase:Int32",
+            "CurrentPhase:Int32",
+            "NextTargetPhase:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampFreezeWorkerHandleFreezeEvent",
+              "ea": "0x140013489",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CurrentPhase",
+          "type": "Int32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "NextTargetPhase",
+          "type": "Int32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetPhase",
+          "type": "Int32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PhaseTransitionPerformanceAggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000010",
+          "fields": [
+            "Count:Int64",
+            "DurationTotalMs:Int64",
+            "DurationMaxMs:Int64",
+            "Activate:UInt8(Boolean)",
+            "TransitionTypeId:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampFreezeWorkerHandleFreezeEvent",
+              "ea": "0x140013330",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Activate",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "DurationMaxMs",
+          "type": "Int64",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "DurationTotalMs",
+          "type": "Int64",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "TransitionTypeId",
+          "type": "UInt32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Phase_ChangeSignal",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x40",
+          "fields": [
+            "NewTargetPhase:Int32",
+            "OldTargetPhase:Int32",
+            "CurrentPhase:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampFreezeWorkerUpdatePostAndUnlock",
+              "ea": "0x14001390b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CurrentPhase",
+          "type": "Int32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "NewTargetPhase",
+          "type": "Int32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "OldTargetPhase",
+          "type": "Int32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessAdded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "status:UInt32(NTStatus)",
+            "pid:UInt32(PID)",
+            "imageFileName:CountedString",
+            "commandLine:CountedString",
+            "sessionId:UInt32",
+            "forceAdd:UInt8(Boolean)",
+            "exemptionGroup:UInt32",
+            "registerAtLaunch:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampAddProcessToJobObject",
+              "ea": "0x14001264c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "commandLine",
+          "type": "CountedString",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "exemptionGroup",
+          "type": "UInt32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "forceAdd",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "imageFileName",
+          "type": "CountedString",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "registerAtLaunch",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessTree_Insert",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "Entry:HexInt64",
+            "pid:UInt32(PID)"
+          ],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampProcessTreeInsert",
+              "ea": "0x1400149af",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Entry",
+          "type": "HexInt64",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "dam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessTree_Remove",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "Entry:HexInt64",
+            "pid:UInt32(PID)"
+          ],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampProcessTreeRemove",
+              "ea": "0x140014b8f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Entry",
+          "type": "HexInt64",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "dam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RemoveSession",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "SessionId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampHandleProcessTermination",
+              "ea": "0x140014418",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Rundown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0xff",
+          "fields": [
+            "System:HexInt32",
+            "CurrentPhase:UInt32",
+            "TargetPhase:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampTracingControlCallback",
+              "ea": "0x14001507e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CurrentPhase",
+          "type": "UInt32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "System",
+          "type": "HexInt32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetPhase",
+          "type": "UInt32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SetUnfrezeDelaySleep",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "UnfrezeDelayMs:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampIoDispatch",
+              "ea": "0x14001144a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "UnfrezeDelayMs",
+          "type": "UInt32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UserSessionDelayNotificationCallback",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x10",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampUserSessionDelayNotificationCallback",
+              "ea": "0x140015323",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x10",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampUserSessionDelayNotificationCallback",
+              "ea": "0x140015398",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "UserSessionDelayWorkItemRoutine",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x10",
+          "fields": [
+            "WatchDogSleepEnabled:UInt8(Boolean)",
+            "UnFreezeDelayMs:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampUserSessionDelayWorkItemRoutine",
+              "ea": "0x14001545f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x10",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampUserSessionDelayWorkItemRoutine",
+              "ea": "0x1400154e3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "UnFreezeDelayMs",
+          "type": "UInt32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "WatchDogSleepEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "dam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WildCardPolicyUseUpdateWorker",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Result:UInt8(Boolean)",
+            "MajorVersion:UInt32",
+            "MinorVersion:UInt32",
+            "Edition:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dam.sys",
+              "function": "DampWildCardPolicyUseUpdateWorker",
+              "ea": "0x14001684b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Edition",
+          "type": "UInt32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "MajorVersion",
+          "type": "UInt32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "MinorVersion",
+          "type": "UInt32",
+          "seenIn": [
+            "dam.sys"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "dam.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

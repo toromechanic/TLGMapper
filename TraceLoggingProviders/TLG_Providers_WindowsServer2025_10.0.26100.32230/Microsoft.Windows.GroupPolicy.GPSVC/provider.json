@@ -1,0 +1,80 @@
+{
+  "providerName": "Microsoft.Windows.GroupPolicy.GPSVC",
+  "guid": "{4FD752B5-957C-57C4-EA6E-19CB7E2C8C04}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "gpsvc.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "NtuserFileRenameFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ErrorCode:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "gpsvc.dll",
+              "function": "?ProcessGPORegistryPolicy@@YAHPEAU_GPOINFO@@PEAU_GROUP_POLICY_OBJECTW@@PEAJ@Z",
+              "ea": "0x1800a0f5a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "gpsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "gpsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessGPORegistryPolicy",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "gpsvc.dll",
+              "function": "?ProcessGPORegistryPolicy@@YAHPEAU_GPOINFO@@PEAU_GROUP_POLICY_OBJECTW@@PEAJ@Z",
+              "ea": "0x18009f552",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "gpsvc.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

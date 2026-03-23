@@ -1,0 +1,104 @@
+{
+  "providerName": "Microsoft.Windows.ApplicationModel.Chat.ChatMessageBlocking",
+  "guid": "{E0A18F5C-07F3-4A44-B149-0F8F13EF6887}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "ChatApis.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "ChatMessageBlockingApiCalled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "ApiName:UnicodeString",
+            "TimeDuration:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ChatApis.dll",
+              "function": "??1TraceLogger@@QEAA@XZ",
+              "ea": "0x18001afee",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ApiName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChatApis.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ChatApis.dll"
+          ]
+        },
+        {
+          "fieldName": "TimeDuration",
+          "type": "UInt64",
+          "seenIn": [
+            "ChatApis.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ChatMessageBlockingApiFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "ApiName:UnicodeString",
+            "ErrorCode:Int32(HResult)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ChatApis.dll",
+              "function": "??1TraceLogger@@QEAA@XZ",
+              "ea": "0x18001b028",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ApiName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChatApis.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "ChatApis.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ChatApis.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

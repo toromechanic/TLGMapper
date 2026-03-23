@@ -1,0 +1,74 @@
+{
+  "providerName": "Microsoft-Windows-FileSystem-Cdfs",
+  "guid": "{592FD58A-AD33-4288-BF88-FB9039D9E391}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "cdfs.sys"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "Mount",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "volumeId:GUID",
+            "status:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "cdfs.sys",
+              "function": "CdTelemetryMount",
+              "ea": "0x1c001b1f6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "volumeId:GUID",
+            "status:HexInt32",
+            "bytesPerSector:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "cdfs.sys",
+              "function": "CdTelemetryMount",
+              "ea": "0x1c001b24e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "bytesPerSector",
+          "type": "HexInt32",
+          "seenIn": [
+            "cdfs.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "HexInt32",
+          "seenIn": [
+            "cdfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "cdfs.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

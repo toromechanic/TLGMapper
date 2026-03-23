@@ -1,0 +1,178 @@
+{
+  "providerName": "Microsoft-Windows-AFD",
+  "guid": "{AA3A221D-9A6F-4CF9-904E-897100CE8915}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "afd.sys"
+  ],
+  "uniqueEventCount": 4,
+  "events": [
+    {
+      "eventName": "HungCloseSocket",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "AF:UInt16",
+            "ST:UInt16",
+            "Protocol:UInt32",
+            "State:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "afd.sys",
+              "function": "AfdCloseTransportEndpoint",
+              "ea": "0x14002e225",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AF",
+          "type": "UInt16",
+          "seenIn": [
+            "afd.sys"
+          ]
+        },
+        {
+          "fieldName": "Protocol",
+          "type": "UInt32",
+          "seenIn": [
+            "afd.sys"
+          ]
+        },
+        {
+          "fieldName": "ST",
+          "type": "UInt16",
+          "seenIn": [
+            "afd.sys"
+          ]
+        },
+        {
+          "fieldName": "State",
+          "type": "UInt8",
+          "seenIn": [
+            "afd.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "QueryProviderInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "TransportDeviceName:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "afd.sys",
+              "function": "AfdQueryProviderInfo",
+              "ea": "0x140028647",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "TransportDeviceName",
+          "type": "CountedString",
+          "seenIn": [
+            "afd.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RioSendBufferSlicing",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "AppName:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "afd.sys",
+              "function": "AfdRioValidateRequestBuffer",
+              "ea": "0x140048548",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "afd.sys",
+              "function": "AfdRioValidateRequestBuffer_Old",
+              "ea": "0x14006fcc8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppName",
+          "type": "AnsiString",
+          "seenIn": [
+            "afd.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TdiFilter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Device:UnicodeString",
+            "Driver:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "afd.sys",
+              "function": "AfdTraceLogTdiFilter",
+              "ea": "0x140069957",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Device",
+          "type": "UnicodeString",
+          "seenIn": [
+            "afd.sys"
+          ]
+        },
+        {
+          "fieldName": "Driver",
+          "type": "UnicodeString",
+          "seenIn": [
+            "afd.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "afd.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

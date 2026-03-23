@@ -1,0 +1,220 @@
+{
+  "providerName": "Microsoft.Windows.SystemReset",
+  "guid": "{1CFA8219-BA47-4030-8389-15DDBF02CBB7}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "ResetEngOnline.dll"
+  ],
+  "uniqueEventCount": 4,
+  "events": [
+    {
+      "eventName": "EsimPresentCheck",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "sessionID:GUID",
+            "errorCode:Int32",
+            "esimPresent:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ResetEngOnline.dll",
+              "function": "?WritePBREsimPresent@@YAXAEBU_GUID@@JH@Z",
+              "ea": "0x180009ad6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ResetEngOnline.dll"
+          ]
+        },
+        {
+          "fieldName": "errorCode",
+          "type": "Int32",
+          "seenIn": [
+            "ResetEngOnline.dll"
+          ]
+        },
+        {
+          "fieldName": "esimPresent",
+          "type": "Int32",
+          "seenIn": [
+            "ResetEngOnline.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionID",
+          "type": "GUID",
+          "seenIn": [
+            "ResetEngOnline.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EsimWipeResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "sessionID:GUID",
+            "errorCode:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ResetEngOnline.dll",
+              "function": "?WritePBREsimWipeResult@@YAXAEBU_GUID@@J@Z",
+              "ea": "0x180009b9a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ResetEngOnline.dll"
+          ]
+        },
+        {
+          "fieldName": "errorCode",
+          "type": "Int32",
+          "seenIn": [
+            "ResetEngOnline.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionID",
+          "type": "GUID",
+          "seenIn": [
+            "ResetEngOnline.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PBRCorruptionRepairOption",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "sessionID:GUID",
+            "errorCode:Int32",
+            "cbsSessionOption:UInt32",
+            "meteredConnection:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ResetEngOnline.dll",
+              "function": "?WritePBRCBSSessionOption@@YAXAEBU_GUID@@JIH@Z",
+              "ea": "0x180009a34",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ResetEngOnline.dll"
+          ]
+        },
+        {
+          "fieldName": "cbsSessionOption",
+          "type": "UInt32",
+          "seenIn": [
+            "ResetEngOnline.dll"
+          ]
+        },
+        {
+          "fieldName": "errorCode",
+          "type": "Int32",
+          "seenIn": [
+            "ResetEngOnline.dll"
+          ]
+        },
+        {
+          "fieldName": "meteredConnection",
+          "type": "Int32",
+          "seenIn": [
+            "ResetEngOnline.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionID",
+          "type": "GUID",
+          "seenIn": [
+            "ResetEngOnline.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RepairNeeded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "sessionID:GUID",
+            "repairNeeded:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ResetEngOnline.dll",
+              "function": "?WritePBRRepairNeeded@@YAXAEBU_GUID@@PEBG@Z",
+              "ea": "0x180009c34",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ResetEngOnline.dll"
+          ]
+        },
+        {
+          "fieldName": "repairNeeded",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ResetEngOnline.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionID",
+          "type": "GUID",
+          "seenIn": [
+            "ResetEngOnline.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

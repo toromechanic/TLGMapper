@@ -1,0 +1,472 @@
+{
+  "providerName": "Microsoft.OneCore.WebThreatDefense.Client.Sensor",
+  "guid": "{E277416D-B4CB-43E7-A037-54C72ACE7812}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "wtdsensor.dll"
+  ],
+  "uniqueEventCount": 10,
+  "events": [
+    {
+      "eventName": "AllocateSensorEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Context:HexInt64",
+            "EventId:UInt16",
+            "DataSizeInB:UInt32",
+            "EventPacket:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtdsensor.dll",
+              "function": "WtdsAllocateEvent",
+              "ea": "0x180002258",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Context",
+          "type": "HexInt64",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        },
+        {
+          "fieldName": "DataSizeInB",
+          "type": "UInt32",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        },
+        {
+          "fieldName": "EventId",
+          "type": "UInt16",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        },
+        {
+          "fieldName": "EventPacket",
+          "type": "HexInt64",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AllocateSensorEventError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Context:HexInt64",
+            "EventId:UInt16",
+            "DataSizeInB:UInt32",
+            "Error:UInt32(Win32Error)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtdsensor.dll",
+              "function": "WtdsAllocateEvent",
+              "ea": "0x180002312",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Context",
+          "type": "HexInt64",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        },
+        {
+          "fieldName": "DataSizeInB",
+          "type": "UInt32",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        },
+        {
+          "fieldName": "Error",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        },
+        {
+          "fieldName": "EventId",
+          "type": "UInt16",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FreeSensorEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "EventPacket:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtdsensor.dll",
+              "function": "WtdsFreeEvent",
+              "ea": "0x180002457",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EventPacket",
+          "type": "HexInt64",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FreeSensorEventError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "EventPacket:HexInt64",
+            "Error:UInt32(Win32Error)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtdsensor.dll",
+              "function": "WtdsFreeEvent",
+              "ea": "0x1800024c6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Error",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        },
+        {
+          "fieldName": "EventPacket",
+          "type": "HexInt64",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SendEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Context:HexInt64",
+            "EventPacket:HexInt64",
+            "IoRequestsInProgress:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "wtdsensor.dll",
+              "function": "WtdsSendEvent",
+              "ea": "0x180002ba0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Context",
+          "type": "HexInt64",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        },
+        {
+          "fieldName": "EventPacket",
+          "type": "HexInt64",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        },
+        {
+          "fieldName": "IoRequestsInProgress",
+          "type": "UInt32",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SendEventError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Context:HexInt64",
+            "EventPacket:HexInt64",
+            "Error:UInt32(Win32Error)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtdsensor.dll",
+              "function": "WtdsSendEvent",
+              "ea": "0x180002a15",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Context",
+          "type": "HexInt64",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        },
+        {
+          "fieldName": "Error",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        },
+        {
+          "fieldName": "EventPacket",
+          "type": "HexInt64",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SensorRegistered",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "SensorId:UInt32",
+            "FileHandle:UInt32",
+            "Context:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtdsensor.dll",
+              "function": "WtdsRegisterSensor",
+              "ea": "0x180002817",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Context",
+          "type": "HexInt64",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        },
+        {
+          "fieldName": "FileHandle",
+          "type": "UInt32",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        },
+        {
+          "fieldName": "SensorId",
+          "type": "UInt32",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SensorRegistrationError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "SensorId:UInt32",
+            "Error:UInt32(Win32Error)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtdsensor.dll",
+              "function": "WtdsRegisterSensor",
+              "ea": "0x1800028b2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Error",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        },
+        {
+          "fieldName": "SensorId",
+          "type": "UInt32",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SensorUnregistered",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Context:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtdsensor.dll",
+              "function": "WtdsUnregisterSensor",
+              "ea": "0x180002d0d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Context",
+          "type": "HexInt64",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SensorUnregistrationError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Context:HexInt64",
+            "Error:UInt32(Win32Error)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtdsensor.dll",
+              "function": "WtdsUnregisterSensor",
+              "ea": "0x180002da0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Context",
+          "type": "HexInt64",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        },
+        {
+          "fieldName": "Error",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "wtdsensor.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

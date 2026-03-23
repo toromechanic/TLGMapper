@@ -1,0 +1,1784 @@
+{
+  "providerName": "Microsoft.Windows.Security.EFS.EfsCore",
+  "guid": "{82B5AD62-B453-481A-B838-CA1EEAE6E472}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "efscore.dll"
+  ],
+  "uniqueEventCount": 45,
+  "events": [
+    {
+      "eventName": "BackupCredentialStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?BackupCredentialToAad@CDplUser@@AEAAJPEAVCDplAccount@@@Z",
+              "ea": "0x1800b2c98",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "BackupCredentialStop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "BackupState:AnsiString",
+            "AttemptCount:Int32",
+            "IsAutoRecoverySupported:Bool32",
+            "BackupTime:UInt64",
+            "BackupKeySize:UInt32",
+            "Result:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?BackupCredentialToAad@CDplUser@@AEAAJPEAVCDplAccount@@@Z",
+              "ea": "0x1800b30c9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AttemptCount",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "BackupKeySize",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "BackupState",
+          "type": "AnsiString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "BackupTime",
+          "type": "UInt64",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "IsAutoRecoverySupported",
+          "type": "Bool32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BackupRecoveryFileToFolder.UpdateRequired",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?BackupRecoveryFileToFolder@CDplUser@@AEAAXPEAGPEAU_WIN32_FIND_DATAW@@0@Z",
+              "ea": "0x1800b3c96",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CDplAccount.Deserialize_Failure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32",
+            "IsDpapiProtected:Int32",
+            "HasMetadataAccountHash:UInt8(Boolean)",
+            "HashVerificationFailed:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?VerifyAndUnprotectSerialAccountBlob@CDplAccount@@AEAAJPEAEKPEBGHPEAHPEAPEAEPEAK2PEAPEAG@Z",
+              "ea": "0x1800b222f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HasMetadataAccountHash",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "HashVerificationFailed",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDpapiProtected",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CDplAccount.Deserialize_NCryptUnprotectSecret",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?VerifyAndUnprotectSerialAccountBlob@CDplAccount@@AEAAJPEAEKPEBGHPEAHPEAPEAEPEAK2PEAPEAG@Z",
+              "ea": "0x1800b1ec1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CDplAccount.EnableCDpl",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "numPrivateKeysProtected:Int32",
+            "numPrivateKeys:Int32",
+            "numKdfKeysProtected:Int32",
+            "numKdfKeys:Int32",
+            "Status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?EnableCDpl@CDplAccount@@AEAAJH@Z",
+              "ea": "0x1800aa5f5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "numKdfKeys",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "numKdfKeysProtected",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "numPrivateKeys",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "numPrivateKeysProtected",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CDplAccount.OnDplPolicyDisabled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "protectedPrivateKeyBlobsDeleted:Int32",
+            "privateKeyBlobsProcessed:Int32",
+            "protectedKdfKeyBlobsDeleted:Int32",
+            "privateKdfKeysProcessed:Int32",
+            "isConsumerCredential:Bool32",
+            "consumerCredentialLevel:UInt32",
+            "status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?OnDplPolicyDisabled@CDplAccount@@AEAAJXZ",
+              "ea": "0x1800ac444",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "consumerCredentialLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "isConsumerCredential",
+          "type": "Bool32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "privateKdfKeysProcessed",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "privateKeyBlobsProcessed",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "protectedKdfKeyBlobsDeleted",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "protectedPrivateKeyBlobsDeleted",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CDplAccount.OnDplPolicyEnabled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "numPrivateKeysProtected:Int32",
+            "numPrivateKeys:Int32",
+            "numKdfKeysProtected:Int32",
+            "numKdfKeys:Int32",
+            "Status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?OnDplPolicyEnabled@CDplAccount@@AEAAJXZ",
+              "ea": "0x1800ac7f3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "numKdfKeys",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "numKdfKeysProtected",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "numPrivateKeys",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "numPrivateKeysProtected",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CDplAccount.Serialize_NCryptProtectSecret",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:Int32",
+            "consumerCredential:Bool32",
+            "consumerCredentialLevel:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?Serialize@CDplAccount@@AEAAJPEAPEAEPEAK01HPEAH@Z",
+              "ea": "0x1800b0c33",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "consumerCredential",
+          "type": "Bool32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "consumerCredentialLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CDplDuck.UnsealOnUnlock",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?UnsealSilently@CDplDuck@@AEAAJPEAX@Z",
+              "ea": "0x1800d3afe",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CDplDuck_OnDeviceLocked",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?OnUserSessionLocked@CDplDuck@@AEAAXXZ",
+              "ea": "0x1800cbc7f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "CDplProtectorNgc.CreateNgcKeyWorker",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?CreateNgcKeyWorker@CDplProtectorNgc@@KAJPEAVCEdpCredSvcUserState@@PEBG@Z",
+              "ea": "0x1800a2c87",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CDplProtectorNgc.Protect",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?Protect@CDplProtectorNgc@@MEAAJPEBEKPEAEKPEAK@Z",
+              "ea": "0x1800a452f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CDplProtectorNgc.ResolveNgcKeyName",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:Int32",
+            "extendedError:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?ResolveNgcKeyName@CDplProtectorNgc@@SAJPEBGPEAPEAG1@Z",
+              "ea": "0x1800a6057",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "extendedError",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CDplProtectorNgc.Unprotect",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "bOnUnlock:Int32",
+            "status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?Unprotect@CDplProtectorNgc@@MEAAJHHPEBEKPEAEKPEAK@Z",
+              "ea": "0x1800a7bc7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "bOnUnlock",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CDplServiceImpl::PublishMissingCredentialNotification.Publish",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?PublishMissingCredentialNotification@CDplServiceImpl@@AEAAXPEBGPEAVCDplUser@@PEAG@Z",
+              "ea": "0x18009c559",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CDplServiceImpl::PublishMissingCredentialNotification_PermanentlySuppressed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?PublishMissingCredentialNotification@CDplServiceImpl@@AEAAXPEBGPEAVCDplUser@@PEAG@Z",
+              "ea": "0x18009c404",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "CDplServiceImpl::PublishMissingCredentialNotification_RetrievedFromCloud",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?PublishMissingCredentialNotification@CDplServiceImpl@@AEAAXPEBGPEAVCDplUser@@PEAG@Z",
+              "ea": "0x18009c347",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "CDplServiceImpl::PublishMissingCredentialNotification_TemporarilySupressed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "secondsRemaining:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?PublishMissingCredentialNotification@CDplServiceImpl@@AEAAXPEBGPEAVCDplUser@@PEAG@Z",
+              "ea": "0x18009c284",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "secondsRemaining",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CDplServiceImpl::PublishMissingCredentialNotification_Throttled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "secondsRemaining:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?PublishMissingCredentialNotification@CDplServiceImpl@@AEAAXPEBGPEAVCDplUser@@PEAG@Z",
+              "ea": "0x18009c185",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "secondsRemaining",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CDplServiceImpl_UpdateDplProtection",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "reason:UnicodeString",
+            "status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?UpdateDplProtection@CDplServiceImpl@@AEAAJPEBGH@Z",
+              "ea": "0x1800a0a1f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "reason",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CDplUser.DeleteDplAccount",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?DeleteDplAccount@CDplUser@@AEAAJPEAVCDplAccount@@W4_EDP_CREDS_DELETION_REASON@@@Z",
+              "ea": "0x1800b4c92",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CDplUser.DeleteDuck",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?DeleteDuck@CDplUser@@AEAAXXZ",
+              "ea": "0x1800b53b0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CDplUser.GetCreateDplKeyPair.CreateNewDPLAccount",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "dplPolicyEnabled:Int32",
+            "status:Int32",
+            "consumerCredential:Bool32",
+            "consumerCredentialLevel:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?GetCreateDplKeyPair@CDplUser@@AEAAJPEBG00QEAEKKHPEAPEAVCDplKeyPair@@PEAH@Z",
+              "ea": "0x1800b8176",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "consumerCredential",
+          "type": "Bool32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "consumerCredentialLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "dplPolicyEnabled",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CDplUser.LoadDplAccountsAndKeys.MoreThanOneAccountPerLevel",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "consumerAccountLevel:UInt32",
+            "numberOfAccounts:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?LoadDplAccountsAndKeys@CDplUser@@AEAAJPEAG@Z",
+              "ea": "0x1800bd126",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "consumerAccountLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "numberOfAccounts",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CDplUser.OnDeviceLockStateChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "deviceLockState:Int32",
+            "delaySeconds:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?OnUserSessionLockStateChange@CDplUser@@AEAAXHHK@Z",
+              "ea": "0x1800bea69",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "delaySeconds",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "deviceLockState",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CEdpCredSvcUserState.ResolveProtectorInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "testProtectorsEnabled:UInt32",
+            "LastNgcPrereqFlags:UInt32",
+            "status:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?ResolveProtectorInfo@CEdpCredSvcUserState@@QEAAJW4_DPL_PROTECTOR_KEY_OPERATION@@HPEAPEAGPEAPEAVCDplProtectorBase@@@Z",
+              "ea": "0x1800a6957",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "LastNgcPrereqFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "testProtectorsEnabled",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CreateNewConsumerCredential",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:UInt32",
+            "credentialLevel:UInt32",
+            "dplEnforced:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?ConsumerCredentialCreate@CDplUser@@AEAAJPEBGKPEAPEAVCDplKeyPair@@@Z",
+              "ea": "0x1800b4533",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "credentialLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "dplEnforced",
+          "type": "Bool32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EdpCredSvcDplCredentialReset",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "isNgcContainerDeletion:Bool32",
+            "status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?EdpCredSvcDplCredentialReset@@YAJPEBG0H@Z",
+              "ea": "0x180088021",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "isNgcContainerDeletion",
+          "type": "Bool32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EdpIsAccessAllowed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "IsAllowed:UInt8",
+            "CallerUniqueID:UnicodeString",
+            "ActivityStatus:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?IsAccessAllowedByEnterpriseDataPolicy@@YAJPEAU_EFS_DATA_STREAM_HEADER@@PEAE@Z",
+              "ea": "0x18000eb8a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityStatus",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "CallerUniqueID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "IsAllowed",
+          "type": "UInt8",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EfsDecrypt",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Result:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "DecryptFileSrv",
+              "ea": "0x1800143db",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Result",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EfsDisableWip",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32(HResult)",
+            "RetryIndex:UInt32",
+            "EdpEnforcementLevel:UInt32",
+            "EdpEnforcementLevelCached:UInt32",
+            "OverrideEdpDisable:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "EfsDisableEdp",
+              "ea": "0x180043a4e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EdpEnforcementLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "EdpEnforcementLevelCached",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "OverrideEdpDisable",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "RetryIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EfsxDecryptFileKey.RecoveryProtectors",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "status:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "EfsxDecryptFileKey",
+              "ea": "0x18007a688",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "status",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GetCreateDuck.DuckCreated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?GetCreateDuck@CDplUser@@AEAAJHHPEAPEAVCDplDuck@@@Z",
+              "ea": "0x1800b897c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OnDplPolicyDisabled_DuckNotAccessible",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?OnDplPolicyDisabled@CDplAccount@@AEAAJXZ",
+              "ea": "0x1800ac3ca",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "efscore.dll",
+              "function": "?OnDplPolicyDisabled@CDplAccount@@AEAAJXZ",
+              "ea": "0x1800ac538",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "OnDplPolicyEnabled_DuckNotAccessible",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?OnDplPolicyEnabled@CDplAccount@@AEAAJXZ",
+              "ea": "0x1800ac6d6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "ParseResponseFailCode",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ParseSubCodeError:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?WIPGetAndParseResponse@@YAJW4_WIP_AAD_REQUEST_TYPE@@PEAXPEAPEAPEAGPEAPEAKPEAK@Z",
+              "ea": "0x1800d83b7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ParseSubCodeError",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ParseResponseStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?WIPGetAndParseResponse@@YAJW4_WIP_AAD_REQUEST_TYPE@@PEAXPEAPEAPEAGPEAPEAKPEAK@Z",
+              "ea": "0x1800d813e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "ParseResponseStop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "IsSpecificKeyRequest:Int32",
+            "IsKeysRequest:Int32",
+            "IsBackupRequest:Int32",
+            "UnknownRequest:Int32",
+            "HttpStatusCode:UInt32",
+            "Result:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?WIPGetAndParseResponse@@YAJW4_WIP_AAD_REQUEST_TYPE@@PEAXPEAPEAPEAGPEAPEAKPEAK@Z",
+              "ea": "0x1800d86f2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HttpStatusCode",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "IsBackupRequest",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "IsKeysRequest",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "IsSpecificKeyRequest",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "UnknownRequest",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PowerNotificationCallback",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "status:Int32(HResult)",
+            "numUsersNotified:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?PowerNotificationCallback@CDplServiceImpl@@CAKPEAXK0@Z",
+              "ea": "0x18009bbdc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "numUsersNotified",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RecoveryIngestionProcessFile.Recover",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "dwStage:UInt32",
+            "moveHr:Int32",
+            "status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?RecoveryIngestionProcessFile@CDplUser@@AEAAJPEBG00K_KPEAKPEAJ@Z",
+              "ea": "0x1800c1f26",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "dwStage",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "moveHr",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegisterForPowerNotification",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "status:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?Initialize@CDplServiceImpl@@AEAAJXZ",
+              "ea": "0x18009ac9b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RetrieveCredentialParsed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "RetrievalState:AnsiString",
+            "KeyRetrivalType:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?RetrieveCredentialsFromAad@CDplUser@@AEAAJPEAGPEAH@Z",
+              "ea": "0x1800c3014",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "KeyRetrivalType",
+          "type": "AnsiString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "RetrievalState",
+          "type": "AnsiString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RetrieveCredentialStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?RetrieveCredentialsFromAad@CDplUser@@AEAAJPEAGPEAH@Z",
+              "ea": "0x1800c2a25",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "RetrieveCredentialStop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "RetrievalState:AnsiString",
+            "AttemptCount:Int32",
+            "IsAutoRecoverySupported:Bool32",
+            "NumCreds:UInt32",
+            "RecoveryIngestionStage:UInt32",
+            "Result:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "?RetrieveCredentialsFromAad@CDplUser@@AEAAJPEAGPEAH@Z",
+              "ea": "0x1800c3402",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AttemptCount",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "IsAutoRecoverySupported",
+          "type": "Bool32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "NumCreds",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "RecoveryIngestionStage",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "RetrievalState",
+          "type": "AnsiString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

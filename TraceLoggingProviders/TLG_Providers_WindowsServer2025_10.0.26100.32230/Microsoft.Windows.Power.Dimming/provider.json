@@ -1,0 +1,126 @@
+{
+  "providerName": "Microsoft.Windows.Power.Dimming",
+  "guid": "{D50E07BD-FCE3-5AD6-A715-CFC122637512}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "umpoext.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "BasicBrightnessEngineShutdown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Shutdown:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?DimEngineShutdownTelemetry@@YAXE@Z",
+              "ea": "0x180019083",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Shutdown",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HotKeyPressed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "hotKey:UInt32",
+            "original:UInt32",
+            "target:UInt32",
+            "consoleState:UInt32",
+            "hotKeyFiltered:UInt8(Boolean)",
+            "poweredOnAc:UInt8(Boolean)",
+            "granularKeyboardBrightness:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?DimEngineMonitorHotKeyPressedTelemetry@@YAXKKKKEEE@Z",
+              "ea": "0x18000746d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "umpoext.dll",
+              "function": "?DimEngineMonitorHotKeyPressedTelemetry@@YAXKKKKEEE@Z",
+              "ea": "0x1800074e7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "consoleState",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "granularKeyboardBrightness",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "hotKey",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "hotKeyFiltered",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "original",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "poweredOnAc",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "target",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

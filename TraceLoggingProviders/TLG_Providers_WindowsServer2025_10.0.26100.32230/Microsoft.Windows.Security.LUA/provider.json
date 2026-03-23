@@ -1,0 +1,4010 @@
+{
+  "providerName": "Microsoft.Windows.Security.LUA",
+  "guid": "{BE928FD4-50BA-57CA-B6B8-925DAB19C3BF}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "appinfo.dll",
+    "consent.exe"
+  ],
+  "uniqueEventCount": 25,
+  "events": [
+    {
+      "eventName": "AMProviderUnexpectedReturn",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "amsiResult:UInt32",
+            "AMProviderName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "consent.exe",
+              "function": "?CuipAMScanAPCProc@@YAX_K@Z",
+              "ea": "0x140006a9e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AMProviderName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "consent.exe"
+          ]
+        },
+        {
+          "fieldName": "amsiResult",
+          "type": "UInt32",
+          "seenIn": [
+            "consent.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AMScanThreadDidNotTerminate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "waitRetVal:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "consent.exe",
+              "function": "?CuiUninitializeAMProvider@@YAXPEAUHAMSCANCONTEXT__@@@Z",
+              "ea": "0x140008dd4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "waitRetVal",
+          "type": "UInt32",
+          "seenIn": [
+            "consent.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AMScanThreadTerminatedForcefully",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "threadTerminationWaitInterval:UInt32",
+            "waitRetVal:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "consent.exe",
+              "function": "?CuiUninitializeAMProvider@@YAXPEAUHAMSCANCONTEXT__@@@Z",
+              "ea": "0x140008d56",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "threadTerminationWaitInterval",
+          "type": "UInt32",
+          "seenIn": [
+            "consent.exe"
+          ]
+        },
+        {
+          "fieldName": "waitRetVal",
+          "type": "UInt32",
+          "seenIn": [
+            "consent.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AMScanTimedOut",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "timeOutInterval:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "consent.exe",
+              "function": "?CuiPerformAMScan@@YAKPEAUHAMSCANCONTEXT__@@PEAU_CONSENTUI_PARAM_HEADER@@PEAU_CREDUI_CONTEXT@@HPEAW4_AM_SCAN_RESULT@@PEAPEAG@Z",
+              "ea": "0x140005107",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "timeOutInterval",
+          "type": "UInt32",
+          "seenIn": [
+            "consent.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ActivityError",
+      "variantCount": 4,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?NotifyFailure@?$ActivityBase@VLUATelemetry@@$00$0CAAAAAAAAAAA@$04$0A@U_TlgReflectorTag_Param0IsProviderType@@@wil@@UEAA_NAEBUFailureInfo@2@@Z",
+              "ea": "0x180034a54",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(Signed)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "failureId:UInt32",
+            "failureCount:UInt32",
+            "function:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?NotifyFailure@?$ActivityBase@VLUATelemetry@@$00$0CAAAAAAAAAAA@$04$0A@U_TlgReflectorTag_Param0IsProviderType@@@wil@@UEAA_NAEBUFailureInfo@2@@Z",
+              "ea": "0x180034b97",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x600000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?NotifyFailure@?$ActivityBase@VLUATelemetry@@$00$0EAAAAAAAAAAA@$04$0DAAAAAA@U_TlgReflectorTag_Param0IsProviderType@@@wil@@UEAA_NAEBUFailureInfo@2@@Z",
+              "ea": "0x1800205a4",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(Signed)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "failureId:UInt32",
+            "failureCount:UInt32",
+            "function:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?NotifyFailure@?$ActivityBase@VLUATelemetry@@$00$0EAAAAAAAAAAA@$04$0DAAAAAA@U_TlgReflectorTag_Param0IsProviderType@@@wil@@UEAA_NAEBUFailureInfo@2@@Z",
+              "ea": "0x1800206e7",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "callContext",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "failureCount",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "failureId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "function",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(Signed)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AmsiUACScanError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "amsiScanResultHr:Int32(HResult)",
+            "amProviderName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "consent.exe",
+              "function": "?CuipAMScanAPCProc@@YAX_K@Z",
+              "ea": "0x140006b38",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "amProviderName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "consent.exe"
+          ]
+        },
+        {
+          "fieldName": "amsiScanResultHr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "consent.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AppXSyncActivity",
+      "variantCount": 5,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NoPrint)",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StartActivity@AppXSyncActivity@LUATelemetry@@QEAAXXZ",
+              "ea": "0x1800411e9",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "isSuccessful:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?Stop@AppXSyncActivity@LUATelemetry@@QEAAXH@Z",
+              "ea": "0x180041346",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32",
+            "isSuccessful:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?Stop@AppXSyncActivity@LUATelemetry@@QEAAXH@Z",
+              "ea": "0x1800414c1",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StopActivity@AppXSyncActivity@LUATelemetry@@MEAAXXZ",
+              "ea": "0x180041800",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StopActivity@AppXSyncActivity@LUATelemetry@@MEAAXXZ",
+              "ea": "0x180041966",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "callContext",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "isSuccessful",
+          "type": "Bool32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(NoPrint)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(String)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AutomaticAdminElevation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "AutomaticAdminState:UInt8(Boolean)",
+            "UTCReplace_AppSessionGuid:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?AipCheckAutomaticAdminPolicy@@YAKPEAH@Z",
+              "ea": "0x18001382f",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AutomaticAdminState",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "UTCReplace_AppSessionGuid",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "COMElevation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HRESULT:Int32(HResult)",
+            "Error:UInt32",
+            "LaunchFlags:UInt32",
+            "ClientFlags:UInt32",
+            "CLSID:GUID",
+            "RequestorPath:UnicodeString",
+            "FriendlyName:UnicodeString",
+            "UTCReplace_AppSessionGuid:UInt8(Boolean)",
+            "userType:UInt8",
+            "UACPromptPolicy:UInt32",
+            "DurationMs:Int64",
+            "correlationVector:AnsiString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?COMElevation_@LUATelemetry@@QEAAXJKKKPEBU_GUID@@PEBG1HK_JPEBD@Z",
+              "ea": "0x18003eb17",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CLSID",
+          "type": "GUID",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationMs",
+          "type": "Int64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "Error",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "FriendlyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "LaunchFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "RequestorPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "UACPromptPolicy",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "UTCReplace_AppSessionGuid",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "correlationVector",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "userType",
+          "type": "UInt8",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "COMElevation_Aggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "DurationSum_ms:Int64",
+            "DurationMin_ms:Int64",
+            "DurationMax_ms:Int64",
+            "HRESULT:Int32(HResult)",
+            "Error:UInt32",
+            "LaunchFlags:UInt32",
+            "ClientFlags:UInt32",
+            "CLSID:GUID",
+            "RequestorPath:UnicodeString",
+            "FriendlyName:UnicodeString",
+            "userType:UInt8",
+            "UACPromptPolicy:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?COMElevation_@LUATelemetry@@QEAAXJKKKPEBU_GUID@@PEBG1HK_JPEBD@Z",
+              "ea": "0x18003ec25",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CLSID",
+          "type": "GUID",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationMax_ms",
+          "type": "Int64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationMin_ms",
+          "type": "Int64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationSum_ms",
+          "type": "Int64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "Error",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "FriendlyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "LaunchFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "RequestorPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "UACPromptPolicy",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "userType",
+          "type": "UInt8",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CentennialElevation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "durationSum_ms:Int64",
+            "durationMin_ms:Int64",
+            "durationMax_ms:Int64",
+            "HRESULT:Int32(HResult)",
+            "packageFullName:UnicodeString",
+            "applicationPath:UnicodeString",
+            "error:UInt32",
+            "clientFlags:UInt32",
+            "creationFlags:UInt32",
+            "aicLaunchFlags:UInt32",
+            "shouldElevate:Int32",
+            "UACPromptPolicy:UInt32",
+            "userType:UInt8",
+            "emittedAtFunctionExit:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?CentennialElevation_@LUATelemetry@@QEAAXJPEBG0KKKKHHK_JHPEBD@Z",
+              "ea": "0x18002c3bb",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "UACPromptPolicy",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "aicLaunchFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "applicationPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "clientFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "creationFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "durationMax_ms",
+          "type": "Int64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "durationMin_ms",
+          "type": "Int64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "durationSum_ms",
+          "type": "Int64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "emittedAtFunctionExit",
+          "type": "Int32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "error",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "packageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "shouldElevate",
+          "type": "Int32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "userType",
+          "type": "UInt8",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CentennialElevationNewEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HRESULT:Int32(HResult)",
+            "packageFullName:UnicodeString",
+            "applicationPath:UnicodeString",
+            "error:UInt32",
+            "clientFlags:UInt32",
+            "creationFlags:UInt32",
+            "aicLaunchFlags:UInt32",
+            "shouldElevate:Int32",
+            "UTCReplace_AppSessionGuid:UInt8(Boolean)",
+            "UACPromptPolicy:UInt32",
+            "userType:UInt8",
+            "DurationMs:Int64",
+            "correlationVector:AnsiString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?CentennialElevation_@LUATelemetry@@QEAAXJPEBG0KKKKHHK_JHPEBD@Z",
+              "ea": "0x18002c277",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DurationMs",
+          "type": "Int64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "UACPromptPolicy",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "UTCReplace_AppSessionGuid",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "aicLaunchFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "applicationPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "clientFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "correlationVector",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "creationFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "error",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "packageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "shouldElevate",
+          "type": "Int32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "userType",
+          "type": "UInt8",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EnsurePackageShutdownActivity",
+      "variantCount": 5,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NoPrint)",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StartActivity@EnsurePackageShutdownActivity@LUATelemetry@@QEAAXXZ",
+              "ea": "0x1800371b3",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "PackageFullName:UnicodeString",
+            "ShutdownFlags:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?Stop@EnsurePackageShutdownActivity@LUATelemetry@@QEAAXPEBGK@Z",
+              "ea": "0x18003756c",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32",
+            "PackageFullName:UnicodeString",
+            "ShutdownFlags:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?Stop@EnsurePackageShutdownActivity@LUATelemetry@@QEAAXPEBGK@Z",
+              "ea": "0x18003768b",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StopActivity@EnsurePackageShutdownActivity@LUATelemetry@@MEAAXXZ",
+              "ea": "0x180037cd1",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StopActivity@EnsurePackageShutdownActivity@LUATelemetry@@MEAAXXZ",
+              "ea": "0x180037dca",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "ShutdownFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "callContext",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(NoPrint)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(String)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FinishPackageActivationActivity",
+      "variantCount": 5,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NoPrint)",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StartActivity@FinishPackageActivationActivity@LUATelemetry@@QEAAXXZ",
+              "ea": "0x18000d43f",
+              "confidence": "CallGraph-d3"
+            },
+            {
+              "binary": "appinfo.dll",
+              "function": "?StartActivity@FinishPackageActivationActivity@LUATelemetry@@QEAAXXZ",
+              "ea": "0x18000d4a2",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32",
+            "ApplicationName:UnicodeString",
+            "PackageFullName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?Stop@FinishPackageActivationActivity@LUATelemetry@@QEAAXPEBG0@Z",
+              "ea": "0x18000b044",
+              "confidence": "CallGraph-d3"
+            },
+            {
+              "binary": "appinfo.dll",
+              "function": "?Stop@FinishPackageActivationActivity@LUATelemetry@@QEAAXPEBG0@Z",
+              "ea": "0x18000b082",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "ApplicationName:UnicodeString",
+            "PackageFullName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?Stop@FinishPackageActivationActivity@LUATelemetry@@QEAAXPEBG0@Z",
+              "ea": "0x18000b1eb",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StopActivity@FinishPackageActivationActivity@LUATelemetry@@MEAAXXZ",
+              "ea": "0x180037ef1",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StopActivity@FinishPackageActivationActivity@LUATelemetry@@MEAAXXZ",
+              "ea": "0x180037fea",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ApplicationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "callContext",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(NoPrint)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(String)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GetElevatedTokenActivity",
+      "variantCount": 5,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NoPrint)",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StartActivity@GetElevatedTokenActivity@LUATelemetry@@QEAAXXZ",
+              "ea": "0x180021ea1",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "Error:UInt32",
+            "ModuleName:UnicodeString",
+            "SessionId:UInt32",
+            "isShadowAdminEnabled:Bool32",
+            "isElevatedToken:Bool32",
+            "isSplitToken:Bool32",
+            "isTcb:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?Stop@GetElevatedTokenActivity@LUATelemetry@@QEAAXKPEBGKHHHH@Z",
+              "ea": "0x1800220da",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32",
+            "Error:UInt32",
+            "ModuleName:UnicodeString",
+            "SessionId:UInt32",
+            "isShadowAdminEnabled:Bool32",
+            "isElevatedToken:Bool32",
+            "isSplitToken:Bool32",
+            "isTcb:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?Stop@GetElevatedTokenActivity@LUATelemetry@@QEAAXKPEBGKHHHH@Z",
+              "ea": "0x180022182",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StopActivity@GetElevatedTokenActivity@LUATelemetry@@MEAAXXZ",
+              "ea": "0x1800222a0",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StopActivity@GetElevatedTokenActivity@LUATelemetry@@MEAAXXZ",
+              "ea": "0x180022406",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Error",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "ModuleName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "callContext",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "isElevatedToken",
+          "type": "Bool32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "isShadowAdminEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "isSplitToken",
+          "type": "Bool32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "isTcb",
+          "type": "Bool32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(NoPrint)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(String)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GetPackageActivationTokenForAliasActivity",
+      "variantCount": 5,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NoPrint)",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StartActivity@GetPackageActivationTokenForAliasActivity@LUATelemetry@@QEAAXXZ",
+              "ea": "0x18000c59f",
+              "confidence": "CallGraph-d3"
+            },
+            {
+              "binary": "appinfo.dll",
+              "function": "?StartActivity@GetPackageActivationTokenForAliasActivity@LUATelemetry@@QEAAXXZ",
+              "ea": "0x18000c602",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "ApplicationLinkName:UnicodeString",
+            "Application:UnicodeString",
+            "PackageFullName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?Stop@GetPackageActivationTokenForAliasActivity@LUATelemetry@@QEAAXPEBG00@Z",
+              "ea": "0x18000f5c7",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32",
+            "ApplicationLinkName:UnicodeString",
+            "Application:UnicodeString",
+            "PackageFullName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?Stop@GetPackageActivationTokenForAliasActivity@LUATelemetry@@QEAAXPEBG00@Z",
+              "ea": "0x18000f6fa",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StopActivity@GetPackageActivationTokenForAliasActivity@LUATelemetry@@MEAAXXZ",
+              "ea": "0x180038111",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StopActivity@GetPackageActivationTokenForAliasActivity@LUATelemetry@@MEAAXXZ",
+              "ea": "0x18003820a",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Application",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "ApplicationLinkName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "callContext",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(NoPrint)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(String)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GetPackageActivationTokenForFilePath",
+      "variantCount": 5,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NoPrint)",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StartActivity@GetPackageActivationTokenForFilePath@LUATelemetry@@QEAAXXZ",
+              "ea": "0x180018a2b",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "FileName:UnicodeString",
+            "AppModelUserId:UnicodeString",
+            "PackageFullName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?Stop@GetPackageActivationTokenForFilePath@LUATelemetry@@QEAAXPEBG00@Z",
+              "ea": "0x180018bd8",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32",
+            "FileName:UnicodeString",
+            "AppModelUserId:UnicodeString",
+            "PackageFullName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?Stop@GetPackageActivationTokenForFilePath@LUATelemetry@@QEAAXPEBG00@Z",
+              "ea": "0x180018d08",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StopActivity@GetPackageActivationTokenForFilePath@LUATelemetry@@MEAAXXZ",
+              "ea": "0x180038331",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StopActivity@GetPackageActivationTokenForFilePath@LUATelemetry@@MEAAXXZ",
+              "ea": "0x18003842a",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppModelUserId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "FileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "callContext",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(NoPrint)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(String)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GetPackageActivationTokenForSxS",
+      "variantCount": 5,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NoPrint)",
+            "threadId:UInt32",
+            "AppModelUserId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StartActivity@GetPackageActivationTokenForSxS@LUATelemetry@@QEAAXPEBG@Z",
+              "ea": "0x18000cc43",
+              "confidence": "CallGraph-d3"
+            },
+            {
+              "binary": "appinfo.dll",
+              "function": "?StartActivity@GetPackageActivationTokenForSxS@LUATelemetry@@QEAAXPEBG@Z",
+              "ea": "0x18000cc7a",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "PackageFullName:UnicodeString",
+            "RuntimeBehavior:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?Stop@GetPackageActivationTokenForSxS@LUATelemetry@@QEAAXPEBGK@Z",
+              "ea": "0x18000f85b",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32",
+            "PackageFullName:UnicodeString",
+            "RuntimeBehavior:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?Stop@GetPackageActivationTokenForSxS@LUATelemetry@@QEAAXPEBGK@Z",
+              "ea": "0x18000f984",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StopActivity@GetPackageActivationTokenForSxS@LUATelemetry@@MEAAXXZ",
+              "ea": "0x18000b9b3",
+              "confidence": "CallGraph-d3"
+            },
+            {
+              "binary": "appinfo.dll",
+              "function": "?StopActivity@GetPackageActivationTokenForSxS@LUATelemetry@@MEAAXXZ",
+              "ea": "0x18000b9fa",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StopActivity@GetPackageActivationTokenForSxS@LUATelemetry@@MEAAXXZ",
+              "ea": "0x18000babc",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppModelUserId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "RuntimeBehavior",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "callContext",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(NoPrint)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(String)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LUASettings",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "enableLUA:UInt32",
+            "consentPromptBehaviorUser:UInt32",
+            "consentPromptBehaviorAdmin:UInt32",
+            "consentPromptBehaviorEnhancedAdmin:UInt32",
+            "promptOnSecureDesktop:UInt32",
+            "enableVirtualization:UInt32",
+            "enableInstallerDetection:UInt32",
+            "enableSecureUIAPaths:UInt32",
+            "enableUIADesktopToggle:UInt32",
+            "validateAdminCodeSignatures:UInt32",
+            "enableRestrictedAutoApprove:UInt32",
+            "typeOfAdminApprovalMode:UInt32",
+            "enableAutoApproveIntegrityContinuity:UInt32",
+            "enableAutomaticAdmin:UInt32",
+            "enableLinkedConnections:UInt32",
+            "enableSecureCredentialPrompting:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?LogUACSettings@LUATelemetry@@SAXXZ",
+              "ea": "0x180013cb3",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "consentPromptBehaviorAdmin",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "consentPromptBehaviorEnhancedAdmin",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "consentPromptBehaviorUser",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "enableAutoApproveIntegrityContinuity",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "enableAutomaticAdmin",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "enableInstallerDetection",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "enableLUA",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "enableLinkedConnections",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "enableRestrictedAutoApprove",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "enableSecureCredentialPrompting",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "enableSecureUIAPaths",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "enableUIADesktopToggle",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "enableVirtualization",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "promptOnSecureDesktop",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "typeOfAdminApprovalMode",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "validateAdminCodeSignatures",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LaunchAdminProcess",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HRESULT:Int32",
+            "Flags:UInt32",
+            "Reason:UInt32",
+            "Error:UInt32",
+            "Application:UnicodeString",
+            "applicationPath:UnicodeString",
+            "UserType:UInt8",
+            "UACPromptPolicy:UInt32",
+            "AppExecutionAliasActivation:UInt8(Boolean)",
+            "DurationMs:Int64",
+            "correlationVector:AnsiString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?LaunchAdminProcess_@LUATelemetry@@QEAAXJKKKPEBG0HK_J_NPEBD@Z",
+              "ea": "0x18003478a",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppExecutionAliasActivation",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "Application",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationMs",
+          "type": "Int64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "Error",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "UACPromptPolicy",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "UserType",
+          "type": "UInt8",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "applicationPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "correlationVector",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LaunchAdminProcess_Aggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "DurationSum_ms:Int64",
+            "DurationMin_ms:Int64",
+            "DurationMax_ms:Int64",
+            "HRESULT:Int32",
+            "Flags:UInt32",
+            "Reason:UInt32",
+            "Error:UInt32",
+            "Application:UnicodeString",
+            "applicationPath:UnicodeString",
+            "UserType:UInt8",
+            "UACPromptPolicy:UInt32",
+            "AppExecutionAliasActivation:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?LaunchAdminProcess_@LUATelemetry@@QEAAXJKKKPEBG0HK_J_NPEBD@Z",
+              "ea": "0x180034883",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppExecutionAliasActivation",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "Application",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationMax_ms",
+          "type": "Int64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationMin_ms",
+          "type": "Int64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationSum_ms",
+          "type": "Int64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "Error",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "UACPromptPolicy",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "UserType",
+          "type": "UInt8",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "applicationPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MSIElevation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HRESULT:Int32(HResult)",
+            "error:UInt32",
+            "runLevel:UInt32",
+            "packageSource:UnicodeString",
+            "productName:UnicodeString",
+            "productVersion:UnicodeString",
+            "productManufacturer:UnicodeString",
+            "MSIAction:UInt32",
+            "numUpdates:UInt32",
+            "UTCReplace_AppSessionGuid:UInt8(Boolean)",
+            "userType:UInt8",
+            "UACPromptPolicy:UInt32",
+            "DurationMs:Int64",
+            "correlationVector:AnsiString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?MSIElevation_@LUATelemetry@@QEAAXJKKPEBG000KKHK_JPEBD@Z",
+              "ea": "0x18003edf7",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DurationMs",
+          "type": "Int64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "MSIAction",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "UACPromptPolicy",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "UTCReplace_AppSessionGuid",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "correlationVector",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "error",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "numUpdates",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "packageSource",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "productManufacturer",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "productVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "runLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "userType",
+          "type": "UInt8",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MSIElevation_Aggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "DurationSum_ms:Int64",
+            "DurationMin_ms:Int64",
+            "DurationMax_ms:Int64",
+            "HRESULT:Int32(HResult)",
+            "error:UInt32",
+            "runLevel:UInt32",
+            "packageSource:UnicodeString",
+            "productName:UnicodeString",
+            "productVersion:UnicodeString",
+            "productManufacturer:UnicodeString",
+            "MSIAction:UInt32",
+            "numUpdates:UInt32",
+            "userType:UInt8",
+            "UACPromptPolicy:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?MSIElevation_@LUATelemetry@@QEAAXJKKPEBG000KKHK_JPEBD@Z",
+              "ea": "0x18003ef30",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationMax_ms",
+          "type": "Int64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationMin_ms",
+          "type": "Int64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationSum_ms",
+          "type": "Int64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "MSIAction",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "UACPromptPolicy",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "error",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "numUpdates",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "packageSource",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "productManufacturer",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "productVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "runLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "userType",
+          "type": "UInt8",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegistrySyncActivity",
+      "variantCount": 5,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NoPrint)",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StartActivity@RegistrySyncActivity@LUATelemetry@@QEAAXXZ",
+              "ea": "0x180041299",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "isSuccessful:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?Stop@RegistrySyncActivity@LUATelemetry@@QEAAXH@Z",
+              "ea": "0x1800415a2",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32",
+            "isSuccessful:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?Stop@RegistrySyncActivity@LUATelemetry@@QEAAXH@Z",
+              "ea": "0x18004171d",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StopActivity@RegistrySyncActivity@LUATelemetry@@MEAAXXZ",
+              "ea": "0x180041a30",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?StopActivity@RegistrySyncActivity@LUATelemetry@@MEAAXXZ",
+              "ea": "0x180041b96",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "callContext",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "isSuccessful",
+          "type": "Bool32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(NoPrint)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(String)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SettingsSyncErrorContext",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "errorCode:Int32(HResult)",
+            "failureInstance:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "appinfo.dll",
+              "function": "?SettingsSyncErrorContext_@LUATelemetry@@QEAAXJPEAG@Z",
+              "ea": "0x180041135",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "errorCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        },
+        {
+          "fieldName": "failureInstance",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appinfo.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

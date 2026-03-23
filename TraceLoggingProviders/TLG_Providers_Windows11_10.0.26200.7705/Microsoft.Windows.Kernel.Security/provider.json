@@ -1,0 +1,66 @@
+{
+  "providerName": "Microsoft.Windows.Kernel.Security",
+  "guid": "{09A69A38-2680-4BFA-AD01-792AD63A4FF2}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "ntoskrnl.exe"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "LimitedToNonLimitedTokenSessionImpersonation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "primaryTokenSessionFlags:UInt32",
+            "impersonationTokenSessionFlags:UInt32",
+            "processPath:CountedString",
+            "processCommandLine:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "SepLogUnmatchedSessionFlagImpersonationAttempt",
+              "ea": "0x1404cf119",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "impersonationTokenSessionFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "primaryTokenSessionFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "processCommandLine",
+          "type": "CountedString",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "processPath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

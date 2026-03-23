@@ -1,0 +1,120 @@
+{
+  "providerName": "Microsoft.Windows.Sens",
+  "guid": "{966AFB4E-A7EF-5EB7-5E31-38C352CA38B9}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "Sens.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "ActivityStoppedAutomatically",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "Sens.dll",
+              "function": "??$_tlgWriteActivityAutoStop@$0EAAAAAAAAAAA@$04@@YAXPEBU_tlgProvider_t@@PEBU_GUID@@@Z",
+              "ea": "0x18000a032",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "SubscriberNotifyStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "EventType:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "Sens.dll",
+              "function": "??0Activity@Sens@@QEAA@W4SENS_EVENT_TYPE@@@Z",
+              "ea": "0x180005b0e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "Sens.dll",
+              "function": "??0Activity@Sens@@QEAA@W4SENS_EVENT_TYPE@@@Z",
+              "ea": "0x180005b77",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EventType",
+          "type": "Int32",
+          "seenIn": [
+            "Sens.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Sens.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SubscriberNotifyStop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "EventType:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "Sens.dll",
+              "function": "??1Activity@Sens@@QEAA@XZ",
+              "ea": "0x180005ced",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "Sens.dll",
+              "function": "??1Activity@Sens@@QEAA@XZ",
+              "ea": "0x180005d2f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EventType",
+          "type": "Int32",
+          "seenIn": [
+            "Sens.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Sens.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

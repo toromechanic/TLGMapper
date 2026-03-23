@@ -1,0 +1,454 @@
+{
+  "providerName": "EAPRasTlsEvents",
+  "guid": "{06C071F2-6C59-5D55-6B31-1578DD063DDC}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "rastls.dll"
+  ],
+  "uniqueEventCount": 7,
+  "events": [
+    {
+      "eventName": "CredentialPlumbing",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "resultCode:UInt64",
+            "interfaceGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "rastls.dll",
+              "function": "?WriteCredentialPlumbingEvent@@YAXKU_GUID@@@Z",
+              "ea": "0x18005be81",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "interfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "resultCode",
+          "type": "UInt64",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CredentialUnPlumbing",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "credentialType:UInt64",
+            "resultCode:UInt64",
+            "interfaceGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "rastls.dll",
+              "function": "?WriteCredentialUnPlumbingEvent@@YAXKKU_GUID@@@Z",
+              "ea": "0x18005bf38",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "credentialType",
+          "type": "UInt64",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "interfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "resultCode",
+          "type": "UInt64",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EAPTLSAuthFail",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "eapOuterMethod:UInt64",
+            "isFastReconnected:Bool32",
+            "eapTLSRawResultCode:UInt64",
+            "interfaceGuid:GUID",
+            "authResultCode:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rastls.dll",
+              "function": "?WriteTlsAuthFailEvent@@YAXPEAU_EAPTLS_CONTROL_BLOCK@@K@Z",
+              "ea": "0x18005c1c0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "authResultCode",
+          "type": "UInt64",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "eapOuterMethod",
+          "type": "UInt64",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "eapTLSRawResultCode",
+          "type": "UInt64",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "interfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "isFastReconnected",
+          "type": "Bool32",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EAPTLSAuthPass",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "eapOuterMethod:UInt64",
+            "isFastReconnected:Bool32",
+            "interfaceGuid:GUID",
+            "authResultCode:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rastls.dll",
+              "function": "?WriteTlsAuthSuccessEvent@@YAXPEAU_EAPTLS_CONTROL_BLOCK@@@Z",
+              "ea": "0x18005c66f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "authResultCode",
+          "type": "UInt64",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "eapOuterMethod",
+          "type": "UInt64",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "interfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "isFastReconnected",
+          "type": "Bool32",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EAPTLSAuthResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "eapOuterMethod:UInt64",
+            "isOuterMethodPassed:Bool32",
+            "isFastReconnected:Bool32",
+            "interfaceGuid:GUID",
+            "eapPacket:UInt64",
+            "authResultCode:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rastls.dll",
+              "function": "?WriteTlsTraceLoggingEvent@@YAXPEAU_EAPTLS_CONTROL_BLOCK@@EH@Z",
+              "ea": "0x18005c7a9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "authResultCode",
+          "type": "UInt64",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "eapOuterMethod",
+          "type": "UInt64",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "eapPacket",
+          "type": "UInt64",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "interfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "isFastReconnected",
+          "type": "Bool32",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "isOuterMethodPassed",
+          "type": "Bool32",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PEAPAuthFail",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "eapOuterMethod:UInt64",
+            "eapInnerMethod:UInt64",
+            "isFastReconnectEnabled:Bool32",
+            "isFastReconnected:Bool32",
+            "interfaceGuid:GUID",
+            "authResultCode:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rastls.dll",
+              "function": "?WritePeapAuthFailEvent@@YAXPEAU_PEAP_CONTROL_BLOCK@@K@Z",
+              "ea": "0x18005c063",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "authResultCode",
+          "type": "UInt64",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "eapInnerMethod",
+          "type": "UInt64",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "eapOuterMethod",
+          "type": "UInt64",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "interfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "isFastReconnectEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "isFastReconnected",
+          "type": "Bool32",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PEAPAuthResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "eapOuterMethod:UInt64",
+            "eapInnerMethod:UInt64",
+            "isOuterMethodPassed:Bool32",
+            "isInnerMethodPassed:Bool32",
+            "isInnerEAPOptional:Bool32",
+            "isFastReconnectEnabled:Bool32",
+            "isFastReconnected:Bool32",
+            "interfaceGuid:GUID",
+            "eapPacket:UInt64",
+            "authResultCode:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rastls.dll",
+              "function": "?WritePeapTraceLoggingEvent@@YAXPEAU_PEAP_CONTROL_BLOCK@@EK@Z",
+              "ea": "0x180033905",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "authResultCode",
+          "type": "UInt64",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "eapInnerMethod",
+          "type": "UInt64",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "eapOuterMethod",
+          "type": "UInt64",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "eapPacket",
+          "type": "UInt64",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "interfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "isFastReconnectEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "isFastReconnected",
+          "type": "Bool32",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "isInnerEAPOptional",
+          "type": "Bool32",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "isInnerMethodPassed",
+          "type": "Bool32",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        },
+        {
+          "fieldName": "isOuterMethodPassed",
+          "type": "Bool32",
+          "seenIn": [
+            "rastls.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

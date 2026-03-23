@@ -1,0 +1,104 @@
+{
+  "providerName": "Microsoft.Windows.Shell.SystemSettings.StorageSense.Aggregate",
+  "guid": "{EBEB74E1-8B28-427E-AD35-768F49F2E65E}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "SettingsHandlers_StorageSense.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "BreakdownItemProgressAggregated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "result:Int32(HResult)",
+            "dataType:UInt32",
+            "categoryName:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "SettingsHandlers_StorageSense.dll",
+              "function": "?UpdateInProgressOperation@CBreakdownItemSetting@StorageSenseHandlers@SystemSettings@@QEAAJPEAX@Z",
+              "ea": "0x18005e85f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "SettingsHandlers_StorageSense.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "SettingsHandlers_StorageSense.dll"
+          ]
+        },
+        {
+          "fieldName": "categoryName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SettingsHandlers_StorageSense.dll"
+          ]
+        },
+        {
+          "fieldName": "dataType",
+          "type": "UInt32",
+          "seenIn": [
+            "SettingsHandlers_StorageSense.dll"
+          ]
+        },
+        {
+          "fieldName": "result",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "SettingsHandlers_StorageSense.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CategoryBreakdown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "RefreshType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SettingsHandlers_StorageSense.dll",
+              "function": "?DoGenericAsyncWork@?$CBreakdownCollectionSettingBase@P6AJPEBUSettingDBItem@DataModel@SystemSettings@@PEAUIUser@System@Windows@@PEAPEAUISettingItem@23@@Z@StorageSenseHandlers@SystemSettings@@UEAAXXZ",
+              "ea": "0x1800549fc",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "RefreshType",
+          "type": "UInt32",
+          "seenIn": [
+            "SettingsHandlers_StorageSense.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

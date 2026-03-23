@@ -1,0 +1,104 @@
+{
+  "providerName": "Microsoft.Windows.Base.Win32.Job",
+  "guid": "{58E1853A-3C4E-4BBA-9FF8-E1CD088D25A5}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "kernel32.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "QueryIoRateControlInformationJobObject",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "VolumeNamePresent:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "kernel32.dll",
+              "function": "QueryIoRateControlInformationJobObject",
+              "ea": "0x18006b43b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "VolumeNamePresent",
+          "type": "Bool32",
+          "seenIn": [
+            "kernel32.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SetIoRateControlInformationJobObject",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "MaxIops:Int64",
+            "MaxBandwidth:Int64",
+            "ReservationIops:Int64",
+            "BaseIoSize:UInt32",
+            "VolumeNameLength:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "kernel32.dll",
+              "function": "SetIoRateControlInformationJobObject",
+              "ea": "0x18006b71e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BaseIoSize",
+          "type": "UInt32",
+          "seenIn": [
+            "kernel32.dll"
+          ]
+        },
+        {
+          "fieldName": "MaxBandwidth",
+          "type": "Int64",
+          "seenIn": [
+            "kernel32.dll"
+          ]
+        },
+        {
+          "fieldName": "MaxIops",
+          "type": "Int64",
+          "seenIn": [
+            "kernel32.dll"
+          ]
+        },
+        {
+          "fieldName": "ReservationIops",
+          "type": "Int64",
+          "seenIn": [
+            "kernel32.dll"
+          ]
+        },
+        {
+          "fieldName": "VolumeNameLength",
+          "type": "UInt16",
+          "seenIn": [
+            "kernel32.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

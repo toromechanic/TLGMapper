@@ -1,0 +1,373 @@
+{
+  "providerName": "Microsoft.Windows.Security.EFS.EfsLibAggregate",
+  "guid": "{5B3A3ED4-78F2-4882-AB48-E34638737AF2}",
+  "os": "WindowsServer2025",
+  "binaryCount": 4,
+  "binaries": [
+    "exfat.sys",
+    "fastfat.sys",
+    "ntfs.sys",
+    "refs.sys"
+  ],
+  "uniqueEventCount": 4,
+  "events": [
+    {
+      "eventName": "ClipSpDecryptFekExFailureAggr",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "Status:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "exfat.sys",
+              "function": "EfspClipSpDecryptFek",
+              "ea": "0x14005935a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EfspClipSpDecryptFek",
+              "ea": "0x1400597db",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EfspClipSpDecryptFek",
+              "ea": "0x1402bf877",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EfspClipSpDecryptFek",
+              "ea": "0x1402bc79f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EfsFileRequiresEncryptionAggr",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "EncryptScenario:Int8",
+            "RequestorProcessFullPath:UnicodeString",
+            "Status:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "exfat.sys",
+              "function": "EfspFileRequiresEncryption",
+              "ea": "0x14005305b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EfspFileRequiresEncryption",
+              "ea": "0x140053395",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EfspFileRequiresEncryption",
+              "ea": "0x1401d6da3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EfspFileRequiresEncryption",
+              "ea": "0x1402b6319",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "EncryptScenario",
+          "type": "Int8",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "RequestorProcessFullPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EfsLibAssert",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "FileSystemType:UInt32",
+            "FileNumber:UInt32",
+            "LineNumber:UInt32",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "EfsGetEfsStreamInfo",
+              "ea": "0x1402bfa39",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EfsGetFileAndStreamTransition",
+              "ea": "0x1401b5bd6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EfsGetFileAndStreamTransition",
+              "ea": "0x1401b5ee9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FileNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "FileSystemType",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "LineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EfsLibAssertAggr",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "FileSystemType:UInt32",
+            "FileNumber:UInt32",
+            "LineNumber:UInt32",
+            "Status:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "exfat.sys",
+              "function": "EfspTraceLogAssert",
+              "ea": "0x14005844c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EfspTraceLogAssert",
+              "ea": "0x14005881e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EfsGetEfsStreamInfo",
+              "ea": "0x1402bfae9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EfsGetFileAndStreamTransition",
+              "ea": "0x1401b59c6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EfsGetFileAndStreamTransition",
+              "ea": "0x1401b5cfb",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EfspTraceLogAssert",
+              "ea": "0x1400b093a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EfspTraceLogAssert",
+              "ea": "0x1402bb823",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "FileNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "FileSystemType",
+          "type": "UInt32",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "LineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

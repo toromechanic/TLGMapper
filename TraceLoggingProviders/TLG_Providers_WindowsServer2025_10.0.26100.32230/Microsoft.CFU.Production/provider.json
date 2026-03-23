@@ -1,0 +1,407 @@
+{
+  "providerName": "Microsoft.CFU.Production",
+  "guid": "{4BC2C781-7503-59B9-CD0B-E3D08A3D8E75}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "HidCfu.dll",
+    "HidCfu_System32_CDE23381.dll"
+  ],
+  "uniqueEventCount": 4,
+  "events": [
+    {
+      "eventName": "CFUDriverDeviceNotStarted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "deviceHardwareId:UnicodeString",
+            "componentConfigurationInvalid:AnsiString",
+            "ntStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "HidCfu.dll",
+              "function": "sub_18002F010",
+              "ea": "0x18002f1f8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "HidCfu.dll",
+              "function": "sub_18002F010",
+              "ea": "0x18002f463",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "HidCfu_System32_CDE23381.dll",
+              "function": "HidCFUDeviceModulesAdd",
+              "ea": "0x18002f1f8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "HidCfu_System32_CDE23381.dll",
+              "function": "HidCFUDeviceModulesAdd",
+              "ea": "0x18002f463",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "componentConfigurationInvalid",
+          "type": "AnsiString",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "deviceHardwareId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "ntStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CFUProtocolComponentUpdateStatus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "CFUTransactionTimeStamp:FileTime",
+            "PartA_PrivTags:UInt64",
+            "productId:HexInt32",
+            "deviceHardwareId:UnicodeString",
+            "instanceId:UnicodeString",
+            "componentId:UInt8(Hex)",
+            "componentUpdateStatus:HexInt32",
+            "componentOfferResponseReason:HexInt32",
+            "componentPayloadResponse:HexInt32",
+            "firmwareVersionOfferedToDevice:HexInt32",
+            "currentFirmwareVersionOnDevice:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "HidCfu.dll",
+              "function": "sub_18001A78C",
+              "ea": "0x18001aa5a",
+              "confidence": "GlobalFallback"
+            },
+            {
+              "binary": "HidCfu_System32_CDE23381.dll",
+              "function": "?ComponentFirmwareUpdateV2_ComponentFirmwareUpdateStatusRecord@@YAGPEAUDMFMODULE__@@@Z",
+              "ea": "0x18001aa5a",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CFUTransactionTimeStamp",
+          "type": "FileTime",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "componentId",
+          "type": "UInt8(Hex)",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "componentOfferResponseReason",
+          "type": "HexInt32",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "componentPayloadResponse",
+          "type": "HexInt32",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "componentUpdateStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "currentFirmwareVersionOnDevice",
+          "type": "HexInt32",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "deviceHardwareId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "firmwareVersionOfferedToDevice",
+          "type": "HexInt32",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "instanceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "productId",
+          "type": "HexInt32",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CFUProtocolTransactionEnded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "CFUTransactionTimeStamp:FileTime",
+            "PartA_PrivTags:UInt64",
+            "productId:HexInt32",
+            "deviceHardwareId:UnicodeString",
+            "instanceId:UnicodeString",
+            "ntStatus:UInt32(NTStatus)",
+            "protocolTransactionSkipped:UInt8(Boolean)",
+            "numberOfLoopsRun:UInt8(Hex)",
+            "allUpToDate:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "HidCfu.dll",
+              "function": "sub_18001F514",
+              "ea": "0x18001f76c",
+              "confidence": "GlobalFallback"
+            },
+            {
+              "binary": "HidCfu_System32_CDE23381.dll",
+              "function": "?ComponentFirmwareUpdateV2_ProtocolStatusRecord@@YAGPEAUDMFMODULE__@@@Z",
+              "ea": "0x18001f76c",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CFUTransactionTimeStamp",
+          "type": "FileTime",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "allUpToDate",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "deviceHardwareId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "instanceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "ntStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "numberOfLoopsRun",
+          "type": "UInt8(Hex)",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "productId",
+          "type": "HexInt32",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "protocolTransactionSkipped",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CFUProtocolTransactionStarted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "CFUTransactionTimeStamp:FileTime",
+            "PartA_PrivTags:UInt64",
+            "productId:HexInt32",
+            "deviceHardwareId:UnicodeString",
+            "instanceId:UnicodeString",
+            "numberOfFirmareItems:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "HidCfu.dll",
+              "function": "sub_18001BA54",
+              "ea": "0x18001bc4b",
+              "confidence": "GlobalFallback"
+            },
+            {
+              "binary": "HidCfu_System32_CDE23381.dll",
+              "function": "?ComponentFirmwareUpdateV2_FirmwareVersionsGet@@YAGPEAUDMFMODULE__@@@Z",
+              "ea": "0x18001bc4b",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CFUTransactionTimeStamp",
+          "type": "FileTime",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "deviceHardwareId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "instanceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "numberOfFirmareItems",
+          "type": "HexInt32",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        },
+        {
+          "fieldName": "productId",
+          "type": "HexInt32",
+          "seenIn": [
+            "HidCfu.dll",
+            "HidCfu_System32_CDE23381.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

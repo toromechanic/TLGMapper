@@ -1,0 +1,114 @@
+{
+  "providerName": "Microsoft.Windows.Security.Digest",
+  "guid": "{A33935FA-A06D-4BDE-9E3B-E8ED5B88D441}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "wdigest.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "DigestCall_Aggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "status:UInt32(NTStatus)",
+            "isServer:UInt8(Boolean)",
+            "callingImageName:UnicodeString",
+            "svcHostTagName:UnicodeString",
+            "digestType:Int32",
+            "algorithmType:Int32",
+            "qopType:Int32",
+            "isLogonCredentialUsed:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wdigest.dll",
+              "function": "?RecordDirectDigestCall@DigestTelemetry@@YAXJEKKKK@Z",
+              "ea": "0x18000ec9b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "wdigest.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "wdigest.dll"
+          ]
+        },
+        {
+          "fieldName": "algorithmType",
+          "type": "Int32",
+          "seenIn": [
+            "wdigest.dll"
+          ]
+        },
+        {
+          "fieldName": "callingImageName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wdigest.dll"
+          ]
+        },
+        {
+          "fieldName": "digestType",
+          "type": "Int32",
+          "seenIn": [
+            "wdigest.dll"
+          ]
+        },
+        {
+          "fieldName": "isLogonCredentialUsed",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "wdigest.dll"
+          ]
+        },
+        {
+          "fieldName": "isServer",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "wdigest.dll"
+          ]
+        },
+        {
+          "fieldName": "qopType",
+          "type": "Int32",
+          "seenIn": [
+            "wdigest.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "wdigest.dll"
+          ]
+        },
+        {
+          "fieldName": "svcHostTagName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wdigest.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

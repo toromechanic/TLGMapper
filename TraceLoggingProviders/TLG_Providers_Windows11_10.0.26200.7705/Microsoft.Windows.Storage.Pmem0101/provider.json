@@ -1,0 +1,521 @@
+{
+  "providerName": "Microsoft.Windows.Storage.Pmem0101",
+  "guid": "{655F3490-F423-4868-A87C-7A23707B1550}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "pmem.sys",
+    "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+  ],
+  "uniqueEventCount": 4,
+  "events": [
+    {
+      "eventName": "DeviceHealth",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "deviceGuid:GUID",
+            "reason:UInt8",
+            "healthStatus:UInt16",
+            "operationalStatus:UInt32[]",
+            "additionalReasons:UInt32[]",
+            "readOnlyReasons:UInt32",
+            "deviceState:UInt16",
+            "readOnlyMode:UInt32",
+            "ignoreDataLoss:UInt32",
+            "lostPersistenceGuarantee:UInt32",
+            "physicalNvdimmsRemoved:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "pmem.sys",
+              "function": "PmemTraceLogicalDeviceHealth",
+              "ea": "0x1c001b09d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys",
+              "function": "PmemTraceLogicalDeviceHealth",
+              "ea": "0x1c001b09d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "additionalReasons",
+          "type": "UInt32[]",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceState",
+          "type": "UInt16",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "healthStatus",
+          "type": "UInt16",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "ignoreDataLoss",
+          "type": "UInt32",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "lostPersistenceGuarantee",
+          "type": "UInt32",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "operationalStatus",
+          "type": "UInt32[]",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "physicalNvdimmsRemoved",
+          "type": "UInt32",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "readOnlyMode",
+          "type": "UInt32",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "readOnlyReasons",
+          "type": "UInt32",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "reason",
+          "type": "UInt8",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DeviceHealthStatusChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "deviceGuid:GUID",
+            "reason:UInt8",
+            "healthStatusChanged:UInt8(Boolean)",
+            "timeSinceLastHealthStatusChange_ms:UInt32",
+            "oldReadOnlyMode:UInt8(Boolean)",
+            "oldLostPersistenceGuarantee:UInt8(Boolean)",
+            "oldReadOnlyReasons:UInt32",
+            "newReadOnlyMode:UInt8(Boolean)",
+            "newLostPersistenceGuarantee:UInt8(Boolean)",
+            "newReadOnlyReasons:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "pmem.sys",
+              "function": "PmemTraceDeviceHealthStatusChange",
+              "ea": "0x1c000475c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys",
+              "function": "PmemTraceDeviceHealthStatusChange",
+              "ea": "0x1c000475c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "healthStatusChanged",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "newLostPersistenceGuarantee",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "newReadOnlyMode",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "newReadOnlyReasons",
+          "type": "UInt32",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "oldLostPersistenceGuarantee",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "oldReadOnlyMode",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "oldReadOnlyReasons",
+          "type": "UInt32",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "reason",
+          "type": "UInt8",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "timeSinceLastHealthStatusChange_ms",
+          "type": "UInt32",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DeviceRemoved",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "deviceGuid:GUID",
+            "surpriseRemoval:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "pmem.sys",
+              "function": "PmemRemoveDevice",
+              "ea": "0x1c001a3a2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys",
+              "function": "PmemRemoveDevice",
+              "ea": "0x1c001a3a2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "surpriseRemoval",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DeviceStarted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "deviceGuid:GUID",
+            "status:UInt32(NTStatus)",
+            "failureReason:UInt8",
+            "vendorId:CountedString",
+            "productId:CountedString",
+            "serialNumber:CountedString",
+            "diskSize_bytes:UInt64",
+            "atomicityMode:UInt8",
+            "interleaveSetSize:UInt32",
+            "interleaveDimmGuids:GUID[]",
+            "badRangesCount:UInt32",
+            "readOnlyMode:UInt8(Boolean)",
+            "lostDataThisBoot:UInt8(Boolean)",
+            "lostDataPreviousBoot:UInt8(Boolean)",
+            "lostPersistenceGuarantee:UInt8(Boolean)",
+            "noMemoryResources:UInt8(Boolean)",
+            "readOnlyReasons:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "pmem.sys",
+              "function": "PmemTraceStartDevice",
+              "ea": "0x1c001b5b2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys",
+              "function": "PmemTraceStartDevice",
+              "ea": "0x1c001b5b2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "atomicityMode",
+          "type": "UInt8",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "badRangesCount",
+          "type": "UInt32",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "diskSize_bytes",
+          "type": "UInt64",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "failureReason",
+          "type": "UInt8",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "interleaveDimmGuids",
+          "type": "GUID[]",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "interleaveSetSize",
+          "type": "UInt32",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "lostDataPreviousBoot",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "lostDataThisBoot",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "lostPersistenceGuarantee",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "noMemoryResources",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "productId",
+          "type": "CountedString",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "readOnlyMode",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "readOnlyReasons",
+          "type": "UInt32",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "serialNumber",
+          "type": "CountedString",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        },
+        {
+          "fieldName": "vendorId",
+          "type": "CountedString",
+          "seenIn": [
+            "pmem.sys",
+            "pmem_pmem.inf_amd64_78f5c0066b9f4830_A62420F3.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

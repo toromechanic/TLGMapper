@@ -1,0 +1,86 @@
+{
+  "providerName": "Microsoft.Windows.Shell.CommandSearchHardwareRequirements",
+  "guid": "{20D197AE-104B-5B8B-7BD0-4CA2EF145FA6}",
+  "os": "WindowsServer2025",
+  "binaryCount": 5,
+  "binaries": [
+    "SettingsConfigTask.dll",
+    "ShellAppRuntime.exe",
+    "SystemSettings.dll",
+    "SystemSettingsViewModel.Desktop.dll",
+    "explorer.exe"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "HardWareCheckResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "result:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "explorer.exe",
+              "function": "??$HardWareCheckResult@W40HardwareCheck@@@CommandSearchHardwareRequirementsTelemetry@HardwareCheck@@SAX$$QEAW4HardWareCheckResult@1@@Z",
+              "ea": "0x14010145b",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SettingsConfigTask.dll",
+              "function": "??$HardWareCheckResult@W40HardwareCheck@@@CommandSearchHardwareRequirementsTelemetry@HardwareCheck@@SAX$$QEAW4HardWareCheckResult@1@@Z",
+              "ea": "0x18000f19d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$HardWareCheckResult@W40HardwareCheck@@@CommandSearchHardwareRequirementsTelemetry@HardwareCheck@@SAX$$QEAW4HardWareCheckResult@1@@Z",
+              "ea": "0x14002569e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "SystemSettings.dll",
+              "function": "??$HardWareCheckResult@W40HardwareCheck@@@CommandSearchHardwareRequirementsTelemetry@HardwareCheck@@SAX$$QEAW4HardWareCheckResult@1@@Z",
+              "ea": "0x1800d8777",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SystemSettingsViewModel.Desktop.dll",
+              "function": "??$HardWareCheckResult@W40HardwareCheck@@@CommandSearchHardwareRequirementsTelemetry@HardwareCheck@@SAX$$QEAW4HardWareCheckResult@1@@Z",
+              "ea": "0x1800c7533",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "SettingsConfigTask.dll",
+            "ShellAppRuntime.exe",
+            "SystemSettings.dll",
+            "SystemSettingsViewModel.Desktop.dll",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "result",
+          "type": "UInt32",
+          "seenIn": [
+            "SettingsConfigTask.dll",
+            "ShellAppRuntime.exe",
+            "SystemSettings.dll",
+            "SystemSettingsViewModel.Desktop.dll",
+            "explorer.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

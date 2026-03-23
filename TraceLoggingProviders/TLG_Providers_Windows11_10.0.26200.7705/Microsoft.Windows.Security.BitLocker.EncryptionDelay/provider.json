@@ -1,0 +1,204 @@
+{
+  "providerName": "Microsoft.Windows.Security.BitLocker.EncryptionDelay",
+  "guid": "{1AA8A014-A347-4BDF-B21A-593F2AB62DE8}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "bdesvc.dll",
+    "fveapi.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "BitLocker.AutoPilot.Scenario",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "trackhr:Int32",
+            "IsAutoPilotScenario:UInt8(Boolean)",
+            "IsAutoPilotLocalProfileAvailable:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?FveIsAutoPilotScenario@@YAJP6AJPEBU_WNF_STATE_NAME@@PEBU_WNF_TYPE_ID@@PEBXPEAKPEAX3@ZP6AJPEAU_UNICODE_STRING@@34K3@ZPEA_N8@Z",
+              "ea": "0x1800211b8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fveapi.dll",
+              "function": "?FveIsAutoPilotScenario@@YAJP6AJPEBU_WNF_STATE_NAME@@PEBU_WNF_TYPE_ID@@PEBXPEAKPEAX3@ZP6AJPEAU_UNICODE_STRING@@34K3@ZPEA_N8@Z",
+              "ea": "0x180040d2f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsAutoPilotLocalProfileAvailable",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll",
+            "fveapi.dll"
+          ]
+        },
+        {
+          "fieldName": "IsAutoPilotScenario",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bdesvc.dll",
+            "fveapi.dll"
+          ]
+        },
+        {
+          "fieldName": "trackhr",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll",
+            "fveapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BitLocker.OOBE.Complete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "IsEulaManuallyAccepted:UInt8(Boolean)",
+            "WasEulaDisplayedBySetup:UInt8(Boolean)",
+            "IsUserLoggedOnPostOobe:UInt8(Boolean)",
+            "WasEulaDisplayedAndMachineOobeCompleted:UInt8(Boolean)",
+            "IsAutoPilotScenario:UInt8(Boolean)",
+            "IsProvisioningComplete:UInt8(Boolean)",
+            "Status of Autopilot scenario resolution:Int32",
+            "Failed to query WNF state data for EULA accepted:Int32",
+            "Failed to query WNF state data for user logon completed post oobe:Int32",
+            "Failed to query WNF state data for completion of machine oobe:Int32",
+            "IsOOBEComplete:Int32",
+            "hr_FveIsOOBECompleted:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?FveIsOOBECompleted@@YAHXZ",
+              "ea": "0x180020665",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fveapi.dll",
+              "function": "?FveIsOOBECompleted@@YAHXZ",
+              "ea": "0x180040616",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Failed to query WNF state data for EULA accepted",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll",
+            "fveapi.dll"
+          ]
+        },
+        {
+          "fieldName": "Failed to query WNF state data for completion of machine oobe",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll",
+            "fveapi.dll"
+          ]
+        },
+        {
+          "fieldName": "Failed to query WNF state data for user logon completed post oobe",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll",
+            "fveapi.dll"
+          ]
+        },
+        {
+          "fieldName": "IsAutoPilotScenario",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bdesvc.dll",
+            "fveapi.dll"
+          ]
+        },
+        {
+          "fieldName": "IsEulaManuallyAccepted",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bdesvc.dll",
+            "fveapi.dll"
+          ]
+        },
+        {
+          "fieldName": "IsOOBEComplete",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll",
+            "fveapi.dll"
+          ]
+        },
+        {
+          "fieldName": "IsProvisioningComplete",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bdesvc.dll",
+            "fveapi.dll"
+          ]
+        },
+        {
+          "fieldName": "IsUserLoggedOnPostOobe",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bdesvc.dll",
+            "fveapi.dll"
+          ]
+        },
+        {
+          "fieldName": "Status of Autopilot scenario resolution",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll",
+            "fveapi.dll"
+          ]
+        },
+        {
+          "fieldName": "WasEulaDisplayedAndMachineOobeCompleted",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bdesvc.dll",
+            "fveapi.dll"
+          ]
+        },
+        {
+          "fieldName": "WasEulaDisplayedBySetup",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bdesvc.dll",
+            "fveapi.dll"
+          ]
+        },
+        {
+          "fieldName": "hr_FveIsOOBECompleted",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll",
+            "fveapi.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

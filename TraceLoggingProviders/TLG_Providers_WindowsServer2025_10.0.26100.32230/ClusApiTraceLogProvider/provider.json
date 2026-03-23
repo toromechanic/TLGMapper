@@ -1,0 +1,506 @@
+{
+  "providerName": "ClusApiTraceLogProvider",
+  "guid": "{3122168F-2432-45F0-B91C-3AF363C14999}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "clusapi.dll"
+  ],
+  "uniqueEventCount": 9,
+  "events": [
+    {
+      "eventName": "AddClusterNodeEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ClusterInstanceId:GUID",
+            "NewClusterNodeId:Int32",
+            "ReturnCode:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "clusapi.dll",
+              "function": "AddClusterNodeEx",
+              "ea": "0x180043537",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClusterInstanceId",
+          "type": "GUID",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "NewClusterNodeId",
+          "type": "Int32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "ReturnCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CreateClusterConfigureNodeEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ClusterInstanceId:GUID",
+            "ClusterNodeId:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "clusapi.dll",
+              "function": "?CreateEmptyCluster@@YAPEAU_HCLUSTER@@PEB_WAEAV?$vector@PEAVClusNode@@V?$allocator@PEAVClusNode@@@std@@@std@@AEAV?$map@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@KU?$less@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@K@std@@@2@@3@AEAVClusterGlobalData@@AEAVPhaseManager@@K_NGPEAK@Z",
+              "ea": "0x1800376eb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClusterInstanceId",
+          "type": "GUID",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "ClusterNodeId",
+          "type": "Int32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CreateClusterEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ClusterInstanceId:GUID",
+            "ClusterVersion:Int32",
+            "ClusterNodesCount:Int32",
+            "ReturnCode:HexInt32",
+            "ElapsedMilliseconds:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "clusapi.dll",
+              "function": "?CreateClusterCore@@YAKPEAU_CREATE_CLUSTER_CONFIG@@P6AHPEAXW4_CLUSTER_SETUP_PHASE@@W4_CLUSTER_SETUP_PHASE_TYPE@@W4_CLUSTER_SETUP_PHASE_SEVERITY@@KPEB_WK@Z1AEAPEAU_HCLUSTER@@@Z",
+              "ea": "0x180035ccb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClusterInstanceId",
+          "type": "GUID",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "ClusterNodesCount",
+          "type": "Int32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "ClusterVersion",
+          "type": "Int32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "ElapsedMilliseconds",
+          "type": "Int32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "ReturnCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DestroyClusterEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ClusterInstanceId:GUID",
+            "ReturnCode:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "clusapi.dll",
+              "function": "DestroyCluster",
+              "ea": "0x180046fbd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClusterInstanceId",
+          "type": "GUID",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "ReturnCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EvictClusterNodeEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ClusterInstanceId:GUID",
+            "EvictClusterNodeId:Int32",
+            "CleanUpTimeOut:Int32",
+            "ReturnCode:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "clusapi.dll",
+              "function": "_lambda_1bfb2a1b72d4c25d7b065d5c97f79fee_::operator()",
+              "ea": "0x18005af1d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CleanUpTimeOut",
+          "type": "Int32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "ClusterInstanceId",
+          "type": "GUID",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "EvictClusterNodeId",
+          "type": "Int32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "ReturnCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PauseClusterNodeExEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ClusterInstanceId:GUID",
+            "PauseClusterExNodeId:Int32",
+            "PauseClusterExDrainToNodeId:Int32",
+            "PauseFlags:Int32",
+            "ReturnCode:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "clusapi.dll",
+              "function": "PauseClusterNodeEx2",
+              "ea": "0x18005c63e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClusterInstanceId",
+          "type": "GUID",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "PauseClusterExDrainToNodeId",
+          "type": "Int32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "PauseClusterExNodeId",
+          "type": "Int32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "PauseFlags",
+          "type": "Int32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "ReturnCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ResumeClusterNodeExEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ClusterInstanceId:GUID",
+            "ResumeFlagsReserved:Int32",
+            "ResumeFailBackType:Int32",
+            "ResumeClusterExNodeId:Int32",
+            "ReturnCode:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "clusapi.dll",
+              "function": "ResumeClusterNodeEx2",
+              "ea": "0x18005c8d5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClusterInstanceId",
+          "type": "GUID",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "ResumeClusterExNodeId",
+          "type": "Int32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "ResumeFailBackType",
+          "type": "Int32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "ResumeFlagsReserved",
+          "type": "Int32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "ReturnCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UpgradeClusterFunctionalLevelEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ClusterInstanceId:GUID",
+            "PerformUpgrade:Bool32",
+            "UpgradedClusterVersion:Int32",
+            "ReturnCode:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "clusapi.dll",
+              "function": "ClusterUpgradeFunctionalLevel",
+              "ea": "0x18002da67",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClusterInstanceId",
+          "type": "GUID",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "PerformUpgrade",
+          "type": "Bool32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "ReturnCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "UpgradedClusterVersion",
+          "type": "Int32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UpgradeClusterFunctionalLevelExEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ClusterInstanceId:GUID",
+            "PerformUpgrade:Bool32",
+            "UpgradedClusterVersion:Int32",
+            "ReturnCode:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "clusapi.dll",
+              "function": "ClusterUpgradeFunctionalLevelEx",
+              "ea": "0x18002dec2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClusterInstanceId",
+          "type": "GUID",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "PerformUpgrade",
+          "type": "Bool32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "ReturnCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        },
+        {
+          "fieldName": "UpgradedClusterVersion",
+          "type": "Int32",
+          "seenIn": [
+            "clusapi.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

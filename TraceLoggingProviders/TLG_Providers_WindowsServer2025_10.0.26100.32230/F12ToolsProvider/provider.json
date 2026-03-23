@@ -1,0 +1,933 @@
+{
+  "providerName": "F12ToolsProvider",
+  "guid": "{843BAF24-ED4D-479C-9E8B-520901959C89}",
+  "os": "WindowsServer2025",
+  "binaryCount": 4,
+  "binaries": [
+    "EdgeContent.dll",
+    "F12Platform.dll",
+    "F12Platform2.dll",
+    "edgehtml.dll"
+  ],
+  "uniqueEventCount": 17,
+  "events": [
+    {
+      "eventName": "EdpHttpRequestEnd",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "sessionId:GUID",
+            "timeToResponse:UInt64",
+            "responseCode:UInt16",
+            "responseBody:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EdgeContent.dll",
+              "function": "_anonymous_namespace_::DevToolsServer::OnHttpRequest",
+              "ea": "0x1800c86a9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "responseBody",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EdgeContent.dll"
+          ]
+        },
+        {
+          "fieldName": "responseCode",
+          "type": "UInt16",
+          "seenIn": [
+            "EdgeContent.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "GUID",
+          "seenIn": [
+            "EdgeContent.dll"
+          ]
+        },
+        {
+          "fieldName": "timeToResponse",
+          "type": "UInt64",
+          "seenIn": [
+            "EdgeContent.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EdpHttpRequestStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "sessionId:GUID",
+            "httpVerb:Int32",
+            "userAgent:CountedAnsiString",
+            "urlAbsolutePath:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EdgeContent.dll",
+              "function": "_anonymous_namespace_::DevToolsServer::OnHttpRequest",
+              "ea": "0x1800c7da8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "httpVerb",
+          "type": "Int32",
+          "seenIn": [
+            "EdgeContent.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "GUID",
+          "seenIn": [
+            "EdgeContent.dll"
+          ]
+        },
+        {
+          "fieldName": "urlAbsolutePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EdgeContent.dll"
+          ]
+        },
+        {
+          "fieldName": "userAgent",
+          "type": "CountedAnsiString",
+          "seenIn": [
+            "EdgeContent.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EdpMessage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "engineType:Int32",
+            "method:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "edgehtml.dll",
+              "function": "_lambda_e36f9f669c4197e257709b4c8a3ecdb7_::operator()",
+              "ea": "0x18110cd66",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "engineType",
+          "type": "Int32",
+          "seenIn": [
+            "edgehtml.dll"
+          ]
+        },
+        {
+          "fieldName": "method",
+          "type": "UnicodeString",
+          "seenIn": [
+            "edgehtml.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EdpSessionEnd",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "sessionId:GUID",
+            "length:UInt64",
+            "closedByWebSocket:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "EdgeContent.dll",
+              "function": "?Run@EdpRemoteSession@EdpProxy@@QEAAJXZ",
+              "ea": "0x1800c8c44",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "closedByWebSocket",
+          "type": "Bool32",
+          "seenIn": [
+            "EdgeContent.dll"
+          ]
+        },
+        {
+          "fieldName": "length",
+          "type": "UInt64",
+          "seenIn": [
+            "EdgeContent.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "GUID",
+          "seenIn": [
+            "EdgeContent.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EdpSessionStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "sessionId:GUID",
+            "type:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "EdgeContent.dll",
+              "function": "?Run@EdpRemoteSession@EdpProxy@@QEAAJXZ",
+              "ea": "0x1800c8a42",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "sessionId",
+          "type": "GUID",
+          "seenIn": [
+            "EdgeContent.dll"
+          ]
+        },
+        {
+          "fieldName": "type",
+          "type": "Int32",
+          "seenIn": [
+            "EdgeContent.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "F12ByteCodeGeneration",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "sessionId:UnicodeString",
+            "packageFullName:UnicodeString",
+            "reason:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "F12Platform2.dll",
+              "function": "?MarkByteCodeGeneration@F12NativeTraceLogging@@UEAAJPEAG0@Z",
+              "ea": "0x180007e2b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "packageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "reason",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "F12Duration",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "sessionId:UnicodeString",
+            "durationSeconds:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "F12Platform.dll",
+              "function": "?CloseSession@F12NativeTraceLogging@@UEAAJXZ",
+              "ea": "0x18001747a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "durationSeconds",
+          "type": "UInt64",
+          "seenIn": [
+            "F12Platform.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "F12Error",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "sessionId:UnicodeString",
+            "component:UnicodeString",
+            "message:UnicodeString",
+            "url:UnicodeString",
+            "line:UnicodeString",
+            "column:UnicodeString",
+            "additionalInfo:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "F12Platform.dll",
+              "function": "?LogError@F12NativeTraceLogging@@UEAAJPEAG00000@Z",
+              "ea": "0x180017836",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "sessionId:UnicodeString",
+            "component:UnicodeString",
+            "message:UnicodeString",
+            "url:UnicodeString",
+            "line:UnicodeString",
+            "column:UnicodeString",
+            "additionalInfo:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "F12Platform2.dll",
+              "function": "?LogError@F12NativeTraceLogging@@UEAAJPEAG00000@Z",
+              "ea": "0x180007ca5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "additionalInfo",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform.dll",
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "column",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform.dll",
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "component",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform.dll",
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "line",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform.dll",
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform.dll",
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform.dll",
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "url",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform.dll",
+            "F12Platform2.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "F12LoadEnd",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "sessionId:UnicodeString",
+            "durationMs:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "F12Platform.dll",
+              "function": "?MarkF12LoadEnd2@F12NativeTraceLogging@@SAJXZ",
+              "ea": "0x18001792c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "durationMs",
+          "type": "UInt64",
+          "seenIn": [
+            "F12Platform.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "F12LoadStart",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "sessionId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "F12Platform.dll",
+              "function": "?MarkF12LoadStart@F12NativeTraceLogging@@UEAAJXZ",
+              "ea": "0x180017a4e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "sessionId:UnicodeString",
+            "hostType:UnicodeString",
+            "launchType:UnicodeString",
+            "launchedPlugin:UnicodeString",
+            "__TlgCV__:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "F12Platform2.dll",
+              "function": "?MarkF12LoadStart@F12NativeTraceLogging@@UEAAJW4F12HostType@@W4F12LaunchType@@W4PluginId@@PEAG@Z",
+              "ea": "0x180007fc3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "__TlgCV__",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "hostType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "launchType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "launchedPlugin",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform.dll",
+            "F12Platform2.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "F12PackageVersion",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "sessionId:UnicodeString",
+            "version:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "F12Platform2.dll",
+              "function": "?LogF12PackageVersion@F12NativeTraceLogging@@UEAAJPEAG@Z",
+              "ea": "0x180007d93",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "sessionId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "F12UsesByteCodeCache",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "sessionId:UnicodeString",
+            "packageFullName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "F12Platform2.dll",
+              "function": "?MarkF12UsesByteCodeCache@F12NativeTraceLogging@@UEAAJPEAG@Z",
+              "ea": "0x180008093",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "packageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FrameSession",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "sessionId:UnicodeString",
+            "durationSeconds:UInt64",
+            "frameWidth:Int32",
+            "frameHeight:Int32",
+            "dockState:UnicodeString",
+            "hasDockStateChanged:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "F12Platform2.dll",
+              "function": "?StopFrameWindowInfo@F12NativeTraceLogging@@UEAAJHH@Z",
+              "ea": "0x180008308",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "dockState",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "durationSeconds",
+          "type": "UInt64",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "frameHeight",
+          "type": "Int32",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "frameWidth",
+          "type": "Int32",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "hasDockStateChanged",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PluginDispatchFireJsonMessage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "PluginId:Int32",
+            "Message:UnicodeString",
+            "IsSkipped:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "F12Platform2.dll",
+              "function": "?TracePluginDispatchFireJsonMessage@F12NativeTraceLogging@@SAXHPEAG_N@Z",
+              "ea": "0x180008506",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsSkipped",
+          "type": "Bool32",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "Message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "PluginId",
+          "type": "Int32",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ToolSession",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "sessionId:UnicodeString",
+            "toolName:UnicodeString",
+            "durationSeconds:UInt64",
+            "frameWidth:Int32",
+            "frameHeight:Int32",
+            "isDocked:UInt8(Boolean)",
+            "hasDockStateChanged:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "F12Platform.dll",
+              "function": "?StopFrameWindowInfo@F12NativeTraceLogging@@UEAAJW4PluginId@@HH@Z",
+              "ea": "0x180017c97",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "sessionId:UnicodeString",
+            "toolName:UnicodeString",
+            "durationSeconds:UInt64",
+            "isConsoleShown:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "F12Platform2.dll",
+              "function": "?StopTimeInTools@F12NativeTraceLogging@@UEAAJW4PluginId@@H@Z",
+              "ea": "0x180008449",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "durationSeconds",
+          "type": "UInt64",
+          "seenIn": [
+            "F12Platform.dll",
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "frameHeight",
+          "type": "Int32",
+          "seenIn": [
+            "F12Platform.dll"
+          ]
+        },
+        {
+          "fieldName": "frameWidth",
+          "type": "Int32",
+          "seenIn": [
+            "F12Platform.dll"
+          ]
+        },
+        {
+          "fieldName": "hasDockStateChanged",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "F12Platform.dll"
+          ]
+        },
+        {
+          "fieldName": "isConsoleShown",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "isDocked",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "F12Platform.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform.dll",
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "toolName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform.dll",
+            "F12Platform2.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UserSessionEnd",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "userSessionIndex:UInt64",
+            "sessionId:UnicodeString",
+            "durationSeconds:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "F12Platform2.dll",
+              "function": "?CloseUserSession@F12NativeTraceLogging@@UEAAJXZ",
+              "ea": "0x180007a69",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "durationSeconds",
+          "type": "UInt64",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "userSessionIndex",
+          "type": "UInt64",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UserSessionStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "userSessionIndex:UInt64",
+            "sessionId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "F12Platform2.dll",
+              "function": "?StartUserSession@F12NativeTraceLogging@@UEAAJXZ",
+              "ea": "0x1800081f8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "sessionId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        },
+        {
+          "fieldName": "userSessionIndex",
+          "type": "UInt64",
+          "seenIn": [
+            "F12Platform2.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

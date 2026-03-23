@@ -1,0 +1,2183 @@
+{
+  "providerName": "FveVolTraceLogProvKM",
+  "guid": "{1491F89F-C57D-4135-8E05-76F0F68124A8}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "fvevol.sys"
+  ],
+  "uniqueEventCount": 31,
+  "events": [
+    {
+      "eventName": "Bitlocker.Driver.AutoSweepStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:UInt32(NTStatus)",
+            "deviceType:UInt32",
+            "deviceNumber:UInt32",
+            "DevExtFlags:UInt32",
+            "FveID:GUID",
+            "startFinalSweep:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveEowSweepStartEx",
+              "ea": "0x1400b3496",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DevExtFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "FveID",
+          "type": "GUID",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceType",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "startFinalSweep",
+          "type": "Bool32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.Boot.Event.Log",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "DriveLetter:UnicodeString",
+            "EventID:UInt32",
+            "VolumeId:GUID",
+            "ErrorCode:UInt32",
+            "Flags:UInt32",
+            "Status:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveLogGenericErrorDatum",
+              "ea": "0x140056b41",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DriveLetter",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "EventID",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "VolumeId",
+          "type": "GUID",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.Boot.MismatchedBinding.Log",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "StructureVersion:UInt16",
+            "ContextFlags:UInt32",
+            "VmkInfoIdentifier:GUID",
+            "BindingIdentifier:GUID",
+            "BindingCreationScenario:UInt32",
+            "SealDateTime:UInt64",
+            "MismatchDateTime:UInt64",
+            "PcrBitmap:HexInt32",
+            "TcgLogValidStatus:UInt32(NTStatus)",
+            "BindingDatumValidStatus:UInt32(NTStatus)",
+            "MismatchedPcrInfoFlags:HexInt32",
+            "MismatchedPcr:UInt32",
+            "ExpectedAlgorithm:UInt16(Hex)",
+            "ObservedAlgorithm:UInt16(Hex)",
+            "ExpectedEventsCount:UInt16",
+            "ObservedEventsCount:UInt16",
+            "MismatchedEvent:UInt16",
+            "ExpectedEventType:HexInt32",
+            "ObservedEventType:HexInt32",
+            "ExpectedDigest:Binary",
+            "ObservedDigest:Binary",
+            "ExpectedEventLabel:UnicodeString",
+            "ObservedEventLabel:UnicodeString",
+            "SealedPcrValues:Binary",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveLogMismatchedBindingInfoDatum",
+              "ea": "0x140057577",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BindingCreationScenario",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "BindingDatumValidStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "BindingIdentifier",
+          "type": "GUID",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "ContextFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "ExpectedAlgorithm",
+          "type": "UInt16(Hex)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "ExpectedDigest",
+          "type": "Binary",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "ExpectedEventLabel",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "ExpectedEventType",
+          "type": "HexInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "ExpectedEventsCount",
+          "type": "UInt16",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "MismatchDateTime",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "MismatchedEvent",
+          "type": "UInt16",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "MismatchedPcr",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "MismatchedPcrInfoFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "ObservedAlgorithm",
+          "type": "UInt16(Hex)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "ObservedDigest",
+          "type": "Binary",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "ObservedEventLabel",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "ObservedEventType",
+          "type": "HexInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "ObservedEventsCount",
+          "type": "UInt16",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "PcrBitmap",
+          "type": "HexInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "SealDateTime",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "SealedPcrValues",
+          "type": "Binary",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "StructureVersion",
+          "type": "UInt16",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "TcgLogValidStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "VmkInfoIdentifier",
+          "type": "GUID",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.Boot.TcgLog.Log",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "StructureVersion:UInt16",
+            "DateTime:UInt64",
+            "IsSecureBootOn:UInt8(Boolean)",
+            "TcgLogHashAlgorithm:UInt16(Hex)",
+            "AllFinalPcrValuesPcrBitmap:HexInt32",
+            "AllPcrDatasPcrBitmap:HexInt32",
+            "PcrUnsealInfo:Binary",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveLogPcrUnsealInfoDatum",
+              "ea": "0x140057b31",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AllFinalPcrValuesPcrBitmap",
+          "type": "HexInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "AllPcrDatasPcrBitmap",
+          "type": "HexInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "DateTime",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "IsSecureBootOn",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "PcrUnsealInfo",
+          "type": "Binary",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "StructureVersion",
+          "type": "UInt16",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "TcgLogHashAlgorithm",
+          "type": "UInt16(Hex)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.Conversion.Start",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "FveID:GUID",
+            "NTSTATUS:UInt32(NTStatus)",
+            "FveState:UInt32",
+            "FveAction:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "ActionFveConvOpen",
+              "ea": "0x1400c24a7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FveAction",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "FveID",
+          "type": "GUID",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "FveState",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.Edrive.Conversion",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "FveID:GUID",
+            "NTSTATUS:UInt32(NTStatus)",
+            "FveState:UInt32",
+            "FveAction:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "ActionFveConvEncryptEDrv",
+              "ea": "0x14008c753",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FveAction",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "FveID",
+          "type": "GUID",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "FveState",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.Edrive.Support.Stack.Timeout",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Status:UInt32(NTStatus)",
+            "AttemptCount:UInt32",
+            "Timeout:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveGetBandProperties",
+              "ea": "0x14007ac1e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AttemptCount",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "Timeout",
+          "type": "Int64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.EncryptionComplete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:UInt32(NTStatus)",
+            "deviceType:UInt32",
+            "deviceNumber:UInt32",
+            "DevExtFlags:UInt32",
+            "fveFlags:UInt64",
+            "FveID:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveEowFinalSweepComplete",
+              "ea": "0x140060ca6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DevExtFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "FveID",
+          "type": "GUID",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceType",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "fveFlags",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.Eow.Conversion.Recovery",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "FveID:GUID",
+            "NTSTATUS:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveEowRecover",
+              "ea": "0x1400642e3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FveID",
+          "type": "GUID",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.Eow.PostCompletion.ExpansionBugRecovery",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "lastPersistedWatermark:UInt64",
+            "currentVolumeLength:UInt64",
+            "FveID:GUID",
+            "NTSTATUS:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveInitialDataReadPhase2",
+              "ea": "0x14008554e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FveID",
+          "type": "GUID",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "currentVolumeLength",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "lastPersistedWatermark",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.Eow.PostCompletion.VolumeSizeChangeDetected",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "lastPersistedWatermark:UInt64",
+            "currentVolumeLength:UInt64",
+            "lastEowBitmapEndOffset:UInt64",
+            "FveID:GUID",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveEowFinalSweepComplete",
+              "ea": "0x140060ad5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FveID",
+          "type": "GUID",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "currentVolumeLength",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "lastEowBitmapEndOffset",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "lastPersistedWatermark",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.Event.Log",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "DriveLetter:UnicodeString",
+            "Status:UInt32(NTStatus)",
+            "EventID:UInt32",
+            "WritePhase:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveLogEventEx",
+              "ea": "0x14007c34e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "DriveLetter:UnicodeString",
+            "Status:UInt32(NTStatus)",
+            "EventID:UInt32",
+            "HardwareID:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveLogEventWithHardwareID",
+              "ea": "0x140055e95",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "DriveLetter:UnicodeString",
+            "Status:UInt32(NTStatus)",
+            "EventID:UInt32",
+            "Offset:UInt64",
+            "Length:UInt64",
+            "Copy:UInt64",
+            "TotalCopies:UInt64",
+            "SlabSize:UInt64",
+            "FailureLine:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveLogEventWithMetadataInfo",
+              "ea": "0x140056292",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Copy",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "DriveLetter",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "EventID",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "FailureLine",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "HardwareID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "Length",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "Offset",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "SlabSize",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "TotalCopies",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "WritePhase",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.HardwareWrapFvek",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Status:UInt32(NTStatus)",
+            "Action:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "IoctlFveHardwareWrapFvek",
+              "ea": "0x14009b540",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Action",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.IceResolveCryptoInfo",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "iceResolveStatus:AnsiString",
+            "iceType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveResolveIceCryptoInfo",
+              "ea": "0x140050747",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fvevol.sys",
+              "function": "FveResolveIceCryptoInfo",
+              "ea": "0x14005082d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fvevol.sys",
+              "function": "FveResolveIceCryptoInfo",
+              "ea": "0x140050937",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fvevol.sys",
+              "function": "FveResolveIceCryptoInfo",
+              "ea": "0x140050a65",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "iceResolveStatus:AnsiString",
+            "iceType:UInt32",
+            "iceKeyType:UInt32",
+            "Status:UInt32(NTStatus)",
+            "fipsEnabled:Bool32",
+            "wrappedKeyStatus:UInt32(NTStatus)",
+            "wrappedKeyStatusString:AnsiString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveResolveIceCryptoInfoV2",
+              "ea": "0x140050d61",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "fipsEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "iceKeyType",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "iceResolveStatus",
+          "type": "AnsiString",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "iceType",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "wrappedKeyStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "wrappedKeyStatusString",
+          "type": "AnsiString",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.IceVerification",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Result:Bool32",
+            "Status:UInt32(NTStatus)",
+            "IceType:UInt32",
+            "IceCryptoIndex:UInt32",
+            "IceAlgorithmId:UInt32",
+            "KeySizeEnum:UInt32",
+            "FveKeySize:UInt32",
+            "FveKeyType:UInt32",
+            "BlockSize:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveVerifyIceCrypto",
+              "ea": "0x140052e3b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BlockSize",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "FveKeySize",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "FveKeyType",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "IceAlgorithmId",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "IceCryptoIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "IceType",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "KeySizeEnum",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Bool32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.Implicit_STOP",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "FveID:GUID",
+            "ImplicitStop:Bool32",
+            "IsEncrypting:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveConvStopCommon",
+              "ea": "0x14007686d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FveID",
+          "type": "GUID",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "ImplicitStop",
+          "type": "Bool32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "IsEncrypting",
+          "type": "Bool32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.Legacy.Conversion.Recovery",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "FveID:GUID",
+            "NTSTATUS:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveConvRecoverDataAndWatermark",
+              "ea": "0x14004b836",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FveID",
+          "type": "GUID",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.Legacy.DecryptionComplete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "FveID:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveConvStopCommon",
+              "ea": "0x140076769",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FveID",
+          "type": "GUID",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.Legacy.EncryptionComplete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "FveID:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveConvStopCommon",
+              "ea": "0x1400766db",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FveID",
+          "type": "GUID",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.ManageBypassIo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Status:UInt32(NTStatus)",
+            "Action:UnicodeString",
+            "BpioOperation:UInt32",
+            "BpioInputVersion:UInt32",
+            "BpioInputInFlags:UInt32",
+            "FveState:UInt32",
+            "FveInitializing:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "IoctlStorageManageBypassIo",
+              "ea": "0x1400cefe0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Action",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "BpioInputInFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "BpioInputVersion",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "BpioOperation",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "FveInitializing",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "FveState",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.Media.WriteProtected",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "DeviceExtFlag:UInt64",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveFilterRundownWrite",
+              "ea": "0x14001f12f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DeviceExtFlag",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.Metadata.Commit.Error",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "NTSTATUS:UInt32(NTStatus)",
+            "FveID:GUID",
+            "IsSurpriseRemoval:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveConvStopCommon",
+              "ea": "0x14007697e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "NTSTATUS:UInt32(NTStatus)",
+            "WriteOp:UInt32",
+            "FveID:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FvepWriteInformation",
+              "ea": "0x140083424",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fvevol.sys",
+              "function": "FvepWriteInformation",
+              "ea": "0x140083542",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FveID",
+          "type": "GUID",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "IsSurpriseRemoval",
+          "type": "Bool32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "WriteOp",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.Metadata.Validation.UnexpectedDirectHash",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "FvePersistState:UInt16",
+            "FveDirectionState:UInt16",
+            "StateOffset:UInt64",
+            "StateSize:UInt32",
+            "FveID:GUID",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveInitialDataReadPhase2",
+              "ea": "0x140084b53",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FveDirectionState",
+          "type": "UInt16",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "FveID",
+          "type": "GUID",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "FvePersistState",
+          "type": "UInt16",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "StateOffset",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "StateSize",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.PauseBypassIo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Status:UInt32(NTStatus)",
+            "FileSystemType:Int32",
+            "FileSystemName:UnicodeString",
+            "BpioOutFlags:UInt32",
+            "BypassIoFileSystemRecognized:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FvePauseBypassIo",
+              "ea": "0x14009f73a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BpioOutFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "BypassIoFileSystemRecognized",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "FileSystemName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "FileSystemType",
+          "type": "Int32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.RDV.ExclusionList",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "ExclusionsSize:UInt32",
+            "IsDeviceExcluded:UInt8(Boolean)",
+            "LineNum:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveUpdateIsOnRdvPolicyExclusionList",
+              "ea": "0x140099cfc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ExclusionsSize",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "IsDeviceExcluded",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "LineNum",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.ROPolicy.Enforce",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "DeviceExtFlag:UInt64",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveFilterDeviceControl",
+              "ea": "0x14002930e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fvevol.sys",
+              "function": "FveFilterDeviceControl",
+              "ea": "0x14002934a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DeviceExtFlag",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.ROPolicy.Mount",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "DeviceExtFlag:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveInitialDataRead",
+              "ea": "0x140078eef",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DeviceExtFlag",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.ResumeBypassIo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Status:UInt32(NTStatus)",
+            "VolumeStackResumeOpStatus:UInt32(NTStatus)",
+            "FileSystemType:Int32",
+            "FileSystemName:UnicodeString",
+            "BpioOutFlags:UInt32",
+            "FailingDriverName:UnicodeString",
+            "FailureReason:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveResumeBypassIo",
+              "ea": "0x14009fe44",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BpioOutFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "FailingDriverName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "FailureReason",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "FileSystemName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "FileSystemType",
+          "type": "Int32",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "VolumeStackResumeOpStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.SetDataset.Error",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Status:UInt32(NTStatus)",
+            "Action:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "IoctlFveSetDataset",
+              "ea": "0x1400bd4cc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Action",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.SetEdriveDataset.Error",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Status:UInt32(NTStatus)",
+            "Action:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "IoctlFveSetDatasetEDrv",
+              "ea": "0x14009c4f9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Action",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Driver.WCOS.FeatureCapability",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "WCOSOsMainLevel:UInt64",
+            "WCOSBspLevel:UInt64",
+            "WCOSDppLevel:UInt64",
+            "WCOSWspLevel:UInt64",
+            "WCOSOsDataLevel:UInt64",
+            "WCOSPreInstallLevel:UInt64",
+            "WCOSUserDataLevel:UInt64",
+            "WCOSServicingMetadataLevel:UInt64",
+            "WCOSServicingFilesLevel:UInt64",
+            "WCOSServicingReserveLevel:UInt64",
+            "WCOSFeatureFlag:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "FveFeatResolve",
+              "ea": "0x1400c4aea",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "WCOSBspLevel",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "WCOSDppLevel",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "WCOSFeatureFlag",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "WCOSOsDataLevel",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "WCOSOsMainLevel",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "WCOSPreInstallLevel",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "WCOSServicingFilesLevel",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "WCOSServicingMetadataLevel",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "WCOSServicingReserveLevel",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "WCOSUserDataLevel",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        },
+        {
+          "fieldName": "WCOSWspLevel",
+          "type": "UInt64",
+          "seenIn": [
+            "fvevol.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

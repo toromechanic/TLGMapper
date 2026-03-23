@@ -1,0 +1,88 @@
+{
+  "providerName": "Microsoft.Windows.Desktop.Shell.OOBEMonitor",
+  "guid": "{6D960CB7-FB14-5ED4-95FD-4D157414ECDB}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "UserOOBE.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "OOBEMonitorEvents",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "EventId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "UserOOBE.dll",
+              "function": "?OOBEMonitorEvents_@OOBEMonitorTelemetry@@QEAAXI@Z",
+              "ea": "0x180030c42",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EventId",
+          "type": "UInt32",
+          "seenIn": [
+            "UserOOBE.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "UserOOBE.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OOBEMonitorTimedOut",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "EventId:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "UserOOBE.dll",
+              "function": "??$OOBEMonitorTimedOut@AEAK@OOBEMonitorTelemetry@@SAXAEAK@Z",
+              "ea": "0x180031779",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EventId",
+          "type": "UInt32",
+          "seenIn": [
+            "UserOOBE.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "UserOOBE.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "providerName": "Microsoft-Windows-MsLbfoEventProvider",
+  "guid": "{B72C6994-9FE0-45AD-83B3-8F5885F20E0E}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "MsLbfoProvider.sys"
+  ],
+  "uniqueEventCount": 5,
+  "events": [
+    {
+      "eventName": "LbfoInitialized",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "teamInterfaceGuid:GUID",
+            "teamLBAlgorithmConfig:Int32",
+            "teamingMode:Int32",
+            "standbyInterfaceGuid:GUID",
+            "ndisStatus:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "MsLbfoProvider.sys",
+              "function": "lbfoInitTeam",
+              "ea": "0x1c001c91e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ndisStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "MsLbfoProvider.sys"
+          ]
+        },
+        {
+          "fieldName": "standbyInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "MsLbfoProvider.sys"
+          ]
+        },
+        {
+          "fieldName": "teamInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "MsLbfoProvider.sys"
+          ]
+        },
+        {
+          "fieldName": "teamLBAlgorithmConfig",
+          "type": "Int32",
+          "seenIn": [
+            "MsLbfoProvider.sys"
+          ]
+        },
+        {
+          "fieldName": "teamingMode",
+          "type": "Int32",
+          "seenIn": [
+            "MsLbfoProvider.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TeamConnectedNic",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "teamInterfaceGuid:GUID",
+            "adapterInterfaceGuid:GUID",
+            "nicFailureReason:Int32",
+            "teamConnectedNicCount:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "MsLbfoProvider.sys",
+              "function": "lbfoTMConnectNic",
+              "ea": "0x1c00054b0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "adapterInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "MsLbfoProvider.sys"
+          ]
+        },
+        {
+          "fieldName": "nicFailureReason",
+          "type": "Int32",
+          "seenIn": [
+            "MsLbfoProvider.sys"
+          ]
+        },
+        {
+          "fieldName": "teamConnectedNicCount",
+          "type": "Int32",
+          "seenIn": [
+            "MsLbfoProvider.sys"
+          ]
+        },
+        {
+          "fieldName": "teamInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "MsLbfoProvider.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TeamDisconnectedNic",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "teamInterfaceGuid:GUID",
+            "adapterInterfaceGuid:GUID",
+            "nicFailureReason:Int32",
+            "teamConnectedNicCount:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "MsLbfoProvider.sys",
+              "function": "lbfoTMDisconnectNic",
+              "ea": "0x1c00057f2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "adapterInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "MsLbfoProvider.sys"
+          ]
+        },
+        {
+          "fieldName": "nicFailureReason",
+          "type": "Int32",
+          "seenIn": [
+            "MsLbfoProvider.sys"
+          ]
+        },
+        {
+          "fieldName": "teamConnectedNicCount",
+          "type": "Int32",
+          "seenIn": [
+            "MsLbfoProvider.sys"
+          ]
+        },
+        {
+          "fieldName": "teamInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "MsLbfoProvider.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UpdatedNicHardFailureReason",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "teamInterfaceGuid:GUID",
+            "adapterInterfaceGuid:GUID",
+            "nicFailureReason:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "MsLbfoProvider.sys",
+              "function": "lbfoSetNicFailureReason",
+              "ea": "0x1c0001e36",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "adapterInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "MsLbfoProvider.sys"
+          ]
+        },
+        {
+          "fieldName": "nicFailureReason",
+          "type": "Int32",
+          "seenIn": [
+            "MsLbfoProvider.sys"
+          ]
+        },
+        {
+          "fieldName": "teamInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "MsLbfoProvider.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UpdatedStandbyNic",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "teamInterfaceGuid:GUID",
+            "standbyInterfaceGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "MsLbfoProvider.sys",
+              "function": "lbfoChangeInstanceParameters",
+              "ea": "0x1c000e0e7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "standbyInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "MsLbfoProvider.sys"
+          ]
+        },
+        {
+          "fieldName": "teamInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "MsLbfoProvider.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

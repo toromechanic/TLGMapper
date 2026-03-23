@@ -1,0 +1,133 @@
+{
+  "providerName": "Microsoft.Windows.MPTF",
+  "guid": "{B2B3EB46-75EC-4EDD-BFB9-4A375AD5CE47}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "MSCustomizedIO.sys",
+    "ThermalFilter.sys"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "CustomizedIODeviceAttributes",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "BIOSName:CountedString",
+            "SupportedInputs:HexInt32",
+            "SupportedOutputs:HexInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "MSCustomizedIO.sys",
+              "function": "MscioDiagLogDeviceAttributes",
+              "ea": "0x14000b31b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MSCustomizedIO.sys",
+              "function": "MscioDiagLogDeviceAttributes",
+              "ea": "0x14000b375",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BIOSName",
+          "type": "CountedString",
+          "seenIn": [
+            "MSCustomizedIO.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "MSCustomizedIO.sys"
+          ]
+        },
+        {
+          "fieldName": "SupportedInputs",
+          "type": "HexInt32",
+          "seenIn": [
+            "MSCustomizedIO.sys"
+          ]
+        },
+        {
+          "fieldName": "SupportedOutputs",
+          "type": "HexInt32",
+          "seenIn": [
+            "MSCustomizedIO.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ThermalFilterDeviceAttributes",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "BIOSName:CountedString",
+            "ThermalDeviceId:Int32",
+            "Capabilities:HexInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ThermalFilter.sys",
+              "function": "TfDiagLogThermalDevice",
+              "ea": "0x14000a456",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ThermalFilter.sys",
+              "function": "TfDiagLogThermalDevice",
+              "ea": "0x14000a4b0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BIOSName",
+          "type": "CountedString",
+          "seenIn": [
+            "ThermalFilter.sys"
+          ]
+        },
+        {
+          "fieldName": "Capabilities",
+          "type": "HexInt32",
+          "seenIn": [
+            "ThermalFilter.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ThermalFilter.sys"
+          ]
+        },
+        {
+          "fieldName": "ThermalDeviceId",
+          "type": "Int32",
+          "seenIn": [
+            "ThermalFilter.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

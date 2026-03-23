@@ -1,0 +1,150 @@
+{
+  "providerName": "Microsoft.Windows.SystemImageBackup.Engine",
+  "guid": "{864D2D93-276F-4A88-8BCE-D8D174E39C4D}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "wbengine.exe"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "SystemImageBackupComplete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "OverallHR:HexInt32",
+            "DetailedHR:HexInt32",
+            "ScheduledTargetType:Int32",
+            "TargetType:Int32",
+            "TotalBackupTimeSeconds:UInt32",
+            "TotalBackupSizeMB:UInt32",
+            "ClientLaunchType:Int32",
+            "NoOfAppsInBackup:UInt32",
+            "NoOfComponentsInBackup:UInt32",
+            "NoOfVolumesPartiallyBackedUp:UInt32",
+            "NoOfVolumesFullyBackedUp:UInt32",
+            "NoOfVolumesWithBadClusters:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "wbengine.exe",
+              "function": "?PublishBackupSqmDatapoint@@YAJPEAU_BLB_BACKUP_SQM_DATAPOINT_INFO@@PEAU_BLB_BACKUP_STOP_EVENT_INFO@@PEAVCBlbEngine@@PEAG@Z",
+              "ea": "0x14011eaca",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClientLaunchType",
+          "type": "Int32",
+          "seenIn": [
+            "wbengine.exe"
+          ]
+        },
+        {
+          "fieldName": "DetailedHR",
+          "type": "HexInt32",
+          "seenIn": [
+            "wbengine.exe"
+          ]
+        },
+        {
+          "fieldName": "NoOfAppsInBackup",
+          "type": "UInt32",
+          "seenIn": [
+            "wbengine.exe"
+          ]
+        },
+        {
+          "fieldName": "NoOfComponentsInBackup",
+          "type": "UInt32",
+          "seenIn": [
+            "wbengine.exe"
+          ]
+        },
+        {
+          "fieldName": "NoOfVolumesFullyBackedUp",
+          "type": "UInt32",
+          "seenIn": [
+            "wbengine.exe"
+          ]
+        },
+        {
+          "fieldName": "NoOfVolumesPartiallyBackedUp",
+          "type": "UInt32",
+          "seenIn": [
+            "wbengine.exe"
+          ]
+        },
+        {
+          "fieldName": "NoOfVolumesWithBadClusters",
+          "type": "UInt32",
+          "seenIn": [
+            "wbengine.exe"
+          ]
+        },
+        {
+          "fieldName": "OverallHR",
+          "type": "HexInt32",
+          "seenIn": [
+            "wbengine.exe"
+          ]
+        },
+        {
+          "fieldName": "ScheduledTargetType",
+          "type": "Int32",
+          "seenIn": [
+            "wbengine.exe"
+          ]
+        },
+        {
+          "fieldName": "TargetType",
+          "type": "Int32",
+          "seenIn": [
+            "wbengine.exe"
+          ]
+        },
+        {
+          "fieldName": "TotalBackupSizeMB",
+          "type": "UInt32",
+          "seenIn": [
+            "wbengine.exe"
+          ]
+        },
+        {
+          "fieldName": "TotalBackupTimeSeconds",
+          "type": "UInt32",
+          "seenIn": [
+            "wbengine.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SystemImageBackupTwoTBWarning",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "wbengine.exe",
+              "function": "?PublishTwoTBSqmDataPoint@@YAJPEBG@Z",
+              "ea": "0x14011ee00",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    }
+  ]
+}

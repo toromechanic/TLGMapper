@@ -1,0 +1,1328 @@
+{
+  "providerName": "Microsoft.Windows.Search.Indexer.Aggregated.High",
+  "guid": "{A6D99B05-2407-434F-A1E8-1BDBE45E80D2}",
+  "os": "Windows 11",
+  "binaryCount": 6,
+  "binaries": [
+    "SearchFilterHost.exe",
+    "SearchIndexer.exe",
+    "SearchProtocolHost.exe",
+    "msscntrs.dll",
+    "mssrch.dll",
+    "tquery.dll"
+  ],
+  "uniqueEventCount": 14,
+  "events": [
+    {
+      "eventName": "BatteryIndexingThresholdCheck",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "ElapsedMinutes:Int32",
+            "PendingNotifications:Int32",
+            "UserActive:Bool32",
+            "OnAC:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "mssrch.dll",
+              "function": "?BatteryIndexingThresholdCheck@SearchIndexerTelemetryAggregatedHigh@@SAXKK_N0@Z",
+              "ea": "0x1801178bd",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "ElapsedMinutes",
+          "type": "Int32",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "OnAC",
+          "type": "Bool32",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "PendingNotifications",
+          "type": "Int32",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "UserActive",
+          "type": "Bool32",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DeferredItem_Aggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "TransactionPass:UInt64",
+            "DeferReason:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "mssrch.dll",
+              "function": "?ReportDeferedItem@SearchIndexerTelemetryAggregatedHigh@@SAXKW4IndexingDeferReason@@@Z",
+              "ea": "0x18020c0f9",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "DeferReason",
+          "type": "UInt64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "TransactionPass",
+          "type": "UInt64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FileExtensionWithMatchTags",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "fileExtension:UnicodeString",
+            "matchTag:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "tquery.dll",
+              "function": "?FileExtensionWithMatchTags@SearchIndexerTelemetryAggregatedHigh@@SAXPEB_W0@Z",
+              "ea": "0x1801a6db7",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "tquery.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "tquery.dll"
+          ]
+        },
+        {
+          "fieldName": "fileExtension",
+          "type": "UnicodeString",
+          "seenIn": [
+            "tquery.dll"
+          ]
+        },
+        {
+          "fieldName": "matchTag",
+          "type": "UnicodeString",
+          "seenIn": [
+            "tquery.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GenericCursorMetrics",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "NumOfResults:Int64",
+            "MinRawScoreMult1000:Int64",
+            "MaxRawScoreMult1000:Int64",
+            "StopwordsRemoved_Sum:Int64",
+            "StopwordsRemoved_Min:Int64",
+            "StopwordsRemoved_Max:Int64",
+            "CompletionKind:UInt16",
+            "CursorName:UInt64",
+            "NumOfTerms:UInt64",
+            "UseBM25:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "tquery.dll",
+              "function": "?GenericCursorMetrics@SearchIndexerTelemetryAggregatedHigh@@SAXG_K00NN_N0@Z",
+              "ea": "0x180228ad3",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "NumOfResults:Int64",
+            "MinRawScoreMult1000:Int64",
+            "MaxRawScoreMult1000:Int64",
+            "CompletionKind:UInt16",
+            "CursorName:UInt64",
+            "NumOfTerms:UInt64",
+            "UseBM25:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "tquery.dll",
+              "function": "?GenericCursorMetrics@SearchIndexerTelemetryAggregatedHigh@@SAXG_K00NN_N0@Z",
+              "ea": "0x180228bb3",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "NumOfResults:Int64",
+            "MinRawScoreMult1000:Int64",
+            "MaxRawScoreMult1000:Int64",
+            "CompletionKind:UInt16",
+            "CursorName:UInt64",
+            "NumOfTerms:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "tquery.dll",
+              "function": "?GenericCursorMetrics@SearchIndexerTelemetryAggregatedHigh@@SAXG_K00NN_N0@Z",
+              "ea": "0x180228c7b",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CompletionKind",
+          "type": "UInt16",
+          "seenIn": [
+            "tquery.dll"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "tquery.dll"
+          ]
+        },
+        {
+          "fieldName": "CursorName",
+          "type": "UInt64",
+          "seenIn": [
+            "tquery.dll"
+          ]
+        },
+        {
+          "fieldName": "MaxRawScoreMult1000",
+          "type": "Int64",
+          "seenIn": [
+            "tquery.dll"
+          ]
+        },
+        {
+          "fieldName": "MinRawScoreMult1000",
+          "type": "Int64",
+          "seenIn": [
+            "tquery.dll"
+          ]
+        },
+        {
+          "fieldName": "NumOfResults",
+          "type": "Int64",
+          "seenIn": [
+            "tquery.dll"
+          ]
+        },
+        {
+          "fieldName": "NumOfTerms",
+          "type": "UInt64",
+          "seenIn": [
+            "tquery.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "tquery.dll"
+          ]
+        },
+        {
+          "fieldName": "StopwordsRemoved_Max",
+          "type": "Int64",
+          "seenIn": [
+            "tquery.dll"
+          ]
+        },
+        {
+          "fieldName": "StopwordsRemoved_Min",
+          "type": "Int64",
+          "seenIn": [
+            "tquery.dll"
+          ]
+        },
+        {
+          "fieldName": "StopwordsRemoved_Sum",
+          "type": "Int64",
+          "seenIn": [
+            "tquery.dll"
+          ]
+        },
+        {
+          "fieldName": "UseBM25",
+          "type": "Bool32",
+          "seenIn": [
+            "tquery.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ImageProcessingMetrics",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "TotalImagesCount:Int64",
+            "ScaledImagesCount:Int64",
+            "UnscaledImagesCount:Int64",
+            "ExtremeScalingCount:Int64",
+            "SumOriginalSizeBytes:Int64",
+            "SumProcessedSizeBytes:Int64",
+            "SumBytesReduced:Int64",
+            "MinOriginalSizeBytes:Int64",
+            "MaxOriginalSizeBytes:Int64",
+            "ImageWidth:UInt32",
+            "ImageHeight:UInt32",
+            "ScalingRequired:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "SearchFilterHost.exe",
+              "function": "?ReportImageProcessingMetrics@SearchIndexerTelemetryAggregatedHigh@@SAXIIKK_N0@Z",
+              "ea": "0x14003c335",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "SearchProtocolHost.exe",
+              "function": "?ReportImageProcessingMetrics@SearchIndexerTelemetryAggregatedHigh@@SAXIIKK_N0@Z",
+              "ea": "0x14005d755",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ExtremeScalingCount",
+          "type": "Int64",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "ImageHeight",
+          "type": "UInt32",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "ImageWidth",
+          "type": "UInt32",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "MaxOriginalSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "MinOriginalSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "ScaledImagesCount",
+          "type": "Int64",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "ScalingRequired",
+          "type": "Bool32",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "SumBytesReduced",
+          "type": "Int64",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "SumOriginalSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "SumProcessedSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "TotalImagesCount",
+          "type": "Int64",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "UnscaledImagesCount",
+          "type": "Int64",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IndexerItem_Aggregate",
+      "variantCount": 4,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "Duration_ms:Int64",
+            "OnACCount:Int64",
+            "IndexingTime_Total:Int64",
+            "IndexingTime_Min:Int64",
+            "IndexingTime_Max:Int64",
+            "PriorityQueueTime_Total:Int64",
+            "PriorityQueueTime_Min:Int64",
+            "PriorityQueueTime_Max:Int64",
+            "PriorityQueueSize_Total:Int64",
+            "PriorityQueueSize_Min:Int64",
+            "PriorityQueueSize_Max:Int64",
+            "Protocol:UnicodeString",
+            "Extension:UnicodeString",
+            "TransactionErrorCode:Int32(HResult)",
+            "ContentSize:UInt32",
+            "IsSemanticIndexEnabled:Bool32",
+            "ItemType:UInt32",
+            "BatteryState:UInt32",
+            "FileContentAvailabililty:UInt32",
+            "TransactionAction:UInt64",
+            "TransactionType:UInt64",
+            "TransactionFlags:UInt64",
+            "ExtendedTransactionFlags:UInt64",
+            "BulkIndexingState:UInt64",
+            "RetryCount:UInt64",
+            "IsUserActive:UInt32",
+            "TransactionPass:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "mssrch.dll",
+              "function": "?Stop@IndexingItem@SearchIndexerTelemetryAggregatedHigh@@QEAAXXZ",
+              "ea": "0x1800b1623",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "Duration_ms:Int64",
+            "OnACCount:Int64",
+            "IndexingTime_Total:Int64",
+            "IndexingTime_Min:Int64",
+            "IndexingTime_Max:Int64",
+            "PriorityQueueTime_Total:Int64",
+            "PriorityQueueTime_Min:Int64",
+            "PriorityQueueTime_Max:Int64",
+            "PriorityQueueSize_Total:Int64",
+            "Protocol:UnicodeString",
+            "Extension:UnicodeString",
+            "TransactionErrorCode:Int32(HResult)",
+            "ContentSize:UInt32",
+            "IsSemanticIndexEnabled:Bool32",
+            "ItemType:UInt32",
+            "TransactionAction:UInt64",
+            "TransactionType:UInt64",
+            "TransactionFlags:UInt64",
+            "ExtendedTransactionFlags:UInt64",
+            "BulkIndexingState:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "mssrch.dll",
+              "function": "?Stop@IndexingItem@SearchIndexerTelemetryAggregatedHigh@@QEAAXXZ",
+              "ea": "0x1800b1b69",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "Duration_ms:Int64",
+            "OnACCount:Int64",
+            "IndexingTime_Total:Int64",
+            "IndexingTime_Min:Int64",
+            "IndexingTime_Max:Int64",
+            "PriorityQueueTime_Total:Int64",
+            "PriorityQueueTime_Min:Int64",
+            "PriorityQueueTime_Max:Int64",
+            "PriorityQueueSize_Total:Int64",
+            "Protocol:UnicodeString",
+            "Extension:UnicodeString",
+            "TransactionErrorCode:Int32(HResult)",
+            "ContentSize:UInt32",
+            "IsSemanticIndexEnabled:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "mssrch.dll",
+              "function": "?Stop@IndexingItem@SearchIndexerTelemetryAggregatedHigh@@QEAAXXZ",
+              "ea": "0x1800b1cef",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "Duration_ms:Int64",
+            "OnACCount:Int64",
+            "IndexingTime_Total:Int64",
+            "IndexingTime_Min:Int64",
+            "IndexingTime_Max:Int64",
+            "Protocol:UnicodeString",
+            "Extension:UnicodeString",
+            "TransactionErrorCode:Int32(HResult)",
+            "ContentSize:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "mssrch.dll",
+              "function": "?Stop@IndexingItem@SearchIndexerTelemetryAggregatedHigh@@QEAAXXZ",
+              "ea": "0x1800b1e18",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BatteryState",
+          "type": "UInt32",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "BulkIndexingState",
+          "type": "UInt64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "ContentSize",
+          "type": "UInt32",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "Duration_ms",
+          "type": "Int64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "ExtendedTransactionFlags",
+          "type": "UInt64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "Extension",
+          "type": "UnicodeString",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "FileContentAvailabililty",
+          "type": "UInt32",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "IndexingTime_Max",
+          "type": "Int64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "IndexingTime_Min",
+          "type": "Int64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "IndexingTime_Total",
+          "type": "Int64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "IsSemanticIndexEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "IsUserActive",
+          "type": "UInt32",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "ItemType",
+          "type": "UInt32",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "OnACCount",
+          "type": "Int64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "PriorityQueueSize_Max",
+          "type": "Int64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "PriorityQueueSize_Min",
+          "type": "Int64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "PriorityQueueSize_Total",
+          "type": "Int64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "PriorityQueueTime_Max",
+          "type": "Int64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "PriorityQueueTime_Min",
+          "type": "Int64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "PriorityQueueTime_Total",
+          "type": "Int64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "Protocol",
+          "type": "UnicodeString",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "RetryCount",
+          "type": "UInt64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "TransactionAction",
+          "type": "UInt64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "TransactionErrorCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "TransactionFlags",
+          "type": "UInt64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "TransactionPass",
+          "type": "UInt64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "TransactionType",
+          "type": "UInt64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IndexerPushApiDocumentsAddedByPackage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:UInt32",
+            "Name:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "SearchIndexer.exe",
+              "function": "sub_140013904",
+              "ea": "0x140013abd",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "UInt32",
+          "seenIn": [
+            "SearchIndexer.exe"
+          ]
+        },
+        {
+          "fieldName": "Name",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SearchIndexer.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "SearchIndexer.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MSSCNTRSCollect",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "CollectValue:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "msscntrs.dll",
+              "function": "?MSSCNTRSCollect@SearchIndexerTelemetryAggregatedHigh@@SAXPEB_W@Z",
+              "ea": "0x18000f189",
+              "confidence": "Direct-Nearest"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CollectValue",
+          "type": "UnicodeString",
+          "seenIn": [
+            "msscntrs.dll"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "msscntrs.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "msscntrs.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MixedContentFileImageCount",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "FileCount:Int64",
+            "Sum_ImageCount:Int64",
+            "Min_ImageCount:Int64",
+            "Max_ImageCount:Int64",
+            "Extension:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "SearchFilterHost.exe",
+              "function": "?ReportMixedContentFileImageCount@SearchIndexerTelemetryAggregatedHigh@@SAXPEB_WI@Z",
+              "ea": "0x1400394a1",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "SearchProtocolHost.exe",
+              "function": "?ReportMixedContentFileImageCount@SearchIndexerTelemetryAggregatedHigh@@SAXPEB_WI@Z",
+              "ea": "0x140059f11",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Extension",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "FileCount",
+          "type": "Int64",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "Max_ImageCount",
+          "type": "Int64",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "Min_ImageCount",
+          "type": "Int64",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe"
+          ]
+        },
+        {
+          "fieldName": "Sum_ImageCount",
+          "type": "Int64",
+          "seenIn": [
+            "SearchFilterHost.exe",
+            "SearchProtocolHost.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PushAPIIndexingElapseTime_Aggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "Elapsed_ms:Int64",
+            "Elapsed_Min:Int64",
+            "Elapsed_Max:Int64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "SearchIndexer.exe",
+              "function": "sub_14000E6B0",
+              "ea": "0x14000e714",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "SearchIndexer.exe"
+          ]
+        },
+        {
+          "fieldName": "Elapsed_Max",
+          "type": "Int64",
+          "seenIn": [
+            "SearchIndexer.exe"
+          ]
+        },
+        {
+          "fieldName": "Elapsed_Min",
+          "type": "Int64",
+          "seenIn": [
+            "SearchIndexer.exe"
+          ]
+        },
+        {
+          "fieldName": "Elapsed_ms",
+          "type": "Int64",
+          "seenIn": [
+            "SearchIndexer.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "SearchIndexer.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ReportTransactionPassesError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "RequiredPasses:UInt32",
+            "PassesToRun:UInt32",
+            "IsDeleteAction:Bool32",
+            "Extension:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "mssrch.dll",
+              "function": "?ReportTransactionPassesError@SearchIndexerTelemetryAggregatedHigh@@SAXPEB_WKK_N@Z",
+              "ea": "0x1801a18b0",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "Extension",
+          "type": "UnicodeString",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDeleteAction",
+          "type": "Bool32",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "PassesToRun",
+          "type": "UInt32",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "RequiredPasses",
+          "type": "UInt32",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SearchApiLog_Aggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "ClassName:UnicodeString",
+            "MethodName:UnicodeString",
+            "ClientProcessName:UnicodeString",
+            "Container:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "SearchIndexer.exe",
+              "function": "sub_140013904",
+              "ea": "0x140013a39",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "SearchIndexer.exe",
+              "function": "sub_140013904",
+              "ea": "0x140013a68",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "SearchIndexer.exe",
+              "function": "sub_140013904",
+              "ea": "0x140013aa4",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClassName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SearchIndexer.exe"
+          ]
+        },
+        {
+          "fieldName": "ClientProcessName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SearchIndexer.exe"
+          ]
+        },
+        {
+          "fieldName": "Container",
+          "type": "Bool32",
+          "seenIn": [
+            "SearchIndexer.exe"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "SearchIndexer.exe"
+          ]
+        },
+        {
+          "fieldName": "MethodName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SearchIndexer.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "SearchIndexer.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TransactionUpdateCalculateProperties",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "TransactionSucceeded:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "mssrch.dll",
+              "function": "?TransactionUpdateCalculatedProperties@SearchIndexerTelemetryAggregatedHigh@@SAX_N@Z",
+              "ea": "0x180075d9a",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "TransactionSucceeded",
+          "type": "UInt32",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WordBreakerLocaleUsed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "LocaleUsed:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "mssrch.dll",
+              "function": "?WordBreakerLocaleUsed@SearchIndexerTelemetryAggregatedHigh@@SAXAEBK@Z",
+              "ea": "0x180075e04",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "LocaleUsed",
+          "type": "UInt32",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "mssrch.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

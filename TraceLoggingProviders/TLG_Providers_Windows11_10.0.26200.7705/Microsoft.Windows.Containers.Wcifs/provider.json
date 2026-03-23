@@ -1,0 +1,632 @@
+{
+  "providerName": "Microsoft.Windows.Containers.Wcifs",
+  "guid": "{6E31F252-A41C-41D7-A9E2-3A20162247EC}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "wcifs.sys"
+  ],
+  "uniqueEventCount": 9,
+  "events": [
+    {
+      "eventName": "BlockedOperation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "OperationType:UInt8",
+            "OperationValue:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wcifs.sys",
+              "function": "WcBlockQuerySetInformation",
+              "ea": "0x14002e2be",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wcifs.sys",
+              "function": "WcEnumerateDirectoryWithMerge",
+              "ea": "0x140015cf4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wcifs.sys",
+              "function": "WcFsctlBlockOperation",
+              "ea": "0x14002d6f9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wcifs.sys",
+              "function": "WcPreFsctlFindFilesBySid",
+              "ea": "0x14001a895",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wcifs.sys",
+              "function": "WcPreLockControl",
+              "ea": "0x14002ce75",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wcifs.sys",
+              "function": "WcPreQueryQuota",
+              "ea": "0x14001a2be",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wcifs.sys",
+              "function": "WcPreRead",
+              "ea": "0x140001801",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wcifs.sys",
+              "function": "WcPreSetQuota",
+              "ea": "0x14001a44c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wcifs.sys",
+              "function": "WcPreWrite",
+              "ea": "0x1400022ac",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OperationType",
+          "type": "UInt8",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "OperationValue",
+          "type": "UInt64",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DirectoryExpansionFinished",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "AlreadyExpanded:Bool32",
+            "DirectoryPath:CountedString",
+            "ContainerIdentifier:UInt32",
+            "ContainerExpansionIdentifier:UInt64",
+            "TotalOperationsQueued:UInt64",
+            "TotalFilesPopulated:UInt64",
+            "ElapsedTimeInMs:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wcifs.sys",
+              "function": "WcTelemetryPostExpansionComplete",
+              "ea": "0x14001b95f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AlreadyExpanded",
+          "type": "Bool32",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "ContainerExpansionIdentifier",
+          "type": "UInt64",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "ContainerIdentifier",
+          "type": "UInt32",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "DirectoryPath",
+          "type": "CountedString",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "ElapsedTimeInMs",
+          "type": "UInt64",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "TotalFilesPopulated",
+          "type": "UInt64",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "TotalOperationsQueued",
+          "type": "UInt64",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DirectoryExpansionStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "ExpansionReason:UInt32",
+            "DirectoryPath:CountedString",
+            "ContainerIdentifier:UInt32",
+            "ContainerExpansionIdentifier:UInt64",
+            "TriggerCounter:UInt32",
+            "OperationQueued:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "wcifs.sys",
+              "function": "WcTelemetryPostExpansionTrigger",
+              "ea": "0x14001bd30",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ContainerExpansionIdentifier",
+          "type": "UInt64",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "ContainerIdentifier",
+          "type": "UInt32",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "DirectoryPath",
+          "type": "CountedString",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "ExpansionReason",
+          "type": "UInt32",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "OperationQueued",
+          "type": "Bool32",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "TriggerCounter",
+          "type": "UInt32",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FileExpansionFinished",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "NormalizedFileSize:Int64",
+            "NormalizedFileSizeSquared:Int64",
+            "NormalizedFileSizeMin:Int64",
+            "NormalizedFileSizeMax:Int64",
+            "NormalizationFactor:UInt32",
+            "UnionScope:UInt32",
+            "UnionFlags:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wcifs.sys",
+              "function": "WcTelemetryPostExpansionComplete",
+              "ea": "0x14001ba94",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "NormalizationFactor",
+          "type": "UInt32",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "NormalizedFileSize",
+          "type": "Int64",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "NormalizedFileSizeMax",
+          "type": "Int64",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "NormalizedFileSizeMin",
+          "type": "Int64",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "NormalizedFileSizeSquared",
+          "type": "Int64",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "UnionFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "UnionScope",
+          "type": "UInt32",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PlaceholderExistsForPagefileOpen",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "AlreadyExpanded:Bool32",
+            "ContainerIdentifier:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "wcifs.sys",
+              "function": "WcProcessWciReparsePointOpen",
+              "ea": "0x140028b11",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AlreadyExpanded",
+          "type": "Bool32",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "ContainerIdentifier",
+          "type": "UInt32",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PrefetchFailureOperation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "OperationStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "wcifs.sys",
+              "function": "WcCopyAsPlaceHolder",
+              "ea": "0x140023af2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OperationStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ShortNameUsage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "FileNameHash:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wcifs.sys",
+              "function": "WcPopulateFile",
+              "ea": "0x140025254",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FileNameHash",
+          "type": "UInt64",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TombstoneFailureOperation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "OperationType:UInt8",
+            "OperationLocation:UInt8",
+            "OperationStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "wcifs.sys",
+              "function": "WcDeleteTombstone",
+              "ea": "0x14001cb82",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wcifs.sys",
+              "function": "WcPostCleanup",
+              "ea": "0x14003305a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wcifs.sys",
+              "function": "WcPostCleanup",
+              "ea": "0x140033149",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wcifs.sys",
+              "function": "WcPostSetInformation",
+              "ea": "0x1400313ec",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wcifs.sys",
+              "function": "WcPostSetInformation",
+              "ea": "0x140031409",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wcifs.sys",
+              "function": "WcPreCleanup",
+              "ea": "0x140029896",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wcifs.sys",
+              "function": "WcProcessSetRenameInformation",
+              "ea": "0x14002beeb",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wcifs.sys",
+              "function": "WcProcessTombstoneBounce",
+              "ea": "0x14001d1bb",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wcifs.sys",
+              "function": "WcProcessTombstoneBounce",
+              "ea": "0x14001d3ce",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wcifs.sys",
+              "function": "WcProcessTombstoneBounce",
+              "ea": "0x14001d4bd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wcifs.sys",
+              "function": "WcProcessWciReparsePointBounce",
+              "ea": "0x14002842b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wcifs.sys",
+              "function": "WcRemoveInMemoryTombstoneAfterRenameLink",
+              "ea": "0x1400318dd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wcifs.sys",
+              "function": "WcRevertDelete",
+              "ea": "0x1400338ff",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OperationLocation",
+          "type": "UInt8",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "OperationStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "OperationType",
+          "type": "UInt8",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TransactionalOperation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "FileOpenById:Bool32",
+            "FileNameHash:UInt64",
+            "Container Id:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "wcifs.sys",
+              "function": "WcPreTransaction",
+              "ea": "0x140032cbc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wcifs.sys",
+              "function": "WcPreTransaction",
+              "ea": "0x140032da1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Container Id",
+          "type": "UInt32",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "FileNameHash",
+          "type": "UInt64",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        },
+        {
+          "fieldName": "FileOpenById",
+          "type": "Bool32",
+          "seenIn": [
+            "wcifs.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

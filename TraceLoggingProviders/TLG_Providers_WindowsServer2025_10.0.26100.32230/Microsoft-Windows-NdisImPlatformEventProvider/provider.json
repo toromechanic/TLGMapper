@@ -1,0 +1,440 @@
+{
+  "providerName": "Microsoft-Windows-NdisImPlatformEventProvider",
+  "guid": "{11C5D8AD-756A-42C2-8087-EB1B4A72A846}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "NdisImPlatform.sys"
+  ],
+  "uniqueEventCount": 10,
+  "events": [
+    {
+      "eventName": "AddedMemberToTeam",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "teamInterfaceGuid:GUID",
+            "adapterInterfaceGuid:GUID",
+            "ndisStatus:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "NdisImPlatform.sys",
+              "function": "?implatAddAdapterToTeam@@YAHPEAU_IMPLAT_TEAM@@PEAU_IMPLAT_ADAPTER@@@Z",
+              "ea": "0x1c000215b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "adapterInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        },
+        {
+          "fieldName": "ndisStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        },
+        {
+          "fieldName": "teamInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BoundProtocol",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "adapterInterfaceGuid:GUID",
+            "ndisStatus:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "NdisImPlatform.sys",
+              "function": "?implatBindAdapterEx@@YAHPEAX0PEAU_NDIS_BIND_PARAMETERS@@@Z",
+              "ea": "0x1c0004e1d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "adapterInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        },
+        {
+          "fieldName": "ndisStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CreatedTeam",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "teamInterfaceGuid:GUID",
+            "ndisStatus:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "NdisImPlatform.sys",
+              "function": "?implatCreateTeam@@YAHPEAPEAU_IMPLAT_TEAM@@PEAU_GUID@@@Z",
+              "ea": "0x1c0002cda",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ndisStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        },
+        {
+          "fieldName": "teamInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CreatedVirtualMiniport",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "virtualMiniportDeviceGuid:GUID",
+            "ndisStatus:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "NdisImPlatform.sys",
+              "function": "?implatCreateVirtualMiniport@@YAHPEAPEAU_IMPLAT_VIRTMINI@@PEAU_UNICODE_STRING@@PEAU_IMPLAT_TEAM@@@Z",
+              "ea": "0x1c0006d88",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ndisStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        },
+        {
+          "fieldName": "virtualMiniportDeviceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HaltedVirtualMiniport",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "teamInterfaceGuid:GUID",
+            "virtualMiniportDeviceGuid:GUID",
+            "virtualMiniportInterfaceGuid:GUID",
+            "haltAction:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "NdisImPlatform.sys",
+              "function": "?implatHaltEx@@YAXPEAXW4_NDIS_HALT_ACTION@@@Z",
+              "ea": "0x1c00072b7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "haltAction",
+          "type": "Int32",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        },
+        {
+          "fieldName": "teamInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        },
+        {
+          "fieldName": "virtualMiniportDeviceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        },
+        {
+          "fieldName": "virtualMiniportInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InitializedVirtualMiniport",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "teamInterfaceGuid:GUID",
+            "virtualMiniportDeviceGuid:GUID",
+            "virtualMiniportInterfaceGuid:GUID",
+            "vlanID:Int32",
+            "defaultInTeam:UInt8(Boolean)",
+            "ndisStatus:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "NdisImPlatform.sys",
+              "function": "?implatInitializeEx@@YAHPEAX0PEAU_NDIS_MINIPORT_INIT_PARAMETERS@@@Z",
+              "ea": "0x1c00085d4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "defaultInTeam",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        },
+        {
+          "fieldName": "ndisStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        },
+        {
+          "fieldName": "teamInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        },
+        {
+          "fieldName": "virtualMiniportDeviceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        },
+        {
+          "fieldName": "virtualMiniportInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        },
+        {
+          "fieldName": "vlanID",
+          "type": "Int32",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RemovedMemberFromTeam",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "teamInterfaceGuid:GUID",
+            "adapterInterfaceGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "NdisImPlatform.sys",
+              "function": "?implatRemoveAdapterFromTeam@@YAXPEAU_IMPLAT_ADAPTER@@@Z",
+              "ea": "0x1c00034d0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "adapterInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        },
+        {
+          "fieldName": "teamInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RemovedTeam",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "teamInterfaceGuid:GUID",
+            "ndisStatus:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "NdisImPlatform.sys",
+              "function": "?implatRemoveTeam@@YAXPEAU_IMPLAT_TEAM@@@Z",
+              "ea": "0x1c0003733",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ndisStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        },
+        {
+          "fieldName": "teamInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RemovedVirtualMiniport",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "virtualMiniportDeviceGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "NdisImPlatform.sys",
+              "function": "?implatRemoveVirtualMiniport@@YAXPEAU_IMPLAT_VIRTMINI@@@Z",
+              "ea": "0x1c000887f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "virtualMiniportDeviceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnboundProtocol",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "adapterInterfaceGuid:GUID",
+            "ndisStatus:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "NdisImPlatform.sys",
+              "function": "?implatUnbindAdapterEx@@YAHPEAX0@Z",
+              "ea": "0x1c0005df4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "adapterInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        },
+        {
+          "fieldName": "ndisStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "NdisImPlatform.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

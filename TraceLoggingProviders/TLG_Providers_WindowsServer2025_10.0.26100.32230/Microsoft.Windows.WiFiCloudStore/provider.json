@@ -1,0 +1,121 @@
+{
+  "providerName": "Microsoft.Windows.WiFiCloudStore",
+  "guid": "{819CF413-40EA-5E76-0BC1-B5F26EBF7075}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "netprofmsvc.dll",
+    "wlansvc.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "NlmStoredNeededChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ProfileGuid:GUID",
+            "NlmModificationType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "netprofmsvc.dll",
+              "function": "??$NlmStoredNeededChange@AEBU_GUID@@AEBW4NlmModificationType@WiFiCloudStore@Internal@Windows@@@WiFiCloudStoreTelemetry@@SAXAEBU_GUID@@AEBW4NlmModificationType@WiFiCloudStore@Internal@Windows@@@Z",
+              "ea": "0x180129d12",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NlmModificationType",
+          "type": "UInt32",
+          "seenIn": [
+            "netprofmsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "ProfileGuid",
+          "type": "GUID",
+          "seenIn": [
+            "netprofmsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WlanStoredNeededChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ProfileName:UnicodeString",
+            "Generation:Int32",
+            "InterfaceGuid:GUID",
+            "LocalModifiedTime:UInt64",
+            "ActionTaken:UInt32",
+            "User:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "wlansvc.dll",
+              "function": "??$WlanStoredNeededChange@AEAPEBGAEBW4ProfileGeneration@WiFiCloudStore@Internal@Windows@@AEBU_GUID@@AEA_KAEBW4WiFiSyncAction@@PEAG@WiFiCloudStoreTelemetry@@SAXAEAPEBGAEBW4ProfileGeneration@WiFiCloudStore@Internal@Windows@@AEBU_GUID@@AEA_KAEBW4WiFiSyncAction@@$$QEAPEAG@Z",
+              "ea": "0x18021b8db",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActionTaken",
+          "type": "UInt32",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Generation",
+          "type": "Int32",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "InterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "LocalModifiedTime",
+          "type": "UInt64",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "ProfileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "User",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "providerName": "Microsoft.Windows.Security.BitLocker.BcdUpdate",
+  "guid": "{497ABD62-6FDF-46C9-A972-9D68CB71C335}",
+  "os": "Windows 11",
+  "binaryCount": 3,
+  "binaries": [
+    "BitLockerCsp.dll",
+    "bdesvc.dll",
+    "fveui.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "BitLocker.BCD.FveOpenFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hrFveOpen:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?GetEncryptableVolumeNamesForBcdDevices@FveBcdUtil@@SAJPEAPEAVPathBuffer@@PEAK@Z",
+              "ea": "0x180064379",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "BitLockerCsp.dll",
+              "function": "?GetEncryptableVolumeNamesForBcdDevices@FveBcdUtil@@SAJPEAPEAVPathBuffer@@PEAK@Z",
+              "ea": "0x18002c6cc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fveui.dll",
+              "function": "?GetEncryptableVolumeNamesForBcdDevices@FveBcdUtil@@SAJPEAPEAVPathBuffer@@PEAK@Z",
+              "ea": "0x180013b5a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "BitLockerCsp.dll",
+            "bdesvc.dll",
+            "fveui.dll"
+          ]
+        },
+        {
+          "fieldName": "hrFveOpen",
+          "type": "Int32",
+          "seenIn": [
+            "BitLockerCsp.dll",
+            "bdesvc.dll",
+            "fveui.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BitLocker.BCD.Update",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?UpdateBcdRecoveryStringData@FveBcdUtil@@SAJPEAXKPEBG@Z",
+              "ea": "0x180064980",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

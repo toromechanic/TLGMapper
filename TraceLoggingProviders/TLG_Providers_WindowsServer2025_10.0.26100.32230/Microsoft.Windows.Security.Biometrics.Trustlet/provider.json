@@ -1,0 +1,126 @@
+{
+  "providerName": "Microsoft.Windows.Security.Biometrics.Trustlet",
+  "guid": "{9DF19CFA-E122-5343-284B-F3945CCD65B2}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "wbiosrvc.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "Info:SDEVTableFound",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ResultCode:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "wbiosrvc.dll",
+              "function": "?IsSDEVTablePresent@BioTrustlet@@SA_NXZ",
+              "ea": "0x180054c0d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ResultCode",
+          "type": "Int32",
+          "seenIn": [
+            "wbiosrvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Info:SecureFpRegKeyStatus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ResultCode:Int32",
+            "IsSecureFpRegKeySet:UInt8(Boolean)",
+            "QueriedBioDeviceCount:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "wbiosrvc.dll",
+              "function": "?ExistsSecureFpRegKey@BioTrustlet@@SA_NXZ",
+              "ea": "0x180050772",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsSecureFpRegKeySet",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "wbiosrvc.dll"
+          ]
+        },
+        {
+          "fieldName": "QueriedBioDeviceCount",
+          "type": "Int64",
+          "seenIn": [
+            "wbiosrvc.dll"
+          ]
+        },
+        {
+          "fieldName": "ResultCode",
+          "type": "Int32",
+          "seenIn": [
+            "wbiosrvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Info:deviceHasSecureFpRegKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ResultCode:Int32",
+            "deviceInstanceId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "wbiosrvc.dll",
+              "function": "?ExistsSecureFpRegKey@BioTrustlet@@SA_NXZ",
+              "ea": "0x18005064a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ResultCode",
+          "type": "Int32",
+          "seenIn": [
+            "wbiosrvc.dll"
+          ]
+        },
+        {
+          "fieldName": "deviceInstanceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wbiosrvc.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

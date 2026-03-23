@@ -1,0 +1,50 @@
+{
+  "providerName": "MSFT_PCSVDeviceTraceLoggingProvider",
+  "guid": "{D428FA57-EB61-51BA-460E-D1A6F6B534B5}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "pcsvDevice.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "PcsvDeviceConnectionEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "ProtocolName:AnsiString",
+            "ConnectionType:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "pcsvDevice.dll",
+              "function": "?WriteTelemetryLog@@YAXPEBD0@Z",
+              "ea": "0x180027ce3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConnectionType",
+          "type": "AnsiString",
+          "seenIn": [
+            "pcsvDevice.dll"
+          ]
+        },
+        {
+          "fieldName": "ProtocolName",
+          "type": "AnsiString",
+          "seenIn": [
+            "pcsvDevice.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

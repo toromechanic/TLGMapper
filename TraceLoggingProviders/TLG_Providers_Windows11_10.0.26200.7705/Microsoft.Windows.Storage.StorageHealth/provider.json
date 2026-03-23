@@ -1,0 +1,752 @@
+{
+  "providerName": "Microsoft.Windows.Storage.StorageHealth",
+  "guid": "{778B9D2F-545B-47B0-98E9-28B9B8CA8C6A}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "StorSvc.dll"
+  ],
+  "uniqueEventCount": 13,
+  "events": [
+    {
+      "eventName": "BadMemoryAllocation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?EvaluateHealth@StorageHealthHandler@StorageHealth@@QEAAJXZ",
+              "ea": "0x18009314e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "CompressAndWriteModel",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "modelFilePath:UnicodeString",
+            "uncompressedModelSize:UInt64",
+            "compressedModelSize:UInt64",
+            "fDeleteModelFile:Bool32",
+            "fDeleteModelFileSuccess:Bool32",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?CompressAndWrite@@YAJV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z",
+              "ea": "0x18006e19d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "compressedModelSize",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "fDeleteModelFile",
+          "type": "Bool32",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "fDeleteModelFileSuccess",
+          "type": "Bool32",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "modelFilePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "uncompressedModelSize",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EvaluateHealthExceptionThrown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "e.what():AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?EvaluateHealth@StorageHealthHandler@StorageHealth@@QEAAJXZ",
+              "ea": "0x1800931cd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "e.what()",
+          "type": "AnsiString",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EvaluationActivity",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?EvaluateHealth@StorageHealthHandler@StorageHealth@@QEAAJXZ",
+              "ea": "0x18005c621",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "evaluateHealthStatus:AnsiString",
+            "maxDaysOfSignals:UInt64",
+            "reqDaysOfSignals:UInt64",
+            "numOfDisks:UInt64",
+            "bootDiskGuid:UnicodeString",
+            "isBootDiskHdd:UInt8(Boolean)",
+            "hResultEvaluateHealth:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?EvaluateHealth@StorageHealthHandler@StorageHealth@@QEAAJXZ",
+              "ea": "0x18005d202",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "bootDiskGuid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "evaluateHealthStatus",
+          "type": "AnsiString",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hResultEvaluateHealth",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "isBootDiskHdd",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "maxDaysOfSignals",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "numOfDisks",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "reqDaysOfSignals",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GetBootDiskTelemetry",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "bootDiskGuid:UnicodeString",
+            "getBootDiskStatus:AnsiString",
+            "hResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?GetBootDisk@StorageHealthHandler@StorageHealth@@AEAAJAEBV?$vector@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@V?$allocator@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@@2@@std@@AEAV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@4@AEA_N@Z",
+              "ea": "0x18005d588",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "bootDiskGuid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "getBootDiskStatus",
+          "type": "AnsiString",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PredctorMLModelParametersInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "modelType:AnsiString",
+            "modelLocation:UnicodeString",
+            "hResultReadModel:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?GetPredictor@PredictorFactory@StorageHealth@@QEAA?AV?$shared_ptr@UPredictor@StorageHealth@@@std@@W4PredictionModel@2@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@4@@Z",
+              "ea": "0x180064d06",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hResultReadModel",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "modelLocation",
+          "type": "UnicodeString",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "modelType",
+          "type": "AnsiString",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ReadAndDecompressModel",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "modelFilePath:UnicodeString",
+            "compressedModelSize:UInt64",
+            "decompressedModelSize:UInt64",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?ReadAndDecompress@@YAJV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z",
+              "ea": "0x18006ed68",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "compressedModelSize",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "decompressedModelSize",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "modelFilePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ScoresAndData",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "diskGuid:UnicodeString",
+            "healthScore:Double",
+            "isBootDisk:UInt8(Boolean)",
+            "isHardDisk:UInt8(Boolean)",
+            "isScoreValid:UInt8(Boolean)",
+            "numOfSignalDays:UInt64",
+            "storageHealthWarningThreshold:Double"
+          ],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?EvaluateHealth@StorageHealthHandler@StorageHealth@@QEAAJXZ",
+              "ea": "0x18005cf05",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "diskGuid:UnicodeString",
+            "healthScore:Double",
+            "isBootDisk:UInt8(Boolean)",
+            "isHardDisk:UInt8(Boolean)",
+            "isScoreValid:UInt8(Boolean)",
+            "numOfSignalDays:UInt64",
+            "storageHealthWarningThreshold:Double"
+          ],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?EvaluateHealth@StorageHealthHandler@StorageHealth@@QEAAJXZ",
+              "ea": "0x18005cfb5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "diskGuid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "healthScore",
+          "type": "Double",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "isBootDisk",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "isHardDisk",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "isScoreValid",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "numOfSignalDays",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "storageHealthWarningThreshold",
+          "type": "Double",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SettingsGetTelemetry",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "storageSettingName:AnsiString",
+            "storageSettingGetStatus:AnsiString",
+            "majorModelVersion:UInt64",
+            "oldMinorModelVersion:UInt64",
+            "newMinorModelVersion:UInt64",
+            "hResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?CheckAndUpdateModel@StorageHealthSettings@StorageHealth@@QEAAJV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@@Z",
+              "ea": "0x18005e4ba",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "regSubKey:UnicodeString",
+            "storageSettingName:UnicodeString",
+            "storageSettingRegValue:UInt64",
+            "storageSettingGetStatus:AnsiString",
+            "hResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?GetSpecifiedSetting@StorageHealthSettings@StorageHealth@@AEAAKV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@K0@Z",
+              "ea": "0x18005eba8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "majorModelVersion",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "newMinorModelVersion",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "oldMinorModelVersion",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "regSubKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "storageSettingGetStatus",
+          "type": "AnsiString",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "storageSettingName",
+          "type": "AnsiString",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "storageSettingName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "storageSettingRegValue",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SignalAggregation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32(HResult)",
+            "hrSerialize:Int32(HResult)",
+            "hrDeserialize:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?GetSignals@SignalAggregator@StorageHealth@@QEAAJAEAV?$vector@U_StorageHealthInput@StorageHealth@@V?$allocator@U_StorageHealthInput@StorageHealth@@@std@@@std@@@Z",
+              "ea": "0x1800638fa",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hrDeserialize",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hrSerialize",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SignalArchiveDeserializationFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "archivePath:UnicodeString",
+            "hResultDeserialize:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?Deserialize@SignalArchiver@StorageHealth@@QEAAJAEAV?$map@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@U_SignalArchiveData@StorageHealth@@U?$less@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@U_SignalArchiveData@StorageHealth@@@std@@@2@@std@@@Z",
+              "ea": "0x18006a5a5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "archivePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hResultDeserialize",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SignalArchiveSerializationFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "archivePath:UnicodeString",
+            "maxArchiveSize:UInt64",
+            "hResultSerialize:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?Serialize@SignalArchiver@StorageHealth@@QEAAJAEBV?$map@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@U_SignalArchiveData@StorageHealth@@U?$less@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@U_SignalArchiveData@StorageHealth@@@std@@@2@@std@@_K@Z",
+              "ea": "0x18006aeb4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "archivePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hResultSerialize",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "maxArchiveSize",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SignalDaysNotEnoughForFeatureGeneration",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "requiredNumOfSignalDays:Int32",
+            "actualNumOfSignalDays:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "StorSvc.dll",
+              "function": "?Generate@AlphaFeatureGenerator@StorageHealth@@UEAAJPEAU_StorageHealthInput@2@@Z",
+              "ea": "0x180074f39",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "StorSvc.dll",
+              "function": "?Generate@TimeSeriesFeatureGenerator@StorageHealth@@UEAAJPEAU_StorageHealthInput@2@@Z",
+              "ea": "0x180076b45",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "actualNumOfSignalDays",
+          "type": "UInt64",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "requiredNumOfSignalDays",
+          "type": "Int32",
+          "seenIn": [
+            "StorSvc.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

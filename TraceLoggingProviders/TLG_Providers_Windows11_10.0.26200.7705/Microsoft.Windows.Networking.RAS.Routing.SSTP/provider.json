@@ -1,0 +1,56 @@
+{
+  "providerName": "Microsoft.Windows.Networking.RAS.Routing.SSTP",
+  "guid": "{1E81AD7A-603A-4C44-B3B6-C99BB22F13BF}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "sstpcfg.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "SstpInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "isSstpCertSelectionUsed:Bool32",
+            "isSstpConfiguredBehindSslTerminator:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "sstpcfg.dll",
+              "function": "SetSstpConfiguration",
+              "ea": "0x1800096ec",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "sstpcfg.dll",
+              "function": "SetSstpConfiguration",
+              "ea": "0x18000970a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "isSstpCertSelectionUsed",
+          "type": "Bool32",
+          "seenIn": [
+            "sstpcfg.dll"
+          ]
+        },
+        {
+          "fieldName": "isSstpConfiguredBehindSslTerminator",
+          "type": "Bool32",
+          "seenIn": [
+            "sstpcfg.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

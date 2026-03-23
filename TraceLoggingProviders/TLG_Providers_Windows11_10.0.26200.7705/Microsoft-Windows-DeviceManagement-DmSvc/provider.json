@@ -1,0 +1,131 @@
+{
+  "providerName": "Microsoft-Windows-DeviceManagement-DmSvc",
+  "guid": "{8CC7D9C9-09AF-45CA-86CE-4CECF680F2B7}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "dmwappushsvc.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "HandleNewWapMessage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "dmwappushsvc.dll",
+              "function": "?HandleNewWapMessage@@YAXPEAXU_CBROKERED_EVENT_ID@@00KKPEAW4_BI_ACTIVATION_STATUS@@@Z",
+              "ea": "0x180003d8a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "SmsWapMsgHandler::GetNewWapMessageBody",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ICCID:UnicodeString",
+            "BCD of ICCID:Binary",
+            "Message:Binary",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "dmwappushsvc.dll",
+              "function": "?CopyToPushRouterStructure@SmsWapMsgHandler@@AEAAJXZ",
+              "ea": "0x180003520",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BCD of ICCID",
+          "type": "Binary",
+          "seenIn": [
+            "dmwappushsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "dmwappushsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "ICCID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dmwappushsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Message",
+          "type": "Binary",
+          "seenIn": [
+            "dmwappushsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SmsWapMsgHandler::RegisterForWNF EaCreateAggregatedEvent ntStatus",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ntStatus:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "dmwappushsvc.dll",
+              "function": "?RegisterForWNF@SmsWapMsgHandler@@QEAAJXZ",
+              "ea": "0x18000425d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "ntStatus:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "dmwappushsvc.dll",
+              "function": "?RegisterForWNF@SmsWapMsgHandler@@QEAAJXZ",
+              "ea": "0x180004297",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ntStatus",
+          "type": "Int32",
+          "seenIn": [
+            "dmwappushsvc.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

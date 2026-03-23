@@ -1,0 +1,78 @@
+{
+  "providerName": "Microsoft.Windows.DriverVerifier.UiGui",
+  "guid": "{B95C2FFF-E9DE-4327-93B1-1D5B8445BF7E}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "verifiergui.exe"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "VrfSetupGui",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "VerifyDrivers:UnicodeString",
+            "Flags:HexInt32",
+            "Options:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "verifiergui.exe",
+              "function": "?VrfTelemetryLogContext@@YAXVCString@@KK@Z",
+              "ea": "0x14001a023",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "verifiergui.exe"
+          ]
+        },
+        {
+          "fieldName": "Options",
+          "type": "HexInt32",
+          "seenIn": [
+            "verifiergui.exe"
+          ]
+        },
+        {
+          "fieldName": "VerifyDrivers",
+          "type": "UnicodeString",
+          "seenIn": [
+            "verifiergui.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Vrf_User_Reset_Config_Gui",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "verifiergui.exe",
+              "function": "?VrfDeleteAllVerifierSettings@@YAHXZ",
+              "ea": "0x14000d0a5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    }
+  ]
+}

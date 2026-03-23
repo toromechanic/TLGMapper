@@ -1,0 +1,112 @@
+{
+  "providerName": "Microsoft.Windows.Kernel.Smss.Telemetry",
+  "guid": "{21063878-2959-42EA-A85A-0DA1AB119C03}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "smss.exe"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "PlatformBinary",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Status:Int32",
+            "Duration:Int64",
+            "Command:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "smss.exe",
+              "function": "SmpSendPlatformBinaryStatus",
+              "ea": "0x1400184cd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Status:Int32",
+            "Duration:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "smss.exe",
+              "function": "SmpSendPlatformBinaryStatus",
+              "ea": "0x14001852b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Command",
+          "type": "CountedString",
+          "seenIn": [
+            "smss.exe"
+          ]
+        },
+        {
+          "fieldName": "Duration",
+          "type": "Int64",
+          "seenIn": [
+            "smss.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "Int32",
+          "seenIn": [
+            "smss.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SmpCopyFileFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Status:Int32",
+            "FileSize:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "smss.exe",
+              "function": "SmpCopyFile",
+              "ea": "0x140011eb8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FileSize",
+          "type": "Int64",
+          "seenIn": [
+            "smss.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "Int32",
+          "seenIn": [
+            "smss.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

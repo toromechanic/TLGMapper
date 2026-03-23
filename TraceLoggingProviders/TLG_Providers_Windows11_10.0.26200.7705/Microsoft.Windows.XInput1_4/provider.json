@@ -1,0 +1,80 @@
+{
+  "providerName": "Microsoft.Windows.XInput1_4",
+  "guid": "{1878B8A3-2425-417B-A0C8-7B567652D45C}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "XInput1_4.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "DeviceVidPid",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "VendorId:UInt16",
+            "ProductId:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "XInput1_4.dll",
+              "function": "?EventWriteVidPid@@YAXGG@Z",
+              "ea": "0x1800133e6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ProductId",
+          "type": "UInt16",
+          "seenIn": [
+            "XInput1_4.dll"
+          ]
+        },
+        {
+          "fieldName": "VendorId",
+          "type": "UInt16",
+          "seenIn": [
+            "XInput1_4.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "XInput1_4DllLoaded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Hresult:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "XInput1_4.dll",
+              "function": "?EventWriteDllLoaded@@YAXJ@Z",
+              "ea": "0x1800132f9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Hresult",
+          "type": "Int32",
+          "seenIn": [
+            "XInput1_4.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

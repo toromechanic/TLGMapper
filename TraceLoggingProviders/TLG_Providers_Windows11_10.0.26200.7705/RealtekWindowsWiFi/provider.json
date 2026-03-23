@@ -1,0 +1,848 @@
+{
+  "providerName": "RealtekWindowsWiFi",
+  "guid": "{6F651B84-F358-4486-BF42-A8D60D911DC6}",
+  "os": "Windows 11",
+  "binaryCount": 4,
+  "binaries": [
+    "rtwlane.sys",
+    "rtwlane01.sys",
+    "rtwlans.sys",
+    "rtwlanu.sys"
+  ],
+  "uniqueEventCount": 13,
+  "events": [
+    {
+      "eventName": "RealtekWDIDriverTraceLogging",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "pDriverObject:HexInt64",
+            "RegistryPath:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "rtwlane.sys",
+              "function": "DriverEntry",
+              "ea": "0x14003fece",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlane01.sys",
+              "function": "DriverEntry",
+              "ea": "0x140040856",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlans.sys",
+              "function": "DriverEntry",
+              "ea": "0x140041367",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlanu.sys",
+              "function": "DriverEntry",
+              "ea": "0x14003ae66",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "RegistryPath",
+          "type": "CountedString",
+          "seenIn": [
+            "rtwlane.sys",
+            "rtwlane01.sys",
+            "rtwlans.sys",
+            "rtwlanu.sys"
+          ]
+        },
+        {
+          "fieldName": "pDriverObject",
+          "type": "HexInt64",
+          "seenIn": [
+            "rtwlane.sys",
+            "rtwlane01.sys",
+            "rtwlans.sys",
+            "rtwlanu.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WDI Allocate Adapter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "UE WDI Version:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rtwlane.sys",
+              "function": "N6PciWdiAllocateAdapter",
+              "ea": "0x140052551",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlane01.sys",
+              "function": "N6PciWdiAllocateAdapter",
+              "ea": "0x140050bfc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlans.sys",
+              "function": "N6SdioWdi_AllocateAdapter",
+              "ea": "0x140051b13",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlanu.sys",
+              "function": "N6UsbWdiAllocateAdapter",
+              "ea": "0x140069bd3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "UE WDI Version",
+          "type": "HexInt32",
+          "seenIn": [
+            "rtwlane.sys",
+            "rtwlane01.sys",
+            "rtwlans.sys",
+            "rtwlanu.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WDI Allocate Adapter Failure",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 1,
+          "keyword": "0x0",
+          "fields": [
+            "Status:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rtwlane.sys",
+              "function": "N6PciWdiAllocateAdapter",
+              "ea": "0x140052cbf",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlane01.sys",
+              "function": "N6PciWdiAllocateAdapter",
+              "ea": "0x1400513a2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlanu.sys",
+              "function": "N6UsbWdiAllocateAdapter",
+              "ea": "0x14006a957",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "keyword": "0x0",
+          "fields": [
+            "Status:HexInt32",
+            "InitFailureHistory:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rtwlans.sys",
+              "function": "N6SdioWdi_AllocateAdapter",
+              "ea": "0x140051bd6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InitFailureHistory",
+          "type": "HexInt32",
+          "seenIn": [
+            "rtwlans.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "HexInt32",
+          "seenIn": [
+            "rtwlane.sys",
+            "rtwlane01.sys",
+            "rtwlans.sys",
+            "rtwlanu.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WDI Close Adapter",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "pAdapter:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rtwlane.sys",
+              "function": "N6PciWdiCloseAdapter",
+              "ea": "0x140052f1e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlane01.sys",
+              "function": "N6PciWdiCloseAdapter",
+              "ea": "0x140051601",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlanu.sys",
+              "function": "N6UsbWdiCloseAdapter",
+              "ea": "0x14006aa84",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ndisStatus:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rtwlans.sys",
+              "function": "N6SdioWdi_CloseAdapter",
+              "ea": "0x140052e47",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ndisStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "rtwlans.sys"
+          ]
+        },
+        {
+          "fieldName": "pAdapter",
+          "type": "HexInt64",
+          "seenIn": [
+            "rtwlane.sys",
+            "rtwlane01.sys",
+            "rtwlanu.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WDI Free Adapter",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Adapter:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rtwlane.sys",
+              "function": "N6PciWdiFreeAdapter",
+              "ea": "0x140053048",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlane01.sys",
+              "function": "N6PciWdiFreeAdapter",
+              "ea": "0x140051726",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "pAdapter:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rtwlans.sys",
+              "function": "N6SdioWdi_FreeAdapter",
+              "ea": "0x1400531fc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlanu.sys",
+              "function": "N6UsbWdiFreeAdapter",
+              "ea": "0x14006ae96",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Adapter",
+          "type": "HexInt64",
+          "seenIn": [
+            "rtwlane.sys",
+            "rtwlane01.sys"
+          ]
+        },
+        {
+          "fieldName": "pAdapter",
+          "type": "HexInt64",
+          "seenIn": [
+            "rtwlans.sys",
+            "rtwlanu.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WDI HandleOidRequest",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Oid::HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rtwlane.sys",
+              "function": "N6WdiHandleOidRequest",
+              "ea": "0x140058885",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlane01.sys",
+              "function": "N6WdiHandleOidRequest",
+              "ea": "0x140056819",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlans.sys",
+              "function": "N6WdiHandleOidRequest",
+              "ea": "0x1400582f2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlanu.sys",
+              "function": "N6WdiHandleOidRequest",
+              "ea": "0x140051f8a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Oid",
+          "type": ":HexInt32",
+          "seenIn": [
+            "rtwlane.sys",
+            "rtwlane01.sys",
+            "rtwlans.sys",
+            "rtwlanu.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WDI HangDiagnose",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "DiagnoseLevel:UInt32",
+            "BufferSize:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rtwlane.sys",
+              "function": "N6PciWdi_HangDiagnose",
+              "ea": "0x1400544a3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlane01.sys",
+              "function": "N6PciWdi_HangDiagnose",
+              "ea": "0x140052af5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlans.sys",
+              "function": "N6SdioWdi_HangDiagnose",
+              "ea": "0x140053349",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlanu.sys",
+              "function": "N6UsbWdi_HangDiagnose",
+              "ea": "0x14006bfbf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BufferSize",
+          "type": "UInt32",
+          "seenIn": [
+            "rtwlane.sys",
+            "rtwlane01.sys",
+            "rtwlans.sys",
+            "rtwlanu.sys"
+          ]
+        },
+        {
+          "fieldName": "DiagnoseLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "rtwlane.sys",
+            "rtwlane01.sys",
+            "rtwlans.sys",
+            "rtwlanu.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WDI Open Adapter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ndisStatus:HexInt32",
+            "InitFailureHistory:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rtwlans.sys",
+              "function": "N6SdioWdi_OpenAdapter",
+              "ea": "0x14005404e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InitFailureHistory",
+          "type": "HexInt32",
+          "seenIn": [
+            "rtwlans.sys"
+          ]
+        },
+        {
+          "fieldName": "ndisStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "rtwlans.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WDI Set Power",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "NewPowerState:UInt32",
+            "CurrentPowerState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rtwlane.sys",
+              "function": "N6PciWdi_Mgnt_SetPower",
+              "ea": "0x1400546b6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlane01.sys",
+              "function": "N6PciWdi_Mgnt_SetPower",
+              "ea": "0x140052d07",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlans.sys",
+              "function": "N6SdioWdi_Mgnt_SetPower",
+              "ea": "0x1400535a3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlanu.sys",
+              "function": "N6UsbWdi_Mgnt_SetPower",
+              "ea": "0x14006c20c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ndisStatus:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rtwlane.sys",
+              "function": "N6PciWdi_Mgnt_SetPower",
+              "ea": "0x140054e2d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlane01.sys",
+              "function": "N6PciWdi_Mgnt_SetPower",
+              "ea": "0x1400534ab",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlans.sys",
+              "function": "N6SdioWdi_Mgnt_SetPower",
+              "ea": "0x140053ee5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Status:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rtwlanu.sys",
+              "function": "N6UsbWdi_Mgnt_SetPower",
+              "ea": "0x14006c9bd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CurrentPowerState",
+          "type": "UInt32",
+          "seenIn": [
+            "rtwlane.sys",
+            "rtwlane01.sys",
+            "rtwlans.sys",
+            "rtwlanu.sys"
+          ]
+        },
+        {
+          "fieldName": "NewPowerState",
+          "type": "UInt32",
+          "seenIn": [
+            "rtwlane.sys",
+            "rtwlane01.sys",
+            "rtwlans.sys",
+            "rtwlanu.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "HexInt32",
+          "seenIn": [
+            "rtwlanu.sys"
+          ]
+        },
+        {
+          "fieldName": "ndisStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "rtwlane.sys",
+            "rtwlane01.sys",
+            "rtwlans.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WDI Start Operation",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "pAdapter:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rtwlane.sys",
+              "function": "N6PciWdiStartOperation",
+              "ea": "0x14005328b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlane01.sys",
+              "function": "N6PciWdiStartOperation",
+              "ea": "0x140051959",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlanu.sys",
+              "function": "N6UsbWdiStartOperation",
+              "ea": "0x14006b0a5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ndisStatus:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rtwlans.sys",
+              "function": "N6SdioWdi_StartOperation",
+              "ea": "0x140055c4c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ndisStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "rtwlans.sys"
+          ]
+        },
+        {
+          "fieldName": "pAdapter",
+          "type": "HexInt64",
+          "seenIn": [
+            "rtwlane.sys",
+            "rtwlane01.sys",
+            "rtwlanu.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WDI Stop Operation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "pAdapter:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rtwlane.sys",
+              "function": "N6PciWdiStopOperation",
+              "ea": "0x1400534a1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlane01.sys",
+              "function": "N6PciWdiStopOperation",
+              "ea": "0x140051b4f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlans.sys",
+              "function": "N6SdioWdi_StopOperation",
+              "ea": "0x140055d56",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlanu.sys",
+              "function": "N6UsbWdiStopOperation",
+              "ea": "0x14006b3bf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "pAdapter",
+          "type": "HexInt64",
+          "seenIn": [
+            "rtwlane.sys",
+            "rtwlane01.sys",
+            "rtwlans.sys",
+            "rtwlanu.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WDI TalTxRxDeinitialize",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "pAdapter:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rtwlane.sys",
+              "function": "N6PciWdiTalTxRxDeinitialize",
+              "ea": "0x140053660",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlane01.sys",
+              "function": "N6PciWdiTalTxRxDeinitialize",
+              "ea": "0x140051cf5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Adapter:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rtwlans.sys",
+              "function": "N6SdioWdi_TalTxRxDeinitialize",
+              "ea": "0x140055f9f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlanu.sys",
+              "function": "N6UsbWdiTalTxRxDeinitialize",
+              "ea": "0x14006b509",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Adapter",
+          "type": "HexInt64",
+          "seenIn": [
+            "rtwlans.sys",
+            "rtwlanu.sys"
+          ]
+        },
+        {
+          "fieldName": "pAdapter",
+          "type": "HexInt64",
+          "seenIn": [
+            "rtwlane.sys",
+            "rtwlane01.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WDI TalTxRxInitialize",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Adapter:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rtwlane.sys",
+              "function": "N6PciWdiTalTxRxInitialize",
+              "ea": "0x14005379c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlane01.sys",
+              "function": "N6PciWdiTalTxRxInitialize",
+              "ea": "0x140051e2c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rtwlanu.sys",
+              "function": "N6UsbWdiTalTxRxInitialize",
+              "ea": "0x14006b6ba",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Status:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rtwlans.sys",
+              "function": "N6SdioWdi_TalTxRxInitialize",
+              "ea": "0x1400564d4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Adapter",
+          "type": "HexInt64",
+          "seenIn": [
+            "rtwlane.sys",
+            "rtwlane01.sys",
+            "rtwlanu.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "HexInt32",
+          "seenIn": [
+            "rtwlans.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

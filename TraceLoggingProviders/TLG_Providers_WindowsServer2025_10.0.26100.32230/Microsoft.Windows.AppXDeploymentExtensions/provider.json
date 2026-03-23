@@ -1,0 +1,895 @@
+{
+  "providerName": "Microsoft.Windows.AppXDeploymentExtensions",
+  "guid": "{D9E5F8FB-06B1-4796-8FA8-ABB07F4FC662}",
+  "os": "WindowsServer2025",
+  "binaryCount": 4,
+  "binaries": [
+    "AppXDeploymentExtensions.desktop.dll",
+    "AppXDeploymentExtensions.onecore.dll",
+    "AppXDeploymentExtensions.server.dll",
+    "AppXDeploymentServer.dll"
+  ],
+  "uniqueEventCount": 17,
+  "events": [
+    {
+      "eventName": "ApplicationSecretsExtensionHandler::RemoveRequest",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "FeatureEnabled:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "AppXDeploymentExtensions.onecore.dll",
+              "function": "?RemoveRequest@ApplicationSecretsExtensionHandler@DEH@OSIntegration@@UEAAJPEBVDehRequest@3@@Z",
+              "ea": "0x18016bf8a",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FeatureEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ApplicationSecretsExtensionHandler::RemoveRequestForUser",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "FeatureEnabled:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "AppXDeploymentExtensions.onecore.dll",
+              "function": "?RemoveRequestForUser@ApplicationSecretsExtensionHandler@DEH@OSIntegration@@UEAAJPEAXPEBVDehRequest@3@@Z",
+              "ea": "0x18016c08a",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FeatureEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ApplyData::ExtensionHandler::EvaluateInstall",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "isSettingSyncEnabledCOM:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "AppXDeploymentExtensions.onecore.dll",
+              "function": "_lambda_871f12c5dbcb55fb88dcd2da74b9aa8c_::operator()",
+              "ea": "0x1800c0c75",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "isSettingSyncEnabledCOM",
+          "type": "Bool32",
+          "seenIn": [
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ApplyData::ExtensionHandler::EvaluateInstall: No op for Attached App.",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "AppXDeploymentExtensions.onecore.dll",
+              "function": "_lambda_871f12c5dbcb55fb88dcd2da74b9aa8c_::operator()",
+              "ea": "0x1800c0d03",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "Attempting repair of acls on registry tree if needed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "RootKeyPath:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "AppXDeploymentExtensions.onecore.dll",
+              "function": "?Execute@RepairAclsOnRegistryTree@Internal@DEH@OSIntegration@@QEAAJXZ",
+              "ea": "0x1801a0686",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "RootKeyPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Failure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "HResult:Int32(HResult)",
+            "File:AnsiString",
+            "LineNumber:UInt32",
+            "Message:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "AppXDeploymentExtensions.desktop.dll",
+              "function": "??$TraceFailureFromProvider@VAppXDEHTelemetry@@@@YAXAEBUFailureInfo@wil@@@Z",
+              "ea": "0x180049e5a",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "AppXDeploymentExtensions.desktop.dll",
+              "function": "??$TraceFailureFromProvider@VAppXDEHTelemetry@@@@YAXAEBUFailureInfo@wil@@@Z",
+              "ea": "0x180049e89",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "AppXDeploymentExtensions.onecore.dll",
+              "function": "??$TraceFailureFromProvider@VAppXDEHTelemetry@@@@YAXAEBUFailureInfo@wil@@@Z",
+              "ea": "0x180094f25",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "AppXDeploymentExtensions.onecore.dll",
+              "function": "??$TraceFailureFromProvider@VAppXDEHTelemetry@@@@YAXAEBUFailureInfo@wil@@@Z",
+              "ea": "0x180094f54",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "AppXDeploymentExtensions.server.dll",
+              "function": "??$TraceFailureFromProvider@VAppXDEHTelemetry@@@@YAXAEBUFailureInfo@wil@@@Z",
+              "ea": "0x1800107b0",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "File",
+          "type": "AnsiString",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll",
+            "AppXDeploymentExtensions.onecore.dll",
+            "AppXDeploymentExtensions.server.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll",
+            "AppXDeploymentExtensions.onecore.dll",
+            "AppXDeploymentExtensions.server.dll"
+          ]
+        },
+        {
+          "fieldName": "LineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll",
+            "AppXDeploymentExtensions.onecore.dll",
+            "AppXDeploymentExtensions.server.dll"
+          ]
+        },
+        {
+          "fieldName": "Message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll",
+            "AppXDeploymentExtensions.onecore.dll",
+            "AppXDeploymentExtensions.server.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FileTypeHelper::TelemetryForKeyPermissions",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PackageFullName:UnicodeString",
+            "Regkey:UnicodeString",
+            "supportedFileType:UnicodeString",
+            "KeyAccess:UInt32",
+            "Key Owner SID:SID",
+            "Key Owner Defaulted:Bool32",
+            "Key Group SID:SID",
+            "Key Group Defaulted:Bool32",
+            "Key DACL present:Bool32",
+            "Key DACL Defaulted:Bool32",
+            "Security Descriptor String:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AppXDeploymentExtensions.desktop.dll",
+              "function": "?TelemetryForKeyPermissions@FileTypeHelper@Internal@DEH@OSIntegration@@AEAAJAEAVRegistryKey@Common@@PEBG11@Z",
+              "ea": "0x1800a5699",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "AppXDeploymentExtensions.onecore.dll",
+              "function": "?TelemetryForKeyPermissions@FileTypeHelper@Internal@DEH@OSIntegration@@AEAAJAEAVRegistryKey@Common@@PEBG11@Z",
+              "ea": "0x18014addd",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Key DACL Defaulted",
+          "type": "Bool32",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll",
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "Key DACL present",
+          "type": "Bool32",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll",
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "Key Group Defaulted",
+          "type": "Bool32",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll",
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "Key Group SID",
+          "type": "SID",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll",
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "Key Owner Defaulted",
+          "type": "Bool32",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll",
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "Key Owner SID",
+          "type": "SID",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll",
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "KeyAccess",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll",
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll",
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll",
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "Regkey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll",
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "Security Descriptor String",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll",
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "supportedFileType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll",
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FirewallRulesHelper::TelemetryForFWOpenPolicyStore",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "firewallError:UInt32",
+            "scmServiceError:UInt32",
+            "bfeServiceError:UInt32",
+            "firewallServiceError:UInt32",
+            "bfeCurrentState:UInt32",
+            "bfeWin32ExitCode:UInt32",
+            "bfeServiceSpecificExitCode:UInt32",
+            "firewallCurrentState:UInt32",
+            "firewallWin32ExitCode:UInt32",
+            "firewallServiceSpecificExitCode:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AppXDeploymentExtensions.desktop.dll",
+              "function": "?OpenFirewallStore@FirewallRulesHelper@Internal@DEH@OSIntegration@@CAJPEAPEAX@Z",
+              "ea": "0x1800a7486",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll"
+          ]
+        },
+        {
+          "fieldName": "bfeCurrentState",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll"
+          ]
+        },
+        {
+          "fieldName": "bfeServiceError",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll"
+          ]
+        },
+        {
+          "fieldName": "bfeServiceSpecificExitCode",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll"
+          ]
+        },
+        {
+          "fieldName": "bfeWin32ExitCode",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll"
+          ]
+        },
+        {
+          "fieldName": "firewallCurrentState",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll"
+          ]
+        },
+        {
+          "fieldName": "firewallError",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll"
+          ]
+        },
+        {
+          "fieldName": "firewallServiceError",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll"
+          ]
+        },
+        {
+          "fieldName": "firewallServiceSpecificExitCode",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll"
+          ]
+        },
+        {
+          "fieldName": "firewallWin32ExitCode",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll"
+          ]
+        },
+        {
+          "fieldName": "scmServiceError",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Migrated successfully setting.",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "source:UnicodeString",
+            "value:UInt32",
+            "target:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "AppXDeploymentExtensions.desktop.dll",
+              "function": "?EnsureMigrated@Migrator@SearchSettingsMigration@DEH@OSIntegration@@CAJPEBGPEAUIPropertySet@Collections@Foundation@Windows@@0_NPEA_N@Z",
+              "ea": "0x1800aecf9",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "source",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll"
+          ]
+        },
+        {
+          "fieldName": "target",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll"
+          ]
+        },
+        {
+          "fieldName": "value",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PackagedCom_GetMaxInstallOrder",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "MaxInstallOrder:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "AppXDeploymentExtensions.desktop.dll",
+              "function": "?GetMaxInstallOrder@PackagedComCatalogCollectorForUserOrSystemRegister@DEH@OSIntegration@@AEBA?AV?$optional@I@std@@PEAUIPackagedComCatalogContext@@@Z",
+              "ea": "0x18014b7b1",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "AppXDeploymentExtensions.onecore.dll",
+              "function": "?GetMaxInstallOrder@PackagedComCatalogCollectorForUserOrSystemRegister@DEH@OSIntegration@@AEBA?AV?$optional@I@std@@PEAUIPackagedComCatalogContext@@@Z",
+              "ea": "0x1801d0bb1",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "AppXDeploymentServer.dll",
+              "function": "sub_1803D6E70",
+              "ea": "0x1803d6f02",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "MaxInstallOrder",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll",
+            "AppXDeploymentExtensions.onecore.dll",
+            "AppXDeploymentServer.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PackagedCom_SetIncomingPackageInstallOrder",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "IncomingPackage:UnicodeString",
+            "IncomingPackageInstallOrder:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "AppXDeploymentExtensions.desktop.dll",
+              "function": "?SetIncomingPackageInstallOrder@PackagedComCatalogCollectorForUserOrSystemRegister@DEH@OSIntegration@@AEAAXPEAUIPackagedComCatalogContext@@PEAUHSTRING__@@I@Z",
+              "ea": "0x18015a595",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "AppXDeploymentExtensions.onecore.dll",
+              "function": "?SetIncomingPackageInstallOrder@PackagedComCatalogCollectorForUserOrSystemRegister@DEH@OSIntegration@@AEAAXPEAUIPackagedComCatalogContext@@PEAUHSTRING__@@I@Z",
+              "ea": "0x1801dfdd5",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "AppXDeploymentServer.dll",
+              "function": "sub_1803E4950",
+              "ea": "0x1803e4998",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IncomingPackage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll",
+            "AppXDeploymentExtensions.onecore.dll",
+            "AppXDeploymentServer.dll"
+          ]
+        },
+        {
+          "fieldName": "IncomingPackageInstallOrder",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll",
+            "AppXDeploymentExtensions.onecore.dll",
+            "AppXDeploymentServer.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PackagedCom_SetMaxInstallOrder",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "MaxInstallOrder:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "AppXDeploymentExtensions.desktop.dll",
+              "function": "?SetMaxInstallOrder@PackagedComCatalogCollectorForUserOrSystemRegister@DEH@OSIntegration@@AEAAXPEAUIPackagedComCatalogContext@@I@Z",
+              "ea": "0x18015b5ce",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "AppXDeploymentExtensions.onecore.dll",
+              "function": "?SetMaxInstallOrder@PackagedComCatalogCollectorForUserOrSystemRegister@DEH@OSIntegration@@AEAAXPEAUIPackagedComCatalogContext@@I@Z",
+              "ea": "0x1801e0e0e",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "AppXDeploymentServer.dll",
+              "function": "sub_1803E599C",
+              "ea": "0x1803e59de",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "MaxInstallOrder",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll",
+            "AppXDeploymentExtensions.onecore.dll",
+            "AppXDeploymentServer.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PackagedServices_CorruptedServiceRegistration",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "AppXDeploymentExtensions.desktop.dll",
+              "function": "?CheckRegistrationState@PackagedServiceExtensionHelper@Internal@DEH@OSIntegration@@AEAA?AV?$tuple@W4ServiceRegistrationState@PackagedServiceExtensionHelper@Internal@DEH@OSIntegration@@V?$unique_any_t@V?$unique_storage@U?$resource_policy@PEAUSC_HANDLE__@@P6AHPEAU1@@Z$1?CloseServiceHandle@@YAH0@ZU?$integral_constant@_K$0A@@wistd@@PEAU1@PEAU1@$0A@$$T@details@wil@@@details@wil@@@wil@@@std@@PEAUSC_HANDLE__@@@Z",
+              "ea": "0x1800bc429",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "Registry key acls require repair -- fixing acls",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "KeyPath:UnicodeString",
+            "ExistingSddl:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "AppXDeploymentExtensions.onecore.dll",
+              "function": "?RepairAclsOnKeyIfNecessary@RepairAclsOnRegistryTree@Internal@DEH@OSIntegration@@AEAAJPEAVRegistryKey@Common@@PEBG_N@Z",
+              "ea": "0x1801a14e4",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ExistingSddl",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "KeyPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Source setting does not exist!",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "source:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "AppXDeploymentExtensions.desktop.dll",
+              "function": "?EnsureMigrated@Migrator@SearchSettingsMigration@DEH@OSIntegration@@CAJPEBGPEAUIPropertySet@Collections@Foundation@Windows@@0_NPEA_N@Z",
+              "ea": "0x1800aed34",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "source",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AppXDeploymentExtensions.desktop.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Successful ResetApplicationSecrets",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PackageFamilyName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "AppXDeploymentExtensions.onecore.dll",
+              "function": "?ResetApplicationSecrets@ApplicationSecretsExtensionHandler@DEH@OSIntegration@@AEAAJPEAXPEBVDehRequest@3@@Z",
+              "ea": "0x18016c2fa",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PackageFamilyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TryNetworkIsolationCreateAppContainerAndLogIfFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "firewallError:Int32",
+            "scmServiceError:UInt32",
+            "bfeServiceError:UInt32",
+            "firewallServiceError:UInt32",
+            "bfeCurrentState:UInt32",
+            "bfeWin32ExitCode:UInt32",
+            "bfeServiceSpecificExitCode:UInt32",
+            "firewallCurrentState:UInt32",
+            "firewallWin32ExitCode:UInt32",
+            "firewallServiceSpecificExitCode:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "AppXDeploymentExtensions.onecore.dll",
+              "function": "?LogFirewallServiceState@DEH@OSIntegration@@YAXJ@Z",
+              "ea": "0x180169453",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "bfeCurrentState",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "bfeServiceError",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "bfeServiceSpecificExitCode",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "bfeWin32ExitCode",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "firewallCurrentState",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "firewallError",
+          "type": "Int32",
+          "seenIn": [
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "firewallServiceError",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "firewallServiceSpecificExitCode",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "firewallWin32ExitCode",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "scmServiceError",
+          "type": "UInt32",
+          "seenIn": [
+            "AppXDeploymentExtensions.onecore.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

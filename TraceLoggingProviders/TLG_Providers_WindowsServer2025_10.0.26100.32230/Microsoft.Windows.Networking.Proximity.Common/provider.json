@@ -1,0 +1,138 @@
+{
+  "providerName": "Microsoft.Windows.Networking.Proximity.Common",
+  "guid": "{073C75A0-D07D-4203-9501-A91F2A239D55}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "ProximityCommon.dll"
+  ],
+  "uniqueEventCount": 4,
+  "events": [
+    {
+      "eventName": "EnumeratingNXPDriver",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "DriverFriendlyName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "ProximityCommon.dll",
+              "function": "?DevQueryAddProvider@CProviderAggregator@Nfp@@AEAAJPEBU_DEV_OBJECT@@@Z",
+              "ea": "0x180005501",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DriverFriendlyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ProximityCommon.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MessageReceived",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "messageType:UnicodeString",
+            "payloadSize:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ProximityCommon.dll",
+              "function": "?s_GetNextSubscribedMessageComplete@CSubscriptionHandle@@SAXPEAU_TP_CALLBACK_INSTANCE@@PEAX1K_KPEAU_TP_IO@@@Z",
+              "ea": "0x180002776",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "messageType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ProximityCommon.dll"
+          ]
+        },
+        {
+          "fieldName": "payloadSize",
+          "type": "UInt32",
+          "seenIn": [
+            "ProximityCommon.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MessageTransmitted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ProximityCommon.dll",
+              "function": "?s_GetNextMessageTransmittedComplete@CPublicationHandle@@SAXPEAU_TP_CALLBACK_INSTANCE@@PEAX1K_KPEAU_TP_IO@@@Z",
+              "ea": "0x180014636",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "PublishMessage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "messageType:UnicodeString",
+            "payloadSize:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ProximityCommon.dll",
+              "function": "?Create@CPublicationHandle@@SAJPEAUIDeviceBroker@@PEAXPEAUIPublication@Nfp@@_NPEAUIProvider@4@PEAPEAV1@@Z",
+              "ea": "0x180012021",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "messageType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ProximityCommon.dll"
+          ]
+        },
+        {
+          "fieldName": "payloadSize",
+          "type": "UInt32",
+          "seenIn": [
+            "ProximityCommon.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

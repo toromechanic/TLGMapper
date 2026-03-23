@@ -1,0 +1,242 @@
+{
+  "providerName": "Microsoft.Windows.Security.BitLocker.Bdesvc",
+  "guid": "{CDA96474-9CD3-402F-96DA-B97ED98637A5}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "bdesvc.dll"
+  ],
+  "uniqueEventCount": 4,
+  "events": [
+    {
+      "eventName": "Resurrected_Recovery",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "hr:Int32(HResult)",
+            "RecoveryFlags:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?FireNVRAMRecoveryTelemetry@@YAJK@Z",
+              "ea": "0x18004395a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "RecoveryFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinRERecovery",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "WinREEventId:UInt16",
+            "FveID:GUID",
+            "BcdSettingId:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvcProcessWinREEvent@@YAXPEAU_EVENT_RECORD@@@Z",
+              "ea": "0x18004292f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvcProcessWinREEvent@@YAXPEAU_EVENT_RECORD@@@Z",
+              "ea": "0x180042acf",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvcProcessWinREEvent@@YAXPEAU_EVENT_RECORD@@@Z",
+              "ea": "0x18004311c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BcdSettingId",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "FveID",
+          "type": "GUID",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "WinREEventId",
+          "type": "UInt16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinRERecoveryError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ErrorCode:Int32",
+            "WinREEventId:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvcProcessWinREEvent@@YAXPEAU_EVENT_RECORD@@@Z",
+              "ea": "0x180042d00",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "WinREEventId",
+          "type": "UInt16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "bootmgrRecovery",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "bootmgrEventId:UInt16",
+            "ErrorCode:UInt32",
+            "Flags:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?ProcessBootErrorLog@@YAIPEAX@Z",
+              "ea": "0x18002dee1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bdesvc.dll",
+              "function": "?ProcessBootErrorLog@@YAIPEAX@Z",
+              "ea": "0x18002df4d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bdesvc.dll",
+              "function": "?ProcessBootErrorLog@@YAIPEAX@Z",
+              "ea": "0x18002e26b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bdesvc.dll",
+              "function": "?ProcessBootErrorLog@@YAIPEAX@Z",
+              "ea": "0x18002e2d7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "UInt32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "bootmgrEventId",
+          "type": "UInt16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

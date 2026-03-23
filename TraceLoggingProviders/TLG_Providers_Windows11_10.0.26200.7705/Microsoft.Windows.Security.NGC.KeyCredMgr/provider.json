@@ -1,0 +1,48 @@
+{
+  "providerName": "Microsoft.Windows.Security.NGC.KeyCredMgr",
+  "guid": "{34646397-1635-5D14-4D2C-2FEBDCCCF5E9}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "KeyCredMgr.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "GetTokenInformation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "KeyCredMgr.dll",
+              "function": "NgcUtils::GetUserSidFromToken",
+              "ea": "0x18000c36e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "KeyCredMgr.dll",
+              "function": "NgcUtils::GetUserSidFromToken",
+              "ea": "0x18000c451",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "UInt32",
+          "seenIn": [
+            "KeyCredMgr.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

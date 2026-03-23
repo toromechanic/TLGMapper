@@ -1,0 +1,272 @@
+{
+  "providerName": "Microsoft.Windows.MediaFoundation.MPEG4Source",
+  "guid": "{85E2DA35-D4FE-5A85-0874-ED763688FD59}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "mfmp4srcsnk.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "MP4EditListWrite",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Edit List playback rate numerator:Int32",
+            "Edit List playback rate denominator:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "mfmp4srcsnk.dll",
+              "function": "?SetEditListPlaybackRate@CMPEG4MediaSink@@AEAAXXZ",
+              "ea": "0x180181ad8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Edit List playback rate denominator",
+          "type": "Int32",
+          "seenIn": [
+            "mfmp4srcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "Edit List playback rate numerator",
+          "type": "Int32",
+          "seenIn": [
+            "mfmp4srcsnk.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MP4FailedParse",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "MFMediaTelemetrySessionID:GUID",
+            "MFMediaTelemetrySessionInstance:UInt32",
+            "Function:UnicodeString",
+            "hr:Int32(HResult)",
+            "bMovieModeIsHEIF:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "mfmp4srcsnk.dll",
+              "function": "?CreateMovieFromBuffer@CQTMovie@@SAJPEAUIMFMediaBuffer@@KP6AJPEAVCQTDataBuffer@@W4QTMovieModeFlags@@PEAUIMFTelemetrySession@@PEAPEAUIQTAtom@@@Z234@Z",
+              "ea": "0x180016e2f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "MFMediaTelemetrySessionID:GUID",
+            "MFMediaTelemetrySessionInstance:UInt32",
+            "Function:UnicodeString",
+            "hr:Int32(HResult)",
+            "ErrorMessage:UnicodeString",
+            "NonCriticalErrors:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "mfmp4srcsnk.dll",
+              "function": "?CreateQTMovie@CQTMovie@@SAJPEAVCQTDataBuffer@@W4QTMovieModeFlags@@PEAUIMFTelemetrySession@@PEAPEAUIQTAtom@@@Z",
+              "ea": "0x18004a267",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mfmp4srcsnk.dll",
+              "function": "?ParseFragment@CQTMovie@@UEAAJPEAUIMFMediaBuffer@@_K1PEA_KPEAU_MF_MP4_TRACK_FRAGMENT_INFO@@@Z",
+              "ea": "0x18009a504",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "MFMediaTelemetrySessionID:GUID",
+            "MFMediaTelemetrySessionInstance:UInt32",
+            "Function:UnicodeString",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "mfmp4srcsnk.dll",
+              "function": "?ParseHeader@CMPEG4MediaSourcePlugin@@UEAAJ_KPEAUIMFMediaBuffer@@0PEA_KPEAH@Z",
+              "ea": "0x180020c95",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "mfmp4srcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "Function",
+          "type": "UnicodeString",
+          "seenIn": [
+            "mfmp4srcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "MFMediaTelemetrySessionID",
+          "type": "GUID",
+          "seenIn": [
+            "mfmp4srcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "MFMediaTelemetrySessionInstance",
+          "type": "UInt32",
+          "seenIn": [
+            "mfmp4srcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "NonCriticalErrors",
+          "type": "UnicodeString",
+          "seenIn": [
+            "mfmp4srcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "bMovieModeIsHEIF",
+          "type": "Bool32",
+          "seenIn": [
+            "mfmp4srcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "mfmp4srcsnk.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MP4Information",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "MFMediaTelemetrySessionID:GUID",
+            "MFMediaTelemetrySessionInstance:UInt32",
+            "ContentDurationSec:UInt32",
+            "TrackInfo:UnicodeString",
+            "UnsupportedMP4Boxes:UnicodeString",
+            "bFragment:Bool32",
+            "bProtected:Bool32",
+            "bGameDVR:Bool32",
+            "bMovieModeIsHEIF:Bool32",
+            "NonCriticalErrors:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "mfmp4srcsnk.dll",
+              "function": "?LogInstance@CQTMovie@@UEAAXW4_MF_TELEMETRY_SESSION_LOG_REASON@@@Z",
+              "ea": "0x1800cf88e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ContentDurationSec",
+          "type": "UInt32",
+          "seenIn": [
+            "mfmp4srcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "MFMediaTelemetrySessionID",
+          "type": "GUID",
+          "seenIn": [
+            "mfmp4srcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "MFMediaTelemetrySessionInstance",
+          "type": "UInt32",
+          "seenIn": [
+            "mfmp4srcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "NonCriticalErrors",
+          "type": "UnicodeString",
+          "seenIn": [
+            "mfmp4srcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "TrackInfo",
+          "type": "UnicodeString",
+          "seenIn": [
+            "mfmp4srcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "UnsupportedMP4Boxes",
+          "type": "UnicodeString",
+          "seenIn": [
+            "mfmp4srcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "bFragment",
+          "type": "Bool32",
+          "seenIn": [
+            "mfmp4srcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "bGameDVR",
+          "type": "Bool32",
+          "seenIn": [
+            "mfmp4srcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "bMovieModeIsHEIF",
+          "type": "Bool32",
+          "seenIn": [
+            "mfmp4srcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "bProtected",
+          "type": "Bool32",
+          "seenIn": [
+            "mfmp4srcsnk.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

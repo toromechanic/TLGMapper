@@ -1,0 +1,66 @@
+{
+  "providerName": "Microsoft.Windows.Security.LUA.UACSettingsPage",
+  "guid": "{85FC9B98-0694-5369-8C6F-EC38D87F5514}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "UserAccountControlSettings.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "PageExit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "UACStateAtInit:UInt32",
+            "UACSliderStateAtExit:UInt32",
+            "ExitEventType:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "UserAccountControlSettings.dll",
+              "function": "?PageExit_@USPTelemetry@@QEAAXKKK@Z",
+              "ea": "0x180009ad1",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ExitEventType",
+          "type": "UInt32",
+          "seenIn": [
+            "UserAccountControlSettings.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "UserAccountControlSettings.dll"
+          ]
+        },
+        {
+          "fieldName": "UACSliderStateAtExit",
+          "type": "UInt32",
+          "seenIn": [
+            "UserAccountControlSettings.dll"
+          ]
+        },
+        {
+          "fieldName": "UACStateAtInit",
+          "type": "UInt32",
+          "seenIn": [
+            "UserAccountControlSettings.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

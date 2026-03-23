@@ -1,0 +1,72 @@
+{
+  "providerName": "Microsoft.Windows.Networking.RAS.RASServer.AgileVPN",
+  "guid": "{684D8F73-F09D-4163-8797-BC32201C94C1}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "vpnike.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "AuthTypeUsed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "authType:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "vpnike.dll",
+              "function": "?CreateTunnel@VPNIKEServerConnection@@UEAAKAEAU_IKETUNNEL_PARAMETERS_@@PEAU_VPN_DPD_CONFIG_@@@Z",
+              "ea": "0x18002322f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "authType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "vpnike.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IsMobikeSwitched",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "isMobikeUsedToSwitchConnetion:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "vpnike.dll",
+              "function": "?UpdateTunnel@VPNIKEServerConnection@@UEAAKAEAU_IKETUNNEL_PARAMETERS_@@@Z",
+              "ea": "0x180027c9f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "isMobikeUsedToSwitchConnetion",
+          "type": "Bool32",
+          "seenIn": [
+            "vpnike.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

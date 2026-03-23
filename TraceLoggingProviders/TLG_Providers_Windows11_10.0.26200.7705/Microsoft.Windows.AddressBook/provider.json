@@ -1,0 +1,216 @@
+{
+  "providerName": "Microsoft.Windows.AddressBook",
+  "guid": "{6C9FDB6B-76F8-49DB-A55B-C6CF12878BC5}",
+  "os": "Windows 11",
+  "binaryCount": 3,
+  "binaries": [
+    "wab.exe",
+    "wab32.dll",
+    "wabmig.exe"
+  ],
+  "uniqueEventCount": 6,
+  "events": [
+    {
+      "eventName": "APIEntry",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "\"API Entered\":AnsiString",
+            "ulFlag:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "wab.exe",
+              "function": "WinMain",
+              "ea": "0x140002437",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "\"API Entered\"",
+          "type": "AnsiString",
+          "seenIn": [
+            "wab.exe"
+          ]
+        },
+        {
+          "fieldName": "ulFlag",
+          "type": "UInt32",
+          "seenIn": [
+            "wab.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayContactsFolder",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "\"Opened Contacts folder in File Explorer\":AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "wab32.dll",
+              "function": "?DisplayContactsFolder@@YAJXZ",
+              "ea": "0x180026417",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "\"Opened Contacts folder in File Explorer\"",
+          "type": "AnsiString",
+          "seenIn": [
+            "wab32.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ShellUICommand_OnNewContactW",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "\"New contact created from Shell UI\":AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "wab32.dll",
+              "function": "?ShellUICommand_OnNewContactW@@YAXPEAUHWND__@@PEAUHINSTANCE__@@PEBGH@Z",
+              "ea": "0x180042ae8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "\"New contact created from Shell UI\"",
+          "type": "AnsiString",
+          "seenIn": [
+            "wab32.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WABMIG_FileType",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Type:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "wabmig.exe",
+              "function": "ImportDialogProc",
+              "ea": "0x14000291f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wabmig.exe",
+              "function": "ImportDialogProc",
+              "ea": "0x140002950",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "wabmig.exe"
+          ]
+        },
+        {
+          "fieldName": "Type",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wabmig.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WABOpen",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "\"WABOpen API called\":AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "wab32.dll",
+              "function": "WABOpen",
+              "ea": "0x18007c823",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "\"WABOpen API called\"",
+          "type": "AnsiString",
+          "seenIn": [
+            "wab32.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WABOpenEx",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "\"WABOpenEx API called\":AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "wab32.dll",
+              "function": "WABOpenEx",
+              "ea": "0x18007c979",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "\"WABOpenEx API called\"",
+          "type": "AnsiString",
+          "seenIn": [
+            "wab32.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

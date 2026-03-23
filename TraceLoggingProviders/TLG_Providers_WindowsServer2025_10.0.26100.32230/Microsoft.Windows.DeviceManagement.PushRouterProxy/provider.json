@@ -1,0 +1,110 @@
+{
+  "providerName": "Microsoft.Windows.DeviceManagement.PushRouterProxy",
+  "guid": "{83AFAF72-DF00-4584-8F4C-ADED166F72B1}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "dmpushproxy.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "MDM PushRouter: Pushrouter failed to start because the dmwappushservice service is disabled.",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "dmpushproxy.dll",
+              "function": "?GetPushMessage@@YAJPEAXPEAKPEAPEAGPEAPEAE122PEAW4PushRouterSubmitOrigin@@13@Z",
+              "ea": "0x180002a4f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "dmpushproxy.dll",
+              "function": "PushRouter_Close",
+              "ea": "0x18000335d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "dmpushproxy.dll",
+              "function": "PushRouter_Open",
+              "ea": "0x18000372f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "dmpushproxy.dll",
+              "function": "PushRouter_SubmitPush",
+              "ea": "0x1800038a1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "PushRouter_GetPushMessageDone",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "GetPushMessageDoneHresult:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dmpushproxy.dll",
+              "function": "?GetPushMessage@@YAJPEAXPEAKPEAPEAGPEAPEAE122PEAW4PushRouterSubmitOrigin@@13@Z",
+              "ea": "0x180002b78",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "GetPushMessageDoneHresult",
+          "type": "HexInt32",
+          "seenIn": [
+            "dmpushproxy.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PushRouter_SubmitPush",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "HRESULT:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dmpushproxy.dll",
+              "function": "PushRouter_SubmitPush",
+              "ea": "0x180003960",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HRESULT",
+          "type": "HexInt32",
+          "seenIn": [
+            "dmpushproxy.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

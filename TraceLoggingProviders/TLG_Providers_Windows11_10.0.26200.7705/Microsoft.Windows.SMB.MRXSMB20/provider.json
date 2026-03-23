@@ -1,0 +1,405 @@
+{
+  "providerName": "Microsoft.Windows.SMB.MRXSMB20",
+  "guid": "{52134415-75C1-4DF9-9118-8B2BD00CC6E2}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "mrxsmb20.sys"
+  ],
+  "uniqueEventCount": 6,
+  "events": [
+    {
+      "eventName": "BlockNTLM",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "BlockNTLMFromNetUseSetting:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "mrxsmb20.sys",
+              "function": "HandleNTLMBlocking",
+              "ea": "0x14002ee9d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "BlockNTLMFromGlobalSetting:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "mrxsmb20.sys",
+              "function": "HandleNTLMBlocking",
+              "ea": "0x14002eec9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BlockNTLMFromGlobalSetting",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "BlockNTLMFromNetUseSetting",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ConnectionProperties",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "Dialect:UInt16",
+            "Capabilities:UInt32",
+            "SigningRequired:UInt8(Boolean)",
+            "PrimaryConnection:UInt8(Boolean)",
+            "TransportType:UInt16",
+            "SigningAlgorithmId:UInt16",
+            "ServerSecurityMode:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "mrxsmb20.sys",
+              "function": "Smb2ProcessNegotiateResponse",
+              "ea": "0x1400274c8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Capabilities",
+          "type": "UInt32",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "Dialect",
+          "type": "UInt16",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "PrimaryConnection",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "ServerSecurityMode",
+          "type": "UInt16",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "SigningAlgorithmId",
+          "type": "UInt16",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "SigningRequired",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "TransportType",
+          "type": "UInt16",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SMBLkmdTelInsertTriageDataBlockFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "InsertTriageDataBlockStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "mrxsmb20.sys",
+              "function": "Smb2LkmdTelInsertTriageDataBlockWrapper",
+              "ea": "0x140036594",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InsertTriageDataBlockStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SessionKeyLength",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Count:Int64",
+            "SessionKeyLength:UInt32",
+            "CipherId:UInt32",
+            "MinimumSessionKeyLength:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "mrxsmb20.sys",
+              "function": "ValidateSessionSetupSecurityBlob",
+              "ea": "0x14001fb66",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CipherId",
+          "type": "UInt32",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "MinimumSessionKeyLength",
+          "type": "UInt32",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionKeyLength",
+          "type": "UInt32",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SessionProperties",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "SessionFlags:UInt32",
+            "SigningRequired:UInt8(Boolean)",
+            "IsMutualAuth:UInt8(Boolean)",
+            "IsNTLM:UInt8(Boolean)",
+            "Is3PartSPN:UInt8(Boolean)",
+            "PrimaryConnection:UInt8(Boolean)",
+            "AuthProtocolId:UInt32",
+            "Dialect:UInt16",
+            "InstanceId:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "mrxsmb20.sys",
+              "function": "Smb2SessionSetup_Finalize",
+              "ea": "0x140056709",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AuthProtocolId",
+          "type": "UInt32",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "Dialect",
+          "type": "UInt16",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "InstanceId",
+          "type": "UInt8",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "Is3PartSPN",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "IsMutualAuth",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "IsNTLM",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "PrimaryConnection",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "SigningRequired",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ShareRootFileIdZero",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ShareRootFileId:UInt8",
+            "AllowZeroFileIdForShareRoot:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "mrxsmb20.sys",
+              "function": "Smb2ProcessOnDiskIdEcp",
+              "ea": "0x140009989",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mrxsmb20.sys",
+              "function": "Smb2ProcessOnDiskIdEcp",
+              "ea": "0x1400099b9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AllowZeroFileIdForShareRoot",
+          "type": "UInt8",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        },
+        {
+          "fieldName": "ShareRootFileId",
+          "type": "UInt8",
+          "seenIn": [
+            "mrxsmb20.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

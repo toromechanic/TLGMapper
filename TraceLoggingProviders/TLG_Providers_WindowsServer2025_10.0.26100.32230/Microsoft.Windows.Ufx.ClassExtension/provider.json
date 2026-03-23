@@ -1,0 +1,142 @@
+{
+  "providerName": "Microsoft.Windows.Ufx.ClassExtension",
+  "guid": "{DADC175F-4A26-5B2B-ED3F-4F6822AC4D8F}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "ufx01000.sys"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "Disconnect",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ufx01000.sys",
+              "function": "FF_DeviceStateChange",
+              "ea": "0x1c004e183",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ufx01000.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EnumerationComplete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ConfigurationNumber:UInt32",
+            "DeviceSpeed:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ufx01000.sys",
+              "function": "TraceLoggingEnumerationComplete",
+              "ea": "0x1c001d882",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConfigurationNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "ufx01000.sys"
+          ]
+        },
+        {
+          "fieldName": "DeviceSpeed",
+          "type": "UInt32",
+          "seenIn": [
+            "ufx01000.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ufx01000.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PortChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PowerSourceAvailable:UInt32",
+            "PortType:UInt32",
+            "MaximumCurrent:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ufx01000.sys",
+              "function": "FF_DevicePortChange",
+              "ea": "0x1c004d9d2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "MaximumCurrent",
+          "type": "UInt32",
+          "seenIn": [
+            "ufx01000.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ufx01000.sys"
+          ]
+        },
+        {
+          "fieldName": "PortType",
+          "type": "UInt32",
+          "seenIn": [
+            "ufx01000.sys"
+          ]
+        },
+        {
+          "fieldName": "PowerSourceAvailable",
+          "type": "UInt32",
+          "seenIn": [
+            "ufx01000.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

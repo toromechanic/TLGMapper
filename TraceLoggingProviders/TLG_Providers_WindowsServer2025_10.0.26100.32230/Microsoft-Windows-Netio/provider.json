@@ -1,0 +1,101 @@
+{
+  "providerName": "Microsoft-Windows-Netio",
+  "guid": "{EB004A05-9B1A-11D4-9123-0050047759BC}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "netio.sys"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "NmrLoadProviderOnDemand",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "NpiId:GUID",
+            "RegKeyFullName:UnicodeString",
+            "Status:UInt32(NTStatus)",
+            "FeatureIdValue:UInt32",
+            "QueriedFeatureId:UInt32",
+            "QueriedEnabledState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "netio.sys",
+              "function": "NmrpFindAndLoadProviderOnDemand",
+              "ea": "0x14006173f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "NpiId:GUID",
+            "RegKeyFullName:UnicodeString",
+            "Status:UInt32(NTStatus)",
+            "FeatureIdValue:UInt32",
+            "QueriedEnabledState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "netio.sys",
+              "function": "NmrpFindConfigurationAndLoadProviderOnDemand",
+              "ea": "0x140061aad",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FeatureIdValue",
+          "type": "UInt32",
+          "seenIn": [
+            "netio.sys"
+          ]
+        },
+        {
+          "fieldName": "NpiId",
+          "type": "GUID",
+          "seenIn": [
+            "netio.sys"
+          ]
+        },
+        {
+          "fieldName": "QueriedEnabledState",
+          "type": "UInt32",
+          "seenIn": [
+            "netio.sys"
+          ]
+        },
+        {
+          "fieldName": "QueriedFeatureId",
+          "type": "UInt32",
+          "seenIn": [
+            "netio.sys"
+          ]
+        },
+        {
+          "fieldName": "RegKeyFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "netio.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "netio.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

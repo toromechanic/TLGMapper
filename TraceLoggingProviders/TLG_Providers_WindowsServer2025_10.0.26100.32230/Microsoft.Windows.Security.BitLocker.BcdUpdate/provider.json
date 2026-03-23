@@ -1,0 +1,50 @@
+{
+  "providerName": "Microsoft.Windows.Security.BitLocker.BcdUpdate",
+  "guid": "{497ABD62-6FDF-46C9-A972-9D68CB71C335}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "BitLockerCsp.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "BitLocker.BCD.FveOpenFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hrFveOpen:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "BitLockerCsp.dll",
+              "function": "?GetEncryptableVolumeNamesForBcdDevices@FveBcdUtil@@SAJPEAPEAVPathBuffer@@PEAK@Z",
+              "ea": "0x18002cb2c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "BitLockerCsp.dll"
+          ]
+        },
+        {
+          "fieldName": "hrFveOpen",
+          "type": "Int32",
+          "seenIn": [
+            "BitLockerCsp.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

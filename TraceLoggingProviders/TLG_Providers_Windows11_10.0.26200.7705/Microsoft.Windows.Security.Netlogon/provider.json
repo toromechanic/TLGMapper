@@ -1,0 +1,248 @@
+{
+  "providerName": "Microsoft.Windows.Security.Netlogon",
+  "guid": "{487060C7-9C26-45A6-9FEF-AA03F02A9A1D}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "netlogon.dll"
+  ],
+  "uniqueEventCount": 4,
+  "events": [
+    {
+      "eventName": "NetrServerAuthenticateKerberos",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:Int32",
+            "SecureChannelType:UInt32",
+            "isServer:UInt8(Boolean)",
+            "UseKerberosForSecureChannels:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "netlogon.dll",
+              "function": "NetrServerAuthenticateKerberos",
+              "ea": "0x1800586ba",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "netlogon.dll"
+          ]
+        },
+        {
+          "fieldName": "SecureChannelType",
+          "type": "UInt32",
+          "seenIn": [
+            "netlogon.dll"
+          ]
+        },
+        {
+          "fieldName": "UseKerberosForSecureChannels",
+          "type": "UInt32",
+          "seenIn": [
+            "netlogon.dll"
+          ]
+        },
+        {
+          "fieldName": "isServer",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "netlogon.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "netlogon.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NlSessionSetupEx",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:Int32",
+            "protocol:UInt32",
+            "isDueToDowngrade:UInt8(Boolean)",
+            "ClientSession->CsSecureChannelType:UInt32",
+            "isServer:UInt8(Boolean)",
+            "UseKerberosForSecureChannels:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "netlogon.dll",
+              "function": "NlSessionSetupEx",
+              "ea": "0x18004089a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "netlogon.dll",
+              "function": "NlSessionSetupEx",
+              "ea": "0x1800409c7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "netlogon.dll",
+              "function": "NlSessionSetupEx",
+              "ea": "0x180040a48",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClientSession->CsSecureChannelType",
+          "type": "UInt32",
+          "seenIn": [
+            "netlogon.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "netlogon.dll"
+          ]
+        },
+        {
+          "fieldName": "UseKerberosForSecureChannels",
+          "type": "UInt32",
+          "seenIn": [
+            "netlogon.dll"
+          ]
+        },
+        {
+          "fieldName": "isDueToDowngrade",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "netlogon.dll"
+          ]
+        },
+        {
+          "fieldName": "isServer",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "netlogon.dll"
+          ]
+        },
+        {
+          "fieldName": "protocol",
+          "type": "UInt32",
+          "seenIn": [
+            "netlogon.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "netlogon.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RpcBacklogLimitRegistration",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "backlogLimit:UInt32",
+            "success:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "netlogon.dll",
+              "function": "NlWriteRpcBacklogLimitEvent",
+              "ea": "0x1800705d2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "netlogon.dll"
+          ]
+        },
+        {
+          "fieldName": "backlogLimit",
+          "type": "UInt32",
+          "seenIn": [
+            "netlogon.dll"
+          ]
+        },
+        {
+          "fieldName": "success",
+          "type": "Bool32",
+          "seenIn": [
+            "netlogon.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StaticPortUsage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "configured:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "netlogon.dll",
+              "function": "NlWriteRpcBacklogLimitEvent",
+              "ea": "0x180070534",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "netlogon.dll"
+          ]
+        },
+        {
+          "fieldName": "configured",
+          "type": "Bool32",
+          "seenIn": [
+            "netlogon.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

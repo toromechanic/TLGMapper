@@ -1,0 +1,136 @@
+{
+  "providerName": "Microsoft.Windows.SpeechPlatform.Settings",
+  "guid": "{ADBB52AD-4E74-56C1-ECBE-CC4539AC4B2D}",
+  "os": "WindowsServer2025",
+  "binaryCount": 3,
+  "binaries": [
+    "SettingsHandlers_InkingTypingPrivacy.dll",
+    "Windows.Media.Speech.dll",
+    "sapi_onecore.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "InvalidDefaultRecognizerLanguage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "languageTag:UnicodeString",
+            "tokenExists:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "sapi_onecore.dll",
+              "function": "??$InvalidDefaultRecognizerLanguage@AEAY0FF@GAEA_N@SpeechPlatformSettingsTrace@Telemetry@Settings@SpeechPlatform@@SAXAEAY0FF@GAEA_N@Z",
+              "ea": "0x18014446e",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Windows.Media.Speech.dll",
+              "function": "??$InvalidDefaultRecognizerLanguage@AEAY0FF@GAEA_N@SpeechPlatformSettingsTrace@Telemetry@Settings@SpeechPlatform@@SAXAEAY0FF@GAEA_N@Z",
+              "ea": "0x180040456",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "languageTag",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Windows.Media.Speech.dll",
+            "sapi_onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "tokenExists",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "Windows.Media.Speech.dll",
+            "sapi_onecore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SetAcceptedPrivacyPolicy",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "accepted:UInt8(Boolean)",
+            "hResult:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SettingsHandlers_InkingTypingPrivacy.dll",
+              "function": "??$SetAcceptedPrivacyPolicy@AEB_NAEAJ@SpeechPlatformSettingsTrace@Telemetry@Settings@SpeechPlatform@@SAXAEB_NAEAJ@Z",
+              "ea": "0x18000c536",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "accepted",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "SettingsHandlers_InkingTypingPrivacy.dll"
+          ]
+        },
+        {
+          "fieldName": "hResult",
+          "type": "UInt32",
+          "seenIn": [
+            "SettingsHandlers_InkingTypingPrivacy.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SetSpeechInputDisabled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "disabled:UInt8(Boolean)",
+            "hResult:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "Windows.Media.Speech.dll",
+              "function": "??$SetSpeechInputDisabled@AEB_NAEAJ@SpeechPlatformSettingsTrace@Telemetry@Settings@SpeechPlatform@@SAXAEB_NAEAJ@Z",
+              "ea": "0x180094380",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "disabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "Windows.Media.Speech.dll"
+          ]
+        },
+        {
+          "fieldName": "hResult",
+          "type": "UInt32",
+          "seenIn": [
+            "Windows.Media.Speech.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

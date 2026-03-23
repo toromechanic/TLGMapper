@@ -1,0 +1,72 @@
+{
+  "providerName": "Microsoft.Windows.Networking.RAS.RASServer.Ddm",
+  "guid": "{02F64AA0-EBBA-4AF8-BDF4-196224230DEA}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "mprddm.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "RrasInterfaceType",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "rrasInterfaceType:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "mprddm.dll",
+              "function": "?LogTunnelTypeTelemetryData@@YAXKH@Z",
+              "ea": "0x18004d0f5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "rrasInterfaceType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "mprddm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SstpInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "isPppAuthByPassed:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "mprddm.dll",
+              "function": "?ValidateAuthInfo@DdmSstpDevice@@AEAAKPEAVDdmDevice@@KPEAE@Z",
+              "ea": "0x18004cdec",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "isPppAuthByPassed",
+          "type": "Bool32",
+          "seenIn": [
+            "mprddm.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,546 @@
+{
+  "providerName": "Microsoft.Windows.OneSync.DiagError",
+  "guid": "{37EC0F35-026E-5E7E-D3D4-80F32547BFFF}",
+  "os": "Windows 11",
+  "binaryCount": 15,
+  "binaries": [
+    "APHostClient.dll",
+    "APHostService.dll",
+    "AccountsRt.dll",
+    "ActiveSyncCsp.dll",
+    "ActiveSyncProvider.dll",
+    "EASPolicyManagerBrokerHost.exe",
+    "InprocLogger.dll",
+    "InternetMailCsp.dll",
+    "Pimstore.dll",
+    "SyncController.dll",
+    "SyncProxy.dll",
+    "accountaccessor.dll",
+    "internetmail.dll",
+    "networkhelper.dll",
+    "syncutil.dll"
+  ],
+  "uniqueEventCount": 8,
+  "events": [
+    {
+      "eventName": "AccountVerifier_InvalidStoreDefault",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "storeIndex:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?CheckStoreConsistency@AccountVerifier@@QEAAJXZ",
+              "ea": "0x180044a2d",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "storeIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ActiveSyncProvider_AirSync_EmptySyncLoopDetected",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "accountId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ActiveSyncProvider.dll",
+              "function": "?OnSyncResponse@SyncFoldersCollection@@QEAAJPEAUSSyncProgress@@JPEAUIMassSyncLayer@@PEAUIMalloc@@PEAH@Z",
+              "ea": "0x1800afbb5",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "accountId",
+          "type": "HexInt32",
+          "seenIn": [
+            "ActiveSyncProvider.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Assert",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32(HResult)",
+            "file:AnsiString",
+            "line:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "AccountsRt.dll",
+              "function": "?AssertionFailureTelemetry@SyncDiagCriticalProvider@@SAXJPEBDK@Z",
+              "ea": "0x18000e9e3",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "APHostClient.dll",
+              "function": "?AssertionFailureTelemetry@SyncDiagCriticalProvider@@SAXJPEBDK@Z",
+              "ea": "0x180007a64",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "EASPolicyManagerBrokerHost.exe",
+              "function": "?AssertionFailureTelemetry@SyncDiagCriticalProvider@@SAXJPEBDK@Z",
+              "ea": "0x140009024",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "InprocLogger.dll",
+              "function": "?AssertionFailureTelemetry@SyncDiagCriticalProvider@@SAXJPEBDK@Z",
+              "ea": "0x180008158",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "internetmail.dll",
+              "function": "?AssertionFailureTelemetry@SyncDiagCriticalProvider@@SAXJPEBDK@Z",
+              "ea": "0x180009ed0",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "networkhelper.dll",
+              "function": "?AssertionFailureTelemetry@SyncDiagCriticalProvider@@SAXJPEBDK@Z",
+              "ea": "0x180003d0b",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Pimstore.dll",
+              "function": "?AssertionFailureTelemetry@SyncDiagCriticalProvider@@SAXJPEBDK@Z",
+              "ea": "0x1800c833b",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "file",
+          "type": "AnsiString",
+          "seenIn": [
+            "APHostClient.dll",
+            "AccountsRt.dll",
+            "EASPolicyManagerBrokerHost.exe",
+            "InprocLogger.dll",
+            "Pimstore.dll",
+            "internetmail.dll",
+            "networkhelper.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "APHostClient.dll",
+            "AccountsRt.dll",
+            "EASPolicyManagerBrokerHost.exe",
+            "InprocLogger.dll",
+            "Pimstore.dll",
+            "internetmail.dll",
+            "networkhelper.dll"
+          ]
+        },
+        {
+          "fieldName": "line",
+          "type": "UInt32",
+          "seenIn": [
+            "APHostClient.dll",
+            "AccountsRt.dll",
+            "EASPolicyManagerBrokerHost.exe",
+            "InprocLogger.dll",
+            "Pimstore.dll",
+            "internetmail.dll",
+            "networkhelper.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Error",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)",
+            "file:AnsiString",
+            "line:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "accountaccessor.dll",
+              "function": "?ErrorOriginateTelemetry@SyncDiagErrorProvider@@SAXJPEBDK@Z",
+              "ea": "0x180007c1e",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "AccountsRt.dll",
+              "function": "?ErrorOriginateTelemetry@SyncDiagErrorProvider@@SAXJPEBDK@Z",
+              "ea": "0x18000f820",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ActiveSyncCsp.dll",
+              "function": "?ErrorOriginateTelemetry@SyncDiagErrorProvider@@SAXJPEBDK@Z",
+              "ea": "0x180007970",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ActiveSyncProvider.dll",
+              "function": "?ErrorOriginateTelemetry@SyncDiagErrorProvider@@SAXJPEBDK@Z",
+              "ea": "0x18003adc0",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "APHostClient.dll",
+              "function": "?ErrorOriginateTelemetry@SyncDiagErrorProvider@@SAXJPEBDK@Z",
+              "ea": "0x180005f0e",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "EASPolicyManagerBrokerHost.exe",
+              "function": "?ErrorOriginateTelemetry@SyncDiagErrorProvider@@SAXJPEBDK@Z",
+              "ea": "0x14000655a",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "InprocLogger.dll",
+              "function": "?ErrorOriginateTelemetry@SyncDiagErrorProvider@@SAXJPEBDK@Z",
+              "ea": "0x18000654a",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "internetmail.dll",
+              "function": "?ErrorOriginateTelemetry@SyncDiagErrorProvider@@SAXJPEBDK@Z",
+              "ea": "0x18000765e",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "InternetMailCsp.dll",
+              "function": "?ErrorOriginateTelemetry@SyncDiagErrorProvider@@SAXJPEBDK@Z",
+              "ea": "0x180007900",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "networkhelper.dll",
+              "function": "?ErrorOriginateTelemetry@SyncDiagErrorProvider@@SAXJPEBDK@Z",
+              "ea": "0x180004798",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Pimstore.dll",
+              "function": "?ErrorOriginateTelemetry@SyncDiagErrorProvider@@SAXJPEBDK@Z",
+              "ea": "0x1800c51bc",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SyncProxy.dll",
+              "function": "?ErrorOriginateTelemetry@SyncDiagErrorProvider@@SAXJPEBDK@Z",
+              "ea": "0x18000839a",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "syncutil.dll",
+              "function": "?ErrorOriginateTelemetry@SyncDiagErrorProvider@@SAXJPEBDK@Z",
+              "ea": "0x180008e88",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "file",
+          "type": "AnsiString",
+          "seenIn": [
+            "APHostClient.dll",
+            "AccountsRt.dll",
+            "ActiveSyncCsp.dll",
+            "ActiveSyncProvider.dll",
+            "EASPolicyManagerBrokerHost.exe",
+            "InprocLogger.dll",
+            "InternetMailCsp.dll",
+            "Pimstore.dll",
+            "SyncProxy.dll",
+            "accountaccessor.dll",
+            "internetmail.dll",
+            "networkhelper.dll",
+            "syncutil.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "APHostClient.dll",
+            "AccountsRt.dll",
+            "ActiveSyncCsp.dll",
+            "ActiveSyncProvider.dll",
+            "EASPolicyManagerBrokerHost.exe",
+            "InprocLogger.dll",
+            "InternetMailCsp.dll",
+            "Pimstore.dll",
+            "SyncProxy.dll",
+            "accountaccessor.dll",
+            "internetmail.dll",
+            "networkhelper.dll",
+            "syncutil.dll"
+          ]
+        },
+        {
+          "fieldName": "line",
+          "type": "UInt32",
+          "seenIn": [
+            "APHostClient.dll",
+            "AccountsRt.dll",
+            "ActiveSyncCsp.dll",
+            "ActiveSyncProvider.dll",
+            "EASPolicyManagerBrokerHost.exe",
+            "InprocLogger.dll",
+            "InternetMailCsp.dll",
+            "Pimstore.dll",
+            "SyncProxy.dll",
+            "accountaccessor.dll",
+            "internetmail.dll",
+            "networkhelper.dll",
+            "syncutil.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IMAP_InvalidServerResponse",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "details:AnsiString",
+            "pResponse:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "internetmail.dll",
+              "function": "?GetResponse@CDefaultResponseSink@@UEAAJPEADPEAPEAD@Z",
+              "ea": "0x180068160",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "details",
+          "type": "AnsiString",
+          "seenIn": [
+            "internetmail.dll"
+          ]
+        },
+        {
+          "fieldName": "pResponse",
+          "type": "AnsiString",
+          "seenIn": [
+            "internetmail.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OneSyncService_ServiceOnstartingSucceeded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "durationMs:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "APHostService.dll",
+              "function": "_lambda_77bc900f864c5cb152a19d3bc7a86315_::operator()",
+              "ea": "0x18001796f",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "durationMs",
+          "type": "UInt64",
+          "seenIn": [
+            "APHostService.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OneSyncService_ServiceStartupError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "service:AnsiString",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "APHostService.dll",
+              "function": "?InitializeService@APHostService@@AEAAJXZ",
+              "ea": "0x180018eea",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "APHostService.dll"
+          ]
+        },
+        {
+          "fieldName": "service",
+          "type": "AnsiString",
+          "seenIn": [
+            "APHostService.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Warning",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)",
+            "file:AnsiString",
+            "line:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "AccountsRt.dll",
+              "function": "?ErrorPropagateTelemetry@SyncDiagWarningProvider@@SAXJPEBDK@Z",
+              "ea": "0x18000f8f8",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "APHostClient.dll",
+              "function": "?ErrorPropagateTelemetry@SyncDiagWarningProvider@@SAXJPEBDK@Z",
+              "ea": "0x180005fe2",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "EASPolicyManagerBrokerHost.exe",
+              "function": "?ErrorPropagateTelemetry@SyncDiagWarningProvider@@SAXJPEBDK@Z",
+              "ea": "0x14000662e",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "InprocLogger.dll",
+              "function": "?ErrorPropagateTelemetry@SyncDiagWarningProvider@@SAXJPEBDK@Z",
+              "ea": "0x18000661e",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "internetmail.dll",
+              "function": "?ErrorPropagateTelemetry@SyncDiagWarningProvider@@SAXJPEBDK@Z",
+              "ea": "0x180007732",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "networkhelper.dll",
+              "function": "?ErrorPropagateTelemetry@SyncDiagWarningProvider@@SAXJPEBDK@Z",
+              "ea": "0x180004868",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Pimstore.dll",
+              "function": "?ErrorPropagateTelemetry@SyncDiagWarningProvider@@SAXJPEBDK@Z",
+              "ea": "0x1800c5294",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "file",
+          "type": "AnsiString",
+          "seenIn": [
+            "APHostClient.dll",
+            "AccountsRt.dll",
+            "EASPolicyManagerBrokerHost.exe",
+            "InprocLogger.dll",
+            "Pimstore.dll",
+            "internetmail.dll",
+            "networkhelper.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "APHostClient.dll",
+            "AccountsRt.dll",
+            "EASPolicyManagerBrokerHost.exe",
+            "InprocLogger.dll",
+            "Pimstore.dll",
+            "internetmail.dll",
+            "networkhelper.dll"
+          ]
+        },
+        {
+          "fieldName": "line",
+          "type": "UInt32",
+          "seenIn": [
+            "APHostClient.dll",
+            "AccountsRt.dll",
+            "EASPolicyManagerBrokerHost.exe",
+            "InprocLogger.dll",
+            "Pimstore.dll",
+            "internetmail.dll",
+            "networkhelper.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "providerName": "Microsoft.Windows.Security.BitLocker.CSP.State.Update",
+  "guid": "{C106BE38-921E-4100-880A-4A3B41B1C95F}",
+  "os": "Windows 11",
+  "binaryCount": 3,
+  "binaries": [
+    "bdesvc.dll",
+    "efsext.dll",
+    "fveapi.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "BitLocker.CSP.Update.State",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "BitLockerStatus:Int32",
+            "data:UInt32",
+            "hr:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?UpdateBitLockerStatusReg@@YAJW4BITLOCKER_CSP_STATUS@@K@Z",
+              "ea": "0x180066382",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "efsext.dll",
+              "function": "?UpdateBitLockerStatusReg@@YAJW4BITLOCKER_CSP_STATUS@@K@Z",
+              "ea": "0x18000fab7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fveapi.dll",
+              "function": "?UpdateBitLockerStatusReg@@YAJW4BITLOCKER_CSP_STATUS@@K@Z",
+              "ea": "0x1800af9f9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BitLockerStatus",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll",
+            "efsext.dll",
+            "fveapi.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bdesvc.dll",
+            "efsext.dll",
+            "fveapi.dll"
+          ]
+        },
+        {
+          "fieldName": "data",
+          "type": "UInt32",
+          "seenIn": [
+            "bdesvc.dll",
+            "efsext.dll",
+            "fveapi.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll",
+            "efsext.dll",
+            "fveapi.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

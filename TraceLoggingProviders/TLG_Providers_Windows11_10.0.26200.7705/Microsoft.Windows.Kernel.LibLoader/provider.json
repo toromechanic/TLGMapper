@@ -1,0 +1,254 @@
+{
+  "providerName": "Microsoft.Windows.Kernel.LibLoader",
+  "guid": "{A99B2EB4-5620-44F5-9B02-F9D2EEBF2E96}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "ntdll.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "HotPatchingEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000001",
+          "fields": [
+            "BaseImageBaseAddress:HexInt64",
+            "BaseCheckSum:HexInt32",
+            "BaseTimeDateStamp:HexInt32",
+            "ProcessName:CountedString",
+            "BaseImagePath:CountedString",
+            "PatchImagePath:CountedString",
+            "NtStatus:UInt32(NTStatus)",
+            "LoggingLocation:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntdll.dll",
+              "function": "LdrpLogEtwHotPatchStatus",
+              "ea": "0x180006b04",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BaseCheckSum",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "BaseImageBaseAddress",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "BaseImagePath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "BaseTimeDateStamp",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "LoggingLocation",
+          "type": "UInt32",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "NtStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "PatchImagePath",
+          "type": "CountedString",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessName",
+          "type": "CountedString",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Import Redirection Loaded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "Application Full Path:CountedString",
+            "Import Redirection Dll Full Path:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "ntdll.dll",
+              "function": "LdrpLogImportRedirectionTelemetry",
+              "ea": "0x18016029b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Application Full Path",
+          "type": "CountedString",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "Import Redirection Dll Full Path",
+          "type": "CountedString",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IntegrityContinuityFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "moduleName:CountedString",
+            "moduleSigningLevel:UInt32",
+            "loadFlags:UInt32",
+            "loadReason:UInt32",
+            "ciSigningFlags:UInt32",
+            "parentModuleName:CountedString",
+            "parentSigningLevel:UInt32",
+            "ciStatus:UInt32",
+            "codeIntegrityOptions:UInt32",
+            "integrityStatus:UInt32",
+            "ciSetFailed:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ntdll.dll",
+              "function": "LdrpLogIntegrityContinuityTelemetry",
+              "ea": "0x180160402",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ciSetFailed",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "ciSigningFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "ciStatus",
+          "type": "UInt32",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "codeIntegrityOptions",
+          "type": "UInt32",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "integrityStatus",
+          "type": "UInt32",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "loadFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "loadReason",
+          "type": "UInt32",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "moduleName",
+          "type": "CountedString",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "moduleSigningLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "parentModuleName",
+          "type": "CountedString",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "parentSigningLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

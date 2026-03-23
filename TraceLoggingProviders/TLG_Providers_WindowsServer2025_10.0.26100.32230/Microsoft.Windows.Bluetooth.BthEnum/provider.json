@@ -1,0 +1,196 @@
+{
+  "providerName": "Microsoft.Windows.Bluetooth.BthEnum",
+  "guid": "{8C8349A2-F297-4178-80A5-0810A56C9DFB}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "bthenum.sys",
+    "bthenum_bth.inf_amd64_4cef9a3eff5127b2_5D648FDA.sys"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "BthServiceConnectResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ServiceClassId:GUID",
+            "COD:UInt32",
+            "BTDeviceAddress:UnicodeString",
+            "PSM:UInt16",
+            "WeInitiatedThisEvent:UInt8(Boolean)",
+            "StatusErrorCode:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "bthenum.sys",
+              "function": "IoCompletionForOpenChannelSuccess",
+              "ea": "0x140002942",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bthenum_bth.inf_amd64_4cef9a3eff5127b2_5D648FDA.sys",
+              "function": "IoCompletionForOpenChannelSuccess",
+              "ea": "0x140002942",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BTDeviceAddress",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bthenum.sys",
+            "bthenum_bth.inf_amd64_4cef9a3eff5127b2_5D648FDA.sys"
+          ]
+        },
+        {
+          "fieldName": "COD",
+          "type": "UInt32",
+          "seenIn": [
+            "bthenum.sys",
+            "bthenum_bth.inf_amd64_4cef9a3eff5127b2_5D648FDA.sys"
+          ]
+        },
+        {
+          "fieldName": "PSM",
+          "type": "UInt16",
+          "seenIn": [
+            "bthenum.sys",
+            "bthenum_bth.inf_amd64_4cef9a3eff5127b2_5D648FDA.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bthenum.sys",
+            "bthenum_bth.inf_amd64_4cef9a3eff5127b2_5D648FDA.sys"
+          ]
+        },
+        {
+          "fieldName": "ServiceClassId",
+          "type": "GUID",
+          "seenIn": [
+            "bthenum.sys",
+            "bthenum_bth.inf_amd64_4cef9a3eff5127b2_5D648FDA.sys"
+          ]
+        },
+        {
+          "fieldName": "StatusErrorCode",
+          "type": "Int32",
+          "seenIn": [
+            "bthenum.sys",
+            "bthenum_bth.inf_amd64_4cef9a3eff5127b2_5D648FDA.sys"
+          ]
+        },
+        {
+          "fieldName": "WeInitiatedThisEvent",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bthenum.sys",
+            "bthenum_bth.inf_amd64_4cef9a3eff5127b2_5D648FDA.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ComponentLoad",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ComponentName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "bthenum.sys",
+              "function": "DriverEntry",
+              "ea": "0x140020550",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bthenum_bth.inf_amd64_4cef9a3eff5127b2_5D648FDA.sys",
+              "function": "DriverEntry",
+              "ea": "0x140020550",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ComponentName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bthenum.sys",
+            "bthenum_bth.inf_amd64_4cef9a3eff5127b2_5D648FDA.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bthenum.sys",
+            "bthenum_bth.inf_amd64_4cef9a3eff5127b2_5D648FDA.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ComponentUnload",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ComponentName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "bthenum.sys",
+              "function": "BthUnload",
+              "ea": "0x14001bf4e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bthenum_bth.inf_amd64_4cef9a3eff5127b2_5D648FDA.sys",
+              "function": "BthUnload",
+              "ea": "0x14001bf4e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ComponentName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bthenum.sys",
+            "bthenum_bth.inf_amd64_4cef9a3eff5127b2_5D648FDA.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bthenum.sys",
+            "bthenum_bth.inf_amd64_4cef9a3eff5127b2_5D648FDA.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

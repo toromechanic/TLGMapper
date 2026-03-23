@@ -1,0 +1,260 @@
+{
+  "providerName": "Microsoft.Windows.HVSI.RDP",
+  "guid": "{50134CDD-5FE1-4315-8C8D-50900921ACCE}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "mstscax.dll"
+  ],
+  "uniqueEventCount": 4,
+  "events": [
+    {
+      "eventName": "CopyPasteFormatId",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "ContentType:UInt32",
+            "ContentTypeString:UnicodeString",
+            "IsAllowed:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "mstscax.dll",
+              "function": "?IsHvsiClipboardFileTypeExcluded@CHvsiApi@@UEAAHIPEBG@Z",
+              "ea": "0x180509450",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ContentType",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "ContentTypeString",
+          "type": "UnicodeString",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "IsAllowed",
+          "type": "Bool32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CopyPasteSettingCheck",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "Action:UInt32",
+            "ContentType:UInt32",
+            "ContentTypeString:UnicodeString",
+            "ClipboardPasteAllowedFileTypes:UInt32",
+            "ContentTypeCategory:UInt32",
+            "ClipboardPasteDirection:UInt32",
+            "DialogStatus:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "mstscax.dll",
+              "function": "?IsHvsiClipboardPasteAllowed@CHvsiApi@@UEAAHW4_HVSI_CLIPBOARD_COPYPASTE_DIRECTION@@IPEBG@Z",
+              "ea": "0x180509830",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Action",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "ClipboardPasteAllowedFileTypes",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "ClipboardPasteDirection",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "ContentType",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "ContentTypeCategory",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "ContentTypeString",
+          "type": "UnicodeString",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "DialogStatus",
+          "type": "Bool32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PrintEnumeration",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Name:UnicodeString",
+            "Type:UInt32",
+            "Policy:UInt32",
+            "IsAllowed:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "mstscax.dll",
+              "function": "?CheckHvsiAllowedPrinterRedirection@CHvsiApi@@UEAAJPEAU_HvsiPrinterInfo@@I@Z",
+              "ea": "0x180508480",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsAllowed",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "Name",
+          "type": "UnicodeString",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "Policy",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "Type",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PrintTo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "HResult:UInt32",
+            "Name:UnicodeString",
+            "Policy:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "mstscax.dll",
+              "function": "?LogHVSIPrint@CHvsiApi@@UEAAXPEAGK@Z",
+              "ea": "0x180509b9c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "Name",
+          "type": "UnicodeString",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "Policy",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

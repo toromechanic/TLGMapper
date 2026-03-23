@@ -1,0 +1,106 @@
+{
+  "providerName": "Microsoft.Windows.FileSystem.Exfat",
+  "guid": "{705511BA-C1E6-41AA-8C36-DAFF03852409}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "exfat.sys"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "Mount",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "volumeId:GUID",
+            "mountStartTime:FileTime",
+            "status:Int32",
+            "bytesPerSector:Int32",
+            "clusterSizeBytes:Int32",
+            "totalClusters:Int64",
+            "freeClusters:Int64",
+            "volumeMountedDirty:Bool32",
+            "volumeMountedReadOnly:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "exfat.sys",
+              "function": "FppTelemetryMount",
+              "ea": "0x14004ee21",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "bytesPerSector",
+          "type": "Int32",
+          "seenIn": [
+            "exfat.sys"
+          ]
+        },
+        {
+          "fieldName": "clusterSizeBytes",
+          "type": "Int32",
+          "seenIn": [
+            "exfat.sys"
+          ]
+        },
+        {
+          "fieldName": "freeClusters",
+          "type": "Int64",
+          "seenIn": [
+            "exfat.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "exfat.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "exfat.sys"
+          ]
+        },
+        {
+          "fieldName": "totalClusters",
+          "type": "Int64",
+          "seenIn": [
+            "exfat.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "exfat.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeMountedDirty",
+          "type": "Bool32",
+          "seenIn": [
+            "exfat.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeMountedReadOnly",
+          "type": "Bool32",
+          "seenIn": [
+            "exfat.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

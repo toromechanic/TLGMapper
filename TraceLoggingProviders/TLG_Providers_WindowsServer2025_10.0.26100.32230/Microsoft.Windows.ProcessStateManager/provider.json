@@ -1,0 +1,2609 @@
+{
+  "providerName": "Microsoft.Windows.ProcessStateManager",
+  "guid": "{0001376B-930D-50CD-2B29-491CA938CD54}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "psmsrv.dll"
+  ],
+  "uniqueEventCount": 35,
+  "events": [
+    {
+      "eventName": "Application.ChangeState",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x3",
+          "fields": [
+            "status:UInt32(NTStatus)",
+            "psmKey:UnicodeString",
+            "newState:UInt8",
+            "currentState:UInt8",
+            "applicationId:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpChangeApplicationState",
+              "ea": "0x180015ba7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpChangeApplicationState",
+              "ea": "0x180015bf7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "applicationId",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "currentState",
+          "type": "UInt8",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "newState",
+          "type": "UInt8",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "psmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Application_RegisterProcess",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmRegisterApplicationProcessEx",
+              "ea": "0x180010f1e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmRegisterApplicationProcessEx",
+              "ea": "0x180010f5f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x3",
+          "fields": [
+            "status:UInt32(NTStatus)",
+            "psmKey:UnicodeString",
+            "hostId:HexInt64",
+            "pid:UInt32(PID)",
+            "activationFlags:UInt32",
+            "sessionId:UInt32",
+            "userSid:SID"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmRegisterApplicationProcessEx",
+              "ea": "0x1800110ea",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x3",
+          "fields": [
+            "status:UInt32(NTStatus)",
+            "psmKey:UnicodeString",
+            "hostId:HexInt64",
+            "pid:UInt32(PID)",
+            "activationFlags:UInt32",
+            "currentState:UInt32",
+            "mixedWorkItems:UInt32",
+            "pureWorkItems:UInt32",
+            "systemWorkItems:UInt32",
+            "sessionId:UInt32",
+            "userSid:SID"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmRegisterApplicationProcessHamByPass",
+              "ea": "0x18000b362",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmRegisterApplicationProcessHamByPass",
+              "ea": "0x18000b3a9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "activationFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "currentState",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "hostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "mixedWorkItems",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "psmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "pureWorkItems",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "systemWorkItems",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "userSid",
+          "type": "SID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Cleanup",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x3",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpCleanup",
+              "ea": "0x1800202f6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "Client_Close",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "?PsmpCloseClientChannel@@YAJPEAPEAX@Z",
+              "ea": "0x180029fc5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x3",
+          "fields": [
+            "Pid:UInt32(PID)",
+            "Flags:HexInt32",
+            "RefCount:HexInt32",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "?PsmpCloseClientChannel@@YAJPEAPEAX@Z",
+              "ea": "0x18002a036",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "Pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "RefCount",
+          "type": "HexInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Client_Delete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x3",
+          "fields": [
+            "Pid:UInt32(PID)",
+            "QuiesceFlags:HexInt32",
+            "AppId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpDeleteClientContext",
+              "ea": "0x180012754",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpDeleteClientContext",
+              "ea": "0x18001278a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppId",
+          "type": "HexInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "Pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "QuiesceFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Client_Register",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x3",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmSrvRegisterQuiesceResumeApp",
+              "ea": "0x180010505",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x3",
+          "fields": [
+            "Pid:UInt32(PID)",
+            "AppId:HexInt64",
+            "Pended:UInt8(Boolean)",
+            "QuiesceFlags:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmSrvRegisterQuiesceResumeApp",
+              "ea": "0x180010534",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppId",
+          "type": "HexInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "Pended",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "Pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "QuiesceFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Client_Rundown",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x3",
+          "fields": [
+            "Pid:UInt32(PID)",
+            "Flags:HexInt32",
+            "RefCount:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PPSM_APP_CONTEXT_HANDLE_TYPE_rundown",
+              "ea": "0x1800124f7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PPSM_APP_CONTEXT_HANDLE_TYPE_rundown",
+              "ea": "0x180012545",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "Pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "RefCount",
+          "type": "HexInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InitializeFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000003",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "FailCode:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpInitialize",
+              "ea": "0x180020734",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FailCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Process.QueryClientAppInfoFail",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x3",
+          "fields": [
+            "status:UInt32(NTStatus)",
+            "pid:UInt32(PID)"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpQueryClientApplicationInformation",
+              "ea": "0x180011468",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PsmDisconnectedStandbyStateChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "NetworkLimited:Bool32",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpPublishDisconnectedStandbyState",
+              "ea": "0x18001a3d5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NetworkLimited",
+          "type": "Bool32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PsmResourceAwareTimerCallback",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PsmKey:UnicodeString",
+            "UserSid:SID",
+            "TimerId:GUID",
+            "SessionId:UInt32",
+            "HostJobType:UInt32",
+            "HostId:HexInt64",
+            "Expired:UInt8(Boolean)",
+            "NTSTATUS:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpLogResourceAwareTimerCallback",
+              "ea": "0x1800181a3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpLogResourceAwareTimerCallback",
+              "ea": "0x1800181cd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Expired",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostJobType",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "TimerId",
+          "type": "GUID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSid",
+          "type": "SID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PsmResourceAwareTimerCallbackTimerNotFound",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "NTSTATUS:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpLogResourceAwareTimerCallback",
+              "ea": "0x180018254",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PsmResourceAwareTimerCreate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PsmKey:UnicodeString",
+            "UserSid:SID",
+            "TimerId:GUID",
+            "SessionId:UInt32",
+            "HostJobType:UInt32",
+            "HostId:HexInt64",
+            "NTSTATUS:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpResourceAwareTimerCreateEx",
+              "ea": "0x18000d966",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpResourceAwareTimerCreateEx",
+              "ea": "0x18000d9b6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostJobType",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "TimerId",
+          "type": "GUID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSid",
+          "type": "SID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PsmResourceAwareTimerExpiration",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PsmKey:UnicodeString",
+            "UserSid:SID",
+            "TimerId:GUID",
+            "SessionId:UInt32",
+            "HostJobType:UInt32",
+            "HostId:HexInt64",
+            "UnbiasedInterruptTime:UInt64",
+            "CpuRunningTime:UInt64",
+            "CpuReadyTime:UInt64",
+            "KernelWaitTime:UInt64",
+            "IoTotalNonOverlappedQueueTime:UInt64",
+            "IoTotalNonOverlappedServiceTime:UInt64",
+            "IoTotalSize:UInt64",
+            "IoCount:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpLogResourceAwareTimerExpiration",
+              "ea": "0x180018402",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpLogResourceAwareTimerExpiration",
+              "ea": "0x18001846b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CpuReadyTime",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "CpuRunningTime",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostJobType",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "IoCount",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "IoTotalNonOverlappedQueueTime",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "IoTotalNonOverlappedServiceTime",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "IoTotalSize",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "KernelWaitTime",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "TimerId",
+          "type": "GUID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "UnbiasedInterruptTime",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSid",
+          "type": "SID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PsmResourceAwareTimerKernelWaitTimeInversion",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "BaselineWaitTime:UInt64",
+            "NewWaitTime:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpLogResourceAwareTimerKernelWaitTimeInversion",
+              "ea": "0x180025cd1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BaselineWaitTime",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "NewWaitTime",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PsmResourceAwareTimerReadyTimeInversion",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "BaselineReadyTime:UInt64",
+            "NewReadyTime:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpLogResourceAwareTimerReadyTimeInversion",
+              "ea": "0x180025da1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BaselineReadyTime",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "NewReadyTime",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PsmResourceAwareTimerRemainingExtend",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PsmKey:UnicodeString",
+            "UserSid:SID",
+            "TimerId:GUID",
+            "SessionId:UInt32",
+            "HostJobType:UInt32",
+            "HostId:HexInt64",
+            "UnbiasedInterruptTime:UInt64",
+            "CpuRunningTime:UInt64",
+            "CpuReadyTime:UInt64",
+            "KernelWaitTime:UInt64",
+            "IoTotalNonOverlappedQueueTime:UInt64",
+            "IoTotalNonOverlappedServiceTime:UInt64",
+            "IoTotalSize:UInt64",
+            "IoCount:UInt64",
+            "Extended:UInt8(Boolean)",
+            "NTSTATUS:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpLogResourceAwareTimerExtend",
+              "ea": "0x18000ca24",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpLogResourceAwareTimerExtend",
+              "ea": "0x18000cab2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CpuReadyTime",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "CpuRunningTime",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "Extended",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostJobType",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "IoCount",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "IoTotalNonOverlappedQueueTime",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "IoTotalNonOverlappedServiceTime",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "IoTotalSize",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "KernelWaitTime",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "TimerId",
+          "type": "GUID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "UnbiasedInterruptTime",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSid",
+          "type": "SID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PsmResourceAwareTimerRemainingTimeGet",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PsmKey:UnicodeString",
+            "UserSid:SID",
+            "TimerId:GUID",
+            "SessionId:UInt32",
+            "HostJobType:UInt32",
+            "HostId:HexInt64",
+            "RemainingTimeMs:UInt64",
+            "NTSTATUS:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpLogResourceAwareTimerRemainingTimeGet",
+              "ea": "0x18000e1c5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpLogResourceAwareTimerRemainingTimeGet",
+              "ea": "0x18000e202",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostJobType",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "RemainingTimeMs",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "TimerId",
+          "type": "GUID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSid",
+          "type": "SID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PsmResourceAwareTimerReset",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PsmKey:UnicodeString",
+            "UserSid:SID",
+            "TimerId:GUID",
+            "SessionId:UInt32",
+            "HostJobType:UInt32",
+            "HostId:HexInt64",
+            "Flags:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpLogResourceAwareTimerReset",
+              "ea": "0x18000ded5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpLogResourceAwareTimerReset",
+              "ea": "0x18000df0b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Flags",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostJobType",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "TimerId",
+          "type": "GUID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSid",
+          "type": "SID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PsmResourceAwareTimerResourceUsageGet",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PsmKey:UnicodeString",
+            "UserSid:SID",
+            "TimerId:GUID",
+            "SessionId:UInt32",
+            "HostJobType:UInt32",
+            "HostId:HexInt64",
+            "UnbiasedInterruptTime:UInt64",
+            "CpuRunningTime:UInt64",
+            "CpuReadyTime:UInt64",
+            "KernelWaitTime:UInt64",
+            "IoTotalNonOverlappedQueueTime:UInt64",
+            "IoTotalNonOverlappedServiceTime:UInt64",
+            "IoTotalSize:UInt64",
+            "IoCount:UInt64",
+            "NTSTATUS:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpLogResourceAwareTimerResourceUsageGet",
+              "ea": "0x18000ac12",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpLogResourceAwareTimerResourceUsageGet",
+              "ea": "0x18000ac8f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CpuReadyTime",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "CpuRunningTime",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostJobType",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "IoCount",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "IoTotalNonOverlappedQueueTime",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "IoTotalNonOverlappedServiceTime",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "IoTotalSize",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "KernelWaitTime",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "TimerId",
+          "type": "GUID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "UnbiasedInterruptTime",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSid",
+          "type": "SID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PsmResourceAwareTimerSet",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PsmKey:UnicodeString",
+            "UserSid:SID",
+            "TimerId:GUID",
+            "SessionId:UInt32",
+            "HostJobType:UInt32",
+            "HostId:HexInt64",
+            "WallclockMode:UInt8(Boolean)",
+            "DurationMs:UInt64",
+            "NTSTATUS:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpLogResourceAwareTimerSet",
+              "ea": "0x18000b021",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpLogResourceAwareTimerSet",
+              "ea": "0x18000b06e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DurationMs",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostJobType",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "TimerId",
+          "type": "GUID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSid",
+          "type": "SID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "WallclockMode",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PsmResourceAwareTimerStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PsmKey:UnicodeString",
+            "UserSid:SID",
+            "TimerId:GUID",
+            "SessionId:UInt32",
+            "HostJobType:UInt32",
+            "HostId:HexInt64",
+            "DurationMs:UInt64",
+            "NTSTATUS:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpLogResourceAwareTimerStart",
+              "ea": "0x18000d46b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpLogResourceAwareTimerStart",
+              "ea": "0x18000d4e8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DurationMs",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostJobType",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "TimerId",
+          "type": "GUID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSid",
+          "type": "SID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PsmSrvRegisterProcessFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x3",
+          "fields": [
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmSrvRegisterProcess",
+              "ea": "0x180010ca2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Psm_ZeroProcessNotificationCallback",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpZeroProcessNotificationCallback",
+              "ea": "0x180013b09",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpZeroProcessNotificationCallback",
+              "ea": "0x180013b39",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpZeroProcessNotificationCallback",
+              "ea": "0x180013bb4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpZeroProcessNotificationCallback",
+              "ea": "0x180013be7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "PsmpCheckNotifyApplicationTerminated",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "OutFlags:UInt32",
+            "ApplicationFlags:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpCheckNotifyApplicationTerminated",
+              "ea": "0x18001352c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpCheckNotifyApplicationTerminated",
+              "ea": "0x18001355f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "ApplicationId:UInt64",
+            "FailedCheck:UInt64",
+            "OutFlags:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpCheckNotifyApplicationTerminated",
+              "ea": "0x180013638",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpCheckNotifyApplicationTerminated",
+              "ea": "0x180013675",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ApplicationFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "ApplicationId",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "FailedCheck",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "OutFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PsmpEnableDisableBackgroundMode",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "PsmKey:UnicodeString",
+            "SessionId:UInt32",
+            "HostJobType:UInt32",
+            "Enable:UInt8(Boolean)",
+            "CurrentState:UInt32",
+            "MixedWorkItems:UInt32",
+            "PureWorkItems:UInt32",
+            "SystemWorkItems:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpTraceLogEnableDisableBackgroundMode",
+              "ea": "0x18000c6cd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpTraceLogEnableDisableBackgroundMode",
+              "ea": "0x18000c718",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CurrentState",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "Enable",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostJobType",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "MixedWorkItems",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PureWorkItems",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "SystemWorkItems",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PsmpEnableDisableSchedulingGroup",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "PsmKey:UnicodeString",
+            "SessionId:UInt32",
+            "HostJobType:UInt32",
+            "Enable:UInt8(Boolean)",
+            "CurrentState:UInt32",
+            "MixedWorkItems:UInt32",
+            "PureWorkItems:UInt32",
+            "SystemWorkItems:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpChangeApplicationState",
+              "ea": "0x1800152c4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpChangeApplicationState",
+              "ea": "0x180015345",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpChangeApplicationState",
+              "ea": "0x1800159b5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpChangeApplicationState",
+              "ea": "0x180015a3d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpTraceLogEnableDisableSchedulingGroup",
+              "ea": "0x18000c30d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpTraceLogEnableDisableSchedulingGroup",
+              "ea": "0x18000c358",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CurrentState",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "Enable",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostJobType",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "MixedWorkItems",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PureWorkItems",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "SystemWorkItems",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PsmpEnableDisableSchedulingRankBias",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "PsmKey:UnicodeString",
+            "SessionId:UInt32",
+            "HostJobType:UInt32",
+            "Enable:UInt8(Boolean)",
+            "CurrentState:UInt32",
+            "MixedWorkItems:UInt32",
+            "PureWorkItems:UInt32",
+            "SystemWorkItems:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpTraceLogEnableDisableRankBias",
+              "ea": "0x18000c4ed",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpTraceLogEnableDisableRankBias",
+              "ea": "0x18000c538",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CurrentState",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "Enable",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostJobType",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "MixedWorkItems",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PureWorkItems",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "SystemWorkItems",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PsmpTerminateJobObject",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PsmKey:UnicodeString",
+            "SessionId:UInt32",
+            "HostId:HexInt64",
+            "HostJobType:UInt32",
+            "TerminateDurationMs:UInt32",
+            "Success:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpTraceLogJobTerminate",
+              "ea": "0x180026b19",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostJobType",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "Success",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "TerminateDurationMs",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Psmp_ActiveProcessZeroMixedCallback",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpActiveProcessZeroMixedCallback",
+              "ea": "0x1800130db",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpActiveProcessZeroMixedCallback",
+              "ea": "0x180013104",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpActiveProcessZeroMixedCallback",
+              "ea": "0x1800131c1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpActiveProcessZeroMixedCallback",
+              "ea": "0x1800131f7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Psmp_ChangeApplicationState",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpChangeApplicationState",
+              "ea": "0x180014ee4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpChangeApplicationState",
+              "ea": "0x180014f13",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "CallbackFlags:UInt32",
+            "FailedCheck:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpChangeApplicationState",
+              "ea": "0x180015ee4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpChangeApplicationState",
+              "ea": "0x180015f1d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CallbackFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "FailedCheck",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Psmp_ChangeApplicationStateFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "ApplicationId:UInt64",
+            "CurrentState:UInt64",
+            "NextState:UInt32",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpChangeApplicationState",
+              "ea": "0x18001571d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpChangeApplicationState",
+              "ea": "0x18001576a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ApplicationId",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "CurrentState",
+          "type": "UInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "NextState",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SignalQuiesceComplete",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpSignalQuiesceComplete",
+              "ea": "0x180013eca",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpSignalQuiesceComplete",
+              "ea": "0x180013ef5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x3",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "PsmKey:UnicodeString",
+            "PendingQuiesceCount:UInt32",
+            "QuiesceActive:UInt8(Boolean)",
+            "ProcessId:UInt32(PID)",
+            "ApplicationId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpSignalQuiesceComplete",
+              "ea": "0x1800140da",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpSignalQuiesceComplete",
+              "ea": "0x18001412a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ApplicationId",
+          "type": "HexInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PendingQuiesceCount",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessId",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "QuiesceActive",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Srv_OpenManagementChannelFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x3",
+          "fields": [
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmSrvOpenManagementChannel",
+              "ea": "0x180010197",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TerminateActiveMixedJob",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PsmKey:UnicodeString",
+            "UserSid:SID",
+            "SessionId:UInt32",
+            "HostId:HexInt64",
+            "appSessionGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpTraceLogTerminateActiveMixedJob",
+              "ea": "0x180026c82",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSid",
+          "type": "SID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "appSessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,424 @@
+{
+  "providerName": "WindowsDriverVerifierXdv",
+  "guid": "{2F125292-522C-4EA9-FDA1-1D4B8F45B992}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "ntkrla57.exe",
+    "ntoskrnl.exe"
+  ],
+  "uniqueEventCount": 4,
+  "events": [
+    {
+      "eventName": "XdvBugCheck",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "MinCount:UInt32",
+            "TriageContext:UInt32",
+            "XdvTipTag:UInt32",
+            "Irql:UInt8",
+            "Module:UnicodeString",
+            "ErrorMessage:AnsiString",
+            "BugcheckCode:HexInt32",
+            "ErrorCode:HexInt32",
+            "RuleClasses:HexInt32[N]"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CarEtwCrashEvent",
+              "ea": "0x1404b4493",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CarEtwCrashEvent",
+              "ea": "0x14060cce3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "MinCount:UInt32",
+            "XdvTipTag:UInt32",
+            "Irql:UInt8",
+            "Module:UnicodeString",
+            "ErrorMessage:AnsiString",
+            "ErrorCode:HexInt32",
+            "ErrorLevel:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CarEtwWriteBugCheckEvent",
+              "ea": "0x1404b4783",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CarEtwWriteBugCheckEvent",
+              "ea": "0x14060cfd3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BugcheckCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ErrorLevel",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ErrorMessage",
+          "type": "AnsiString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Irql",
+          "type": "UInt8",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "MinCount",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Module",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "RuleClasses",
+          "type": "HexInt32[N]",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "TriageContext",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "XdvTipTag",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "XdvDriverLoad",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "XdvTipTag:UInt32",
+            "DriverName:UnicodeString",
+            "BaseAddress:HexInt64",
+            "TimeDateStamp:HexInt64",
+            "CheckSum:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CarLoadImageHandler",
+              "ea": "0x1404b4dbb",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CarTipLogDriverLoad",
+              "ea": "0x1404b4e9f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CarLoadImageHandler",
+              "ea": "0x14060d60b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CarTipLogDriverLoad",
+              "ea": "0x14060d6ef",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BaseAddress",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "CheckSum",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "DriverName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "TimeDateStamp",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "XdvTipTag",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "XdvLiveDump",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "CarTipTag:UInt32",
+            "Violation ID:UInt32",
+            "ViolationString:AnsiString",
+            "Violation Hash:HexInt32",
+            "Violating Drivername:UnicodeString",
+            "Driver CheckSum:HexInt32",
+            "Error Level:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CarEtwWriteLiveDumpEvent",
+              "ea": "0x1404b48e1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CarEtwWriteLiveDumpEvent",
+              "ea": "0x14060d131",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CarTipTag",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Driver CheckSum",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Error Level",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Violating Drivername",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Violation Hash",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Violation ID",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ViolationString",
+          "type": "AnsiString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "XdvLoaded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "XdvTipTag:UInt32",
+            "VerifierExtLoadAddress:UInt64",
+            "VerifyDrivers:UnicodeString",
+            "XdvRuleSuppress:UnicodeString",
+            "XdvExtensionOption:UInt32",
+            "XdvVerifierOptions:UInt32",
+            "XdvVerifierFlags:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "CarEtwRegister",
+              "ea": "0x1404b4617",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "CarEtwRegister",
+              "ea": "0x14060ce67",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "VerifierExtLoadAddress",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "VerifyDrivers",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "XdvExtensionOption",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "XdvRuleSuppress",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "XdvTipTag",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "XdvVerifierFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "XdvVerifierOptions",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

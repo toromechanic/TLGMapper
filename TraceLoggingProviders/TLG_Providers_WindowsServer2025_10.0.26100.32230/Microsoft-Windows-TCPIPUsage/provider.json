@@ -1,0 +1,88 @@
+{
+  "providerName": "Microsoft-Windows-TCPIPUsage",
+  "guid": "{6039F834-C297-4CBA-B965-0A99B116735E}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "tcpip.sys"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "TcpCreateAndConnect",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "PID:UInt64",
+            "TID:UInt64",
+            "LocalAddress:Binary(SocketAddress)",
+            "RemoteAddress:Binary(SocketAddress)",
+            "LocalPort:UInt16",
+            "RemotePort:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "tcpip.sys",
+              "function": "TcpCreateAndConnectTcbComplete",
+              "ea": "0x140082d66",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "tcpip.sys",
+              "function": "TcpCreateAndConnectTcbComplete",
+              "ea": "0x140082daf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "LocalAddress",
+          "type": "Binary(SocketAddress)",
+          "seenIn": [
+            "tcpip.sys"
+          ]
+        },
+        {
+          "fieldName": "LocalPort",
+          "type": "UInt16",
+          "seenIn": [
+            "tcpip.sys"
+          ]
+        },
+        {
+          "fieldName": "PID",
+          "type": "UInt64",
+          "seenIn": [
+            "tcpip.sys"
+          ]
+        },
+        {
+          "fieldName": "RemoteAddress",
+          "type": "Binary(SocketAddress)",
+          "seenIn": [
+            "tcpip.sys"
+          ]
+        },
+        {
+          "fieldName": "RemotePort",
+          "type": "UInt16",
+          "seenIn": [
+            "tcpip.sys"
+          ]
+        },
+        {
+          "fieldName": "TID",
+          "type": "UInt64",
+          "seenIn": [
+            "tcpip.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

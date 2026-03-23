@@ -1,0 +1,378 @@
+{
+  "providerName": "Microsoft.Windows.Security.Kerb3961",
+  "guid": "{1EAC4041-7C1C-41D3-A617-87851875F630}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "Kerb3961Kernel.sys",
+    "kerb3961.dll"
+  ],
+  "uniqueEventCount": 7,
+  "events": [
+    {
+      "eventName": "Kerb3961Policy",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PolicyName:UnicodeString",
+            "PolicyValue:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "kerb3961.dll",
+              "function": "?PolicyConfiguration@Telemetry@Kerb3961@@YAXPEBGI@Z",
+              "ea": "0x180002ef0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "kerb3961.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "kerb3961.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyValue",
+          "type": "UInt32",
+          "seenIn": [
+            "kerb3961.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Kerb3961ScenarioCiphers",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x2",
+          "fields": [
+            "Usage:UInt64",
+            "Ciphers:UInt32[]",
+            "Count:UInt64",
+            "Status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "kerb3961.dll",
+              "function": "?GetCiphers@Policy@Logging@Kerb3961@@YAXW4KeyUsage@3@QEAI_KJ@Z",
+              "ea": "0x180002da7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x2",
+          "fields": [
+            "Usage:UInt64",
+            "Ciphers:UInt32[]",
+            "Count:UInt64",
+            "Status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "kerb3961.dll",
+              "function": "?GetCiphers@Policy@Logging@Kerb3961@@YAXW4KeyUsage@3@QEAI_KJ@Z",
+              "ea": "0x180002dea",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Ciphers",
+          "type": "UInt32[]",
+          "seenIn": [
+            "kerb3961.dll"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "UInt64",
+          "seenIn": [
+            "kerb3961.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "Int32",
+          "seenIn": [
+            "kerb3961.dll"
+          ]
+        },
+        {
+          "fieldName": "Usage",
+          "type": "UInt64",
+          "seenIn": [
+            "kerb3961.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PartnerCipherResult",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x2",
+          "fields": [
+            "Cipher:UnicodeString",
+            "Cipher Number:UInt32",
+            "Status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "kerb3961.dll",
+              "function": "??1PartnerCipherResult@Policy@Logging@Kerb3961@@QEAA@XZ",
+              "ea": "0x180002af0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x2",
+          "fields": [
+            "Cipher:UnicodeString",
+            "Cipher Number:UInt32",
+            "Status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "kerb3961.dll",
+              "function": "??1PartnerCipherResult@Policy@Logging@Kerb3961@@QEAA@XZ",
+              "ea": "0x180002b49",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Cipher Number",
+          "type": "UInt32",
+          "seenIn": [
+            "kerb3961.dll"
+          ]
+        },
+        {
+          "fieldName": "Cipher",
+          "type": "UnicodeString",
+          "seenIn": [
+            "kerb3961.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "Int32",
+          "seenIn": [
+            "kerb3961.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UsageEnabled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x3",
+          "fields": [
+            "Cipher:UnicodeString",
+            "Enabled:Bool32",
+            "Operation:UInt8",
+            "SET:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "kerb3961.dll",
+              "function": "?UsageEnabled@Cipher@Logging@Kerb3961@@YAXPEBG_NW4KeyPolicyOperation@3@I@Z",
+              "ea": "0x180003191",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "Kerb3961Kernel.sys",
+              "function": "?UsageEnabled@Cipher@Logging@Kerb3961@@YAXPEBG_NW4KeyPolicyOperation@3@I@Z",
+              "ea": "0x18000fbb1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Cipher",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Kerb3961Kernel.sys",
+            "kerb3961.dll"
+          ]
+        },
+        {
+          "fieldName": "Enabled",
+          "type": "Bool32",
+          "seenIn": [
+            "Kerb3961Kernel.sys",
+            "kerb3961.dll"
+          ]
+        },
+        {
+          "fieldName": "Operation",
+          "type": "UInt8",
+          "seenIn": [
+            "Kerb3961Kernel.sys",
+            "kerb3961.dll"
+          ]
+        },
+        {
+          "fieldName": "SET",
+          "type": "UInt32",
+          "seenIn": [
+            "Kerb3961Kernel.sys",
+            "kerb3961.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VerifyCondition",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x1",
+          "fields": [
+            "Condition:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "kerb3961.dll",
+              "function": "?ConditionFailed@Verify@Logging@Kerb3961@@YAXPEBD@Z",
+              "ea": "0x180002c26",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "Kerb3961Kernel.sys",
+              "function": "?ConditionFailed@Verify@Logging@Kerb3961@@YAXPEBD@Z",
+              "ea": "0x18000f8fe",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Condition",
+          "type": "AnsiString",
+          "seenIn": [
+            "Kerb3961Kernel.sys",
+            "kerb3961.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VerifyConsistency",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 1,
+          "keyword": "0x1",
+          "fields": [
+            "Message:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "kerb3961.dll",
+              "function": "?ConsistencyFail@Verify@Logging@Kerb3961@@YAXPEBG@Z",
+              "ea": "0x180002ce8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "Kerb3961Kernel.sys",
+              "function": "?ConsistencyFail@Verify@Logging@Kerb3961@@YAXPEBG@Z",
+              "ea": "0x18000f9c0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Kerb3961Kernel.sys",
+            "kerb3961.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VerifyStatus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x1",
+          "fields": [
+            "Expression:AnsiString",
+            "Status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "kerb3961.dll",
+              "function": "?StatusFailed@Verify@Logging@Kerb3961@@YAXPEBDJ@Z",
+              "ea": "0x180003098",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "Kerb3961Kernel.sys",
+              "function": "?StatusFailed@Verify@Logging@Kerb3961@@YAXPEBDJ@Z",
+              "ea": "0x18000fab8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Expression",
+          "type": "AnsiString",
+          "seenIn": [
+            "Kerb3961Kernel.sys",
+            "kerb3961.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "Int32",
+          "seenIn": [
+            "Kerb3961Kernel.sys",
+            "kerb3961.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

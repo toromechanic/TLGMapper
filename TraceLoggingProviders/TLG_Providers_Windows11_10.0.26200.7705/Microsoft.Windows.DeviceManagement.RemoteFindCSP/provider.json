@@ -1,0 +1,105 @@
+{
+  "providerName": "Microsoft.Windows.DeviceManagement.RemoteFindCSP",
+  "guid": "{11838EF3-69E8-4FF0-8116-B2FFDDF289C9}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "DeviceEnroller.exe",
+    "enterprisecsps.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "CreateProcessCalled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "HRESULT:Int32",
+            "__TlgCV__:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "?LogCreateProcess@CRemoteFindLogger@@QEAAXJ@Z",
+              "ea": "0x1800e9b8a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32",
+          "seenIn": [
+            "enterprisecsps.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "enterprisecsps.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "enterprisecsps.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ToastLaunched",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "HRESULT:Int32",
+            "__TlgCV__:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "DeviceEnroller.exe",
+              "function": "?LogToastLaunch@CRemoteFindLogger@@QEAAXJ@Z",
+              "ea": "0x1400399e5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32",
+          "seenIn": [
+            "DeviceEnroller.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "DeviceEnroller.exe"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "DeviceEnroller.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

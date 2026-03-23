@@ -1,0 +1,564 @@
+{
+  "providerName": "Microsoft.Windows.Capture.USBVideo",
+  "guid": "{80863BFB-0974-45C1-88DF-E4E9A4B2B7D4}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "usbvideo.sys"
+  ],
+  "uniqueEventCount": 8,
+  "events": [
+    {
+      "eventName": "Method2Status",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "SessionId:GUID",
+            "HardwareId:UnicodeString",
+            "StillStatus:UInt32(NTStatus)",
+            "Status:UInt32(NTStatus)",
+            "Time:UInt64",
+            "bcdUSB:UInt16(Hex)",
+            "idVendor:UInt16(Hex)",
+            "idProduct:UInt16(Hex)",
+            "bcdDevice:UInt16(Hex)"
+          ],
+          "callers": [
+            {
+              "binary": "usbvideo.sys",
+              "function": "Method2StillImageTriggerHandler",
+              "ea": "0x14001f3d2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HardwareId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "GUID",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "StillStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "Time",
+          "type": "UInt64",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "bcdDevice",
+          "type": "UInt16(Hex)",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "bcdUSB",
+          "type": "UInt16(Hex)",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "idProduct",
+          "type": "UInt16(Hex)",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "idVendor",
+          "type": "UInt16(Hex)",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PinInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "SessionId:GUID",
+            "HardwareId:UnicodeString",
+            "StreamPinCount:UInt32",
+            "BridgePinCount:UInt32",
+            "StillPinCount:UInt32",
+            "Method2Capable:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "usbvideo.sys",
+              "function": "USBVideoPinBuildDescriptors",
+              "ea": "0x140015bf3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BridgePinCount",
+          "type": "UInt32",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "HardwareId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "Method2Capable",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "GUID",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "StillPinCount",
+          "type": "UInt32",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "StreamPinCount",
+          "type": "UInt32",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UVC-Categories",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "SessionId:GUID",
+            "HardwareId:UnicodeString",
+            "CategoryCount:UInt64",
+            "CategoryGuidsArray:GUID[]"
+          ],
+          "callers": [
+            {
+              "binary": "usbvideo.sys",
+              "function": "BuildUSBVideoFilterTopology",
+              "ea": "0x140018bf7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CategoryCount",
+          "type": "UInt64",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "CategoryGuidsArray",
+          "type": "GUID[]",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "HardwareId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "GUID",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UVC-ConfigurationDescriptor",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "SessionId:GUID",
+            "HardwareId:UnicodeString",
+            "ConfigurationDescriptorSize:UInt16",
+            "ConfigurationDescriptorBuffer:UInt8[]"
+          ],
+          "callers": [
+            {
+              "binary": "usbvideo.sys",
+              "function": "BuildUSBVideoFilterTopology",
+              "ea": "0x1400187ca",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConfigurationDescriptorBuffer",
+          "type": "UInt8[]",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "ConfigurationDescriptorSize",
+          "type": "UInt16",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "HardwareId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "GUID",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UVC-ExtensionUnitGUID",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "SessionId:GUID",
+            "HardwareId:UnicodeString",
+            "XU-Guid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "usbvideo.sys",
+              "function": "XUBuildPropertySet",
+              "ea": "0x14000122f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HardwareId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "GUID",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "XU-Guid",
+          "type": "GUID",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UVC-FaultyInterruptEndpoint",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "SessionId:GUID",
+            "HardwareId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "usbvideo.sys",
+              "function": "USBVideoProcessInterrupt",
+              "ea": "0x14000d09c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HardwareId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "GUID",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UVC-InvalidConfiguration",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "SessionId:GUID",
+            "HardwareId:UnicodeString",
+            "CameraVendorId:UInt32",
+            "CameraProductId:UInt32",
+            "CameraRevision:UInt32",
+            "Manufacturer:UnicodeString",
+            "CameraName:UnicodeString",
+            "Status:UInt32(NTStatus)",
+            "ErrorMessage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "usbvideo.sys",
+              "function": "ReportInvalidConfigurationTelemetry",
+              "ea": "0x14001ff28",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CameraName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "CameraProductId",
+          "type": "UInt32",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "CameraRevision",
+          "type": "UInt32",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "CameraVendorId",
+          "type": "UInt32",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "ErrorMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "HardwareId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "Manufacturer",
+          "type": "UnicodeString",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "GUID",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UVC-UnrecoverableInterruptEndpoint",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "SessionId:GUID",
+            "HardwareId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "usbvideo.sys",
+              "function": "ProcessIrpsThread",
+              "ea": "0x14003b0cf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HardwareId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "GUID",
+          "seenIn": [
+            "usbvideo.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "providerName": "Microsoft.Windows.Shell.NthBioRecallSetupLogging",
+  "guid": "{9C57B833-EDBA-448C-B316-B72C9123C564}",
+  "os": "Windows 11",
+  "binaryCount": 3,
+  "binaries": [
+    "CustomShellHost.exe",
+    "ShellAppRuntime.exe",
+    "explorer.exe"
+  ],
+  "uniqueEventCount": 5,
+  "events": [
+    {
+      "eventName": "NthBioRecallSetupCompleted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "nthBioRecallSetupExitReason:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "??$NthBioRecallSetupCompleted@W4UserOOBEExitReason@@@NthBioRecallSetupTelemetry@@SAX$$QEAW4UserOOBEExitReason@@@Z",
+              "ea": "0x14002164d",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$NthBioRecallSetupCompleted@W4UserOOBEExitReason@@@NthBioRecallSetupTelemetry@@SAX$$QEAW4UserOOBEExitReason@@@Z",
+              "ea": "0x140104050",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$NthBioRecallSetupCompleted@W4UserOOBEExitReason@@@NthBioRecallSetupTelemetry@@SAX$$QEAW4UserOOBEExitReason@@@Z",
+              "ea": "0x140028051",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "nthBioRecallSetupExitReason",
+          "type": "UInt32",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NthBioRecallSetupDeviceIsEDUSKU",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "isEDUSKU:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "explorer.exe",
+              "function": "??$NthBioRecallSetupDeviceIsEDUSKU@AEB_N@NthBioRecallSetupTelemetry@@SAXAEB_N@Z",
+              "ea": "0x1401040c0",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isEDUSKU",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "explorer.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NthBioRecallSetupDeviceIsITManaged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "isITManaged:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "explorer.exe",
+              "function": "??$NthBioRecallSetupDeviceIsITManaged@AEA_N@NthBioRecallSetupTelemetry@@SAXAEA_N@Z",
+              "ea": "0x14010412c",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isITManaged",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "explorer.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NthSnapshotCaptureDeviceIsEU",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "isEU:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "?s_shouldLaunchCloudExperienceHostForSnapshotCapture@CLogonTaskFramework@@CA_NW4LogonTypeFlags@@_N@Z",
+              "ea": "0x1400ea79f",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "?s_shouldLaunchCloudExperienceHostForSnapshotCapture@CLogonTaskFramework@@CA_NW4LogonTypeFlags@@_N@Z",
+              "ea": "0x1400ef14b",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe"
+          ]
+        },
+        {
+          "fieldName": "isEU",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ShouldShowNthBioRecallSetupForUser",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "shouldShowNthBioRecallSetupForUser:UInt8(Boolean)",
+            "bioRecallSetupNthLogonSkipReasonFlag:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "??$ShouldShowNthBioRecallSetupForUser@_NW4SnapshotCaptureNthLogonSkipReason@@@NthBioRecallSetupTelemetry@@SAX$$QEA_N$$QEAW4SnapshotCaptureNthLogonSkipReason@@@Z",
+              "ea": "0x140023af8",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$ShouldShowNthBioRecallSetupForUser@_NW4SnapshotCaptureNthLogonSkipReason@@@NthBioRecallSetupTelemetry@@SAX$$QEA_N$$QEAW4SnapshotCaptureNthLogonSkipReason@@@Z",
+              "ea": "0x14010638d",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$ShouldShowNthBioRecallSetupForUser@_NW4SnapshotCaptureNthLogonSkipReason@@@NthBioRecallSetupTelemetry@@SAX$$QEA_N$$QEAW4SnapshotCaptureNthLogonSkipReason@@@Z",
+              "ea": "0x14002a4fc",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "bioRecallSetupNthLogonSkipReasonFlag",
+          "type": "UInt32",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "shouldShowNthBioRecallSetupForUser",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

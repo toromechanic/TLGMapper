@@ -1,0 +1,320 @@
+{
+  "providerName": "Microsoft.OSG.Web.HTTPSys",
+  "guid": "{B1945E15-4933-460F-8103-AA611DDB663A}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "http.sys"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "Http2FaultAggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "StreamFault:UInt8(Boolean)",
+            "FaultCode:UInt32",
+            "StatusCode:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "http.sys",
+              "function": "UxDuoExecuteDetach",
+              "ea": "0x140008b28",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "http.sys",
+              "function": "UxDuoExecuteStreamCleanup",
+              "ea": "0x14000a39e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "http.sys",
+              "function": "UxSslConnectionHandshakeCompletion",
+              "ea": "0x14001d56a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "http.sys"
+          ]
+        },
+        {
+          "fieldName": "FaultCode",
+          "type": "UInt32",
+          "seenIn": [
+            "http.sys"
+          ]
+        },
+        {
+          "fieldName": "StatusCode",
+          "type": "UInt32",
+          "seenIn": [
+            "http.sys"
+          ]
+        },
+        {
+          "fieldName": "StreamFault",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "http.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Http2UsageAggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "ClientStreams_Sum:Int64",
+            "ClientStreams_Max:Int64",
+            "ClientStreams_Min:Int64",
+            "ServerStreams_Sum:Int64",
+            "ServerStreams_Max:Int64",
+            "ServerStreams_Min:Int64",
+            "PeakConcurrentClientStreams_Sum:Int64",
+            "PeakConcurrentClientStreams_Max:Int64",
+            "PeakConcurrentClientStreams_Min:Int64",
+            "BytesSent_Sum:Int64",
+            "BytesSent_Max:Int64",
+            "BytesSent_Min:Int64",
+            "BytesReceived_Sum:Int64",
+            "BytesReceived_Max:Int64",
+            "BytesReceived_Min:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "http.sys",
+              "function": "UlTelemetryHttp2Usage",
+              "ea": "0x140009446",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "http.sys",
+              "function": "UlTelemetryHttp2Usage",
+              "ea": "0x14000952a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "http.sys",
+              "function": "UlTelemetryHttp2Usage",
+              "ea": "0x140009579",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BytesReceived_Max",
+          "type": "Int64",
+          "seenIn": [
+            "http.sys"
+          ]
+        },
+        {
+          "fieldName": "BytesReceived_Min",
+          "type": "Int64",
+          "seenIn": [
+            "http.sys"
+          ]
+        },
+        {
+          "fieldName": "BytesReceived_Sum",
+          "type": "Int64",
+          "seenIn": [
+            "http.sys"
+          ]
+        },
+        {
+          "fieldName": "BytesSent_Max",
+          "type": "Int64",
+          "seenIn": [
+            "http.sys"
+          ]
+        },
+        {
+          "fieldName": "BytesSent_Min",
+          "type": "Int64",
+          "seenIn": [
+            "http.sys"
+          ]
+        },
+        {
+          "fieldName": "BytesSent_Sum",
+          "type": "Int64",
+          "seenIn": [
+            "http.sys"
+          ]
+        },
+        {
+          "fieldName": "ClientStreams_Max",
+          "type": "Int64",
+          "seenIn": [
+            "http.sys"
+          ]
+        },
+        {
+          "fieldName": "ClientStreams_Min",
+          "type": "Int64",
+          "seenIn": [
+            "http.sys"
+          ]
+        },
+        {
+          "fieldName": "ClientStreams_Sum",
+          "type": "Int64",
+          "seenIn": [
+            "http.sys"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "http.sys"
+          ]
+        },
+        {
+          "fieldName": "PeakConcurrentClientStreams_Max",
+          "type": "Int64",
+          "seenIn": [
+            "http.sys"
+          ]
+        },
+        {
+          "fieldName": "PeakConcurrentClientStreams_Min",
+          "type": "Int64",
+          "seenIn": [
+            "http.sys"
+          ]
+        },
+        {
+          "fieldName": "PeakConcurrentClientStreams_Sum",
+          "type": "Int64",
+          "seenIn": [
+            "http.sys"
+          ]
+        },
+        {
+          "fieldName": "ServerStreams_Max",
+          "type": "Int64",
+          "seenIn": [
+            "http.sys"
+          ]
+        },
+        {
+          "fieldName": "ServerStreams_Min",
+          "type": "Int64",
+          "seenIn": [
+            "http.sys"
+          ]
+        },
+        {
+          "fieldName": "ServerStreams_Sum",
+          "type": "Int64",
+          "seenIn": [
+            "http.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SslHandshakeCompletionAggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "SchannelOverhead_Sum:Int64",
+            "SchannelOverhead_Max:Int64",
+            "SchannelOverhead_Min:Int64",
+            "Protocol:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "http.sys",
+              "function": "UlTelemetryHttp2Usage",
+              "ea": "0x14000959a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "http.sys",
+              "function": "UxSslConnectionHandshakeCompletion",
+              "ea": "0x14001d4af",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "http.sys",
+              "function": "UxSslConnectionHandshakeCompletion",
+              "ea": "0x14001d505",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "http.sys",
+              "function": "UxSslConnectionHandshakeCompletion",
+              "ea": "0x14001d54d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "http.sys"
+          ]
+        },
+        {
+          "fieldName": "Protocol",
+          "type": "UInt32",
+          "seenIn": [
+            "http.sys"
+          ]
+        },
+        {
+          "fieldName": "SchannelOverhead_Max",
+          "type": "Int64",
+          "seenIn": [
+            "http.sys"
+          ]
+        },
+        {
+          "fieldName": "SchannelOverhead_Min",
+          "type": "Int64",
+          "seenIn": [
+            "http.sys"
+          ]
+        },
+        {
+          "fieldName": "SchannelOverhead_Sum",
+          "type": "Int64",
+          "seenIn": [
+            "http.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

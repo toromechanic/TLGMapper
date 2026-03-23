@@ -1,0 +1,2861 @@
+{
+  "providerName": "Microsoft.Windows.Kernel.Oplocks",
+  "guid": "{107CF38F-B01B-4FFC-BF6B-D0ED96D8ECC6}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "ntoskrnl.exe"
+  ],
+  "uniqueEventCount": 51,
+  "events": [
+    {
+      "eventName": "BreakOplockOnWritableMappedSection",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "SyncType:UInt32",
+            "PageProtection:HexInt32",
+            "OplockState:HexInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlCheckOplockForFsFilterCallback",
+              "ea": "0x1409f3957",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PageProtection",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "SyncType",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ClosingDeleteOnClose",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlCheckOplockEx2",
+              "ea": "0x1403d4858",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DenyExclusiveOplockForWritableMappedSection",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "NextOplockState:HexInt32",
+            "OplockState:HexInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpRequestExclusiveOplock",
+              "ea": "0x1404e4e59",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "NextOplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DenySharableOplockForWritableMappedSection",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "DesiredOplock:HexInt32",
+            "OplockState:HexInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpRequestShareableOplock",
+              "ea": "0x1404e574b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "DesiredOplock",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpAcknowledgeOplockBreakByCacheFlags_Enter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "NewOplockLevel:HexInt32",
+            "LowerOplockLevel:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpAcknowledgeOplockBreakByCacheFlags",
+              "ea": "0x1404e0c9d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "LowerOplockLevel",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "NewOplockLevel",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpAcknowledgeOplockBreakByCacheFlags_Exclusive_SetCompleteAckOnClose",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "OriginalFileObject:HexInt64",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpAcknowledgeOplockBreakByCacheFlags",
+              "ea": "0x1404e159d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OriginalFileObject",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpAcknowledgeOplockBreakByCacheFlags_Exit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "NTSTATUS:UInt32(NTStatus)",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpAcknowledgeOplockBreakByCacheFlags",
+              "ea": "0x1404e1882",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpAcknowledgeOplockBreakByCacheFlags",
+              "ea": "0x1406ce316",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpAcknowledgeOplockBreakByCacheFlags_RH_SetCompleteAckOnClose",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "OriginalFileObject:HexInt64",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpAcknowledgeOplockBreakByCacheFlags",
+              "ea": "0x1404e1199",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OriginalFileObject",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpCancelOplockRHIrp_Enter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ReleaseWaitingIrps:UInt8(Boolean)",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpCancelOplockRHIrp",
+              "ea": "0x140413019",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ReleaseWaitingIrps",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpCancelOplockRHIrp_Exit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ReleaseWaitingIrps:UInt8(Boolean)",
+            "CancelledIrp:UInt8(Boolean)",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpCancelOplockRHIrp",
+              "ea": "0x14041319e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpCancelOplockRHIrp",
+              "ea": "0x1406cb927",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CancelledIrp",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ReleaseWaitingIrps",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpCancelWaitingIrp_Enter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpCancelWaitingIrp",
+              "ea": "0x140420e2f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpCancelWaitingIrp_Exit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpCancelWaitingIrp",
+              "ea": "0x140420ff4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpCancelWaitingIrp",
+              "ea": "0x1406cbb9c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpCancelWaitingIrp_LoopTop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32",
+            "WaitingIrp->Irp:HexInt64",
+            "Irp canceled:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpCancelWaitingIrp",
+              "ea": "0x140420f3d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Irp canceled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "WaitingIrp->Irp",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpComputeShareableOplockState_Enter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpComputeShareableOplockState",
+              "ea": "0x14041e183",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpComputeShareableOplockState_Exit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32",
+            "Oplock->WaitingIrps.Flink:HexInt64",
+            "Oplock->WaitingIrps.Blink:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpComputeShareableOplockState",
+              "ea": "0x14041e248",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Oplock->WaitingIrps.Blink",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock->WaitingIrps.Flink",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpGrantAnyOplockFromExclusive_SetCompleteAckOnClose",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "OriginalFileObject:HexInt64",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpGrantAnyOplockFromExclusive",
+              "ea": "0x140580d1e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OriginalFileObject",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e1a2a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "NTSTATUS:UInt32(NTStatus)",
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e1b78",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e1d87",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e2044",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e29ae",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e2de7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e2f50",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e312a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e3868",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_CompleteAckOnClose",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e33d4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_InvalidState",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e34b4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_MatchingKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "NTSTATUS:UInt32(NTStatus)",
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e1c9b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_MayWaitForAtomic",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e2c1f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_NothingToBreak",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "NTSTATUS:UInt32(NTStatus)",
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e3e38",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockR",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e2846",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockRH",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e2a93",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockRHtoNone",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e3763",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockRHtoR",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e1edb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockRW",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e2596",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockRWH",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e21b9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockRWHtoNone",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e3582",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockRWHtoR",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e3c8d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockRWHtoRH",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e39c6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockRWHtoRW",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e3b2a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockRWtoNone",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e3695",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockBreakByCacheFlags_OplockRWtoR",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockBreakByCacheFlags",
+              "ea": "0x1404e3283",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockCleanup_Enter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockCleanup",
+              "ea": "0x1404e41d8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockCleanup_Exit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32",
+            "Oplock->WaitingIrps.Flink:HexInt64",
+            "Oplock->WaitingIrps.Blink:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockCleanup",
+              "ea": "0x1404e478b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Oplock->WaitingIrps.Blink",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock->WaitingIrps.Flink",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpOplockCleanup_RemoveWaitingIrps_CompleteAckOnClose",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "OriginalFileObject:HexInt64",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockCleanup",
+              "ea": "0x1404e42b5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OriginalFileObject",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpReleaseIrpsWaitingForRH_Enter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpReleaseIrpsWaitingForRH",
+              "ea": "0x14041cda4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpReleaseIrpsWaitingForRH",
+              "ea": "0x14041cdd9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpReleaseIrpsWaitingForRH_Exit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "WaitingIrpsFound:UInt32",
+            "NonMatchingKeysFound:UInt32",
+            "WaitingIrpsCompleted:UInt32",
+            "WaitingIrpsSkipped:UInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpReleaseIrpsWaitingForRH",
+              "ea": "0x14041ceb2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpReleaseIrpsWaitingForRH",
+              "ea": "0x14041cf10",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NonMatchingKeysFound",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "WaitingIrpsCompleted",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "WaitingIrpsFound",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "WaitingIrpsSkipped",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpRemoveAndBreakRHIrp_Enter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "CompletionStatus:UInt32(NTStatus)",
+            "NewOplockLevel:HexInt32",
+            "OutputFlags:HexInt32",
+            "AccessMode:HexInt32",
+            "ShareMode:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpRemoveAndCompleteRHIrp",
+              "ea": "0x1404e4898",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AccessMode",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "CompletionStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "NewOplockLevel",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OutputFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ShareMode",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpRemoveAndBreakRHIrp_Exit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "CompletionStatus:UInt32(NTStatus)",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpRemoveAndCompleteRHIrp",
+              "ea": "0x1404e4aa0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CompletionStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpRemoveAndCompleteReadOnlyIrp_Enter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "CompletionStatus:UInt32(NTStatus)",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32",
+            "NewOplockLevel:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpRemoveAndCompleteReadOnlyIrp",
+              "ea": "0x1406e3cc9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CompletionStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "NewOplockLevel",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpRemoveAndCompleteReadOnlyIrp_Exit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "CompletionStatus:UInt32(NTStatus)",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpRemoveAndCompleteReadOnlyIrp",
+              "ea": "0x1406e3d5a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CompletionStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpRemoveAndCompleteWaitingIrp",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "WaitingIrp->Irp:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpRemoveAndCompleteWaitingIrp",
+              "ea": "0x14041d049",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "WaitingIrp->Irp",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpRequestShareableOplock_RH",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "DesiredOplock:HexInt32",
+            "GrantingInAck:UInt8(Boolean)",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpRequestShareableOplock",
+              "ea": "0x1404e5bcd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DesiredOplock",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "GrantingInAck",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpWaitOnIrp_Enter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Waiting Irp:HexInt64",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpWaitOnIrp",
+              "ea": "0x14041f2b8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Waiting Irp",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FsRtlpWaitOnIrp_Exit",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "NTSTATUS:UInt32(NTStatus)",
+            "PerformedInlineWait:UInt8(Boolean)",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpWaitOnIrp",
+              "ea": "0x1406cba34",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpWaitOnIrp",
+              "ea": "0x1406e6ac3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "NTSTATUS:UInt32(NTStatus)",
+            "PerformedInlineWait:UInt8(Boolean)",
+            "Oplock_ptr:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpWaitOnIrp",
+              "ea": "0x1406cbaef",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpWaitOnIrp",
+              "ea": "0x1406e6b51",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PerformedInlineWait",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NeedTwoBreaks",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "OplockAcquired:UInt8(Boolean)",
+            "Flags:HexInt32",
+            "CacheLevelToLose:HexInt32",
+            "Oplock_ptr:HexInt64",
+            "OplockState:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlCheckUpperOplock",
+              "ea": "0x14070a1db",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheLevelToLose",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockAcquired",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "OplockState",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Oplock_ptr",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OplockBreakAckMissingData",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "TelemetryFlags:HexInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockPerfSendData",
+              "ea": "0x14070ad30",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "TelemetryFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OplockBreakAckTimeout",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "AckWasDone:UInt8(Boolean)",
+            "AckTimeoutMs:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockAckTimeoutWorker",
+              "ea": "0x140581165",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AckTimeoutMs",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "AckWasDone",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OplockBreakAcknowledgment",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Version:UInt32",
+            "intervalDurationMilliseconds:UInt64",
+            "totalCount:UInt64",
+            "totalTimeNanoseconds:UInt64",
+            "averageLatencyNanoseconds:UInt64",
+            "averageLatencyBucketNanoseconds:UInt64",
+            "medianLatencyBucketNanoseconds:UInt64",
+            "maxLatencyNanoseconds:UInt64",
+            "maxLatencyBucketNanoseconds:UInt64",
+            "latencyLevelsNanoseconds:Int64[]",
+            "breakCountArray:UInt64[]",
+            "totalDurationNanosecondsArray:UInt64[]"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "FsRtlpOplockPerfSendData",
+              "ea": "0x14070afcb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "averageLatencyBucketNanoseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "averageLatencyNanoseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "breakCountArray",
+          "type": "UInt64[]",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "intervalDurationMilliseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "latencyLevelsNanoseconds",
+          "type": "Int64[]",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "maxLatencyBucketNanoseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "maxLatencyNanoseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "medianLatencyBucketNanoseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "totalCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "totalDurationNanosecondsArray",
+          "type": "UInt64[]",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "totalTimeNanoseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

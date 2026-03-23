@@ -1,0 +1,494 @@
+{
+  "providerName": "Microsoft.Windows.Shell.Mapi",
+  "guid": "{91D35613-D4E5-5939-03C5-31DA88A791F9}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "mapi32.dll",
+    "mapistub.dll"
+  ],
+  "uniqueEventCount": 15,
+  "events": [
+    {
+      "eventName": "ActivityStoppedAutomatically",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "mapi32.dll",
+              "function": "??$_tlgWriteActivityAutoStop@$0CAAAAAAAAAAA@$04@@YAXPEBU_tlgProvider_t@@PEBU_GUID@@@Z",
+              "ea": "0x18000423e",
+              "confidence": "GlobalFallback"
+            },
+            {
+              "binary": "mapistub.dll",
+              "function": "??$_tlgWriteActivityAutoStop@$0CAAAAAAAAAAA@$04@@YAXPEBU_tlgProvider_t@@PEBU_GUID@@@Z",
+              "ea": "0x18000423e",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "Centennial Package without MAPI",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Process Name::UnicodeString",
+            "PackageFullName::UnicodeString",
+            "ApplicationUserModelId::UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "mapi32.dll",
+              "function": "?LogCentennialButNoMMGA@@YAXXZ",
+              "ea": "0x18000a2c8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mapistub.dll",
+              "function": "?LogCentennialButNoMMGA@@YAXXZ",
+              "ea": "0x18000a2c8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ApplicationUserModelId",
+          "type": ":UnicodeString",
+          "seenIn": [
+            "mapi32.dll",
+            "mapistub.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": ":UnicodeString",
+          "seenIn": [
+            "mapi32.dll",
+            "mapistub.dll"
+          ]
+        },
+        {
+          "fieldName": "Process Name",
+          "type": ":UnicodeString",
+          "seenIn": [
+            "mapi32.dll",
+            "mapistub.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Error: Either you are not a MAPI provider, in which case remove 'mailProvider' extension from manifest, or you are a MAPI provider that needs to add the regkey Software\\Clients\\Mail (Default).",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "mapi32.dll",
+              "function": "?GetProxyDllEx@@YAPEAUHINSTANCE__@@HPEAKHPEAHPEAG@Z",
+              "ea": "0x18000915b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mapistub.dll",
+              "function": "?GetProxyDllEx@@YAPEAUHINSTANCE__@@HPEAKHPEAHPEAG@Z",
+              "ea": "0x18000915b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "Forcing mmgaserver architecture: CLSCTX_ACTIVATE_32_BIT_SERVER",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "mapi32.dll",
+              "function": "?CalculateAndForceMmgaserverArchitecture@@YAXPEAUHINSTANCE__@@H@Z",
+              "ea": "0x180005859",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mapistub.dll",
+              "function": "?CalculateAndForceMmgaserverArchitecture@@YAXPEAUHINSTANCE__@@H@Z",
+              "ea": "0x180005859",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "Forcing mmgaserver architecture: CLSCTX_ACTIVATE_64_BIT_SERVER",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "mapi32.dll",
+              "function": "?CalculateAndForceMmgaserverArchitecture@@YAXPEAUHINSTANCE__@@H@Z",
+              "ea": "0x180005829",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mapistub.dll",
+              "function": "?CalculateAndForceMmgaserverArchitecture@@YAXPEAUHINSTANCE__@@H@Z",
+              "ea": "0x180005829",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "Forcing mmgaserver architecture: Error - unknown architecture",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "mapi32.dll",
+              "function": "?CalculateAndForceMmgaserverArchitecture@@YAXPEAUHINSTANCE__@@H@Z",
+              "ea": "0x18000588a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mapistub.dll",
+              "function": "?CalculateAndForceMmgaserverArchitecture@@YAXPEAUHINSTANCE__@@H@Z",
+              "ea": "0x18000588a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "MAPISendMailStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "mapi32.dll",
+              "function": "MAPISendMail",
+              "ea": "0x1800146ea",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mapistub.dll",
+              "function": "MAPISendMail",
+              "ea": "0x1800146ea",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "MAPISendMailStop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "lRet:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "mapi32.dll",
+              "function": "MAPISendMail",
+              "ea": "0x18001481d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mapistub.dll",
+              "function": "MAPISendMail",
+              "ea": "0x18001481d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "lRet",
+          "type": "UInt32",
+          "seenIn": [
+            "mapi32.dll",
+            "mapistub.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MAPISendMailWStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "mapi32.dll",
+              "function": "MAPISendMailW",
+              "ea": "0x1800149e3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mapistub.dll",
+              "function": "MAPISendMailW",
+              "ea": "0x1800149e3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "MAPISendMailWStop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "lRet:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "mapi32.dll",
+              "function": "MAPISendMailW",
+              "ea": "0x180014b0d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mapistub.dll",
+              "function": "MAPISendMailW",
+              "ea": "0x180014b0d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "lRet",
+          "type": "UInt32",
+          "seenIn": [
+            "mapi32.dll",
+            "mapistub.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Mapi32 CoInit sendmailproxy",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "mapi32.dll",
+              "function": "?MAPISendMailProxy@@YAK_KPEAUMapiMessage@@KKG@Z",
+              "ea": "0x18000a96a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mapistub.dll",
+              "function": "?MAPISendMailProxy@@YAK_KPEAUMapiMessage@@KKG@Z",
+              "ea": "0x18000a96a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "Mapi32 CoInit sendmailproxyw",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "mapi32.dll",
+              "function": "?MAPISendMailProxyW@@YAK_KPEAUMapiMessageW@@KKG@Z",
+              "ea": "0x18000ab7a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mapistub.dll",
+              "function": "?MAPISendMailProxyW@@YAK_KPEAUMapiMessageW@@KKG@Z",
+              "ea": "0x18000ab7a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "Mapi32 CoUnInit sendmailproxy",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "mapi32.dll",
+              "function": "?MAPISendMailProxy@@YAK_KPEAUMapiMessage@@KKG@Z",
+              "ea": "0x18000aad9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mapistub.dll",
+              "function": "?MAPISendMailProxy@@YAK_KPEAUMapiMessage@@KKG@Z",
+              "ea": "0x18000aad9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "Mapi32 CoUnInit sendmailproxyw",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "mapi32.dll",
+              "function": "?MAPISendMailProxyW@@YAK_KPEAUMapiMessageW@@KKG@Z",
+              "ea": "0x18000acd6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mapistub.dll",
+              "function": "?MAPISendMailProxyW@@YAK_KPEAUMapiMessageW@@KKG@Z",
+              "ea": "0x18000acd6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "ShouldMapiBeLoadedInprocForMmgaPipeline returned",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "true:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "mapi32.dll",
+              "function": "?ShouldMapiBeLoadedInprocForMmgaPipeline@@YA?AV?$optional@_N@std@@V?$vector@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@V?$allocator@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@@2@@2@@Z",
+              "ea": "0x18000d101",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mapistub.dll",
+              "function": "?ShouldMapiBeLoadedInprocForMmgaPipeline@@YA?AV?$optional@_N@std@@V?$vector@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@V?$allocator@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@@2@@2@@Z",
+              "ea": "0x18000d101",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "false:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "mapi32.dll",
+              "function": "?ShouldMapiBeLoadedInprocForMmgaPipeline@@YA?AV?$optional@_N@std@@V?$vector@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@V?$allocator@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@@2@@2@@Z",
+              "ea": "0x18000d14e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mapistub.dll",
+              "function": "?ShouldMapiBeLoadedInprocForMmgaPipeline@@YA?AV?$optional@_N@std@@V?$vector@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@V?$allocator@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@@2@@2@@Z",
+              "ea": "0x18000d14e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "false",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "mapi32.dll",
+            "mapistub.dll"
+          ]
+        },
+        {
+          "fieldName": "true",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "mapi32.dll",
+            "mapistub.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

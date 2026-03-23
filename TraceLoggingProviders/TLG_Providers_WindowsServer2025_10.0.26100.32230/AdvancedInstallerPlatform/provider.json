@@ -1,0 +1,243 @@
+{
+  "providerName": "AdvancedInstallerPlatform",
+  "guid": "{696AC247-4E85-42E8-B0D2-FEC2475C76AD}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "wcp.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "AIExecutionFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "InstallerId:GUID",
+            "InstallerName:AnsiString",
+            "Phase:UnicodeString",
+            "Mode:UnicodeString",
+            "Status:UnicodeString",
+            "Component:UnicodeString",
+            "QueueType:UnicodeString",
+            "BootState:UnicodeString",
+            "RebootRequested:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "wcp.dll",
+              "function": "?SendAIFailure@AIAsimovProvider@COM@Windows@@QEAAXAEBU_GUID@@AEBUAIFailureInformation@23@K@Z",
+              "ea": "0x1801dac9d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BootState",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wcp.dll"
+          ]
+        },
+        {
+          "fieldName": "Component",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wcp.dll"
+          ]
+        },
+        {
+          "fieldName": "InstallerId",
+          "type": "GUID",
+          "seenIn": [
+            "wcp.dll"
+          ]
+        },
+        {
+          "fieldName": "InstallerName",
+          "type": "AnsiString",
+          "seenIn": [
+            "wcp.dll"
+          ]
+        },
+        {
+          "fieldName": "Mode",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wcp.dll"
+          ]
+        },
+        {
+          "fieldName": "Phase",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wcp.dll"
+          ]
+        },
+        {
+          "fieldName": "QueueType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wcp.dll"
+          ]
+        },
+        {
+          "fieldName": "RebootRequested",
+          "type": "Bool32",
+          "seenIn": [
+            "wcp.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wcp.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AIFinalStats",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "InstallerId:GUID",
+            "InstallerName:AnsiString",
+            "CountOfTotalInvocations:UInt64",
+            "CountOfInstallInvocations:UInt64",
+            "CountOfUninstallInvocations:UInt64",
+            "CountOfDeltaInvocations:UInt64",
+            "CountOfRebootsRequested:UInt64",
+            "ExecutionTimeAverageUs:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wcp.dll",
+              "function": "?SendAIStats@AIAsimovProvider@COM@Windows@@QEAAXXZ",
+              "ea": "0x1801dae47",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CountOfDeltaInvocations",
+          "type": "UInt64",
+          "seenIn": [
+            "wcp.dll"
+          ]
+        },
+        {
+          "fieldName": "CountOfInstallInvocations",
+          "type": "UInt64",
+          "seenIn": [
+            "wcp.dll"
+          ]
+        },
+        {
+          "fieldName": "CountOfRebootsRequested",
+          "type": "UInt64",
+          "seenIn": [
+            "wcp.dll"
+          ]
+        },
+        {
+          "fieldName": "CountOfTotalInvocations",
+          "type": "UInt64",
+          "seenIn": [
+            "wcp.dll"
+          ]
+        },
+        {
+          "fieldName": "CountOfUninstallInvocations",
+          "type": "UInt64",
+          "seenIn": [
+            "wcp.dll"
+          ]
+        },
+        {
+          "fieldName": "ExecutionTimeAverageUs",
+          "type": "UInt64",
+          "seenIn": [
+            "wcp.dll"
+          ]
+        },
+        {
+          "fieldName": "InstallerId",
+          "type": "GUID",
+          "seenIn": [
+            "wcp.dll"
+          ]
+        },
+        {
+          "fieldName": "InstallerName",
+          "type": "AnsiString",
+          "seenIn": [
+            "wcp.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AIQueueExecution",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "DeviceSKUType:UInt64",
+            "DeviceArchitecture:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "wcp.dll",
+              "function": "?StartActivity@AIAsimovProvider@COM@Windows@@AEAAXXZ",
+              "ea": "0x1801db07d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "wcp.dll",
+              "function": "?StopActivity@AIAsimovProvider@COM@Windows@@AEAAXXZ",
+              "ea": "0x18015d327",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DeviceArchitecture",
+          "type": "UInt16",
+          "seenIn": [
+            "wcp.dll"
+          ]
+        },
+        {
+          "fieldName": "DeviceSKUType",
+          "type": "UInt64",
+          "seenIn": [
+            "wcp.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

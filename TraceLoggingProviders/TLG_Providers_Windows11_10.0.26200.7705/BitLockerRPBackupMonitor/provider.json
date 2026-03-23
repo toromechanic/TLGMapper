@@ -1,0 +1,77 @@
+{
+  "providerName": "BitLockerRPBackupMonitor",
+  "guid": "{6ECB20D3-12D7-5A8E-AD37-AFF14180CD59}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "bdesvc.dll",
+    "fvewiz.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "RPBackupPromptChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "BitLockerShowPromptOld:UInt32",
+            "BitLockerShowPromptNew:UInt32",
+            "ExitCode:Int32(HResult)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?ShowPromptForCurrentUser@FveBackupMonitor@@SAJPEBVCNgscbToken@@K@Z",
+              "ea": "0x1800686b9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fvewiz.dll",
+              "function": "?ShowPromptForCurrentUser@FveBackupMonitor@@SAJPEBVCNgscbToken@@K@Z",
+              "ea": "0x180053df3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BitLockerShowPromptNew",
+          "type": "UInt32",
+          "seenIn": [
+            "bdesvc.dll",
+            "fvewiz.dll"
+          ]
+        },
+        {
+          "fieldName": "BitLockerShowPromptOld",
+          "type": "UInt32",
+          "seenIn": [
+            "bdesvc.dll",
+            "fvewiz.dll"
+          ]
+        },
+        {
+          "fieldName": "ExitCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "bdesvc.dll",
+            "fvewiz.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bdesvc.dll",
+            "fvewiz.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

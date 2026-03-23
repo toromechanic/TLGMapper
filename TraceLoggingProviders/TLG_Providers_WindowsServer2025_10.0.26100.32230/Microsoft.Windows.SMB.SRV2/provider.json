@@ -1,0 +1,708 @@
+{
+  "providerName": "Microsoft.Windows.SMB.SRV2",
+  "guid": "{771E7665-3E83-4475-8AE6-8F5384C41408}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "srv2.sys"
+  ],
+  "uniqueEventCount": 7,
+  "events": [
+    {
+      "eventName": "ConnectionProperties",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "Dialect:UInt16",
+            "IsNetBT:UInt8(Boolean)",
+            "IsRdma:UInt8(Boolean)",
+            "SigningRequired:UInt8(Boolean)",
+            "SupportCA:UInt8(Boolean)",
+            "SupportCrypto:UInt8(Boolean)",
+            "MaxReadWriteSize:UInt32",
+            "VendorId:UInt32",
+            "DeviceId:UInt32",
+            "RDMAType:UInt32",
+            "SigningAlgorithmId:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "srv2.sys",
+              "function": "Smb2ExecuteNegotiateReal",
+              "ea": "0x14008d393",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "DeviceId",
+          "type": "UInt32",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "Dialect",
+          "type": "UInt16",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "IsNetBT",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "IsRdma",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "MaxReadWriteSize",
+          "type": "UInt32",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "RDMAType",
+          "type": "UInt32",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "SigningAlgorithmId",
+          "type": "UInt16",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "SigningRequired",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "SupportCA",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "SupportCrypto",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "VendorId",
+          "type": "UInt32",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SMBLkmdTelInsertTriageDataBlockFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "InsertTriageDataBlockStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "srv2.sys",
+              "function": "Smb2LkmdTelInsertTriageDataBlockWrapper",
+              "ea": "0x140023557",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InsertTriageDataBlockStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ServerConfiguration",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "SMB2:UInt8(Boolean)",
+            "RequireSigning:UInt8(Boolean)",
+            "KeepAliveTimeInMinutes:UInt32",
+            "TreatHostAsStableStorage:UInt8(Boolean)",
+            "LeasingEnabled:UInt8(Boolean)",
+            "DirectoryLeasingEnabled:UInt8(Boolean)",
+            "DirectoryHandleLeasingEnabled:UInt8(Boolean)",
+            "MultichannelEnabled:UInt8(Boolean)",
+            "EncryptData:UInt8(Boolean)",
+            "NotificationsEnabled:UInt8(Boolean)",
+            "EncryptionEnabled:UInt8(Boolean)",
+            "CompressionEnabled:UInt8(Boolean)",
+            "RejectUnencryptedAccess:UInt8(Boolean)",
+            "HardeningLevel:UInt32",
+            "AsymmetryMode:UInt8",
+            "S4U2SelfForClaims:UInt32",
+            "AllowAnonymous:UInt8(Boolean)",
+            "MaxMidWindowSize:UInt32",
+            "ABELevel:UInt32",
+            "MaxLargeMTUSize:UInt32",
+            "OplockBreakTimeoutInSeconds:UInt32",
+            "ResumeKeyPresent:UInt8(Boolean)",
+            "SpnValidationPolicy:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "srv2.sys",
+              "function": "Smb2ProviderInitializeGlobal",
+              "ea": "0x14006e6e4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ABELevel",
+          "type": "UInt32",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "AllowAnonymous",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "AsymmetryMode",
+          "type": "UInt8",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "CompressionEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "DirectoryHandleLeasingEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "DirectoryLeasingEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "EncryptData",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "EncryptionEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "HardeningLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "KeepAliveTimeInMinutes",
+          "type": "UInt32",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "LeasingEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "MaxLargeMTUSize",
+          "type": "UInt32",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "MaxMidWindowSize",
+          "type": "UInt32",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "MultichannelEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "NotificationsEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "OplockBreakTimeoutInSeconds",
+          "type": "UInt32",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "RejectUnencryptedAccess",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "RequireSigning",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "ResumeKeyPresent",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "S4U2SelfForClaims",
+          "type": "UInt32",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "SMB2",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "SpnValidationPolicy",
+          "type": "UInt32",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "TreatHostAsStableStorage",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ServerSigningAuditEnabled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ServerSigningAuditEnabled:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "srv2.sys",
+              "function": "Smb2RefreshRegistryValue",
+              "ea": "0x14006f7e5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "ServerSigningAuditEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SessionKeyLength",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Count:Int64",
+            "SessionKeyLength:UInt32",
+            "CipherId:UInt32",
+            "MinimumSessionKeyLength:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "srv2.sys",
+              "function": "Smb2ValidateSecurityBuffer",
+              "ea": "0x14009b5bb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CipherId",
+          "type": "UInt32",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "MinimumSessionKeyLength",
+          "type": "UInt32",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionKeyLength",
+          "type": "UInt32",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SessionProperties",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "EncryptData:UInt8(Boolean)",
+            "IsAdmin:UInt8(Boolean)",
+            "IsAnonymous:UInt8(Boolean)",
+            "IsGuest:UInt8(Boolean)",
+            "IsInteractive:UInt8(Boolean)",
+            "IsCsvUser:UInt8(Boolean)",
+            "IsCAActive:UInt8(Boolean)",
+            "IsMCBinding:UInt8(Boolean)",
+            "SecurityPackageID:UInt16",
+            "SpnValidationPolicy:UInt32",
+            "SpnQueryStatus:UInt32(NTStatus)",
+            "spnServiceClassIsValid:UInt8(Boolean)",
+            "SpnPrincipalNameIsValid:UInt8(Boolean)",
+            "SpnIsCaptured:UInt8(Boolean)",
+            "SigningRequired:UInt8(Boolean)",
+            "ClientSecurityMode:UInt16",
+            "Dialect:UInt16",
+            "InstanceId:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "srv2.sys",
+              "function": "Smb2ExecuteSessionSetupReal",
+              "ea": "0x1400900f7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClientSecurityMode",
+          "type": "UInt16",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "Dialect",
+          "type": "UInt16",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "EncryptData",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "InstanceId",
+          "type": "UInt8",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "IsAdmin",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "IsAnonymous",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "IsCAActive",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "IsCsvUser",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "IsGuest",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "IsInteractive",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "IsMCBinding",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "SecurityPackageID",
+          "type": "UInt16",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "SigningRequired",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "SpnIsCaptured",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "SpnPrincipalNameIsValid",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "SpnQueryStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "SpnValidationPolicy",
+          "type": "UInt32",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "spnServiceClassIsValid",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SpnValidationFailureSessionProperties",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "SecurityPackageID:UInt16",
+            "SpnValidationPolicy:UInt32",
+            "SpnQueryStatus:UInt32(NTStatus)",
+            "SpnServiceClassIsValid:UInt8(Boolean)",
+            "SpnPrincipalNameIsValid:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "srv2.sys",
+              "function": "Smb2ExecuteSessionSetupReal",
+              "ea": "0x14008edc1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "srv2.sys",
+              "function": "Smb2ExecuteSessionSetupReal",
+              "ea": "0x14008f032",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SecurityPackageID",
+          "type": "UInt16",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "SpnPrincipalNameIsValid",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "SpnQueryStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "SpnServiceClassIsValid",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        },
+        {
+          "fieldName": "SpnValidationPolicy",
+          "type": "UInt32",
+          "seenIn": [
+            "srv2.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

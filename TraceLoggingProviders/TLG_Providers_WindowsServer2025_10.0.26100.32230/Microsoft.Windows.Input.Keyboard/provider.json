@@ -1,0 +1,537 @@
+{
+  "providerName": "Microsoft.Windows.Input.Keyboard",
+  "guid": "{D71E5030-761B-51ED-C569-A89D4C503C4F}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "ISM.dll",
+    "InputService.dll"
+  ],
+  "uniqueEventCount": 10,
+  "events": [
+    {
+      "eventName": "ElapsedTimeThresholdReached",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "WinKeyScenarioInstanceId:UInt32",
+            "TimeElapsedSec:UInt64",
+            "TimeElapsedThresholdSec:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ISM.dll",
+              "function": "?UpdateWinKeyScenarioStatusAndLogLatency@WinKeyScenarioTelemetry@@CA_NXZ",
+              "ea": "0x180023080",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        },
+        {
+          "fieldName": "TimeElapsedSec",
+          "type": "UInt64",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        },
+        {
+          "fieldName": "TimeElapsedThresholdSec",
+          "type": "UInt64",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        },
+        {
+          "fieldName": "WinKeyScenarioInstanceId",
+          "type": "UInt32",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HotKeysUsage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "m_uiModifiers:HexInt32",
+            "vk:HexInt32",
+            "isphkNotNull:Bool32",
+            "fKeyUp:Bool32",
+            "pid:UInt32",
+            "UTCReplace_TargetAppId:UInt32",
+            "UTCReplace_TargetAppVer:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ISM.dll",
+              "function": "?DetectAndProcessHotKey@HotKeyProcessor@@QEAAJI_N_K1PEAEIIU_GUID@@AEAUHotKeyDetectionResult@@@Z",
+              "ea": "0x1801cecbb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        },
+        {
+          "fieldName": "UTCReplace_TargetAppId",
+          "type": "UInt32",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        },
+        {
+          "fieldName": "UTCReplace_TargetAppVer",
+          "type": "UInt32",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        },
+        {
+          "fieldName": "fKeyUp",
+          "type": "Bool32",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        },
+        {
+          "fieldName": "isphkNotNull",
+          "type": "Bool32",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        },
+        {
+          "fieldName": "m_uiModifiers",
+          "type": "HexInt32",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        },
+        {
+          "fieldName": "pid",
+          "type": "UInt32",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        },
+        {
+          "fieldName": "vk",
+          "type": "HexInt32",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "KeyboardInputDropped",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "droppedKeysCount:UInt64",
+            "sessionId:UInt32",
+            "timeElapsedSec:UInt64",
+            "keyUpsDropped:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "InputService.dll",
+              "function": "??$KeyboardInputDropped@AEA_KAEAI_KAEA_K@KeyboardInputTelemetry@@SAXAEA_KAEAI$$QEA_K0@Z",
+              "ea": "0x18017a045",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "droppedKeysCount",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "keyUpsDropped",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "timeElapsedSec",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MultipleStartMenuEditFocusChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "droppedKeysCount:UInt64",
+            "sessionId:UInt32",
+            "timeElapsedSec:UInt64",
+            "keyUpsDropped:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "InputService.dll",
+              "function": "??$MultipleStartMenuEditFocusChange@AEA_KAEAI_KAEA_K@KeyboardInputTelemetry@@SAXAEA_KAEAI$$QEA_K0@Z",
+              "ea": "0x18017a10d",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "droppedKeysCount",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "keyUpsDropped",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "timeElapsedSec",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StartMenuEditFocusChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "droppedKeysCount:UInt64",
+            "sessionId:UInt32",
+            "timeElapsedSec:UInt64",
+            "keyUpsDropped:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "InputService.dll",
+              "function": "??$StartMenuEditFocusChange@AEA_KAEAI_KAEA_K@KeyboardInputTelemetry@@SAXAEA_KAEAI$$QEA_K0@Z",
+              "ea": "0x18017a1d5",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "droppedKeysCount",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "keyUpsDropped",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "timeElapsedSec",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinKeyAcknowledged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "WinKeyScenarioInstanceId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ISM.dll",
+              "function": "?OnWinKeyAcknowledged@WinKeyScenarioTelemetry@@SAXXZ",
+              "ea": "0x18010db7a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        },
+        {
+          "fieldName": "WinKeyScenarioInstanceId",
+          "type": "UInt32",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinKeyDetectAndProcessNoModifiers",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "WinKeyScenarioInstanceId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ISM.dll",
+              "function": "?StartWinKeyScenario@WinKeyScenarioTelemetry@@SAXPEAI@Z",
+              "ea": "0x18010dc95",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        },
+        {
+          "fieldName": "WinKeyScenarioInstanceId",
+          "type": "UInt32",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinKeyDetected",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "WinKeyScenarioInstanceId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ISM.dll",
+              "function": "?OnWinKeyDetected@WinKeyScenarioTelemetry@@SAXXZ",
+              "ea": "0x18010dbea",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        },
+        {
+          "fieldName": "WinKeyScenarioInstanceId",
+          "type": "UInt32",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinKeyOnActivationObjectNotification",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "WindowId:HexInt64",
+            "WinKeyScenarioInstanceId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ISM.dll",
+              "function": "?OnForegroundChange@WinKeyScenarioTelemetry@@SAX_K@Z",
+              "ea": "0x18010dabd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        },
+        {
+          "fieldName": "WinKeyScenarioInstanceId",
+          "type": "UInt32",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        },
+        {
+          "fieldName": "WindowId",
+          "type": "HexInt64",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinKeyOnFocusedThreadChanged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "WinKeyScenarioInstanceId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ISM.dll",
+              "function": "?EndWinKeyScenario@WinKeyScenarioTelemetry@@SAXXZ",
+              "ea": "0x180022920",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        },
+        {
+          "fieldName": "WinKeyScenarioInstanceId",
+          "type": "UInt32",
+          "seenIn": [
+            "ISM.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

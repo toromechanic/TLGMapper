@@ -1,0 +1,104 @@
+{
+  "providerName": "Microsoft-Windows-Security-EFS-EDPAudit-ApplicationLearning",
+  "guid": "{6F14D881-64EA-449D-96D7-34E9C966082B}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "edpauditapi.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "EdpAuditLogApplicationLearning",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:UInt32",
+            "appname:UnicodeString",
+            "actiontype:UInt32",
+            "appIdType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "edpauditapi.dll",
+              "function": "EdpAuditLogApplicationLearning",
+              "ea": "0x180013ca2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "actiontype",
+          "type": "UInt32",
+          "seenIn": [
+            "edpauditapi.dll"
+          ]
+        },
+        {
+          "fieldName": "appIdType",
+          "type": "UInt32",
+          "seenIn": [
+            "edpauditapi.dll"
+          ]
+        },
+        {
+          "fieldName": "appname",
+          "type": "UnicodeString",
+          "seenIn": [
+            "edpauditapi.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32",
+          "seenIn": [
+            "edpauditapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EdpAuditLogSitesLearning",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:UInt32",
+            "SiteName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "edpauditapi.dll",
+              "function": "EdpAuditLogSiteLearning",
+              "ea": "0x180013ff2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SiteName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "edpauditapi.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32",
+          "seenIn": [
+            "edpauditapi.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,901 @@
+{
+  "providerName": "Microsoft.Windows.Clfs.Telemetry",
+  "guid": "{B8E872D9-2CBB-5D71-E4E7-91788804AA03}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "clfs.sys",
+    "clfsw32.dll"
+  ],
+  "uniqueEventCount": 8,
+  "events": [
+    {
+      "eventName": "ClfsAuthConfigSummary",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "auth mode:UInt32",
+            "is group policy enabled:UInt8(Boolean)",
+            "learning mode start time:UInt64",
+            "current time:UInt64",
+            "transition period:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "clfs.sys",
+              "function": "ClfsTelemetryAuthConfigSummary",
+              "ea": "0x14005242a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "auth mode",
+          "type": "UInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "current time",
+          "type": "UInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "is group policy enabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "learning mode start time",
+          "type": "UInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "transition period",
+          "type": "UInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ClfsAuthModeTransition",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "old mode:UInt32",
+            "new mode:UInt32",
+            "learning mode start time:UInt64",
+            "current time:UInt64",
+            "transition period:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "clfs.sys",
+              "function": "ClfsTelemetryAuthModeTransition",
+              "ea": "0x140052526",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "current time",
+          "type": "UInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "learning mode start time",
+          "type": "UInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "new mode",
+          "type": "UInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "old mode",
+          "type": "UInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "transition period",
+          "type": "UInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ClfsTelemetryCreatePerf",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "file_type:HexInt32",
+            "time_us:Int64",
+            "size:HexInt64",
+            "group:HexInt64",
+            "mode:HexInt32",
+            "state:HexInt32",
+            "created:HexInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "clfs.sys",
+              "function": "ClfsTelemetryCreatePerf",
+              "ea": "0x140052615",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "created",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "file_type",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "group",
+          "type": "HexInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mode",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "size",
+          "type": "HexInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "state",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "time_us",
+          "type": "Int64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogFileCorruptionSummary",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "image name:CountedString",
+            "container name:UnicodeString",
+            "clfs file type:HexInt32",
+            "is reg file:UInt8(Boolean)",
+            "image path hash:HexInt32",
+            "container state:HexInt32",
+            "auth mode:HexInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "clfs.sys",
+              "function": "ClfsTelemetryFileCorruption",
+              "ea": "0x140052845",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "auth mode",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "clfs file type",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "container name",
+          "type": "UnicodeString",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "container state",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "image name",
+          "type": "CountedString",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "image path hash",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "is reg file",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogFileOpenDll",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "access mask:HexInt32",
+            "flags:HexInt32",
+            "integrity level:HexInt32",
+            "image name:UnicodeString",
+            "log file path:UnicodeString",
+            "container count:HexInt32",
+            "free container count:HexInt32",
+            "container size:HexInt64",
+            "calc space:HexInt64",
+            "total space:HexInt64",
+            "usable space:HexInt64",
+            "frame 1:UnicodeString",
+            "frame 2:UnicodeString",
+            "frame 3:UnicodeString",
+            "frame 4:UnicodeString",
+            "frame 5:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "clfsw32.dll",
+              "function": "ClfsTelemetryOpen",
+              "ea": "0x180002b82",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "clfsw32.dll"
+          ]
+        },
+        {
+          "fieldName": "access mask",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfsw32.dll"
+          ]
+        },
+        {
+          "fieldName": "calc space",
+          "type": "HexInt64",
+          "seenIn": [
+            "clfsw32.dll"
+          ]
+        },
+        {
+          "fieldName": "container count",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfsw32.dll"
+          ]
+        },
+        {
+          "fieldName": "container size",
+          "type": "HexInt64",
+          "seenIn": [
+            "clfsw32.dll"
+          ]
+        },
+        {
+          "fieldName": "flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfsw32.dll"
+          ]
+        },
+        {
+          "fieldName": "frame 1",
+          "type": "UnicodeString",
+          "seenIn": [
+            "clfsw32.dll"
+          ]
+        },
+        {
+          "fieldName": "frame 2",
+          "type": "UnicodeString",
+          "seenIn": [
+            "clfsw32.dll"
+          ]
+        },
+        {
+          "fieldName": "frame 3",
+          "type": "UnicodeString",
+          "seenIn": [
+            "clfsw32.dll"
+          ]
+        },
+        {
+          "fieldName": "frame 4",
+          "type": "UnicodeString",
+          "seenIn": [
+            "clfsw32.dll"
+          ]
+        },
+        {
+          "fieldName": "frame 5",
+          "type": "UnicodeString",
+          "seenIn": [
+            "clfsw32.dll"
+          ]
+        },
+        {
+          "fieldName": "free container count",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfsw32.dll"
+          ]
+        },
+        {
+          "fieldName": "image name",
+          "type": "UnicodeString",
+          "seenIn": [
+            "clfsw32.dll"
+          ]
+        },
+        {
+          "fieldName": "integrity level",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfsw32.dll"
+          ]
+        },
+        {
+          "fieldName": "log file path",
+          "type": "UnicodeString",
+          "seenIn": [
+            "clfsw32.dll"
+          ]
+        },
+        {
+          "fieldName": "total space",
+          "type": "HexInt64",
+          "seenIn": [
+            "clfsw32.dll"
+          ]
+        },
+        {
+          "fieldName": "usable space",
+          "type": "HexInt64",
+          "seenIn": [
+            "clfsw32.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogFileOpenSummary",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "image name:CountedString",
+            "container name:UnicodeString",
+            "image path hash:HexInt32",
+            "access mask bits:HexInt32",
+            "flag bits:HexInt32",
+            "log option bits:HexInt32",
+            "highest integrity level:HexInt32",
+            "lowest integrity level:HexInt32",
+            "opened from kernel mode:UInt8(Boolean)",
+            "opened from user mode:UInt8(Boolean)",
+            "total matches:HexInt32",
+            "total millis open:HexInt64",
+            "container count:HexInt32",
+            "free container count:HexInt32",
+            "container size:HexInt64",
+            "calc space:HexInt64",
+            "total space:HexInt64",
+            "usable space:HexInt64",
+            "frame 1:CountedString",
+            "frame 2:CountedString",
+            "frame 3:CountedString",
+            "frame 4:CountedString",
+            "frame 5:CountedString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "clfs.sys",
+              "function": "?ClfsProcessTelemetryEvents@@YAXXZ",
+              "ea": "0x140018198",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "access mask bits",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "calc space",
+          "type": "HexInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "container count",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "container name",
+          "type": "UnicodeString",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "container size",
+          "type": "HexInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "flag bits",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "frame 1",
+          "type": "CountedString",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "frame 2",
+          "type": "CountedString",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "frame 3",
+          "type": "CountedString",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "frame 4",
+          "type": "CountedString",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "frame 5",
+          "type": "CountedString",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "free container count",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "highest integrity level",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "image name",
+          "type": "CountedString",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "image path hash",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "log option bits",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "lowest integrity level",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "opened from kernel mode",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "opened from user mode",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "total matches",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "total millis open",
+          "type": "HexInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "total space",
+          "type": "HexInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "usable space",
+          "type": "HexInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogFileRecoverySummary",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "image name:CountedString",
+            "container name:UnicodeString",
+            "clfs file type:HexInt32",
+            "is reg file:UInt8(Boolean)",
+            "image path hash:HexInt32",
+            "recovery stage:UInt32",
+            "timestamp of event:UInt64",
+            "recovery status:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "clfs.sys",
+              "function": "ClfsTelemetryLogFileRecoverySummary",
+              "ea": "0x140052e2f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "clfs file type",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "container name",
+          "type": "UnicodeString",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "image name",
+          "type": "CountedString",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "image path hash",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "is reg file",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "recovery stage",
+          "type": "UInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "recovery status",
+          "type": "UInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "timestamp of event",
+          "type": "UInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogFileSignedSummary",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:UInt64",
+            "image name:CountedString",
+            "container name:UnicodeString",
+            "clfs file type:HexInt32",
+            "is reg file:UInt8(Boolean)",
+            "image path hash:HexInt32",
+            "container state:HexInt32",
+            "timestamp of event:UInt64",
+            "timestamp of learning mode:UInt64",
+            "delta timestamp:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "clfs.sys",
+              "function": "ClfsTelemetrySignExistingFile",
+              "ea": "0x140053119",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "clfs file type",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "container name",
+          "type": "UnicodeString",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "container state",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "delta timestamp",
+          "type": "UInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "image name",
+          "type": "CountedString",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "image path hash",
+          "type": "HexInt32",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "is reg file",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "timestamp of event",
+          "type": "UInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        },
+        {
+          "fieldName": "timestamp of learning mode",
+          "type": "UInt64",
+          "seenIn": [
+            "clfs.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

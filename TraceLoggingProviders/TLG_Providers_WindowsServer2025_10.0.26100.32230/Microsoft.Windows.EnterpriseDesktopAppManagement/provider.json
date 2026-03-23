@@ -1,0 +1,398 @@
+{
+  "providerName": "Microsoft.Windows.EnterpriseDesktopAppManagement",
+  "guid": "{16EAA7BB-5B6E-4615-BF44-B8195B5BF873}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "EnterpriseDesktopAppMgmtCSP.dll",
+    "MDMAppInstaller.exe"
+  ],
+  "uniqueEventCount": 4,
+  "events": [
+    {
+      "eventName": "Error",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "Message:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseDesktopAppMgmtCSP.dll",
+              "function": "?LogError@@YAXPEBGZZ",
+              "ea": "0x180009df8",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MDMAppInstaller.exe",
+              "function": "?LogError@@YAXPEBGZZ",
+              "ea": "0x140007708",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Message:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MDMAppInstaller.exe",
+              "function": "?LogTelemetryError@@YAXPEBGZZ",
+              "ea": "0x1400078a1",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FallbackError",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilResult:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseDesktopAppMgmtCSP.dll",
+              "function": "?ReportTelemetryFailure@TraceLoggingProvider@wil@@IEAAXAEBUFailureInfo@2@@Z",
+              "ea": "0x18000a1c0",
+              "confidence": "GlobalFallback"
+            },
+            {
+              "binary": "MDMAppInstaller.exe",
+              "function": "?ReportTelemetryFailure@TraceLoggingProvider@wil@@IEAAXAEBUFailureInfo@2@@Z",
+              "ea": "0x140007b55",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilResult:Struct(Signed)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "failureId:UInt32",
+            "failureCount:UInt32",
+            "function:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseDesktopAppMgmtCSP.dll",
+              "function": "?ReportTraceLoggingFailure@TraceLoggingProvider@wil@@IEAAXAEBUFailureInfo@2@@Z",
+              "ea": "0x18000a30f",
+              "confidence": "GlobalFallback"
+            },
+            {
+              "binary": "MDMAppInstaller.exe",
+              "function": "?ReportTraceLoggingFailure@TraceLoggingProvider@wil@@IEAAXAEBUFailureInfo@2@@Z",
+              "ea": "0x140007d17",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        },
+        {
+          "fieldName": "callContext",
+          "type": "AnsiString",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        },
+        {
+          "fieldName": "currentContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        },
+        {
+          "fieldName": "currentContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        },
+        {
+          "fieldName": "currentContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        },
+        {
+          "fieldName": "failureCount",
+          "type": "UInt32",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        },
+        {
+          "fieldName": "failureId",
+          "type": "UInt32",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        },
+        {
+          "fieldName": "function",
+          "type": "AnsiString",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        },
+        {
+          "fieldName": "originatingContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        },
+        {
+          "fieldName": "originatingContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        },
+        {
+          "fieldName": "originatingContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        },
+        {
+          "fieldName": "wilResult",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        },
+        {
+          "fieldName": "wilResult",
+          "type": "Struct(Signed)",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Info",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Message:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseDesktopAppMgmtCSP.dll",
+              "function": "?LogInfo@@YAXPEBGZZ",
+              "ea": "0x180009ec0",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MDMAppInstaller.exe",
+              "function": "?LogInfo@@YAXPEBGZZ",
+              "ea": "0x1400077c4",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Message:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MDMAppInstaller.exe",
+              "function": "?LogTelemetryInfo@@YAXPEBGZZ",
+              "ea": "0x140007979",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Warning",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Message:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseDesktopAppMgmtCSP.dll",
+              "function": "?LogWarn@@YAXPEBGZZ",
+              "ea": "0x180009f88",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MDMAppInstaller.exe",
+              "function": "?LogWarn@@YAXPEBGZZ",
+              "ea": "0x140007a30",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseDesktopAppMgmtCSP.dll",
+            "MDMAppInstaller.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

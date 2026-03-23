@@ -1,0 +1,310 @@
+{
+  "providerName": "Microsoft.Windows.SMB.SRVADMIN",
+  "guid": "{CBF776FD-5B21-5FBC-E4CD-F19FE9ACC193}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "srvnet.sys"
+  ],
+  "uniqueEventCount": 6,
+  "events": [
+    {
+      "eventName": "QuicServerConnectionShutdown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Error:UInt16",
+            "Reason:UInt32",
+            "MachineNamedPipeAccess:UInt32",
+            "ConnectionNamedPipeAccess:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "srvnet.sys",
+              "function": "SrvNetQuicServerConnectionCallback",
+              "ea": "0x14001cf72",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConnectionNamedPipeAccess",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srvnet.sys"
+          ]
+        },
+        {
+          "fieldName": "Error",
+          "type": "UInt16",
+          "seenIn": [
+            "srvnet.sys"
+          ]
+        },
+        {
+          "fieldName": "MachineNamedPipeAccess",
+          "type": "UInt32",
+          "seenIn": [
+            "srvnet.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "srvnet.sys"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UInt32",
+          "seenIn": [
+            "srvnet.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RDMAConnectionClose",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "TimeElapsedInMilliseconds:UInt64",
+            "EndpointShutdown:UInt8",
+            "EndpointRemoved:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "srvnet.sys",
+              "function": "SrvNetRdmaCloseSocket",
+              "ea": "0x14001a253",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EndpointRemoved",
+          "type": "UInt8",
+          "seenIn": [
+            "srvnet.sys"
+          ]
+        },
+        {
+          "fieldName": "EndpointShutdown",
+          "type": "UInt8",
+          "seenIn": [
+            "srvnet.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "srvnet.sys"
+          ]
+        },
+        {
+          "fieldName": "TimeElapsedInMilliseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "srvnet.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SMB1Info",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "SrvNetIsSMB1RequestFound:UInt32",
+            "SrvNetTransportType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "srvnet.sys",
+              "function": "SrvNetCommonReceiveHandler",
+              "ea": "0x14002c4ff",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SrvNetIsSMB1RequestFound",
+          "type": "UInt32",
+          "seenIn": [
+            "srvnet.sys"
+          ]
+        },
+        {
+          "fieldName": "SrvNetTransportType",
+          "type": "UInt32",
+          "seenIn": [
+            "srvnet.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SMB1NotAvailable",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "srvnet.sys",
+              "function": "SrvNetHandleUnclaimedSmb1Connection",
+              "ea": "0x14001b3b7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "ServerSpnAuditEnabled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ServerSpnAuditEnabled:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "srvnet.sys",
+              "function": "SrvNetRefreshLanmanServerParameters",
+              "ea": "0x140011e66",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "srvnet.sys"
+          ]
+        },
+        {
+          "fieldName": "ServerSpnAuditEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "srvnet.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ShareProperties",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "MaximumCurrentOpenFiles:UInt32",
+            "MaximumCurrentUsers:UInt32",
+            "ShareType:UInt32",
+            "ShareFlags:UInt32",
+            "DfsFlags:UInt32",
+            "Flags:UInt32",
+            "ShareState:UInt32",
+            "ClusterShareType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "srvnet.sys",
+              "function": "SrvAdminSMBSharesReportingRoutine",
+              "ea": "0x1400225ee",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClusterShareType",
+          "type": "UInt32",
+          "seenIn": [
+            "srvnet.sys"
+          ]
+        },
+        {
+          "fieldName": "DfsFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "srvnet.sys"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "UInt32",
+          "seenIn": [
+            "srvnet.sys"
+          ]
+        },
+        {
+          "fieldName": "MaximumCurrentOpenFiles",
+          "type": "UInt32",
+          "seenIn": [
+            "srvnet.sys"
+          ]
+        },
+        {
+          "fieldName": "MaximumCurrentUsers",
+          "type": "UInt32",
+          "seenIn": [
+            "srvnet.sys"
+          ]
+        },
+        {
+          "fieldName": "ShareFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "srvnet.sys"
+          ]
+        },
+        {
+          "fieldName": "ShareState",
+          "type": "UInt32",
+          "seenIn": [
+            "srvnet.sys"
+          ]
+        },
+        {
+          "fieldName": "ShareType",
+          "type": "UInt32",
+          "seenIn": [
+            "srvnet.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

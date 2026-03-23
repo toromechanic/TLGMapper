@@ -1,0 +1,428 @@
+{
+  "providerName": "Microsoft.Windows.Security.BCrypt",
+  "guid": "{F3A71A4B-6118-4257-8CCB-39A33BA059D4}",
+  "os": "Windows 11",
+  "binaryCount": 3,
+  "binaries": [
+    "bcrypt.dll",
+    "bcryptprimitives.dll",
+    "cng.sys"
+  ],
+  "uniqueEventCount": 7,
+  "events": [
+    {
+      "eventName": "BCryptOpenAlgorithmProvider",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "PartA_PrivTags:UInt64",
+            "Status:UInt32",
+            "IsKernelMode:Bool32",
+            "ProcessName:UnicodeString",
+            "AlgorithmId:UnicodeString",
+            "RequestedProvider:UnicodeString",
+            "ResolvedProvider:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "bcrypt.dll",
+              "function": "BCryptOpenAlgorithmProvider",
+              "ea": "0x18000a3a8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "cng.sys",
+              "function": "BCryptOpenAlgorithmProvider",
+              "ea": "0x180047172",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AlgorithmId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bcrypt.dll",
+            "cng.sys"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "bcrypt.dll",
+            "cng.sys"
+          ]
+        },
+        {
+          "fieldName": "IsKernelMode",
+          "type": "Bool32",
+          "seenIn": [
+            "bcrypt.dll",
+            "cng.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bcrypt.dll",
+            "cng.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bcrypt.dll",
+            "cng.sys"
+          ]
+        },
+        {
+          "fieldName": "RequestedProvider",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bcrypt.dll",
+            "cng.sys"
+          ]
+        },
+        {
+          "fieldName": "ResolvedProvider",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bcrypt.dll",
+            "cng.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32",
+          "seenIn": [
+            "bcrypt.dll",
+            "cng.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BCryptRegisterConfigChangeNotify",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "callingImageName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "bcrypt.dll",
+              "function": "BCryptRegisterConfigChangeNotify",
+              "ea": "0x180018913",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "callingImageName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bcrypt.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BCryptSignHash",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "PartA_PrivTags:UInt64",
+            "Status:UInt32",
+            "IsKernelMode:Bool32",
+            "ProcessName:UnicodeString",
+            "AlgorithmId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "bcrypt.dll",
+              "function": "BCryptSignHash",
+              "ea": "0x18000fad5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "cng.sys",
+              "function": "BCryptSignHash",
+              "ea": "0x18005da80",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AlgorithmId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bcrypt.dll",
+            "cng.sys"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "bcrypt.dll",
+            "cng.sys"
+          ]
+        },
+        {
+          "fieldName": "IsKernelMode",
+          "type": "Bool32",
+          "seenIn": [
+            "bcrypt.dll",
+            "cng.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bcrypt.dll",
+            "cng.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bcrypt.dll",
+            "cng.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32",
+          "seenIn": [
+            "bcrypt.dll",
+            "cng.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BCryptUnregisterConfigChangeNotify",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "callingImageName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "bcrypt.dll",
+              "function": "BCryptUnregisterConfigChangeNotify",
+              "ea": "0x180018d43",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "callingImageName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bcrypt.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BCryptVerifySignature",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "PartA_PrivTags:UInt64",
+            "Status:UInt32",
+            "IsKernelMode:Bool32",
+            "ProcessName:UnicodeString",
+            "AlgorithmId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "bcrypt.dll",
+              "function": "BCryptVerifySignature",
+              "ea": "0x18000ff19",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "cng.sys",
+              "function": "BCryptVerifySignature",
+              "ea": "0x180047d02",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AlgorithmId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bcrypt.dll",
+            "cng.sys"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "bcrypt.dll",
+            "cng.sys"
+          ]
+        },
+        {
+          "fieldName": "IsKernelMode",
+          "type": "Bool32",
+          "seenIn": [
+            "bcrypt.dll",
+            "cng.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bcrypt.dll",
+            "cng.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bcrypt.dll",
+            "cng.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32",
+          "seenIn": [
+            "bcrypt.dll",
+            "cng.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CheckEncryptionPadding",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Provider:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "bcrypt.dll",
+              "function": "BCryptDecrypt",
+              "ea": "0x18000d43a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bcrypt.dll",
+              "function": "BCryptDecrypt",
+              "ea": "0x18000d479",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bcrypt.dll"
+          ]
+        },
+        {
+          "fieldName": "Provider",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bcrypt.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FIPSSelftestSuccess",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "UserMode:UInt64",
+            "KernelMode:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bcryptprimitives.dll",
+              "function": "MsProviderStart",
+              "ea": "0x180043d5e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "KernelMode",
+          "type": "UInt64",
+          "seenIn": [
+            "bcryptprimitives.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bcryptprimitives.dll"
+          ]
+        },
+        {
+          "fieldName": "UserMode",
+          "type": "UInt64",
+          "seenIn": [
+            "bcryptprimitives.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

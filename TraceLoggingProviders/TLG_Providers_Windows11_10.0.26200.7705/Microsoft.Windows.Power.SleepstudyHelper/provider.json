@@ -1,0 +1,335 @@
+{
+  "providerName": "Microsoft.Windows.Power.SleepstudyHelper",
+  "guid": "{9EDC1E34-F571-4374-871C-B87CC742017B}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "energy.dll",
+    "ntoskrnl.exe"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "BlockerLimitReached",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "GlobalLimit:UInt32",
+            "LibraryLimit:UInt32",
+            "GlobalCount:UInt32",
+            "LibraryCount:UInt32",
+            "AllocationTag:UInt32",
+            "FriendlyName:CountedString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "SleepstudyHelperBuildBlocker",
+              "ea": "0x140b2807a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AllocationTag",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "FriendlyName",
+          "type": "CountedString",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "GlobalCount",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "GlobalLimit",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "LibraryCount",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "LibraryLimit",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ScenarioBlockerData",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "CsSessionId:UInt64",
+            "ParentGuid:GUID",
+            "BlockerGuid:GUID",
+            "FriendlyName:UnicodeString",
+            "BlockerType:UInt32",
+            "ActiveTime:UInt64",
+            "ActiveTimeBuckets:UInt32[N]",
+            "ActiveTimePerBucket:UInt64[N]",
+            "UnattributedActiveTimeBuckets:UInt32[N]",
+            "UnattributedActiveTimePerBucket:UInt64[N]",
+            "NonActiveTime:UInt64",
+            "NonActiveTimeBuckets:UInt32[N]",
+            "NonActiveTimePerBucket:UInt64[N]",
+            "UnattributedNonActiveTimeBuckets:UInt32[N]",
+            "UnattributedNonActiveTimePerBucket:UInt64[N]",
+            "DeviceClassGuid:UnicodeString",
+            "DeviceClassName:UnicodeString",
+            "DeviceHardwareId:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "energy.dll",
+              "function": "?WriteScenarioBlockerVerboseAccounting@@YAXPEBU_tlgProvider_t@@PEBUBlockerData@@@Z",
+              "ea": "0x180045d16",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActiveTime",
+          "type": "UInt64",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "ActiveTimeBuckets",
+          "type": "UInt32[N]",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "ActiveTimePerBucket",
+          "type": "UInt64[N]",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "BlockerGuid",
+          "type": "GUID",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "BlockerType",
+          "type": "UInt32",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "CsSessionId",
+          "type": "UInt64",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "DeviceClassGuid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "DeviceClassName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "DeviceHardwareId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "FriendlyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "NonActiveTime",
+          "type": "UInt64",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "NonActiveTimeBuckets",
+          "type": "UInt32[N]",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "NonActiveTimePerBucket",
+          "type": "UInt64[N]",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "ParentGuid",
+          "type": "GUID",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "UnattributedActiveTimeBuckets",
+          "type": "UInt32[N]",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "UnattributedActiveTimePerBucket",
+          "type": "UInt64[N]",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "UnattributedNonActiveTimeBuckets",
+          "type": "UInt32[N]",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "UnattributedNonActiveTimePerBucket",
+          "type": "UInt64[N]",
+          "seenIn": [
+            "energy.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SlimEtlWriteDiagnostics",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "TotalBytesWritten:UInt64",
+            "WriteHeaderFailureCount:UInt32",
+            "WritePayloadFailureCount:UInt32",
+            "MostRecentFailureReason:UInt32",
+            "IterationCount:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "SshpSessionManagerFlushControlEventBufferWorker",
+              "ea": "0x140b2f4ba",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IterationCount",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "MostRecentFailureReason",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "TotalBytesWritten",
+          "type": "UInt64",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "WriteHeaderFailureCount",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "WritePayloadFailureCount",
+          "type": "UInt32",
+          "seenIn": [
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

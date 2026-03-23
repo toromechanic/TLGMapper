@@ -1,0 +1,6529 @@
+{
+  "providerName": "Microsoft.Windows.ProcessLifetimeManager",
+  "guid": "{072665FB-8953-5A85-931D-D06AEAB3D109}",
+  "os": "Windows 11",
+  "binaryCount": 3,
+  "binaries": [
+    "ExecModelClient.dll",
+    "modernexecserver.dll",
+    "twinapi.appcore.dll"
+  ],
+  "uniqueEventCount": 127,
+  "events": [
+    {
+      "eventName": "Activation_AllowCsEntry",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextAllowActiveCsEntry@@YAJPEAU_HS_CONTEXT@@K@Z",
+              "ea": "0x1800591b3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "ActivationId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextAllowActiveCsEntry@@YAJPEAU_HS_CONTEXT@@K@Z",
+              "ea": "0x180059264",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Activation_Callback",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspActHamCallback@@YAXPEAU_HAM_ACTIVITY_CALLBACK_PAYLOAD@@@Z",
+              "ea": "0x18005d23c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "Activity:HexInt64",
+            "ActivationId:HexInt32",
+            "Subject:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspActHamCallback@@YAXPEAU_HAM_ACTIVITY_CALLBACK_PAYLOAD@@@Z",
+              "ea": "0x18005d340",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Activity",
+          "type": "HexInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Subject",
+          "type": "UInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Activation_Cancel",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextCancelActivation@@YAJPEAU_HS_CONTEXT@@KW4_HAM_TERMINATE_TYPE@@K@Z",
+              "ea": "0x1800592d5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "ActivationId:HexInt32",
+            "TerminateType:UInt8",
+            "Flags:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextCancelActivation@@YAJPEAU_HS_CONTEXT@@KW4_HAM_TERMINATE_TYPE@@K@Z",
+              "ea": "0x180059390",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "TerminateType",
+          "type": "UInt8",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Activation_DelayStopped",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000001",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "ActivationId:HexInt32",
+            "PsmKey:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspHostDelayedStopCallback@@YAXPEAU_TP_CALLBACK_INSTANCE@@PEAXPEAU_TP_TIMER@@@Z",
+              "ea": "0x18005e39d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Activation_DisableTimeout",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextSetDisableActivationTimeout@@YAJPEAU_HS_CONTEXT@@KK@Z",
+              "ea": "0x180059c4a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "ActivationId:HexInt32",
+            "DisableTimeout:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextSetDisableActivationTimeout@@YAJPEAU_HS_CONTEXT@@KK@Z",
+              "ea": "0x180059ccc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "DisableTimeout",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Activation_Fail",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ActivationId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HamCloseViewActivityForFailure@CProcessLifetimeManager@@UEAAJKK@Z",
+              "ea": "0x18003a721",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "ActivationId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HamCloseViewActivityForFailure@CProcessLifetimeManager@@UEAAJKK@Z",
+              "ea": "0x18003a756",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Activation_IsDebugged",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextIsActivationHostDebuggingEnabled@@YAJPEAU_HS_CONTEXT@@KPEAK@Z",
+              "ea": "0x1800595d7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "ActivationId:HexInt32",
+            "IsDebugged:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextIsActivationHostDebuggingEnabled@@YAJPEAU_HS_CONTEXT@@KPEAK@Z",
+              "ea": "0x18005966a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDebugged",
+          "type": "Bool32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Activation_IsDehydrated",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextIsActivationDehydrated@@YAJPEAU_HS_CONTEXT@@KPEAK@Z",
+              "ea": "0x1800594bb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "ActivationId:HexInt32",
+            "IsDehydrated:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextIsActivationDehydrated@@YAJPEAU_HS_CONTEXT@@KPEAK@Z",
+              "ea": "0x180059566",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDehydrated",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Activation_Register",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextRegisterActivation@@YAJPEAU_HS_CONTEXT@@K@Z",
+              "ea": "0x180059a8a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "ActivationId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextRegisterActivation@@YAJPEAU_HS_CONTEXT@@K@Z",
+              "ea": "0x180059b3f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Activation_Rehydrate",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspActActivateForRehydrate@@YAXPEAU_TP_CALLBACK_INSTANCE@@PEAXPEAU_TP_WORK@@@Z",
+              "ea": "0x18005bfdb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000001",
+          "fields": [
+            "hr:Int32(HResult)",
+            "ActivationId:HexInt32",
+            "PsmKey:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspActActivateForRehydrate@@YAXPEAU_TP_CALLBACK_INSTANCE@@PEAXPEAU_TP_WORK@@@Z",
+              "ea": "0x18005c22c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Activation_SendNotification",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "ActivationId:HexInt32",
+            "Notification:Int32",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspContextSendNotification@@YAXPEAU_HS_CONTEXT@@PEAU_HS_ACTIVITY@@W4FM_CoreUIAction@Execution@@JK@Z",
+              "ea": "0x18005ac7e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Notification",
+          "type": "Int32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Activation_SetImportance",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextSetImportance@@YAJPEAU_HS_CONTEXT@@KT_RM_ACTIVITY_IMPORTANCE@@@Z",
+              "ea": "0x180059d43",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "ActivationId:HexInt32",
+            "Importance:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextSetImportance@@YAJPEAU_HS_CONTEXT@@KT_RM_ACTIVITY_IMPORTANCE@@@Z",
+              "ea": "0x180059e22",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Importance",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Activation_SetIsKillable",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextSetIsKillable@@YAJPEAU_HS_CONTEXT@@KK@Z",
+              "ea": "0x180059e8f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "ActivationId:HexInt32",
+            "IsKillable:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextSetIsKillable@@YAJPEAU_HS_CONTEXT@@KK@Z",
+              "ea": "0x180059f60",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "IsKillable",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Activation_StartAsync",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextStartActivationAsync@@YAJPEAU_HS_CONTEXT@@KK@Z",
+              "ea": "0x180059feb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "ActivationId:HexInt32",
+            "Flags:HexInt32",
+            "WasRehydrated:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextStartActivationAsync@@YAJPEAU_HS_CONTEXT@@KK@Z",
+              "ea": "0x18005a11b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "WasRehydrated",
+          "type": "Bool32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Activation_StartForHostAsync",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextStartActivationForHostAsync@@YAJPEAU_HS_CONTEXT@@KPEAU_RM_PSM_HOST_INFO@@T_RM_ACTIVITY_IMPORTANCE@@PEBGK_K44@Z",
+              "ea": "0x18005a204",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "ActivationId:HexInt32",
+            "PsmKey:UnicodeString",
+            "HostId:HexInt64",
+            "Importance:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextStartActivationForHostAsync@@YAJPEAU_HS_CONTEXT@@KPEAU_RM_PSM_HOST_INFO@@T_RM_ACTIVITY_IMPORTANCE@@PEBGK_K44@Z",
+              "ea": "0x18005a30b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Importance",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Activation_StateChanged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "ActivationId:HexInt32",
+            "Activity:HexInt64",
+            "NewState:UInt8",
+            "OldSate:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspActEndStateChange@@YAXPEAU_HS_ACTIVITY@@K@Z",
+              "ea": "0x18005d16f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspActProcessStartedNotification@@YAXPEAU_HS_ACTIVITY@@PEAU_HAM_ACTIVITY_CALLBACK_PAYLOAD@@@Z",
+              "ea": "0x18005d4f7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Activity",
+          "type": "HexInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "NewState",
+          "type": "UInt8",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "OldSate",
+          "type": "UInt8",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Activation_Stop",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextStopActivation@@YAJPEAU_HS_CONTEXT@@K@Z",
+              "ea": "0x18005a39a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "ActivationId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextStopActivation@@YAJPEAU_HS_CONTEXT@@K@Z",
+              "ea": "0x18005a40f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Activation_Terminate",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextTerminateActivationHost@@YAJPEAU_HS_CONTEXT@@KW4_HAM_TERMINATE_TYPE@@W4_HAM_TERMINATE_REASON@@K@Z",
+              "ea": "0x18005a473",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "ActivationId:HexInt32",
+            "TerminateType:UInt8",
+            "TerminateReason:HexInt32",
+            "HungThreadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextTerminateActivationHost@@YAJPEAU_HS_CONTEXT@@KW4_HAM_TERMINATE_TYPE@@W4_HAM_TERMINATE_REASON@@K@Z",
+              "ea": "0x18005a51c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "HungThreadId",
+          "type": "UInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "TerminateReason",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "TerminateType",
+          "type": "UInt8",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Activation_WaitForStarted",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextWaitForActivationStarted@@YAJPEAU_HS_CONTEXT@@KKKPEA_K@Z",
+              "ea": "0x18005a819",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000001",
+          "fields": [
+            "Result:Int32(HResult)",
+            "ActivationId:HexInt32",
+            "Flags:HexInt32",
+            "HostGeneration:UInt64",
+            "TimeoutMs:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextWaitForActivationStarted@@YAJPEAU_HS_CONTEXT@@KKKPEA_K@Z",
+              "ea": "0x18005a879",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Result:Int32(HResult)",
+            "ActivationId:HexInt32",
+            "Flags:HexInt32",
+            "HostGeneration:UInt64",
+            "TimeoutMs:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextWaitForActivationStarted@@YAJPEAU_HS_CONTEXT@@KKKPEA_K@Z",
+              "ea": "0x18005a942",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "HostGeneration",
+          "type": "UInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "TimeoutMs",
+          "type": "UInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Activation_WindowRemoved",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextNotifyWindowRemoved@@YAJPEAU_HS_CONTEXT@@K@Z",
+              "ea": "0x180059914",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "IsDehydrated:UInt8(Boolean)",
+            "ActivationId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextNotifyWindowRemoved@@YAJPEAU_HS_CONTEXT@@K@Z",
+              "ea": "0x1800599e1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDehydrated",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Activity_Dehydrate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000001",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "Id:HexInt32",
+            "PsmKey:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspActDehydrate@@YAJPEAU_HS_ACTIVITY@@@Z",
+              "ea": "0x18005cf8c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Id",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Activity_StopRequestFail",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000001",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "StopRequestType:UInt8",
+            "ActivationId:HexInt32",
+            "ActivityId:HexInt64",
+            "CurrentState:UInt8",
+            "NextState:UInt8",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspActProcessStopRequest@@YAXPEAU_HS_ACTIVITY@@PEAU_HAM_ACTIVITY_CALLBACK_PAYLOAD@@@Z",
+              "ea": "0x18005d654",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "ActivityId",
+          "type": "HexInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "CurrentState",
+          "type": "UInt8",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "NextState",
+          "type": "UInt8",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "StopRequestType",
+          "type": "UInt8",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AllowServicing",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "packageCount:UInt32",
+            "notifyBi:Int32",
+            "terminateRunningApps:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?AllowServicing@CProcessLifetimeManager@@UEAAJPEAPEBGK0KHHPEAPEAPEAGPEAKPEAPEAUSERVICING_TERMINATION_INFO@@2@Z",
+              "ea": "0x18002f145",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "result:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?AllowServicing@CProcessLifetimeManager@@UEAAJPEAPEBGK0KHHPEAPEAPEAGPEAKPEAPEAUSERVICING_TERMINATION_INFO@@2@Z",
+              "ea": "0x18002f421",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "notifyBi",
+          "type": "Int32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "packageCount",
+          "type": "UInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "result",
+          "type": "Int32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "terminateRunningApps",
+          "type": "Int32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AllowUninstall",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "package:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?AllowUninstall@CProcessLifetimeManager@@UEAAJPEBG@Z",
+              "ea": "0x180039db3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?AllowUninstall@CProcessLifetimeManager@@UEAAJPEBG@Z",
+              "ea": "0x180039e14",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "package",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AppSvcInfo_AllocateStateError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?AppSvcInfoAllocateState@@YAJPEAU_APPLICATION_SERVICING_INFO@@@Z",
+              "ea": "0x1800302b4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AppSvcInfo_CreateError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ProcessId:UInt32(PID)",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?AppSvcInfoCreate@@YAJKPEAXPEAPEAU_APPLICATION_SERVICING_INFO@@@Z",
+              "ea": "0x180040114",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessId",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AppSvcInfo_IsConsoleAppError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?AppSvcInfoIsConsoleApp@@YAJPEAU_APPLICATION_SERVICING_INFO@@PEAK@Z",
+              "ea": "0x180032527",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AppSvcInfo_RestartInfoError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?AppSvcInfoQueryAndStoreRestartInfo@@YAJPEAU_APPLICATION_SERVICING_INFO@@@Z",
+              "ea": "0x1800402b2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Application_Terminate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)",
+            "PsmKey:UnicodeString",
+            "UserContext:HexInt64",
+            "TerminateFlags:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?TerminateApplicationForUser@CProcessLifetimeManager@@UEAAJ_KPEAUIImmersiveApplication@@W4PLM_TERMINATE_FLAGS@@PEAW4PLM_TASKCOMPLETION_CATEGORY_FLAGS@@@Z",
+              "ea": "0x18002161a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "TerminateFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "UserContext",
+          "type": "HexInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Background workitems for package were force terminated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "packageFullName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?ChangePackageBiState@@YAJKPEAXPEBGW4_BI_APPLICATION_STATE_TRANSITION@@@Z",
+              "ea": "0x1800337d9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "packageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Capability list result is supported on 10X",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?IfUnsupportedOnWindows10XAddToRequirements@AppApplicabilityStatics@Profile@System@Windows@@AEAAJPEAU?$IIterable@PEAUHSTRING__@@@Collections@Foundation@4@AEAV?$ComPtr@V?$AgileVector@PEAVUnsupportedAppRequirement@Profile@System@Windows@@U?$DefaultEqualityPredicate@PEAVUnsupportedAppRequirement@Profile@System@Windows@@@Internal@Collections@Foundation@4@U?$DefaultLifetimeTraits@PEAVUnsupportedAppRequirement@Profile@System@Windows@@@6784@$0A@@Internal@Collections@Foundation@Windows@@@WRL@Microsoft@@@Z",
+              "ea": "0x1801559d3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "Capability list result is unsupported on 10X",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?IfUnsupportedOnWindows10XAddToRequirements@AppApplicabilityStatics@Profile@System@Windows@@AEAAJPEAU?$IIterable@PEAUHSTRING__@@@Collections@Foundation@4@AEAV?$ComPtr@V?$AgileVector@PEAVUnsupportedAppRequirement@Profile@System@Windows@@U?$DefaultEqualityPredicate@PEAVUnsupportedAppRequirement@Profile@System@Windows@@@Internal@Collections@Foundation@4@U?$DefaultLifetimeTraits@PEAVUnsupportedAppRequirement@Profile@System@Windows@@@6784@$0A@@Internal@Collections@Foundation@Windows@@@WRL@Microsoft@@@Z",
+              "ea": "0x180155954",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "ChangePackageBiState failed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "result:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?ChangePackageBiState@@YAJKPEAXPEBGW4_BI_APPLICATION_STATE_TRANSITION@@@Z",
+              "ea": "0x1800337fa",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "result",
+          "type": "Int32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Changing the package state through BI",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "packageFullName:UnicodeString",
+            "newState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?ChangePackageBiState@@YAJKPEAXPEBGW4_BI_APPLICATION_STATE_TRANSITION@@@Z",
+              "ea": "0x18003371f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "newState",
+          "type": "UInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "packageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DebugControl_DisableDebugMode",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "User:UInt64",
+            "PackageFullName:UnicodeString",
+            "result:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?DisableDebugMode@CImmersiveApplicationDebugControlInternal@@UEAAJPEBG@Z",
+              "ea": "0x180042468",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "User",
+          "type": "UInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "result",
+          "type": "Int32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DebugControl_DisableDebugRelatedPackage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "user:UInt64",
+            "packageFullName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?DisableDebugMode@CImmersiveApplicationDebugControlInternal@@UEAAJPEBG@Z",
+              "ea": "0x180042389",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "packageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "user",
+          "type": "UInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DebugControl_EnableDebugMode",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "User:UInt64",
+            "hr:Int32(HResult)",
+            "PackageFullName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?EnableDebugMode@CImmersiveApplicationDebugControlInternal@@UEAAJPEBGK0PEAPEBGI@Z",
+              "ea": "0x18004278a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "User",
+          "type": "UInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DebugControl_EnableDebugRelatedPackage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "User:UInt64",
+            "PackageFullName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?EnableDebugMode@CImmersiveApplicationDebugControlInternal@@UEAAJPEBGK0PEAPEBGI@Z",
+              "ea": "0x180042668",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "User",
+          "type": "UInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Debug_Callback",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspDebugCallback@@YAXPEAU_HAM_ACTIVITY_CALLBACK_PAYLOAD@@@Z",
+              "ea": "0x18005b50f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "CallbackReason:HexInt32",
+            "HostPsmKey:UnicodeString",
+            "HostJobType:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspDebugCallback@@YAXPEAU_HAM_ACTIVITY_CALLBACK_PAYLOAD@@@Z",
+              "ea": "0x18005b63e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CallbackReason",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "HostJobType",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "HostPsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Debug_DisableDebugMode",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsDebugModeDisable@@YAJPEAU_HS_CONTEXT@@PEBGPEAX@Z",
+              "ea": "0x18005ad73",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "PackageFullName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsDebugModeDisable@@YAJPEAU_HS_CONTEXT@@PEBGPEAX@Z",
+              "ea": "0x18005ae15",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Debug_EnableDebugMode",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsDebugModeEnable@@YAJPEAU_HS_CONTEXT@@PEBGPEAX@Z",
+              "ea": "0x18005aea4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "PackageFullName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsDebugModeEnable@@YAJPEAU_HS_CONTEXT@@PEBGPEAX@Z",
+              "ea": "0x18005af2a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Debug_PackageResume",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsDebugResumePackage@@YAJPEAU_HS_CONTEXT@@PEBGPEAXPEAW4_HAM_APPLICATION_EXECUTION_STATE@@@Z",
+              "ea": "0x18005b15b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "PackageFullName:UnicodeString",
+            "UserSid:SID",
+            "PreviousPackageState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsDebugResumePackage@@YAJPEAU_HS_CONTEXT@@PEBGPEAXPEAW4_HAM_APPLICATION_EXECUTION_STATE@@@Z",
+              "ea": "0x18005b25b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "PreviousPackageState",
+          "type": "UInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSid",
+          "type": "SID",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Debug_PackageResumeClose",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsDebugPackageResumeClose@@YAJPEAU_HS_CONTEXT@@PEBGPEAX@Z",
+              "ea": "0x18005afb2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "PackageFullName:UnicodeString",
+            "UserSid:SID"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsDebugPackageResumeClose@@YAJPEAU_HS_CONTEXT@@PEBGPEAX@Z",
+              "ea": "0x18005b0c3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSid",
+          "type": "SID",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Debug_QueryPackageState",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "PackageFullName:UnicodeString",
+            "PackageState:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsDebugQueryPackageState@@YAJPEAU_HS_CONTEXT@@PEBGPEAXPEAW4_HAM_APPLICATION_EXECUTION_STATE@@@Z",
+              "ea": "0x1800223bd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsDebugQueryPackageState@@YAJPEAU_HS_CONTEXT@@PEBGPEAXPEAW4_HAM_APPLICATION_EXECUTION_STATE@@@Z",
+              "ea": "0x180022445",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageState",
+          "type": "UInt8",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Debug_ResumePackage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "User:UInt64",
+            "PackageFullName:UnicodeString",
+            "hr:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?TriggerResumeNotification@CImmersiveApplicationDebugControlInternal@@UEAAJPEBG@Z",
+              "ea": "0x1800443da",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "User",
+          "type": "UInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Debug_SuspendPackage",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsDebugSuspendPackage@@YAJPEAU_HS_CONTEXT@@PEBGPEAXPEAW4_HAM_APPLICATION_EXECUTION_STATE@@@Z",
+              "ea": "0x18005b2f0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "PackageFullName:UnicodeString",
+            "PreviousPackageState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsDebugSuspendPackage@@YAJPEAU_HS_CONTEXT@@PEBGPEAXPEAW4_HAM_APPLICATION_EXECUTION_STATE@@@Z",
+              "ea": "0x18005b390",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "User:UInt64",
+            "PackageFullName:UnicodeString",
+            "hr:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?TriggerSuspendNotification@CImmersiveApplicationDebugControlInternal@@UEAAJPEBG@Z",
+              "ea": "0x1800444ea",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "PreviousPackageState",
+          "type": "UInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "User",
+          "type": "UInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Debug_TerminatePackage",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsDebugTerminatePackage@@YAJPEAU_HS_CONTEXT@@PEBGPEAX@Z",
+              "ea": "0x18005b406",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "PackageFullName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsDebugTerminatePackage@@YAJPEAU_HS_CONTEXT@@PEBGPEAX@Z",
+              "ea": "0x18005b4af",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Disconnected Psm",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?v_ShutdownServices@CProcessLifetimeManager@@MEAAJPEAUIProfferService@@@Z",
+              "ea": "0x18003d3d4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "ExtendedExecution_Close",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ObjectId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "?Close@CExtendedExecutionSessionHam@ExtendedExecution@ApplicationModel@Windows@@QEAAXXZ",
+              "ea": "0x1800121a4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "ObjectId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "?Close@CExtendedExecutionSessionHam@ExtendedExecution@ApplicationModel@Windows@@QEAAXXZ",
+              "ea": "0x1800121f4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ObjectId",
+          "type": "HexInt64",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExtendedExecution_ConnectToHam",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "ConnectionContext:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "?HamConnectRunOnceCallback@@YAKPEAT_RTL_RUN_ONCE@@PEAXPEAPEAX@Z",
+              "ea": "0x1800160b8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConnectionContext",
+          "type": "HexInt64",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExtendedExecution_DisconnectFromHam",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "ConnectionContext:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "?CleanupHamConnection@@YAXXZ",
+              "ea": "0x1800189a9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConnectionContext",
+          "type": "HexInt64",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExtendedExecution_ExtendedExecutionSummary",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Version:UInt32",
+            "PsmKey:UnicodeString",
+            "Reason:UInt8",
+            "ActivityId:HexInt64",
+            "SessionDurationMs:Int32",
+            "EndReason:UInt8",
+            "RevokeReason:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "?EndTelemetryContext@CExtendedExecutionSessionHam@ExtendedExecution@ApplicationModel@Windows@@AEAAXW4EE_END_REASON@1234@W4_HAM_EXTENDED_EXECUTION_REVOKED_REASON@@_K@Z",
+              "ea": "0x1800177ca",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityId",
+          "type": "HexInt64",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "EndReason",
+          "type": "UInt8",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UInt8",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "RevokeReason",
+          "type": "UInt8",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionDurationMs",
+          "type": "Int32",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "UInt32",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExtendedExecution_ObjectCreated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ObjectId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "??0CExtendedExecutionSessionHam@ExtendedExecution@ApplicationModel@Windows@@QEAA@P6AXPEAXW4_HAM_EXTENDED_EXECUTION_REVOKED_REASON@@@Z0@Z",
+              "ea": "0x1800161ef",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ObjectId",
+          "type": "HexInt64",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExtendedExecution_ObjectDestroyed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ObjectId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "??1CExtendedExecutionSessionHam@ExtendedExecution@ApplicationModel@Windows@@QEAA@XZ",
+              "ea": "0x18001202a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ObjectId",
+          "type": "HexInt64",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExtendedExecution_OnActivityClosed",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ObjectId:HexInt64",
+            "ActivityId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "?OnActivityClosed@CExtendedExecutionSessionHam@ExtendedExecution@ApplicationModel@Windows@@QEAAX_K@Z",
+              "ea": "0x180011f77",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "ObjectId:HexInt64",
+            "ActivityId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "?OnActivityClosed@CExtendedExecutionSessionHam@ExtendedExecution@ApplicationModel@Windows@@QEAAX_K@Z",
+              "ea": "0x180011fc4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityId",
+          "type": "HexInt64",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "ObjectId",
+          "type": "HexInt64",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExtendedExecution_OnActivityStarted",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ObjectId:HexInt64",
+            "ActivityId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "?OnActivityStarted@CExtendedExecutionSessionHam@ExtendedExecution@ApplicationModel@Windows@@QEAAX_K@Z",
+              "ea": "0x18001207f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Hr:Int32(HResult)",
+            "ObjectId:HexInt64",
+            "ActivityId:HexInt64",
+            "EeState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "?OnActivityStarted@CExtendedExecutionSessionHam@ExtendedExecution@ApplicationModel@Windows@@QEAAX_K@Z",
+              "ea": "0x1800120f9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityId",
+          "type": "HexInt64",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "EeState",
+          "type": "UInt32",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "Hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "ObjectId",
+          "type": "HexInt64",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExtendedExecution_OnActivityStopRequested",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ObjectId:HexInt64",
+            "ActivityId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "?OnActivityStopRequested@CExtendedExecutionSessionHam@ExtendedExecution@ApplicationModel@Windows@@QEAAX_KW4_HAM_ACTIVITY_STOP_REQUEST_REASON@@@Z",
+              "ea": "0x1800230cc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Hr:Int32(HResult)",
+            "ObjectId:HexInt64",
+            "ActivityId:HexInt64",
+            "EeState:UInt32",
+            "RevokeReason:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "?OnActivityStopRequested@CExtendedExecutionSessionHam@ExtendedExecution@ApplicationModel@Windows@@QEAAX_KW4_HAM_ACTIVITY_STOP_REQUEST_REASON@@@Z",
+              "ea": "0x18002318b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityId",
+          "type": "HexInt64",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "EeState",
+          "type": "UInt32",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "Hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "ObjectId",
+          "type": "HexInt64",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "RevokeReason",
+          "type": "UInt8",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExtendedExecution_RequestExtension",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ObjectId:HexInt64",
+            "Reason:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "?RequestExtensionAsync@CExtendedExecutionSessionHam@ExtendedExecution@ApplicationModel@Windows@@QEAAJW4_HAM_EXTENDED_EXECUTION_REASON@@PEBG@Z",
+              "ea": "0x180011cd0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Version:UInt32",
+            "Hr:Int32(HResult)",
+            "FailureCode:UInt8",
+            "ObjectId:HexInt64",
+            "PsmKey:UnicodeString",
+            "Reason:UInt8",
+            "ActivityId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "?RequestExtensionAsync@CExtendedExecutionSessionHam@ExtendedExecution@ApplicationModel@Windows@@QEAAJW4_HAM_EXTENDED_EXECUTION_REASON@@PEBG@Z",
+              "ea": "0x180011eb3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityId",
+          "type": "HexInt64",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "FailureCode",
+          "type": "UInt8",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "Hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "ObjectId",
+          "type": "HexInt64",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UInt8",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "UInt32",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExtendedExecution_RequestExtensionAsync",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "_lambda_b810d6073ee43d317c1c1ef9a95cd0b5_::operator()",
+              "ea": "0x180011b45",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "_lambda_b810d6073ee43d317c1c1ef9a95cd0b5_::operator()",
+              "ea": "0x180011b7c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)",
+            "currentProcessId:UInt32(PID)"
+          ],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "_lambda_b810d6073ee43d317c1c1ef9a95cd0b5_::operator()",
+              "ea": "0x180011c4f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "currentProcessId",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExtendedExecution_RequestExtensionAsyncError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "?RequestExtensionAsync@CExtendedExecutionSession@ExtendedExecution@ApplicationModel@Windows@@UEAAJPEAPEAU?$IAsyncOperation@W4ExtendedExecutionResult@ExtendedExecution@ApplicationModel@Windows@@@Foundation@4@@Z",
+              "ea": "0x180016af2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExtendedExecution_RequestExtensionAsyncError_ForegroundSession",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "?RequestExtensionAsync@CExtendedExecutionForegroundSession@Foreground@ExtendedExecution@ApplicationModel@Windows@@UEAAJPEAPEAU?$IAsyncOperation@W4ExtendedExecutionForegroundResult@Foreground@ExtendedExecution@ApplicationModel@Windows@@@Foundation@5@@Z",
+              "ea": "0x1800279ba",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExtendedExecution_RequestExtensionAsync_ForegroundSession",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "_lambda_5045d6520fe7170c83f78832d71935c0_::operator()",
+              "ea": "0x180024ae0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)",
+            "currentProcessId:UInt32(PID)"
+          ],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "_lambda_5045d6520fe7170c83f78832d71935c0_::operator()",
+              "ea": "0x180024ba4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "currentProcessId",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExtendedExecution_SendRevocation",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "?_SendRevocation@CExtendedExecutionSession@ExtendedExecution@ApplicationModel@Windows@@AEAAXW4ExtendedExecutionRevokedReason@234@@Z",
+              "ea": "0x180028460",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)",
+            "currentProcessId:UInt32(PID)"
+          ],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "?_SendRevocation@CExtendedExecutionSession@ExtendedExecution@ApplicationModel@Windows@@AEAAXW4ExtendedExecutionRevokedReason@234@@Z",
+              "ea": "0x1800285be",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "currentProcessId",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExtendedExecution_SendRevocation_ForegroundSession",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "?_SendRevocation@CExtendedExecutionForegroundSession@Foreground@ExtendedExecution@ApplicationModel@Windows@@AEAAXW4ExtendedExecutionForegroundRevokedReason@2345@@Z",
+              "ea": "0x1800282ac",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)",
+            "currentProcessId:UInt32(PID)"
+          ],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "?_SendRevocation@CExtendedExecutionForegroundSession@Foreground@ExtendedExecution@ApplicationModel@Windows@@AEAAXW4ExtendedExecutionForegroundRevokedReason@2345@@Z",
+              "ea": "0x180028406",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "currentProcessId",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "ExecModelClient.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExtendedExecution_SkipDisconnectFromHamOnProcessExit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ExecModelClient.dll",
+              "function": "?CleanupExtendedExecutionGlobals@@YAXK@Z",
+              "ea": "0x180018915",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "FM_ActivationPrerequisitePhase",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "userContext:UInt64",
+            "activationInstanceId:UInt32",
+            "appUserModelId:UnicodeString",
+            "contractId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?ActivationPrerequisitePhase@ForegroundManager@Execution@@UEAAJKIW4APPLICATIONLAYER@@_K1QEBGPEBU_GUID@@2KPEAUIPropertySet@Collections@Foundation@Windows@@PEAH@Z",
+              "ea": "0x1800471fb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?ActivationPrerequisitePhase@ForegroundManager@Execution@@UEAAJKIW4APPLICATIONLAYER@@_K1QEBGPEBU_GUID@@2KPEAUIPropertySet@Collections@Foundation@Windows@@PEAH@Z",
+              "ea": "0x180047453",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "activationInstanceId",
+          "type": "UInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "appUserModelId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "contractId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "userContext",
+          "type": "UInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FM_GenerateActivationInstance",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "activationInstanceId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?GenerateActivationInstanceId@ForegroundManager@Execution@@UEAAJPEAK@Z",
+              "ea": "0x18004770f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "activationInstanceId",
+          "type": "UInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FM_LogoffUser",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "userContext:UInt64",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "_lambda_036525c025de0ef11886217880bbd660_::operator()",
+              "ea": "0x180046e84",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "userContext",
+          "type": "UInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FM_RegisterCallback",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "coreUIEndpoint:UnicodeString",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?RegisterCallback@ForegroundManager@Execution@@UEAAJQEBGW4FM_NotificationType@2@@Z",
+              "ea": "0x1800482ca",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "coreUIEndpoint",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FM_SendActivationNotification",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "activationId:UInt32",
+            "action:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?OnCoreUIWorkReady@ForegroundManager@Execution@@UEAAXPEAUIMessageSession@@PEAX@Z",
+              "ea": "0x180047f81",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "action",
+          "type": "UInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "activationId",
+          "type": "UInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FM_Shutdown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "_lambda_07dc5b16c3859316e1e38dbc1d6305fe_::operator()",
+              "ea": "0x180046f40",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FM_ShutdownError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?Shutdown@ForegroundManager@Execution@@UEAAJW4_ACTIVATIONSHUTDOWNIMPORTANCE@@@Z",
+              "ea": "0x180048a7d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FinishedServicing",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "packageCount:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?FinishedServicing@CProcessLifetimeManager@@UEAAJPEAPEBGK@Z",
+              "ea": "0x1800335b4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "result:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?FinishedServicing@CProcessLifetimeManager@@UEAAJPEAPEBGK@Z",
+              "ea": "0x180033626",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?FinishedServicing@CProcessLifetimeManager@@UEAAJPEAPEBGK@Z",
+              "ea": "0x18003364d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "packageCount",
+          "type": "UInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "result",
+          "type": "Int32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HamGetRunningApps: Failed to enumerate applications",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)",
+            "package:UnicodeString",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?_HamGetRunningAppsForUser@CProcessLifetimeManager@@AEAAJPEBGPEAV?$CRefCountedObject@U_UserInfo@Execution@@@@AEAV?$CCoSimpleArray@PEAG$0PPPPPPPO@V?$CSimpleArrayStandardCompareHelper@PEAG@@@@@Z",
+              "ea": "0x18003cbc3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "package",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HamShim_GetApplicationStateForPsmKey",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextGetApplicationStateForPsmKey@@YAJPEAU_HS_CONTEXT@@PEBGPEAXPEAW4_HAM_APPLICATION_EXECUTION_STATE@@PEAW4_HAM_TERMINATE_REASON@@@Z",
+              "ea": "0x180021f95",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextGetApplicationStateForPsmKey@@YAJPEAU_HS_CONTEXT@@PEBGPEAXPEAW4_HAM_APPLICATION_EXECUTION_STATE@@PEAW4_HAM_TERMINATE_REASON@@@Z",
+              "ea": "0x180021fc5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "PsmKey:UnicodeString",
+            "Sid:SID",
+            "ApplicationState:UInt8",
+            "TerminateReason:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextGetApplicationStateForPsmKey@@YAJPEAU_HS_CONTEXT@@PEBGPEAXPEAW4_HAM_APPLICATION_EXECUTION_STATE@@PEAW4_HAM_TERMINATE_REASON@@@Z",
+              "ea": "0x1800220e9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextGetApplicationStateForPsmKey@@YAJPEAU_HS_CONTEXT@@PEBGPEAXPEAW4_HAM_APPLICATION_EXECUTION_STATE@@PEAW4_HAM_TERMINATE_REASON@@@Z",
+              "ea": "0x18002211d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ApplicationState",
+          "type": "UInt8",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Sid",
+          "type": "SID",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "TerminateReason",
+          "type": "UInt8",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HamTerminatePackage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Package:UnicodeString",
+            "type:UInt32",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?_HamTerminatePackage@CProcessLifetimeManager@@AEAAJPEBGW4_BI_APPLICATION_STATE_TRANSITION@@PEAU_HS_PACKAGE_HANDLE_TABLE@@AEAV?$CCoSimpleArray@USERVICING_TERMINATION_INFO@@$0PPPPPPPO@V?$CSimpleArrayStandardCompareHelper@USERVICING_TERMINATION_INFO@@@@@@@Z",
+              "ea": "0x18003ce4e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Package",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "type",
+          "type": "UInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HamWaitForPendingTerminateIfNeeded",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "HostId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HamWaitForPendingTerminateIfNeeded@CProcessLifetimeManager@@UEAAJPEAXKPEBG_KPEAU_HAM_ACTIVITY_PROPERTIES@@@Z",
+              "ea": "0x18002b915",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HamWaitForPendingTerminateIfNeeded@CProcessLifetimeManager@@UEAAJPEAXKPEBG_KPEAU_HAM_ACTIVITY_PROPERTIES@@@Z",
+              "ea": "0x18002b94d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "HostId:HexInt64",
+            "WasWaitNeeded:UInt8(Boolean)",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HamWaitForPendingTerminateIfNeeded@CProcessLifetimeManager@@UEAAJPEAXKPEBG_KPEAU_HAM_ACTIVITY_PROPERTIES@@@Z",
+              "ea": "0x18002bb5e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "WasWaitNeeded",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Host_Created",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "PsmKey:UnicodeString",
+            "HostId:HexInt64",
+            "Sid:SID"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspContextFindOrCreateHost@@YAJPEAU_HS_CONTEXT@@PEAU_RM_PSM_HOST_INFO@@PEAPEAU_HS_HOST@@@Z",
+              "ea": "0x18005aae1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Sid",
+          "type": "SID",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Host_DelayStopCallback",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspHostDelayedStopCallback@@YAXPEAU_TP_CALLBACK_INSTANCE@@PEAXPEAU_TP_TIMER@@@Z",
+              "ea": "0x18005e301",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "HostId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspHostDelayedStopCallback@@YAXPEAU_TP_CALLBACK_INSTANCE@@PEAXPEAU_TP_TIMER@@@Z",
+              "ea": "0x18005e44f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Host_Destroyed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "PsmKey:UnicodeString",
+            "HostId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspHostCleanup@@YAXPEAU_HS_HOST@@@Z",
+              "ea": "0x18005e29e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Host_RemoveDehydratedViews",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspHostRemoveDehydratedViews@@YAXPEAU_HS_HOST@@@Z",
+              "ea": "0x18005e5fb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "PsmKey:UnicodeString",
+            "HostId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspHostRemoveDehydratedViews@@YAXPEAU_HS_HOST@@@Z",
+              "ea": "0x18005e6d1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Host_StartedCount",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "HostId:HexInt64",
+            "ActivationId:HexInt32",
+            "StartedCount:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspActCheckSetStarted@@YAXPEAU_HS_ACTIVITY@@K@Z",
+              "ea": "0x18005c6f5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "StartedCount",
+          "type": "UInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Host_StopTimerQueued",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "HostId:HexInt64",
+            "PsmKey:UnicodeString",
+            "ActivationId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspHostCheckAddDelayStop@@YAXPEAU_HS_HOST@@PEAU_HS_ACTIVITY@@@Z",
+              "ea": "0x18005e131",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationId",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Host_SuspendResumeNotification",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspHostNotifySuspendResume@@YAXPEAU_HS_HOST@@K@Z",
+              "ea": "0x18005e4df",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "PsmKey:UnicodeString",
+            "HostId:HexInt64",
+            "Suspend:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspHostNotifySuspendResume@@YAXPEAU_HS_HOST@@K@Z",
+              "ea": "0x18005e58e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Suspend",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Host_Terminate",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextTerminateHost@@YAJPEAU_HS_CONTEXT@@PEAU_RM_PSM_HOST_INFO@@W4_HAM_TERMINATE_TYPE@@W4_HAM_TERMINATE_REASON@@PEA_K@Z",
+              "ea": "0x18005a5b9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "HostId:HexInt64",
+            "PsmKey:UnicodeString",
+            "Sid:SID"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextTerminateHost@@YAJPEAU_HS_CONTEXT@@PEAU_RM_PSM_HOST_INFO@@W4_HAM_TERMINATE_TYPE@@W4_HAM_TERMINATE_REASON@@PEA_K@Z",
+              "ea": "0x18005a664",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Sid",
+          "type": "SID",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Host_TerminateByProcessIfSuspended",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextTerminateIfSuspendedByPid@@YAJPEAU_HS_CONTEXT@@KPEAE@Z",
+              "ea": "0x18005a6ea",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "Pid:UInt32(PID)",
+            "HostTerminated:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextTerminateIfSuspendedByPid@@YAJPEAU_HS_CONTEXT@@KPEAE@Z",
+              "ea": "0x18005a792",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HostTerminated",
+          "type": "Bool32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IsUnsupportedOnWindows10X called on Windows10X device",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "currentOSBuildNumber:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?IfUnsupportedOnWindows10XAddToRequirements@AppApplicabilityStatics@Profile@System@Windows@@AEAAJPEAU?$IIterable@PEAUHSTRING__@@@Collections@Foundation@4@AEAV?$ComPtr@V?$AgileVector@PEAVUnsupportedAppRequirement@Profile@System@Windows@@U?$DefaultEqualityPredicate@PEAVUnsupportedAppRequirement@Profile@System@Windows@@@Internal@Collections@Foundation@4@U?$DefaultLifetimeTraits@PEAVUnsupportedAppRequirement@Profile@System@Windows@@@6784@$0A@@Internal@Collections@Foundation@Windows@@@WRL@Microsoft@@@Z",
+              "ea": "0x1801556b1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "currentOSBuildNumber",
+          "type": "UInt64",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Notification_Received",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Name:UnicodeString",
+            "Subject:UInt8",
+            "Payload:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspContextIssueStateChangeNotification@@YAXPEAU_HAM_STATE_CHANGE_NOTIFICATION_PAYLOAD@@PEAX@Z",
+              "ea": "0x180028c22",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspContextIssueStateChangeNotification@@YAXPEAU_HAM_STATE_CHANGE_NOTIFICATION_PAYLOAD@@PEAX@Z",
+              "ea": "0x180028c68",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspContextIssueStateChangeNotification@@YAXPEAU_HAM_STATE_CHANGE_NOTIFICATION_PAYLOAD@@PEAX@Z",
+              "ea": "0x180028d28",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HspContextIssueStateChangeNotification@@YAXPEAU_HAM_STATE_CHANGE_NOTIFICATION_PAYLOAD@@PEAX@Z",
+              "ea": "0x180028d5d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Name",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Payload",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Subject",
+          "type": "UInt8",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OnUserLogoff: User not found in data store",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "user:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?OnUserLogoff@CSuspendResumeController@@UEAAX_KW4_ACTIVATIONSHUTDOWNIMPORTANCE@@@Z",
+              "ea": "0x180040cac",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "user",
+          "type": "UInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Service_AllocateState",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?RuntimeClassInitialize@CProcessLifetimeManager@@QEAAJPEAUProcessLifetimeManagerSettings@@@Z",
+              "ea": "0x180020332",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)",
+            "FailCode:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?RuntimeClassInitialize@CProcessLifetimeManager@@QEAAJPEAUProcessLifetimeManagerSettings@@@Z",
+              "ea": "0x180020688",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FailCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Service_Initialize",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "??0CProcessLifetimeManager@@QEAA@XZ",
+              "ea": "0x18001fa89",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "Servicing_AddWindowHandleError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?EnumWindowsProc@@YAHPEAUHWND__@@_J@Z",
+              "ea": "0x1800606b5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "Servicing_DesktopBridgeAppRestart",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "AUMID:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?AppSvcInfoRestartAfterServicing@@YAJPEAU_APPLICATION_SERVICING_INFO@@@Z",
+              "ea": "0x1800404ba",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "AUMID:UnicodeString",
+            "OldPackageFullName:UnicodeString",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?AppSvcInfoRestartAfterServicing@@YAJPEAU_APPLICATION_SERVICING_INFO@@@Z",
+              "ea": "0x1800405ab",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AUMID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "OldPackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Servicing_DesktopBridgeApps",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?OnServicingApp@CProcessLifetimeManager@@UEAAJPEAXW4_HAM_PACKAGED_APP_SERVICING_FLAGS@@@Z",
+              "ea": "0x180032092",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)",
+            "ProcessId:UInt32(PID)",
+            "PackageFullName:UnicodeString",
+            "IsRestartable:Bool32",
+            "IsConsoleApp:Bool32",
+            "WindowNum:UInt32",
+            "ServicingFlags:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?OnServicingApp@CProcessLifetimeManager@@UEAAJPEAXW4_HAM_PACKAGED_APP_SERVICING_FLAGS@@@Z",
+              "ea": "0x1800323d9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsConsoleApp",
+          "type": "Bool32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "IsRestartable",
+          "type": "Bool32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessId",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "ServicingFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "WindowNum",
+          "type": "UInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Servicing_DesktopBridgeAppsFinish",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?_FinishedServicingForDesktopBridgeApp@CProcessLifetimeManager@@AEAAXPEBG@Z",
+              "ea": "0x18003c873",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "AUMID:UnicodeString",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?_FinishedServicingForDesktopBridgeApp@CProcessLifetimeManager@@AEAAXPEBG@Z",
+              "ea": "0x18003c939",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AUMID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Session_Logoff",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextLogoffSession@@YAJPEAU_HS_CONTEXT@@K@Z",
+              "ea": "0x1800596e6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextLogoffSession@@YAJPEAU_HS_CONTEXT@@K@Z",
+              "ea": "0x18005975e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Supported capability found",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "capability:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?IfUnsupportedOnWindows10XAddToRequirements@AppApplicabilityStatics@Profile@System@Windows@@AEAAJPEAU?$IIterable@PEAUHSTRING__@@@Collections@Foundation@4@AEAV?$ComPtr@V?$AgileVector@PEAVUnsupportedAppRequirement@Profile@System@Windows@@U?$DefaultEqualityPredicate@PEAVUnsupportedAppRequirement@Profile@System@Windows@@@Internal@Collections@Foundation@4@U?$DefaultLifetimeTraits@PEAVUnsupportedAppRequirement@Profile@System@Windows@@@6784@$0A@@Internal@Collections@Foundation@Windows@@@WRL@Microsoft@@@Z",
+              "ea": "0x1801558c1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "capability",
+          "type": "UnicodeString",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TaskCompletion_ActivityStopIgnored",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Hr:Int32(HResult)",
+            "TcState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?OnActivityStopRequestedOrInvalidated@COSTaskCompletionHam@@QEAAX_KW4_HAM_ACTIVITY_CALLBACK_SUBJECT@@@Z",
+              "ea": "0x1800994f1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "TcState",
+          "type": "UInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TaskCompletion_BeginTask",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ObjectId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?BeginTask@COSTaskCompletionHam@@QEAAJKW4PLM_TASKCOMPLETION_CATEGORY_FLAGS@@@Z",
+              "ea": "0x1800450a8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Hr:Int32(HResult)",
+            "ObjectId:HexInt64",
+            "ProcessId:UInt32(PID)",
+            "PsmKey:UnicodeString",
+            "TcCategory:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?BeginTask@COSTaskCompletionHam@@QEAAJKW4PLM_TASKCOMPLETION_CATEGORY_FLAGS@@@Z",
+              "ea": "0x18004516b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "ObjectId",
+          "type": "HexInt64",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessId",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "TcCategory",
+          "type": "HexInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TaskCompletion_BeginTaskByHandle",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ObjectId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?BeginTaskByHandle@COSTaskCompletionHam@@QEAAJPEAXW4PLM_TASKCOMPLETION_CATEGORY_FLAGS@@@Z",
+              "ea": "0x18004401e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?BeginTaskByHandle@COSTaskCompletionHam@@QEAAJPEAXW4PLM_TASKCOMPLETION_CATEGORY_FLAGS@@@Z",
+              "ea": "0x180044049",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Hr:Int32(HResult)",
+            "ObjectId:HexInt64",
+            "ProcessId:UInt32(PID)",
+            "PsmKey:UnicodeString",
+            "TcCategory:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?BeginTaskByHandle@COSTaskCompletionHam@@QEAAJPEAXW4PLM_TASKCOMPLETION_CATEGORY_FLAGS@@@Z",
+              "ea": "0x180044165",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?BeginTaskByHandle@COSTaskCompletionHam@@QEAAJPEAXW4PLM_TASKCOMPLETION_CATEGORY_FLAGS@@@Z",
+              "ea": "0x1800441a5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "ObjectId",
+          "type": "HexInt64",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessId",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "TcCategory",
+          "type": "HexInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TaskCompletion_BeginTaskByHandleEx",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ObjectId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?BeginTaskByHandleEx@COSTaskCompletionHam@@QEAAJPEAXW4PLM_TASKCOMPLETION_CATEGORY_FLAGS@@W4PLM_TASKCOMPLETION_BEGIN_TASK_FLAGS@@@Z",
+              "ea": "0x18011212b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Hr:Int32(HResult)",
+            "ObjectId:HexInt64",
+            "ProcessId:UInt32(PID)",
+            "PsmKey:UnicodeString",
+            "TcCategory:HexInt32",
+            "BeginTaskFlags:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?BeginTaskByHandleEx@COSTaskCompletionHam@@QEAAJPEAXW4PLM_TASKCOMPLETION_CATEGORY_FLAGS@@W4PLM_TASKCOMPLETION_BEGIN_TASK_FLAGS@@@Z",
+              "ea": "0x18011219c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BeginTaskFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "Hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "ObjectId",
+          "type": "HexInt64",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessId",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "TcCategory",
+          "type": "HexInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TaskCompletion_BeginTaskSummary",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Version:UInt32",
+            "Hr:Int32(HResult)",
+            "FailureCode:UInt8",
+            "ObjectId:HexInt64",
+            "ProcessId:UInt32",
+            "PsmKey:UnicodeString",
+            "TcCategory:HexInt32",
+            "BeginTaskFlags:HexInt32",
+            "ActivityId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?BeginTaskByHandleInternal@COSTaskCompletionHam@@AEAAJPEAXW4PLM_TASKCOMPLETION_CATEGORY_FLAGS@@W4PLM_TASKCOMPLETION_BEGIN_TASK_FLAGS@@@Z",
+              "ea": "0x180044441",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?BeginTaskByHandleInternal@COSTaskCompletionHam@@AEAAJPEAXW4PLM_TASKCOMPLETION_CATEGORY_FLAGS@@W4PLM_TASKCOMPLETION_BEGIN_TASK_FLAGS@@@Z",
+              "ea": "0x180044494",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityId",
+          "type": "HexInt64",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "BeginTaskFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "FailureCode",
+          "type": "UInt8",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "Hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "ObjectId",
+          "type": "HexInt64",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessId",
+          "type": "UInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "TcCategory",
+          "type": "HexInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "UInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TaskCompletion_ConnectToHam",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "ConnectionContext:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?HamConnectRunOnceCallback@@YAKPEAT_RTL_RUN_ONCE@@PEAXPEAPEAX@Z",
+              "ea": "0x18008fb0f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConnectionContext",
+          "type": "HexInt64",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TaskCompletion_DisconnectFromHam",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "ConnectionContext:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?CleanupHamConnection@@YAXXZ",
+              "ea": "0x1800884f3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConnectionContext",
+          "type": "HexInt64",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TaskCompletion_EndTask",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ObjectId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?EndTask@COSTaskCompletionHam@@QEAAJXZ",
+              "ea": "0x180043e64",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?EndTask@COSTaskCompletionHam@@QEAAJXZ",
+              "ea": "0x180043e8d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ObjectId:HexInt64",
+            "ActivityId:HexInt64",
+            "TcState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?EndTask@COSTaskCompletionHam@@QEAAJXZ",
+              "ea": "0x180043f1c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?EndTask@COSTaskCompletionHam@@QEAAJXZ",
+              "ea": "0x180043f53",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityId",
+          "type": "HexInt64",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "ObjectId",
+          "type": "HexInt64",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "TcState",
+          "type": "UInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TaskCompletion_ObjectCreated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ObjectId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "??0COSTaskCompletionHam@@QEAA@XZ",
+              "ea": "0x180044f5a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "??0COSTaskCompletionHam@@QEAA@XZ",
+              "ea": "0x180044f8e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ObjectId",
+          "type": "HexInt64",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TaskCompletion_ObjectDestroyed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ObjectId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "??1COSTaskCompletionHam@@QEAA@XZ",
+              "ea": "0x180043c6e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "??1COSTaskCompletionHam@@QEAA@XZ",
+              "ea": "0x180043c90",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ObjectId",
+          "type": "HexInt64",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TaskCompletion_OnActivityClosed",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Hr:Int32(HResult)",
+            "ObjectId:HexInt64",
+            "ActivityId:HexInt64",
+            "TcState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?OnActivityClosed@COSTaskCompletionHam@@QEAAX_K@Z",
+              "ea": "0x180077875",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?OnActivityClosed@COSTaskCompletionHam@@QEAAX_K@Z",
+              "ea": "0x1800778bc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ObjectId:HexInt64",
+            "ActivityId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?OnActivityClosed@COSTaskCompletionHam@@QEAAX_K@Z",
+              "ea": "0x18007793b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?OnActivityClosed@COSTaskCompletionHam@@QEAAX_K@Z",
+              "ea": "0x180077974",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityId",
+          "type": "HexInt64",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "Hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "ObjectId",
+          "type": "HexInt64",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "TcState",
+          "type": "UInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TaskCompletion_OnActivityStarted",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Hr:Int32(HResult)",
+            "ObjectId:HexInt64",
+            "ActivityId:HexInt64",
+            "TcState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?OnActivityStarted@COSTaskCompletionHam@@QEAAX_K@Z",
+              "ea": "0x180073a4f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ObjectId:HexInt64",
+            "ActivityId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?OnActivityStarted@COSTaskCompletionHam@@QEAAX_K@Z",
+              "ea": "0x180073a90",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityId",
+          "type": "HexInt64",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "Hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "ObjectId",
+          "type": "HexInt64",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "TcState",
+          "type": "UInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TaskCompletion_OnActivityStopRequested",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ObjectId:HexInt64",
+            "ActivityId:HexInt64",
+            "Subject:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?OnActivityStopRequestedOrInvalidated@COSTaskCompletionHam@@QEAAX_KW4_HAM_ACTIVITY_CALLBACK_SUBJECT@@@Z",
+              "ea": "0x180099451",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Hr:Int32(HResult)",
+            "ObjectId:HexInt64",
+            "ActivityId:HexInt64",
+            "Subject:UInt16(Hex)",
+            "TcState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?OnActivityStopRequestedOrInvalidated@COSTaskCompletionHam@@QEAAX_KW4_HAM_ACTIVITY_CALLBACK_SUBJECT@@@Z",
+              "ea": "0x180099550",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityId",
+          "type": "HexInt64",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "Hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "ObjectId",
+          "type": "HexInt64",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "Subject",
+          "type": "UInt16(Hex)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "Subject",
+          "type": "UInt8",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "TcState",
+          "type": "UInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TaskCompletion_OnProcessRundown",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ObjectId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?OnProcessRundown@COSTaskCompletionHam@@AEAAXXZ",
+              "ea": "0x180112264",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Hr:Int32(HResult)",
+            "ObjectId:HexInt64",
+            "ProcessId:UInt32(PID)",
+            "TcState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?OnProcessRundown@COSTaskCompletionHam@@AEAAXXZ",
+              "ea": "0x1801122f3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "ObjectId",
+          "type": "HexInt64",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessId",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "TcState",
+          "type": "UInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TaskCompletion_SkipDisconnectFromHamOnProcessExit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?CleanupTaskCompletionGlobals@@YAXK@Z",
+              "ea": "0x180088464",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "TaskCompletion_TaskCompletionSummary",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "Version:UInt32",
+            "PsmKey:UnicodeString",
+            "TaskCategory:HexInt32",
+            "TaskFlags:HexInt32",
+            "ActivityId:HexInt64",
+            "TaskDurationMs:Int32",
+            "EndReason:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?EndTelemetryContext@COSTaskCompletionHam@@AEAAXW4TC_END_TASK_REASON@1@@Z",
+              "ea": "0x180044bd5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?EndTelemetryContext@COSTaskCompletionHam@@AEAAXW4TC_END_TASK_REASON@1@@Z",
+              "ea": "0x180044c11",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityId",
+          "type": "HexInt64",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "EndReason",
+          "type": "UInt8",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskCategory",
+          "type": "HexInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskDurationMs",
+          "type": "Int32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "UInt32",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Terminating via debug API",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "user:UInt64",
+            "packageFullName:UnicodeString",
+            "result:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?ShutdownPackage@CImmersiveApplicationDebugControlInternal@@UEAAJPEBG@Z",
+              "ea": "0x18004419b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "packageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "result",
+          "type": "Int32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "user",
+          "type": "UInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Unsupported capability found",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "capability:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "twinapi.appcore.dll",
+              "function": "?IfUnsupportedOnWindows10XAddToRequirements@AppApplicabilityStatics@Profile@System@Windows@@AEAAJPEAU?$IIterable@PEAUHSTRING__@@@Collections@Foundation@4@AEAV?$ComPtr@V?$AgileVector@PEAVUnsupportedAppRequirement@Profile@System@Windows@@U?$DefaultEqualityPredicate@PEAVUnsupportedAppRequirement@Profile@System@Windows@@@Internal@Collections@Foundation@4@U?$DefaultLifetimeTraits@PEAVUnsupportedAppRequirement@Profile@System@Windows@@@6784@$0A@@Internal@Collections@Foundation@Windows@@@WRL@Microsoft@@@Z",
+              "ea": "0x18015583b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "capability",
+          "type": "UnicodeString",
+          "seenIn": [
+            "twinapi.appcore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UserNotification_Added",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?OnUserAdded@CProcessLifetimeManager@@AEAAJPEAUIUserWatcher@System@Windows@@PEAUIUserChangedEventArgs@34@@Z",
+              "ea": "0x180022799",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "UserSid:SID",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?OnUserAdded@CProcessLifetimeManager@@AEAAJPEAUIUserWatcher@System@Windows@@PEAUIUserChangedEventArgs@34@@Z",
+              "ea": "0x180022935",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "UserSid",
+          "type": "SID",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UserNotification_AuthStatusChanging",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?OnUserAuthStatusChanging@CProcessLifetimeManager@@AEAAJPEAUIUserWatcher@System@Windows@@PEAUIUserAuthenticationStatusChangingEventArgs@34@@Z",
+              "ea": "0x18003ac7b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "UserSid:SID",
+            "hr:Int32(HResult)",
+            "hrDeferral:Int32(HResult)",
+            "AuthStatus:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?OnUserAuthStatusChanging@CProcessLifetimeManager@@AEAAJPEAUIUserWatcher@System@Windows@@PEAUIUserAuthenticationStatusChangingEventArgs@34@@Z",
+              "ea": "0x18003ae0e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AuthStatus",
+          "type": "UInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSid",
+          "type": "SID",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "hrDeferral",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "User_Logoff",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextLogoffUser@@YAJPEAU_HS_CONTEXT@@PEAXK@Z",
+              "ea": "0x1800597ae",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "Sid:SID"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?HsContextLogoffUser@@YAJPEAU_HS_CONTEXT@@PEAXK@Z",
+              "ea": "0x180059850",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Sid",
+          "type": "SID",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WM_CloseError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?OnServicingApp@CProcessLifetimeManager@@UEAAJPEAXW4_HAM_PACKAGED_APP_SERVICING_FLAGS@@@Z",
+              "ea": "0x1800322ca",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WM_EndSessionError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?OnServicingApp@CProcessLifetimeManager@@UEAAJPEAXW4_HAM_PACKAGED_APP_SERVICING_FLAGS@@@Z",
+              "ea": "0x180032262",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WM_QueryEndSessionError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?OnServicingApp@CProcessLifetimeManager@@UEAAJPEAXW4_HAM_PACKAGED_APP_SERVICING_FLAGS@@@Z",
+              "ea": "0x1800321b3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WaitOnBiNotifyNewSessionFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HRBiNotifyNewUser:UInt32",
+            "HRBiNotifyNewSession:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?_WaitOnBiNotifyNewSession@CProcessLifetimeManager@@AEAAJXZ",
+              "ea": "0x18002f722",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HRBiNotifyNewSession",
+          "type": "UInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "HRBiNotifyNewUser",
+          "type": "UInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WaitOnHamNotifyNewSessionFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "NTHamNotifyNewSession:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?_WaitOnHamNotifyNewSession@CProcessLifetimeManager@@AEAAJXZ",
+              "ea": "0x18002f7d3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NTHamNotifyNewSession",
+          "type": "UInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "_RegisterForStateChanges",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "fpackageLevel:UInt8(Boolean)",
+            "filter:UInt32",
+            "result:Int32",
+            "cookie:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?_RegisterForStateChanges@CSuspendResumeController@@AEAAJW4PLM_STATE_CHANGE@@PEAUIUnknown@@AEBU_GUID@@W4PLM_StateChangeSubject@Execution@@_NPEBGPEAK@Z",
+              "ea": "0x18000868d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "cookie",
+          "type": "UInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "filter",
+          "type": "UInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "fpackageLevel",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "result",
+          "type": "Int32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "_UnregisterForStateChanges",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "fPackageLevel:UInt8(Boolean)",
+            "result:Int32",
+            "cookie:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?_UnregisterForStateChanges@CSuspendResumeController@@AEAAJKW4PLM_StateChangeSubject@Execution@@@Z",
+              "ea": "0x18002d93d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "cookie",
+          "type": "UInt32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "fPackageLevel",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "result",
+          "type": "Int32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "s_CancelBackgroundTasksAtLogOff(start)",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 1,
+          "keyword": "0x0",
+          "fields": [
+            "user:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?s_CancelBackgroundTasksAtLogOff@CSuspendResumeController@@CAKPEAX@Z",
+              "ea": "0x18004120e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "user",
+          "type": "UInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "s_CancelBackgroundTasksAtLogOff(stop)",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 1,
+          "keyword": "0x0",
+          "fields": [
+            "user:UInt64",
+            "ntstatus:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "modernexecserver.dll",
+              "function": "?s_CancelBackgroundTasksAtLogOff@CSuspendResumeController@@CAKPEAX@Z",
+              "ea": "0x18004127f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ntstatus",
+          "type": "Int32",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        },
+        {
+          "fieldName": "user",
+          "type": "UInt64",
+          "seenIn": [
+            "modernexecserver.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

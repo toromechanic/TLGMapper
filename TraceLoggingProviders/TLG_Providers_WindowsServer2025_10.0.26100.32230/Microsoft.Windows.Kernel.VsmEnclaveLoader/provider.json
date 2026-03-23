@@ -1,0 +1,104 @@
+{
+  "providerName": "Microsoft.Windows.Kernel.VsmEnclaveLoader",
+  "guid": "{C0834DA2-8ABE-478F-848C-1DA4CBE18DAF}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "ntdll.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "VSMEnclaveTelemetry",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "VSM Operation:AnsiString",
+            "EnclaveType:UInt64",
+            "NTSTATUS:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntdll.dll",
+              "function": "LdrpLogVsmEnclaveLdrCreateEnclaveTelemetry",
+              "ea": "0x18011509d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "VSM Operation:AnsiString",
+            "NTSTATUS:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntdll.dll",
+              "function": "LdrpLogVsmEnclaveLdrDeleteEnclaveTelemetry",
+              "ea": "0x1801607d8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntdll.dll",
+              "function": "LdrpLogVsmEnclaveLdrInitializeEnclaveTelemetry",
+              "ea": "0x1800b19c2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "VSM Operation:AnsiString",
+            "NTSTATUS:UInt32",
+            "StrictMemoryPolicy:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ntdll.dll",
+              "function": "LdrpLogVsmEnclaveLdrLoadEnclaveModuleTelemetry",
+              "ea": "0x18011e9f0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EnclaveType",
+          "type": "UInt64",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "StrictMemoryPolicy",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        },
+        {
+          "fieldName": "VSM Operation",
+          "type": "AnsiString",
+          "seenIn": [
+            "ntdll.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

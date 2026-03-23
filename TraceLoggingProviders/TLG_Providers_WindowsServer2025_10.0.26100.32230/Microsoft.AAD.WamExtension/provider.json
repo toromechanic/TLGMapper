@@ -1,0 +1,108 @@
+{
+  "providerName": "Microsoft.AAD.WamExtension",
+  "guid": "{7B1AE42D-B4F2-414D-9C97-913F19049964}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "aadWamExtension.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "ActivityStoppedAutomatically",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "aadWamExtension.dll",
+              "function": "??$_tlgWriteActivityAutoStop@$0EAAAAAAAAAAA@$04@@YAXPEBU_tlgProvider_t@@PEBU_GUID@@@Z",
+              "ea": "0x180008e65",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "Windows::Internal::Security::Authentication::Aad::AadWamExtensionWorker::ProcessDeviceAuthRequest_Start",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "aadWamExtension.dll",
+              "function": "?ProcessDeviceAuthRequest@AadWamExtensionWorker@Aad@Authentication@Security@Internal@Windows@@AEAAJPEAVAadContextFunctions@@PEAUIWebTokenRequest@Core@Web@346@PEAU?$IMap@PEAUHSTRING__@@PEAU1@@Collections@Foundation@6@PEAUHSTRING__@@PEAW4SystemExtensionResult@Web@3456@PEAPEAUIWebTokenRequestResult@9Web@346@@Z",
+              "ea": "0x18000d89e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "aadWamExtension.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Windows::Internal::Security::Authentication::Aad::AadWamExtensionWorker::ProcessDeviceAuthRequest_Stop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "hr:Int32",
+            "extraParamsCount:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "aadWamExtension.dll",
+              "function": "?ProcessDeviceAuthRequest@AadWamExtensionWorker@Aad@Authentication@Security@Internal@Windows@@AEAAJPEAVAadContextFunctions@@PEAUIWebTokenRequest@Core@Web@346@PEAU?$IMap@PEAUHSTRING__@@PEAU1@@Collections@Foundation@6@PEAUHSTRING__@@PEAW4SystemExtensionResult@Web@3456@PEAPEAUIWebTokenRequestResult@9Web@346@@Z",
+              "ea": "0x18000e8fe",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "aadWamExtension.dll"
+          ]
+        },
+        {
+          "fieldName": "extraParamsCount",
+          "type": "UInt32",
+          "seenIn": [
+            "aadWamExtension.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "aadWamExtension.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

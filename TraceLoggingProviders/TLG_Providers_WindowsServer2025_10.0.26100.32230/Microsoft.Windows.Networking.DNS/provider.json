@@ -1,0 +1,867 @@
+{
+  "providerName": "Microsoft.Windows.Networking.DNS",
+  "guid": "{9CA335ED-C0A6-4B4D-B084-9C9B5143AFF0}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "dnsapi.dll",
+    "dnsrslvr.dll"
+  ],
+  "uniqueEventCount": 9,
+  "events": [
+    {
+      "eventName": "AllDnsServersTimeoutStatistics",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "AllDnsServersTimeoutCount:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dnsapi.dll",
+              "function": "UploadAllDnsStatistics",
+              "ea": "0x18002040c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AllDnsServersTimeoutCount",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DnsProcessMitigations",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "SystemCallDisablePolicyApplied:Bool32",
+            "ExtensionPointDisablePolicyApplied:Bool32",
+            "DynamicCodePolicyApplied:Bool32",
+            "ControlFlowGuardPolicyApplied:Bool32",
+            "BinarySignaturePolicyApplied:Bool32",
+            "FontDisablePolicyApplied:Bool32",
+            "ImageLoadPolicyApplied:Bool32",
+            "ChildProcessPolicyApplied:Bool32",
+            "EnforceMitigations:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "dnsrslvr.dll",
+              "function": "Trace_ProcessMitigations",
+              "ea": "0x180044ec1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BinarySignaturePolicyApplied",
+          "type": "Bool32",
+          "seenIn": [
+            "dnsrslvr.dll"
+          ]
+        },
+        {
+          "fieldName": "ChildProcessPolicyApplied",
+          "type": "Bool32",
+          "seenIn": [
+            "dnsrslvr.dll"
+          ]
+        },
+        {
+          "fieldName": "ControlFlowGuardPolicyApplied",
+          "type": "Bool32",
+          "seenIn": [
+            "dnsrslvr.dll"
+          ]
+        },
+        {
+          "fieldName": "DynamicCodePolicyApplied",
+          "type": "Bool32",
+          "seenIn": [
+            "dnsrslvr.dll"
+          ]
+        },
+        {
+          "fieldName": "EnforceMitigations",
+          "type": "Bool32",
+          "seenIn": [
+            "dnsrslvr.dll"
+          ]
+        },
+        {
+          "fieldName": "ExtensionPointDisablePolicyApplied",
+          "type": "Bool32",
+          "seenIn": [
+            "dnsrslvr.dll"
+          ]
+        },
+        {
+          "fieldName": "FontDisablePolicyApplied",
+          "type": "Bool32",
+          "seenIn": [
+            "dnsrslvr.dll"
+          ]
+        },
+        {
+          "fieldName": "ImageLoadPolicyApplied",
+          "type": "Bool32",
+          "seenIn": [
+            "dnsrslvr.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dnsrslvr.dll"
+          ]
+        },
+        {
+          "fieldName": "SystemCallDisablePolicyApplied",
+          "type": "Bool32",
+          "seenIn": [
+            "dnsrslvr.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DnsQuery duration aggregate",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Query count:UInt32",
+            "DurationTotal_ticks:Int64",
+            "DurationMin_ticks:Int64",
+            "DurationMax_ticks:Int64",
+            "Ticks per second:Int64",
+            "Query type:UInt32",
+            "Status code array:UInt32[N]",
+            "Status code count array:UInt32[N]",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "dnsapi.dll",
+              "function": "Trace_LogQueryDuration",
+              "ea": "0x18004820e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Query count:UInt32",
+            "DurationMin_ticks:Int64",
+            "DurationTotal_ticks:Int64",
+            "DurationMax_ticks:Int64",
+            "Ticks per second:Int64",
+            "Query type:UInt32",
+            "Status code array:UInt32[N]",
+            "Status code count array:UInt32[N]",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "dnsrslvr.dll",
+              "function": "Trace_LogQueryDuration",
+              "ea": "0x180044bd5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DurationMax_ticks",
+          "type": "Int64",
+          "seenIn": [
+            "dnsapi.dll",
+            "dnsrslvr.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationMin_ticks",
+          "type": "Int64",
+          "seenIn": [
+            "dnsapi.dll",
+            "dnsrslvr.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationTotal_ticks",
+          "type": "Int64",
+          "seenIn": [
+            "dnsapi.dll",
+            "dnsrslvr.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dnsapi.dll",
+            "dnsrslvr.dll"
+          ]
+        },
+        {
+          "fieldName": "Query count",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll",
+            "dnsrslvr.dll"
+          ]
+        },
+        {
+          "fieldName": "Query type",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll",
+            "dnsrslvr.dll"
+          ]
+        },
+        {
+          "fieldName": "Status code array",
+          "type": "UInt32[N]",
+          "seenIn": [
+            "dnsapi.dll",
+            "dnsrslvr.dll"
+          ]
+        },
+        {
+          "fieldName": "Status code count array",
+          "type": "UInt32[N]",
+          "seenIn": [
+            "dnsapi.dll",
+            "dnsrslvr.dll"
+          ]
+        },
+        {
+          "fieldName": "Ticks per second",
+          "type": "Int64",
+          "seenIn": [
+            "dnsapi.dll",
+            "dnsrslvr.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DnsQueryStats",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "NetBiosSuccessfulQueryCount:UInt32",
+            "OnlyNetBiosSuccessfulQueryCount:UInt32",
+            "NetBiosQueryCount:UInt32",
+            "NetBiosExclusivePublic:UInt32",
+            "NetBiosExclusiveNonPublic:UInt32",
+            "NetBiosParallelPublic:UInt32",
+            "NetBiosParallelNonPublic:UInt32",
+            "NetBiosRegistryKey:UInt32",
+            "LlmnrSuccessfulQueryCount:UInt32",
+            "OnlyLlmnrSuccessfulQueryCount:UInt32",
+            "LlmnrQueryCount:UInt32",
+            "LlmnrExclusive:UInt32",
+            "LlmnrParallel:UInt32",
+            "LlmnrRegistryKey:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dnsapi.dll",
+              "function": "UploadQueryStatistics",
+              "ea": "0x1800863bd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "LlmnrExclusive",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "LlmnrParallel",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "LlmnrQueryCount",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "LlmnrRegistryKey",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "LlmnrSuccessfulQueryCount",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "NetBiosExclusiveNonPublic",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "NetBiosExclusivePublic",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "NetBiosParallelNonPublic",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "NetBiosParallelPublic",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "NetBiosQueryCount",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "NetBiosRegistryKey",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "NetBiosSuccessfulQueryCount",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "OnlyLlmnrSuccessfulQueryCount",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "OnlyNetBiosSuccessfulQueryCount",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DnsServerConfig",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "InterfaceGuid:GUID",
+            "InterfaceType:UInt64",
+            "DnsServers:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "dnsapi.dll",
+              "function": "DnsCheckServerConfig",
+              "ea": "0x18001f572",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DnsServers",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "InterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "InterfaceType",
+          "type": "UInt64",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DnsServerFailureStats",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "InterfaceGuid:GUID",
+            "InterfaceType:UInt32",
+            "DnsServerAddress:UnicodeString",
+            "DnsServerAddressFamily:UInt32",
+            "DnsServerOrder:UInt32",
+            "Status:HexInt32",
+            "Count:UInt32",
+            "ServerType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dnsapi.dll",
+              "function": "UploadFailuresDnsStatistics",
+              "ea": "0x18006f7af",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "InterfaceGuid:GUID",
+            "InterfaceType:UInt32",
+            "DnsServerAddress:UnicodeString",
+            "DnsServerAddressFamily:UInt32",
+            "DnsServerOrder:UInt32",
+            "Count:UInt32",
+            "QueryName:AnsiString",
+            "QueryType:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "dnsapi.dll",
+              "function": "UploadFailuresDnsStatistics",
+              "ea": "0x18006f93c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "InterfaceGuid:GUID",
+            "InterfaceType:UInt32",
+            "DnsServerAddress:UnicodeString",
+            "DnsServerAddressFamily:UInt32",
+            "DnsServerOrder:UInt32",
+            "HttpStatus:HexInt32",
+            "Count:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dnsapi.dll",
+              "function": "UploadFailuresDnsStatistics",
+              "ea": "0x18006fa2e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "DnsServerAddress",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "DnsServerAddressFamily",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "DnsServerOrder",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "HttpStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "InterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "InterfaceType",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "QueryName",
+          "type": "AnsiString",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "QueryType",
+          "type": "UInt16",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "ServerType",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "HexInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DnsServerStatistics",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "InterfaceGuid:GUID",
+            "InterfaceType:UInt64",
+            "DnsServerAddress:UnicodeString",
+            "DnsServerAddressFamily:UInt32",
+            "DnsServerOrder:UInt32",
+            "QueryCount:UInt32",
+            "SuccessfulQueryCount:UInt32",
+            "FailedQueryCount:UInt32",
+            "TimeoutCount:UInt32",
+            "SumTimeouts:UInt64",
+            "MaxTimeout:UInt32",
+            "MinTimeout:UInt32",
+            "TimeoutsSquaresSum:UInt64",
+            "SumSuccessRoundTripTime:UInt64",
+            "SumFailedRoundTripTime:UInt64",
+            "MaxSuccessRoundTripTime:UInt32",
+            "MinSuccessRoundTripTime:UInt32",
+            "MaxFailedRoundTripTime:UInt64",
+            "MinFailedRoundTripTime:UInt64",
+            "SuccessRoundTripTimeSquaresSum:UInt64",
+            "FailedRoundTripTimeSquaresSum:UInt64",
+            "ServerType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dnsapi.dll",
+              "function": "UploadServerDnsStatistics",
+              "ea": "0x18006f526",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DnsServerAddress",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "DnsServerAddressFamily",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "DnsServerOrder",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "FailedQueryCount",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "FailedRoundTripTimeSquaresSum",
+          "type": "UInt64",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "InterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "InterfaceType",
+          "type": "UInt64",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "MaxFailedRoundTripTime",
+          "type": "UInt64",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "MaxSuccessRoundTripTime",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "MaxTimeout",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "MinFailedRoundTripTime",
+          "type": "UInt64",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "MinSuccessRoundTripTime",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "MinTimeout",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "QueryCount",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "ServerType",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "SuccessRoundTripTimeSquaresSum",
+          "type": "UInt64",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "SuccessfulQueryCount",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "SumFailedRoundTripTime",
+          "type": "UInt64",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "SumSuccessRoundTripTime",
+          "type": "UInt64",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "SumTimeouts",
+          "type": "UInt64",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "TimeoutCount",
+          "type": "UInt32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "TimeoutsSquaresSum",
+          "type": "UInt64",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InitDnsapi",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Dnscache:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "dnsapi.dll",
+              "function": "Dns_CacheServiceInitEx",
+              "ea": "0x18008eadd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Dnscache",
+          "type": "Bool32",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dnsapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InitZtdns",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "dnsrslvr.dll",
+              "function": "Trace_InitZtdns",
+              "ea": "0x180044a5d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dnsrslvr.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

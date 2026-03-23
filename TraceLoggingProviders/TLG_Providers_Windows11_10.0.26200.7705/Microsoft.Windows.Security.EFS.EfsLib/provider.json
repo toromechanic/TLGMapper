@@ -1,0 +1,617 @@
+{
+  "providerName": "Microsoft.Windows.Security.EFS.EfsLib",
+  "guid": "{7A688F0E-F39B-4A7A-BBBB-066E2C1FCB04}",
+  "os": "Windows 11",
+  "binaryCount": 4,
+  "binaries": [
+    "exfat.sys",
+    "fastfat.sys",
+    "ntfs.sys",
+    "refs.sys"
+  ],
+  "uniqueEventCount": 10,
+  "events": [
+    {
+      "eventName": "ClipSpDecryptFekExFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "exfat.sys",
+              "function": "EfspClipSpDecryptFek",
+              "ea": "0x1400592ce",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EfspClipSpDecryptFek",
+              "ea": "0x140059733",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EfspClipSpDecryptFek",
+              "ea": "0x1402bf828",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EfspClipSpDecryptFek",
+              "ea": "0x1402bc707",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EfsCryptoOffload",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "testOverrideFlag:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "exfat.sys",
+              "function": "EfspIsCryptoOffloadTurnedOffByOverride",
+              "ea": "0x1400581cb",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "exfat.sys",
+              "function": "EfspIsCryptoOffloadTurnedOffByOverride",
+              "ea": "0x14005822f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EfspIsCryptoOffloadTurnedOffByOverride",
+              "ea": "0x14005858d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EfspIsCryptoOffloadTurnedOffByOverride",
+              "ea": "0x1400585d4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EfspIsCryptoOffloadTurnedOffByOverride",
+              "ea": "0x140237af1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EfspIsCryptoOffloadTurnedOffByOverride",
+              "ea": "0x140237b38",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EfspIsCryptoOffloadTurnedOffByOverride",
+              "ea": "0x1402bb5a5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EfspIsCryptoOffloadTurnedOffByOverride",
+              "ea": "0x1402bb5ec",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "testOverrideFlag",
+          "type": "UnicodeString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EfsCryptoOffloadPresence",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "bitlockerPresence:UnicodeString",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "EfspCanOffloadCrypto",
+              "ea": "0x14005c0c4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EfspCanOffloadCrypto",
+              "ea": "0x14005c14b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EfspCanOffloadCrypto",
+              "ea": "0x1400de697",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EfspCanOffloadCrypto",
+              "ea": "0x1400de794",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "bitlockerPresence",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EfsCryptoOffloadVeto",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "CryptoOffloadVeto:UnicodeString",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "EfspCanOffloadCrypto",
+              "ea": "0x14005c2cd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EfspCanOffloadCrypto",
+              "ea": "0x1400de915",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CryptoOffloadVeto",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EfsFileRequiresEncryption",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "EncryptScenario:Int8",
+            "InputFileExtension:UnicodeString",
+            "RequestorProcessFullPath:UnicodeString",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "exfat.sys",
+              "function": "EfspFileRequiresEncryption",
+              "ea": "0x140052f19",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EfspFileRequiresEncryption",
+              "ea": "0x14005328d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EfspFileRequiresEncryption",
+              "ea": "0x1401d6c9b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EfspFileRequiresEncryption",
+              "ea": "0x1402b6221",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EncryptScenario",
+          "type": "Int8",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "InputFileExtension",
+          "type": "UnicodeString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "RequestorProcessFullPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EfsLibAssert",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "FileSystemType:UInt32",
+            "FileNumber:UInt32",
+            "LineNumber:UInt32",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "exfat.sys",
+              "function": "EfspTraceLogAssert",
+              "ea": "0x1400583c5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EfspTraceLogAssert",
+              "ea": "0x1400587ad",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EfspTraceLogAssert",
+              "ea": "0x1400b08c9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EfspTraceLogAssert",
+              "ea": "0x1402bb7c5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FileNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "FileSystemType",
+          "type": "UInt32",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "LineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EfsOpenFileEfsReadInformation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "EfsReadInformation:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "exfat.sys",
+              "function": "EfsOpenFile",
+              "ea": "0x140052145",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EfsOpenFile",
+              "ea": "0x140052588",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EfsOpenFile",
+              "ea": "0x140295af8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EfsOpenFile",
+              "ea": "0x1402b5558",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EfsReadInformation",
+          "type": "UInt32",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EfsTurnOnBitOnlyOperationUsage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "EfspPostCreateGetDataStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "exfat.sys",
+              "function": "EfspPostCreate",
+              "ea": "0x140053d25",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EfspPostCreate",
+              "ea": "0x14005406b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EfspPostCreate",
+              "ea": "0x1402bf706",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EfspPostCreate",
+              "ea": "0x1402b7117",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EfspPostCreateGetDataStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EfspEnsureClipSpFunctionTableLoadedFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "exfat.sys",
+              "function": "EfspClipSpDecryptFek",
+              "ea": "0x1400593f7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EfspClipSpDecryptFek",
+              "ea": "0x140059830",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EfspClipSpDecryptFek",
+              "ea": "0x1401b4a4c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EfspClipSpDecryptFek",
+              "ea": "0x1402bc804",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "XboxCryptoCreateEfsKeyFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "exfat.sys",
+              "function": "EfspClipSpDecryptFek",
+              "ea": "0x14005926d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EfspClipSpDecryptFek",
+              "ea": "0x1400596d4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EfspClipSpDecryptFek",
+              "ea": "0x1402bf7ca",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EfspClipSpDecryptFek",
+              "ea": "0x1402bc6a8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

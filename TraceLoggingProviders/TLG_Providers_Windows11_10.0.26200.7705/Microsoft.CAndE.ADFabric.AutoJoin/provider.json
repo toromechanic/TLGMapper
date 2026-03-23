@@ -1,0 +1,353 @@
+{
+  "providerName": "Microsoft.CAndE.ADFabric.AutoJoin",
+  "guid": "{0C7964F6-0865-4847-B379-1B574381BCB7}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "dsreg.dll"
+  ],
+  "uniqueEventCount": 4,
+  "events": [
+    {
+      "eventName": "AutoJoinFailFastChecksStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "dsreg.dll",
+              "function": "?PreJoinChecks@@YAJAEA_N@Z",
+              "ea": "0x18001fc23",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "AutoJoinFailFastChecksStop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "preCheckResult:UnicodeString",
+            "isJoined:UnicodeString",
+            "isDcAvailable:UnicodeString",
+            "isSystem:UnicodeString",
+            "keyProvider:UnicodeString",
+            "keyContainer:UnicodeString",
+            "dsrInstance:UnicodeString",
+            "deviceKeysHealthy:UnicodeString",
+            "resultCode:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "dsreg.dll",
+              "function": "?PreJoinChecks@@YAJAEA_N@Z",
+              "ea": "0x1800202a3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "deviceKeysHealthy",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "dsrInstance",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "isDcAvailable",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "isJoined",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "isSystem",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "keyContainer",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "keyProvider",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "preCheckResult",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "resultCode",
+          "type": "Int32",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AutoRegistrationStart",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "globalAutojoinPolicy:UnicodeString",
+            "localAutojoinPolicy:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "dsreg.dll",
+              "function": "?Join@DsrCmdJoinHelper@@QEAAJAEBUCLI_EXTENSIONS@@PEAUstruct_dsreg_server_response@@@Z",
+              "ea": "0x1800afec5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "globalAutojoinPolicy:UnicodeString",
+            "localAutojoinPolicy:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "dsreg.dll",
+              "function": "?Join@DsrCmdJoinHelper@@QEAAJAEBUCLI_EXTENSIONS@@PEAUstruct_dsreg_server_response@@@Z",
+              "ea": "0x1800b09d2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "dsreg.dll",
+              "function": "?Leave@DsrCmdJoinHelper@@SAJPEAUstruct_dsreg_server_response@@@Z",
+              "ea": "0x1800b1c9c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "dsreg.dll",
+              "function": "?Leave@DsrCmdJoinHelper@@SAJPEAUstruct_dsreg_server_response@@@Z",
+              "ea": "0x1800b1edf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "globalAutojoinPolicy",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "localAutojoinPolicy",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AutoRegistrationStop",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "errorCode:Int32",
+            "adalLog:UnicodeString",
+            "authCorrelationID:UnicodeString",
+            "config:UnicodeString",
+            "errorType:UnicodeString",
+            "registration:UnicodeString",
+            "tenantType:UnicodeString",
+            "tenantId:UnicodeString",
+            "joinMode:UnicodeString",
+            "drsInstance:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "dsreg.dll",
+              "function": "?Join@DsrCmdJoinHelper@@QEAAJAEBUCLI_EXTENSIONS@@PEAUstruct_dsreg_server_response@@@Z",
+              "ea": "0x1800b039a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "dsreg.dll",
+              "function": "?Join@DsrCmdJoinHelper@@QEAAJAEBUCLI_EXTENSIONS@@PEAUstruct_dsreg_server_response@@@Z",
+              "ea": "0x1800b13e7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "errorCode:Int32",
+            "adalLog:UnicodeString",
+            "authCorrelationID:UnicodeString",
+            "config:UnicodeString",
+            "errorType:UnicodeString",
+            "registration:UnicodeString",
+            "tenantType:UnicodeString",
+            "tenantId:UnicodeString",
+            "joinMode:UnicodeString",
+            "drsInstance:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "dsreg.dll",
+              "function": "?Join@DsrCmdJoinHelper@@QEAAJAEBUCLI_EXTENSIONS@@PEAUstruct_dsreg_server_response@@@Z",
+              "ea": "0x1800b08f5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "dsreg.dll",
+              "function": "?Leave@DsrCmdJoinHelper@@SAJPEAUstruct_dsreg_server_response@@@Z",
+              "ea": "0x1800b214f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "adalLog",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "authCorrelationID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "config",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "drsInstance",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "errorCode",
+          "type": "Int32",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "errorType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "joinMode",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "registration",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "tenantId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "tenantType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1822 @@
+{
+  "providerName": "Microsoft.Geolocation.Triage",
+  "guid": "{3B0A9C9D-45BB-4D23-A06B-57713FB75588}",
+  "os": "Windows 11",
+  "binaryCount": 4,
+  "binaries": [
+    "Geolocation.dll",
+    "LocationFramework.dll",
+    "LocationWinPalMisc.dll",
+    "lfsvc.dll"
+  ],
+  "uniqueEventCount": 25,
+  "events": [
+    {
+      "eventName": "AgnssPositionInjection",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "InjectionType:UInt32",
+            "InjectionStatus:Int32",
+            "InjectionDataSize:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?InjectAgnss@CGnssDriverWrapper@@UEAAJKPEAUGNSS_AGNSS_INJECT@@@Z",
+              "ea": "0x1800dfbde",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InjectionDataSize",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "InjectionStatus",
+          "type": "Int32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "InjectionType",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BudgetedDT_Event",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "acquireId:UInt32",
+            "actualWaitS:UInt32",
+            "expectedWaitS:UInt32",
+            "interruptedReason:UnicodeString",
+            "distanceM:UInt32",
+            "mdUsed:Bool32",
+            "currReqIndex:UInt32",
+            "currRespTimeS:UInt32",
+            "currRespStatus:UInt32",
+            "distanceFromLastM:UInt32",
+            "currRespAccM:Double",
+            "currRespSource:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?LogDataAndReset@DTSessionTelemetry@@AEAAXXZ",
+              "ea": "0x1800138a4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "acquireId",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "actualWaitS",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "currReqIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "currRespAccM",
+          "type": "Double",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "currRespSource",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "currRespStatus",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "currRespTimeS",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "distanceFromLastM",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "distanceM",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "expectedWaitS",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "interruptedReason",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "mdUsed",
+          "type": "Bool32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CPE_SingelshotAcquireComplete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "availPe:UInt32",
+            "availPe:UInt32",
+            "availPe:UInt32",
+            "availPe:UInt32",
+            "availPe:UInt32",
+            "availPe:UInt32",
+            "selectedPrimaryPe:UInt32",
+            "fallbackOccurred:Int32",
+            "PositionStatus:Int32(HResult)",
+            "ResponsePE:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?LogAcquireCompletion@PeInfoHelper@@QEAAXXZ",
+              "ea": "0x1800549ee",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?LogAcquireCompletion@PeInfoHelper@@QEAAXXZ",
+              "ea": "0x180054a45",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PositionStatus",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "ResponsePE",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "availPe",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "fallbackOccurred",
+          "type": "Int32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "selectedPrimaryPe",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FailureLogReport",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "HR:Int32(HResult)",
+            "CustomMessage:UnicodeString",
+            "Function:AnsiString",
+            "CallingCode:AnsiString",
+            "Filename:AnsiString",
+            "Line:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "Geolocation.dll",
+              "function": "?LogFunctionalError@CLocationLoggingHelper@@SAXJPEBGPEBD11I@Z",
+              "ea": "0x180017dc4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "lfsvc.dll",
+              "function": "?LogFunctionalError@CLocationLoggingHelper@@SAXJPEBGPEBD11I@Z",
+              "ea": "0x1800062f8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "LocationWinPalMisc.dll",
+              "function": "?LogFunctionalError@CLocationLoggingHelper@@SAXJPEBGPEBD11I@Z",
+              "ea": "0x1800078a0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CallingCode",
+          "type": "AnsiString",
+          "seenIn": [
+            "Geolocation.dll",
+            "LocationWinPalMisc.dll",
+            "lfsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "CustomMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Geolocation.dll",
+            "LocationWinPalMisc.dll",
+            "lfsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Filename",
+          "type": "AnsiString",
+          "seenIn": [
+            "Geolocation.dll",
+            "LocationWinPalMisc.dll",
+            "lfsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Function",
+          "type": "AnsiString",
+          "seenIn": [
+            "Geolocation.dll",
+            "LocationWinPalMisc.dll",
+            "lfsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "Geolocation.dll",
+            "LocationWinPalMisc.dll",
+            "lfsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Line",
+          "type": "UInt32",
+          "seenIn": [
+            "Geolocation.dll",
+            "LocationWinPalMisc.dll",
+            "lfsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GF_TrackerEventTrigger",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "trackerInstance:UInt32",
+            "appId:UInt32",
+            "GfId:UInt32",
+            "newStateInGf:UInt32",
+            "timeSinceAddedToTrackerS:UInt32",
+            "distanceToEdgeOfGfM:Double"
+          ],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?GeofenceEventTriggered@CGeofenceTracker@@UEAAJW4InternalTrackerInstance@@AEBV?$shared_ptr@UTRACKED_GEOFENCE@@@std@@W4LocationStateInGeofence@@PEAUILocationInformation@@@Z",
+              "ea": "0x1800f51b4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "GfId",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "appId",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "distanceToEdgeOfGfM",
+          "type": "Double",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "newStateInGf",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "timeSinceAddedToTrackerS",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "trackerInstance",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GfOperationAddGeofence",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ApplicationId:UInt32",
+            "GeofenceId:UInt32",
+            "RadiusInMeters:Double",
+            "StartTime:FileTime",
+            "Duration:UInt64",
+            "DwellTime:UInt64",
+            "SingleUse:UInt8",
+            "hr:Int32",
+            "callerProcessName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?Add@CGeofenceAppServices@@UEAAJPEAUGEOFENCE@@@Z",
+              "ea": "0x18006bcd2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ApplicationId",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "Duration",
+          "type": "UInt64",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "DwellTime",
+          "type": "UInt64",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "GeofenceId",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "RadiusInMeters",
+          "type": "Double",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "SingleUse",
+          "type": "UInt8",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "StartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "callerProcessName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Inference",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "properties:HexInt32",
+            "requestForPE:UInt32",
+            "responsePE:UInt32",
+            "horizontalAccuracy:UInt32",
+            "beaconCount:UInt32",
+            "wwanConnectivity:UInt8(Boolean)",
+            "gatewayCount:UInt32",
+            "devicePeCapability:UInt32",
+            "cacheHR:HexInt32",
+            "tileTotalTime:UInt32",
+            "tileHR:HexInt32",
+            "orionTotalTime:UInt32",
+            "webproxyHR:HexInt32",
+            "webproxyNetworkHR:HexInt32",
+            "orionHR:HexInt32",
+            "ServerSource:HexInt32",
+            "servingCellType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?GenerateLocationByInference@?$CLocationInferenceServices@UILocationCellBeaconInformation@@@@IEAAJPEAUILocationCellBeaconInformation@@PEAPEAUILocationInformation@@@Z",
+              "ea": "0x180107da6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?GenerateLocationByInference@?$CLocationInferenceServices@UILocationIpAddressInformation@@@@IEAAJPEAUILocationIpAddressInformation@@PEAPEAUILocationInformation@@@Z",
+              "ea": "0x18003514c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ServerSource",
+          "type": "HexInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "beaconCount",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "cacheHR",
+          "type": "HexInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "devicePeCapability",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "gatewayCount",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "horizontalAccuracy",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "orionHR",
+          "type": "HexInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "orionTotalTime",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "properties",
+          "type": "HexInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "requestForPE",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "responsePE",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "servingCellType",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "tileHR",
+          "type": "HexInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "tileTotalTime",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "webproxyHR",
+          "type": "HexInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "webproxyNetworkHR",
+          "type": "HexInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "wwanConnectivity",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RecordApiSession",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ProductId:GUID",
+            "ProgramId:UnicodeString",
+            "FileId:UnicodeString",
+            "FileName:UnicodeString",
+            "DisplayNameString:UnicodeString",
+            "DevicePeCapability:UInt32",
+            "ClientOriginated:UInt32",
+            "SessionType:UInt32",
+            "AccuracyType:UInt32",
+            "AccuracyValue:UInt32",
+            "Timeout:UInt32",
+            "RequestAgeMs:UInt32",
+            "DistanceThreshold:UInt32",
+            "PollingInterval:UInt32",
+            "ResponseAgeMs:UInt32",
+            "ResponseAccuracy:Double",
+            "ResponseTime:UInt32",
+            "Provider:UInt32",
+            "MeetsRequirements:UInt32",
+            "SessionDuration:UInt32",
+            "TimeToFirstAccurateResponseMs:UInt32",
+            "FirstAccurateAccuracyValue:Double",
+            "FirstAccurateFixProvider:UInt32",
+            "GenerationMechanism:UInt32",
+            "ServerSource:UInt32",
+            "firstAccurateFixFound:UInt8(Boolean)",
+            "ResponseStatus:Int32(HResult)",
+            "IsCrossContainerRequest:UInt8(Boolean)",
+            "IsRemoteSource:UInt8(Boolean)",
+            "StandbyActive:UInt8(Boolean)",
+            "NetworkConnectedInStandby:UInt8(Boolean)",
+            "registerBackgroundExecution:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?CompleteSession@CLocationApiUsageTelemetry@@QEAAXH@Z",
+              "ea": "0x180077b68",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AccuracyType",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "AccuracyValue",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientOriginated",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "DevicePeCapability",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "DisplayNameString",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "DistanceThreshold",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "FileId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "FileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "FirstAccurateAccuracyValue",
+          "type": "Double",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "FirstAccurateFixProvider",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "GenerationMechanism",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "IsCrossContainerRequest",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "IsRemoteSource",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "MeetsRequirements",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "NetworkConnectedInStandby",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "PollingInterval",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "ProductId",
+          "type": "GUID",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "ProgramId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "Provider",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "RequestAgeMs",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "ResponseAccuracy",
+          "type": "Double",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "ResponseAgeMs",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "ResponseStatus",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "ResponseTime",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "ServerSource",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionDuration",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionType",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "StandbyActive",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "TimeToFirstAccurateResponseMs",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "Timeout",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "firstAccurateFixFound",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "registerBackgroundExecution",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RequestAccessAsyncApi",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "api:UnicodeString",
+            "accessStatus:HexInt32",
+            "hr:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "Geolocation.dll",
+              "function": "_Windows::Devices::Geolocation::GeolocationFactory::RequestAccessAsync_::_14_::_lambda_1_::operator()",
+              "ea": "0x18000cde7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "accessStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "Geolocation.dll"
+          ]
+        },
+        {
+          "fieldName": "api",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Geolocation.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "HexInt32",
+          "seenIn": [
+            "Geolocation.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SessionCallerInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "SessionId:UInt32",
+            "ProviderPe:UInt32",
+            "ProductId:GUID",
+            "PackageIdString:UnicodeString",
+            "CallerProcessName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?StartSubscriberRequest@CLocationSession@@UEAAJXZ",
+              "ea": "0x180078a32",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CallerProcessName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageIdString",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "ProductId",
+          "type": "GUID",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "ProviderPe",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StartEmulated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "StartTrackingPe:UInt32",
+            "IsPrimaryNativeTracking:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?StartEmulated@CLocationAcquireOffloadedTrackingCpe@@AEAAJXZ",
+              "ea": "0x18010cd3e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsPrimaryNativeTracking",
+          "type": "Int32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "StartTrackingPe",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StartNative",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "StartTrackingPe:UInt32",
+            "IsPrimaryNativeTracking:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?StartNative@CLocationAcquireOffloadedTrackingCpe@@AEAAJ_N@Z",
+              "ea": "0x18010ce78",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsPrimaryNativeTracking",
+          "type": "Int32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "StartTrackingPe",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UserOverridePosition",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?PostPosition@CLocationUserOverrideSession@@UEAAJUOverridePosition@@@Z",
+              "ea": "0x180105c9e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "UserOverrideStarted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?Start@CLocationUserOverrideSession@@UEAAJUOverridePosition@@@Z",
+              "ea": "0x180106055",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "UserOverrideStopped",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?Stop@CLocationUserOverrideSession@@UEAAJXZ",
+              "ea": "0x180106175",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "VE_ClientNotified",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "visitSummaryType:UInt32",
+            "timeStamp:FileTime",
+            "visitStateChange:UInt32",
+            "hasPosition:UInt8(Boolean)",
+            "clientsCount:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?ReportVisitsStateInfo@CVisitsEngine@@AEAAJW4VisitsState@@0PEAUILocationInformation@@@Z",
+              "ea": "0x180085872",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "clientsCount",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "hasPosition",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "timeStamp",
+          "type": "FileTime",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "visitStateChange",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "visitSummaryType",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VE_Moving_OnEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ExternalEvent:UInt32",
+            "canDetectVisit:UInt8(Boolean)",
+            "timeRemainingToAllowMs:UInt32",
+            "timeElapsedSinceStartMs:UInt32",
+            "stayingScore:Int32",
+            "remBudget:UInt32",
+            "availSignals:UnicodeString",
+            "locEnvAvail:UInt64",
+            "locEnv:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?OnEventHappened@CMovingState@@UEAAXW4VisitsExternalEvent@@AEAV?$list@W4DerivedVisitsSignal@@V?$allocator@W4DerivedVisitsSignal@@@std@@@std@@@Z",
+              "ea": "0x180085ced",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ExternalEvent",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "availSignals",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "canDetectVisit",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "locEnv",
+          "type": "UInt64",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "locEnvAvail",
+          "type": "UInt64",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "remBudget",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "stayingScore",
+          "type": "Int32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "timeElapsedSinceStartMs",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "timeRemainingToAllowMs",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VE_RegisterClient",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "clientCorrelationId:HexInt64",
+            "Scope:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?RegisterClient@CVisitsEngine@@UEAAJAEBV?$shared_ptr@VIVisitClient@@@std@@AEAV?$shared_ptr@VLocationCallOnExit@@@3@@Z",
+              "ea": "0x18012da57",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Scope",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "clientCorrelationId",
+          "type": "HexInt64",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VE_StateNotify",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "visitEvent:UInt32",
+            "stayScore:UInt32",
+            "highInterestScore:UInt32",
+            "budgetLeft:UInt32",
+            "availSignals:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?UpdateNewMetadata@CVisitsState@@IEAAXW4VisitsExternalEvent@@PEAW4VisitScoreProfile@@PEAK2AEBV?$list@W4DerivedVisitsSignal@@V?$allocator@W4DerivedVisitsSignal@@@std@@@std@@W4VisitsState@@JPEAUILocationInformation@@@Z",
+              "ea": "0x1800861ba",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "availSignals",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "budgetLeft",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "highInterestScore",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "stayScore",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "visitEvent",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VE_Suspect_OnEvent_Ignored",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ExternalEvent:UInt32",
+            "timespentInSuspectMs:UInt32",
+            "timerFired:UInt8(Boolean)",
+            "score:Int32",
+            "highInterestSignalCount:UInt32",
+            "availSignals:UnicodeString",
+            "locEnvAvail:UInt64",
+            "locEnv:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?OnEventHappened@CSuspectState@@UEAAXW4VisitsExternalEvent@@AEAV?$list@W4DerivedVisitsSignal@@V?$allocator@W4DerivedVisitsSignal@@@std@@@std@@@Z",
+              "ea": "0x1800625d7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ExternalEvent",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "availSignals",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "highInterestSignalCount",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "locEnv",
+          "type": "UInt64",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "locEnvAvail",
+          "type": "UInt64",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "score",
+          "type": "Int32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "timerFired",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "timespentInSuspectMs",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VE_Suspect_OnExitTimerFired",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?OnExitTimerFired@CSuspectState@@AEAAJXZ",
+              "ea": "0x180133e20",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "VE_UpdateMonitoringState",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "desiredMonitoringState:UInt8(Boolean)",
+            "currMonitoringState:UInt8(Boolean)",
+            "globalPermissionOn:Int32",
+            "visitClientProfile:UInt32",
+            "remainingChangeBudget:UInt32",
+            "uploadOn:UInt8(Boolean)",
+            "fmdOn:UInt8(Boolean)",
+            "tzAutoupdateOn:UInt8(Boolean)",
+            "testModeForceBudgetHighOn:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?RecalculateMonitoringState@CVisitsEngine@@AEAAJ_N@Z",
+              "ea": "0x180035d73",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "currMonitoringState",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "desiredMonitoringState",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "fmdOn",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "globalPermissionOn",
+          "type": "Int32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "remainingChangeBudget",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "testModeForceBudgetHighOn",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "tzAutoupdateOn",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "uploadOn",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "visitClientProfile",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VE_UpdateUserOverrideMonitoringState",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "desiredMonitoringState:UInt8(Boolean)",
+            "currMonitoringState:UInt8(Boolean)",
+            "globalPermissionOn:Int32",
+            "visitClientProfile:UInt32",
+            "uploadOn:UInt8(Boolean)",
+            "fmdOn:UInt8(Boolean)",
+            "tzAutoupdateOn:UInt8(Boolean)",
+            "testModeForceBudgetHighOn:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?RecalculateMonitoringState@CUserOverrideVisit@@AEAAJXZ",
+              "ea": "0x180130d71",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "currMonitoringState",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "desiredMonitoringState",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "fmdOn",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "globalPermissionOn",
+          "type": "Int32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "testModeForceBudgetHighOn",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "tzAutoupdateOn",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "uploadOn",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "visitClientProfile",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VE_UserOverrideClientNotified",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "visitSummaryType:UInt32",
+            "timeStamp:FileTime",
+            "visitStateChange:UInt32",
+            "hasPosition:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?ReportVisitsStateInfo@CUserOverrideVisit@@AEAAJW4VisitsState@@0PEAUILocationInformation@@@Z",
+              "ea": "0x1801312db",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hasPosition",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "timeStamp",
+          "type": "FileTime",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "visitStateChange",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        },
+        {
+          "fieldName": "visitSummaryType",
+          "type": "UInt32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WiFiAdapter_FtmSupport",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "IsFtmSupported:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "LocationFramework.dll",
+              "function": "?QueryAndSetFtmSupported@CLocationAdapterWiFi@@AEAAJXZ",
+              "ea": "0x18004c946",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsFtmSupported",
+          "type": "Bool32",
+          "seenIn": [
+            "LocationFramework.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

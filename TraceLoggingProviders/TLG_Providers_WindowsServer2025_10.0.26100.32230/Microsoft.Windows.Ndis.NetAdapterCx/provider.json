@@ -1,0 +1,183 @@
+{
+  "providerName": "Microsoft.Windows.Ndis.NetAdapterCx",
+  "guid": "{828A1D06-71B8-5FC5-B237-28AE6AEAC7C4}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "netadaptercx.sys",
+    "netadaptercxum.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "NxAdapterStateTransition",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x6",
+          "fields": [
+            "DevicelessAdapterInterfaceGuid:GUID",
+            "AdapterNetLuid:HexInt64",
+            "AdapterStateTransitionFrom:HexInt32",
+            "AdapterStateTransitionEvent:HexInt32",
+            "AdapterStateTransitionTo:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "netadaptercx.sys",
+              "function": "?EvtLogTransition@NxAdapter@@AEAAXW4TransitionType@SmFx@@W4StateId@?$NxAdapterStateMachine@VNxAdapter@@@@W4EventId@5@1@Z",
+              "ea": "0x140008ab7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "netadaptercxum.dll",
+              "function": "?EvtLogTransition@NxAdapter@@AEAAXW4TransitionType@SmFx@@W4StateId@?$NxAdapterStateMachine@VNxAdapter@@@@W4EventId@5@1@Z",
+              "ea": "0x18000cd77",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x6",
+          "fields": [
+            "DeviceBusAddress:UInt32",
+            "AdapterNetLuid:HexInt64",
+            "AdapterStateTransitionFrom:HexInt32",
+            "AdapterStateTransitionEvent:HexInt32",
+            "AdapterStateTransitionTo:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "netadaptercx.sys",
+              "function": "?EvtLogTransition@NxAdapter@@AEAAXW4TransitionType@SmFx@@W4StateId@?$NxAdapterStateMachine@VNxAdapter@@@@W4EventId@5@1@Z",
+              "ea": "0x140008b27",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "netadaptercxum.dll",
+              "function": "?EvtLogTransition@NxAdapter@@AEAAXW4TransitionType@SmFx@@W4StateId@?$NxAdapterStateMachine@VNxAdapter@@@@W4EventId@5@1@Z",
+              "ea": "0x18000cde7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AdapterNetLuid",
+          "type": "HexInt64",
+          "seenIn": [
+            "netadaptercx.sys",
+            "netadaptercxum.dll"
+          ]
+        },
+        {
+          "fieldName": "AdapterStateTransitionEvent",
+          "type": "HexInt32",
+          "seenIn": [
+            "netadaptercx.sys",
+            "netadaptercxum.dll"
+          ]
+        },
+        {
+          "fieldName": "AdapterStateTransitionFrom",
+          "type": "HexInt32",
+          "seenIn": [
+            "netadaptercx.sys",
+            "netadaptercxum.dll"
+          ]
+        },
+        {
+          "fieldName": "AdapterStateTransitionTo",
+          "type": "HexInt32",
+          "seenIn": [
+            "netadaptercx.sys",
+            "netadaptercxum.dll"
+          ]
+        },
+        {
+          "fieldName": "DeviceBusAddress",
+          "type": "UInt32",
+          "seenIn": [
+            "netadaptercx.sys",
+            "netadaptercxum.dll"
+          ]
+        },
+        {
+          "fieldName": "DevicelessAdapterInterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "netadaptercx.sys",
+            "netadaptercxum.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NxDeviceStateTransition",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x5",
+          "fields": [
+            "DeviceBusAddress:UInt32",
+            "DeviceStateTransitionFrom:HexInt32",
+            "DeviceStateTransitionEvent:HexInt32",
+            "DeviceStateTransitionTo:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "netadaptercx.sys",
+              "function": "?EvtLogTransition@NxDevice@@AEAAXW4TransitionType@SmFx@@W4StateId@?$NxDeviceStateMachine@VNxDevice@@@@W4EventId@5@1@Z",
+              "ea": "0x140015daf",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "netadaptercxum.dll",
+              "function": "?EvtLogTransition@NxDevice@@AEAAXW4TransitionType@SmFx@@W4StateId@?$NxDeviceStateMachine@VNxDevice@@@@W4EventId@5@1@Z",
+              "ea": "0x1800182df",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DeviceBusAddress",
+          "type": "UInt32",
+          "seenIn": [
+            "netadaptercx.sys",
+            "netadaptercxum.dll"
+          ]
+        },
+        {
+          "fieldName": "DeviceStateTransitionEvent",
+          "type": "HexInt32",
+          "seenIn": [
+            "netadaptercx.sys",
+            "netadaptercxum.dll"
+          ]
+        },
+        {
+          "fieldName": "DeviceStateTransitionFrom",
+          "type": "HexInt32",
+          "seenIn": [
+            "netadaptercx.sys",
+            "netadaptercxum.dll"
+          ]
+        },
+        {
+          "fieldName": "DeviceStateTransitionTo",
+          "type": "HexInt32",
+          "seenIn": [
+            "netadaptercx.sys",
+            "netadaptercxum.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

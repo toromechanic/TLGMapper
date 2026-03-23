@@ -1,0 +1,1504 @@
+{
+  "providerName": "Microsoft.Windows.WaaSMedic.Local",
+  "guid": "{30D25124-A468-505C-DE82-8411646EB8B5}",
+  "os": "Windows 11",
+  "binaryCount": 3,
+  "binaries": [
+    "WaaSMedicAgent.exe",
+    "WaaSMedicCapsule.dll",
+    "WaaSMedicSvcImpl.dll"
+  ],
+  "uniqueEventCount": 26,
+  "events": [
+    {
+      "eventName": "Agent-Completed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "__TlgCV__:AnsiString",
+            "hResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicAgent.exe",
+              "function": "wmain",
+              "ea": "0x14000b6f2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WaaSMedicAgent.exe"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "WaaSMedicAgent.exe"
+          ]
+        },
+        {
+          "fieldName": "hResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "WaaSMedicAgent.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Agent-RPCClientTerminated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "__TlgCV__:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicAgent.exe",
+              "function": "?RpcClientMonitorThread@@YAKPEAX@Z",
+              "ea": "0x14000a873",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WaaSMedicAgent.exe"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "WaaSMedicAgent.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BinaryHealthPlugin-CoCreateInstanceFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "version:UnicodeString",
+            "hResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?RunDetection@CBinaryHealthPlugin@WaasMedic@@AEAAJAEA_N@Z",
+              "ea": "0x180042c26",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?RunRemediation@CBinaryHealthPlugin@WaasMedic@@AEAAJQEAPEAGAEAKK@Z",
+              "ea": "0x180042e7f",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "hResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BinaryHealthPlugin-MissingBinaryFound",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "version:UnicodeString",
+            "binaryName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?RunRemediation@CBinaryHealthPlugin@WaasMedic@@AEAAJQEAPEAGAEAKK@Z",
+              "ea": "0x180042f82",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "binaryName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BinaryHealthPlugin-RemediateCorruptedBinary",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "version:UnicodeString",
+            "binaryName:UnicodeString",
+            "hResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?RemediateCorruptedBinary@CBinaryHealthPlugin@WaasMedic@@QEAAJAEAUtagBinaryHealthInfo@2@AEAV?$XInterface@UISFPIntegrityCheckAndRepair@@@2@@Z",
+              "ea": "0x1800427a6",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "binaryName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "hResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BinaryHealthPlugin-RemediateCorruptedBinarySuccess",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "version:UnicodeString",
+            "binaryName:UnicodeString",
+            "hResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?RemediateCorruptedBinary@CBinaryHealthPlugin@WaasMedic@@QEAAJAEAUtagBinaryHealthInfo@2@AEAV?$XInterface@UISFPIntegrityCheckAndRepair@@@2@@Z",
+              "ea": "0x180042842",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "binaryName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "hResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BinaryHealthPlugin-RunRemediationCanNotRemediate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "version:UnicodeString",
+            "binaryName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?RunRemediation@CBinaryHealthPlugin@WaasMedic@@AEAAJQEAPEAGAEAKK@Z",
+              "ea": "0x180043025",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "binaryName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EdgeUpdateRepairPluginDownloadVerifyFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "__TlgCV__:AnsiString",
+            "failedReasons:UInt32",
+            "performActionResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?PerformAction@EdgeUpdateRepairPlugin@WaasMedic@@UEAAJXZ",
+              "ea": "0x180017830",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "failedReasons",
+          "type": "UInt32",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "performActionResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Error",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "m:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicAgent.exe",
+              "function": "?_LogMsgErrorA@@YAXPEAD@Z",
+              "ea": "0x14000bd77",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?_LogMsgErrorA@@YAXPEAD@Z",
+              "ea": "0x180026e03",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WaaSMedicSvcImpl.dll",
+              "function": "?_LogMsgErrorA@@YAXPEAD@Z",
+              "ea": "0x18002e61f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "m:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicAgent.exe",
+              "function": "?_LogMsgErrorW@@YAXPEAG@Z",
+              "ea": "0x14000bdab",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?_LogMsgErrorW@@YAXPEAG@Z",
+              "ea": "0x180026e43",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WaaSMedicSvcImpl.dll",
+              "function": "?_LogMsgErrorW@@YAXPEAG@Z",
+              "ea": "0x18002e653",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "m",
+          "type": "AnsiString",
+          "seenIn": [
+            "WaaSMedicAgent.exe",
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        },
+        {
+          "fieldName": "m",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicAgent.exe",
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Info",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "m:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicAgent.exe",
+              "function": "?_LogMsgInfoA@@YAXPEAD@Z",
+              "ea": "0x14000bddf",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?_LogMsgInfoA@@YAXPEAD@Z",
+              "ea": "0x180026e73",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WaaSMedicSvcImpl.dll",
+              "function": "?_LogMsgInfoA@@YAXPEAD@Z",
+              "ea": "0x18002e687",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "m:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicAgent.exe",
+              "function": "?_LogMsgInfoW@@YAXPEAG@Z",
+              "ea": "0x14000be13",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?_LogMsgInfoW@@YAXPEAG@Z",
+              "ea": "0x180026eb3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WaaSMedicSvcImpl.dll",
+              "function": "?_LogMsgInfoW@@YAXPEAG@Z",
+              "ea": "0x18002e6bb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "m",
+          "type": "AnsiString",
+          "seenIn": [
+            "WaaSMedicAgent.exe",
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        },
+        {
+          "fieldName": "m",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicAgent.exe",
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogLevelError",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "fmt:AnsiString",
+            "hResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicAgent.exe",
+              "function": "?LogLevelA@@YAXEPEBDZZ",
+              "ea": "0x14000bbc9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?LogLevelA@@YAXEPEBDZZ",
+              "ea": "0x180026cb4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WaaSMedicSvcImpl.dll",
+              "function": "?LogLevelA@@YAXEPEBDZZ",
+              "ea": "0x18002e464",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "fmt:UnicodeString",
+            "hResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicAgent.exe",
+              "function": "?LogLevelW@@YAXEPEBGZZ",
+              "ea": "0x14000bd32",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?LogLevelW@@YAXEPEBGZZ",
+              "ea": "0x180026da7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WaaSMedicSvcImpl.dll",
+              "function": "?LogLevelW@@YAXEPEBGZZ",
+              "ea": "0x18002e5d9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "fmt",
+          "type": "AnsiString",
+          "seenIn": [
+            "WaaSMedicAgent.exe",
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        },
+        {
+          "fieldName": "fmt",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicAgent.exe",
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        },
+        {
+          "fieldName": "hResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "WaaSMedicAgent.exe",
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "QueryBinaryForCorruptionFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "version:UnicodeString",
+            "binaryName:UnicodeString",
+            "failureReason:UnicodeString",
+            "hResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?QueryBinaryForCorruption@CBinaryHealthPlugin@WaasMedic@@QEAAJPEBGPEAGAEAV?$XInterface@UISFPIntegrityCheckAndRepair@@@2@PEA_N@Z",
+              "ea": "0x1800425e7",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "binaryName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "failureReason",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "hResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegUtil-RegSetValueFromVariantFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "version:UnicodeString",
+            "subKey:UnicodeString",
+            "valueName:UnicodeString",
+            "protected:Bool32",
+            "hResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?RegSetValueFromVariant@WaasMedic@@YAJPEAUHKEY__@@PEBG1PEAUtagVARIANT@@_N@Z",
+              "ea": "0x18002ae9f",
+              "confidence": "CallGraph-d3"
+            },
+            {
+              "binary": "WaaSMedicSvcImpl.dll",
+              "function": "?RegSetValueFromVariant@WaasMedic@@YAJPEAUHKEY__@@PEBG1PEAUtagVARIANT@@_N@Z",
+              "ea": "0x180026981",
+              "confidence": "CallGraph-d3"
+            },
+            {
+              "binary": "WaaSMedicSvcImpl.dll",
+              "function": "?SetJsonDefaultSettings@DefaultSettingsProvider@WaasMedic@@QEAAJPEBG0@Z",
+              "ea": "0x180021e82",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        },
+        {
+          "fieldName": "hResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        },
+        {
+          "fieldName": "protected",
+          "type": "Bool32",
+          "seenIn": [
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        },
+        {
+          "fieldName": "subKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        },
+        {
+          "fieldName": "valueName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ResetRepairPlugin.DetectCondition",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "RemediationCategory:UnicodeString",
+            "NeedRemediation:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?DetectCondition@ResetRepairPlugin@WaasMedic@@UEAAJPEAPEBGPEA_N@Z",
+              "ea": "0x180045ea9",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NeedRemediation",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "RemediationCategory",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ResetRepairPlugin.RemediationCompletes",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "RemediationCategory:UnicodeString",
+            "Result:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?PerformAction@ResetRepairPlugin@WaasMedic@@UEAAJXZ",
+              "ea": "0x180047f9d",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?PerformAction@ResetRepairPlugin@WaasMedic@@UEAAJXZ",
+              "ea": "0x18004807e",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "RemediationCategory",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ResetRepairPlugin.RemediationStarts",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "RemediationCategory:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?PerformAction@ResetRepairPlugin@WaasMedic@@UEAAJXZ",
+              "ea": "0x180047f47",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?PerformAction@ResetRepairPlugin@WaasMedic@@UEAAJXZ",
+              "ea": "0x18004802d",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "RemediationCategory",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SLGetWindowsInformationDWORDFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "hResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicSvcImpl.dll",
+              "function": "?LaunchRemediation@WaaSRemediationAgent@@UEAAJPEBDPEBG@Z",
+              "ea": "0x18004f69f",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WaaSMedicSvcImpl.dll"
+          ]
+        },
+        {
+          "fieldName": "hResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "WaaSMedicSvcImpl.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ScheduledTasksPlugin-NoStaticTaskXmlFilesLoaded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "version:UnicodeString",
+            "hResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?LoadStaticTaskData@CScheduledTasksPlugin@WaasMedic@@QEAAJXZ",
+              "ea": "0x180056287",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "hResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ServiceHealthPluginAccessDenied",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "regPath:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?IsAllowedToResetOwner@CServiceHealthPlugin@WaasMedic@@AEAA_NAEBV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@@Z",
+              "ea": "0x18004c587",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "regPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ServiceHealthPluginServiceNotConfiguredCorrectly",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "version:UnicodeString",
+            "serviceName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?MatchSVCConfigDataFromXMLFile@CServiceHealthPlugin@WaasMedic@@AEAAJPEBGAEA_N@Z",
+              "ea": "0x18004cbb4",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "serviceName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ServicingCleanupPlugin-DetectLastScavengeThresholdFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "version:UnicodeString",
+            "hResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?DetectLastScavengeThreshold@CServicingCleanupPlugin@WaasMedic@@AEAAJKPEA_N@Z",
+              "ea": "0x18005416b",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "hResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StackDataResetDetectionBlocked",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "__TlgCV__:AnsiString",
+            "Reason:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?DetectCondition@CStackDataResetPlugin@WaasMedic@@UEAAJPEAPEBGPEA_N@Z",
+              "ea": "0x18003b490",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?DetectCondition@CStackDataResetPlugin@WaasMedic@@UEAAJPEAPEBGPEA_N@Z",
+              "ea": "0x18003b623",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?DetectCondition@CStackDataResetPlugin@WaasMedic@@UEAAJPEAPEBGPEA_N@Z",
+              "ea": "0x18003b74b",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?DetectCondition@CStackDataResetPlugin@WaasMedic@@UEAAJPEAPEBGPEA_N@Z",
+              "ea": "0x18003b805",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?DetectCondition@CStackDataResetPlugin@WaasMedic@@UEAAJPEAPEBGPEA_N@Z",
+              "ea": "0x18003b930",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "AnsiString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TasksHelper-CreateOrUpdateTaskFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "version:UnicodeString",
+            "taskName:UnicodeString",
+            "taskXml:UnicodeString",
+            "hResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?CreateOrUpdateTask@TasksHelper@WaasMedic@@QEAAJPEBG00@Z",
+              "ea": "0x1800611b2",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "WaaSMedicSvcImpl.dll",
+              "function": "?CreateOrUpdateTask@TasksHelper@WaasMedic@@QEAAJPEBG00@Z",
+              "ea": "0x1800301b9",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        },
+        {
+          "fieldName": "hResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        },
+        {
+          "fieldName": "taskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        },
+        {
+          "fieldName": "taskXml",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TimeSyncPlugin-W32TimeSyncNowFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "version:UnicodeString",
+            "hResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicAgent.exe",
+              "function": "?SyncSystemTime@TimeHelper@WaasMedic@@SAJXZ",
+              "ea": "0x140011c51",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?SyncSystemTime@TimeHelper@WaasMedic@@SAJXZ",
+              "ea": "0x180031738",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "WaaSMedicSvcImpl.dll",
+              "function": "?SyncSystemTime@TimeHelper@WaasMedic@@SAJXZ",
+              "ea": "0x180029b0e",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WaaSMedicAgent.exe",
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        },
+        {
+          "fieldName": "hResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "WaaSMedicAgent.exe",
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicAgent.exe",
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Verbose",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "m:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicAgent.exe",
+              "function": "?_LogMsgVerboseA@@YAXPEAD@Z",
+              "ea": "0x14000be47",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?_LogMsgVerboseA@@YAXPEAD@Z",
+              "ea": "0x180026ee3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WaaSMedicSvcImpl.dll",
+              "function": "?_LogMsgVerboseA@@YAXPEAD@Z",
+              "ea": "0x18002e6ef",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "m:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicAgent.exe",
+              "function": "?_LogMsgVerboseW@@YAXPEAG@Z",
+              "ea": "0x14000be7b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?_LogMsgVerboseW@@YAXPEAG@Z",
+              "ea": "0x180026f23",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WaaSMedicSvcImpl.dll",
+              "function": "?_LogMsgVerboseW@@YAXPEAG@Z",
+              "ea": "0x18002e723",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "m",
+          "type": "AnsiString",
+          "seenIn": [
+            "WaaSMedicAgent.exe",
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        },
+        {
+          "fieldName": "m",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicAgent.exe",
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Warning",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "m:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicAgent.exe",
+              "function": "?_LogMsgWarningA@@YAXPEAD@Z",
+              "ea": "0x14000beaf",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?_LogMsgWarningA@@YAXPEAD@Z",
+              "ea": "0x180026f53",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WaaSMedicSvcImpl.dll",
+              "function": "?_LogMsgWarningA@@YAXPEAD@Z",
+              "ea": "0x18002e757",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "m:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "WaaSMedicAgent.exe",
+              "function": "?_LogMsgWarningW@@YAXPEAG@Z",
+              "ea": "0x14000bee3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WaaSMedicCapsule.dll",
+              "function": "?_LogMsgWarningW@@YAXPEAG@Z",
+              "ea": "0x180026f93",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WaaSMedicSvcImpl.dll",
+              "function": "?_LogMsgWarningW@@YAXPEAG@Z",
+              "ea": "0x18002e78b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "m",
+          "type": "AnsiString",
+          "seenIn": [
+            "WaaSMedicAgent.exe",
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        },
+        {
+          "fieldName": "m",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WaaSMedicAgent.exe",
+            "WaaSMedicCapsule.dll",
+            "WaaSMedicSvcImpl.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

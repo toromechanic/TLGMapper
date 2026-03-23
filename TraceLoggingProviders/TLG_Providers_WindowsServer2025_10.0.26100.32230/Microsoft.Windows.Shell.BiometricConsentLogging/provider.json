@@ -1,0 +1,111 @@
+{
+  "providerName": "Microsoft.Windows.Shell.BiometricConsentLogging",
+  "guid": "{990F8B2C-47BB-5C00-7037-F9344968D95A}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "ShellAppRuntime.exe",
+    "explorer.exe"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "ShouldShowUnusedBiometricConsentForUserWithBiometrics",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "shouldShowConsent:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "explorer.exe",
+              "function": "??$ShouldShowUnusedBiometricConsentForUserWithBiometrics@AEA_N@BiometricConsentTelemetry@@SAXAEA_N@Z",
+              "ea": "0x1400634f8",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$ShouldShowUnusedBiometricConsentForUserWithBiometrics@AEA_N@BiometricConsentTelemetry@@SAXAEA_N@Z",
+              "ea": "0x140063535",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$ShouldShowUnusedBiometricConsentForUserWithBiometrics@AEA_N@BiometricConsentTelemetry@@SAXAEA_N@Z",
+              "ea": "0x140029136",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "shouldShowConsent",
+          "type": "Int32",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnusedBiometricConsentCompleted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "userOobeExitReason:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "explorer.exe",
+              "function": "??$UnusedBiometricConsentCompleted@W4UserOOBEExitReason@@@BiometricConsentTelemetry@@SAX$$QEAW4UserOOBEExitReason@@@Z",
+              "ea": "0x140106b23",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$UnusedBiometricConsentCompleted@W4UserOOBEExitReason@@@BiometricConsentTelemetry@@SAX$$QEAW4UserOOBEExitReason@@@Z",
+              "ea": "0x14002a95d",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "userOobeExitReason",
+          "type": "UInt32",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

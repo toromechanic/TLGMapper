@@ -1,0 +1,132 @@
+{
+  "providerName": "Microsoft.Windows.Shell.PersonalDataExportConsentLogging",
+  "guid": "{A9ECBF9F-D194-586E-43D9-09FC869A72C0}",
+  "os": "Windows 11",
+  "binaryCount": 3,
+  "binaries": [
+    "CustomShellHost.exe",
+    "ShellAppRuntime.exe",
+    "explorer.exe"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "PersonalDataExportConsentCompleted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "userOobeExitReason:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "??$PersonalDataExportConsentCompleted@W4UserOOBEExitReason@@@PersonalDataExportConsentTelemetry@@SAX$$QEAW4UserOOBEExitReason@@@Z",
+              "ea": "0x140021ff5",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$PersonalDataExportConsentCompleted@W4UserOOBEExitReason@@@PersonalDataExportConsentTelemetry@@SAX$$QEAW4UserOOBEExitReason@@@Z",
+              "ea": "0x140104adf",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$PersonalDataExportConsentCompleted@W4UserOOBEExitReason@@@PersonalDataExportConsentTelemetry@@SAX$$QEAW4UserOOBEExitReason@@@Z",
+              "ea": "0x1400289f9",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "userOobeExitReason",
+          "type": "UInt32",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ShouldShowPersonalDataExportConsentForUser",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "shouldLaunchForNthPDE:Int32",
+            "previousPdeVersionNumber:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "??$ShouldShowPersonalDataExportConsentForUser@AEA_NI@PersonalDataExportConsentTelemetry@@SAXAEA_N$$QEAI@Z",
+              "ea": "0x140023c84",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$ShouldShowPersonalDataExportConsentForUser@AEA_NI@PersonalDataExportConsentTelemetry@@SAXAEA_N$$QEAI@Z",
+              "ea": "0x140106512",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$ShouldShowPersonalDataExportConsentForUser@AEA_NI@PersonalDataExportConsentTelemetry@@SAXAEA_N$$QEAI@Z",
+              "ea": "0x14002a688",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "previousPdeVersionNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "shouldLaunchForNthPDE",
+          "type": "Int32",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

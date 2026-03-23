@@ -1,0 +1,580 @@
+{
+  "providerName": "RDP",
+  "guid": "{A8F457B8-A2B8-56CC-F3F5-3C00430937BB}",
+  "os": "WindowsServer2025",
+  "binaryCount": 5,
+  "binaries": [
+    "SessEnv.dll",
+    "mstscax.dll",
+    "rdpserverbase.dll",
+    "rdpsharercom.dll",
+    "rdpviewerax.dll"
+  ],
+  "uniqueEventCount": 5,
+  "events": [
+    {
+      "eventName": "RDPCollabSharer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "SessionInformation:Struct(IPv4)",
+            "appName:UnicodeString",
+            "sessionDurationMs:UInt32",
+            "universalApp:Bool32",
+            "maxAttendees:UInt32",
+            "hadMCUConnection:Bool32",
+            "takeControlHappened:Bool32",
+            "graphicsSource:UInt32",
+            "sessionCorrelationId:UnicodeString",
+            "legacyDllUsed:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpsharercom.dll",
+              "function": "?LogRDPCollabSharerSessionTelemetry@RDPCollabTraceLogging@@YAJPEAUTRACE_LOGGING_COLLAB_SHARER_SESSION@@@Z",
+              "ea": "0x1800aa990",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SessionInformation",
+          "type": "Struct(IPv4)",
+          "seenIn": [
+            "rdpsharercom.dll"
+          ]
+        },
+        {
+          "fieldName": "appName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rdpsharercom.dll"
+          ]
+        },
+        {
+          "fieldName": "graphicsSource",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpsharercom.dll"
+          ]
+        },
+        {
+          "fieldName": "hadMCUConnection",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpsharercom.dll"
+          ]
+        },
+        {
+          "fieldName": "legacyDllUsed",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpsharercom.dll"
+          ]
+        },
+        {
+          "fieldName": "maxAttendees",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpsharercom.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionCorrelationId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rdpsharercom.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionDurationMs",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpsharercom.dll"
+          ]
+        },
+        {
+          "fieldName": "takeControlHappened",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpsharercom.dll"
+          ]
+        },
+        {
+          "fieldName": "universalApp",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpsharercom.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RDPCollabViewer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "SessionInformation:Struct(IPv4)",
+            "appName:UnicodeString",
+            "axVersion:UnicodeString",
+            "sessionDurationMs:UInt32",
+            "universalApp:Bool32",
+            "disconnectReason:UInt32",
+            "exDisconnectReason:UInt32",
+            "connectionResult:UInt32",
+            "sessionCorrelationId:UnicodeString",
+            "legacyDllUsed:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpviewerax.dll",
+              "function": "?LogRDPCollabViewerSessionTelemetry@RDPCollabTraceLogging@@YAJPEAUTRACE_LOGGING_COLLAB_VIEWER_SESSION@@@Z",
+              "ea": "0x18002c14b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SessionInformation",
+          "type": "Struct(IPv4)",
+          "seenIn": [
+            "rdpviewerax.dll"
+          ]
+        },
+        {
+          "fieldName": "appName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rdpviewerax.dll"
+          ]
+        },
+        {
+          "fieldName": "axVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rdpviewerax.dll"
+          ]
+        },
+        {
+          "fieldName": "connectionResult",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpviewerax.dll"
+          ]
+        },
+        {
+          "fieldName": "disconnectReason",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpviewerax.dll"
+          ]
+        },
+        {
+          "fieldName": "exDisconnectReason",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpviewerax.dll"
+          ]
+        },
+        {
+          "fieldName": "legacyDllUsed",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpviewerax.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionCorrelationId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rdpviewerax.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionDurationMs",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpviewerax.dll"
+          ]
+        },
+        {
+          "fieldName": "universalApp",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpviewerax.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RDPEmulation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "Monitors:Struct(XML)",
+            "monitorId:UInt32",
+            "Left Coordinate:UInt32",
+            "Top Coordinate:UInt32",
+            "width:UInt32",
+            "height:UInt32",
+            "physicalWidth:UInt32",
+            "physicalHeight:UInt32",
+            "orientation:UInt32",
+            "desktopScaleFactor:UInt32",
+            "modernScaleFactor:UInt32",
+            "flags:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "mstscax.dll",
+              "function": "?LogRDPEmulation@RDPEmulationTraceLogging@@YAXPEAU_RDPX_MONITOR_INFO@@I@Z",
+              "ea": "0x1802d1922",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Left Coordinate",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "Monitors",
+          "type": "Struct(XML)",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "Top Coordinate",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "desktopScaleFactor",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "flags",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "height",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "modernScaleFactor",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "monitorId",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "orientation",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "physicalHeight",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "physicalWidth",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        },
+        {
+          "fieldName": "width",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RDPEncryption",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "EncryptionNegotiationResult:Struct(NTStatus)",
+            "negotiationSuccess:Bool32",
+            "negotiationFailureCode:UInt32",
+            "collabConnection:Bool32",
+            "selectedProtocol:UInt32",
+            "clientSupportedEncryption:UInt32",
+            "serverSecurityLayer:UInt32",
+            "userAuthenticationLevel:UInt32",
+            "serverFipsEnabled:Bool32",
+            "serverMinEncryptionLevelGP:UInt32",
+            "serverSecurityLayerGP:UInt32",
+            "serverSecurityLayerRegPolicy:UInt32",
+            "serverSKU:UInt32",
+            "rdshRole:Bool32",
+            "rdshDeployment:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpserverbase.dll",
+              "function": "?LogRDPEncryptionNegotiationResult@RDPEncryptionTraceLogging@@YAJPEAUTRACE_LOGGING_ENCRYPTION_SETTINGS@@@Z",
+              "ea": "0x18013bd79",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "EncryptionSuccess:Struct(Boolean)",
+            "clientVersion:UInt32",
+            "clientBuild:UInt32",
+            "clientCapabilities:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpserverbase.dll",
+              "function": "?LogRDPEncryptionSuccess@RDPEncryptionTraceLogging@@YAJIII@Z",
+              "ea": "0x18013c2bf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EncryptionNegotiationResult",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "rdpserverbase.dll"
+          ]
+        },
+        {
+          "fieldName": "EncryptionSuccess",
+          "type": "Struct(Boolean)",
+          "seenIn": [
+            "rdpserverbase.dll"
+          ]
+        },
+        {
+          "fieldName": "clientBuild",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpserverbase.dll"
+          ]
+        },
+        {
+          "fieldName": "clientCapabilities",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpserverbase.dll"
+          ]
+        },
+        {
+          "fieldName": "clientSupportedEncryption",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpserverbase.dll"
+          ]
+        },
+        {
+          "fieldName": "clientVersion",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpserverbase.dll"
+          ]
+        },
+        {
+          "fieldName": "collabConnection",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpserverbase.dll"
+          ]
+        },
+        {
+          "fieldName": "negotiationFailureCode",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpserverbase.dll"
+          ]
+        },
+        {
+          "fieldName": "negotiationSuccess",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpserverbase.dll"
+          ]
+        },
+        {
+          "fieldName": "rdshDeployment",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpserverbase.dll"
+          ]
+        },
+        {
+          "fieldName": "rdshRole",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpserverbase.dll"
+          ]
+        },
+        {
+          "fieldName": "selectedProtocol",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpserverbase.dll"
+          ]
+        },
+        {
+          "fieldName": "serverFipsEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpserverbase.dll"
+          ]
+        },
+        {
+          "fieldName": "serverMinEncryptionLevelGP",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpserverbase.dll"
+          ]
+        },
+        {
+          "fieldName": "serverSKU",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpserverbase.dll"
+          ]
+        },
+        {
+          "fieldName": "serverSecurityLayer",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpserverbase.dll"
+          ]
+        },
+        {
+          "fieldName": "serverSecurityLayerGP",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpserverbase.dll"
+          ]
+        },
+        {
+          "fieldName": "serverSecurityLayerRegPolicy",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpserverbase.dll"
+          ]
+        },
+        {
+          "fieldName": "userAuthenticationLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpserverbase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RDPShadow",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HRESULT:UInt32",
+            "RequestControl:UInt32",
+            "RequestPermission:UInt32",
+            "Response:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SessEnv.dll",
+              "function": "RpcShadow2",
+              "ea": "0x1800394a9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HRESULT",
+          "type": "UInt32",
+          "seenIn": [
+            "SessEnv.dll"
+          ]
+        },
+        {
+          "fieldName": "RequestControl",
+          "type": "UInt32",
+          "seenIn": [
+            "SessEnv.dll"
+          ]
+        },
+        {
+          "fieldName": "RequestPermission",
+          "type": "UInt32",
+          "seenIn": [
+            "SessEnv.dll"
+          ]
+        },
+        {
+          "fieldName": "Response",
+          "type": "UInt32",
+          "seenIn": [
+            "SessEnv.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

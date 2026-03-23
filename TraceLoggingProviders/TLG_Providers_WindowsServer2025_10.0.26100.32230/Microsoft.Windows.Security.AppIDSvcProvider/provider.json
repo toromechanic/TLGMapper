@@ -1,0 +1,70 @@
+{
+  "providerName": "Microsoft.Windows.Security.AppIDSvcProvider",
+  "guid": "{C4588082-5072-4D81-BB2E-575950EAF2CB}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "appidsvc.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "AppIDServiceCleanup",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "appidsvc.dll",
+              "function": "?AiSvcpCleanup@@YAXK@Z",
+              "ea": "0x180003214",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "AppIDServiceStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ErrorValue:UInt32",
+            "ErrorValueForRegKeyQuery:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "appidsvc.dll",
+              "function": "?ServiceMain@@YAXKQEAPEAG@Z",
+              "ea": "0x180004995",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorValue",
+          "type": "UInt32",
+          "seenIn": [
+            "appidsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorValueForRegKeyQuery",
+          "type": "Int32",
+          "seenIn": [
+            "appidsvc.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

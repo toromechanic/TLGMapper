@@ -1,0 +1,2296 @@
+{
+  "providerName": "Microsoft.Windows.Power.AdaptiveStandby",
+  "guid": "{68C97E16-C170-4C1B-BC4B-7CB3A5B04023}",
+  "os": "WindowsServer2025",
+  "binaryCount": 3,
+  "binaries": [
+    "ntkrla57.exe",
+    "ntoskrnl.exe",
+    "umpoext.dll"
+  ],
+  "uniqueEventCount": 31,
+  "events": [
+    {
+      "eventName": "AdaptiveSessionStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "CurrentTimeSeconds:UInt64",
+            "StartReason:UInt32",
+            "CurrentSessionId:UInt64",
+            "StartIsOnAcPower:UInt8(Boolean)",
+            "StartActiveBatteryCount:UInt32",
+            "StartFullChargeCapacity:UInt32",
+            "StartRemainingChargeCapacity:UInt32",
+            "StartBatteryPercentage:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbySessionStart",
+              "ea": "0x140831f54",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbySessionStart",
+              "ea": "0x140758364",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CurrentSessionId",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "CurrentTimeSeconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "StartActiveBatteryCount",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "StartBatteryPercentage",
+          "type": "Int32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "StartFullChargeCapacity",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "StartIsOnAcPower",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "StartReason",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "StartRemainingChargeCapacity",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AdaptiveSessionStop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "CurrentTimeSeconds:UInt64",
+            "StopReason:UInt32",
+            "CurrentSessionId:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbySessionStop",
+              "ea": "0x1408320b7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbySessionStop",
+              "ea": "0x1407584c7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CurrentSessionId",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "CurrentTimeSeconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "StopReason",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AdaptiveStandbyActionWorker",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyActionWorker",
+              "ea": "0x14083090e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyActionWorker",
+              "ea": "0x1408309cd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyActionWorker",
+              "ea": "0x140756d1e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyActionWorker",
+              "ea": "0x140756ddd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "AdaptiveStandbyActionWorkerQueued",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyHandleBatteryUpdate",
+              "ea": "0x1408313e7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyHandleBatteryUpdate",
+              "ea": "0x1407577f7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "AdaptiveStandbyActivatorCallback",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PdcActivation:HexInt64",
+            "Reason:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyActivatorCallback",
+              "ea": "0x14043c7f3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyActivatorCallback",
+              "ea": "0x1405d9583",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyActivatorCallback",
+              "ea": "0x14043c947",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyActivatorCallback",
+              "ea": "0x1405d96d7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PdcActivation",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AdaptiveStandbyBatteryReserveAction",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "timeInStandby:UInt64",
+            "gracePeriod:UInt32",
+            "remainingBatteryPercentage:Int32",
+            "remainingBatteryTime:UInt32",
+            "reserveBatteryTime:UInt32",
+            "executeAction:Bool32",
+            "rejectReason:UInt32",
+            "csSessionId:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyCheckHibernateReserveAction",
+              "ea": "0x140830e6b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyCheckHibernateReserveAction",
+              "ea": "0x14075727b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "timeInStandby:UInt32",
+            "gracePeriod:UInt32",
+            "remainingBatteryPercentage:UInt32",
+            "remainingBatteryTime:UInt32",
+            "reserveBatteryTime:UInt32",
+            "executeAction:Bool32",
+            "rejectReason:UInt32",
+            "dataSources:UInt32",
+            "csSessionId:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?UmpoTraceAdaptiveStandbyBatteryReserveAction@@YAXKKKKKHW4_ADAPTIVE_STANDBY_NOEXECUTION_REASON@@K_K@Z",
+              "ea": "0x18000b1b4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "csSessionId",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe",
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "dataSources",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "executeAction",
+          "type": "Bool32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe",
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "gracePeriod",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe",
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "rejectReason",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe",
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "remainingBatteryPercentage",
+          "type": "Int32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "remainingBatteryPercentage",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "remainingBatteryTime",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe",
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "reserveBatteryTime",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe",
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "timeInStandby",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "timeInStandby",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AdaptiveStandbyBudgetAction",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "timeInStandby:UInt64",
+            "gracePeriod:UInt32",
+            "remainingBatteryPercentage:Int32",
+            "batteryDrainPercentage:Int32",
+            "batteryDrainPercentageThreshold:Int32",
+            "executeAction:Bool32",
+            "rejectReason:UInt32",
+            "csSessionId:UInt64",
+            "budgetRefreshCount:UInt32",
+            "budgetRefreshInterval:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyCheckHibernateBudgetAction",
+              "ea": "0x140830c03",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyCheckHibernateBudgetAction",
+              "ea": "0x140757013",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "timeInStandby:UInt32",
+            "gracePeriod:UInt32",
+            "remainingBatteryPercentage:UInt32",
+            "batteryDrainPercentage:UInt32",
+            "batteryDrainPercentageThreshold:UInt32",
+            "executeAction:Bool32",
+            "rejectReason:UInt32",
+            "dataSources:UInt32",
+            "csSessionId:UInt64",
+            "budgetExperimentsEnabled:UInt8(Boolean)",
+            "budgetExperimentsVariant:UInt32",
+            "budgetExperimentsVariantPayload:UInt32",
+            "budgetRefreshCount:UInt32",
+            "budgetRefreshInterval:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?UmpoTraceAdaptiveStandbyBudgetActionV0_2@@YAXKKKHW4_ADAPTIVE_STANDBY_NOEXECUTION_REASON@@K_KEPEAU_ADAPTIVE_STANDBY_BUDGET_SETTINGS@@PEAU_ADAPTIVE_STANDBY_BUDGET_VELOCITY_SETTINGS@@K@Z",
+              "ea": "0x180016ff8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "timeInStandby:UInt32",
+            "gracePeriod:UInt32",
+            "remainingBatteryPercentage:UInt32",
+            "batteryDrainPercentage:UInt32",
+            "batteryDrainPercentageThreshold:UInt32",
+            "batteryPercentageOnEnter:UInt32",
+            "executeAction:Bool32",
+            "rejectReason:UInt32",
+            "dataSources:UInt32",
+            "csSessionId:UInt64",
+            "budgetExperimentsEnabled:UInt8(Boolean)",
+            "budgetExperimentsVariant:UInt32",
+            "budgetExperimentsVariantPayload:UInt32",
+            "drainExperimentsEnabled:UInt8(Boolean)",
+            "drainExperimentsVariant:UInt32",
+            "budgetRefreshCount:UInt32",
+            "budgetRefreshInterval:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?UmpoTraceAdaptiveStandbyBudgetActionV2@@YAXKKKHW4_ADAPTIVE_STANDBY_NOEXECUTION_REASON@@K_KEPEAU_ADAPTIVE_STANDBY_BUDGET_SETTINGS@@PEAU_ADAPTIVE_STANDBY_BUDGET_VELOCITY_SETTINGS@@PEAU_ADAPTIVE_STANDBY_DRAIN_VELOCITY_SETTINGS@@KK@Z",
+              "ea": "0x180017483",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe",
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "batteryDrainPercentage",
+          "type": "Int32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "batteryDrainPercentage",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "batteryDrainPercentageThreshold",
+          "type": "Int32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "batteryDrainPercentageThreshold",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "batteryPercentageOnEnter",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "budgetExperimentsEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "budgetExperimentsVariant",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "budgetExperimentsVariantPayload",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "budgetRefreshCount",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe",
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "budgetRefreshInterval",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe",
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "csSessionId",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe",
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "dataSources",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "drainExperimentsEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "drainExperimentsVariant",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "executeAction",
+          "type": "Bool32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe",
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "gracePeriod",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe",
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "rejectReason",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe",
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "remainingBatteryPercentage",
+          "type": "Int32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "remainingBatteryPercentage",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "timeInStandby",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "timeInStandby",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AdaptiveStandbyInitialize",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyInitialize",
+              "ea": "0x1408317f7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyInitialize",
+              "ea": "0x140757c07",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyInitialize",
+              "ea": "0x140831947",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyInitialize",
+              "ea": "0x140757d57",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AdaptiveStandbyInitializeActivator",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyInitializeActivator",
+              "ea": "0x140831a1f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyInitializeActivator",
+              "ea": "0x140757e2f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyInitializeActivator",
+              "ea": "0x140831aad",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyInitializeActivator",
+              "ea": "0x140757ebd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AdaptiveStandbyInternalError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "error:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?UmpoTraceInternalError@@YAXW4_INTERNAL_ERROR@@@Z",
+              "ea": "0x180017964",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "error",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AdaptiveStandbyPendingAction",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PendingAction:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyActionWorker",
+              "ea": "0x140830953",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyActionWorker",
+              "ea": "0x140756d63",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PendingAction",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AdaptiveStandbySrumFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "action:UInt32",
+            "error:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?UmpoTraceSrumFailure@@YAXW4_ADAPTIVE_STANDBY_ACTION@@K@Z",
+              "ea": "0x180017a1b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "action",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "error",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AudioActivityStateChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "IsAudioActive:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyWnfCallback",
+              "ea": "0x1408328c6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyWnfCallback",
+              "ea": "0x140758cd6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsAudioActive",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AusterityBudgetAction",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "timeInStandby:UInt32",
+            "remainingBatteryPercentage:UInt32",
+            "batteryDrainPercentage:UInt32",
+            "batteryDrainPercentageThreshold:UInt32",
+            "executeAction:Bool32",
+            "rejectReason:UInt32",
+            "dataSources:UInt32",
+            "csSessionId:UInt64",
+            "budgetExperimentsEnabled:UInt8(Boolean)",
+            "budgetExperimentsVariant:UInt32",
+            "budgetExperimentsVariantPayload:UInt32",
+            "restrictedStandbyExperimentEnabled:UInt8(Boolean)",
+            "budgetRefreshCount:UInt32",
+            "budgetRefreshInterval:UInt32",
+            "errataDisableReasons:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?UmpoTraceAdaptiveStandbyBudgetActionV0_2@@YAXKKKHW4_ADAPTIVE_STANDBY_NOEXECUTION_REASON@@K_KEPEAU_ADAPTIVE_STANDBY_BUDGET_SETTINGS@@PEAU_ADAPTIVE_STANDBY_BUDGET_VELOCITY_SETTINGS@@K@Z",
+              "ea": "0x180017138",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "timeInStandby:UInt32",
+            "remainingBatteryPercentage:UInt32",
+            "batteryDrainPercentage:UInt32",
+            "batteryDrainPercentageThreshold:UInt32",
+            "batteryPercentageOnEnter:UInt32",
+            "executeAction:Bool32",
+            "rejectReason:UInt32",
+            "dataSources:UInt32",
+            "csSessionId:UInt64",
+            "budgetExperimentsEnabled:UInt8(Boolean)",
+            "budgetExperimentsVariant:UInt32",
+            "budgetExperimentsVariantPayload:UInt32",
+            "drainExperimentsEnabled:UInt8(Boolean)",
+            "drainExperimentsVariant:UInt32",
+            "restrictedStandbyExperimentEnabled:UInt8(Boolean)",
+            "budgetRefreshCount:UInt32",
+            "budgetRefreshInterval:UInt32",
+            "errataDisableReasons:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?UmpoTraceAdaptiveStandbyBudgetActionV2@@YAXKKKHW4_ADAPTIVE_STANDBY_NOEXECUTION_REASON@@K_KEPEAU_ADAPTIVE_STANDBY_BUDGET_SETTINGS@@PEAU_ADAPTIVE_STANDBY_BUDGET_VELOCITY_SETTINGS@@PEAU_ADAPTIVE_STANDBY_DRAIN_VELOCITY_SETTINGS@@KK@Z",
+              "ea": "0x18001760d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "batteryDrainPercentage",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "batteryDrainPercentageThreshold",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "batteryPercentageOnEnter",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "budgetExperimentsEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "budgetExperimentsVariant",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "budgetExperimentsVariantPayload",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "budgetRefreshCount",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "budgetRefreshInterval",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "csSessionId",
+          "type": "UInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "dataSources",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "drainExperimentsEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "drainExperimentsVariant",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "errataDisableReasons",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "executeAction",
+          "type": "Bool32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "rejectReason",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "remainingBatteryPercentage",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "restrictedStandbyExperimentEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "timeInStandby",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BatteryStateUpdate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "CurrentIsOnAcPower:UInt8(Boolean)",
+            "CurrentActiveBatteryCount:UInt32",
+            "CurrentFullChargeCapacity:UInt32",
+            "CurrentRemainingChargeCapacity:UInt32",
+            "CurrentBatteryPercentage:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyHandleBatteryUpdate",
+              "ea": "0x14083126b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyHandleBatteryUpdate",
+              "ea": "0x14075767b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CurrentActiveBatteryCount",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "CurrentBatteryPercentage",
+          "type": "Int32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "CurrentFullChargeCapacity",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "CurrentIsOnAcPower",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "CurrentRemainingChargeCapacity",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BatteryStateUpdateAction",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Action:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyHandleBatteryUpdate",
+              "ea": "0x14083146a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyHandleBatteryUpdate",
+              "ea": "0x14075787a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Action",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HandlePowerMessage",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Type:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyHandlePowerMessage",
+              "ea": "0x140831535",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyHandlePowerMessage",
+              "ea": "0x140757945",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyHandlePowerMessage",
+              "ea": "0x1408316fd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyHandlePowerMessage",
+              "ea": "0x140757b0d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Type",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NotifyShellPhaseState",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "IsPhaseEngaged:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyNotifyShellPhaseState",
+              "ea": "0x140831b80",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyNotifyShellPhaseState",
+              "ea": "0x140757f90",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyNotifyShellPhaseState",
+              "ea": "0x140831bf5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyNotifyShellPhaseState",
+              "ea": "0x140758005",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsPhaseEngaged",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Pdcv2ActivationClientActivate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "ActivationErrorDetails:UInt32",
+            "ReserveConfigurationUpdateActivation:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyActivatorCallback",
+              "ea": "0x14043c8a1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyQueryReserveConfiguration",
+              "ea": "0x14043cb06",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyActivatorCallback",
+              "ea": "0x1405d9631",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyQueryReserveConfiguration",
+              "ea": "0x1405d9896",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationErrorDetails",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ReserveConfigurationUpdateActivation",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Pdcv2ActivationClientDeactivate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "ReserveConfigurationUpdateActivation:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyHandlePowerMessage",
+              "ea": "0x1408315df",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyHandlePowerMessage",
+              "ea": "0x1407579ef",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ReserveConfigurationUpdateActivation",
+          "type": "HexInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PowerSettingCallback",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "SettingGuid:GUID",
+            "Value:UInt8[]"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyPowerSettingCallback",
+              "ea": "0x140831cd1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyPowerSettingCallback",
+              "ea": "0x1407580e1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyPowerSettingCallback",
+              "ea": "0x140831d6b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyPowerSettingCallback",
+              "ea": "0x14075817b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SettingGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Value",
+          "type": "UInt8[]",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "QueryReserveConfiguration",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "SessionStartSystemTime:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyQueryReserveConfiguration",
+              "ea": "0x14043c9ef",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyQueryReserveConfiguration",
+              "ea": "0x1405d977f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SessionStartSystemTime",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ReserveConfigurationChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "SessionStartSystemTime:UInt64",
+            "ActiveDcDischargeRate:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyHandlePowerMessage",
+              "ea": "0x140831657",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyHandlePowerMessage",
+              "ea": "0x140757a67",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActiveDcDischargeRate",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "SessionStartSystemTime",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RestrictedStandbyBudgetAction",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "timeInStandby:UInt64",
+            "gracePeriod:UInt32",
+            "remainingBatteryPercentage:Int32",
+            "batteryDrainPercentage:Int32",
+            "batteryDrainPercentageThreshold:Int32",
+            "executeAction:Bool32",
+            "rejectReason:UInt32",
+            "csSessionId:UInt64",
+            "budgetRefreshCount:UInt32",
+            "budgetRefreshInterval:UInt32",
+            "errataDisableReasons:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyCheckRestrictedStandbyBudgetAction",
+              "ea": "0x14083113d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyCheckRestrictedStandbyBudgetAction",
+              "ea": "0x14075754d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "batteryDrainPercentage",
+          "type": "Int32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "batteryDrainPercentageThreshold",
+          "type": "Int32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "budgetRefreshCount",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "budgetRefreshInterval",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "csSessionId",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "errataDisableReasons",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "executeAction",
+          "type": "Bool32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "gracePeriod",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "rejectReason",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "remainingBatteryPercentage",
+          "type": "Int32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "timeInStandby",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RsErrataConfigurationChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "RsDisabled:UInt8(Boolean)",
+            "RsDisableReasons:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyHandlePowerMessage",
+              "ea": "0x1408316b5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyHandlePowerMessage",
+              "ea": "0x140757ac5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "RsDisableReasons",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "RsDisabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RsErrataDeviceMatchedNotification",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Action:UInt32",
+            "MatchedDeviceCount:Int32",
+            "FoundMatchIndex:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?UmpoRsErrataTraceDeviceNotification@@YAXW4_CM_NOTIFY_ACTION@@JKPEBGV?$basic_string_view@GU?$char_traits@G@std@@@std@@K@Z",
+              "ea": "0x18002329c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Action:UInt32",
+            "MatchedDeviceCount:Int32",
+            "FoundChidIndex:UInt32",
+            "FoundMatchIndex:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?UmpoRsErrataTraceDeviceNotificationV2@@YAXW4_CM_NOTIFY_ACTION@@JKKPEBGV?$basic_string_view@GU?$char_traits@G@std@@@std@@K@Z",
+              "ea": "0x1800233ee",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Action",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "FoundChidIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "FoundMatchIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "MatchedDeviceCount",
+          "type": "Int32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RsErrataDeviceNotification",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Action:UInt32",
+            "MatchedDeviceCount:Int32",
+            "FoundMatchIndex:UInt32",
+            "InstanceId:UnicodeString",
+            "HardwareIds:UInt16[](String)",
+            "Result:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?UmpoRsErrataTraceDeviceNotification@@YAXW4_CM_NOTIFY_ACTION@@JKPEBGV?$basic_string_view@GU?$char_traits@G@std@@@std@@K@Z",
+              "ea": "0x180023201",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Action:UInt32",
+            "MatchedDeviceCount:Int32",
+            "FoundChidIndex:UInt32",
+            "FoundMatchIndex:UInt32",
+            "InstanceId:UnicodeString",
+            "HardwareIds:UInt16[](String)",
+            "Result:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?UmpoRsErrataTraceDeviceNotificationV2@@YAXW4_CM_NOTIFY_ACTION@@JKKPEBGV?$basic_string_view@GU?$char_traits@G@std@@@std@@K@Z",
+              "ea": "0x18002333f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Action",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "FoundChidIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "FoundMatchIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "HardwareIds",
+          "type": "UInt16[](String)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "InstanceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "MatchedDeviceCount",
+          "type": "Int32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RsErrataInitialization",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "SelectedEntryIndex:UInt32",
+            "MbbRegistryKeyPresent:UInt8(Boolean)",
+            "OverrideRegistryKeyPresent:UInt8(Boolean)",
+            "Result:Int32(HResult)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?UmpoRsErrataTraceInitialization@@YAXKEEJ@Z",
+              "ea": "0x18002349d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "MbbRegistryKeyPresent",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "OverrideRegistryKeyPresent",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "SelectedEntryIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RsErrataMbbRegistryKeyChanged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "OldMbbRegistryKeyPresent:UInt8(Boolean)",
+            "NewMbbRegistryKeyPresent:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?UmpoRsErrataTraceRegistryNotification@@YAXEE@Z",
+              "ea": "0x180023555",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NewMbbRegistryKeyPresent",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "OldMbbRegistryKeyPresent",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SessionChangeNotification",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "SessionId:UInt64",
+            "SessionType:UInt32",
+            "SessionEnterReason:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyWnfCallback",
+              "ea": "0x1408329f2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyWnfCallback",
+              "ea": "0x140758e02",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SessionEnterReason",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt64",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "SessionType",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WnfCallback",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "StateName:HexInt32[N]",
+            "ChangeStamp:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyWnfCallback",
+              "ea": "0x1408327a9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyWnfCallback",
+              "ea": "0x140758bb9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntkrla57.exe",
+              "function": "PopAdaptiveStandbyWnfCallback",
+              "ea": "0x140832a5c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "PopAdaptiveStandbyWnfCallback",
+              "ea": "0x140758e6c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ChangeStamp",
+          "type": "UInt32",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "StateName",
+          "type": "HexInt32[N]",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

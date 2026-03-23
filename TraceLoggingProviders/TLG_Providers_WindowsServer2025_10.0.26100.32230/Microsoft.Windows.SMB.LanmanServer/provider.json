@@ -1,0 +1,62 @@
+{
+  "providerName": "Microsoft.Windows.SMB.LanmanServer",
+  "guid": "{A536740C-0E11-5027-37BA-E29CF2F61B53}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "srvsvc.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "AlternativePortRuleAdded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "NetTransportType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "srvsvc.dll",
+              "function": "SrvsvcWriteTelemetryEventAlternativePortRuleAdded",
+              "ea": "0x1800402f7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NetTransportType",
+          "type": "UInt32",
+          "seenIn": [
+            "srvsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FirstServerCertificateMappingAceAdded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "srvsvc.dll",
+              "function": "SrvsvcWriteTelemetryEventFirstServerCertificateMappingAceAdded",
+              "ea": "0x1800403a1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "providerName": "Microsoft.Windows.MediaFoundation.MP3Source",
+  "guid": "{C6F749C6-FBE8-5C8D-F3B1-ACA1563D7BE3}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "MFMediaEngine.dll",
+    "mfsrcsnk.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "ID3Write",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hresult:Int32",
+            "FramesWritten:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "MFMediaEngine.dll",
+              "function": "?WriteFrames@CID3Header@@AEAAJVCBuffer@MFBUFFER@@PEA_K@Z",
+              "ea": "0x180325b2e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mfsrcsnk.dll",
+              "function": "?WriteFrames@CID3Header@@AEAAJVCBuffer@MFBUFFER@@PEA_K@Z",
+              "ea": "0x18015ca1c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FramesWritten",
+          "type": "UInt32",
+          "seenIn": [
+            "MFMediaEngine.dll",
+            "mfsrcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "Int32",
+          "seenIn": [
+            "MFMediaEngine.dll",
+            "mfsrcsnk.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MP3SourceError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "MFMediaTelemetrySessionID:GUID",
+            "MFMediaTelemetrySessionInstance:UInt32",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "mfsrcsnk.dll",
+              "function": "?HandleError@CMP3BytewiseMediaSource@@AEAAXJ@Z",
+              "ea": "0x180011dbe",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "MFMediaTelemetrySessionID",
+          "type": "GUID",
+          "seenIn": [
+            "mfsrcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "MFMediaTelemetrySessionInstance",
+          "type": "UInt32",
+          "seenIn": [
+            "mfsrcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "mfsrcsnk.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Mp3SourceAggregation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "EncodingType:Int32",
+            "Duration:UInt64",
+            "Bitrate:UInt32",
+            "Samplerate:UInt32",
+            "Channels:UInt32",
+            "MajorVersion:UInt8",
+            "MinorVersion:UInt8",
+            "Id3TagList:UInt32",
+            "MFMediaTelemetrySessionID:GUID",
+            "MFMediaTelemetrySessionInstance:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "mfsrcsnk.dll",
+              "function": "?LogTelemetry@CMP3SourceAggregateData@@UEAAXXZ",
+              "ea": "0x1801087a0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Bitrate",
+          "type": "UInt32",
+          "seenIn": [
+            "mfsrcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "Channels",
+          "type": "UInt32",
+          "seenIn": [
+            "mfsrcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "Duration",
+          "type": "UInt64",
+          "seenIn": [
+            "mfsrcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "EncodingType",
+          "type": "Int32",
+          "seenIn": [
+            "mfsrcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "Id3TagList",
+          "type": "UInt32",
+          "seenIn": [
+            "mfsrcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "MFMediaTelemetrySessionID",
+          "type": "GUID",
+          "seenIn": [
+            "mfsrcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "MFMediaTelemetrySessionInstance",
+          "type": "UInt32",
+          "seenIn": [
+            "mfsrcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "MajorVersion",
+          "type": "UInt8",
+          "seenIn": [
+            "mfsrcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "MinorVersion",
+          "type": "UInt8",
+          "seenIn": [
+            "mfsrcsnk.dll"
+          ]
+        },
+        {
+          "fieldName": "Samplerate",
+          "type": "UInt32",
+          "seenIn": [
+            "mfsrcsnk.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

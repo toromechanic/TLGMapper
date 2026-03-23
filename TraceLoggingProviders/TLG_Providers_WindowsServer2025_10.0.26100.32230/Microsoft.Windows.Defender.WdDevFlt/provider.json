@@ -1,0 +1,279 @@
+{
+  "providerName": "Microsoft.Windows.Defender.WdDevFlt",
+  "guid": "{7AF898D7-7E0E-518D-5F96-B1E79239484C}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "WdDevFlt.sys",
+    "WdDevFlt_drivers_A8EF466A.sys"
+  ],
+  "uniqueEventCount": 4,
+  "events": [
+    {
+      "eventName": "Cdo.ConnectFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "StatusCode:UInt32(NTStatus)",
+            "ServiceMajorVersion:HexInt32",
+            "ServiceMinorVersion:HexInt32",
+            "FilterMajorVersion:HexInt32",
+            "FilterMajorVersion:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "WdDevFlt.sys",
+              "function": "sub_14003AEA4",
+              "ea": "0x14003af2d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WdDevFlt_drivers_A8EF466A.sys",
+              "function": "WddTraceLogCdoConnectFailure",
+              "ea": "0x14003ae6d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "WdDevFlt.sys",
+            "WdDevFlt_drivers_A8EF466A.sys"
+          ]
+        },
+        {
+          "fieldName": "FilterMajorVersion",
+          "type": "HexInt32",
+          "seenIn": [
+            "WdDevFlt.sys",
+            "WdDevFlt_drivers_A8EF466A.sys"
+          ]
+        },
+        {
+          "fieldName": "ServiceMajorVersion",
+          "type": "HexInt32",
+          "seenIn": [
+            "WdDevFlt.sys",
+            "WdDevFlt_drivers_A8EF466A.sys"
+          ]
+        },
+        {
+          "fieldName": "ServiceMinorVersion",
+          "type": "HexInt32",
+          "seenIn": [
+            "WdDevFlt.sys",
+            "WdDevFlt_drivers_A8EF466A.sys"
+          ]
+        },
+        {
+          "fieldName": "StatusCode",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "WdDevFlt.sys",
+            "WdDevFlt_drivers_A8EF466A.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ComponentInitFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ComponentName:CountedString",
+            "StatusCode:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "WdDevFlt.sys",
+              "function": "sub_14003AFB8",
+              "ea": "0x14003b037",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WdDevFlt_drivers_A8EF466A.sys",
+              "function": "WddTraceLogComponentInitFailure",
+              "ea": "0x14003af77",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ComponentName",
+          "type": "CountedString",
+          "seenIn": [
+            "WdDevFlt.sys",
+            "WdDevFlt_drivers_A8EF466A.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WdDevFlt.sys",
+            "WdDevFlt_drivers_A8EF466A.sys"
+          ]
+        },
+        {
+          "fieldName": "StatusCode",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "WdDevFlt.sys",
+            "WdDevFlt_drivers_A8EF466A.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DriverEntryFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "StatusCode:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "WdDevFlt.sys",
+              "function": "sub_14003B0C0",
+              "ea": "0x14003b112",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WdDevFlt_drivers_A8EF466A.sys",
+              "function": "WddTraceLogDriverEntryFailure",
+              "ea": "0x14003b052",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "WdDevFlt.sys",
+            "WdDevFlt_drivers_A8EF466A.sys"
+          ]
+        },
+        {
+          "fieldName": "StatusCode",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "WdDevFlt.sys",
+            "WdDevFlt_drivers_A8EF466A.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PolicyPackage.LoadStatistics",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "MinPackageSize(bytes):Int64",
+            "MaxPackageSize(bytes):Int64",
+            "RulesCount:Int64",
+            "GroupsCount:Int64",
+            "StatusCode:UInt32(NTStatus)",
+            "ServiceConnected:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "WdDevFlt.sys",
+              "function": "sub_14003B18C",
+              "ea": "0x14003b289",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WdDevFlt_drivers_A8EF466A.sys",
+              "function": "WddTraceLogPolicyPackageLoadStatistics",
+              "ea": "0x14003b1c9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "WdDevFlt.sys",
+            "WdDevFlt_drivers_A8EF466A.sys"
+          ]
+        },
+        {
+          "fieldName": "GroupsCount",
+          "type": "Int64",
+          "seenIn": [
+            "WdDevFlt.sys",
+            "WdDevFlt_drivers_A8EF466A.sys"
+          ]
+        },
+        {
+          "fieldName": "MaxPackageSize(bytes)",
+          "type": "Int64",
+          "seenIn": [
+            "WdDevFlt.sys",
+            "WdDevFlt_drivers_A8EF466A.sys"
+          ]
+        },
+        {
+          "fieldName": "MinPackageSize(bytes)",
+          "type": "Int64",
+          "seenIn": [
+            "WdDevFlt.sys",
+            "WdDevFlt_drivers_A8EF466A.sys"
+          ]
+        },
+        {
+          "fieldName": "RulesCount",
+          "type": "Int64",
+          "seenIn": [
+            "WdDevFlt.sys",
+            "WdDevFlt_drivers_A8EF466A.sys"
+          ]
+        },
+        {
+          "fieldName": "ServiceConnected",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "WdDevFlt.sys",
+            "WdDevFlt_drivers_A8EF466A.sys"
+          ]
+        },
+        {
+          "fieldName": "StatusCode",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "WdDevFlt.sys",
+            "WdDevFlt_drivers_A8EF466A.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

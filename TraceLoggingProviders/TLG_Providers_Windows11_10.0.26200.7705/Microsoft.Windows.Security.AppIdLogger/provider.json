@@ -1,0 +1,850 @@
+{
+  "providerName": "Microsoft.Windows.Security.AppIdLogger",
+  "guid": "{77FE4532-3F5C-5786-632B-FB3201BCE29B}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "appid.sys",
+    "appidpolicyconverter.exe"
+  ],
+  "uniqueEventCount": 20,
+  "events": [
+    {
+      "eventName": "ActivityStoppedAutomatically",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "appidpolicyconverter.exe",
+              "function": "??$_tlgWriteActivityAutoStop@$0CAAAAAAAAAAA@$03@@YAXPEBU_tlgProvider_t@@PEBU_GUID@@@Z",
+              "ea": "0x14000275c",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "AppIDDriverStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "NTStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "appid.sys",
+              "function": "DriverEntry",
+              "ea": "0x14003751d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NTStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "appid.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AppIDDriverUnload",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "appid.sys",
+              "function": "AipUnload",
+              "ea": "0x140020c96",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "AppIdSvcCacheInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ServiceStatus:UInt32(NTStatus)",
+            "CacheStatus:UInt32(NTStatus)",
+            "PublisherName:CountedString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "appid.sys",
+              "function": "AiGetTrustedPublisherName",
+              "ea": "0x140028f41",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CacheStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "appid.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "appid.sys"
+          ]
+        },
+        {
+          "fieldName": "PublisherName",
+          "type": "CountedString",
+          "seenIn": [
+            "appid.sys"
+          ]
+        },
+        {
+          "fieldName": "ServiceStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "appid.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ApplockerPolicyData",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "policyName:UnicodeString",
+            "enforcementMode:UInt32",
+            "serviceEnforcementMode:UInt32",
+            "ruleCount:UInt32",
+            "allowCount:UInt32",
+            "denyCount:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appidpolicyconverter.exe",
+              "function": "?CreatePolicySecurityDescriptor@@YAKPEAU_POLICY@@PEAU_SECURITY_DESCRIPTOR_RELATIVE@@K@Z",
+              "ea": "0x1400055e8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "allowCount",
+          "type": "UInt32",
+          "seenIn": [
+            "appidpolicyconverter.exe"
+          ]
+        },
+        {
+          "fieldName": "denyCount",
+          "type": "UInt32",
+          "seenIn": [
+            "appidpolicyconverter.exe"
+          ]
+        },
+        {
+          "fieldName": "enforcementMode",
+          "type": "UInt32",
+          "seenIn": [
+            "appidpolicyconverter.exe"
+          ]
+        },
+        {
+          "fieldName": "policyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appidpolicyconverter.exe"
+          ]
+        },
+        {
+          "fieldName": "ruleCount",
+          "type": "UInt32",
+          "seenIn": [
+            "appidpolicyconverter.exe"
+          ]
+        },
+        {
+          "fieldName": "serviceEnforcementMode",
+          "type": "UInt32",
+          "seenIn": [
+            "appidpolicyconverter.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ConvertPolicy",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "appidpolicyconverter.exe",
+              "function": "?ConvertSrpPolicy@@YAKXZ",
+              "ea": "0x14000489c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "result:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appidpolicyconverter.exe",
+              "function": "?ConvertSrpPolicy@@YAKXZ",
+              "ea": "0x140004a19",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "result",
+          "type": "UInt32",
+          "seenIn": [
+            "appidpolicyconverter.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EdpPluginNotifyRoutine_FqbnName",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "processImageName:UnicodeString",
+            "fqbnName:CountedString",
+            "status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "appid.sys",
+              "function": "EdpPluginNotifyRoutine",
+              "ea": "0x140032251",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "fqbnName",
+          "type": "CountedString",
+          "seenIn": [
+            "appid.sys"
+          ]
+        },
+        {
+          "fieldName": "processImageName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appid.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "appid.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PluginInvokeCallbackError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "pluginId:GUID",
+            "executionCategoryId:GUID",
+            "result:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "appid.sys",
+              "function": "PluginInvokeCallback",
+              "ea": "0x140022221",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "executionCategoryId",
+          "type": "GUID",
+          "seenIn": [
+            "appid.sys"
+          ]
+        },
+        {
+          "fieldName": "pluginId",
+          "type": "GUID",
+          "seenIn": [
+            "appid.sys"
+          ]
+        },
+        {
+          "fieldName": "result",
+          "type": "Int64",
+          "seenIn": [
+            "appid.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PluginPolicyConverter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "result:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appidpolicyconverter.exe",
+              "function": "?ConvertSrpPolicy@@YAKXZ",
+              "ea": "0x140004fdb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "result",
+          "type": "UInt32",
+          "seenIn": [
+            "appidpolicyconverter.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PluginPolicyData",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "pluginId:GUID",
+            "pluginName:UnicodeString",
+            "pluginFlags:UInt32",
+            "executionCategoryId:GUID",
+            "executionCategoryFlags:UInt32",
+            "executionCategoryPolicyIdCount:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appidpolicyconverter.exe",
+              "function": "?ConvertOnePlugin@@YAKPEAUHKEY__@@AEBV?$unique_ptr@GU?$Deleter@Uaifree_tag@release@@@release@@@std@@AEAV?$vector@UAPPID_PLUGIN_@@V?$allocator@UAPPID_PLUGIN_@@@std@@@3@AEAV?$vector@UAPPID_EXECUTION_CATEGORY_@@V?$allocator@UAPPID_EXECUTION_CATEGORY_@@@std@@@3@AEAV?$vector@U_GUID@@V?$allocator@U_GUID@@@std@@@3@AEAV?$vector@V?$unique_ptr@GU?$Deleter@Uaifree_tag@release@@@release@@@std@@V?$allocator@V?$unique_ptr@GU?$Deleter@Uaifree_tag@release@@@release@@@std@@@2@@3@AEAK@Z",
+              "ea": "0x140003795",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "executionCategoryFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "appidpolicyconverter.exe"
+          ]
+        },
+        {
+          "fieldName": "executionCategoryId",
+          "type": "GUID",
+          "seenIn": [
+            "appidpolicyconverter.exe"
+          ]
+        },
+        {
+          "fieldName": "executionCategoryPolicyIdCount",
+          "type": "UInt32",
+          "seenIn": [
+            "appidpolicyconverter.exe"
+          ]
+        },
+        {
+          "fieldName": "pluginFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "appidpolicyconverter.exe"
+          ]
+        },
+        {
+          "fieldName": "pluginId",
+          "type": "GUID",
+          "seenIn": [
+            "appidpolicyconverter.exe"
+          ]
+        },
+        {
+          "fieldName": "pluginName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "appidpolicyconverter.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PolicyConversionTaskResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "result:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "appidpolicyconverter.exe",
+              "function": "wmain",
+              "ea": "0x1400080a4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "result",
+          "type": "UInt32",
+          "seenIn": [
+            "appidpolicyconverter.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessCallbackCompletedAverage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "avgPerfTimeMicroSeconds:UInt64",
+            "totalCount:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "appid.sys",
+              "function": "AiProcessNotifyRoutine",
+              "ea": "0x140021901",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "appid.sys",
+              "function": "AipUnload",
+              "ea": "0x140020b77",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "avgPerfTimeMicroSeconds",
+          "type": "UInt64",
+          "seenIn": [
+            "appid.sys"
+          ]
+        },
+        {
+          "fieldName": "totalCount",
+          "type": "UInt64",
+          "seenIn": [
+            "appid.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessCallbackCompletedHigh",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "processFileName:CountedString",
+            "perfTimeMicroSeconds:UInt64",
+            "creationStatus:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "appid.sys",
+              "function": "AiProcessNotifyRoutine",
+              "ea": "0x14002186e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "creationStatus",
+          "type": "Int64",
+          "seenIn": [
+            "appid.sys"
+          ]
+        },
+        {
+          "fieldName": "perfTimeMicroSeconds",
+          "type": "UInt64",
+          "seenIn": [
+            "appid.sys"
+          ]
+        },
+        {
+          "fieldName": "processFileName",
+          "type": "CountedString",
+          "seenIn": [
+            "appid.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessCallbackError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "errorCode:Int64",
+            "isAppx:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "appid.sys",
+              "function": "AipCreateProcessNotifyRoutine",
+              "ea": "0x140021de1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "errorCode",
+          "type": "Int64",
+          "seenIn": [
+            "appid.sys"
+          ]
+        },
+        {
+          "fieldName": "isAppx",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "appid.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SeSetSecurityAttributesTokenEx",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "SeSetSecurityAttributesTokenEx_Status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "appid.sys",
+              "function": "WdagPluginEvaluate",
+              "ea": "0x1400346fa",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SeSetSecurityAttributesTokenEx_Status",
+          "type": "Int32",
+          "seenIn": [
+            "appid.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SrpVerifyDllCompletedAverage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "avgPerfTimeMicroSeconds:UInt64",
+            "totalCount:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "appid.sys",
+              "function": "AipUnload",
+              "ea": "0x140020c01",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "appid.sys",
+              "function": "SrpVerifyDll",
+              "ea": "0x140025449",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "avgPerfTimeMicroSeconds",
+          "type": "UInt64",
+          "seenIn": [
+            "appid.sys"
+          ]
+        },
+        {
+          "fieldName": "totalCount",
+          "type": "UInt64",
+          "seenIn": [
+            "appid.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SrpVerifyDllCompletedHigh",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "dllFileName:CountedString",
+            "perfTimeMicroSeconds:UInt64",
+            "loadStatus:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "appid.sys",
+              "function": "SrpVerifyDll",
+              "ea": "0x14002538b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "dllFileName",
+          "type": "CountedString",
+          "seenIn": [
+            "appid.sys"
+          ]
+        },
+        {
+          "fieldName": "loadStatus",
+          "type": "Int64",
+          "seenIn": [
+            "appid.sys"
+          ]
+        },
+        {
+          "fieldName": "perfTimeMicroSeconds",
+          "type": "UInt64",
+          "seenIn": [
+            "appid.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SrpVerifyDllError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "dllFileName:CountedString",
+            "perfTimeMicroSeconds:UInt64",
+            "result:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "appid.sys",
+              "function": "SrpVerifyDll",
+              "ea": "0x140025322",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "dllFileName",
+          "type": "CountedString",
+          "seenIn": [
+            "appid.sys"
+          ]
+        },
+        {
+          "fieldName": "perfTimeMicroSeconds",
+          "type": "UInt64",
+          "seenIn": [
+            "appid.sys"
+          ]
+        },
+        {
+          "fieldName": "result",
+          "type": "Int64",
+          "seenIn": [
+            "appid.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WdagPluginEvaluate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "AiEvaluateAppLockerPolicyClass_Return_Status:Int32",
+            "AiEvaluateAppLockerPolicyClass_Execution_Status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "appid.sys",
+              "function": "WdagPluginEvaluate",
+              "ea": "0x14003476e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AiEvaluateAppLockerPolicyClass_Execution_Status",
+          "type": "Int32",
+          "seenIn": [
+            "appid.sys"
+          ]
+        },
+        {
+          "fieldName": "AiEvaluateAppLockerPolicyClass_Return_Status",
+          "type": "Int32",
+          "seenIn": [
+            "appid.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WdagPluginNotifyRoutine",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "pid:UInt32",
+            "executionCategoryId:GUID",
+            "result:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "appid.sys",
+              "function": "WdagPluginNotifyRoutine",
+              "ea": "0x140034512",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "executionCategoryId",
+          "type": "GUID",
+          "seenIn": [
+            "appid.sys"
+          ]
+        },
+        {
+          "fieldName": "pid",
+          "type": "UInt32",
+          "seenIn": [
+            "appid.sys"
+          ]
+        },
+        {
+          "fieldName": "result",
+          "type": "Int32",
+          "seenIn": [
+            "appid.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "providerName": "EAPTtlsEvents",
+  "guid": "{B6DC7658-6074-5509-926B-7D0CA235B8DA}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "TtlsAuth.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "TTLSAuthResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "eapInnerMethod:UInt64",
+            "isOuterMethodPassed:Bool32",
+            "isInnerMethodPassed:Bool32",
+            "isFastReconnected:Bool32",
+            "isAuthSucceeded:Bool32",
+            "eapPacket:UInt64",
+            "authResultCode:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "TtlsAuth.dll",
+              "function": "?WriteTtlsTraceLogging@TtlsSession@@QEAAXH@Z",
+              "ea": "0x180015e14",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "authResultCode",
+          "type": "HexInt64",
+          "seenIn": [
+            "TtlsAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "eapInnerMethod",
+          "type": "UInt64",
+          "seenIn": [
+            "TtlsAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "eapPacket",
+          "type": "UInt64",
+          "seenIn": [
+            "TtlsAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "isAuthSucceeded",
+          "type": "Bool32",
+          "seenIn": [
+            "TtlsAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "isFastReconnected",
+          "type": "Bool32",
+          "seenIn": [
+            "TtlsAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "isInnerMethodPassed",
+          "type": "Bool32",
+          "seenIn": [
+            "TtlsAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "isOuterMethodPassed",
+          "type": "Bool32",
+          "seenIn": [
+            "TtlsAuth.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

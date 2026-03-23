@@ -1,0 +1,551 @@
+{
+  "providerName": "Microsoft.Windows.Security.UserInit",
+  "guid": "{F867EECD-98D1-531C-B3FD-80530A46591E}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "userinit.exe",
+    "userinitext.dll"
+  ],
+  "uniqueEventCount": 8,
+  "events": [
+    {
+      "eventName": "CreateEventFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "userinit.exe",
+              "function": "?CreateEventFailed@UserInitTraceProvider@@SAXXZ",
+              "ea": "0x140010772",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "userinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EndWaitForShellInitializationIfNeeded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "userinit.exe",
+              "function": "?EndWaitForShellInitializationIfNeeded@UserInitTraceProvider@@SAXXZ",
+              "ea": "0x1400107d6",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "userinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LaunchShellAppRuntime",
+      "variantCount": 10,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "winStationReturnValue:UInt8(Boolean)",
+            "EnableUniversalAppsForCustomShell:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "userinitext.dll",
+              "function": "?ShouldLaunchShellAppRuntime@@YA_NPEBQEBU_tlgProvider_t@@PEAW4ShellAppRuntimeLaunchOption@@@Z",
+              "ea": "0x180008a93",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "propertyValue->Type:UInt16",
+            "propertyValue->u.ulVal:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "userinitext.dll",
+              "function": "?ShouldLaunchShellAppRuntime@@YA_NPEBQEBU_tlgProvider_t@@PEAW4ShellAppRuntimeLaunchOption@@@Z",
+              "ea": "0x180008ad4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "userinitext.dll",
+              "function": "LaunchShellAppRuntime",
+              "ea": "0x18000281c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "userinitext.dll",
+              "function": "LaunchShellAppRuntime",
+              "ea": "0x180002b32",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "userinitext.dll",
+              "function": "ProcesRemoteSessionInitialCommand",
+              "ea": "0x180002d9f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "userinitext.dll",
+              "function": "ProcesRemoteSessionInitialCommand",
+              "ea": "0x1800030ad",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "regReturnValue:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "userinitext.dll",
+              "function": "LaunchShellAppRuntime",
+              "ea": "0x180002869",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "GetLastError():UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "userinitext.dll",
+              "function": "LaunchShellAppRuntime",
+              "ea": "0x180002923",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "userinitext.dll",
+              "function": "LaunchShellAppRuntime",
+              "ea": "0x180002ae1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "msg:AnsiString",
+            "lasterror:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "userinitext.dll",
+              "function": "LaunchShellAppRuntime",
+              "ea": "0x1800029a0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "msg:AnsiString",
+            "lasterror:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "userinitext.dll",
+              "function": "LaunchShellAppRuntime",
+              "ea": "0x180002a06",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "msg:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "userinitext.dll",
+              "function": "LaunchShellAppRuntime",
+              "ea": "0x180002a5a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ShellAppRuntimeReadyTime:UInt64",
+            "functionReturnValue:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "userinitext.dll",
+              "function": "LaunchShellAppRuntime",
+              "ea": "0x180002b80",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "userinitext.dll",
+              "function": "ProcesRemoteSessionInitialCommand",
+              "ea": "0x180002e06",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EnableUniversalAppsForCustomShell",
+          "type": "UInt32",
+          "seenIn": [
+            "userinitext.dll"
+          ]
+        },
+        {
+          "fieldName": "GetLastError()",
+          "type": "UInt32",
+          "seenIn": [
+            "userinitext.dll"
+          ]
+        },
+        {
+          "fieldName": "ShellAppRuntimeReadyTime",
+          "type": "UInt64",
+          "seenIn": [
+            "userinitext.dll"
+          ]
+        },
+        {
+          "fieldName": "functionReturnValue",
+          "type": "Bool32",
+          "seenIn": [
+            "userinitext.dll"
+          ]
+        },
+        {
+          "fieldName": "lasterror",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "userinitext.dll"
+          ]
+        },
+        {
+          "fieldName": "msg",
+          "type": "AnsiString",
+          "seenIn": [
+            "userinitext.dll"
+          ]
+        },
+        {
+          "fieldName": "propertyValue->Type",
+          "type": "UInt16",
+          "seenIn": [
+            "userinitext.dll"
+          ]
+        },
+        {
+          "fieldName": "propertyValue->u.ulVal",
+          "type": "UInt32",
+          "seenIn": [
+            "userinitext.dll"
+          ]
+        },
+        {
+          "fieldName": "regReturnValue",
+          "type": "Int32",
+          "seenIn": [
+            "userinitext.dll"
+          ]
+        },
+        {
+          "fieldName": "winStationReturnValue",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "userinitext.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ShellStartupWaitResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "result:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "userinit.exe",
+              "function": "??$ShellStartupWaitResult@AEAK@UserInitTraceProvider@@SAXAEAK@Z",
+              "ea": "0x14000fdf1",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "userinit.exe"
+          ]
+        },
+        {
+          "fieldName": "result",
+          "type": "UInt32",
+          "seenIn": [
+            "userinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StartWaitForShellInitializationIfNeeded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "userinit.exe",
+              "function": "?StartWaitForShellInitializationIfNeeded@UserInitTraceProvider@@SAXXZ",
+              "ea": "0x14000540e",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "userinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TerminateProcessInCurrentSession",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "msg:AnsiString",
+            "lastError:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "userinitext.dll",
+              "function": "TerminateProcessInCurrentSession",
+              "ea": "0x180009e18",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "userinitext.dll",
+              "function": "TerminateProcessInCurrentSession",
+              "ea": "0x180009ece",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "userinitext.dll",
+              "function": "TerminateProcessInCurrentSession",
+              "ea": "0x180009fc2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "msg:AnsiString",
+            "processName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "userinitext.dll",
+              "function": "TerminateProcessInCurrentSession",
+              "ea": "0x18000a046",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "msg:AnsiString",
+            "processName:UnicodeString",
+            "status:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "userinitext.dll",
+              "function": "TerminateProcessInCurrentSession",
+              "ea": "0x18000a0d6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "lastError",
+          "type": "HexInt32",
+          "seenIn": [
+            "userinitext.dll"
+          ]
+        },
+        {
+          "fieldName": "msg",
+          "type": "AnsiString",
+          "seenIn": [
+            "userinitext.dll"
+          ]
+        },
+        {
+          "fieldName": "processName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "userinitext.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "HexInt32",
+          "seenIn": [
+            "userinitext.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WaitForStartup",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "userinit.exe",
+              "function": "?WaitForStartup@UserInitTraceProvider@@SAXXZ",
+              "ea": "0x1400129be",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "userinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WaitOnShellStartupEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "userinit.exe",
+              "function": "?WaitOnShellStartupEvent@UserInitTraceProvider@@SAXXZ",
+              "ea": "0x140012a96",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "userinit.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

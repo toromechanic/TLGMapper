@@ -1,0 +1,174 @@
+{
+  "providerName": "Microsoft.Tpm.Tbs",
+  "guid": "{61D3C72E-6B1B-454C-A34D-B39EB95B8D99}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "tbs.dll",
+    "tbs.sys"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "SubmitCommandInternalError",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Reason:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "tbs.dll",
+              "function": "?Tbsip_Submit_Command_Internal@@YAIPEAXIIPEBEIPEAEPEAII@Z",
+              "ea": "0x18000195d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "tbs.dll",
+              "function": "?Tbsip_Submit_Command_Internal@@YAIPEAXIIPEBEIPEAEPEAII@Z",
+              "ea": "0x1800019bf",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "tbs.sys",
+              "function": "?Tbsip_Submit_Command_Internal@@YAIPEAXIIPEBEIPEAEPEAII@Z",
+              "ea": "0x180002178",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "tbs.sys",
+              "function": "?Tbsip_Submit_Command_Internal@@YAIPEAXIIPEBEIPEAEPEAII@Z",
+              "ea": "0x18000219a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Reason:UnicodeString",
+            "CommandCode:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "tbs.dll",
+              "function": "?Tbsip_Submit_Command_Internal@@YAIPEAXIIPEBEIPEAEPEAII@Z",
+              "ea": "0x180001a91",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "tbs.dll",
+              "function": "?Tbsip_Submit_Command_Internal@@YAIPEAXIIPEBEIPEAEPEAII@Z",
+              "ea": "0x180001b24",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "tbs.sys",
+              "function": "?Tbsip_Submit_Command_Internal@@YAIPEAXIIPEBEIPEAEPEAII@Z",
+              "ea": "0x1800020be",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "tbs.sys",
+              "function": "?Tbsip_Submit_Command_Internal@@YAIPEAXIIPEBEIPEAEPEAII@Z",
+              "ea": "0x180002134",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CommandCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "tbs.dll",
+            "tbs.sys"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UnicodeString",
+          "seenIn": [
+            "tbs.dll",
+            "tbs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TbsRemapError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "HResult:HexInt32",
+            "TbsResult:UInt32",
+            "CallLine:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "tbs.dll",
+              "function": "TbsRemapError",
+              "ea": "0x180001c93",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "tbs.dll",
+              "function": "TbsRemapError",
+              "ea": "0x180001cdd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "tbs.sys",
+              "function": "TbsRemapError",
+              "ea": "0x180001d6d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CallLine",
+          "type": "UInt32",
+          "seenIn": [
+            "tbs.dll",
+            "tbs.sys"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "HexInt32",
+          "seenIn": [
+            "tbs.dll",
+            "tbs.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "tbs.dll",
+            "tbs.sys"
+          ]
+        },
+        {
+          "fieldName": "TbsResult",
+          "type": "UInt32",
+          "seenIn": [
+            "tbs.dll",
+            "tbs.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

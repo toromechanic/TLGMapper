@@ -1,0 +1,128 @@
+{
+  "providerName": "Microsoft.Windows.Licensing.DeviceLicenseSubscription",
+  "guid": "{466F3B39-9929-45E6-B891-D867BD20B738}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "ClipDLS.exe"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "AcquireDeviceLicense",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "ShouldTryAcquiringLicense:Bool32",
+            "DeviceLicensingStatus:UInt16",
+            "Result:Int32(HResult)",
+            "LastErrorDescription:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ClipDLS.exe",
+              "function": "?MainHR@@YAJHQEBQEBG@Z",
+              "ea": "0x140014373",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DeviceLicensingStatus",
+          "type": "UInt16",
+          "seenIn": [
+            "ClipDLS.exe"
+          ]
+        },
+        {
+          "fieldName": "LastErrorDescription",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ClipDLS.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ClipDLS.exe"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "ClipDLS.exe"
+          ]
+        },
+        {
+          "fieldName": "ShouldTryAcquiringLicense",
+          "type": "Bool32",
+          "seenIn": [
+            "ClipDLS.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DeviceLicenseRequestReceived",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "DeviceBasedLicensingFeatureEnabled:Bool32",
+            "LicenseType:UInt16",
+            "SpecialInstruction:UInt16",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ClipDLS.exe",
+              "function": "?MainHR@@YAJHQEBQEBG@Z",
+              "ea": "0x140008566",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DeviceBasedLicensingFeatureEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "ClipDLS.exe"
+          ]
+        },
+        {
+          "fieldName": "LicenseType",
+          "type": "UInt16",
+          "seenIn": [
+            "ClipDLS.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ClipDLS.exe"
+          ]
+        },
+        {
+          "fieldName": "SpecialInstruction",
+          "type": "UInt16",
+          "seenIn": [
+            "ClipDLS.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

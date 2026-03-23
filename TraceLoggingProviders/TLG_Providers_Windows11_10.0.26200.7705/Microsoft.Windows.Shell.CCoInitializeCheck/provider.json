@@ -1,0 +1,96 @@
+{
+  "providerName": "Microsoft.Windows.Shell.CCoInitializeCheck",
+  "guid": "{68B4CDA8-1DE4-57FA-513E-9013B76C5E24}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "windows.storage.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "CoInitLeak",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "taskGuid:UnicodeString",
+            "finalCount:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "windows.storage.dll",
+              "function": "??$CoInitLeak@AEAPEBGAEBK@CoInitializeCheckTelemetry@@SAXAEAPEBGAEBK@Z",
+              "ea": "0x1805f51c6",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "windows.storage.dll"
+          ]
+        },
+        {
+          "fieldName": "finalCount",
+          "type": "UInt32",
+          "seenIn": [
+            "windows.storage.dll"
+          ]
+        },
+        {
+          "fieldName": "taskGuid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "windows.storage.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnexpectedInitialCoInitRefCount",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "initialCount:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "windows.storage.dll",
+              "function": "??$UnexpectedInitialCoInitRefCount@AEAK@CoInitializeCheckTelemetry@@SAXAEAK@Z",
+              "ea": "0x1805f524b",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "windows.storage.dll"
+          ]
+        },
+        {
+          "fieldName": "initialCount",
+          "type": "UInt32",
+          "seenIn": [
+            "windows.storage.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

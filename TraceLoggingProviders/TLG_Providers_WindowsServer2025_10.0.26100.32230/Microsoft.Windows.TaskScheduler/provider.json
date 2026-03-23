@@ -1,0 +1,4383 @@
+{
+  "providerName": "Microsoft.Windows.TaskScheduler",
+  "guid": "{10FF35F4-901F-493F-B272-67AFB81008D4}",
+  "os": "WindowsServer2025",
+  "binaryCount": 4,
+  "binaries": [
+    "schedsvc.dll",
+    "taskcomp.dll",
+    "taskschd.dll",
+    "ubpm.dll"
+  ],
+  "uniqueEventCount": 84,
+  "events": [
+    {
+      "eventName": "BootTriggerFired",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "taskName:UnicodeString",
+            "InstanceGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpActionLogTriggered@@YAXPEAU_UBPM_TRIGGER_CONSUMER_BLOCK@@KKPEAXPEAU_GUID@@@Z",
+              "ea": "0x18001479c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InstanceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "taskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Consumer.SnapList",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "NumRegisteredTasks:UInt32",
+            "TotalTasks:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmConsumerSnapListCopy",
+              "ea": "0x18000bbaf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NumRegisteredTasks",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TotalTasks",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DelayedProcessTerminate_WMClose",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ErrorCode:UInt32(Win32Error)",
+            "Pid:UInt32(PID)"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmpDelayedTerminateProcessCallback",
+              "ea": "0x180003a0c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EventTriggerFired",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "taskName:UnicodeString",
+            "InstanceGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpActionLogTriggered@@YAXPEAU_UBPM_TRIGGER_CONSUMER_BLOCK@@KKPEAXPEAU_GUID@@@Z",
+              "ea": "0x1800147e6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InstanceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "taskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LoadJobs",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x2",
+          "fields": [
+            "BootTimeLoad:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?LoadJobs@JobStore@@QEAAJH@Z",
+              "ea": "0x18007288b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x2",
+          "fields": [
+            "result:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?LoadJobs@JobStore@@QEAAJH@Z",
+              "ea": "0x1800729e6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BootTimeLoad",
+          "type": "Bool32",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "result",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogonTriggerFired",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "taskName:UnicodeString",
+            "InstanceGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpActionLogTriggered@@YAXPEAU_UBPM_TRIGGER_CONSUMER_BLOCK@@KKPEAXPEAU_GUID@@@Z",
+              "ea": "0x180014833",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpActionLogTriggered@@YAXPEAU_UBPM_TRIGGER_CONSUMER_BLOCK@@KKPEAXPEAU_GUID@@@Z",
+              "ea": "0x180014872",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InstanceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "taskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Maintenance.EvalAllTriggers",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Status:UInt32(Win32Error)"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpMaintenanceEvalAllTriggersCallback@@YAXPEAXU_CBROKERED_EVENT_ID@@00K@Z",
+              "ea": "0x180001d47",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpMaintenanceEvalAllTriggersCallback@@YAXPEAXU_CBROKERED_EVENT_ID@@00K@Z",
+              "ea": "0x180001d5a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MaintenanceConstraintCheck",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "TaskName:UnicodeString",
+            "TotalTasksRunning:UInt32",
+            "Status:UInt32",
+            "TaskRequeued:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmMaintenanceConstraintsCheck",
+              "ea": "0x180002642",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskRequeued",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TotalTasksRunning",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MaintenanceLag",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "TaskID:UInt32",
+            "Duration:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmTelemMaintenanceTaskRundown",
+              "ea": "0x180004990",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Duration",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskID",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MaintenanceLaunch",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpMaintenanceLaunchCallback@@YAXPEAXE0@Z",
+              "ea": "0x18000bf6b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "CallbackFlags:UInt16",
+            "NumTasksStarted:UInt32",
+            "dwStatus:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpMaintenanceLaunchCallback@@YAXPEAXE0@Z",
+              "ea": "0x18000bf80",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CallbackFlags",
+          "type": "UInt16",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "NumTasksStarted",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "dwStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MaintenanceQueueAttempted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "TaskName:UnicodeString",
+            "CompletedInTimePeriod:UInt8(Boolean)",
+            "QueuedAttempted:UInt32",
+            "ErrorCode:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmpPerformTriggerActions",
+              "ea": "0x1800111c8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmpPerformTriggerActions",
+              "ea": "0x180011207",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CompletedInTimePeriod",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "QueuedAttempted",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MaintenanceRetrigger",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpMaintenanceRetriggerMaintenanceTasks@@YAXXZ",
+              "ea": "0x18000213e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpMaintenanceRetriggerMaintenanceTasks@@YAXXZ",
+              "ea": "0x18000214f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "MaintenanceRetriggered",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Level:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpMaintenanceRetriggerMaintenanceTasks@@YAXXZ",
+              "ea": "0x1800020c0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpMaintenanceRetriggerMaintenanceTasks@@YAXXZ",
+              "ea": "0x1800020e6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Level",
+          "type": "UInt16",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MaintenanceSettings",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Status:HexInt32",
+            "Initialized:Bool32",
+            "ActivationBoundary:SystemTime",
+            "WakeEnabled:UInt8(Boolean)",
+            "Randomized:UInt8(Boolean)",
+            "Disabled:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmMaintenanceEvaluateWakePolicy",
+              "ea": "0x18002da84",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationBoundary",
+          "type": "SystemTime",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Disabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Initialized",
+          "type": "Bool32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Randomized",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "HexInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "WakeEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MaintenanceSettingsMalformed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "UserMaintenanceSettingsErrorString:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmMaintenanceEvaluateWakePolicy",
+              "ea": "0x18002d9e2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "UserMaintenanceSettingsErrorString",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MaintenanceStatsCorrupted.InvalidDateTime",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "TaskID:UInt32",
+            "TaskName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmTelemMaintenanceTaskRundown",
+              "ea": "0x180004a3d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "TaskID",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MaintenanceStatsCorrupted.InvalidRead",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "TaskID:UInt32",
+            "TaskName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmTelemMaintenanceTaskRundown",
+              "ea": "0x1800049d8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "TaskID",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MaintenanceTaskExecutionLimit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "TaskID:UInt32",
+            "ExecutionLimit:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmpExecutionTimeLimitCheckSet",
+              "ea": "0x180011ceb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ExecutionLimit",
+          "type": "UInt64",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskID",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MaintenanceTaskRundown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "TaskID:UInt32",
+            "TaskName:UnicodeString",
+            "RundownReason:UInt16",
+            "Periodicity_wYears:UInt16",
+            "Periodicity_wMonths:UInt16",
+            "Periodicity_wWeeks:UInt16",
+            "Periodicity_wDays:UInt16",
+            "Periodicity_wHours:UInt16",
+            "Periodicity_wMinutes:UInt16",
+            "Periodicity_wSeconds:UInt16",
+            "Deadline_wYears:UInt16",
+            "Deadline_wMonths:UInt16",
+            "Deadline_wWeeks:UInt16",
+            "Deadline_wDays:UInt16",
+            "Deadline_wHours:UInt16",
+            "Deadline_wMinutes:UInt16",
+            "Deadline_wSeconds:UInt16",
+            "IsExclusive:UInt8(Boolean)",
+            "IsCritical:UInt8(Boolean)",
+            "ConstraintFlags:UInt32",
+            "ObservedUrgencyLevel:UInt16",
+            "LastRunTime:FileTime",
+            "LastCompletionTime:FileTime",
+            "ObservedOobeTime:SystemTime",
+            "LastRunResult:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmTelemMaintenanceTaskRundown",
+              "ea": "0x18000480e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmTelemMaintenanceTaskRundown",
+              "ea": "0x180004846",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConstraintFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Deadline_wDays",
+          "type": "UInt16",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Deadline_wHours",
+          "type": "UInt16",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Deadline_wMinutes",
+          "type": "UInt16",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Deadline_wMonths",
+          "type": "UInt16",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Deadline_wSeconds",
+          "type": "UInt16",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Deadline_wWeeks",
+          "type": "UInt16",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Deadline_wYears",
+          "type": "UInt16",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "IsCritical",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "IsExclusive",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "LastCompletionTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "LastRunResult",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "LastRunTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "ObservedOobeTime",
+          "type": "SystemTime",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "ObservedUrgencyLevel",
+          "type": "UInt16",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Periodicity_wDays",
+          "type": "UInt16",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Periodicity_wHours",
+          "type": "UInt16",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Periodicity_wMinutes",
+          "type": "UInt16",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Periodicity_wMonths",
+          "type": "UInt16",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Periodicity_wSeconds",
+          "type": "UInt16",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Periodicity_wWeeks",
+          "type": "UInt16",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Periodicity_wYears",
+          "type": "UInt16",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "RundownReason",
+          "type": "UInt16",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskID",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MaintenanceTaskStarted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "TaskName:UnicodeString",
+            "UrgencyLevel:UInt32",
+            "TaskID:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmTelemMaintenanceTaskStarted",
+              "ea": "0x180004c65",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "TaskID",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "UrgencyLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MaintenanceTaskStopped",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "TaskName:UnicodeString",
+            "UrgencyLevel:UInt32",
+            "DurationSecs:UInt64",
+            "TaskID:UInt32",
+            "StopReason:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmTelemMaintenanceTaskStopped",
+              "ea": "0x180004bee",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DurationSecs",
+          "type": "UInt64",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "StopReason",
+          "type": "UInt16",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskID",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "UrgencyLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MaintenanceWindowRundown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "RundownReason:UInt16",
+            "UrgencyLevel:UInt8(Hex)",
+            "LevelCurrentlyActive:UInt8(Boolean)",
+            "TotalCount:UInt64",
+            "TotalLevelSecs:UInt64",
+            "TotalUpdatimeSecs:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmTelemMaintenanceWindowRundown",
+              "ea": "0x1800050e6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmTelemMaintenanceWindowRundown",
+              "ea": "0x180005149",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "LevelCurrentlyActive",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "RundownReason",
+          "type": "UInt16",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TotalCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TotalLevelSecs",
+          "type": "UInt64",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TotalUpdatimeSecs",
+          "type": "UInt64",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "UrgencyLevel",
+          "type": "UInt8(Hex)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MaintenanceWindowStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "UrgencyLevel:UInt8(Hex)"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmTelemMaintenanceWindowStarted",
+              "ea": "0x180002486",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmTelemMaintenanceWindowStarted",
+              "ea": "0x1800024bb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "UrgencyLevel",
+          "type": "UInt8(Hex)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MaintenanceWindowStop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "UrgencyLevel:UInt8(Hex)",
+            "DurationSecs:UInt64",
+            "TotalCount:UInt64",
+            "TotalLevelSecs:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmTelemMaintenanceWindowStopped",
+              "ea": "0x1800022ea",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DurationSecs",
+          "type": "UInt64",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TotalCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TotalLevelSecs",
+          "type": "UInt64",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "UrgencyLevel",
+          "type": "UInt8(Hex)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Maintenance_CheckQueueLauncher",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "MaintenanceDisabled:UInt8(Boolean)",
+            "MaintenanceLaunching:UInt8(Boolean)",
+            "ErrorCode:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmpCheckQueueMaintenanceLauncher",
+              "ea": "0x1800033d0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "MaintenanceDisabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "MaintenanceLaunching",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Maintenance_Init",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "SleepStudyFailedCheck:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmInitializeMaintenance",
+              "ea": "0x18002d6a2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SleepStudyFailedCheck",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Maintenance_Initialize",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ErrorCode:UInt32",
+            "FailedCheck:UInt32",
+            "SleepStudyStatus:UInt32(NTStatus)",
+            "SleepStudyFailedCheck:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmInitializeMaintenance",
+              "ea": "0x18002d6d1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "FailedCheck",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "SleepStudyFailedCheck",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "SleepStudyStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Maintenance_InitializeTaskTriggers",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ErrorCode:UInt32(NTStatus)",
+            "FailedCheck:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmMaintenanceInitializeTaskTriggers",
+              "ea": "0x18002d8c2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "FailedCheck",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Maintenance_TogglePdcActivator",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x4",
+          "fields": [
+            "PowerSourceEnum:UInt32",
+            "MaintenanceTasksRunning:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmpToggleMaintenancePdcActivator",
+              "ea": "0x180003cc6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "MaintenanceTasksRunning",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "PowerSourceEnum",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MeasuredTask.Registered",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "TaskName:UnicodeString",
+            "TaskDisabled:UInt8(Boolean)",
+            "StartWhenAvailable:UInt8(Boolean)",
+            "DelaySecs:UInt32",
+            "RepetitionIntervalSec:UInt32",
+            "RandomDelay:UInt8(Boolean)",
+            "LastRunTime:FileTime",
+            "LastCompletionTime:FileTime",
+            "CreationTime:FileTime",
+            "ErrorCode:UInt32(Win32Error)"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmTelemConsumerRegistered",
+              "ea": "0x180007515",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CreationTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "DelaySecs",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "LastCompletionTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "LastRunTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "RandomDelay",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "RepetitionIntervalSec",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "StartWhenAvailable",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskDisabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MeasuredTask.ServiceStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ErrorCode:UInt32(Win32Error)"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmTelemReportServiceStart",
+              "ea": "0x180032e62",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MeasuredTask.TriggerArrived",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "TaskName:UnicodeString",
+            "TriggerIndex:UInt32",
+            "ErrorCode:UInt32(Win32Error)"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmTelemTriggerArrived",
+              "ea": "0x18000fd31",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TriggerIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MeasuredTask.Updated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "TaskName:UnicodeString",
+            "TaskDisabled:UInt8(Boolean)",
+            "StartWhenAvailable:UInt8(Boolean)",
+            "DelaySecs:UInt32",
+            "RepetitionIntervalSec:UInt32",
+            "RandomDelay:UInt8(Boolean)",
+            "LastRunTime:FileTime",
+            "LastCompletionTime:FileTime",
+            "CreationTime:FileTime",
+            "ErrorCode:UInt32(Win32Error)"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmTelemConsumerUpdated",
+              "ea": "0x180008758",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmTelemConsumerUpdated",
+              "ea": "0x18000878f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CreationTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "DelaySecs",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "LastCompletionTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "LastRunTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "RandomDelay",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "RepetitionIntervalSec",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "StartWhenAvailable",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskDisabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Migration.TopLevelCopy",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000001",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?InitJobStore@JobStore@@AEAAJXZ",
+              "ea": "0x180071590",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Migration.TopLevelCopyFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000001",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?InitJobStore@JobStore@@AEAAJXZ",
+              "ea": "0x180071563",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Migration_Complete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x2",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?LoadJobs@JobStore@@QEAAJH@Z",
+              "ea": "0x1800728ed",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Migration_CopyFileFail",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000001",
+          "fields": [
+            "hr:Int32(HResult)",
+            "src:UnicodeString",
+            "dest:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?CopyDirectoryWithPermissions@JobStore@@QEBAJPEAG0@Z",
+              "ea": "0x18006fc04",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "schedsvc.dll",
+              "function": "?CopyFileWithPermissions@JobStore@@QEBAJPEAG0@Z",
+              "ea": "0x18007002a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "dest",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "src",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Migration_DFNCreateFileFail",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000001",
+          "fields": [
+            "hr:Int32(HResult)",
+            "src:UnicodeString",
+            "dest:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?DuplicateFilePermissions@JobStore@@QEBAJPEAG0@Z",
+              "ea": "0x1800706e2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "dest",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "src",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Migration_DFNGetSecInfoFail",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000001",
+          "fields": [
+            "hr:Int32(HResult)",
+            "src:UnicodeString",
+            "dest:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?DuplicateFilePermissions@JobStore@@QEBAJPEAG0@Z",
+              "ea": "0x18007065b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "dest",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "src",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Migration_DFNRealPathInvalidFail",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000001",
+          "fields": [
+            "hr:Int32(HResult)",
+            "src:UnicodeString",
+            "dest:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?DuplicateFilePermissions@JobStore@@QEBAJPEAG0@Z",
+              "ea": "0x1800705b5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "dest",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "src",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Migration_DFNSetSecInfoFail",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000001",
+          "fields": [
+            "hr:Int32(HResult)",
+            "src:UnicodeString",
+            "dest:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?DuplicateFilePermissions@JobStore@@QEBAJPEAG0@Z",
+              "ea": "0x180070760",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "dest",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "src",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Migration_DropBackupPrivFail",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000001",
+          "fields": [
+            "status:UInt32",
+            "backupWasEnabled:UInt8(Boolean)",
+            "restoreWasEnabled:UInt8(Boolean)",
+            "previousState:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?DropBackupRestorePermissions@JobStore@@AEBAJEE@Z",
+              "ea": "0x180070452",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "backupWasEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "previousState",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "restoreWasEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Migration_DropRestorePrivFail",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000001",
+          "fields": [
+            "status:UInt32",
+            "backupWasEnabled:UInt8(Boolean)",
+            "restoreWasEnabled:UInt8(Boolean)",
+            "previousState:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?DropBackupRestorePermissions@JobStore@@AEBAJEE@Z",
+              "ea": "0x1800704cc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "backupWasEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "previousState",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "restoreWasEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Migration_SetSddlNotImpersonatingFail",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000001",
+          "fields": [
+            "path:UnicodeString",
+            "sddl:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?FileSddlSetWithRestorePrivs@JobStore@@QEBAJPEBG0@Z",
+              "ea": "0x1800708c0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "path",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "sddl",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Migration_SetSddlWithRestorePrivsFail",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000001",
+          "fields": [
+            "hr:Int32(HResult)",
+            "itempath:UnicodeString",
+            "sddl:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?MigrateSecurityInfoP@JobStore@@AEAAJPEBG@Z",
+              "ea": "0x1800731ff",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "itempath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "sddl",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Migration_TakeBackupFail",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000001",
+          "fields": [
+            "status:UInt32",
+            "backupWasEnabled:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?TakeBackupRestorePermissions@JobStore@@AEBAJPEAE0@Z",
+              "ea": "0x180073b19",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "backupWasEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Migration_TakeRestoreFail",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000001",
+          "fields": [
+            "status:UInt32",
+            "backupWasEnabled:UInt8(Boolean)",
+            "restoreWasEnabled:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?TakeBackupRestorePermissions@JobStore@@AEBAJPEAE0@Z",
+              "ea": "0x180073bb5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "backupWasEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "restoreWasEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PowerSourceChangedEnd",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "StoredPowerSource:UInt32",
+            "NewPowerSource:UInt32",
+            "Status:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpPowerSourceChanged@@YAKPEAXK0@Z",
+              "ea": "0x1800037f0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NewPowerSource",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "StoredPowerSource",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PowerSourceChangedStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpPowerSourceChanged@@YAKPEAXK0@Z",
+              "ea": "0x18000386a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "QueuedActionRun",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "TaskName:UnicodeString",
+            "ActionsRun:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpRunConsumerQueuedActions@@YAXPEAU_UBPM_TRIGGER_CONSUMER_BLOCK@@PEAU_UBPM_CONSTRAINT_PRECHECK_INFO@@W4_UBPM_QUEUED_ACTION_QUEUE_REASON@@E@Z",
+              "ea": "0x18001180a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpRunConsumerQueuedActions@@YAXPEAU_UBPM_TRIGGER_CONSUMER_BLOCK@@PEAU_UBPM_CONSTRAINT_PRECHECK_INFO@@W4_UBPM_QUEUED_ACTION_QUEUE_REASON@@E@Z",
+              "ea": "0x180011845",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActionsRun",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "References.DecPendingAction",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "TaskName:UnicodeString",
+            "cPendingActions:Int32",
+            "ConsumerUnregistered:Bool32",
+            "pConsumerBlock:HexInt64",
+            "WaitersSignalled:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmConsumerDecPendingActions",
+              "ea": "0x18000f346",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConsumerUnregistered",
+          "type": "Bool32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "WaitersSignalled",
+          "type": "Bool32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "cPendingActions",
+          "type": "Int32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "pConsumerBlock",
+          "type": "HexInt64",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "References.IncPendingAction",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "TaskName:UnicodeString",
+            "ConsumerBlock->cPendingActions:Int32",
+            "ConsumerBlock->StateFlags.ConsumerUnregistered:Bool32",
+            "Status:HexInt32",
+            "pConsumerBlock:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmConsumerIncPendingActions",
+              "ea": "0x18000fbd9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConsumerBlock->StateFlags.ConsumerUnregistered",
+          "type": "Bool32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "ConsumerBlock->cPendingActions",
+          "type": "Int32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "HexInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "pConsumerBlock",
+          "type": "HexInt64",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "References.WaitForZeroPendingAction",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "pConsumerBlock:HexInt64",
+            "TaskName:UnicodeString",
+            "cPendingActions:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmpTriggerConsumerUnregister",
+              "ea": "0x1800173d4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "cPendingActions",
+          "type": "Int32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "pConsumerBlock",
+          "type": "HexInt64",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegistrationTriggerFired",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "taskName:UnicodeString",
+            "InstanceGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpActionLogTriggered@@YAXPEAU_UBPM_TRIGGER_CONSUMER_BLOCK@@KKPEAXPEAU_GUID@@@Z",
+              "ea": "0x18001490b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InstanceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "taskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Rpc_DeleteTask",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?Delete@RpcServer@@QEAAJPEBGK@Z",
+              "ea": "0x18002f50d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "TaskName:UnicodeString",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?Delete@RpcServer@@QEAAJPEBGK@Z",
+              "ea": "0x18002f6f6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Rpc_EnableTask",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?EnableTask@RpcServer@@QEAAJPEBGH@Z",
+              "ea": "0x1800077c1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Path:UnicodeString",
+            "hr:Int32(HResult)",
+            "Enabled:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?EnableTask@RpcServer@@QEAAJPEBGH@Z",
+              "ea": "0x180007e22",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Enabled",
+          "type": "Bool32",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Path",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Rpc_RegisterTask",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?RegisterTask@RpcServer@@QEAAJPEBG0K0KKPEBU_TASK_USER_CRED@@PEBUDynamicTaskInfo@@PEAPEAGPEAPEAU_TASK_XML_ERROR_INFO@@@Z",
+              "ea": "0x18004d872",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "schedsvc.dll",
+              "function": "?RegisterTask@RpcServer@@QEAAJPEBG0K0KKPEBU_TASK_USER_CRED@@PEBUDynamicTaskInfo@@PEAPEAGPEAPEAU_TASK_XML_ERROR_INFO@@@Z",
+              "ea": "0x18004d8ac",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Path:UnicodeString",
+            "hr:Int32(HResult)",
+            "TaskXml:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?RegisterTask@RpcServer@@QEAAJPEBG0K0KKPEBU_TASK_USER_CRED@@PEBUDynamicTaskInfo@@PEAPEAGPEAPEAU_TASK_XML_ERROR_INFO@@@Z",
+              "ea": "0x180051145",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "schedsvc.dll",
+              "function": "?RegisterTask@RpcServer@@QEAAJPEBG0K0KKPEBU_TASK_USER_CRED@@PEBUDynamicTaskInfo@@PEAPEAGPEAPEAU_TASK_XML_ERROR_INFO@@@Z",
+              "ea": "0x18005117f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Path",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskXml",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Rpc_RunTask",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?RunTask@RpcServer@@QEAAJPEBGKPEAPEBGKK0PEAU_GUID@@@Z",
+              "ea": "0x1800303f8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "TaskName:UnicodeString",
+            "hr:Int32(HResult)",
+            "SessionId:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?RunTask@RpcServer@@QEAAJPEBGKPEAPEBGKK0PEAU_GUID@@@Z",
+              "ea": "0x180030458",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SessionId",
+          "type": "Int32",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Rpc_StopTask",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?StopTask@RpcServer@@QEAAJPEBGK@Z",
+              "ea": "0x18007dbc9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "TaskName:UnicodeString",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?StopTask@RpcServer@@QEAAJPEBGK@Z",
+              "ea": "0x18007dde7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Rundown_Consumer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ConsumerName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmpTracingControlCallback",
+              "ea": "0x180005eee",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConsumerName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Rundown_Consumer_Trigger",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "TriggerIndex:UInt32",
+            "Broker:UInt32",
+            "hAggregatedEvent:HexInt64",
+            "hAggregatedStopEvent:HexInt64",
+            "UbpmRepetitionSecs:UInt32",
+            "UbpmValiditySecs:UInt32",
+            "UbpmActionDelaysSecs:UInt32",
+            "SebTriggerType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmpTracingControlCallback",
+              "ea": "0x180005f8a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "TriggerIndex:UInt32",
+            "Broker:UInt32",
+            "hAggregatedEvent:HexInt64",
+            "hAggregatedStopEvent:HexInt64",
+            "DabTriggerType:UInt32",
+            "DabTriggerFlags:UInt32",
+            "DabActionDelaysSecs:UInt32",
+            "DabRepetitionDurationSecs:UInt32",
+            "DabValidityDurationSecs:UInt32",
+            "StartBoundary:SystemTime",
+            "EndBoundary:SystemTime"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmpTracingControlCallback",
+              "ea": "0x18000605f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Broker",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "DabActionDelaysSecs",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "DabRepetitionDurationSecs",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "DabTriggerFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "DabTriggerType",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "DabValidityDurationSecs",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "EndBoundary",
+          "type": "SystemTime",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "SebTriggerType",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "StartBoundary",
+          "type": "SystemTime",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TriggerIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "UbpmActionDelaysSecs",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "UbpmRepetitionSecs",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "UbpmValiditySecs",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "hAggregatedEvent",
+          "type": "HexInt64",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "hAggregatedStopEvent",
+          "type": "HexInt64",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Rundown_HostedTask",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ConsumerName:UnicodeString",
+            "ActionName:UnicodeString",
+            "HostedActionClsId:GUID",
+            "Pid:UInt32(PID)"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmpTracingControlCallback",
+              "ea": "0x1800061b0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActionName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "ConsumerName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "HostedActionClsId",
+          "type": "GUID",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Rundown_NonHostedTask",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ConsumerName:UnicodeString",
+            "ActionName:UnicodeString",
+            "SessionId:UInt32",
+            "Pid:UInt32(PID)"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmpTracingControlCallback",
+              "ea": "0x180006150",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActionName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "ConsumerName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "Pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SleepStudy_CreateLibraryFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "SleepStudyStatus:UInt32(NTStatus)",
+            "SleepStudyFailedCheck:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmInitializeMaintenance",
+              "ea": "0x18002d3c4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SleepStudyFailedCheck",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "SleepStudyStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SleepStudy_StartReportingBlocker",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x4",
+          "fields": [
+            "TaskName:UnicodeString",
+            "ActionInstanceGuid:GUID",
+            "FailedCheck:UInt32",
+            "SleepStudyStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmpSleepStudyStartReportingBlocker",
+              "ea": "0x180004f10",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActionInstanceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "FailedCheck",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "SleepStudyStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SleepStudy_StopReportingBlocker",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x4",
+          "fields": [
+            "TaskName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmpSleepStudyStopReportingBlocker",
+              "ea": "0x180004d0e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SleepStudy_TaskStartedCallout",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "FailedCheck:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmpMaintenanceTaskStartedCallout",
+              "ea": "0x180003f7e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FailedCheck",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SleepStudy_TaskStoppedCallout",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "FailedCheck:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmpMaintenanceTaskStoppedCallout",
+              "ea": "0x180004118",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FailedCheck",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SleepStudy_TogglePdcActivator",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x4",
+          "fields": [
+            "FailedCheck:UInt32",
+            "SleepStudyStatus:UInt32(NTStatus)",
+            "SleepStudyFailedCheck:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmpToggleMaintenancePdcActivator",
+              "ea": "0x180003b80",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FailedCheck",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "SleepStudyFailedCheck",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "SleepStudyStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TakeMaintenanceReference",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "TakeReference:UInt8(Boolean)",
+            "TotalMaintenanceTasksRunning:UInt32",
+            "PdcMode:UInt32",
+            "hMaintenanceActivator:HexInt64",
+            "fMaintenancePdcActive:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmTakeMaintenancePdcReference@@YAXE@Z",
+              "ea": "0x180003dbe",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PdcMode",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TakeReference",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TotalMaintenanceTasksRunning",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "fMaintenancePdcActive",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "hMaintenanceActivator",
+          "type": "HexInt64",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TaskConfigChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "TaskName:UnicodeString",
+            "OldState:UInt8(Boolean)",
+            "NewState:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmTriggerConsumerConfigure",
+              "ea": "0x18002c329",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NewState",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "OldState",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TaskResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "TaskName:UnicodeString",
+            "LastRunTime:FileTime",
+            "LastCompletionTime:FileTime",
+            "LastRunResult:UInt32",
+            "DurationSinceLastAttempt:UInt32",
+            "DurationSinceLastCompletion:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmpTriggerConsumerReportResult",
+              "ea": "0x18000d31e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmpTriggerConsumerReportResult",
+              "ea": "0x18000d35b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DurationSinceLastAttempt",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationSinceLastCompletion",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "LastCompletionTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "LastRunResult",
+          "type": "UInt32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "LastRunTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TimeTriggerTriggerFired",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "taskName:UnicodeString",
+            "InstanceGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpActionLogTriggered@@YAXPEAU_UBPM_TRIGGER_CONSUMER_BLOCK@@KKPEAXPEAU_GUID@@@Z",
+              "ea": "0x180014710",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InstanceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "taskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TimeTriggerTriggerMissedFired",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "taskName:UnicodeString",
+            "InstanceGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpActionLogTriggered@@YAXPEAU_UBPM_TRIGGER_CONSUMER_BLOCK@@KKPEAXPEAU_GUID@@@Z",
+              "ea": "0x180014503",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpActionLogTriggered@@YAXPEAU_UBPM_TRIGGER_CONSUMER_BLOCK@@KKPEAXPEAU_GUID@@@Z",
+              "ea": "0x180014534",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InstanceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "taskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Trigger.Arrived",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "TaskName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpHandleTriggerArrived@@YAXPEAU_UBPM_TRIGGER_CONSUMER_BLOCK@@PEAXU_CBROKERED_EVENT_ID@@1KE@Z",
+              "ea": "0x18000f88c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpHandleTriggerArrived@@YAXPEAU_UBPM_TRIGGER_CONSUMER_BLOCK@@PEAXU_CBROKERED_EVENT_ID@@1KE@Z",
+              "ea": "0x18000f8ca",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "TaskName:UnicodeString",
+            "dwStatus:UInt32(Win32Error)"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpHandleTriggerArrived@@YAXPEAU_UBPM_TRIGGER_CONSUMER_BLOCK@@PEAXU_CBROKERED_EVENT_ID@@1KE@Z",
+              "ea": "0x18000f9c2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpHandleTriggerArrived@@YAXPEAU_UBPM_TRIGGER_CONSUMER_BLOCK@@PEAXU_CBROKERED_EVENT_ID@@1KE@Z",
+              "ea": "0x18000fa00",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "dwStatus",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Trigger.Cancelled",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "TaskName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmpTriggerCancelled",
+              "ea": "0x18000e93b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmpTriggerCancelled",
+              "ea": "0x18000e97c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "TaskName:UnicodeString",
+            "dwStatus:UInt32(Win32Error)"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "UbpmpTriggerCancelled",
+              "ea": "0x18000ea13",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "TaskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "dwStatus",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnexpectedRegisterWaitUntilOobeCompleteError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "GetLastError():UInt32(Win32Error)"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpOobeStateStart@@YAKPEAU_UBPM_UTILS_SETUP_PARAMS@@@Z",
+              "ea": "0x180031fc5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "GetLastError()",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnexpectedTryGetTimeFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "OobeCompletionTimeFound:Bool32",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpUserOOBECompletedCallback@@YAXPEAX@Z",
+              "ea": "0x1800362aa",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OobeCompletionTimeFound",
+          "type": "Bool32",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "User::CreateUser_AllocationFailure",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "pSID:SID",
+            "Domain:UnicodeString",
+            "Account:UnicodeString",
+            "use:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?CreateUser@User@@SA?AV1@AEBV_bstr_t@@0W4_SID_NAME_USE@@PEAX@Z",
+              "ea": "0x18003618a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "taskcomp.dll",
+              "function": "?CreateUser@User@@SA?AV1@AEBV_bstr_t@@0W4_SID_NAME_USE@@PEAX@Z",
+              "ea": "0x180018f6f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "pSID:SID",
+            "Domain:UnicodeString",
+            "Account:UnicodeString",
+            "Domain_Account:UnicodeString",
+            "use:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?CreateUser@User@@SA?AV1@AEBV_bstr_t@@0W4_SID_NAME_USE@@PEAX@Z",
+              "ea": "0x180036451",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "taskcomp.dll",
+              "function": "?CreateUser@User@@SA?AV1@AEBV_bstr_t@@0W4_SID_NAME_USE@@PEAX@Z",
+              "ea": "0x180019193",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "pSID:SID",
+            "_bstr_account:UnicodeString",
+            "_bstr_domain:UnicodeString",
+            "domain_Account:UnicodeString",
+            "use:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?CreateUser@User@@SA?AV1@AEBV_bstr_t@@W4_SID_NAME_USE@@PEAX_N@Z",
+              "ea": "0x1800351f8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "taskcomp.dll",
+              "function": "?CreateUser@User@@SA?AV1@AEBV_bstr_t@@W4_SID_NAME_USE@@PEAX_N@Z",
+              "ea": "0x180019609",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Account",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll",
+            "taskcomp.dll"
+          ]
+        },
+        {
+          "fieldName": "Domain",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll",
+            "taskcomp.dll"
+          ]
+        },
+        {
+          "fieldName": "Domain_Account",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll",
+            "taskcomp.dll"
+          ]
+        },
+        {
+          "fieldName": "_bstr_account",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll",
+            "taskcomp.dll"
+          ]
+        },
+        {
+          "fieldName": "_bstr_domain",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll",
+            "taskcomp.dll"
+          ]
+        },
+        {
+          "fieldName": "domain_Account",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll",
+            "taskcomp.dll"
+          ]
+        },
+        {
+          "fieldName": "pSID",
+          "type": "SID",
+          "seenIn": [
+            "schedsvc.dll",
+            "taskcomp.dll"
+          ]
+        },
+        {
+          "fieldName": "use",
+          "type": "UInt32",
+          "seenIn": [
+            "schedsvc.dll",
+            "taskcomp.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "User::CreateUser_DomainAccount",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "pSID:SID",
+            "Domain:UnicodeString",
+            "Account:UnicodeString",
+            "Domain_Account:UnicodeString",
+            "use:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?CreateUser@User@@SA?AV1@AEBV_bstr_t@@W4_SID_NAME_USE@@PEAX_N@Z",
+              "ea": "0x180034d7c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "taskcomp.dll",
+              "function": "?CreateUser@User@@SA?AV1@AEBV_bstr_t@@W4_SID_NAME_USE@@PEAX_N@Z",
+              "ea": "0x180019451",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Account",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll",
+            "taskcomp.dll"
+          ]
+        },
+        {
+          "fieldName": "Domain",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll",
+            "taskcomp.dll"
+          ]
+        },
+        {
+          "fieldName": "Domain_Account",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll",
+            "taskcomp.dll"
+          ]
+        },
+        {
+          "fieldName": "pSID",
+          "type": "SID",
+          "seenIn": [
+            "schedsvc.dll",
+            "taskcomp.dll"
+          ]
+        },
+        {
+          "fieldName": "use",
+          "type": "UInt32",
+          "seenIn": [
+            "schedsvc.dll",
+            "taskcomp.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "User::CreateUser_MalformedAccount",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?CreateUser@User@@SA?AV1@AEBV_bstr_t@@W4_SID_NAME_USE@@PEAX_N@Z",
+              "ea": "0x180034dac",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "taskcomp.dll",
+              "function": "?CreateUser@User@@SA?AV1@AEBV_bstr_t@@W4_SID_NAME_USE@@PEAX_N@Z",
+              "ea": "0x180019483",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "User::StreamIn_FromSidToDomainAccountFail",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "HResult:Int32(HResult)",
+            "pSID:SID"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?StreamIn@User@@QEAAJ_KAEAPEAEPEBE@Z",
+              "ea": "0x180031b44",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "pSID",
+          "type": "SID",
+          "seenIn": [
+            "schedsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "User::UpdateEntry_NullUserDetails",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "m_domain:UnicodeString",
+            "m_account:UnicodeString",
+            "m_userName:UnicodeString",
+            "use:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "schedsvc.dll",
+              "function": "?UpdateEntry@User@@AEBAJXZ",
+              "ea": "0x18006b034",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "taskcomp.dll",
+              "function": "?UpdateEntry@User@@AEBAJXZ",
+              "ea": "0x18001b968",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "taskschd.dll",
+              "function": "?UpdateEntry@User@@AEBAJXZ",
+              "ea": "0x180020bb8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "m_account",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll",
+            "taskcomp.dll",
+            "taskschd.dll"
+          ]
+        },
+        {
+          "fieldName": "m_domain",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll",
+            "taskcomp.dll",
+            "taskschd.dll"
+          ]
+        },
+        {
+          "fieldName": "m_userName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "schedsvc.dll",
+            "taskcomp.dll",
+            "taskschd.dll"
+          ]
+        },
+        {
+          "fieldName": "use",
+          "type": "UInt32",
+          "seenIn": [
+            "schedsvc.dll",
+            "taskcomp.dll",
+            "taskschd.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WnfTriggerFired",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "taskName:UnicodeString",
+            "InstanceGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpActionLogTriggered@@YAXPEAU_UBPM_TRIGGER_CONSUMER_BLOCK@@KKPEAXPEAU_GUID@@@Z",
+              "ea": "0x180014653",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ubpm.dll",
+              "function": "?UbpmpActionLogTriggered@@YAXPEAU_UBPM_TRIGGER_CONSUMER_BLOCK@@KKPEAXPEAU_GUID@@@Z",
+              "ea": "0x180014684",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InstanceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        },
+        {
+          "fieldName": "taskName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ubpm.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

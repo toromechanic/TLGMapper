@@ -1,0 +1,1782 @@
+{
+  "providerName": "Microsoft.Windows.EnterpriseModernAppManagement",
+  "guid": "{0E71A49B-CA69-5999-A395-626493EB0CBD}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "EnterpriseAppMgmtSvc.dll",
+    "EnterpriseModernAppMgmtCSP.dll"
+  ],
+  "uniqueEventCount": 32,
+  "events": [
+    {
+      "eventName": "ActivityStoppedAutomatically",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "??$_tlgWriteActivityAutoStop@$0EAAAAAAAAAAA@$04@@YAXPEBU_tlgProvider_t@@PEBU_GUID@@@Z",
+              "ea": "0x180014fea",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "CSPAbortFailedInstallAttempt",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "L\"Failed to abort stale install queue item",
+            "continuing with new install attempt\":UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?_StartAppInstall@EnterpriseModernAppManagement@@YAJAEBVHString@Wrappers@WRL@Microsoft@@00KH@Z",
+              "ea": "0x18002dc5e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "L\"Failed to abort stale install queue item",
+          "type": "Unknown",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "continuing with new install attempt\"",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSPAppInstallResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartB_Ms.Telemetry.Error:Struct(Hex)",
+            "ErrorCode:Int32(HResult)",
+            "ErrorLocation:AnsiString",
+            "LineNumber:UInt32",
+            "ErrorMethod:AnsiString",
+            "PackageFamilyName:UnicodeString",
+            "ProductId:UnicodeString",
+            "Sku:UnicodeString",
+            "DmEnrollmentId:UnicodeString",
+            "Flags:UInt32",
+            "DeviceInstall:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?StartAppInstall@EnterpriseModernAppManagement@@YAJAEBQEAUHSTRING__@@0QEAGH@Z",
+              "ea": "0x18002d780",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DeviceInstall",
+          "type": "Bool32",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "DmEnrollmentId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorLocation",
+          "type": "AnsiString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorMethod",
+          "type": "AnsiString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "UInt32",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "LineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFamilyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "PartB_Ms.Telemetry.Error",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "ProductId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "Sku",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSPNodeAdd_Start",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Data:Int32",
+            "FullUriPath:UnicodeString",
+            "CSPNamespace:UnicodeString",
+            "TargetedUserSidName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?TraceLoggingCSPNodeActivityStart@EnterpriseModernAppManagement@@YAJPEAUIConfigManager2URI@@PEAVCConfigServiceProvider2Impl@@AEAV?$TraceLoggingActivity@$1?g_hEnterpriseModernAppMgmtLoggingProvider@@3QEBU_tlgProvider_t@@EB$0EAAAAAAAAAAA@$04U_TlgReflectorTag_Param0IsHProvider@@@@W4tagCSP_NODE_ACTION_TYPE@1@PEAUtagVARIANT@@@Z",
+              "ea": "0x1800140f7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Data:Int16",
+            "FullUriPath:UnicodeString",
+            "CSPNamespace:UnicodeString",
+            "TargetedUserSidName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?TraceLoggingCSPNodeActivityStart@EnterpriseModernAppManagement@@YAJPEAUIConfigManager2URI@@PEAVCConfigServiceProvider2Impl@@AEAV?$TraceLoggingActivity@$1?g_hEnterpriseModernAppMgmtLoggingProvider@@3QEBU_tlgProvider_t@@EB$0EAAAAAAAAAAA@$04U_TlgReflectorTag_Param0IsHProvider@@@@W4tagCSP_NODE_ACTION_TYPE@1@PEAUtagVARIANT@@@Z",
+              "ea": "0x18001418e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Data:UnicodeString",
+            "FullUriPath:UnicodeString",
+            "CSPNamespace:UnicodeString",
+            "TargetedUserSidName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?TraceLoggingCSPNodeActivityStart@EnterpriseModernAppManagement@@YAJPEAUIConfigManager2URI@@PEAVCConfigServiceProvider2Impl@@AEAV?$TraceLoggingActivity@$1?g_hEnterpriseModernAppMgmtLoggingProvider@@3QEBU_tlgProvider_t@@EB$0EAAAAAAAAAAA@$04U_TlgReflectorTag_Param0IsHProvider@@@@W4tagCSP_NODE_ACTION_TYPE@1@PEAUtagVARIANT@@@Z",
+              "ea": "0x180014225",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CSPNamespace",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "Data",
+          "type": "Int16",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "Data",
+          "type": "Int32",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "Data",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "FullUriPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetedUserSidName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSPNodeAdd_Stop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HR:Int32(HResult)",
+            "Data:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?TraceLoggingCSPNodeActivityStop@EnterpriseModernAppManagement@@YAJAEAV?$TraceLoggingActivity@$1?g_hEnterpriseModernAppMgmtLoggingProvider@@3QEBU_tlgProvider_t@@EB$0EAAAAAAAAAAA@$04U_TlgReflectorTag_Param0IsHProvider@@@@W4tagCSP_NODE_ACTION_TYPE@1@JPEAUtagVARIANT@@@Z",
+              "ea": "0x18001460e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Data",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSPNodeDeleteChild_Start",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Data:UnicodeString",
+            "FullUriPath:UnicodeString",
+            "CSPNamespace:UnicodeString",
+            "TargetedUserSidName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?TraceLoggingCSPNodeActivityStart@EnterpriseModernAppManagement@@YAJPEAUIConfigManager2URI@@PEAVCConfigServiceProvider2Impl@@AEAV?$TraceLoggingActivity@$1?g_hEnterpriseModernAppMgmtLoggingProvider@@3QEBU_tlgProvider_t@@EB$0EAAAAAAAAAAA@$04U_TlgReflectorTag_Param0IsHProvider@@@@W4tagCSP_NODE_ACTION_TYPE@1@PEAUtagVARIANT@@@Z",
+              "ea": "0x18001404e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CSPNamespace",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "Data",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "FullUriPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetedUserSidName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSPNodeDeleteChild_Stop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HR:Int32(HResult)",
+            "Data:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?TraceLoggingCSPNodeActivityStop@EnterpriseModernAppManagement@@YAJAEAV?$TraceLoggingActivity@$1?g_hEnterpriseModernAppMgmtLoggingProvider@@3QEBU_tlgProvider_t@@EB$0EAAAAAAAAAAA@$04U_TlgReflectorTag_Param0IsHProvider@@@@W4tagCSP_NODE_ACTION_TYPE@1@JPEAUtagVARIANT@@@Z",
+              "ea": "0x1800145d0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Data",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSPNodeExecute_Start",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Data:UnicodeString",
+            "FullUriPath:UnicodeString",
+            "CSPNamespace:UnicodeString",
+            "TargetedUserSidName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?TraceLoggingCSPNodeActivityStart@EnterpriseModernAppManagement@@YAJPEAUIConfigManager2URI@@PEAVCConfigServiceProvider2Impl@@AEAV?$TraceLoggingActivity@$1?g_hEnterpriseModernAppMgmtLoggingProvider@@3QEBU_tlgProvider_t@@EB$0EAAAAAAAAAAA@$04U_TlgReflectorTag_Param0IsHProvider@@@@W4tagCSP_NODE_ACTION_TYPE@1@PEAUtagVARIANT@@@Z",
+              "ea": "0x180013c4c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CSPNamespace",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "Data",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "FullUriPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetedUserSidName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSPNodeExecute_Stop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HR:Int32(HResult)",
+            "Data:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?TraceLoggingCSPNodeActivityStop@EnterpriseModernAppManagement@@YAJAEAV?$TraceLoggingActivity@$1?g_hEnterpriseModernAppMgmtLoggingProvider@@3QEBU_tlgProvider_t@@EB$0EAAAAAAAAAAA@$04U_TlgReflectorTag_Param0IsHProvider@@@@W4tagCSP_NODE_ACTION_TYPE@1@JPEAUtagVARIANT@@@Z",
+              "ea": "0x180014385",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Data",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSPNodeGetChildNodeNames_Start",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Data:UnicodeString",
+            "FullUriPath:UnicodeString",
+            "CSPNamespace:UnicodeString",
+            "TargetedUserSidName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?TraceLoggingCSPNodeActivityStart@EnterpriseModernAppManagement@@YAJPEAUIConfigManager2URI@@PEAVCConfigServiceProvider2Impl@@AEAV?$TraceLoggingActivity@$1?g_hEnterpriseModernAppMgmtLoggingProvider@@3QEBU_tlgProvider_t@@EB$0EAAAAAAAAAAA@$04U_TlgReflectorTag_Param0IsHProvider@@@@W4tagCSP_NODE_ACTION_TYPE@1@PEAUtagVARIANT@@@Z",
+              "ea": "0x180013cf0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CSPNamespace",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "Data",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "FullUriPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetedUserSidName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSPNodeGetChildNodeNames_Stop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HR:Int32(HResult)",
+            "Data:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?TraceLoggingCSPNodeActivityStop@EnterpriseModernAppManagement@@YAJAEAV?$TraceLoggingActivity@$1?g_hEnterpriseModernAppMgmtLoggingProvider@@3QEBU_tlgProvider_t@@EB$0EAAAAAAAAAAA@$04U_TlgReflectorTag_Param0IsHProvider@@@@W4tagCSP_NODE_ACTION_TYPE@1@JPEAUtagVARIANT@@@Z",
+              "ea": "0x1800143ed",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Data",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSPNodeGetValue",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HR:Int32(HResult)",
+            "FullUriPath:UnicodeString",
+            "CSPNamespace:UnicodeString",
+            "TargetedUserSidName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?TraceLoggingCSPNodeError@EnterpriseModernAppManagement@@YAJPEAUIConfigManager2URI@@PEAVCConfigServiceProvider2Impl@@W4tagCSP_NODE_ACTION_TYPE@1@J@Z",
+              "ea": "0x18001473e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CSPNamespace",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "FullUriPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetedUserSidName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSPNodeGetValue_Start",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Data:UnicodeString",
+            "FullUriPath:UnicodeString",
+            "CSPNamespace:UnicodeString",
+            "TargetedUserSidName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?TraceLoggingCSPNodeActivityStart@EnterpriseModernAppManagement@@YAJPEAUIConfigManager2URI@@PEAVCConfigServiceProvider2Impl@@AEAV?$TraceLoggingActivity@$1?g_hEnterpriseModernAppMgmtLoggingProvider@@3QEBU_tlgProvider_t@@EB$0EAAAAAAAAAAA@$04U_TlgReflectorTag_Param0IsHProvider@@@@W4tagCSP_NODE_ACTION_TYPE@1@PEAUtagVARIANT@@@Z",
+              "ea": "0x180013fc0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CSPNamespace",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "Data",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "FullUriPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetedUserSidName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSPNodeGetValue_Stop",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HR:Int32(HResult)",
+            "Data:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?TraceLoggingCSPNodeActivityStop@EnterpriseModernAppManagement@@YAJAEAV?$TraceLoggingActivity@$1?g_hEnterpriseModernAppMgmtLoggingProvider@@3QEBU_tlgProvider_t@@EB$0EAAAAAAAAAAA@$04U_TlgReflectorTag_Param0IsHProvider@@@@W4tagCSP_NODE_ACTION_TYPE@1@JPEAUtagVARIANT@@@Z",
+              "ea": "0x1800144e3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HR:Int32(HResult)",
+            "Data:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?TraceLoggingCSPNodeActivityStop@EnterpriseModernAppManagement@@YAJAEAV?$TraceLoggingActivity@$1?g_hEnterpriseModernAppMgmtLoggingProvider@@3QEBU_tlgProvider_t@@EB$0EAAAAAAAAAAA@$04U_TlgReflectorTag_Param0IsHProvider@@@@W4tagCSP_NODE_ACTION_TYPE@1@JPEAUtagVARIANT@@@Z",
+              "ea": "0x18001454b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Data",
+          "type": "Int32",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "Data",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSPNodeSetValue_Start",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Data:Int16",
+            "FullUriPath:UnicodeString",
+            "CSPNamespace:UnicodeString",
+            "TargetedUserSidName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?TraceLoggingCSPNodeActivityStart@EnterpriseModernAppManagement@@YAJPEAUIConfigManager2URI@@PEAVCConfigServiceProvider2Impl@@AEAV?$TraceLoggingActivity@$1?g_hEnterpriseModernAppMgmtLoggingProvider@@3QEBU_tlgProvider_t@@EB$0EAAAAAAAAAAA@$04U_TlgReflectorTag_Param0IsHProvider@@@@W4tagCSP_NODE_ACTION_TYPE@1@PEAUtagVARIANT@@@Z",
+              "ea": "0x180013da9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Data:UnicodeString",
+            "FullUriPath:UnicodeString",
+            "CSPNamespace:UnicodeString",
+            "TargetedUserSidName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?TraceLoggingCSPNodeActivityStart@EnterpriseModernAppManagement@@YAJPEAUIConfigManager2URI@@PEAVCConfigServiceProvider2Impl@@AEAV?$TraceLoggingActivity@$1?g_hEnterpriseModernAppMgmtLoggingProvider@@3QEBU_tlgProvider_t@@EB$0EAAAAAAAAAAA@$04U_TlgReflectorTag_Param0IsHProvider@@@@W4tagCSP_NODE_ACTION_TYPE@1@PEAUtagVARIANT@@@Z",
+              "ea": "0x180013e74",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Data:Int32",
+            "FullUriPath:UnicodeString",
+            "CSPNamespace:UnicodeString",
+            "TargetedUserSidName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?TraceLoggingCSPNodeActivityStart@EnterpriseModernAppManagement@@YAJPEAUIConfigManager2URI@@PEAVCConfigServiceProvider2Impl@@AEAV?$TraceLoggingActivity@$1?g_hEnterpriseModernAppMgmtLoggingProvider@@3QEBU_tlgProvider_t@@EB$0EAAAAAAAAAAA@$04U_TlgReflectorTag_Param0IsHProvider@@@@W4tagCSP_NODE_ACTION_TYPE@1@PEAUtagVARIANT@@@Z",
+              "ea": "0x180013efe",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CSPNamespace",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "Data",
+          "type": "Int16",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "Data",
+          "type": "Int32",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "Data",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "FullUriPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetedUserSidName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSPNodeSetValue_Stop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HR:Int32(HResult)",
+            "Data:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?TraceLoggingCSPNodeActivityStop@EnterpriseModernAppManagement@@YAJAEAV?$TraceLoggingActivity@$1?g_hEnterpriseModernAppMgmtLoggingProvider@@3QEBU_tlgProvider_t@@EB$0EAAAAAAAAAAA@$04U_TlgReflectorTag_Param0IsHProvider@@@@W4tagCSP_NODE_ACTION_TYPE@1@JPEAUtagVARIANT@@@Z",
+              "ea": "0x180014455",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Data",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSP_APP_INFO_ERROR",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "AppId:UnicodeString",
+            "AppInfoField:UnicodeString",
+            "HR:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?GetProductInfoImpl@CCSPEnterpriseAppsManager@EnterpriseModernAppManagement@@AEAAJPEBG0W4tagPRODUCTID_TYPE@2@W4ENTERPRISEMODERNAPPMANAGEMENT_NODE_TYPE@2@W4tagUSER_TYPE@2@PEAPEAUtagProductInfo@2@@Z",
+              "ea": "0x180010dc3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?GetProductInfoImpl@CCSPEnterpriseAppsManager@EnterpriseModernAppManagement@@AEAAJPEBG0W4tagPRODUCTID_TYPE@2@W4ENTERPRISEMODERNAPPMANAGEMENT_NODE_TYPE@2@W4tagUSER_TYPE@2@PEAPEAUtagProductInfo@2@@Z",
+              "ea": "0x180010f64",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?GetProductInfoImpl@CCSPEnterpriseAppsManager@EnterpriseModernAppManagement@@AEAAJPEBG0W4tagPRODUCTID_TYPE@2@W4ENTERPRISEMODERNAPPMANAGEMENT_NODE_TYPE@2@W4tagUSER_TYPE@2@PEAPEAUtagProductInfo@2@@Z",
+              "ea": "0x18001107a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?GetProductInfoImpl@CCSPEnterpriseAppsManager@EnterpriseModernAppManagement@@AEAAJPEBG0W4tagPRODUCTID_TYPE@2@W4ENTERPRISEMODERNAPPMANAGEMENT_NODE_TYPE@2@W4tagUSER_TYPE@2@PEAPEAUtagProductInfo@2@@Z",
+              "ea": "0x1800111b0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?GetProductInfoImpl@CCSPEnterpriseAppsManager@EnterpriseModernAppManagement@@AEAAJPEBG0W4tagPRODUCTID_TYPE@2@W4ENTERPRISEMODERNAPPMANAGEMENT_NODE_TYPE@2@W4tagUSER_TYPE@2@PEAPEAUtagProductInfo@2@@Z",
+              "ea": "0x1800113c0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?GetProductInfoImpl@CCSPEnterpriseAppsManager@EnterpriseModernAppManagement@@AEAAJPEBG0W4tagPRODUCTID_TYPE@2@W4ENTERPRISEMODERNAPPMANAGEMENT_NODE_TYPE@2@W4tagUSER_TYPE@2@PEAPEAUtagProductInfo@2@@Z",
+              "ea": "0x1800114e7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "?ReportProductInfoError@CCSPEnterpriseAppsManager@EnterpriseModernAppManagement@@IEAAJJPEBG0AEAVAutoString@Common@@@Z",
+              "ea": "0x18001256e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "AppInfoField",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSP_APP_INSTALL_ERROR",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "AppId:UnicodeString",
+            "HR:Int32(HResult)",
+            "DeploymentActivityId:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseAppMgmtSvc.dll",
+              "function": "?OnCompletedAddPackageAsync@PackageManagerWrapper@@QEAAJJPEAG00PEAU?$IAsyncOperationWithProgress@PEAVDeploymentResult@Deployment@Management@Windows@@UDeploymentProgress@234@@Foundation@Windows@@@Z",
+              "ea": "0x1800263f0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "DeploymentActivityId",
+          "type": "GUID",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSP_APP_INSTALL_ERROR_LIMITED",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "AppId:UnicodeString",
+            "HR:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseAppMgmtSvc.dll",
+              "function": "?DoAddPackageWork@@YAXPEAU_TP_CALLBACK_INSTANCE@@PEAXPEAU_TP_WORK@@@Z",
+              "ea": "0x180023083",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "EnterpriseAppMgmtSvc.dll",
+              "function": "?OnCompletedAddPackageAsync@PackageManagerWrapper@@QEAAJJPEAG00PEAU?$IAsyncOperationWithProgress@PEAVDeploymentResult@Deployment@Management@Windows@@UDeploymentProgress@234@@Foundation@Windows@@@Z",
+              "ea": "0x180026b71",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSP_APP_INSTALL_SUCCESS",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "AppId:UnicodeString",
+            "HR:Int32(HResult)",
+            "DeploymentActivityId:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseAppMgmtSvc.dll",
+              "function": "?OnCompletedAddPackageAsync@PackageManagerWrapper@@QEAAJJPEAG00PEAU?$IAsyncOperationWithProgress@PEAVDeploymentResult@Deployment@Management@Windows@@UDeploymentProgress@234@@Foundation@Windows@@@Z",
+              "ea": "0x18002691d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "DeploymentActivityId",
+          "type": "GUID",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSP_APP_PROVISION_ERROR",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "AppId:UnicodeString",
+            "HR:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseAppMgmtSvc.dll",
+              "function": "?DoProvisionPackage@@YAXPEAU_TP_CALLBACK_INSTANCE@@PEAXPEAU_TP_WORK@@@Z",
+              "ea": "0x1800234f0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "EnterpriseAppMgmtSvc.dll",
+              "function": "?DoProvisionPackage@@YAXPEAU_TP_CALLBACK_INSTANCE@@PEAXPEAU_TP_WORK@@@Z",
+              "ea": "0x1800237a0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSP_APP_PROVISION_SUCCESS",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "AppId:UnicodeString",
+            "HR:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseAppMgmtSvc.dll",
+              "function": "?DoProvisionPackage@@YAXPEAU_TP_CALLBACK_INSTANCE@@PEAXPEAU_TP_WORK@@@Z",
+              "ea": "0x1800236a9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSP_APP_REMOVE_ERROR",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "AppId:UnicodeString",
+            "HR:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseAppMgmtSvc.dll",
+              "function": "?DoRemovePackageForAllUsersImpl@@YAJPEAVRemovePackageForAllUsersParameters@@PEAU_TP_WORK@@@Z",
+              "ea": "0x180023964",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSP_APP_REMOVE_SUCCESS",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "AppId:UnicodeString",
+            "HR:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseAppMgmtSvc.dll",
+              "function": "?DoRemovePackageForAllUsersImpl@@YAJPEAVRemovePackageForAllUsersParameters@@PEAU_TP_WORK@@@Z",
+              "ea": "0x18002399c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSP_APP_UNINSTALL_ERROR",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "AppId:UnicodeString",
+            "HR:Int32(HResult)",
+            "DeploymentActivityId:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseAppMgmtSvc.dll",
+              "function": "?OnCompletedRemovePackageAsync@PackageManagerWrapper@@QEAAJJPEAG00PEAU?$IAsyncOperationWithProgress@PEAVDeploymentResult@Deployment@Management@Windows@@UDeploymentProgress@234@@Foundation@Windows@@@Z",
+              "ea": "0x180026f7f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "DeploymentActivityId",
+          "type": "GUID",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSP_APP_UNINSTALL_SUCCESS",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "AppId:UnicodeString",
+            "HR:Int32(HResult)",
+            "DeploymentActivityId:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseAppMgmtSvc.dll",
+              "function": "?OnCompletedRemovePackageAsync@PackageManagerWrapper@@QEAAJJPEAG00PEAU?$IAsyncOperationWithProgress@PEAVDeploymentResult@Deployment@Management@Windows@@UDeploymentProgress@234@@Foundation@Windows@@@Z",
+              "ea": "0x180026ff0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "DeploymentActivityId",
+          "type": "GUID",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSP_APP_UNPROVISION_ERROR",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "AppId:UnicodeString",
+            "HR:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseAppMgmtSvc.dll",
+              "function": "?DoRemovePackageForAllUsers@@YAXPEAU_TP_CALLBACK_INSTANCE@@PEAXPEAU_TP_WORK@@@Z",
+              "ea": "0x180023881",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "EnterpriseAppMgmtSvc.dll",
+              "function": "?DoUnprovisionPackage@@YAXPEAU_TP_CALLBACK_INSTANCE@@PEAXPEAU_TP_WORK@@@Z",
+              "ea": "0x180023b77",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "EnterpriseAppMgmtSvc.dll",
+              "function": "?DoUnprovisionPackage@@YAXPEAU_TP_CALLBACK_INSTANCE@@PEAXPEAU_TP_WORK@@@Z",
+              "ea": "0x180023cb3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSP_APP_UNPROVISION_SUCCESS",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "AppId:UnicodeString",
+            "HR:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseAppMgmtSvc.dll",
+              "function": "?DoUnprovisionPackage@@YAXPEAU_TP_CALLBACK_INSTANCE@@PEAXPEAU_TP_WORK@@@Z",
+              "ea": "0x180023ba5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSP_IMPERSONATION_ERROR",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HR:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseAppMgmtSvc.dll",
+              "function": "?OnCompletedAddPackageAsync@PackageManagerWrapper@@QEAAJJPEAG00PEAU?$IAsyncOperationWithProgress@PEAVDeploymentResult@Deployment@Management@Windows@@UDeploymentProgress@234@@Foundation@Windows@@@Z",
+              "ea": "0x1800261a0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "EnterpriseAppMgmtSvc.dll",
+              "function": "?OnCompletedRemovePackageAsync@PackageManagerWrapper@@QEAAJJPEAG00PEAU?$IAsyncOperationWithProgress@PEAVDeploymentResult@Deployment@Management@Windows@@UDeploymentProgress@234@@Foundation@Windows@@@Z",
+              "ea": "0x180026d8f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "EnterpriseAppMgmtSvc.dll",
+              "function": "?UpdateProgressStatus@@YAJPEAG0IPEAUHKEY__@@@Z",
+              "ea": "0x18002a383",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CSP_IMPERSONATION_REVERT_ERROR",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HR:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseModernAppMgmtCSP.dll",
+              "function": "??1CAutoImpersonateTargetedUser@EnterpriseModernAppManagement@@QEAA@XZ",
+              "ea": "0x180004f5a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseModernAppMgmtCSP.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OMADMALERT_ERROR",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HR:Int32(HResult)",
+            "OmaDmAccountId:UnicodeString",
+            "AlertType:UnicodeString",
+            "AlertSource:UnicodeString",
+            "AertData:UnicodeString",
+            "TargetedUserSidName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseAppMgmtSvc.dll",
+              "function": "?SendOmaDmAlert@EnterpriseModernAppManagement@@YAJPEBG000J@Z",
+              "ea": "0x1800321ba",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AertData",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "AlertSource",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "AlertType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "HR",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "OmaDmAccountId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetedUserSidName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ResultLoggingCallback",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilResult:Struct(Signed)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "failureId:UInt32",
+            "failureCount:UInt32",
+            "function:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "EnterpriseAppMgmtSvc.dll",
+              "function": "_lambda_a6d10e6116a376f051aba4be3428af47_::operator()",
+              "ea": "0x1800119fd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "callContext",
+          "type": "AnsiString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "failureCount",
+          "type": "UInt32",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "failureId",
+          "type": "UInt32",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "function",
+          "type": "AnsiString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "wilResult",
+          "type": "Struct(Signed)",
+          "seenIn": [
+            "EnterpriseAppMgmtSvc.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

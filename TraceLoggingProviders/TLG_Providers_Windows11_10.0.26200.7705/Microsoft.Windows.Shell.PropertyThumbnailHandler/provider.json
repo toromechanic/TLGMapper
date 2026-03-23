@@ -1,0 +1,58 @@
+{
+  "providerName": "Microsoft.Windows.Shell.PropertyThumbnailHandler",
+  "guid": "{C8462780-4470-5E25-1590-3BD8E4B09E4A}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "shell32.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "GetThumbnailInternalPropStoreLeak",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "propThumbnailProvider:HexInt64",
+            "cRef:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "shell32.dll",
+              "function": "??$GetThumbnailInternalPropStoreLeak@PEAVCPropertyThumbnailHandler@@AEBK@PropertyThumbnailHandlerTelemetry@@SAX$$QEAPEAVCPropertyThumbnailHandler@@AEBK@Z",
+              "ea": "0x180301b41",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "shell32.dll"
+          ]
+        },
+        {
+          "fieldName": "cRef",
+          "type": "UInt32",
+          "seenIn": [
+            "shell32.dll"
+          ]
+        },
+        {
+          "fieldName": "propThumbnailProvider",
+          "type": "HexInt64",
+          "seenIn": [
+            "shell32.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

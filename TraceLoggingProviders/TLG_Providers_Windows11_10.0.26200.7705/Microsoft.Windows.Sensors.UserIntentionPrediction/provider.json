@@ -1,0 +1,58 @@
+{
+  "providerName": "Microsoft.Windows.Sensors.UserIntentionPrediction",
+  "guid": "{3C3FF699-DF2B-5B76-054B-012C6DB1603A}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "SensorService.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "StopAllSensors",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "variant:UInt32",
+            "isMonitorOn:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "SensorService.dll",
+              "function": "??$StopAllSensors@W4Variant_UserIntentionPrediction@@AEA_N@UserIntentionPredictionTraceloggingProvider@@SAX$$QEAW4Variant_UserIntentionPrediction@@AEA_N@Z",
+              "ea": "0x180064a4a",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "SensorService.dll"
+          ]
+        },
+        {
+          "fieldName": "isMonitorOn",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "SensorService.dll"
+          ]
+        },
+        {
+          "fieldName": "variant",
+          "type": "UInt32",
+          "seenIn": [
+            "SensorService.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

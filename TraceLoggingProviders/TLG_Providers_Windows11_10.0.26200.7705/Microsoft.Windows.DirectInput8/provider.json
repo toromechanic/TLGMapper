@@ -1,0 +1,80 @@
+{
+  "providerName": "Microsoft.Windows.DirectInput8",
+  "guid": "{63EC1C5F-7672-4DB1-9DB0-98A4531CC134}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "dinput8.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "DeviceVidPid",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "VendorId:UInt16",
+            "ProductId:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "dinput8.dll",
+              "function": "EventWriteVidPid",
+              "ea": "0x18001b474",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ProductId",
+          "type": "UInt16",
+          "seenIn": [
+            "dinput8.dll"
+          ]
+        },
+        {
+          "fieldName": "VendorId",
+          "type": "UInt16",
+          "seenIn": [
+            "dinput8.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Dinput8DllLoaded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Hresult:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "dinput8.dll",
+              "function": "DllProcessAttach",
+              "ea": "0x1800234de",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Hresult",
+          "type": "Int32",
+          "seenIn": [
+            "dinput8.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

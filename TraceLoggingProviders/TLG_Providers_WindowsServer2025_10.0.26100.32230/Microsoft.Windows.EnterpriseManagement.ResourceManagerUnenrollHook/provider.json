@@ -1,0 +1,311 @@
+{
+  "providerName": "Microsoft.Windows.EnterpriseManagement.ResourceManagerUnenrollHook",
+  "guid": "{6222F3F1-237E-4B0F-8D12-C20072D42197}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "unenrollhook.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "UnEnrollHook",
+      "variantCount": 4,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "UnEnrollStartTime:SystemTime",
+            "EnrollmentID:UnicodeString",
+            "ProviderID:UnicodeString",
+            "UserSID:UnicodeString",
+            "DeviceWide:Bool32",
+            "UnEnrollEndTime:SystemTime",
+            "HResult:Int32(HResult)",
+            "__TlgCV__:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "unenrollhook.dll",
+              "function": "?LogUnenrollHookEnd@CResourceManagerLogger@@QEAAXU_SYSTEMTIME@@PEBG11H0J@Z",
+              "ea": "0x180008c86",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "pszMessage:UnicodeString",
+            "HResult:Int32(HResult)",
+            "__TlgCV__:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "unenrollhook.dll",
+              "function": "?LogUnenrollHookError@CResourceManagerLogger@@QEAAXPEBGJ@Z",
+              "ea": "0x180008d56",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "EnrollmentID:UnicodeString",
+            "ResourceURI:UnicodeString",
+            "HResult:Int32(HResult)",
+            "__TlgCV__:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "unenrollhook.dll",
+              "function": "?LogUnenrollHookResourceRemoval@CResourceManagerLogger@@QEAAXPEBG0J@Z",
+              "ea": "0x180008dd4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "pszMessage:UnicodeString",
+            "EnrollmentID:UnicodeString",
+            "ResourceURI:UnicodeString",
+            "HResult:Int32(HResult)",
+            "__TlgCV__:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "unenrollhook.dll",
+              "function": "?LogUnenrollHookResourceRemovalError@CResourceManagerLogger@@QEAAXPEBG00J@Z",
+              "ea": "0x180008e64",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DeviceWide",
+          "type": "Bool32",
+          "seenIn": [
+            "unenrollhook.dll"
+          ]
+        },
+        {
+          "fieldName": "EnrollmentID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "unenrollhook.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "unenrollhook.dll"
+          ]
+        },
+        {
+          "fieldName": "ProviderID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "unenrollhook.dll"
+          ]
+        },
+        {
+          "fieldName": "ResourceURI",
+          "type": "UnicodeString",
+          "seenIn": [
+            "unenrollhook.dll"
+          ]
+        },
+        {
+          "fieldName": "UnEnrollEndTime",
+          "type": "SystemTime",
+          "seenIn": [
+            "unenrollhook.dll"
+          ]
+        },
+        {
+          "fieldName": "UnEnrollStartTime",
+          "type": "SystemTime",
+          "seenIn": [
+            "unenrollhook.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "unenrollhook.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "unenrollhook.dll"
+          ]
+        },
+        {
+          "fieldName": "pszMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "unenrollhook.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnenrollHook",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "L\"No user found\":UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "unenrollhook.dll",
+              "function": "EnterpriseResourceManager_DeleteAllResources",
+              "ea": "0x180001c7b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "L\"User deleted\":UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "unenrollhook.dll",
+              "function": "EnterpriseResourceManager_DeleteAllResources",
+              "ea": "0x180001fb7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "unenrollhook.dll"
+          ]
+        },
+        {
+          "fieldName": "L\"No user found\"",
+          "type": "UnicodeString",
+          "seenIn": [
+            "unenrollhook.dll"
+          ]
+        },
+        {
+          "fieldName": "L\"User deleted\"",
+          "type": "UnicodeString",
+          "seenIn": [
+            "unenrollhook.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WmiAppRemoval",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "L\"Error getting JobID\":UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "unenrollhook.dll",
+              "function": "DeleteResourceIfWmiApp",
+              "ea": "0x18000855a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "JobID:UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "unenrollhook.dll",
+              "function": "DeleteResourceIfWmiApp",
+              "ea": "0x1800085dd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "L\"Caught Exception\":UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "unenrollhook.dll",
+              "function": "DeleteResourceIfWmiApp",
+              "ea": "0x18000dbc5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "unenrollhook.dll"
+          ]
+        },
+        {
+          "fieldName": "JobID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "unenrollhook.dll"
+          ]
+        },
+        {
+          "fieldName": "L\"Caught Exception\"",
+          "type": "UnicodeString",
+          "seenIn": [
+            "unenrollhook.dll"
+          ]
+        },
+        {
+          "fieldName": "L\"Error getting JobID\"",
+          "type": "UnicodeString",
+          "seenIn": [
+            "unenrollhook.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

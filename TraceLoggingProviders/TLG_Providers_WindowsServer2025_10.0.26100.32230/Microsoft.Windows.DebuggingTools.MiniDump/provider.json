@@ -1,0 +1,109 @@
+{
+  "providerName": "Microsoft.Windows.DebuggingTools.MiniDump",
+  "guid": "{67F67E50-7371-5DC8-DDA2-B5FB365D18B6}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "dbgcore.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "Action",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "SessionId:GUID",
+            "ActionName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "dbgcore.dll",
+              "function": "?TelemetryLogAction@@YAXU_GUID@@PEBG@Z",
+              "ea": "0x18001110e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "SessionId:GUID",
+            "ActionName:UnicodeString",
+            "Result:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "dbgcore.dll",
+              "function": "?TelemetryLogActionWithResult@@YAXU_GUID@@PEBGJ@Z",
+              "ea": "0x180011279",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "SessionId:GUID",
+            "ActionName:UnicodeString",
+            "FunctionName:UnicodeString",
+            "Result:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "dbgcore.dll",
+              "function": "?TelemetryLogFunctionCallWithResult@@YAXU_GUID@@PEBGJ@Z",
+              "ea": "0x1800113dc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActionName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dbgcore.dll"
+          ]
+        },
+        {
+          "fieldName": "FunctionName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dbgcore.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dbgcore.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32",
+          "seenIn": [
+            "dbgcore.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "GUID",
+          "seenIn": [
+            "dbgcore.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

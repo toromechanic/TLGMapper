@@ -1,0 +1,276 @@
+{
+  "providerName": "FveEnableLoggingProvider",
+  "guid": "{00A85728-5A3D-4B9E-B24B-9A14CCE5F322}",
+  "os": "Windows 11",
+  "binaryCount": 3,
+  "binaries": [
+    "BitLockerDeviceEncryption.exe",
+    "bdesvc.dll",
+    "fveui.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "BitLocker.FveApi.EAS.InitBackup.Fail",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "IsDomainJoined:Bool32",
+            "IsCloudDomainJoined:Bool32",
+            "IsWorkplaceJoined:Bool32",
+            "IsMSAUser:Bool32",
+            "BackupRecoveryPasswordToAAD:Bool32",
+            "ExitCode:Int32(HResult)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?InitializeWithSupportLevel@FveEnableEAS@@QEAAJAEBVDeviceEncryptionSupportLevel@@_N111@Z",
+              "ea": "0x1800705f9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "BitLockerDeviceEncryption.exe",
+              "function": "?InitializeWithSupportLevel@FveEnableEAS@@QEAAJAEBVDeviceEncryptionSupportLevel@@_N111@Z",
+              "ea": "0x14000db13",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fveui.dll",
+              "function": "?InitializeWithSupportLevel@FveEnableEAS@@QEAAJAEBVDeviceEncryptionSupportLevel@@_N111@Z",
+              "ea": "0x18002b033",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BackupRecoveryPasswordToAAD",
+          "type": "Bool32",
+          "seenIn": [
+            "BitLockerDeviceEncryption.exe",
+            "bdesvc.dll",
+            "fveui.dll"
+          ]
+        },
+        {
+          "fieldName": "ExitCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "BitLockerDeviceEncryption.exe",
+            "bdesvc.dll",
+            "fveui.dll"
+          ]
+        },
+        {
+          "fieldName": "IsCloudDomainJoined",
+          "type": "Bool32",
+          "seenIn": [
+            "BitLockerDeviceEncryption.exe",
+            "bdesvc.dll",
+            "fveui.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDomainJoined",
+          "type": "Bool32",
+          "seenIn": [
+            "BitLockerDeviceEncryption.exe",
+            "bdesvc.dll",
+            "fveui.dll"
+          ]
+        },
+        {
+          "fieldName": "IsMSAUser",
+          "type": "Bool32",
+          "seenIn": [
+            "BitLockerDeviceEncryption.exe",
+            "bdesvc.dll",
+            "fveui.dll"
+          ]
+        },
+        {
+          "fieldName": "IsWorkplaceJoined",
+          "type": "Bool32",
+          "seenIn": [
+            "BitLockerDeviceEncryption.exe",
+            "bdesvc.dll",
+            "fveui.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "BitLockerDeviceEncryption.exe",
+            "bdesvc.dll",
+            "fveui.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.FveApi.AAD.RP.Backup",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ExitCode:Int32(HResult)",
+            "FveID:GUID",
+            "VolumeType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BackupRecoveryPassword@FveEnableEAS@@QEAAJPEBG@Z",
+              "ea": "0x18006d291",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "BitLockerDeviceEncryption.exe",
+              "function": "?BackupRecoveryPassword@FveEnableEAS@@QEAAJPEBG@Z",
+              "ea": "0x14000945e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fveui.dll",
+              "function": "?BackupRecoveryPassword@FveEnableEAS@@QEAAJPEBG@Z",
+              "ea": "0x1800274c7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ExitCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "BitLockerDeviceEncryption.exe",
+            "bdesvc.dll",
+            "fveui.dll"
+          ]
+        },
+        {
+          "fieldName": "FveID",
+          "type": "GUID",
+          "seenIn": [
+            "BitLockerDeviceEncryption.exe",
+            "bdesvc.dll",
+            "fveui.dll"
+          ]
+        },
+        {
+          "fieldName": "VolumeType",
+          "type": "UInt32",
+          "seenIn": [
+            "BitLockerDeviceEncryption.exe",
+            "bdesvc.dll",
+            "fveui.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.FveApi.MSA.RP.Backup.Retry",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "BackUpStatus:AnsiString",
+            "IsOSVolume:Bool32",
+            "ExitCode:Int32(HResult)",
+            "VolumeGuid:GUID",
+            "NoRetryStatus:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BackupRecoveryPasswordWithRetry@FveEnableEAS@@IEAAJPEAXW4eFveVolumeType@@PEBU_GUID@@2PEBU_FVE_AUTH_ELEMENT@@@Z",
+              "ea": "0x18006de79",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "BitLockerDeviceEncryption.exe",
+              "function": "?BackupRecoveryPasswordWithRetry@FveEnableEAS@@IEAAJPEAXW4eFveVolumeType@@PEBU_GUID@@2PEBU_FVE_AUTH_ELEMENT@@@Z",
+              "ea": "0x14000a1d0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fveui.dll",
+              "function": "?BackupRecoveryPasswordWithRetry@FveEnableEAS@@IEAAJPEAXW4eFveVolumeType@@PEBU_GUID@@2PEBU_FVE_AUTH_ELEMENT@@@Z",
+              "ea": "0x18002808b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BackUpStatus",
+          "type": "AnsiString",
+          "seenIn": [
+            "BitLockerDeviceEncryption.exe",
+            "bdesvc.dll",
+            "fveui.dll"
+          ]
+        },
+        {
+          "fieldName": "ExitCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "BitLockerDeviceEncryption.exe",
+            "bdesvc.dll",
+            "fveui.dll"
+          ]
+        },
+        {
+          "fieldName": "IsOSVolume",
+          "type": "Bool32",
+          "seenIn": [
+            "BitLockerDeviceEncryption.exe",
+            "bdesvc.dll",
+            "fveui.dll"
+          ]
+        },
+        {
+          "fieldName": "NoRetryStatus",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "BitLockerDeviceEncryption.exe",
+            "bdesvc.dll",
+            "fveui.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "BitLockerDeviceEncryption.exe",
+            "bdesvc.dll",
+            "fveui.dll"
+          ]
+        },
+        {
+          "fieldName": "VolumeGuid",
+          "type": "GUID",
+          "seenIn": [
+            "BitLockerDeviceEncryption.exe",
+            "bdesvc.dll",
+            "fveui.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "providerName": "Microsoft.Windows.Power.Notifications",
+  "guid": "{5BA7412C-D028-415E-B364-90E94A5CC2DC}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "powrprof.dll"
+  ],
+  "uniqueEventCount": 5,
+  "events": [
+    {
+      "eventName": "RegisterSettingCallback",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "registrationHandle:HexInt64",
+            "settingGuid:GUID",
+            "sessionId:UInt32",
+            "callback:HexInt64(CodePointer)",
+            "callbackContext:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "powrprof.dll",
+              "function": "PowerSettingRegisterNotificationEx",
+              "ea": "0x1800064ae",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "callback",
+          "type": "HexInt64(CodePointer)",
+          "seenIn": [
+            "powrprof.dll"
+          ]
+        },
+        {
+          "fieldName": "callbackContext",
+          "type": "HexInt64",
+          "seenIn": [
+            "powrprof.dll"
+          ]
+        },
+        {
+          "fieldName": "registrationHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "powrprof.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "powrprof.dll"
+          ]
+        },
+        {
+          "fieldName": "settingGuid",
+          "type": "GUID",
+          "seenIn": [
+            "powrprof.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegisterSettingService",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "registrationHandle:HexInt64",
+            "settingGuid:GUID",
+            "sessionId:UInt32",
+            "serviceHandle:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "powrprof.dll",
+              "function": "PowerSettingRegisterNotificationEx",
+              "ea": "0x18000659f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "registrationHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "powrprof.dll"
+          ]
+        },
+        {
+          "fieldName": "serviceHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "powrprof.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "powrprof.dll"
+          ]
+        },
+        {
+          "fieldName": "settingGuid",
+          "type": "GUID",
+          "seenIn": [
+            "powrprof.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SettingNotificationStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "registrationHandle:HexInt64",
+            "settingGuid:GUID",
+            "settingValue:Binary"
+          ],
+          "callers": [
+            {
+              "binary": "powrprof.dll",
+              "function": "PowerpSettingCallback",
+              "ea": "0x1800058f9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "registrationHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "powrprof.dll"
+          ]
+        },
+        {
+          "fieldName": "settingGuid",
+          "type": "GUID",
+          "seenIn": [
+            "powrprof.dll"
+          ]
+        },
+        {
+          "fieldName": "settingValue",
+          "type": "Binary",
+          "seenIn": [
+            "powrprof.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SettingNotificationStop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "registrationHandle:HexInt64",
+            "result:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "powrprof.dll",
+              "function": "PowerpSettingCallback",
+              "ea": "0x180005954",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "registrationHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "powrprof.dll"
+          ]
+        },
+        {
+          "fieldName": "result",
+          "type": "UInt32",
+          "seenIn": [
+            "powrprof.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnregisterSetting",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "registrationHandle:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "powrprof.dll",
+              "function": "PowerSettingUnregisterNotification",
+              "ea": "0x180006b8c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "registrationHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "powrprof.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,361 @@
+{
+  "providerName": "Microsoft.Windows.Sense.SenseIR",
+  "guid": "{450BBA94-53CE-54E6-D150-9636ACEAFB86}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "MsSense.dll"
+  ],
+  "uniqueEventCount": 6,
+  "events": [
+    {
+      "eventName": "CreateFile",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Time:UInt64",
+            "Win32Path:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?LogCreateFile@SenseIRTraceLoggingProvider@sensorHub@sense@@SAXAEBV?$shared_ptr@$$CBVFileEvent@cyberData@sense@@@std@@@Z",
+              "ea": "0x18027d29b",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Time",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Win32Path",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CreateProcess",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ProcessCreationTime:UInt64",
+            "FilePath:UnicodeString",
+            "CommandLine:UnicodeString",
+            "ProcessId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?LogCreateProcess@SenseIRTraceLoggingProvider@sensorHub@sense@@SAXAEBV?$shared_ptr@$$CBVProcessEvent@cyberData@sense@@@std@@_N@Z",
+              "ea": "0x18027d35d",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ProcessCreationTime:UInt64",
+            "FilePath:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?LogCreateProcess@SenseIRTraceLoggingProvider@sensorHub@sense@@SAXAEBV?$shared_ptr@$$CBVProcessEvent@cyberData@sense@@@std@@_N@Z",
+              "ea": "0x18027d3e1",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CommandLine",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "FilePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessCreationTime",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessId",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GenericEtwCreateProcess",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ProcessId:UInt32",
+            "CreatorProcessId:UInt32",
+            "InferredParentProcessId:UInt32",
+            "ProcessStartKey:UInt64",
+            "CreatorProcessStartKey:UInt64",
+            "InferredParentProcessStartKey:UInt64",
+            "CiIsMicrosoftRoot:UInt32",
+            "CiIsMicrosoftApplicationRoot:UInt32",
+            "AllowCapping:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?CreateNewProcessEvent@EtwSecHandler@sensorHub@sense@@AEAA?AV?$shared_ptr@$$CBVEvent@cyberData@sense@@@std@@AEBV?$shared_ptr@VEtwEventData@sensorHub@sense@@@5@PEAU_TRACE_EVENT_INFO@@K_N@Z",
+              "ea": "0x180275f22",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AllowCapping",
+          "type": "Bool32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "CiIsMicrosoftApplicationRoot",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "CiIsMicrosoftRoot",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "CreatorProcessId",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "CreatorProcessStartKey",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "InferredParentProcessId",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "InferredParentProcessStartKey",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessId",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessStartKey",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LoadModule",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ModuleLoadTime:UInt64",
+            "FilePath:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?LogLoadImage@SenseIRTraceLoggingProvider@sensorHub@sense@@SAXAEBV?$shared_ptr@$$CBVModuleEvent@cyberData@sense@@@std@@@Z",
+              "ea": "0x18027d475",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MsSense.dll",
+              "function": "?LogLoadImageUsingEventProperties@SenseIRTraceLoggingProvider@sensorHub@sense@@SAX_KAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
+              "ea": "0x18027d4f1",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FilePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "ModuleLoadTime",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SensorHub",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "message:AnsiString",
+            "NativeFileName:UnicodeString",
+            "DataStream:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?CreateFileEvent@EtwSecHandler@sensorHub@sense@@AEAA?AV?$shared_ptr@$$CBVFileEvent@cyberData@sense@@@std@@AEBV?$shared_ptr@VEtwEventData@sensorHub@sense@@@5@PEAU_TRACE_EVENT_INFO@@KAEA_N@Z",
+              "ea": "0x1802746b5",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DataStream",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "NativeFileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "AnsiString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WfpDriverCtrl",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "message:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?StartWfpDriver@WfpDriverCtrl@sense@@AEAAXXZ",
+              "ea": "0x18027e0c1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MsSense.dll",
+              "function": "?StartWfpDriver@WfpDriverCtrl@sense@@AEAAXXZ",
+              "ea": "0x18027e1b4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MsSense.dll",
+              "function": "?StartWfpDriver@WfpDriverCtrl@sense@@AEAAXXZ",
+              "ea": "0x18027e227",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "message:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?StartWfpDriver@WfpDriverCtrl@sense@@AEAAXXZ",
+              "ea": "0x18027e295",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "message",
+          "type": "AnsiString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

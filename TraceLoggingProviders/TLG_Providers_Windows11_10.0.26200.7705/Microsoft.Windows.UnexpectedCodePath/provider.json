@@ -1,0 +1,123 @@
+{
+  "providerName": "Microsoft.Windows.UnexpectedCodePath",
+  "guid": "{DF280ED0-43D2-4E7A-BF82-901D268ACFA0}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "ntdll.dll",
+    "ntoskrnl.exe"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "CodePath",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Id:UInt64",
+            "CodePathIndex:UInt32",
+            "ErrorCode:UInt32",
+            "count:UInt32",
+            "IRQL:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntdll.dll",
+              "function": "UcOnUnexpectedCodePath",
+              "ea": "0x18015743f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "UcpLogUnexpectedCodePathEvent",
+              "ea": "0x140694659",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CodePathIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "ntdll.dll",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "ntdll.dll",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "IRQL",
+          "type": "UInt32",
+          "seenIn": [
+            "ntdll.dll",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Id",
+          "type": "UInt64",
+          "seenIn": [
+            "ntdll.dll",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "UInt32",
+          "seenIn": [
+            "ntdll.dll",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UcpTriggeredNodeCount",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntdll.dll",
+              "function": "UcpFindOrCreateTelemetryRecord",
+              "ea": "0x1801576e2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "UcpFindOrCreateTelemetryRecord",
+              "ea": "0x14069441a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "UInt64",
+          "seenIn": [
+            "ntdll.dll",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

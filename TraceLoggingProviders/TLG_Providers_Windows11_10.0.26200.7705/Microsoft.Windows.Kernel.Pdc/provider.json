@@ -1,0 +1,589 @@
+{
+  "providerName": "Microsoft.Windows.Kernel.Pdc",
+  "guid": "{66BA1A86-43C6-41AC-955B-28B520DB532A}",
+  "os": "Windows 11",
+  "binaryCount": 8,
+  "binaries": [
+    "KNetPwrDepBroker.sys",
+    "fvevol.sys",
+    "kmpdc.sys",
+    "netio.sys",
+    "ntoskrnl.exe",
+    "pdc.sys",
+    "srvnet.sys",
+    "umpdc.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "PDCV2_ClientCallback",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ClientID:UInt32",
+            "Task:UnicodeString",
+            "SubTask:UnicodeString",
+            "CallbackReason:UInt32",
+            "ActivationCount:UInt32",
+            "ActivationsUpCounter:UInt32",
+            "RenewalUpCounter:UInt32",
+            "ActivationDuration:Int64",
+            "ActivationHandle:UInt64",
+            "Status:HexInt32",
+            "PdcVersion:HexInt32",
+            "ModuleName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "Pdcv2EventWrite_ACTIVATION_CLIENT_CALLBACK",
+              "ea": "0x14001967f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "kmpdc.sys",
+              "function": "Pdcv1EventWrite_ACTIVATION_CLIENT_CALLBACK",
+              "ea": "0x140002189",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "kmpdc.sys",
+              "function": "Pdcv2EventWrite_ACTIVATION_CLIENT_CALLBACK",
+              "ea": "0x140002918",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "KNetPwrDepBroker.sys",
+              "function": "Pdcv2EventWrite_ACTIVATION_CLIENT_CALLBACK",
+              "ea": "0x1c0003279",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "netio.sys",
+              "function": "Pdcv2EventWrite_ACTIVATION_CLIENT_CALLBACK",
+              "ea": "0x14005612f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "Pdcv2EventWrite_ACTIVATION_CLIENT_CALLBACK",
+              "ea": "0x140607757",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "pdc.sys",
+              "function": "Pdcv1EventWrite_ACTIVATION_CLIENT_CALLBACK",
+              "ea": "0x140005fe7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "srvnet.sys",
+              "function": "Pdcv2EventWrite_ACTIVATION_CLIENT_CALLBACK",
+              "ea": "0x140029f24",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "umpdc.dll",
+              "function": "Pdcv1DiagnosticTimerCallback",
+              "ea": "0x18000995a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "umpdc.dll",
+              "function": "Pdcv1EventWrite_ACTIVATION_CLIENT_CALLBACK",
+              "ea": "0x180009c06",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "umpdc.dll",
+              "function": "Pdcv2EventWrite_ACTIVATION_CLIENT_CALLBACK",
+              "ea": "0x180004fea",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationCount",
+          "type": "UInt32",
+          "seenIn": [
+            "KNetPwrDepBroker.sys",
+            "fvevol.sys",
+            "kmpdc.sys",
+            "netio.sys",
+            "ntoskrnl.exe",
+            "pdc.sys",
+            "srvnet.sys",
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "ActivationDuration",
+          "type": "Int64",
+          "seenIn": [
+            "KNetPwrDepBroker.sys",
+            "fvevol.sys",
+            "kmpdc.sys",
+            "netio.sys",
+            "ntoskrnl.exe",
+            "pdc.sys",
+            "srvnet.sys",
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "ActivationHandle",
+          "type": "UInt64",
+          "seenIn": [
+            "KNetPwrDepBroker.sys",
+            "fvevol.sys",
+            "kmpdc.sys",
+            "netio.sys",
+            "ntoskrnl.exe",
+            "pdc.sys",
+            "srvnet.sys",
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "ActivationsUpCounter",
+          "type": "UInt32",
+          "seenIn": [
+            "KNetPwrDepBroker.sys",
+            "fvevol.sys",
+            "kmpdc.sys",
+            "netio.sys",
+            "ntoskrnl.exe",
+            "pdc.sys",
+            "srvnet.sys",
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "CallbackReason",
+          "type": "UInt32",
+          "seenIn": [
+            "KNetPwrDepBroker.sys",
+            "fvevol.sys",
+            "kmpdc.sys",
+            "netio.sys",
+            "ntoskrnl.exe",
+            "pdc.sys",
+            "srvnet.sys",
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientID",
+          "type": "UInt32",
+          "seenIn": [
+            "KNetPwrDepBroker.sys",
+            "fvevol.sys",
+            "kmpdc.sys",
+            "netio.sys",
+            "ntoskrnl.exe",
+            "pdc.sys",
+            "srvnet.sys",
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "ModuleName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "KNetPwrDepBroker.sys",
+            "fvevol.sys",
+            "kmpdc.sys",
+            "netio.sys",
+            "ntoskrnl.exe",
+            "pdc.sys",
+            "srvnet.sys",
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "PdcVersion",
+          "type": "HexInt32",
+          "seenIn": [
+            "KNetPwrDepBroker.sys",
+            "fvevol.sys",
+            "kmpdc.sys",
+            "netio.sys",
+            "ntoskrnl.exe",
+            "pdc.sys",
+            "srvnet.sys",
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "RenewalUpCounter",
+          "type": "UInt32",
+          "seenIn": [
+            "KNetPwrDepBroker.sys",
+            "fvevol.sys",
+            "kmpdc.sys",
+            "netio.sys",
+            "ntoskrnl.exe",
+            "pdc.sys",
+            "srvnet.sys",
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "HexInt32",
+          "seenIn": [
+            "KNetPwrDepBroker.sys",
+            "fvevol.sys",
+            "kmpdc.sys",
+            "netio.sys",
+            "ntoskrnl.exe",
+            "pdc.sys",
+            "srvnet.sys",
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "SubTask",
+          "type": "UnicodeString",
+          "seenIn": [
+            "KNetPwrDepBroker.sys",
+            "fvevol.sys",
+            "kmpdc.sys",
+            "netio.sys",
+            "ntoskrnl.exe",
+            "pdc.sys",
+            "srvnet.sys",
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "Task",
+          "type": "UnicodeString",
+          "seenIn": [
+            "KNetPwrDepBroker.sys",
+            "fvevol.sys",
+            "kmpdc.sys",
+            "netio.sys",
+            "ntoskrnl.exe",
+            "pdc.sys",
+            "srvnet.sys",
+            "umpdc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PDCV2_Deactivate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ClientID:UInt32",
+            "Task:UnicodeString",
+            "SubTask:UnicodeString",
+            "ActivationCount:UInt32",
+            "ActivationsUpCounter:UInt32",
+            "ActivationDuration:Int64",
+            "ActivationHandle:UInt64",
+            "Status:HexInt32",
+            "PdcVersion:HexInt32",
+            "ModuleName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "fvevol.sys",
+              "function": "Pdcv2EventWrite_ACTIVATION_CLIENT_DEACTIVATE",
+              "ea": "0x1400198d3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "kmpdc.sys",
+              "function": "Pdcv1EventWrite_ACTIVATION_CLIENT_DEACTIVATE",
+              "ea": "0x14000242c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "kmpdc.sys",
+              "function": "Pdcv2EventWrite_ACTIVATION_CLIENT_DEACTIVATE",
+              "ea": "0x140002bea",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "KNetPwrDepBroker.sys",
+              "function": "Pdcv2EventWrite_ACTIVATION_CLIENT_DEACTIVATE",
+              "ea": "0x1c000354b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "netio.sys",
+              "function": "Pdcv2EventWrite_ACTIVATION_CLIENT_DEACTIVATE",
+              "ea": "0x140032f6e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "netio.sys",
+              "function": "Pdcv2EventWrite_ACTIVATION_CLIENT_DEACTIVATE",
+              "ea": "0x140032fa2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "Pdcv2EventWrite_ACTIVATION_CLIENT_DEACTIVATE",
+              "ea": "0x14041c497",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "pdc.sys",
+              "function": "Pdcv1EventWrite_ACTIVATION_CLIENT_DEACTIVATE",
+              "ea": "0x14000626f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "srvnet.sys",
+              "function": "Pdcv2EventWrite_ACTIVATION_CLIENT_DEACTIVATE",
+              "ea": "0x14002a170",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "umpdc.dll",
+              "function": "Pdcv1EventWrite_ACTIVATION_CLIENT_DEACTIVATE",
+              "ea": "0x180006864",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "umpdc.dll",
+              "function": "Pdcv2EventWrite_ACTIVATION_CLIENT_DEACTIVATE",
+              "ea": "0x1800018c4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "umpdc.dll",
+              "function": "Pdcv2EventWrite_ACTIVATION_CLIENT_DEACTIVATE",
+              "ea": "0x1800018ff",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationCount",
+          "type": "UInt32",
+          "seenIn": [
+            "KNetPwrDepBroker.sys",
+            "fvevol.sys",
+            "kmpdc.sys",
+            "netio.sys",
+            "ntoskrnl.exe",
+            "pdc.sys",
+            "srvnet.sys",
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "ActivationDuration",
+          "type": "Int64",
+          "seenIn": [
+            "KNetPwrDepBroker.sys",
+            "fvevol.sys",
+            "kmpdc.sys",
+            "netio.sys",
+            "ntoskrnl.exe",
+            "pdc.sys",
+            "srvnet.sys",
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "ActivationHandle",
+          "type": "UInt64",
+          "seenIn": [
+            "KNetPwrDepBroker.sys",
+            "fvevol.sys",
+            "kmpdc.sys",
+            "netio.sys",
+            "ntoskrnl.exe",
+            "pdc.sys",
+            "srvnet.sys",
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "ActivationsUpCounter",
+          "type": "UInt32",
+          "seenIn": [
+            "KNetPwrDepBroker.sys",
+            "fvevol.sys",
+            "kmpdc.sys",
+            "netio.sys",
+            "ntoskrnl.exe",
+            "pdc.sys",
+            "srvnet.sys",
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientID",
+          "type": "UInt32",
+          "seenIn": [
+            "KNetPwrDepBroker.sys",
+            "fvevol.sys",
+            "kmpdc.sys",
+            "netio.sys",
+            "ntoskrnl.exe",
+            "pdc.sys",
+            "srvnet.sys",
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "ModuleName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "KNetPwrDepBroker.sys",
+            "fvevol.sys",
+            "kmpdc.sys",
+            "netio.sys",
+            "ntoskrnl.exe",
+            "pdc.sys",
+            "srvnet.sys",
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "PdcVersion",
+          "type": "HexInt32",
+          "seenIn": [
+            "KNetPwrDepBroker.sys",
+            "fvevol.sys",
+            "kmpdc.sys",
+            "netio.sys",
+            "ntoskrnl.exe",
+            "pdc.sys",
+            "srvnet.sys",
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "HexInt32",
+          "seenIn": [
+            "KNetPwrDepBroker.sys",
+            "fvevol.sys",
+            "kmpdc.sys",
+            "netio.sys",
+            "ntoskrnl.exe",
+            "pdc.sys",
+            "srvnet.sys",
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "SubTask",
+          "type": "UnicodeString",
+          "seenIn": [
+            "KNetPwrDepBroker.sys",
+            "fvevol.sys",
+            "kmpdc.sys",
+            "netio.sys",
+            "ntoskrnl.exe",
+            "pdc.sys",
+            "srvnet.sys",
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "Task",
+          "type": "UnicodeString",
+          "seenIn": [
+            "KNetPwrDepBroker.sys",
+            "fvevol.sys",
+            "kmpdc.sys",
+            "netio.sys",
+            "ntoskrnl.exe",
+            "pdc.sys",
+            "srvnet.sys",
+            "umpdc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PdcClientCallWatchdogFired",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "TimeoutMs:UInt32",
+            "ProcessId:UInt32",
+            "ThreadId:UInt32",
+            "PdcClientId:UInt32",
+            "FunctionName:AnsiString",
+            "ProcessExeName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "umpdc.dll",
+              "function": "PdcpFireClientCallWatchdog",
+              "ea": "0x180009df9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FunctionName",
+          "type": "AnsiString",
+          "seenIn": [
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "PdcClientId",
+          "type": "UInt32",
+          "seenIn": [
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessExeName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessId",
+          "type": "UInt32",
+          "seenIn": [
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "ThreadId",
+          "type": "UInt32",
+          "seenIn": [
+            "umpdc.dll"
+          ]
+        },
+        {
+          "fieldName": "TimeoutMs",
+          "type": "UInt32",
+          "seenIn": [
+            "umpdc.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

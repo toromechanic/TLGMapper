@@ -1,0 +1,465 @@
+{
+  "providerName": "Microsoft.Windows.Sense.CollectionEtw",
+  "guid": "{F68C769C-CC20-502E-AEE3-115C2EDA66F7}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "MsSense.dll",
+    "SenseIR.exe"
+  ],
+  "uniqueEventCount": 5,
+  "events": [
+    {
+      "eventName": "ActionFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "actionId:UnicodeString",
+            "actionHr:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "SenseIR.exe",
+              "function": "?OnActionEnd@OfflineActionRunner@IncidentResponse@sense@@MEAAXV?$shared_ptr@UActionAuxiliary@Data@IncidentResponse@Wcd@@@std@@@Z",
+              "ea": "0x140167463",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "actionHr",
+          "type": "Int32",
+          "seenIn": [
+            "SenseIR.exe"
+          ]
+        },
+        {
+          "fieldName": "actionId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseIR.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CertificateNotInstalled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "actionId:UnicodeString",
+            "certInstallationHr:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?ShouldCollectDataAccordingToPolicyAndCert@Scheduler@DataCollection@sense@@AEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AEBVvalue@json@web@@AEA_N@Z",
+              "ea": "0x180374659",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "actionId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "certInstallationHr",
+          "type": "Int32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DataCollection",
+      "variantCount": 6,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "message:UnicodeString",
+            "shouldInstallCertificate:UInt8(Boolean)",
+            "allowExecutionPolicyOverride:UInt8(Boolean)",
+            "randomizeFirstInvocation:UInt8(Boolean)",
+            "minTimeElapsedFromBootInMinutes:UInt32",
+            "maxFirstExecutionPeriodInMinutes:UInt32",
+            "maxWaitForNewActionsInMs:UInt32",
+            "pollingIntervalInMs:UInt32",
+            "waitStopProcessThreadInMs:UInt32",
+            "maxNoConnectionWaitTimeInMs:UInt32",
+            "etwMaxStringLength:UInt32",
+            "trustMicrosoftTestRoot:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?Parse@Configuration@DataCollection@sense@@QEAAXAEBVConfigurationCommand@23@@Z",
+              "ea": "0x180376955",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "message:UnicodeString",
+            "id:UnicodeString",
+            "type:UnicodeString",
+            "scheduleInMinutes:UInt32",
+            "randomizeScriptFirstInvocation:UInt8(Boolean)",
+            "minTimeElapsedFromBootInMinutes:UInt32",
+            "firstInvocationInSeconds:UInt32",
+            "actionConfiguration:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?Parse@Configuration@DataCollection@sense@@QEAAXAEBVConfigurationCommand@23@@Z",
+              "ea": "0x180376cbf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "message:UnicodeString",
+            "type:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?Parse@Configuration@DataCollection@sense@@QEAAXAEBVConfigurationCommand@23@@Z",
+              "ea": "0x180377137",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "errorCode:Int32",
+            "message:UnicodeString",
+            "missing:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?Parse@Configuration@DataCollection@sense@@QEAAXAEBVConfigurationCommand@23@@Z",
+              "ea": "0x1807ffe23",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "errorCode:Int32",
+            "message:UnicodeString",
+            "exception:AnsiString",
+            "data:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?Parse@Configuration@DataCollection@sense@@QEAAXAEBVConfigurationCommand@23@@Z",
+              "ea": "0x1807fff3c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "errorCode:Int32",
+            "message:UnicodeString",
+            "exception:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?Parse@Configuration@DataCollection@sense@@QEAAXAEBVConfigurationCommand@23@@Z",
+              "ea": "0x180800024",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MsSense.dll",
+              "function": "?Parse@Configuration@DataCollection@sense@@QEAAXAEBVConfigurationCommand@23@@Z",
+              "ea": "0x180800108",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "actionConfiguration",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "allowExecutionPolicyOverride",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "data",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "errorCode",
+          "type": "Int32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "etwMaxStringLength",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "exception",
+          "type": "AnsiString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "firstInvocationInSeconds",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "id",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "maxFirstExecutionPeriodInMinutes",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "maxNoConnectionWaitTimeInMs",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "maxWaitForNewActionsInMs",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "minTimeElapsedFromBootInMinutes",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "missing",
+          "type": "AnsiString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "pollingIntervalInMs",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "randomizeFirstInvocation",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "randomizeScriptFirstInvocation",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "scheduleInMinutes",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "shouldInstallCertificate",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "trustMicrosoftTestRoot",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "type",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "waitStopProcessThreadInMs",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExecutionPolicyReduced",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "actionId:UnicodeString",
+            "certInstallationHr:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?ShouldCollectDataAccordingToPolicyAndCert@Scheduler@DataCollection@sense@@AEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AEBVvalue@json@web@@AEA_N@Z",
+              "ea": "0x1803745f9",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "actionId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "certInstallationHr",
+          "type": "Int32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SenseIR",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "message:AnsiString",
+            "actionId:UnicodeString",
+            "responseType:UnicodeString",
+            "responseJson:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SenseIR.exe",
+              "function": "?OnActionEnd@OfflineActionRunner@IncidentResponse@sense@@MEAAXV?$shared_ptr@UActionAuxiliary@Data@IncidentResponse@Wcd@@@std@@@Z",
+              "ea": "0x140167347",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "actionId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseIR.exe"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "AnsiString",
+          "seenIn": [
+            "SenseIR.exe"
+          ]
+        },
+        {
+          "fieldName": "responseJson",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseIR.exe"
+          ]
+        },
+        {
+          "fieldName": "responseType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseIR.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

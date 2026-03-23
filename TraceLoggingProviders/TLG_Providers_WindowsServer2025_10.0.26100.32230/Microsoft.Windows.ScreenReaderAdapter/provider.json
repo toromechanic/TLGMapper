@@ -1,0 +1,59 @@
+{
+  "providerName": "Microsoft.Windows.ScreenReaderAdapter",
+  "guid": "{2D1BF371-28B8-4475-9BF1-EA843A49FEBB}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "Magnify.exe",
+    "Narrator.exe"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "ChangeVoice",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ttsLanguageInfo:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "Magnify.exe",
+              "function": "??$ChangeVoice@PEBG@ScreenReaderAdapterLogging@@SAX$$QEAPEBG@Z",
+              "ea": "0x1400538bc",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Narrator.exe",
+              "function": "??$ChangeVoice@PEBG@ScreenReaderAdapterLogging@@SAX$$QEAPEBG@Z",
+              "ea": "0x140020818",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Magnify.exe",
+            "Narrator.exe"
+          ]
+        },
+        {
+          "fieldName": "ttsLanguageInfo",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Magnify.exe",
+            "Narrator.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

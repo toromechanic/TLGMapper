@@ -1,0 +1,7563 @@
+{
+  "providerName": "Microsoft.Windows.Graphics.Display",
+  "guid": "{DEB96C0A-D2D9-5868-A5D5-50EE13513C8B}",
+  "os": "Windows 11",
+  "binaryCount": 6,
+  "binaries": [
+    "DispBroker.dll",
+    "dxgkrnl.sys",
+    "monitor.sys",
+    "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys",
+    "watchdog.sys",
+    "win32kbase.sys"
+  ],
+  "uniqueEventCount": 71,
+  "events": [
+    {
+      "eventName": "AdvancedColorSupportChanged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x40",
+          "fields": [
+            "advancedColorSupported:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "watchdog.sys",
+              "function": "DisplayScenarioJournalSetResult",
+              "ea": "0x140015ce9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "advancedColorSupported",
+          "type": "Bool32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AggIoDeviceControl",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000100",
+          "fields": [
+            "Count:Int64",
+            "PartA_PrivTags:UInt64",
+            "ControlCode:UInt32",
+            "Internal:UInt8(Boolean)",
+            "Status:UInt32(NTStatus)",
+            "AdapterLuid:UInt64",
+            "TargetId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "monitor.sys",
+              "function": "IoDeviceControlTelemetry",
+              "ea": "0x140001e17",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor.sys",
+              "function": "IoDeviceControlTelemetry",
+              "ea": "0x140001e76",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor.sys",
+              "function": "IoDeviceControlTelemetry",
+              "ea": "0x140001ebb",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys",
+              "function": "IoDeviceControlTelemetry",
+              "ea": "0x140001e17",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys",
+              "function": "IoDeviceControlTelemetry",
+              "ea": "0x140001e76",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys",
+              "function": "IoDeviceControlTelemetry",
+              "ea": "0x140001ebb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AdapterLuid",
+          "type": "UInt64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "ControlCode",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "Internal",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetId",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AggLegacyBrightnessApiCall",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000100",
+          "fields": [
+            "Count:Int64",
+            "MinBrightnessRequested:Int64",
+            "MaxBrightnessRequested:Int64",
+            "MinBrightnessPercentage:Int64",
+            "MaxBrightnessPercentage:Int64",
+            "PartA_PrivTags:UInt64",
+            "CallingApi:UInt32",
+            "WmiMethodId:UInt32",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "monitor.sys",
+              "function": "LegacyApiTelemetry",
+              "ea": "0x140001574",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys",
+              "function": "LegacyApiTelemetry",
+              "ea": "0x140001574",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CallingApi",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "MaxBrightnessPercentage",
+          "type": "Int64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "MaxBrightnessRequested",
+          "type": "Int64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "MinBrightnessPercentage",
+          "type": "Int64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "MinBrightnessRequested",
+          "type": "Int64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "WmiMethodId",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AggMonitorDimStateRequest",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000100",
+          "fields": [
+            "Count:Int64",
+            "PartA_PrivTags:UInt64",
+            "DisplayAdapterLuid:HexInt64",
+            "VidPnTargetId:UInt32",
+            "CurrentDimState:Bool32",
+            "NewDimsState:Bool32",
+            "IsBrightnessValueInitialized:Bool32",
+            "WasBrightnessChangeRequested:Bool32",
+            "StatusFromDriver:UInt32(NTStatus)",
+            "FailureReason:UInt32",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "monitor.sys",
+              "function": "DimStateTelemetry",
+              "ea": "0x140001766",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys",
+              "function": "DimStateTelemetry",
+              "ea": "0x140001766",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "CurrentDimState",
+          "type": "Bool32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "DisplayAdapterLuid",
+          "type": "HexInt64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "FailureReason",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "IsBrightnessValueInitialized",
+          "type": "Bool32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "NewDimsState",
+          "type": "Bool32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "StatusFromDriver",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "VidPnTargetId",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "WasBrightnessChangeRequested",
+          "type": "Bool32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AggSetBrightness",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000100",
+          "fields": [
+            "Count:Int64",
+            "MinRequestedBrightness:Int64",
+            "MaxRequestedBrightness:Int64",
+            "MinAppliedBrightness:Int64",
+            "MaxAppliedBrightness:Int64",
+            "PartA_PrivTags:UInt64",
+            "IsNits:UInt8(Boolean)",
+            "IsThermallyThrottled:UInt8(Boolean)",
+            "StatusFromDriver:UInt32(NTStatus)",
+            "AdapterLuid:UInt64",
+            "TargetId:UInt32",
+            "Reason:UInt32",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "monitor.sys",
+              "function": "SetBrightnessTelemetry",
+              "ea": "0x140001ac6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys",
+              "function": "SetBrightnessTelemetry",
+              "ea": "0x140001ac6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AdapterLuid",
+          "type": "UInt64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "IsNits",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "IsThermallyThrottled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "MaxAppliedBrightness",
+          "type": "Int64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "MaxRequestedBrightness",
+          "type": "Int64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "MinAppliedBrightness",
+          "type": "Int64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "MinRequestedBrightness",
+          "type": "Int64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "StatusFromDriver",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetId",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AggSetMonitorsDimState",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000100",
+          "fields": [
+            "count:Int64",
+            "PartA_PrivTags:UInt64",
+            "entryPoint:UInt32",
+            "isConsoleConnection:UInt8(Boolean)",
+            "isSwitchInProgress:UInt8(Boolean)",
+            "appliedLegacyBrightness:UInt8(Boolean)",
+            "calledSetMonitorsDimState:UInt8(Boolean)",
+            "isDimming:UInt8(Boolean)",
+            "powerDisplayStateNewState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "?PowerMonitorDimStateTelemetry@@YAXPEAU_DIM_UNDIM_TELEMETRY_DATA@@@Z",
+              "ea": "0x1400a1ced",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "appliedLegacyBrightness",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "calledSetMonitorsDimState",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "entryPoint",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "isConsoleConnection",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "isDimming",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "isSwitchInProgress",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "powerDisplayStateNewState",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AggThermalThrottleBrightness",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000100",
+          "fields": [
+            "Count:Int64",
+            "MinRequestedBrightness:Int64",
+            "MaxRequestedBrightness:Int64",
+            "MinAppliedBrightness:Int64",
+            "MaxAppliedBrightness:Int64",
+            "PartA_PrivTags:UInt64",
+            "IsNits:UInt8(Boolean)",
+            "GetBrightnessFailed:UInt8(Boolean)",
+            "Status:UInt32(NTStatus)",
+            "AdapterLuid:UInt64",
+            "TargetId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "monitor.sys",
+              "function": "ThermalThrottleTelemetry",
+              "ea": "0x1400056d0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys",
+              "function": "ThermalThrottleTelemetry",
+              "ea": "0x1400056d0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AdapterLuid",
+          "type": "UInt64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "GetBrightnessFailed",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "IsNits",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "MaxAppliedBrightness",
+          "type": "Int64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "MaxRequestedBrightness",
+          "type": "Int64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "MinAppliedBrightness",
+          "type": "Int64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "MinRequestedBrightness",
+          "type": "Int64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetId",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ChangeDisplaySettingsAPI",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000004",
+          "fields": [
+            "DeviceName:UnicodeString",
+            "DevModeIsNull:Bool32",
+            "Flags:UInt32",
+            "Status:Int32",
+            "StartTime:UInt64",
+            "EndTime:UInt64",
+            "UserOrKernelMode:Int8"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "xxxUserChangeDisplaySettings",
+              "ea": "0x1400e47a9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DevModeIsNull",
+          "type": "Bool32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "DeviceName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "EndTime",
+          "type": "UInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "StartTime",
+          "type": "UInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "Int32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "UserOrKernelMode",
+          "type": "Int8",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ChangeDisplaySettingsDevMode",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000004",
+          "fields": [
+            "Fields:UInt32",
+            "PositionX:Int32",
+            "PositionY:Int32",
+            "Width:UInt32",
+            "Height:UInt32",
+            "Freq:UInt32",
+            "DriverExtra:UInt32",
+            "Orientation:UInt32",
+            "FixedOutput:UInt32",
+            "Flags:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "xxxUserChangeDisplaySettings",
+              "ea": "0x1400e48d3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DriverExtra",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "Fields",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "FixedOutput",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "Freq",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "Height",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "Orientation",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "PositionX",
+          "type": "Int32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "PositionY",
+          "type": "Int32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "Width",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayMuxArrival",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "MuxErrorCode:UInt32(NTStatus)",
+            "SymbolicLink:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "_lambda_16d75bc2076ed5e741d08f2a5e717111_::operator()",
+              "ea": "0x140082ce1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "MuxErrorCode",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "SymbolicLink",
+          "type": "CountedString",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayMuxDeparture",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "MuxErrorCode:UInt32(NTStatus)",
+            "SymbolicLink:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "_lambda_dbcf8364b3ea4150de008656de4589a7_::operator()",
+              "ea": "0x1400831f9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "MuxErrorCode",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "SymbolicLink",
+          "type": "CountedString",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayMuxDevice-RefreshState",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200",
+          "fields": [
+            "Target1AdapterLuid:HexInt64",
+            "Target1TargetId:HexInt32",
+            "Target2AdapterLuid:HexInt64",
+            "Target2TargetId:HexInt32",
+            "CurrentAdapterLuid:HexInt64",
+            "CurrentTargetId:HexInt32",
+            "Target1Valid:UInt8(Boolean)",
+            "Target2Valid:UInt8(Boolean)",
+            "CurrentTargetValid:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "DispBroker.dll",
+              "function": "?RefreshState@DisplayMuxDevice@implementation@Core@Display@Devices@Windows@winrt@@AEAAXXZ",
+              "ea": "0x18004ea1e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CurrentAdapterLuid",
+          "type": "HexInt64",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "CurrentTargetId",
+          "type": "HexInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "CurrentTargetValid",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "Target1AdapterLuid",
+          "type": "HexInt64",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "Target1TargetId",
+          "type": "HexInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "Target1Valid",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "Target2AdapterLuid",
+          "type": "HexInt64",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "Target2TargetId",
+          "type": "HexInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "Target2Valid",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayMuxDeviceChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Context:HexInt64",
+            "Event:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?MuxDeviceDeviceChangeNotification@DISPLAY_MUX_DEVICE@@CAJPEAX0@Z",
+              "ea": "0x140085fc6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Context",
+          "type": "HexInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Event",
+          "type": "GUID",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayMuxInit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Status:UInt32(NTStatus)",
+            "Stage:UInt32",
+            "SymbolicLink:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "_lambda_adc6777f2423c6a058a4ce52fa2b6c14_::operator()",
+              "ea": "0x140083103",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Stage",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "SymbolicLink",
+          "type": "CountedString",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayMuxPairingCreated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Version:UInt32",
+            "MuxACPIName:CountedString",
+            "Adapter1Luid:HexInt64",
+            "Adapter1TargetId:HexInt32",
+            "Adapter1VenId:HexInt32",
+            "Adapter1DevId:HexInt32",
+            "Adapter1DriverVer:UnicodeString",
+            "Adapter2Luid:HexInt64",
+            "Adapter2TargetId:HexInt32",
+            "Adapter2VenId:HexInt32",
+            "Adapter2DevId:HexInt32",
+            "Adapter2DriverVer:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?CheckForNewMuxPairing@DISPLAY_MUX_PAIRING@@AEAAJXZ",
+              "ea": "0x140083944",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Adapter1DevId",
+          "type": "HexInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter1DriverVer",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter1Luid",
+          "type": "HexInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter1TargetId",
+          "type": "HexInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter1VenId",
+          "type": "HexInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter2DevId",
+          "type": "HexInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter2DriverVer",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter2Luid",
+          "type": "HexInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter2TargetId",
+          "type": "HexInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter2VenId",
+          "type": "HexInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "MuxACPIName",
+          "type": "CountedString",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayMuxPairingDestroyed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Version:UInt32",
+            "MuxACPIName:CountedString",
+            "Adapter1Luid:HexInt64",
+            "Adapter1TargetId:HexInt32",
+            "Adapter1VenId:HexInt32",
+            "Adapter1DevId:HexInt32",
+            "Adapter1DriverVer:UnicodeString",
+            "Adapter2Luid:HexInt64",
+            "Adapter2TargetId:HexInt32",
+            "Adapter2VenId:HexInt32",
+            "Adapter2DevId:HexInt32",
+            "Adapter2DriverVer:UnicodeString",
+            "Reason:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?DestroyActivePairing@DISPLAY_MUX_PAIRING@@AEAAXW4DISPLAY_MUX_PAIRING_DESTROYED_REASON@@@Z",
+              "ea": "0x140084458",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Adapter1DevId",
+          "type": "HexInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter1DriverVer",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter1Luid",
+          "type": "HexInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter1TargetId",
+          "type": "HexInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter1VenId",
+          "type": "HexInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter2DevId",
+          "type": "HexInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter2DriverVer",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter2Luid",
+          "type": "HexInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter2TargetId",
+          "type": "HexInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter2VenId",
+          "type": "HexInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "MuxACPIName",
+          "type": "CountedString",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayMuxPairingStatus",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Version:UInt32",
+            "MuxACPIName:CountedString",
+            "SystemSupportsStaticMdmNow:UInt8(Boolean)",
+            "StaticSupport:UInt32",
+            "MdmRequirementStatus:UInt32",
+            "MuxPairingState:UInt32",
+            "MuxPairingErrorCode:UInt32(NTStatus)",
+            "MuxSwitchPosition:UInt32",
+            "Adapter1Luid:HexInt64",
+            "Adapter1TargetId:HexInt32",
+            "Adapter1VenId:HexInt32",
+            "Adapter1DevId:HexInt32",
+            "Adapter1DriverVer:UnicodeString",
+            "Adapter2Luid:HexInt64",
+            "Adapter2TargetId:HexInt32",
+            "Adapter2VenId:HexInt32",
+            "Adapter2DevId:HexInt32",
+            "Adapter2DriverVer:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?LogMuxPairingStateTelemetry@DISPLAY_MUX_PAIRING@@AEBAXW4DISPLAYCONFIG_DISPLAYMUX_PAIRING_STATUS@@J_N@Z",
+              "ea": "0x140085ba1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Version:UInt32",
+            "MuxACPIName:CountedString",
+            "SystemSupportsStaticMdmNow:UInt8(Boolean)",
+            "StaticSupport:UInt32",
+            "MdmRequirementStatus:UInt32",
+            "MuxPairingState:UInt32",
+            "MuxPairingErrorCode:UInt32(NTStatus)",
+            "MuxSwitchPosition:UInt32",
+            "Adapter1Luid:HexInt64",
+            "Adapter1TargetId:HexInt32",
+            "Adapter1VenId:HexInt32",
+            "Adapter1DevId:HexInt32",
+            "Adapter1DriverVer:UnicodeString",
+            "Adapter2Luid:HexInt64",
+            "Adapter2TargetId:HexInt32",
+            "Adapter2VenId:HexInt32",
+            "Adapter2DevId:HexInt32",
+            "Adapter2DriverVer:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?LogMuxPairingStateTelemetry@DISPLAY_MUX_PAIRING@@AEBAXW4DISPLAYCONFIG_DISPLAYMUX_PAIRING_STATUS@@J_N@Z",
+              "ea": "0x140085d88",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Adapter1DevId",
+          "type": "HexInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter1DriverVer",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter1Luid",
+          "type": "HexInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter1TargetId",
+          "type": "HexInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter1VenId",
+          "type": "HexInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter2DevId",
+          "type": "HexInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter2DriverVer",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter2Luid",
+          "type": "HexInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter2TargetId",
+          "type": "HexInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Adapter2VenId",
+          "type": "HexInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "MdmRequirementStatus",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "MuxACPIName",
+          "type": "CountedString",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "MuxPairingErrorCode",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "MuxPairingState",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "MuxSwitchPosition",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "StaticSupport",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "SystemSupportsStaticMdmNow",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayMuxSwitchAPICall",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "AppProcessGuid:GUID",
+            "SwitchToAdapter:HexInt64",
+            "SwitchToTargetId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "DispBroker.dll",
+              "function": "??0DisplayMuxSwitchOperation@Internal@Display@Devices@Windows@@QEAA@U_LUID@@IEU_GUID@@@Z",
+              "ea": "0x180043e6e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppProcessGuid",
+          "type": "GUID",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "SwitchToAdapter",
+          "type": "HexInt64",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "SwitchToTargetId",
+          "type": "HexInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayMuxSwitchCancel",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "SwitchToGpuDdiProgress:UInt32",
+            "SwitchFromGpuDdiProgress:UInt32",
+            "FailureCase:UInt8(Boolean)",
+            "MuxConnectedToSwitchToAdapter:UInt8(Boolean)",
+            "TriggerReset:UInt8(Boolean)",
+            "Gpu0DdiDisplayMuxSwitchCanceledCalled:UInt8(Boolean)",
+            "Gpu1DdiDisplayMuxSwitchCanceledCalled:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "??R_lambda_9000b013b54c5d4fd00007edcb0ed276_@@QEBA@XZ",
+              "ea": "0x14008302c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FailureCase",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Gpu0DdiDisplayMuxSwitchCanceledCalled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Gpu1DdiDisplayMuxSwitchCanceledCalled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "MuxConnectedToSwitchToAdapter",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "SwitchFromGpuDdiProgress",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "SwitchToGpuDdiProgress",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "TriggerReset",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayMuxSwitchDbgSettings",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "AppProcessGuid:GUID",
+            "FaultInjectionStage:UInt32",
+            "DelayStage:UInt32",
+            "DelayInMsSeconds:UInt32",
+            "BeepOnDelay:Bool32",
+            "BreakOnFailure:Bool32",
+            "VerboseDiagnostic:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "DispBroker.dll",
+              "function": "?ReadDisplayMuxDbgSettings@DisplayMuxSwitchOperation@Internal@Display@Devices@Windows@@AEAAXXZ",
+              "ea": "0x180045906",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppProcessGuid",
+          "type": "GUID",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "BeepOnDelay",
+          "type": "Bool32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "BreakOnFailure",
+          "type": "Bool32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "DelayInMsSeconds",
+          "type": "UInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "DelayStage",
+          "type": "UInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "FaultInjectionStage",
+          "type": "UInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "VerboseDiagnostic",
+          "type": "Bool32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayMuxSwitchDelayInjection",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "AppProcessGuid:GUID",
+            "DelayStage:UInt32",
+            "DelayInMs:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "DispBroker.dll",
+              "function": "?CheckForMdmFaultOrDelayInjection@DisplayMuxSwitchOperation@Internal@Display@Devices@Windows@@AEAAXW4_D3DKMT_DISPLAYMUX_SWITCH_INJECTION_STAGE@@W4_D3DKMT_DISPLAYMUX_SWITCH_ERROR_STAGE@@@Z",
+              "ea": "0x1800449d1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DispBroker.dll",
+              "function": "?CheckForMdmFaultOrDelayInjection@DisplayMuxSwitchOperation@Internal@Display@Devices@Windows@@AEAAXW4_D3DKMT_DISPLAYMUX_SWITCH_INJECTION_STAGE@@W4_D3DKMT_DISPLAYMUX_SWITCH_ERROR_STAGE@@@Z",
+              "ea": "0x180044aa3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?CheckForMdmFaultOrDelayInjection@@YA_NW4_D3DKMT_DISPLAYMUX_SWITCH_INJECTION_STAGE@@W4_D3DKMT_DISPLAYMUX_SWITCH_ERROR_STAGE@@AEAU_DISPLAYMUX_SWITCH_CONTEXT@@@Z",
+              "ea": "0x1400835a3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?CheckForMdmFaultOrDelayInjection@@YA_NW4_D3DKMT_DISPLAYMUX_SWITCH_INJECTION_STAGE@@W4_D3DKMT_DISPLAYMUX_SWITCH_ERROR_STAGE@@AEAU_DISPLAYMUX_SWITCH_CONTEXT@@@Z",
+              "ea": "0x1400836bd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppProcessGuid",
+          "type": "GUID",
+          "seenIn": [
+            "DispBroker.dll",
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "DelayInMs",
+          "type": "UInt32",
+          "seenIn": [
+            "DispBroker.dll",
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "DelayStage",
+          "type": "UInt32",
+          "seenIn": [
+            "DispBroker.dll",
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "DispBroker.dll",
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayMuxSwitchDisplayPathStateComparisonFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "AppProcessGuid:GUID",
+            "DisplayCompareType:UInt32",
+            "BeforeSwitchCompareData:HexInt64",
+            "AfterSwitchCompareData:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "DispBroker.dll",
+              "function": "?ReportPathStateChange@DisplayMuxSwitchOperation@Internal@Display@Devices@Windows@@UEAAJI_K0@Z",
+              "ea": "0x180045ab4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AfterSwitchCompareData",
+          "type": "HexInt64",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "AppProcessGuid",
+          "type": "GUID",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "BeforeSwitchCompareData",
+          "type": "HexInt64",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "DisplayCompareType",
+          "type": "UInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayMuxSwitchDxgkQueryConnectionChanges",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "AppProcessGuid:GUID",
+            "Adapter:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?QueryConnectionChanges@@YAJPEAU_DEVICE_OBJECT@@U_LUID@@PEAU_GUID@@2@Z",
+              "ea": "0x140087443",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "AppProcessGuid:GUID",
+            "Adapter:HexInt64",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?QueryConnectionChanges@@YAJPEAU_DEVICE_OBJECT@@U_LUID@@PEAU_GUID@@2@Z",
+              "ea": "0x1400874f0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Adapter",
+          "type": "HexInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "AppProcessGuid",
+          "type": "GUID",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayMuxSwitchFailure",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "AppProcessGuid:GUID",
+            "HResult:UInt32(NTStatus)",
+            "ErrorStageReturned:UInt32",
+            "LineNumber:UInt32",
+            "File:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "DispBroker.dll",
+              "function": "?CheckFailed@DisplayMuxSwitchOperation@Internal@Display@Devices@Windows@@AEAAXJW4_D3DKMT_DISPLAYMUX_SWITCH_ERROR_STAGE@@IPEBD@Z",
+              "ea": "0x180044572",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "AppProcessGuid:GUID",
+            "Status:UInt32(NTStatus)",
+            "ErrorStageReturned:UInt32",
+            "LineNumber:UInt32",
+            "File:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?CheckFailed@@YA_NJW4_D3DKMT_DISPLAYMUX_SWITCH_ERROR_STAGE@@AEAU_DISPLAYMUX_SWITCH_CONTEXT@@IPEAD@Z",
+              "ea": "0x140083353",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppProcessGuid",
+          "type": "GUID",
+          "seenIn": [
+            "DispBroker.dll",
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "ErrorStageReturned",
+          "type": "UInt32",
+          "seenIn": [
+            "DispBroker.dll",
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "File",
+          "type": "AnsiString",
+          "seenIn": [
+            "DispBroker.dll",
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "LineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "DispBroker.dll",
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "DispBroker.dll",
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayMuxSwitchFailureCheckSucceeded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "AppProcessGuid:GUID",
+            "Status:UInt32(NTStatus)",
+            "Stage:UInt32",
+            "LineNumber:UInt32",
+            "File:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?CheckFailed@@YA_NJW4_D3DKMT_DISPLAYMUX_SWITCH_ERROR_STAGE@@AEAU_DISPLAYMUX_SWITCH_CONTEXT@@IPEAD@Z",
+              "ea": "0x1400833fd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppProcessGuid",
+          "type": "GUID",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "File",
+          "type": "AnsiString",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "LineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Stage",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayMuxSwitchFailureCheckSucceededDispBroker",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "AppProcessGuid:GUID",
+            "HResult:UInt32(NTStatus)",
+            "Stage:UInt32",
+            "LineNumber:UInt32",
+            "File:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "DispBroker.dll",
+              "function": "?CheckFailed@DisplayMuxSwitchOperation@Internal@Display@Devices@Windows@@AEAAXJW4_D3DKMT_DISPLAYMUX_SWITCH_ERROR_STAGE@@IPEBD@Z",
+              "ea": "0x18004462f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppProcessGuid",
+          "type": "GUID",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "File",
+          "type": "AnsiString",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "LineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "Stage",
+          "type": "UInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayMuxSwitchFaultInjection",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "AppProcessGuid:GUID",
+            "InjectionStage:UInt32",
+            "ErrorStageReturned:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "DispBroker.dll",
+              "function": "?CheckForMdmFaultOrDelayInjection@DisplayMuxSwitchOperation@Internal@Display@Devices@Windows@@AEAAXW4_D3DKMT_DISPLAYMUX_SWITCH_INJECTION_STAGE@@W4_D3DKMT_DISPLAYMUX_SWITCH_ERROR_STAGE@@@Z",
+              "ea": "0x180044b87",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?CheckForMdmFaultOrDelayInjection@@YA_NW4_D3DKMT_DISPLAYMUX_SWITCH_INJECTION_STAGE@@W4_D3DKMT_DISPLAYMUX_SWITCH_ERROR_STAGE@@AEAU_DISPLAYMUX_SWITCH_CONTEXT@@@Z",
+              "ea": "0x1400837df",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppProcessGuid",
+          "type": "GUID",
+          "seenIn": [
+            "DispBroker.dll",
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "ErrorStageReturned",
+          "type": "UInt32",
+          "seenIn": [
+            "DispBroker.dll",
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "InjectionStage",
+          "type": "UInt32",
+          "seenIn": [
+            "DispBroker.dll",
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "DispBroker.dll",
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayMuxSwitchStartSequence",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "AppProcessGuid:GUID",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "_lambda_7b3f14799f20c6d540ea6da3a6d31bf6_::operator()",
+              "ea": "0x140082e24",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppProcessGuid",
+          "type": "GUID",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayMuxSwitchTriggered",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Version:UInt32",
+            "AppProcessGuid:GUID",
+            "IsDynamicSwitch:UInt8(Boolean)",
+            "SwitchToAdapter:HexInt64",
+            "SwitchToTargetId:HexInt32",
+            "SwitchToVenId:HexInt32",
+            "SwitchToDevId:HexInt32",
+            "SwitchToDriverVer:UnicodeString",
+            "SwitchFromAdapter:HexInt64",
+            "SwitchFromTargetId:HexInt32",
+            "SwitchFromVenId:HexInt32",
+            "SwitchFromDevId:HexInt32",
+            "SwitchFromDriverVer:UnicodeString",
+            "DurationInMilliseconds:UInt32",
+            "StatusValue:HexInt32",
+            "StatusValueIsNtStatus:UInt8(Boolean)",
+            "StatusValueIsHResult:UInt8(Boolean)",
+            "ErrorStage:UInt32",
+            "FaultInjectedStage:UInt32",
+            "ErrorLineNumber:UInt32",
+            "ErrorFileName:AnsiString",
+            "DisplayCompareType:UInt32",
+            "BeforeSwitchCompareData:HexInt64",
+            "AfterSwitchCompareData:HexInt64",
+            "PanelWasNotInPsr:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "DispBroker.dll",
+              "function": "??1DisplayMuxSwitchOperation@Internal@Display@Devices@Windows@@UEAA@XZ",
+              "ea": "0x180044159",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AfterSwitchCompareData",
+          "type": "HexInt64",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "AppProcessGuid",
+          "type": "GUID",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "BeforeSwitchCompareData",
+          "type": "HexInt64",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "DisplayCompareType",
+          "type": "UInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationInMilliseconds",
+          "type": "UInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorFileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorLineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorStage",
+          "type": "UInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "FaultInjectedStage",
+          "type": "UInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDynamicSwitch",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "PanelWasNotInPsr",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "StatusValue",
+          "type": "HexInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "StatusValueIsHResult",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "StatusValueIsNtStatus",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "SwitchFromAdapter",
+          "type": "HexInt64",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "SwitchFromDevId",
+          "type": "HexInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "SwitchFromDriverVer",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "SwitchFromTargetId",
+          "type": "HexInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "SwitchFromVenId",
+          "type": "HexInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "SwitchToAdapter",
+          "type": "HexInt64",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "SwitchToDevId",
+          "type": "HexInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "SwitchToDriverVer",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "SwitchToTargetId",
+          "type": "HexInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "SwitchToVenId",
+          "type": "HexInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "UInt32",
+          "seenIn": [
+            "DispBroker.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayScenarioContextLeaked",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000002",
+          "fields": [
+            "Entry:UInt32",
+            "EntryParameter:Binary",
+            "Counter:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "watchdog.sys",
+              "function": "?ReportLeaked@CDisplayScenarioContext@@QEAAXXZ",
+              "ea": "0x140012343",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Counter",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Entry",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "EntryParameter",
+          "type": "Binary",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayScenarioExpected",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000001",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "version:UInt16",
+            "sdcSeqId:UInt32",
+            "Topology:Struct[](33)",
+            "Flags:UInt64",
+            "FixedFlags:UInt64",
+            "Luid:UInt64",
+            "SourceId:UInt32",
+            "TargetId:UInt32",
+            "VideoStandard:UInt32",
+            "TotalSize:Struct(String)",
+            "cx:UInt32",
+            "cy:UInt32",
+            "ActiveSize:Struct(String)",
+            "cx:UInt32",
+            "cy:UInt32",
+            "PhysicalRefreshRate:Struct(String)",
+            "Numerator:UInt32",
+            "Denominator:UInt32",
+            "VirtualRefreshRate:Struct(String)",
+            "Numerator:UInt32",
+            "Denominator:UInt32",
+            "MinimumRefreshRate:Struct(String)",
+            "Numerator:UInt32",
+            "Denominator:UInt32",
+            "HSyncFreq:Struct(String)",
+            "Numerator:UInt32",
+            "Denominator:UInt32",
+            "PixelRate:UInt32",
+            "BoostRefreshRateMultiplier:UInt32",
+            "ScanLineOrdering:UInt32",
+            "TargetOutputTechnology:UInt32",
+            "TargetBaseOutputTechnology:UInt32",
+            "SourceModeInfo:Struct(TID)",
+            "PrimSurfSize:Struct(String)",
+            "cx:UInt32",
+            "cy:UInt32",
+            "VisibleRegionSize:Struct(String)",
+            "cx:UInt32",
+            "cy:UInt32",
+            "Stride:UInt32",
+            "PixelFormat:UInt32",
+            "ColorBasis:UInt32",
+            "PixelValueAccessMode:UInt32",
+            "IsStereo:Bool32",
+            "VirtualModeSupported:Bool32",
+            "Rotation:UInt32",
+            "ScalingToApply:UInt32",
+            "ScalingIntent:UInt32",
+            "Position:Struct(String)",
+            "x:UInt32",
+            "y:UInt32",
+            "ContentResolution:Struct(String)",
+            "x:UInt32",
+            "y:UInt32",
+            "DwmClipBox:Struct(Hex)",
+            "left:Int32",
+            "top:Int32",
+            "right:Int32",
+            "bottom:Int32",
+            "PrimaryClonePathIndex:UInt32",
+            "DisplayId:UInt32",
+            "StatusApply:Int32",
+            "WireFormat:UInt32",
+            "ColorSpace:UInt32",
+            "SyncGroupId:UInt32",
+            "TargetUsage:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "watchdog.sys",
+              "function": "?JournalSendReport@CDisplayScenarioJournal@@QEAAXXZ",
+              "ea": "0x140017872",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActiveSize",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "BoostRefreshRateMultiplier",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "ColorBasis",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "ColorSpace",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "ContentResolution",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Denominator",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "DisplayId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "DwmClipBox",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "FixedFlags",
+          "type": "UInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "UInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "HSyncFreq",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "IsStereo",
+          "type": "Bool32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Luid",
+          "type": "UInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "MinimumRefreshRate",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Numerator",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "PhysicalRefreshRate",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "PixelFormat",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "PixelRate",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "PixelValueAccessMode",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Position",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "PrimSurfSize",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "PrimaryClonePathIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Rotation",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "ScalingIntent",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "ScalingToApply",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "ScanLineOrdering",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "SourceId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "SourceModeInfo",
+          "type": "Struct(TID)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "StatusApply",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Stride",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "SyncGroupId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetBaseOutputTechnology",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetOutputTechnology",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetUsage",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Topology",
+          "type": "Struct[](33)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "TotalSize",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "VideoStandard",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "VirtualModeSupported",
+          "type": "Bool32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "VirtualRefreshRate",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "VisibleRegionSize",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "WireFormat",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "bottom",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "cx",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "cy",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "left",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "right",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "sdcSeqId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "top",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UInt16",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "x",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "y",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayScenarioRestore",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000002",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Entry:UInt32",
+            "EntryParameter:Binary",
+            "version:UInt16",
+            "sdcSeqId:UInt32",
+            "Journal:Struct(IPv4)",
+            "trigger:UInt32",
+            "triggerParam1:UInt32",
+            "triggerParam2:UInt32",
+            "calloutType:UInt32",
+            "adapterLuid:UInt64",
+            "scenarioTimestamp:FileTime",
+            "endTimeStamp:FileTime",
+            "MonitorOnReason:UInt32",
+            "Results:Struct[](Boolean)",
+            "Luid:UInt64",
+            "SourceId:UInt32",
+            "Result:Int32",
+            "SetTimingPathInfo:Struct[](IPv6)",
+            "AdapterLuid:HexInt64",
+            "VidPnTargetId:UInt32",
+            "OutputColorSpace:UInt32",
+            "SelectedWireFormat:UInt32",
+            "InputFlags:UInt32",
+            "TargetState:Struct(PID)",
+            "ConnectionChangeId:UInt64",
+            "TargetId:UInt32",
+            "ConnectionStatus:UInt32",
+            "TargetType:UInt32",
+            "VariableData2:UInt32",
+            "OutputFlags:UInt32",
+            "DiagnosticInfo:UInt32",
+            "Status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "watchdog.sys",
+              "function": "?JournalSendReport@CDisplayRestoreVidPnJournal@@QEAAXXZ",
+              "ea": "0x140017c57",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AdapterLuid",
+          "type": "HexInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "ConnectionChangeId",
+          "type": "UInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "ConnectionStatus",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "DiagnosticInfo",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Entry",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "EntryParameter",
+          "type": "Binary",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "InputFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Journal",
+          "type": "Struct(IPv4)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Luid",
+          "type": "UInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "MonitorOnReason",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "OutputColorSpace",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "OutputFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Results",
+          "type": "Struct[](Boolean)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "SelectedWireFormat",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "SetTimingPathInfo",
+          "type": "Struct[](IPv6)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "SourceId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetState",
+          "type": "Struct(PID)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetType",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "VariableData2",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "VidPnTargetId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "adapterLuid",
+          "type": "UInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "calloutType",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "endTimeStamp",
+          "type": "FileTime",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "scenarioTimestamp",
+          "type": "FileTime",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "sdcSeqId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "trigger",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "triggerParam1",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "triggerParam2",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UInt16",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayScenarioResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000001",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "version:UInt16",
+            "sdcSeqId:UInt32",
+            "Journal:Struct(23)",
+            "trigger:UInt32",
+            "triggerParam:UInt32",
+            "calloutType:UInt32",
+            "adapterLuid:UInt64",
+            "timeStamp:FileTime",
+            "startTimeStamp:FileTime",
+            "endTimeStamp:FileTime",
+            "sdcFlags:UInt32",
+            "sdcInternalFlags:UInt32",
+            "sdcResult:Int32",
+            "failureStage:UInt32",
+            "sessionType:UInt32",
+            "tsdddState:UInt32",
+            "dbSettings:UInt32",
+            "retryCount:UInt32",
+            "lastRetryResult:Int32",
+            "DisplayUniqueness:UInt32",
+            "AdapterUniqueness:UInt32",
+            "displayUniquenessDelta:UInt32",
+            "overlapCount:Int32",
+            "wasOptimized:Bool32",
+            "needModeReset:Bool32",
+            "applyPathsModalityReturn:Int32",
+            "Topology:Struct[](33)",
+            "Flags:UInt64",
+            "FixedFlags:UInt64",
+            "Luid:UInt64",
+            "SourceId:UInt32",
+            "TargetId:UInt32",
+            "VideoStandard:UInt32",
+            "TotalSize:Struct(String)",
+            "cx:UInt32",
+            "cy:UInt32",
+            "ActiveSize:Struct(String)",
+            "cx:UInt32",
+            "cy:UInt32",
+            "PhysicalRefreshRate:Struct(String)",
+            "Numerator:UInt32",
+            "Denominator:UInt32",
+            "VirtualRefreshRate:Struct(String)",
+            "Numerator:UInt32",
+            "Denominator:UInt32",
+            "MinimumRefreshRate:Struct(String)",
+            "Numerator:UInt32",
+            "Denominator:UInt32",
+            "HSyncFreq:Struct(String)",
+            "Numerator:UInt32",
+            "Denominator:UInt32",
+            "PixelRate:UInt32",
+            "BoostRefreshRateMultiplier:UInt32",
+            "ScanLineOrdering:UInt32",
+            "TargetOutputTechnology:UInt32",
+            "TargetBaseOutputTechnology:UInt32",
+            "SourceModeInfo:Struct(TID)",
+            "PrimSurfSize:Struct(String)",
+            "cx:UInt32",
+            "cy:UInt32",
+            "VisibleRegionSize:Struct(String)",
+            "cx:UInt32",
+            "cy:UInt32",
+            "Stride:UInt32",
+            "PixelFormat:UInt32",
+            "ColorBasis:UInt32",
+            "PixelValueAccessMode:UInt32",
+            "IsStereo:Bool32",
+            "VirtualModeSupported:Bool32",
+            "Rotation:UInt32",
+            "ScalingToApply:UInt32",
+            "ScalingIntent:UInt32",
+            "Position:Struct(String)",
+            "x:UInt32",
+            "y:UInt32",
+            "ContentResolution:Struct(String)",
+            "x:UInt32",
+            "y:UInt32",
+            "DwmClipBox:Struct(Hex)",
+            "left:Int32",
+            "top:Int32",
+            "right:Int32",
+            "bottom:Int32",
+            "PrimaryClonePathIndex:UInt32",
+            "DisplayId:UInt32",
+            "StatusApply:Int32",
+            "WireFormat:UInt32",
+            "ColorSpace:UInt32",
+            "SyncGroupId:UInt32",
+            "TargetUsage:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "watchdog.sys",
+              "function": "?JournalSendReport@CDisplayScenarioJournal@@QEAAXXZ",
+              "ea": "0x140017681",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActiveSize",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "AdapterUniqueness",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "BoostRefreshRateMultiplier",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "ColorBasis",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "ColorSpace",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "ContentResolution",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Denominator",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "DisplayId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "DisplayUniqueness",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "DwmClipBox",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "FixedFlags",
+          "type": "UInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "UInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "HSyncFreq",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "IsStereo",
+          "type": "Bool32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Journal",
+          "type": "Struct(23)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Luid",
+          "type": "UInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "MinimumRefreshRate",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Numerator",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "PhysicalRefreshRate",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "PixelFormat",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "PixelRate",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "PixelValueAccessMode",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Position",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "PrimSurfSize",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "PrimaryClonePathIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Rotation",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "ScalingIntent",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "ScalingToApply",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "ScanLineOrdering",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "SourceId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "SourceModeInfo",
+          "type": "Struct(TID)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "StatusApply",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Stride",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "SyncGroupId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetBaseOutputTechnology",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetOutputTechnology",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetUsage",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Topology",
+          "type": "Struct[](33)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "TotalSize",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "VideoStandard",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "VirtualModeSupported",
+          "type": "Bool32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "VirtualRefreshRate",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "VisibleRegionSize",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "WireFormat",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "adapterLuid",
+          "type": "UInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "applyPathsModalityReturn",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "bottom",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "calloutType",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "cx",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "cy",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "dbSettings",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "displayUniquenessDelta",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "endTimeStamp",
+          "type": "FileTime",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "failureStage",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "lastRetryResult",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "left",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "needModeReset",
+          "type": "Bool32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "overlapCount",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "retryCount",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "right",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "sdcFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "sdcInternalFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "sdcResult",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "sdcSeqId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "sessionType",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "startTimeStamp",
+          "type": "FileTime",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "timeStamp",
+          "type": "FileTime",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "top",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "trigger",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "triggerParam",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "tsdddState",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UInt16",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "wasOptimized",
+          "type": "Bool32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "x",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "y",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayScenarioSetMonitorPowerStage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x80",
+          "fields": [
+            "Stage:AnsiString",
+            "Status:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "watchdog.sys",
+              "function": "DisplayLogSetMonitorPowerStage",
+              "ea": "0x140016348",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "watchdog.sys",
+              "function": "DisplayLogSetMonitorPowerStage",
+              "ea": "0x1400163a8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Stage",
+          "type": "AnsiString",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayScenarioSpecializedData",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000001",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "version:UInt16",
+            "sdcSeqId:UInt32",
+            "type:UInt32",
+            "result:UInt32",
+            "stage:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "watchdog.sys",
+              "function": "?JournalSendReport@CDisplayScenarioJournal@@QEAAXXZ",
+              "ea": "0x140017939",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000001",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "version:UInt16",
+            "sdcSeqId:UInt32",
+            "type:UInt32",
+            "cdsFlags:UInt32",
+            "result:UInt32",
+            "stage:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "watchdog.sys",
+              "function": "?JournalSendReport@CDisplayScenarioJournal@@QEAAXXZ",
+              "ea": "0x140017a3f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "cdsFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "result",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "sdcSeqId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "stage",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "type",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UInt16",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayScenarioStateResults",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000001",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "version:UInt16",
+            "sdcSeqId:UInt32",
+            "Entry:UInt32",
+            "EntryParameter:Binary",
+            "DbTopologyNotFound:UInt8",
+            "DisplayState:Struct[](Unsigned)",
+            "Luid:UInt64",
+            "vidPnSrcId:UInt32",
+            "finalVisState:UInt32",
+            "turnVisCount:UInt32",
+            "visOnBits:UInt32",
+            "visiOffBits:UInt32",
+            "scaleFactor:UInt32",
+            "viewDistance:UInt32",
+            "desktopOverrideMin:Int32",
+            "desktopOverrideMax:Int32",
+            "desktopOverrideCur:Int32",
+            "optimalZoomX:Int32",
+            "optimalZoomY:Int32",
+            "dpiFlags:UInt32",
+            "physicalDpiX:Int32",
+            "physicalDpiY:Int32",
+            "prefScaleFactor:UInt32",
+            "commitVidPnResult:Int32",
+            "SetTimingPathInfo:Struct[](IPv6)",
+            "AdapterLuid:HexInt64",
+            "VidPnTargetId:UInt32",
+            "OutputColorSpace:UInt32",
+            "SelectedWireFormat:UInt32",
+            "InputFlags:UInt32",
+            "TargetState:Struct(PID)",
+            "ConnectionChangeId:UInt64",
+            "TargetId:UInt32",
+            "ConnectionStatus:UInt32",
+            "TargetType:UInt32",
+            "VariableData2:UInt32",
+            "OutputFlags:UInt32",
+            "DiagnosticInfo:UInt32",
+            "Status:Int32",
+            "rapidHpdType:UInt32",
+            "rapidHpdActivityId:GUID",
+            "rapidHpdChainStartType:UInt32",
+            "rapidHpdTimeSinceChainStartInMs:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "watchdog.sys",
+              "function": "?JournalSendReport@CDisplayScenarioJournal@@QEAAXXZ",
+              "ea": "0x140017779",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AdapterLuid",
+          "type": "HexInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "ConnectionChangeId",
+          "type": "UInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "ConnectionStatus",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "DbTopologyNotFound",
+          "type": "UInt8",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "DiagnosticInfo",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "DisplayState",
+          "type": "Struct[](Unsigned)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Entry",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "EntryParameter",
+          "type": "Binary",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "InputFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Luid",
+          "type": "UInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "OutputColorSpace",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "OutputFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "SelectedWireFormat",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "SetTimingPathInfo",
+          "type": "Struct[](IPv6)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetState",
+          "type": "Struct(PID)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetType",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "VariableData2",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "VidPnTargetId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "commitVidPnResult",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "desktopOverrideCur",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "desktopOverrideMax",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "desktopOverrideMin",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "dpiFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "finalVisState",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "optimalZoomX",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "optimalZoomY",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "physicalDpiX",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "physicalDpiY",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "prefScaleFactor",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "rapidHpdActivityId",
+          "type": "GUID",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "rapidHpdChainStartType",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "rapidHpdTimeSinceChainStartInMs",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "rapidHpdType",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "scaleFactor",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "sdcSeqId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "turnVisCount",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UInt16",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "vidPnSrcId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "viewDistance",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "visOnBits",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "visiOffBits",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisplayScenarioUserPaths",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000001",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "version:UInt16",
+            "sdcSeqId:UInt32",
+            "Topology:Struct[](24)",
+            "Flags:UInt64",
+            "FixedFlags:UInt64",
+            "Luid:UInt64",
+            "SourceId:UInt32",
+            "TargetId:UInt32",
+            "PhysicalTargetModeInfo:Struct(SocketAddress)",
+            "VideoStandard:UInt32",
+            "TotalSize:Struct(String)",
+            "cx:UInt32",
+            "cy:UInt32",
+            "ActiveSize:Struct(String)",
+            "cx:UInt32",
+            "cy:UInt32",
+            "PhysicalRefreshRate:Struct(String)",
+            "Numerator:UInt32",
+            "Denominator:UInt32",
+            "VirtualRefreshRate:Struct(String)",
+            "Numerator:UInt32",
+            "Denominator:UInt32",
+            "MinimumRefreshRate:Struct(String)",
+            "Numerator:UInt32",
+            "Denominator:UInt32",
+            "HSyncFreq:Struct(String)",
+            "Numerator:UInt32",
+            "Denominator:UInt32",
+            "PixelRate:UInt32",
+            "BoostRefreshRateMultiplier:UInt32",
+            "ScanLineOrdering:UInt32",
+            "TargetOutputTechnology:UInt32",
+            "TargetBaseOutputTechnology:UInt32",
+            "SourceModeInfo:Struct(Boolean)",
+            "Width:UInt32",
+            "Height:UInt32",
+            "PixelFormat:UInt32",
+            "IsStereo:Bool32",
+            "VirtualModeSupported:Bool32",
+            "Rotation:UInt32",
+            "ScalingToApply:UInt32",
+            "ScalingIntent:UInt32",
+            "Position:Struct(String)",
+            "x:UInt32",
+            "y:UInt32",
+            "ContentResolution:Struct(String)",
+            "x:UInt32",
+            "y:UInt32",
+            "DwmClipBox:Struct(Hex)",
+            "left:Int32",
+            "top:Int32",
+            "right:Int32",
+            "bottom:Int32",
+            "PrimaryClonePathIndex:UInt32",
+            "DisplayId:UInt32",
+            "StatusApply:Int32",
+            "WireFormat:Struct(String)",
+            "ColorEncoding:UInt32",
+            "BitsPerPixel:UInt32",
+            "ColorSpace:UInt32",
+            "SyncGroupId:UInt32",
+            "TargetUsage:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "watchdog.sys",
+              "function": "?JournalSendReport@CDisplayScenarioJournal@@QEAAXXZ",
+              "ea": "0x140017b2a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActiveSize",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "BitsPerPixel",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "BoostRefreshRateMultiplier",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "ColorEncoding",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "ColorSpace",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "ContentResolution",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Denominator",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "DisplayId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "DwmClipBox",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "FixedFlags",
+          "type": "UInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "UInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "HSyncFreq",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Height",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "IsStereo",
+          "type": "Bool32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Luid",
+          "type": "UInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "MinimumRefreshRate",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Numerator",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "PhysicalRefreshRate",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "PhysicalTargetModeInfo",
+          "type": "Struct(SocketAddress)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "PixelFormat",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "PixelRate",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Position",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "PrimaryClonePathIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Rotation",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "ScalingIntent",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "ScalingToApply",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "ScanLineOrdering",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "SourceId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "SourceModeInfo",
+          "type": "Struct(Boolean)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "StatusApply",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "SyncGroupId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetBaseOutputTechnology",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetOutputTechnology",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetUsage",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Topology",
+          "type": "Struct[](24)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "TotalSize",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "VideoStandard",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "VirtualModeSupported",
+          "type": "Bool32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "VirtualRefreshRate",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "Width",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "WireFormat",
+          "type": "Struct(String)",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "bottom",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "cx",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "cy",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "left",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "right",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "sdcSeqId",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "top",
+          "type": "Int32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UInt16",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "x",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        },
+        {
+          "fieldName": "y",
+          "type": "UInt32",
+          "seenIn": [
+            "watchdog.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IoDeviceControlFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000100",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ControlCode:UInt32",
+            "Internal:UInt8(Boolean)",
+            "Status:UInt32(NTStatus)",
+            "AdapterLuid:UInt64",
+            "TargetId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "monitor.sys",
+              "function": "IoDeviceControlTelemetry",
+              "ea": "0x14000206c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor.sys",
+              "function": "IoDeviceControlTelemetry",
+              "ea": "0x1400020b1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys",
+              "function": "IoDeviceControlTelemetry",
+              "ea": "0x14000206c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys",
+              "function": "IoDeviceControlTelemetry",
+              "ea": "0x1400020b1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AdapterLuid",
+          "type": "UInt64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "ControlCode",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "Internal",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetId",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LinkTrainingInfo",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x4000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Version:UInt32",
+            "AdapterLuid:HexInt64",
+            "VidPnTargetId:UInt32",
+            "ConnectionChangeId:UInt32",
+            "LinkStatus:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?HandleLinkTrainingTimeout@VIDPN_MGR@@QEAAXIEPEAE0@Z",
+              "ea": "0x14025dc6a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?HandleLinkTrainingTimeout@VIDPN_MGR@@QEAAXIEPEAE0@Z",
+              "ea": "0x14025dd99",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x4000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Version:UInt32",
+            "AdapterLuid:HexInt64",
+            "VidPnTargetId:UInt32",
+            "ConnectionChangeId:UInt64",
+            "LinkStatus:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?SetTimingsFromVidPn@VIDPN_MGR@@QEAAJKW4_DMM_CLIENT_TYPE@@PEAVDMMVIDPN@@PEAUD3DKMT_VIDPN_SOURCE_MASKS@@PEAU_DMM_SET_TIMING_RESULT@@EPEAVDXGDEVICE@@PEAVCOREDEVICEACCESS@@@Z",
+              "ea": "0x1402f87e5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?UpdateTargetLinkTrainingStatus@VIDPN_MGR@@QEAAJPEAU_DXGK_CONNECTION_CHANGE@@EPEAU_DXGK_DISPLAY_SCENARIO_CONTEXT@@E@Z",
+              "ea": "0x14025dfa0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AdapterLuid",
+          "type": "HexInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "ConnectionChangeId",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "ConnectionChangeId",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "LinkStatus",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "VidPnTargetId",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LoadXddmDriver",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "pwszDriver:UnicodeString",
+            "LoadDeviceType:UInt32",
+            "LoadDeviceSubtype:UInt32",
+            "bImage:Bool32",
+            "LoadInSessionSpace:Bool32",
+            "bLoadCddAsFilter:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ldevLoadImage",
+              "ea": "0x1401011ff",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "LoadDeviceSubtype",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "LoadDeviceType",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "LoadInSessionSpace",
+          "type": "Bool32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "bImage",
+          "type": "Bool32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "bLoadCddAsFilter",
+          "type": "Bool32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "pwszDriver",
+          "type": "UnicodeString",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MdmGlobalStat",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Version:UInt32",
+            "MuxErrorCode:UInt32(NTStatus)",
+            "MdmStatus:UInt32",
+            "SystemSupportsStaticMdmNow:UInt8(Boolean)",
+            "OsStaticMdmSupport:UInt32",
+            "OsDynamicMdmSupport:UInt32",
+            "TotalMuxCount:UInt32",
+            "ActiveMuxPairs:UInt32",
+            "EnableStaticMdmWithoutFullSupport:UInt8(Boolean)",
+            "EnableDynamicMdmWithoutFullSupport:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?LogMdmStatusTelemetry@DISPLAY_MUX_MGR@@AEBAXW4DISPLAYCONFIG_DISPLAYMUX_RUNTIME_STATUS@@J_N@Z",
+              "ea": "0x1400858f2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000200",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Version:UInt32",
+            "MuxErrorCode:UInt32(NTStatus)",
+            "MdmStatus:UInt32",
+            "SystemSupportsStaticMdmNow:UInt8(Boolean)",
+            "OsStaticMdmSupport:UInt32",
+            "OsDynamicMdmSupport:UInt32",
+            "TotalMuxCount:UInt32",
+            "ActiveMuxPairs:UInt32",
+            "EnableStaticMdmWithoutFullSupport:UInt8(Boolean)",
+            "EnableDynamicMdmWithoutFullSupport:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?LogMdmStatusTelemetry@DISPLAY_MUX_MGR@@AEBAXW4DISPLAYCONFIG_DISPLAYMUX_RUNTIME_STATUS@@J_N@Z",
+              "ea": "0x1400859bc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActiveMuxPairs",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "EnableDynamicMdmWithoutFullSupport",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "EnableStaticMdmWithoutFullSupport",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "MdmStatus",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "MuxErrorCode",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "OsDynamicMdmSupport",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "OsStaticMdmSupport",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "SystemSupportsStaticMdmNow",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "TotalMuxCount",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MonitorBrightnessInitialized",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000100",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "DisplayAdapterLuid:HexInt64",
+            "VidPnTargetId:UInt32",
+            "BrightnessInterfaceVersion:UInt32",
+            "BrightValue:UInt32",
+            "DimmedValue:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "monitor.sys",
+              "function": "HandleModernBrightnessIoctl",
+              "ea": "0x1400197e0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor.sys",
+              "function": "HandleModernBrightnessIoctl",
+              "ea": "0x140019836",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys",
+              "function": "HandleModernBrightnessIoctl",
+              "ea": "0x1400197e0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys",
+              "function": "HandleModernBrightnessIoctl",
+              "ea": "0x140019836",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BrightValue",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "BrightnessInterfaceVersion",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "DimmedValue",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "DisplayAdapterLuid",
+          "type": "HexInt64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "VidPnTargetId",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MonitorCapabilities",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000020",
+          "fields": [
+            "Version:UInt32",
+            "DisplayAdapterLuid:HexInt64",
+            "VidPnTargetId:UInt32",
+            "PanelBrightnessCaps:Binary",
+            "PanelBrightnessRanges:Binary",
+            "IsAcpiBrightness:UInt8(Boolean)",
+            "PublishedBrightnessInterface:GUID",
+            "PowerNotificationStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "monitor.sys",
+              "function": "EvtDriverDeviceAdd",
+              "ea": "0x140015c3c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor.sys",
+              "function": "EvtDriverDeviceAdd",
+              "ea": "0x140015cfc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys",
+              "function": "EvtDriverDeviceAdd",
+              "ea": "0x140015c3c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys",
+              "function": "EvtDriverDeviceAdd",
+              "ea": "0x140015cfc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DisplayAdapterLuid",
+          "type": "HexInt64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "IsAcpiBrightness",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "PanelBrightnessCaps",
+          "type": "Binary",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "PanelBrightnessRanges",
+          "type": "Binary",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "PowerNotificationStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "PublishedBrightnessInterface",
+          "type": "GUID",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "VidPnTargetId",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MonitorDimStateRequestFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000100",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "DisplayAdapterLuid:HexInt64",
+            "VidPnTargetId:UInt32",
+            "CurrentDimState:Bool32",
+            "NewDimsState:Bool32",
+            "IsBrightnessValueInitialized:Bool32",
+            "WasBrightnessChangeRequested:Bool32",
+            "StatusFromDriver:UInt32(NTStatus)",
+            "FailureReason:UInt32",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "monitor.sys",
+              "function": "DimStateTelemetry",
+              "ea": "0x1400018d8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys",
+              "function": "DimStateTelemetry",
+              "ea": "0x1400018d8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CurrentDimState",
+          "type": "Bool32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "DisplayAdapterLuid",
+          "type": "HexInt64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "FailureReason",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "IsBrightnessValueInitialized",
+          "type": "Bool32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "NewDimsState",
+          "type": "Bool32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "StatusFromDriver",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "VidPnTargetId",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "WasBrightnessChangeRequested",
+          "type": "Bool32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MonitorInitBrightness",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000100",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Reason:UInt32",
+            "Status:UInt32(NTStatus)",
+            "AdapterLuid:UInt64",
+            "TargetId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "monitor.sys",
+              "function": "InitBrightnessTelemetry",
+              "ea": "0x140004bf2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys",
+              "function": "InitBrightnessTelemetry",
+              "ea": "0x140004bf2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AdapterLuid",
+          "type": "UInt64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetId",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MonitorOnOff",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x10",
+          "fields": [
+            "version:UInt16",
+            "seqId:UInt32",
+            "screenOnSessionGuid:GUID",
+            "adapterLuid:UInt64",
+            "targetId:UInt32",
+            "callerOrigin:UInt8",
+            "currentTime:UInt64",
+            "previousTime:UInt64",
+            "currentState:UInt8",
+            "previousState:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?LogMonitorObjectOnOffState@DXGMONITOR@@QEAAXAEBU_GUID@@IW4Enum@MONITOR_ON_OFF_CALLER_ORIGIN@@@Z",
+              "ea": "0x1403c4255",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000010",
+          "fields": [
+            "version:UInt16",
+            "seqId:UInt32",
+            "screenOnSessionGuid:GUID",
+            "adapterLuid:UInt64",
+            "targetId:UInt32",
+            "callerOrigin:UInt8",
+            "currentTime:UInt64",
+            "previousTime:UInt64",
+            "currentState:UInt8",
+            "previousState:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?LogMonitorObjectOnOffState@DXGMONITOR@@QEAAXAEBU_GUID@@IW4Enum@MONITOR_ON_OFF_CALLER_ORIGIN@@@Z",
+              "ea": "0x1403c4323",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "adapterLuid",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "callerOrigin",
+          "type": "UInt8",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "currentState",
+          "type": "UInt8",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "currentTime",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "previousState",
+          "type": "UInt8",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "previousTime",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "screenOnSessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "seqId",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "targetId",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UInt16",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OPMContextCreate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000400",
+          "fields": [
+            "Count:Int64",
+            "PartA_PrivTags:UInt64",
+            "OpmSemantic:UInt32",
+            "Status:UInt32(NTStatus)",
+            "ProcessName:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?DpiOpmLogCreateContext@@YAXJI@Z",
+              "ea": "0x140063df9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "OpmSemantic",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessName",
+          "type": "AnsiString",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OPMSetLevel",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000400",
+          "fields": [
+            "Count:Int64",
+            "PartA_PrivTags:UInt64",
+            "ProtectionType:UInt32",
+            "ProtectionLevel:UInt32",
+            "Status:UInt32(NTStatus)",
+            "ProcessName:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?DpiOpmLogSetLevel@@YAXJII@Z",
+              "ea": "0x14008a3eb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessName",
+          "type": "AnsiString",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "ProtectionLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "ProtectionType",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProximityPowerPress",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "escaped:UInt8(Boolean)",
+            "interval:UInt64",
+            "pressCount:UInt32",
+            "scenarioCount:UInt32",
+            "escapeCount:UInt32",
+            "runtime:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "?ShouldEscapeProximity@@YAEXZ",
+              "ea": "0x1401adf62",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "escapeCount",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "escaped",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "interval",
+          "type": "UInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "pressCount",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "runtime",
+          "type": "UInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "scenarioCount",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RemoteOPMUnsupported",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000400",
+          "fields": [
+            "Count:Int64",
+            "PartA_PrivTags:UInt64",
+            "IoControlCode:UInt32",
+            "InRemoteMappingSession:Bool32",
+            "ProcessName:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "_lambda_eaecb3877008d04769bbc086d157a70f_::operator()",
+              "ea": "0x14019ffe1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "InRemoteMappingSession",
+          "type": "Bool32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "IoControlCode",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessName",
+          "type": "AnsiString",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RemoteVsyncInterval",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800",
+          "fields": [
+            "MilliSeconds:UInt32",
+            "AdapterLuid:HexInt64",
+            "TargetId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?LogVsyncInterval@BLTQUEUE@@AEAAXT_LARGE_INTEGER@@0@Z",
+              "ea": "0x140037223",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AdapterLuid",
+          "type": "HexInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "MilliSeconds",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetId",
+          "type": "HexInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RemoteVsyncIntervalAg",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000800",
+          "fields": [
+            "Count:Int64",
+            "PartA_PrivTags:UInt64",
+            "MilliSeconds:UInt32",
+            "AdapterLuid:HexInt64",
+            "TargetId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?LogVsyncInterval@BLTQUEUE@@AEAAXT_LARGE_INTEGER@@0@Z",
+              "ea": "0x14003719f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AdapterLuid",
+          "type": "HexInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "MilliSeconds",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetId",
+          "type": "HexInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RemoteVsyncRecoveryStatus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "VsyncType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?StartVSync@BLTQUEUE@@AEAAX_NW4VsyncEvent@1@@Z",
+              "ea": "0x14028320a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "VsyncType",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RemoteVsyncRecoveryStatusAg",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000800",
+          "fields": [
+            "Count:Int64",
+            "PartA_PrivTags:UInt64",
+            "Status:UInt32(NTStatus)",
+            "VsyncType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?StartVSync@BLTQUEUE@@AEAAX_NW4VsyncEvent@1@@Z",
+              "ea": "0x1402831a8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "VsyncType",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RemoteVsyncRequestAg",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000800",
+          "fields": [
+            "Count:Int64",
+            "PartA_PrivTags:UInt64",
+            "ProcessName:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?LogWaitForVsyncCalls@BLTQUEUE@@AEAAXXZ",
+              "ea": "0x1403b84d1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessName",
+          "type": "AnsiString",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RemoteVsyncStartStatus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "Reason:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?LogStartStatus@BLTQUEUE_REMOTE_VSYNC_SOURCE@@AEAAXJW4StartExitReason@1@@Z",
+              "ea": "0x140283a12",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Reason",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RemoteVsyncStartStatusAg",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000800",
+          "fields": [
+            "Count:Int64",
+            "PartA_PrivTags:UInt64",
+            "Status:UInt32(NTStatus)",
+            "Reason:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?LogStartStatus@BLTQUEUE_REMOTE_VSYNC_SOURCE@@AEAAXJW4StartExitReason@1@@Z",
+              "ea": "0x1402839bf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RemoteVsyncTimeout",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?LogRemoteVsyncTimeout@BLTQUEUE@@AEAAXXZ",
+              "ea": "0x14028266b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "RemoteVsyncTimeoutAg",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000800",
+          "fields": [
+            "Count:Int64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?LogRemoteVsyncTimeout@BLTQUEUE@@AEAAXXZ",
+              "ea": "0x1402825f3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SetBrightnessFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000100",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "RequestedBrightness:UInt64",
+            "AppliedBrightness:UInt64",
+            "IsNits:UInt8(Boolean)",
+            "IsThermallyThrottled:UInt8(Boolean)",
+            "StatusFromDriver:UInt32(NTStatus)",
+            "AdapterLuid:UInt64",
+            "TargetId:UInt32",
+            "Reason:UInt32",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "monitor.sys",
+              "function": "IoDeviceControlTelemetry",
+              "ea": "0x140001eda",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor.sys",
+              "function": "SetBrightnessTelemetry",
+              "ea": "0x140001c46",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys",
+              "function": "IoDeviceControlTelemetry",
+              "ea": "0x140001eda",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys",
+              "function": "SetBrightnessTelemetry",
+              "ea": "0x140001c46",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AdapterLuid",
+          "type": "UInt64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "AppliedBrightness",
+          "type": "UInt64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "IsNits",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "IsThermallyThrottled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "RequestedBrightness",
+          "type": "UInt64",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "StatusFromDriver",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetId",
+          "type": "UInt32",
+          "seenIn": [
+            "monitor.sys",
+            "monitor_monitor.inf_amd64_f34c845bb3958726_C0130784.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SetTimingsFromVidPnDDICall",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x4000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Version:UInt32",
+            "AdapterLuid:HexInt64",
+            "DdiReturnStatus:UInt32(NTStatus)",
+            "PathCount:UInt32",
+            "ResultFlags:UInt32",
+            "DdiTimeInUs:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?DdiSetTimingsFromVidPn@ADAPTER_DISPLAY@@QEAAJPEAU_DXGKARG_SETTIMINGSFROMVIDPN@@@Z",
+              "ea": "0x1404085e6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AdapterLuid",
+          "type": "HexInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "DdiReturnStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "DdiTimeInUs",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PathCount",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "ResultFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "USB4MonitorAddPowerRef",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1000",
+          "fields": [
+            "PoFxCompoentId:UInt32",
+            "AdapterLuid:UInt64",
+            "TargetId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?AddUsb4HRPowerRef@Usb4HostRouterPoFxRefv2@DxgMonitor@@QEAAJU_LUID@@I@Z",
+              "ea": "0x140277ad6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AdapterLuid",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PoFxCompoentId",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetId",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "USB4MonitorFailedToFindHostRouter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000002000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Version:UInt32",
+            "Status:UInt32(NTStatus)",
+            "Dpcd_DP_IN_Adapter_Number:UInt32",
+            "Dpcd_USB4_Driver_ID:UInt32",
+            "ActivityId:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?_CreatePhysicalMonitor@MONITOR_MGR@@QEAAJIPEAU_DEVICE_OBJECT@@EEAEAVMONITOR_REF_ACCESSOR@@PEAU_DXGK_CONNECTION_USB4_INFO@@PEAU_DXGK_DISPLAY_SCENARIO_CONTEXT@@@Z",
+              "ea": "0x1403ba0bc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityId",
+          "type": "GUID",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Dpcd_DP_IN_Adapter_Number",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Dpcd_USB4_Driver_ID",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "USB4MonitorPowerOnStatus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000001000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Version:UInt32",
+            "Stage:UInt32",
+            "Status:UInt32(NTStatus)",
+            "AdapterLuid:UInt64",
+            "Usb4MonitorCount:UInt32",
+            "FirstFailedVidPnTarget:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "_lambda_4f1b21fdf227c274fd119a17c5b036b5_::operator()",
+              "ea": "0x1402774e0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AdapterLuid",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "FirstFailedVidPnTarget",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Stage",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Usb4MonitorCount",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "USB4MonitorQueuePowerOnWork",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1000",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "AdapterLuid:UInt64",
+            "Usb4MonitorCount:UInt32",
+            "FirstVidPnTarget:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "_lambda_c7448c75b3dac8478dfa1698e822be3e_::operator()",
+              "ea": "0x140277769",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AdapterLuid",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "FirstVidPnTarget",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Usb4MonitorCount",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "USB4MonitorRemovePowerRef",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1000",
+          "fields": [
+            "PoFxCompoentId:UInt32",
+            "PoFxRemoveComponentRelationStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?RemoveUsb4HRPowerRefInternal@Usb4HostRouterPoFxRefv2@DxgMonitor@@AEAAJXZ",
+              "ea": "0x1402785cf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PoFxCompoentId",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PoFxRemoveComponentRelationStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "USB4MonitorReportedWithoutDriverSupport",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000002000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Version:UInt32",
+            "AdapterLuid:HexInt64",
+            "TargetId:UInt32",
+            "Dpcd_DP_IN_Adapter_Number:UInt32",
+            "Dpcd_USB4_Driver_ID:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "DxgkQueryConnectionChanges",
+              "ea": "0x140041ac0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AdapterLuid",
+          "type": "HexInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Dpcd_DP_IN_Adapter_Number",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Dpcd_USB4_Driver_ID",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetId",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "USB4MonitorSetupStatus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000001000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Version:UInt32",
+            "Status:UInt32(NTStatus)",
+            "ActivityId:GUID",
+            "Stage:UInt32",
+            "Dpcd_DP_IN_Adapter_Number:UInt32",
+            "Dpcd_USB4_Driver_ID:UInt32",
+            "Dpcd_USB4_ROUTER_TOPOLOGY_ID:Binary"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "_lambda_95d838af50bdc3f1bdaf124795879894_::operator()",
+              "ea": "0x14027760e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityId",
+          "type": "GUID",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Dpcd_DP_IN_Adapter_Number",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Dpcd_USB4_Driver_ID",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Dpcd_USB4_ROUTER_TOPOLOGY_ID",
+          "type": "Binary",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Stage",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "USB4MonitorSkipDepartureValueUpdate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1000",
+          "fields": [
+            "AdapterLuid:UInt64",
+            "TargetId:UInt32",
+            "NewValue:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?CancelSkippedDepartures@MonitorUsb4State@DxgMonitor@@QEAAXXZ",
+              "ea": "0x140277be1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?ReportHpdDepartureSkipped@MonitorUsb4State@DxgMonitor@@QEAAXXZ",
+              "ea": "0x140278665",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AdapterLuid",
+          "type": "UInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "NewValue",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetId",
+          "type": "UInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "USB4MonitorSkipRemoval",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1000",
+          "fields": [
+            "TargetID:HexInt32",
+            "DisplayAdapterLuid:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "dxgkrnl.sys",
+              "function": "?_HandleRemovePhysicalMonitor@MONITOR_MGR@@QEAAJIEPEAU_DXGK_DISPLAY_SCENARIO_CONTEXT@@@Z",
+              "ea": "0x1403c3929",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DisplayAdapterLuid",
+          "type": "HexInt64",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetID",
+          "type": "HexInt32",
+          "seenIn": [
+            "dxgkrnl.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UserDetectedBlackScreen",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000008",
+          "fields": [
+            "EventVersion:UInt16",
+            "RecoveringAttempt:UInt32",
+            "ConnectionProtocol:UInt16(Hex)",
+            "QueryDisplayConfigStatus:UInt32(NTStatus)",
+            "DrvDxgkPollDisplayChildrenStatus:UInt32(NTStatus)",
+            "RecoveryStatus:UInt32(NTStatus)",
+            "NumPaths:UInt32",
+            "DISPLAYCONFIG_PATH_INFO_INTERNAL:Binary",
+            "Flags:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "xxxDisplayDiagBlackScreenDetected",
+              "ea": "0x1401ab8bc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConnectionProtocol",
+          "type": "UInt16(Hex)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "DISPLAYCONFIG_PATH_INFO_INTERNAL",
+          "type": "Binary",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "DrvDxgkPollDisplayChildrenStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "EventVersion",
+          "type": "UInt16",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "NumPaths",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "QueryDisplayConfigStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "RecoveringAttempt",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "RecoveryStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

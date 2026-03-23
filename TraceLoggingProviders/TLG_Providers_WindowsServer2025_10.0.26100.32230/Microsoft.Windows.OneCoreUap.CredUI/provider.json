@@ -1,0 +1,74 @@
+{
+  "providerName": "Microsoft.Windows.OneCoreUap.CredUI",
+  "guid": "{98209579-992E-4F9C-87D8-3BEAACCCBCF6}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "credui.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "ImpersonationLevel",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "isImpersonating:Bool32",
+            "impersonationLevel:Int32",
+            "procCommandLine:CountedString",
+            "caller:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "credui.dll",
+              "function": "?ReportImpersonationStatus@@YAXPEBD@Z",
+              "ea": "0x180009cec",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "credui.dll"
+          ]
+        },
+        {
+          "fieldName": "caller",
+          "type": "AnsiString",
+          "seenIn": [
+            "credui.dll"
+          ]
+        },
+        {
+          "fieldName": "impersonationLevel",
+          "type": "Int32",
+          "seenIn": [
+            "credui.dll"
+          ]
+        },
+        {
+          "fieldName": "isImpersonating",
+          "type": "Bool32",
+          "seenIn": [
+            "credui.dll"
+          ]
+        },
+        {
+          "fieldName": "procCommandLine",
+          "type": "CountedString",
+          "seenIn": [
+            "credui.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

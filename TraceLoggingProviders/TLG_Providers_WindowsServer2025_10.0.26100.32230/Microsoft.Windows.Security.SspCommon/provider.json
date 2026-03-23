@@ -1,0 +1,212 @@
+{
+  "providerName": "Microsoft.Windows.Security.SspCommon",
+  "guid": "{AFDA4FD8-2FE5-5C75-BA0E-7D5C0B225E12}",
+  "os": "WindowsServer2025",
+  "binaryCount": 3,
+  "binaries": [
+    "kerberos.dll",
+    "msv1_0.dll",
+    "wdigest.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "EPAAuditInfoClient",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "svchostTag:UnicodeString",
+            "callingImageName:UnicodeString",
+            "isSuppressChannelBinding:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "kerberos.dll",
+              "function": "?LogClientDataForEpaAudit@SspTelemetry@@YAX_NPEAU_LSA_SECPKG_FUNCTION_TABLE@@@Z",
+              "ea": "0x18000bda5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?LogClientDataForEpaAudit@SspTelemetry@@YAX_NPEAU_LSA_SECPKG_FUNCTION_TABLE@@@Z",
+              "ea": "0x18001db50",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wdigest.dll",
+              "function": "?LogClientDataForEpaAudit@SspTelemetry@@YAX_NPEAU_LSA_SECPKG_FUNCTION_TABLE@@@Z",
+              "ea": "0x180036925",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "kerberos.dll",
+            "msv1_0.dll",
+            "wdigest.dll"
+          ]
+        },
+        {
+          "fieldName": "callingImageName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "kerberos.dll",
+            "msv1_0.dll",
+            "wdigest.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "kerberos.dll",
+            "msv1_0.dll",
+            "wdigest.dll"
+          ]
+        },
+        {
+          "fieldName": "isSuppressChannelBinding",
+          "type": "Bool32",
+          "seenIn": [
+            "kerberos.dll",
+            "msv1_0.dll",
+            "wdigest.dll"
+          ]
+        },
+        {
+          "fieldName": "svchostTag",
+          "type": "UnicodeString",
+          "seenIn": [
+            "kerberos.dll",
+            "msv1_0.dll",
+            "wdigest.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EPAAuditInfoServer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "svchostTag:UnicodeString",
+            "callingImageName:UnicodeString",
+            "isUpgradedClient:Bool32",
+            "fContextReq:UInt32",
+            "auditFlags:UInt32",
+            "status:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "kerberos.dll",
+              "function": "?LogServerDataForEpaAudit@SspTelemetry@@YAXPEAU_SEC_CHANNEL_BINDINGS_RESULT@@PEAU_LSA_SECPKG_FUNCTION_TABLE@@KEK@Z",
+              "ea": "0x1800f5114",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?LogServerDataForEpaAudit@SspTelemetry@@YAXPEAU_SEC_CHANNEL_BINDINGS_RESULT@@PEAU_LSA_SECPKG_FUNCTION_TABLE@@KEK@Z",
+              "ea": "0x180018714",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wdigest.dll",
+              "function": "?LogServerDataForEpaAudit@SspTelemetry@@YAXPEAU_SEC_CHANNEL_BINDINGS_RESULT@@PEAU_LSA_SECPKG_FUNCTION_TABLE@@KEK@Z",
+              "ea": "0x180036ad9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "kerberos.dll",
+            "msv1_0.dll",
+            "wdigest.dll"
+          ]
+        },
+        {
+          "fieldName": "auditFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "kerberos.dll",
+            "msv1_0.dll",
+            "wdigest.dll"
+          ]
+        },
+        {
+          "fieldName": "callingImageName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "kerberos.dll",
+            "msv1_0.dll",
+            "wdigest.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "kerberos.dll",
+            "msv1_0.dll",
+            "wdigest.dll"
+          ]
+        },
+        {
+          "fieldName": "fContextReq",
+          "type": "UInt32",
+          "seenIn": [
+            "kerberos.dll",
+            "msv1_0.dll",
+            "wdigest.dll"
+          ]
+        },
+        {
+          "fieldName": "isUpgradedClient",
+          "type": "Bool32",
+          "seenIn": [
+            "kerberos.dll",
+            "msv1_0.dll",
+            "wdigest.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32",
+          "seenIn": [
+            "kerberos.dll",
+            "msv1_0.dll",
+            "wdigest.dll"
+          ]
+        },
+        {
+          "fieldName": "svchostTag",
+          "type": "UnicodeString",
+          "seenIn": [
+            "kerberos.dll",
+            "msv1_0.dll",
+            "wdigest.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

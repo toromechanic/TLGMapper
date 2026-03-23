@@ -1,0 +1,296 @@
+{
+  "providerName": "Microsoft.CAndE.ADFabric.CDJ.Recovery",
+  "guid": "{5AA2DC10-E0E7-4BB2-A186-D230D79442D7}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "dsreg.dll"
+  ],
+  "uniqueEventCount": 5,
+  "events": [
+    {
+      "eventName": "RecoveryCheckEvent",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32",
+            "stage:UnicodeString",
+            "message:UnicodeString",
+            "deviceKeysHealthCheckResult:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dsreg.dll",
+              "function": "DsrCLI",
+              "ea": "0x18008fbe8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32",
+            "stage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "dsreg.dll",
+              "function": "DsrCLI",
+              "ea": "0x18008fd66",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "deviceKeysHealthCheckResult",
+          "type": "UInt32",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "stage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RecoveryCheckStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "isForced:UInt8(Boolean)",
+            "triggeringError:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "dsreg.dll",
+              "function": "DsrCLI",
+              "ea": "0x18008f4fa",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "isForced",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "triggeringError",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RecoveryCheckStop",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32",
+            "exitCode:Int32",
+            "win32Error:Int32",
+            "description:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "dsreg.dll",
+              "function": "DsrCLI",
+              "ea": "0x18008f5ee",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "dsreg.dll",
+              "function": "DsrCLI",
+              "ea": "0x18008f8bc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "dsreg.dll",
+              "function": "DsrCLI",
+              "ea": "0x18008fa44",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32",
+            "exitCode:Int32",
+            "win32Error:Int32",
+            "description:UnicodeString",
+            "recoveryStartCount:UInt32",
+            "joinType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dsreg.dll",
+              "function": "DsrCLI",
+              "ea": "0x18008fe1e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "description",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "exitCode",
+          "type": "Int32",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "joinType",
+          "type": "UInt32",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "recoveryStartCount",
+          "type": "UInt32",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "win32Error",
+          "type": "Int32",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RecoveryNotificationStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "isAdmin:UInt8(Boolean)",
+            "joinType:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "dsreg.dll",
+              "function": "?NotifyUser@DsrCmdRecovery@@SAJW4_DSREG_JOIN_TYPE@@@Z",
+              "ea": "0x1800a8c00",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "isAdmin",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "joinType",
+          "type": "Int32",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RecoveryNotificationStop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32",
+            "buttonId:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "dsreg.dll",
+              "function": "?NotifyUser@DsrCmdRecovery@@SAJW4_DSREG_JOIN_TYPE@@@Z",
+              "ea": "0x1800a8c68",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "buttonId",
+          "type": "Int32",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "dsreg.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

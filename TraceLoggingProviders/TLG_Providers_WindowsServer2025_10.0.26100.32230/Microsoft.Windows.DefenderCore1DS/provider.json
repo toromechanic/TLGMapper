@@ -1,0 +1,1170 @@
+{
+  "providerName": "Microsoft.Windows.DefenderCore1DS",
+  "guid": "{05FF9269-F73F-5D04-7F30-398BB2F6E5D0}",
+  "os": "WindowsServer2025",
+  "binaryCount": 8,
+  "binaries": [
+    "MdeDiag.dll",
+    "MpClient.dll",
+    "MpDefenderCoreService.exe",
+    "MpDlpService.exe",
+    "MpSvc.dll",
+    "MsMpEng.exe",
+    "NisSrv.exe",
+    "UpdatePlatform.amd64fre.exe"
+  ],
+  "uniqueEventCount": 9,
+  "events": [
+    {
+      "eventName": "MdCommonAggregateMetric",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x500000000000",
+          "fields": [
+            "Count:Int64",
+            "SumValue:Int64",
+            "MinValue:Int64",
+            "MaxValue:Int64",
+            "PartA_PrivTags:UInt64",
+            "_Priority:Int32",
+            "ProductName:UnicodeString",
+            "FeatureName:UnicodeString",
+            "MetricName:UnicodeString",
+            "MetricType:Int32",
+            "MetricCode:Int64",
+            "MetricData:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MdeDiag.dll",
+              "function": "MdeDiagnosticsRequest",
+              "ea": "0x1800046e2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MpSvc.dll",
+              "function": "EmitHealthMetricEvents",
+              "ea": "0x1802086a8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MpSvc.dll",
+              "function": "EmitHealthMetricEvents",
+              "ea": "0x180208999",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MpSvc.dll",
+              "function": "LogEngineInitLatencyEvent",
+              "ea": "0x1802430bc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MpSvc.dll",
+              "function": "OnDemandScanTelemetry::TransmitScanLatency",
+              "ea": "0x180354d47",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "_Priority:Int32",
+            "ProductName:UnicodeString",
+            "FeatureName:UnicodeString",
+            "MetricName:UnicodeString",
+            "MetricType:Int32",
+            "MetricCode:Int64",
+            "MetricData:UnicodeString",
+            "Count:Int64",
+            "SumValue:Int64",
+            "MinValue:Int64",
+            "MaxValue:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "MpDefenderCoreService.exe",
+              "function": "?log_event@mp_common_agg_metric@details@MpWatchDog@@QEBAXXZ",
+              "ea": "0x140035d9c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "SumValue:Int64",
+            "MinValue:Int64",
+            "MaxValue:Int64",
+            "PartA_PrivTags:UInt64",
+            "_Priority:Int32",
+            "ProductName:UnicodeString",
+            "FeatureName:UnicodeString",
+            "MetricName:UnicodeString",
+            "MetricType:Int32",
+            "MetricCode:Int64",
+            "MetricData:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MpSvc.dll",
+              "function": "?SendData@SccTelemetry@@QEAAXJPEB_WAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
+              "ea": "0x18032dfbb",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MpSvc.dll",
+              "function": "EmitHealthMetricEvents",
+              "ea": "0x180208b27",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "MdeDiag.dll",
+            "MpDefenderCoreService.exe",
+            "MpSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "FeatureName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MdeDiag.dll",
+            "MpDefenderCoreService.exe",
+            "MpSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "MaxValue",
+          "type": "Int64",
+          "seenIn": [
+            "MdeDiag.dll",
+            "MpDefenderCoreService.exe",
+            "MpSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "MetricCode",
+          "type": "Int64",
+          "seenIn": [
+            "MdeDiag.dll",
+            "MpDefenderCoreService.exe",
+            "MpSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "MetricData",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MdeDiag.dll",
+            "MpDefenderCoreService.exe",
+            "MpSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "MetricName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MdeDiag.dll",
+            "MpDefenderCoreService.exe",
+            "MpSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "MetricType",
+          "type": "Int32",
+          "seenIn": [
+            "MdeDiag.dll",
+            "MpDefenderCoreService.exe",
+            "MpSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "MinValue",
+          "type": "Int64",
+          "seenIn": [
+            "MdeDiag.dll",
+            "MpDefenderCoreService.exe",
+            "MpSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "MdeDiag.dll",
+            "MpDefenderCoreService.exe",
+            "MpSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "ProductName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MdeDiag.dll",
+            "MpDefenderCoreService.exe",
+            "MpSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "SumValue",
+          "type": "Int64",
+          "seenIn": [
+            "MdeDiag.dll",
+            "MpDefenderCoreService.exe",
+            "MpSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "_Priority",
+          "type": "Int32",
+          "seenIn": [
+            "MdeDiag.dll",
+            "MpDefenderCoreService.exe",
+            "MpSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MdCommonRawMetric",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "_Priority:Int32",
+            "ProductName:UnicodeString",
+            "FeatureName:UnicodeString",
+            "MetricName:UnicodeString",
+            "MetricType:Int32",
+            "MetricCode:Int64",
+            "MetricData:UnicodeString",
+            "CorrelationId:UnicodeString",
+            "BaseValue:Int64",
+            "RawValue:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "MpClient.dll",
+              "function": "?ReportTelemetry@CMpSignaturesUpdateGlobal@MpClient@@AEAAXHHJPEA_W_NAEAE0K@Z",
+              "ea": "0x180032c44",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MpClient.dll",
+              "function": "?ReportTelemetry@CMpSignaturesUpdateGlobal@MpClient@@AEAAXHHJPEA_W_NAEAE0K@Z",
+              "ea": "0x180032da9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MpClient.dll",
+              "function": "MpPlatformUpdate",
+              "ea": "0x180080abf",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MpDefenderCoreService.exe",
+              "function": "?log_event@mp_common_raw_metric@details@MpWatchDog@@QEBAXXZ",
+              "ea": "0x140035ad0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MpSvc.dll",
+              "function": "?InitHealthMonitor@@YAJPEAUtagHEALTH_MONITOR@@@Z",
+              "ea": "0x1800eae0d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MpSvc.dll",
+              "function": "?SendData@SccTelemetry@@QEAAXJPEB_WAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
+              "ea": "0x18032e0e5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MpSvc.dll",
+              "function": "?SendRawData@SccTelemetry@@QEAAXJPEB_WAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
+              "ea": "0x18032e3de",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MpSvc.dll",
+              "function": "EmitHealthMetricEvents",
+              "ea": "0x180208821",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MpSvc.dll",
+              "function": "OnDemandScanTelemetry::TransmitScanSuccessRate",
+              "ea": "0x180354f09",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MpSvc.dll",
+              "function": "OnDemandScanTelemetry::TransmitScanTriggerCount",
+              "ea": "0x180355014",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x500000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "_Priority:Int32",
+            "ProductName:UnicodeString",
+            "FeatureName:UnicodeString",
+            "MetricName:UnicodeString",
+            "MetricType:Int32",
+            "MetricCode:Int64",
+            "MetricData:UnicodeString",
+            "CorrelationId:UnicodeString",
+            "BaseValue:Int64",
+            "RawValue:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "MpDefenderCoreService.exe",
+              "function": "?WriteExceptionMetric@MpCommonExceptionMetric@@AEBAXKPEB_W0@Z",
+              "ea": "0x1400e96c7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MpDlpService.exe",
+              "function": "?WriteExceptionMetric@MpCommonExceptionMetric@@AEBAXKPEB_W0@Z",
+              "ea": "0x1400571b7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MsMpEng.exe",
+              "function": "?WriteExceptionMetric@MpCommonExceptionMetric@@AEBAXKPEB_W0@Z",
+              "ea": "0x140006ec7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "NisSrv.exe",
+              "function": "?WriteExceptionMetric@MpCommonExceptionMetric@@AEBAXKPEB_W0@Z",
+              "ea": "0x14025dcf7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "UpdatePlatform.amd64fre.exe",
+              "function": "sub_14000BCEC",
+              "ea": "0x14000bd67",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BaseValue",
+          "type": "Int64",
+          "seenIn": [
+            "MpClient.dll",
+            "MpDefenderCoreService.exe",
+            "MpDlpService.exe",
+            "MpSvc.dll",
+            "MsMpEng.exe",
+            "NisSrv.exe",
+            "UpdatePlatform.amd64fre.exe"
+          ]
+        },
+        {
+          "fieldName": "CorrelationId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpClient.dll",
+            "MpDefenderCoreService.exe",
+            "MpDlpService.exe",
+            "MpSvc.dll",
+            "MsMpEng.exe",
+            "NisSrv.exe",
+            "UpdatePlatform.amd64fre.exe"
+          ]
+        },
+        {
+          "fieldName": "FeatureName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpClient.dll",
+            "MpDefenderCoreService.exe",
+            "MpDlpService.exe",
+            "MpSvc.dll",
+            "MsMpEng.exe",
+            "NisSrv.exe",
+            "UpdatePlatform.amd64fre.exe"
+          ]
+        },
+        {
+          "fieldName": "MetricCode",
+          "type": "Int64",
+          "seenIn": [
+            "MpClient.dll",
+            "MpDefenderCoreService.exe",
+            "MpDlpService.exe",
+            "MpSvc.dll",
+            "MsMpEng.exe",
+            "NisSrv.exe",
+            "UpdatePlatform.amd64fre.exe"
+          ]
+        },
+        {
+          "fieldName": "MetricData",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpClient.dll",
+            "MpDefenderCoreService.exe",
+            "MpDlpService.exe",
+            "MpSvc.dll",
+            "MsMpEng.exe",
+            "NisSrv.exe",
+            "UpdatePlatform.amd64fre.exe"
+          ]
+        },
+        {
+          "fieldName": "MetricName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpClient.dll",
+            "MpDefenderCoreService.exe",
+            "MpDlpService.exe",
+            "MpSvc.dll",
+            "MsMpEng.exe",
+            "NisSrv.exe",
+            "UpdatePlatform.amd64fre.exe"
+          ]
+        },
+        {
+          "fieldName": "MetricType",
+          "type": "Int32",
+          "seenIn": [
+            "MpClient.dll",
+            "MpDefenderCoreService.exe",
+            "MpDlpService.exe",
+            "MpSvc.dll",
+            "MsMpEng.exe",
+            "NisSrv.exe",
+            "UpdatePlatform.amd64fre.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "MpClient.dll",
+            "MpDefenderCoreService.exe",
+            "MpDlpService.exe",
+            "MpSvc.dll",
+            "MsMpEng.exe",
+            "NisSrv.exe",
+            "UpdatePlatform.amd64fre.exe"
+          ]
+        },
+        {
+          "fieldName": "ProductName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpClient.dll",
+            "MpDefenderCoreService.exe",
+            "MpDlpService.exe",
+            "MpSvc.dll",
+            "MsMpEng.exe",
+            "NisSrv.exe",
+            "UpdatePlatform.amd64fre.exe"
+          ]
+        },
+        {
+          "fieldName": "RawValue",
+          "type": "Int64",
+          "seenIn": [
+            "MpClient.dll",
+            "MpDefenderCoreService.exe",
+            "MpDlpService.exe",
+            "MpSvc.dll",
+            "MsMpEng.exe",
+            "NisSrv.exe",
+            "UpdatePlatform.amd64fre.exe"
+          ]
+        },
+        {
+          "fieldName": "_Priority",
+          "type": "Int32",
+          "seenIn": [
+            "MpClient.dll",
+            "MpDefenderCoreService.exe",
+            "MpDlpService.exe",
+            "MpSvc.dll",
+            "MsMpEng.exe",
+            "NisSrv.exe",
+            "UpdatePlatform.amd64fre.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MdCoreSvcHeartbeat",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "_Priority:Int32",
+            "EventCount:UInt64",
+            "SensorInit:UInt32",
+            "ActiveSensors:UInt64",
+            "SensorAnomalyCount:UInt64",
+            "EcsLastUpdateTime:UInt64",
+            "EcsTag:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MpDefenderCoreService.exe",
+              "function": "?SendHeartbeatEvent@Wd1dsManager@MpWatchDog@@AEAAXXZ",
+              "ea": "0x14002e31d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActiveSensors",
+          "type": "UInt64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "EcsLastUpdateTime",
+          "type": "UInt64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "EcsTag",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "EventCount",
+          "type": "UInt64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "SensorAnomalyCount",
+          "type": "UInt64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "SensorInit",
+          "type": "UInt32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "_Priority",
+          "type": "Int32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MdCoreSvcMemoryLeakAlert",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "_Priority:Int32",
+            "SensorName:UnicodeString",
+            "SensorTarget:UnicodeString",
+            "AlertLevel:UInt32",
+            "AlgorithmName:UnicodeString",
+            "TimeToFailure:UInt64",
+            "R2:UInt32",
+            "Alpha:Int64",
+            "Beta:Int64",
+            "SeriesSize:UInt32",
+            "CurrentMemoryUsage:UInt32",
+            "CriticalMemoryThreshold:UInt32",
+            "PID:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "MpDefenderCoreService.exe",
+              "function": "?Analyze@CMpWdPerfMemLeakAnalyzer@MpWatchDog@@UEAA_NKAEBV?$CMpWdServiceMonitor@K_K@2@PEB_WPEAK@Z",
+              "ea": "0x14005937a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AlertLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "AlgorithmName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "Alpha",
+          "type": "Int64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "Beta",
+          "type": "Int64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "CriticalMemoryThreshold",
+          "type": "UInt32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "CurrentMemoryUsage",
+          "type": "UInt32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "PID",
+          "type": "UInt32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "R2",
+          "type": "UInt32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "SensorName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "SensorTarget",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "SeriesSize",
+          "type": "UInt32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "TimeToFailure",
+          "type": "UInt64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "_Priority",
+          "type": "Int32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MdCoreSvcRemediationNotify",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "_Priority:Int32",
+            "Source:UnicodeString",
+            "Name:UnicodeString",
+            "Message:UnicodeString",
+            "PayloadName:UnicodeString",
+            "PayloadHash:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "MpDefenderCoreService.exe",
+              "function": "?SendTelemetry@CMpWdEcsRemediationExecutor@MpWatchDog@@AEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@00K@Z",
+              "ea": "0x140046f59",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "Name",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "PayloadHash",
+          "type": "UInt32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "PayloadName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "Source",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "_Priority",
+          "type": "Int32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MdCoreSvcRemediationResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "_Priority:Int32",
+            "Source:UnicodeString",
+            "PayloadName:UnicodeString",
+            "PayloadHash:UInt32",
+            "HRESULT:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "MpDefenderCoreService.exe",
+              "function": "?Execute@CMpWdEcsRemediationExecutor@MpWatchDog@@QEAAJAEBVRemediationPayload@2@@Z",
+              "ea": "0x1400462a7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HRESULT",
+          "type": "UInt32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "PayloadHash",
+          "type": "UInt32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "PayloadName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "Source",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "_Priority",
+          "type": "Int32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MdCoreSvcSensorAlert",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "_Priority:Int32",
+            "SensorName:UnicodeString",
+            "SensorId:UInt32",
+            "SensorTarget:UnicodeString",
+            "SensorSignal:UInt64",
+            "AlertLevel:UInt32",
+            "SensorMin:UInt64",
+            "SensorAvg:UInt64",
+            "SensorMax:UInt64",
+            "LastValue:UInt64",
+            "TotalSystem:UInt64",
+            "TotalSystemUsage:UInt64",
+            "ThresholdLow:UInt64",
+            "ThresholdHigh:UInt64",
+            "AlertContext:UInt64",
+            "ProcessorArchitecture:UInt32",
+            "PID:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "MpDefenderCoreService.exe",
+              "function": "?SendSensorAlertTelemetry@?$CMpWdPerfCommonSensor@N@MpWatchDog@@UEAAJW4WD_SENSOR_ID@2@KKKW4WD_SENSOR_ALERT_CONTEXT@2@@Z",
+              "ea": "0x14005538b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MpDefenderCoreService.exe",
+              "function": "?SendSensorAlertTelemetry@?$CMpWdPerfCommonSensor@_K@MpWatchDog@@UEAAJW4WD_SENSOR_ID@2@KKKW4WD_SENSOR_ALERT_CONTEXT@2@@Z",
+              "ea": "0x140056961",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AlertContext",
+          "type": "UInt64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "AlertLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "LastValue",
+          "type": "UInt64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "PID",
+          "type": "UInt32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "ProcessorArchitecture",
+          "type": "UInt32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "SensorAvg",
+          "type": "UInt64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "SensorId",
+          "type": "UInt32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "SensorMax",
+          "type": "UInt64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "SensorMin",
+          "type": "UInt64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "SensorName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "SensorSignal",
+          "type": "UInt64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "SensorTarget",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "ThresholdHigh",
+          "type": "UInt64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "ThresholdLow",
+          "type": "UInt64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "TotalSystem",
+          "type": "UInt64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "TotalSystemUsage",
+          "type": "UInt64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "_Priority",
+          "type": "Int32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MdCoreSvcSensorHealthFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "_Priority:Int32",
+            "SensorName:UnicodeString",
+            "HRESULT:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "MpDefenderCoreService.exe",
+              "function": "?TriggerSensorScans@WdAnomalyDetector@MpWatchDog@@QEAAJXZ",
+              "ea": "0x14001fd09",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "SensorName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "_Priority",
+          "type": "Int32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MdCoreSvcSensorInitFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "_Priority:Int32",
+            "ModuleName:UnicodeString",
+            "HRESULT:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "MpDefenderCoreService.exe",
+              "function": "?OnStartup@CMpWatchdogServiceCallback@@UEAAX_KPEBQEB_W@Z",
+              "ea": "0x140012264",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "ModuleName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        },
+        {
+          "fieldName": "_Priority",
+          "type": "Int32",
+          "seenIn": [
+            "MpDefenderCoreService.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

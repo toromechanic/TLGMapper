@@ -1,0 +1,54 @@
+{
+  "providerName": "Win32kDeadzonePalmTelemetryProvider",
+  "guid": "{72A4952F-DB5C-4D90-8F9D-0ED3465B315E}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "win32kbase.sys"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "DeadzonePalmInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "DeadzoneTouches:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "?_UploadTelemetryData@DeadzonePalmTelemetry@@AEAAXH@Z",
+              "ea": "0x1401259ff",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "win32kbase.sys",
+              "function": "?_UploadTelemetryData@DeadzonePalmTelemetry@@AEAAXH@Z",
+              "ea": "0x140125a32",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "win32kbase.sys",
+              "function": "?_UploadTelemetryData@DeadzonePalmTelemetry@@AEAAXH@Z",
+              "ea": "0x140125b5f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DeadzoneTouches",
+          "type": "AnsiString",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "providerName": "Microsoft.Windows.Print.PassthroughHelper",
+  "guid": "{1A026FF9-6981-5097-76EB-CA81EEFB351B}",
+  "os": "WindowsServer2025",
+  "binaryCount": 3,
+  "binaries": [
+    "Print.PrintSupport.Source.dll",
+    "PrintConfig.dll",
+    "PrintConfig_3_B8E856F1.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "SetIppSupportedFormats",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "SupportedPdlContentTypes:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "PrintConfig.dll",
+              "function": "sub_18003C10C",
+              "ea": "0x18003c28c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PrintConfig_3_B8E856F1.dll",
+              "function": "??$SetIppSupportedFormats@PEBG@PassthroughHelperTelemetry@@SAX$$QEAPEBG@Z",
+              "ea": "0x18003c28c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "PrintConfig.dll",
+            "PrintConfig_3_B8E856F1.dll"
+          ]
+        },
+        {
+          "fieldName": "SupportedPdlContentTypes",
+          "type": "UnicodeString",
+          "seenIn": [
+            "PrintConfig.dll",
+            "PrintConfig_3_B8E856F1.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SetPsaSupportedFormats",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "SupportedPdlContentTypes:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "Print.PrintSupport.Source.dll",
+              "function": "??$SetPsaSupportedFormats@PEBG@PassthroughHelperTelemetry@@SAX$$QEAPEBG@Z",
+              "ea": "0x180009959",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Print.PrintSupport.Source.dll"
+          ]
+        },
+        {
+          "fieldName": "SupportedPdlContentTypes",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Print.PrintSupport.Source.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "providerName": "Microsoft.Windows.Security.BitLocker.CSP.State.Update",
+  "guid": "{C106BE38-921E-4100-880A-4A3B41B1C95F}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "efsext.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "BitLocker.CSP.Update.State",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "BitLockerStatus:Int32",
+            "data:UInt32",
+            "hr:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "efsext.dll",
+              "function": "?UpdateBitLockerStatusReg@@YAJW4BITLOCKER_CSP_STATUS@@K@Z",
+              "ea": "0x18000fab7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BitLockerStatus",
+          "type": "Int32",
+          "seenIn": [
+            "efsext.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "efsext.dll"
+          ]
+        },
+        {
+          "fieldName": "data",
+          "type": "UInt32",
+          "seenIn": [
+            "efsext.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "efsext.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

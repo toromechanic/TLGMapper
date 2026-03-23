@@ -1,0 +1,247 @@
+{
+  "providerName": "Microsoft.Windows.Diagnostics.Troubleshooter.Networking",
+  "guid": "{3192497F-BB99-5AA1-10AA-680F4AA2EEE2}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "ndfapi.dll",
+    "netdiagfx.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "AggregatedNdfApiCalls",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "Count:Int64",
+            "ProcessPath:AnsiString",
+            "APIName:AnsiString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ndfapi.dll",
+              "function": "?TelemeterAPICall@@YAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+              "ea": "0x18000f3a8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "APIName",
+          "type": "AnsiString",
+          "seenIn": [
+            "ndfapi.dll"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ndfapi.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ndfapi.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessPath",
+          "type": "AnsiString",
+          "seenIn": [
+            "ndfapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NdfDiagnosticsComplete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "sessionId:GUID",
+            "ListHelperClasses:UnicodeString",
+            "NumRootCausesFound:Int32",
+            "ListRepairGuids:UnicodeString",
+            "NLMStatusAtComplete:UnicodeString",
+            "NLMStatusAtCompleteCode:UInt32",
+            "NLMStatusAtLaunch:UnicodeString",
+            "NLMStatusAtLaunchCode:UInt32",
+            "ConnectedMediaAtLaunch:UInt8",
+            "ConnectedMediaAtComplete:UInt8",
+            "DurationInMs:UInt64",
+            "HResult:Int32(HResult)",
+            "FinalStopStatus:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "netdiagfx.dll",
+              "function": "?Diagnose@NetworkDiagnosticsEngine@@QEAAJPEAVDiagnosticsClient@@@Z",
+              "ea": "0x18001b468",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConnectedMediaAtComplete",
+          "type": "UInt8",
+          "seenIn": [
+            "netdiagfx.dll"
+          ]
+        },
+        {
+          "fieldName": "ConnectedMediaAtLaunch",
+          "type": "UInt8",
+          "seenIn": [
+            "netdiagfx.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationInMs",
+          "type": "UInt64",
+          "seenIn": [
+            "netdiagfx.dll"
+          ]
+        },
+        {
+          "fieldName": "FinalStopStatus",
+          "type": "Int32",
+          "seenIn": [
+            "netdiagfx.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "netdiagfx.dll"
+          ]
+        },
+        {
+          "fieldName": "ListHelperClasses",
+          "type": "UnicodeString",
+          "seenIn": [
+            "netdiagfx.dll"
+          ]
+        },
+        {
+          "fieldName": "ListRepairGuids",
+          "type": "UnicodeString",
+          "seenIn": [
+            "netdiagfx.dll"
+          ]
+        },
+        {
+          "fieldName": "NLMStatusAtComplete",
+          "type": "UnicodeString",
+          "seenIn": [
+            "netdiagfx.dll"
+          ]
+        },
+        {
+          "fieldName": "NLMStatusAtCompleteCode",
+          "type": "UInt32",
+          "seenIn": [
+            "netdiagfx.dll"
+          ]
+        },
+        {
+          "fieldName": "NLMStatusAtLaunch",
+          "type": "UnicodeString",
+          "seenIn": [
+            "netdiagfx.dll"
+          ]
+        },
+        {
+          "fieldName": "NLMStatusAtLaunchCode",
+          "type": "UInt32",
+          "seenIn": [
+            "netdiagfx.dll"
+          ]
+        },
+        {
+          "fieldName": "NumRootCausesFound",
+          "type": "Int32",
+          "seenIn": [
+            "netdiagfx.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "GUID",
+          "seenIn": [
+            "netdiagfx.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NdfDiagnosticsLaunched",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "sessionId:GUID",
+            "NLMStatus:UnicodeString",
+            "ConnectedMedia:UInt8",
+            "NLMStatusCode:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "netdiagfx.dll",
+              "function": "?Diagnose@NetworkDiagnosticsEngine@@QEAAJPEAVDiagnosticsClient@@@Z",
+              "ea": "0x180019d2f",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConnectedMedia",
+          "type": "UInt8",
+          "seenIn": [
+            "netdiagfx.dll"
+          ]
+        },
+        {
+          "fieldName": "NLMStatus",
+          "type": "UnicodeString",
+          "seenIn": [
+            "netdiagfx.dll"
+          ]
+        },
+        {
+          "fieldName": "NLMStatusCode",
+          "type": "UInt32",
+          "seenIn": [
+            "netdiagfx.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "GUID",
+          "seenIn": [
+            "netdiagfx.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

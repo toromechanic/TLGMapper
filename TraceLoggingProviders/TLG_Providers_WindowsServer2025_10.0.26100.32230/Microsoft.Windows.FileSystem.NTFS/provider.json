@@ -1,0 +1,6447 @@
+{
+  "providerName": "Microsoft.Windows.FileSystem.NTFS",
+  "guid": "{FFD1D811-6488-4D44-82AF-C31D372609A9}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "ntfs.sys"
+  ],
+  "uniqueEventCount": 37,
+  "events": [
+    {
+      "eventName": "BadReparsePoint",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "NtStatus:UInt32(NTStatus)",
+            "ReparsePointLength:UInt32",
+            "FoundReparseBuffer:UInt8(Boolean)",
+            "ReparseTag:UInt32",
+            "FileAttributes:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryBadReparse",
+              "ea": "0x140239520",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FileAttributes",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "FoundReparseBuffer",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "NtStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "ReparsePointLength",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "ReparseTag",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BypassIoEnabled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "ProcessName:AnsiString",
+            "OutFlags:HexInt32",
+            "OpStatus:UInt32(NTStatus)",
+            "FailingDriverName:CountedString",
+            "FailureReason:CountedString",
+            "VolumeBypassIoFlags:HexInt32",
+            "StorageDriverName:CountedString",
+            "SSF_FailingDriverName:CountedString",
+            "SSF_FailingDriverReason:CountedString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryBypassIoEnable",
+              "ea": "0x1400e623a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "FailingDriverName",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "FailureReason",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "OpStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "OutFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessName",
+          "type": "AnsiString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "SSF_FailingDriverName",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "SSF_FailingDriverReason",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "StorageDriverName",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "VolumeBypassIoFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CompactFrs",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "activityId:GUID",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "status:UInt32(NTStatus)",
+            "fileAttributes:UInt32",
+            "fileSizeBytes:Int64",
+            "attrListBeforeCompactionSizeBytes:Int64",
+            "attrListAfterCompactionSizeBytes:Int64",
+            "totalFrsCompactionTimeMS:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryCompactFrs",
+              "ea": "0x1400e6461",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "activityId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "attrListAfterCompactionSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "attrListBeforeCompactionSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "fileAttributes",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "fileSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalFrsCompactionTimeMS",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Compression",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "fileExt:UnicodeString",
+            "allocatedBefore:Int64",
+            "allocatedAfter:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryCompression",
+              "ea": "0x140217ac2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "allocatedAfter",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "allocatedBefore",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "fileExt",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Corruption",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "bootPartition:UInt8(Boolean)",
+            "diskId:GUID",
+            "vendorId:CountedString",
+            "productId:CountedString",
+            "productRevision:CountedString",
+            "deviceSerialNumber:CountedString",
+            "busType:UInt32",
+            "deviceNumber:UInt32",
+            "nativeNVMe:UInt8(Boolean)",
+            "adapterSerialNumber:CountedString",
+            "vcbState:UInt32",
+            "vcbState2:UInt32",
+            "corruptionState:UInt32",
+            "corruptionFlags:UInt32",
+            "headerFlags:UInt16",
+            "verb:UInt16",
+            "target:UInt32",
+            "descriptionSignature:UInt32",
+            "outcome:Int32",
+            "outcomeTime:FileTime",
+            "selfhealingHint1:UInt64",
+            "selfhealingHint2:UInt64",
+            "selfhealingResolution1:UInt64",
+            "selfhealingResolution2:UInt64",
+            "sourceTag:UInt32",
+            "irpFunctionCodes:UInt32",
+            "outcomeHr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryCorruption",
+              "ea": "0x1400e6a10",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "adapterSerialNumber",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "bootPartition",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "busType",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "corruptionFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "corruptionState",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "descriptionSignature",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceSerialNumber",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "diskId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "headerFlags",
+          "type": "UInt16",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "irpFunctionCodes",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "nativeNVMe",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "outcome",
+          "type": "Int32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "outcomeHr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "outcomeTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "productId",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "productRevision",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "selfhealingHint1",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "selfhealingHint2",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "selfhealingResolution1",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "selfhealingResolution2",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "sourceTag",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "target",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "vcbState2",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "vcbState",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "vendorId",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "verb",
+          "type": "UInt16",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CreateFile",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "hasEncryptionContext:UInt8(Boolean)",
+            "fileAttributes:UInt32",
+            "createDisposition:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryCreateFile",
+              "ea": "0x1402c0869",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "createDisposition",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "fileAttributes",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "hasEncryptionContext",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DeleteFile",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "totalCountDeleteFile:UInt32",
+            "totalCountDeletesInDesktop:UInt32",
+            "totalCountDeletesInDocuments:UInt32",
+            "totalCountDeletesInDownloads:UInt32",
+            "totalCountDeletesInMusic:UInt32",
+            "totalCountDeletesInPictures:UInt32",
+            "totalCountDeletesInVideos:UInt32",
+            "totalCountDeletesInOther:UInt32",
+            "deleteFileSummaryEntry:Struct[](IPv4)",
+            "processName:AnsiString",
+            "countDeletesInDesktop:UInt32",
+            "countDeletesInDocuments:UInt32",
+            "countDeletesInDownloads:UInt32",
+            "countDeletesInMusic:UInt32",
+            "countDeletesInPictures:UInt32",
+            "countDeletesInVideos:UInt32",
+            "countDeletesInOther:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryPeriodicDeleteFileSummary",
+              "ea": "0x1400e9084",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "countDeletesInDesktop",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "countDeletesInDocuments",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "countDeletesInDownloads",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "countDeletesInMusic",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "countDeletesInOther",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "countDeletesInPictures",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "countDeletesInVideos",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "deleteFileSummaryEntry",
+          "type": "Struct[](IPv4)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "processName",
+          "type": "AnsiString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalCountDeleteFile",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalCountDeletesInDesktop",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalCountDeletesInDocuments",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalCountDeletesInDownloads",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalCountDeletesInMusic",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalCountDeletesInOther",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalCountDeletesInPictures",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalCountDeletesInVideos",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DeleteReparsePoint",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "vcbState:UInt32",
+            "vcbState2:UInt32",
+            "volumeStateMisc:UInt32",
+            "vendorId:CountedString",
+            "productId:CountedString",
+            "busType:Int32",
+            "isRepair:UInt8(Boolean)",
+            "ReparseTag:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryDeleteReparse",
+              "ea": "0x1400e6cd2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "ReparseTag",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "busType",
+          "type": "Int32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "isRepair",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "productId",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "vcbState2",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "vcbState",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "vendorId",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeStateMisc",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DismountBegin",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "activityId:GUID",
+            "volumeId:GUID",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "volumeInfoKey:UInt32",
+            "isAsync:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryDismountBegin",
+              "ea": "0x1400e6f37",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "activityId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "isAsync",
+          "type": "Bool32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DismountEnd",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "activityId:GUID",
+            "volumeId:GUID",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "volumeInfoKey:UInt32",
+            "status:UInt32(NTStatus)",
+            "elapsedTimeTicks:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryDismountEnd",
+              "ea": "0x1400e7083",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "activityId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeTicks",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EA",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "isWrite:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryEA",
+              "ea": "0x140131554",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryEA",
+              "ea": "0x1401315ae",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "isWrite",
+          "type": "Bool32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EncryptionFailed(Aggregate)",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "diskId:GUID",
+            "vendorId:CountedString",
+            "productId:CountedString",
+            "busType:Int32",
+            "originalVolumeId:GUID",
+            "encryptionOperation:UInt32",
+            "status:UInt32(NTStatus)",
+            "onlineEncryption:UInt8(Boolean)",
+            "bitlockerOffload:UInt8(Boolean)",
+            "logFileFull:UInt8(Boolean)",
+            "abnormalTerminated:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryFailedEncryption",
+              "ea": "0x1400e7165",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "abnormalTerminated",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "bitlockerOffload",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "busType",
+          "type": "Int32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "diskId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "encryptionOperation",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "logFileFull",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "onlineEncryption",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "originalVolumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "productId",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "vendorId",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FileLevelTrim",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "periodDurationMicroSec:Int64",
+            "operationCount:UInt64",
+            "repostedOperationCount:UInt64",
+            "failedOperationCount:UInt64",
+            "operationRangeCount:UInt64",
+            "operationByteCount:UInt64",
+            "operationLongRangeByteCount:UInt64",
+            "unalignedRangeCount:UInt64",
+            "bytesInUnalignedRanges:UInt64",
+            "operationTrimExtentCount:UInt64",
+            "nonBlockAlignedTrimByteCount:UInt64",
+            "reclaimedByteCount:UInt64",
+            "byteCountBucketValues:UnicodeString",
+            "bucketizedOperationCount:UInt64[]",
+            "bucketizedOperationByteCount:UInt64[]",
+            "bucketizedOperationBytesReclaimed:UInt64[]",
+            "bucketizedOperationLatency:UInt64[]",
+            "latencyBucketValues:UnicodeString",
+            "bucketizedCountLatency:UInt64[]",
+            "failedOperationStatusCodes:UInt32[]",
+            "failedOperationCounts:UInt64[]"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryFileLevelTrim",
+              "ea": "0x1400e7edc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "bucketizedCountLatency",
+          "type": "UInt64[]",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "bucketizedOperationByteCount",
+          "type": "UInt64[]",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "bucketizedOperationBytesReclaimed",
+          "type": "UInt64[]",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "bucketizedOperationCount",
+          "type": "UInt64[]",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "bucketizedOperationLatency",
+          "type": "UInt64[]",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "byteCountBucketValues",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "bytesInUnalignedRanges",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "failedOperationCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "failedOperationCounts",
+          "type": "UInt64[]",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "failedOperationStatusCodes",
+          "type": "UInt32[]",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "latencyBucketValues",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "nonBlockAlignedTrimByteCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "operationByteCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "operationCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "operationLongRangeByteCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "operationRangeCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "operationTrimExtentCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "periodDurationMicroSec",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "reclaimedByteCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "repostedOperationCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "unalignedRangeCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Functionality",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "maxNamedStreamSize:Int64",
+            "usageQueryFileLayout:UInt32",
+            "usageEARead:UInt32",
+            "usageEAWrite:UInt32",
+            "usageObjectId:UInt32",
+            "usageHardlinks:UInt32",
+            "usagePinnedFiles:UInt32",
+            "usageQuota:UInt32",
+            "CountDirectoryStreamEncrypt:Int64",
+            "CountDirectoryStreamEncryptSucceeded:Int64",
+            "CountDirectoryStreamDecrypt:Int64",
+            "CountDirectoryStreamDecryptSucceeded:Int64",
+            "CountDirectoryFileDecrypt:Int64",
+            "CountDirectoryFileDecryptSucceeded:Int64",
+            "CountFileOnlineEfsFileEncrypt:Int64",
+            "CountFileOnlineEfsFileEncryptSucceeded:Int64",
+            "CountFileOnlineEfsStreamEncrypt:Int64",
+            "CountFileOnlineEfsStreamEncryptSucceeded:Int64",
+            "CountFileOnlineEfsStreamDecrypt:Int64",
+            "CountFileOnlineEfsStreamDecryptSucceeded:Int64",
+            "CountFileOnlineEfsFileDecrypt:Int64",
+            "CountFileOnlineEfsFileDecryptSucceeded:Int64",
+            "CountFileLegacyEfsFileEncrypt:Int64",
+            "CountFileLegacyEfsFileEncryptSucceeded:Int64",
+            "CountFileLegacyEfsStreamEncrypt:Int64",
+            "CountFileLegacyEfsStreamEncryptSucceeded:Int64",
+            "CountFileLegacyEfsStreamDecrypt:Int64",
+            "CountFileLegacyEfsStreamDecryptSucceeded:Int64",
+            "CountFileLegacyEfsFileDecrypt:Int64",
+            "CountFileLegacyEfsFileDecryptSucceeded:Int64",
+            "CountBitLockerOffload:Int64",
+            "CountBitLockerOffloadSucceeded:Int64",
+            "countEncryptOnCloseCalls:Int64",
+            "countEncryptCleanUpCalls:Int64",
+            "corruptionTelemetryCount:UInt32",
+            "countDanglingMDL:Int64",
+            "countDanglingMDLMount:Int64",
+            "countDanglingMDLDismount:Int64",
+            "countDanglingMDLLock:Int64",
+            "countDanglingMDLQueryRemove:Int64",
+            "countDanglingMDLSupriseRemove:Int64",
+            "countLogFileFlushFailures:Int64",
+            "countDiskFullEvents:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryPeriodicVolume",
+              "ea": "0x1401af868",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryPeriodicVolume",
+              "ea": "0x1401af8a2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CountBitLockerOffload",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountBitLockerOffloadSucceeded",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountDirectoryFileDecrypt",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountDirectoryFileDecryptSucceeded",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountDirectoryStreamDecrypt",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountDirectoryStreamDecryptSucceeded",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountDirectoryStreamEncrypt",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountDirectoryStreamEncryptSucceeded",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountFileLegacyEfsFileDecrypt",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountFileLegacyEfsFileDecryptSucceeded",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountFileLegacyEfsFileEncrypt",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountFileLegacyEfsFileEncryptSucceeded",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountFileLegacyEfsStreamDecrypt",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountFileLegacyEfsStreamDecryptSucceeded",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountFileLegacyEfsStreamEncrypt",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountFileLegacyEfsStreamEncryptSucceeded",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountFileOnlineEfsFileDecrypt",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountFileOnlineEfsFileDecryptSucceeded",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountFileOnlineEfsFileEncrypt",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountFileOnlineEfsFileEncryptSucceeded",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountFileOnlineEfsStreamDecrypt",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountFileOnlineEfsStreamDecryptSucceeded",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountFileOnlineEfsStreamEncrypt",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountFileOnlineEfsStreamEncryptSucceeded",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "corruptionTelemetryCount",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "countDanglingMDL",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "countDanglingMDLDismount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "countDanglingMDLLock",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "countDanglingMDLMount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "countDanglingMDLQueryRemove",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "countDanglingMDLSupriseRemove",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "countDiskFullEvents",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "countEncryptCleanUpCalls",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "countEncryptOnCloseCalls",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "countLogFileFlushFailures",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "maxNamedStreamSize",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "usageEARead",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "usageEAWrite",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "usageHardlinks",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "usageObjectId",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "usagePinnedFiles",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "usageQueryFileLayout",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "usageQuota",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HardLink",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "fileExt:UnicodeString",
+            "isInContainer:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryHardLink",
+              "ea": "0x14020cc84",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryHardLink",
+              "ea": "0x14020ccaf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "fileExt",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "isInContainer",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HardLinkWithNoAccessFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryHardLinkWithNoAccessFailed",
+              "ea": "0x1400e85b1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IoPerformance",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "bootPartition:UInt8(Boolean)",
+            "diskId:GUID",
+            "vendorId:CountedString",
+            "productId:CountedString",
+            "productRevision:CountedString",
+            "deviceSerialNumber:CountedString",
+            "busType:UInt32",
+            "deviceNumber:UInt32",
+            "nativeNVMe:UInt8(Boolean)",
+            "version:UInt32",
+            "collectionId:UInt64",
+            "operation:UnicodeString",
+            "intervalDurationMilliseconds:UInt64",
+            "highLatencyLevelMilliseconds:UInt64",
+            "highLatencyCount:UInt32",
+            "totalCount:UInt64",
+            "totalTimeNanoseconds:UInt64",
+            "totalBytes:UInt64",
+            "totalExtents:UInt64",
+            "averageOperationsPerSecond:UInt64",
+            "averageBytesPerSecond:UInt64",
+            "averageLatencyNanoseconds:UInt64",
+            "averageLatencyLevelNanoseconds:UInt64",
+            "medianLatencyLevelNanoseconds:UInt64",
+            "maxLatencyNanoseconds:UInt64",
+            "maxLatencyLevelNanoseconds:UInt64",
+            "latencyLevelsNanoseconds:Int64[]",
+            "ioCountArray:UInt64[]",
+            "totalDurationNanosecondsArray:UInt64[]",
+            "totalBytesArray:UInt64[]",
+            "extentsCountArray:UInt64[]"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetrySendVolumePerfData",
+              "ea": "0x1400e9996",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "averageBytesPerSecond",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "averageLatencyLevelNanoseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "averageLatencyNanoseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "averageOperationsPerSecond",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "bootPartition",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "busType",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "collectionId",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceSerialNumber",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "diskId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "extentsCountArray",
+          "type": "UInt64[]",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "highLatencyCount",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "highLatencyLevelMilliseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "intervalDurationMilliseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "ioCountArray",
+          "type": "UInt64[]",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "latencyLevelsNanoseconds",
+          "type": "Int64[]",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "maxLatencyLevelNanoseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "maxLatencyNanoseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "medianLatencyLevelNanoseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "nativeNVMe",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "operation",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "productId",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "productRevision",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalBytes",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalBytesArray",
+          "type": "UInt64[]",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalDurationNanosecondsArray",
+          "type": "UInt64[]",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalExtents",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalTimeNanoseconds",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "vendorId",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IoPerformanceDisabled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "disableIoPerfTelemetryRegistry:UInt8(Boolean)",
+            "numberOfPhysicalPages:UInt64",
+            "qpcBypassEnabled:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryIoPerformanceDisabled",
+              "ea": "0x1400e86bb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "disableIoPerfTelemetryRegistry",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "numberOfPhysicalPages",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "qpcBypassEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Mount",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "bootPartition:UInt8(Boolean)",
+            "diskId:GUID",
+            "vendorId:CountedString",
+            "productId:CountedString",
+            "productRevision:CountedString",
+            "deviceSerialNumber:CountedString",
+            "busType:UInt32",
+            "deviceNumber:UInt32",
+            "nativeNVMe:UInt8(Boolean)",
+            "adapterSerialNumber:CountedString",
+            "activityId:GUID",
+            "originalVolumeId:GUID",
+            "status:UInt32(NTStatus)",
+            "restartApplied:UInt8(Boolean)",
+            "elapsedTimeTicks:UInt64",
+            "MountStageTimes:UInt64[]",
+            "vcbState:UInt32",
+            "vcbState2:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryMount",
+              "ea": "0x14023a265",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "MountStageTimes",
+          "type": "UInt64[]",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "activityId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "adapterSerialNumber",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "bootPartition",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "busType",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceSerialNumber",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "diskId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeTicks",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "nativeNVMe",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "originalVolumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "productId",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "productRevision",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "restartApplied",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "vcbState2",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "vcbState",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "vendorId",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MountFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "bootPartition:UInt8(Boolean)",
+            "diskId:GUID",
+            "vendorId:CountedString",
+            "productId:CountedString",
+            "productRevision:CountedString",
+            "deviceSerialNumber:CountedString",
+            "busType:UInt32",
+            "deviceNumber:UInt32",
+            "nativeNVMe:UInt8(Boolean)",
+            "activityId:GUID",
+            "originalVolumeId:GUID",
+            "restartApplied:UInt8(Boolean)",
+            "status:UInt32(NTStatus)",
+            "failedAttempts:UInt32",
+            "mountStageSourceTag:UInt64",
+            "elapsedTimeTicks:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryFailedMount",
+              "ea": "0x1400e7803",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "activityId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "bootPartition",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "busType",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceSerialNumber",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "diskId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeTicks",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "failedAttempts",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStageSourceTag",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "nativeNVMe",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "originalVolumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "productId",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "productRevision",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "restartApplied",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "vendorId",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NamedStreams",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "byteCount:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryNamedStreams",
+              "ea": "0x1401f604d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryNamedStreams",
+              "ea": "0x1401f6093",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "byteCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NtfsLatencies",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "VolumeName:CountedString",
+            "Operation:UnicodeString",
+            "CollectionId:UInt64",
+            "IntervalMs:UInt64",
+            "CountHighLatency:UInt32",
+            "AvgOpsPerSec:UInt64",
+            "AvgLatencyNs:UInt64",
+            "AvgThroughput:UInt64",
+            "MaxLatencyNs:UInt64",
+            "TotalCount:UInt64",
+            "TotalTimeNs:UInt64",
+            "TotalBytes:UInt64",
+            "CountLte128us:UInt64",
+            "CountLte256us:UInt64",
+            "CountLte512us:UInt64",
+            "CountLte1ms:UInt64",
+            "CountLte4ms:UInt64",
+            "CountLte16ms:UInt64",
+            "CountLte64ms:UInt64",
+            "CountLte128ms:UInt64",
+            "CountLte256ms:UInt64",
+            "CountLte512ms:UInt64",
+            "CountLte1s:UInt64",
+            "CountLte2s:UInt64",
+            "CountLte10s:UInt64",
+            "CountLte20s:UInt64",
+            "CountLte30s:UInt64",
+            "CountGt30s:UInt64",
+            "TimeNsLte128us:UInt64",
+            "TimeNsLte256us:UInt64",
+            "TimeNsLte512us:UInt64",
+            "TimeNsLte1ms:UInt64",
+            "TimeNsLte4ms:UInt64",
+            "TimeNsLte16ms:UInt64",
+            "TimeNsLte64ms:UInt64",
+            "TimeNsLte128ms:UInt64",
+            "TimeNsLte256ms:UInt64",
+            "TimeNsLte512ms:UInt64",
+            "TimeNsLte1s:UInt64",
+            "TimeNsLte2s:UInt64",
+            "TimeNsLte10s:UInt64",
+            "TimeNsLte20s:UInt64",
+            "TimeNsLte30s:UInt64",
+            "TimeNsGt30s:UInt64",
+            "BytesLte128us:UInt64",
+            "BytesLte256us:UInt64",
+            "BytesLte512us:UInt64",
+            "BytesLte1ms:UInt64",
+            "BytesLte4ms:UInt64",
+            "BytesLte16ms:UInt64",
+            "BytesLte64ms:UInt64",
+            "BytesLte128ms:UInt64",
+            "BytesLte256ms:UInt64",
+            "BytesLte512ms:UInt64",
+            "BytesLte1s:UInt64",
+            "BytesLte2s:UInt64",
+            "BytesLte10s:UInt64",
+            "BytesLte20s:UInt64",
+            "BytesLte30s:UInt64",
+            "BytesGt30s:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsIoPerfWriteSummaryToLocalTracing",
+              "ea": "0x1400e5ff3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AvgLatencyNs",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "AvgOpsPerSec",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "AvgThroughput",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "BytesGt30s",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "BytesLte10s",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "BytesLte128ms",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "BytesLte128us",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "BytesLte16ms",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "BytesLte1ms",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "BytesLte1s",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "BytesLte20s",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "BytesLte256ms",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "BytesLte256us",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "BytesLte2s",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "BytesLte30s",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "BytesLte4ms",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "BytesLte512ms",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "BytesLte512us",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "BytesLte64ms",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CollectionId",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountGt30s",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountHighLatency",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountLte10s",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountLte128ms",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountLte128us",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountLte16ms",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountLte1ms",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountLte1s",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountLte20s",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountLte256ms",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountLte256us",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountLte2s",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountLte30s",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountLte4ms",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountLte512ms",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountLte512us",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "CountLte64ms",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "IntervalMs",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "MaxLatencyNs",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "Operation",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "TimeNsGt30s",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "TimeNsLte10s",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "TimeNsLte128ms",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "TimeNsLte128us",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "TimeNsLte16ms",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "TimeNsLte1ms",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "TimeNsLte1s",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "TimeNsLte20s",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "TimeNsLte256ms",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "TimeNsLte256us",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "TimeNsLte2s",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "TimeNsLte30s",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "TimeNsLte4ms",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "TimeNsLte512ms",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "TimeNsLte512us",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "TimeNsLte64ms",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "TotalBytes",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "TotalCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "TotalTimeNs",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "VolumeName",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PageFileSetEndOfFileInfo",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "oldFileSize:UInt64",
+            "requestedFileSize:UInt64",
+            "newFileSize:UInt64",
+            "pagingFileSizeSizeInMM:UInt64",
+            "pagingFileMaxSize:UInt64",
+            "growBy:UInt64",
+            "extraExtendSize:UInt64",
+            "timeRequirementSpecified:UInt8(Boolean)",
+            "delayReasons:UInt32",
+            "timeRequirementMet:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryPageFileEndOfFileSize",
+              "ea": "0x140025f36",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "oldFileSize:UInt64",
+            "requestedFileSize:UInt64",
+            "newFileSize:UInt64",
+            "growBy:UInt64",
+            "timeRequirementSpecified:UInt8(Boolean)",
+            "delayReasons:UInt32",
+            "timeRequirementMet:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryPageFileEndOfFileSize",
+              "ea": "0x140026107",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "delayReasons",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "extraExtendSize",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "growBy",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "newFileSize",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "oldFileSize",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "pagingFileMaxSize",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "pagingFileSizeSizeInMM",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "requestedFileSize",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "timeRequirementMet",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "timeRequirementSpecified",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Periodic",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "originalVolumeId:GUID",
+            "missedTelemetryPointsStack:UInt32",
+            "missedTelemetryPointsDisabled:UInt32",
+            "elapsedTimeTicks:Int64",
+            "maxTrimListSize:UInt32",
+            "userFileReads:UInt64",
+            "userDiskReads:UInt64",
+            "userFileWrites:UInt64",
+            "userFileWriteBytes:UInt64",
+            "userDiskWrites:UInt64",
+            "metaDataReads:UInt64",
+            "metaDataReadBytes:UInt64",
+            "metaDataDiskReads:UInt64",
+            "metaDataWrites:UInt64",
+            "metaDataWriteBytes:UInt64",
+            "metaDataDiskWrites:UInt64",
+            "logFileFullExceptions:UInt32",
+            "allocateCalls:UInt32",
+            "allocateClusters:UInt64",
+            "allocateHints:UInt32",
+            "allocateHintsHonored:UInt32",
+            "allocateCache:UInt32",
+            "diskResourcesExhausted:UInt32",
+            "volumeTrimCount:UInt64",
+            "volumeTrimTimeTicks:UInt64",
+            "volumeTrimByteCount:UInt64",
+            "fileLevelTrimCount:UInt64",
+            "fileLevelTrimTimeTicks:UInt64",
+            "fileLevelTrimByteCount:UInt64",
+            "VolumeMappedSlabs:UInt64",
+            "SmartTrimOverFlowCount:UInt64",
+            "TrimStatOverFlowCount:UInt64",
+            "VolumeUnmappedSMTSlabs:UInt64",
+            "VolumeMappedSMTSlabs:UInt64",
+            "VolumeSMTEvalExecTime:UInt64",
+            "VolumeUnmappedSlabs:UInt64",
+            "overAcceptableLatencyCount:UInt32",
+            "logFileFullResultStats:UInt64[]",
+            "totalCountIOLatencyErrors:UInt32",
+            "totalCountWriteFailed:UInt32",
+            "totalCountReadFailed:UInt32",
+            "totalCountHotfixed:UInt32",
+            "ioFailureClustersRangeStartArray:Int64[]",
+            "ioFailureClustersRangeCountArray:Int64[]",
+            "ioFailureStatusArray:Int32[]",
+            "ioFailureHighLatencyCountArray:UInt32[]",
+            "ioFailureReadErrorCountArray:UInt32[]",
+            "ioFailureWriteErrorCountArray:UInt32[]",
+            "ioFailureHotfixedClustersCountArray:UInt32[]"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryPeriodicVolume",
+              "ea": "0x1401b029f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryPeriodicVolume",
+              "ea": "0x1401b02d9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "SmartTrimOverFlowCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "TrimStatOverFlowCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "VolumeMappedSMTSlabs",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "VolumeMappedSlabs",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "VolumeSMTEvalExecTime",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "VolumeUnmappedSMTSlabs",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "VolumeUnmappedSlabs",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "allocateCache",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "allocateCalls",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "allocateClusters",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "allocateHints",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "allocateHintsHonored",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "diskResourcesExhausted",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeTicks",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "fileLevelTrimByteCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "fileLevelTrimCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "fileLevelTrimTimeTicks",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "ioFailureClustersRangeCountArray",
+          "type": "Int64[]",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "ioFailureClustersRangeStartArray",
+          "type": "Int64[]",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "ioFailureHighLatencyCountArray",
+          "type": "UInt32[]",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "ioFailureHotfixedClustersCountArray",
+          "type": "UInt32[]",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "ioFailureReadErrorCountArray",
+          "type": "UInt32[]",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "ioFailureStatusArray",
+          "type": "Int32[]",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "ioFailureWriteErrorCountArray",
+          "type": "UInt32[]",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "logFileFullExceptions",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "logFileFullResultStats",
+          "type": "UInt64[]",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "maxTrimListSize",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "metaDataDiskReads",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "metaDataDiskWrites",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "metaDataReadBytes",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "metaDataReads",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "metaDataWriteBytes",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "metaDataWrites",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "missedTelemetryPointsDisabled",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "missedTelemetryPointsStack",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "originalVolumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "overAcceptableLatencyCount",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalCountHotfixed",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalCountIOLatencyErrors",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalCountReadFailed",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalCountWriteFailed",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "userDiskReads",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "userDiskWrites",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "userFileReads",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "userFileWriteBytes",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "userFileWrites",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeTrimByteCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeTrimCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeTrimTimeTicks",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PinFile",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryPinFile",
+              "ea": "0x14024512c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "QueryFileLayout",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryQueryFileLayout",
+              "ea": "0x1402c4a72",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "QueryVolumeNumaInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryQueryVolumeNumaInfo",
+              "ea": "0x1400ae45c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SurpriseRemove",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetrySurpriseRemoveEvent",
+              "ea": "0x1400e9b0a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Txf",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryTxf",
+              "ea": "0x1400b2619",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UsnCreate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "activityId:GUID",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "imageName:AnsiString",
+            "beforeUsnData:Struct(Boolean)",
+            "maximumSize:UInt64",
+            "allocationDelta:UInt64",
+            "journalId:UInt64",
+            "requestedUsnData:Struct(String)",
+            "maximumSize:UInt64",
+            "allocationDelta:UInt64",
+            "afterUsnData:Struct(Boolean)",
+            "maximumSize:UInt64",
+            "allocationDelta:UInt64",
+            "journalId:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryUsnCreate",
+              "ea": "0x1400e9d2b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "activityId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "afterUsnData",
+          "type": "Struct(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "allocationDelta",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "beforeUsnData",
+          "type": "Struct(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "imageName",
+          "type": "AnsiString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "journalId",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "maximumSize",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "requestedUsnData",
+          "type": "Struct(String)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UsnDelete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "activityId:GUID",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "imageName:AnsiString",
+            "deleteData:Struct(String)",
+            "flags:UInt32",
+            "journalId:UInt64",
+            "usnData:Struct(Boolean)",
+            "allocationDelta:UInt64",
+            "maximumSize:UInt64",
+            "journalId:UInt64",
+            "markedForDeletion:UInt8(Boolean)",
+            "waitForDeletion:UInt8(Boolean)",
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryUsnDelete",
+              "ea": "0x1400e9ff4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "activityId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "allocationDelta",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "deleteData",
+          "type": "Struct(String)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "flags",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "imageName",
+          "type": "AnsiString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "journalId",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "markedForDeletion",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "maximumSize",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "usnData",
+          "type": "Struct(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "waitForDeletion",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UsnDeleteWorkerCompleted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "activityId:GUID",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "usnData:Struct(Boolean)",
+            "maximumSize:UInt64",
+            "allocationDelta:UInt64",
+            "journalId:UInt64",
+            "waitersReleased:UInt32",
+            "totalTimeInMs:UInt64",
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryUsnDeleteWorkerCompleted",
+              "ea": "0x1400ea1ff",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "activityId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "allocationDelta",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "journalId",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "maximumSize",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalTimeInMs",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "usnData",
+          "type": "Struct(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "waitersReleased",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UsnEnableTrackingRanges",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "activityId:GUID",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "imageName:AnsiString",
+            "requestedRangeTrack:Struct(Boolean)",
+            "flags:UInt32",
+            "chunkSize:UInt64",
+            "fileSizeThreshold:Int64",
+            "adjustedRangeTrack:Struct(Boolean)",
+            "flags:UInt32",
+            "chunkSize:UInt64",
+            "fileSizeThreshold:Int64",
+            "beforeRangeTrack:Struct(Boolean)",
+            "flags:UInt32",
+            "chunkSize:UInt64",
+            "fileSizeThreshold:Int64",
+            "afterRangeTrack:Struct(Boolean)",
+            "flags:UInt32",
+            "chunkSize:UInt64",
+            "fileSizeThreshold:Int64",
+            "currentUsnData:Struct(Boolean)",
+            "maximumSize:UInt64",
+            "allocationDelta:UInt64",
+            "journalId:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryUsnEnableRanges",
+              "ea": "0x1400ea649",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "activityId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "adjustedRangeTrack",
+          "type": "Struct(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "afterRangeTrack",
+          "type": "Struct(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "allocationDelta",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "beforeRangeTrack",
+          "type": "Struct(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "chunkSize",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "currentUsnData",
+          "type": "Struct(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "fileSizeThreshold",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "flags",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "imageName",
+          "type": "AnsiString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "journalId",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "maximumSize",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "requestedRangeTrack",
+          "type": "Struct(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VolumeInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "bootPartition:UInt8(Boolean)",
+            "diskId:GUID",
+            "vendorId:CountedString",
+            "productId:CountedString",
+            "productRevision:CountedString",
+            "deviceSerialNumber:CountedString",
+            "busType:UInt32",
+            "deviceNumber:UInt32",
+            "nativeNVMe:UInt8(Boolean)",
+            "adapterSerialNumber:CountedString",
+            "originalVolumeId:GUID",
+            "restartApplied:UInt8(Boolean)",
+            "logicalSectorSizeBytes:UInt32",
+            "effectivePhysicalSectorSizeBytes:UInt32",
+            "physicalSectorSizeBytes:UInt32",
+            "clusterSizeBytes:UInt32",
+            "frsSizeBytes:UInt32",
+            "indexAllocationBufferSizeBytes:UInt32",
+            "upcaseTableSizeBytes:Int64",
+            "volumeCreationTime:FileTime",
+            "isThinlyProvisioned:UInt8(Boolean)",
+            "slabSizeBytes:UInt64",
+            "totalClusters:Int64",
+            "freeClusters:Int64",
+            "totalReservedClusters:Int64",
+            "actualAvailableClusters:Int64",
+            "slabsInUse:Int64",
+            "totalSlabsRequired:Int64",
+            "tpMapFailureCount:UInt32",
+            "nextSecurityId:UInt32",
+            "volumeStateMisc:UInt32",
+            "vcbState:UInt32",
+            "vcbState2:UInt32",
+            "corruptionState:UInt32",
+            "corruptionFlags:UInt32",
+            "corruptionCorruptLogPeakBytesUsed:UInt32",
+            "corruptionVerifyLogPeakBytesUsed:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryVolumeInfo",
+              "ea": "0x14022da4a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "actualAvailableClusters",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "adapterSerialNumber",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "bootPartition",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "busType",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "clusterSizeBytes",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "corruptionCorruptLogPeakBytesUsed",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "corruptionFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "corruptionState",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "corruptionVerifyLogPeakBytesUsed",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceSerialNumber",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "diskId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "effectivePhysicalSectorSizeBytes",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "freeClusters",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "frsSizeBytes",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "indexAllocationBufferSizeBytes",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "isThinlyProvisioned",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "logicalSectorSizeBytes",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "nativeNVMe",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "nextSecurityId",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "originalVolumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "physicalSectorSizeBytes",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "productId",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "productRevision",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "restartApplied",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "slabSizeBytes",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "slabsInUse",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalClusters",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalReservedClusters",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalSlabsRequired",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "tpMapFailureCount",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "upcaseTableSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "vcbState2",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "vcbState",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "vendorId",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeCreationTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeStateMisc",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VolumeInfoCritical",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "bootPartition:UInt8(Boolean)",
+            "diskId:GUID",
+            "vendorId:CountedString",
+            "productId:CountedString",
+            "productRevision:CountedString",
+            "deviceSerialNumber:CountedString",
+            "busType:UInt32",
+            "deviceNumber:UInt32",
+            "nativeNVMe:UInt8(Boolean)",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "originalVolumeId:GUID",
+            "volumeInfoIsBeingUpdated:UInt8(Boolean)",
+            "restartApplied:UInt8(Boolean)",
+            "logicalSectorSizeBytes:UInt32",
+            "effectivePhysicalSectorSizeBytes:UInt32",
+            "physicalSectorSizeBytes:UInt32",
+            "clusterSizeBytes:UInt32",
+            "frsSizeBytes:UInt32",
+            "indexAllocationBufferSizeBytes:UInt32",
+            "totalClusters:Int64",
+            "freeClusters:Int64",
+            "volumeStateMisc:UInt32",
+            "vcbState:UInt32",
+            "vcbState2:UInt32",
+            "corruptionState:UInt32",
+            "corruptionFlags:UInt32",
+            "sdsClustersCount:Int64",
+            "sdsExtentsCount:Int64",
+            "usnClustersCount:Int64",
+            "usnAllocatedExtentsCount:Int64",
+            "usnAllExtentsCount:Int64",
+            "mftClustersCount:Int64",
+            "mftExtentsCount:Int64",
+            "mftBitmapClustersCount:Int64",
+            "mftBitmapExtentsCount:Int64",
+            "reparseClustersCount:Int64",
+            "reparseExtentsCount:Int64",
+            "badClustersCount:Int64",
+            "badClustersExtentsCount:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryVolumeInfoCritical",
+              "ea": "0x1400eabc0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "badClustersCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "badClustersExtentsCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "bootPartition",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "busType",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "clusterSizeBytes",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "corruptionFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "corruptionState",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceSerialNumber",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "diskId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "effectivePhysicalSectorSizeBytes",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "freeClusters",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "frsSizeBytes",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "indexAllocationBufferSizeBytes",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "logicalSectorSizeBytes",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mftBitmapClustersCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mftBitmapExtentsCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mftClustersCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mftExtentsCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "nativeNVMe",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "originalVolumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "physicalSectorSizeBytes",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "productId",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "productRevision",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "reparseClustersCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "reparseExtentsCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "restartApplied",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "sdsClustersCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "sdsExtentsCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "totalClusters",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "usnAllExtentsCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "usnAllocatedExtentsCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "usnClustersCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "vcbState2",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "vcbState",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "vendorId",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoIsBeingUpdated",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeStateMisc",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VolumeInfoSizes",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "usnSizeBytes:Int64",
+            "usnClustersCount:Int64",
+            "usnAllocatedExtentsCount:Int64",
+            "usnAllExtentsCount:Int64",
+            "firstValidUsn:Int64",
+            "nextUsn:Int64",
+            "lowestValidUsn:Int64",
+            "usnMaximumSize:UInt64",
+            "usnAllocationDelta:UInt64",
+            "mftSizeBytes:Int64",
+            "mftClustersCount:Int64",
+            "mftExtentsCount:Int64",
+            "mft2SizeBytes:Int64",
+            "mftBitmapSizeBytes:Int64",
+            "mftBitmapClustersCount:Int64",
+            "mftBitmapExtentsCount:Int64",
+            "logSizeBytes:Int64",
+            "bitmapSizeBytes:Int64",
+            "attributeDefTableSizeBytes:Int64",
+            "badClusterFileSizeBytes:Int64",
+            "extendDirectorySizeBytes:Int64",
+            "sdsSizeBytes:Int64",
+            "sdsClustersCount:Int64",
+            "sdsExtentsCount:Int64",
+            "sdsAttrListSizeBytes:Int64",
+            "securityIdIndexSizeBytes:Int64",
+            "securityDescriptorHashIndexSizeBytes:Int64",
+            "quotaTableSizeBytes:Int64",
+            "ownerIdTableSizeBytes:Int64",
+            "reparseSizeBytes:Int64",
+            "reparseClustersCount:Int64",
+            "reparseExtentsCount:Int64",
+            "objectIdTableSizeBytes:Int64",
+            "verifySizeBytes:Int64",
+            "corruptSizeBytes:Int64",
+            "volumeDasdSizeBytes:Int64",
+            "badClustersCount:Int64",
+            "badClustersExtentsCount:Int64",
+            "cachedRunsMissCountForMft:UInt32",
+            "cachedRunsMissCountForMftZone:UInt32",
+            "cachedRunsMissCount:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryVolumeInfo",
+              "ea": "0x14022e1cc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryVolumeInfo",
+              "ea": "0x14022e206",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "attributeDefTableSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "badClusterFileSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "badClustersCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "badClustersExtentsCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "bitmapSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "cachedRunsMissCount",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "cachedRunsMissCountForMft",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "cachedRunsMissCountForMftZone",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "corruptSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "extendDirectorySizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "firstValidUsn",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "logSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "lowestValidUsn",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mft2SizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mftBitmapClustersCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mftBitmapExtentsCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mftBitmapSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mftClustersCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mftExtentsCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mftSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "nextUsn",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "objectIdTableSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "ownerIdTableSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "quotaTableSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "reparseClustersCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "reparseExtentsCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "reparseSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "sdsAttrListSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "sdsClustersCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "sdsExtentsCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "sdsSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "securityDescriptorHashIndexSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "securityIdIndexSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "usnAllExtentsCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "usnAllocatedExtentsCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "usnAllocationDelta",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "usnClustersCount",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "usnMaximumSize",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "usnSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "verifySizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeDasdSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VolumeSizeChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "volumeId:GUID",
+            "volumeInfoKey:UInt32",
+            "mountGuid:GUID",
+            "mountStartTime:FileTime",
+            "bootPartition:UInt8(Boolean)",
+            "diskId:GUID",
+            "vendorId:CountedString",
+            "productId:CountedString",
+            "productRevision:CountedString",
+            "deviceSerialNumber:CountedString",
+            "busType:UInt32",
+            "deviceNumber:UInt32",
+            "nativeNVMe:UInt8(Boolean)",
+            "activityId:GUID",
+            "originalVolumeId:GUID",
+            "status:UInt32(NTStatus)",
+            "volumeSizeChangeType:UInt16",
+            "elapsedTimeTicks:UInt64",
+            "volumeSizeChangeStageTimes:UInt64[]",
+            "vcbState:UInt32",
+            "vcbState2:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntfs.sys",
+              "function": "NtfsTelemetryVolumeSizeChange",
+              "ea": "0x1400eb076",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "activityId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "bootPartition",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "busType",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "deviceSerialNumber",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "diskId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "elapsedTimeTicks",
+          "type": "UInt64",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "mountStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "nativeNVMe",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "originalVolumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "productId",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "productRevision",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "vcbState2",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "vcbState",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "vendorId",
+          "type": "CountedString",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeInfoKey",
+          "type": "UInt32",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeSizeChangeStageTimes",
+          "type": "UInt64[]",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeSizeChangeType",
+          "type": "UInt16",
+          "seenIn": [
+            "ntfs.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

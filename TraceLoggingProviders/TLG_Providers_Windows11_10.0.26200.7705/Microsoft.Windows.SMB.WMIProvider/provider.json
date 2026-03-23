@@ -1,0 +1,90 @@
+{
+  "providerName": "Microsoft.Windows.SMB.WMIProvider",
+  "guid": "{B6F4AE91-7458-5C7F-0CA8-0C7838C7372C}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "smbwmiv2.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "GlobalMappingAdded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "smbwmiv2.dll",
+              "function": "MSFT_SmbGlobalMapping_Invoke_Create",
+              "ea": "0x18001aad2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "GlobalMappingRemoved",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "smbwmiv2.dll",
+              "function": "MSFT_SmbGlobalMapping_Invoke_Remove",
+              "ea": "0x18001abf4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "RemoveSmbComponent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Name:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "smbwmiv2.dll",
+              "function": "MSFT_SmbComponent_Invoke_RemoveSmbComponent",
+              "ea": "0x180029e85",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Name",
+          "type": "UnicodeString",
+          "seenIn": [
+            "smbwmiv2.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "smbwmiv2.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,682 @@
+{
+  "providerName": "Microsoft.Windows.PowerService",
+  "guid": "{55D407F6-B994-49F1-95E7-9A3E4B628F46}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "umpo.dll"
+  ],
+  "uniqueEventCount": 9,
+  "events": [
+    {
+      "eventName": "NotifyBroadcastStatistics",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Code:UInt32",
+            "Data:UInt32",
+            "NotifyPrefetch:UInt8(Boolean)",
+            "WaitForCompletion:UInt8(Boolean)",
+            "BroadcastTotalTimeUs:UInt64",
+            "TotalNotificationTimeUs:UInt64",
+            "MaxNotificationTimeInUs:UInt64",
+            "TotalNotificationCount:UInt64",
+            "WorkerCount:UInt32",
+            "NotificationBucketCounts:UInt32[N]",
+            "NotificationBucketTimes:UInt64[N]",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "umpo.dll",
+              "function": "UmpoTraceNotificationBroadcastStatistics",
+              "ea": "0x1800047f1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BroadcastTotalTimeUs",
+          "type": "UInt64",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "Code",
+          "type": "UInt32",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "Data",
+          "type": "UInt32",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "MaxNotificationTimeInUs",
+          "type": "UInt64",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "NotificationBucketCounts",
+          "type": "UInt32[N]",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "NotificationBucketTimes",
+          "type": "UInt64[N]",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "NotifyPrefetch",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "TotalNotificationCount",
+          "type": "UInt64",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "TotalNotificationTimeUs",
+          "type": "UInt64",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "WaitForCompletion",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "WorkerCount",
+          "type": "UInt32",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OverlayPowerSchemeChanged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Process:UnicodeString",
+            "Pid:UInt32(PID)",
+            "OldSchemeGuid:GUID",
+            "NewSchemeGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "umpo.dll",
+              "function": "UmpoPowerPolicyChanged",
+              "ea": "0x180004f85",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NewSchemeGuid",
+          "type": "GUID",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "OldSchemeGuid",
+          "type": "GUID",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "Pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "Process",
+          "type": "UnicodeString",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PolicyManagerSettingChanged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "SubGroupGuid:GUID",
+            "SettingGuid:GUID",
+            "OverlayGuid:GUID",
+            "SchemeGuid:GUID",
+            "ProfileGuid:GUID",
+            "IsACSetting:UInt8(Boolean)",
+            "NewValueIndex:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "umpo.dll",
+              "function": "UmpoTracePolicyManagerSettingChange",
+              "ea": "0x180016e85",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsACSetting",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "NewValueIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "OverlayGuid",
+          "type": "GUID",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "ProfileGuid",
+          "type": "GUID",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "SchemeGuid",
+          "type": "GUID",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "SettingGuid",
+          "type": "GUID",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "SubGroupGuid",
+          "type": "GUID",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PowerSchemeChanged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Process:UnicodeString",
+            "Pid:UInt32(PID)",
+            "OldSchemeGuid:GUID",
+            "NewSchemeGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "umpo.dll",
+              "function": "UmpoPowerPolicyChanged",
+              "ea": "0x180004ef6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NewSchemeGuid",
+          "type": "GUID",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "OldSchemeGuid",
+          "type": "GUID",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "Pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "Process",
+          "type": "UnicodeString",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PowerSettingWrite",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Process:UnicodeString",
+            "Pid:UInt32(PID)",
+            "SchemeGuid:GUID",
+            "SubGroupGuid:GUID",
+            "SettingGuid:GUID",
+            "AccessFlags:UInt32",
+            "BackendWrite:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "umpo.dll",
+              "function": "UmpoTracePowerSettingWrite",
+              "ea": "0x18000526c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AccessFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "BackendWrite",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "Pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "Process",
+          "type": "UnicodeString",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "SchemeGuid",
+          "type": "GUID",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "SettingGuid",
+          "type": "GUID",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "SubGroupGuid",
+          "type": "GUID",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SmartPresenceSetIntervals",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "UserSid:SID",
+            "Intervals:Struct[](Boolean)",
+            "StartOffsetInUs:UInt64",
+            "EndOffsetInUs:UInt64",
+            "Confidence:UInt8",
+            "Flags:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "umpo.dll",
+              "function": "UmpoTraceSmartPresenceSetAwayInterval",
+              "ea": "0x1800026f4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Confidence",
+          "type": "UInt8",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "EndOffsetInUs",
+          "type": "UInt64",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "UInt32",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "Intervals",
+          "type": "Struct[](Boolean)",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "StartOffsetInUs",
+          "type": "UInt64",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSid",
+          "type": "SID",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SmartPresenceSuspendResume",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "IsSuspend:UInt8(Boolean)",
+            "IsDisabled:UInt8(Boolean)",
+            "IsGlobalUserPresent:UInt8(Boolean)",
+            "SuspendCount:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "umpo.dll",
+              "function": "UmpoTraceSmartPresenceSuspendResume",
+              "ea": "0x180003ca4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsDisabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "IsGlobalUserPresent",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "IsSuspend",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "SuspendCount",
+          "type": "UInt32",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SmartPresenceUpdateAwayTimePrediction",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "AwayEndTime:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "umpo.dll",
+              "function": "UmpoTraceSmartPresencePrediction",
+              "ea": "0x1800018a4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AwayEndTime",
+          "type": "UInt64",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SmartSuspendPrediction",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "TargetState:UInt32",
+            "SearchIndex:UInt32",
+            "SearchStartTime:FileTime",
+            "SearchEndTime:FileTime",
+            "EntryTime:FileTime",
+            "ExitTime:FileTime",
+            "ErrorCode:HexInt32",
+            "Flags:HexInt32",
+            "ProbabilityThreshold:UInt8",
+            "ConfidenceThreshold:UInt8",
+            "ProbabilityActual:UInt8",
+            "ConfidenceActual:UInt8",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "umpo.dll",
+              "function": "UmpoTraceSmartSuspendPrediction",
+              "ea": "0x180017215",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConfidenceActual",
+          "type": "UInt8",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "ConfidenceThreshold",
+          "type": "UInt8",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "EntryTime",
+          "type": "FileTime",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "ExitTime",
+          "type": "FileTime",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "ProbabilityActual",
+          "type": "UInt8",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "ProbabilityThreshold",
+          "type": "UInt8",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "SearchEndTime",
+          "type": "FileTime",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "SearchIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "SearchStartTime",
+          "type": "FileTime",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetState",
+          "type": "UInt32",
+          "seenIn": [
+            "umpo.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

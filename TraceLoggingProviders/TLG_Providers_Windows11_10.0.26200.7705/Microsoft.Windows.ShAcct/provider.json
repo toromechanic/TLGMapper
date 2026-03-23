@@ -1,0 +1,176 @@
+{
+  "providerName": "Microsoft.Windows.ShAcct",
+  "guid": "{522DD632-A132-4CA6-B50A-62279034FD9B}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "shacct.dll"
+  ],
+  "uniqueEventCount": 5,
+  "events": [
+    {
+      "eventName": "CConnectedAccounts::FindByRID",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ConnectedUserSid:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "shacct.dll",
+              "function": "?FindByRID@CConnectedAccounts@@UEAAJKPEAPEAUIPropertyStore@@@Z",
+              "ea": "0x180006a00",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConnectedUserSid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "shacct.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GetConnectedUserEnum failed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "shacct.dll",
+              "function": "?_Init@CConnectedAccounts@@AEAAJXZ",
+              "ea": "0x180006e19",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "shacct.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Query PKEY_Identity_ProviderID",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "shacct.dll",
+              "function": "?GetValue@CUserPropertyStore@@UEAAJAEBU_tagpropertykey@@PEAUtagPROPVARIANT@@@Z",
+              "ea": "0x1800091a9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "shacct.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SHNextObjectFromEnumUnknown failed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)",
+            "ConnectedUserCount:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "shacct.dll",
+              "function": "?_Init@CConnectedAccounts@@AEAAJXZ",
+              "ea": "0x180006d49",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "shacct.dll",
+              "function": "?_Init@CConnectedAccounts@@AEAAJXZ",
+              "ea": "0x180006d85",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConnectedUserCount",
+          "type": "Int32",
+          "seenIn": [
+            "shacct.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "shacct.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SHNextObjectFromEnumUnknown succeeded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ConnectedUserCount:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "shacct.dll",
+              "function": "?_Init@CConnectedAccounts@@AEAAJXZ",
+              "ea": "0x180006cee",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConnectedUserCount",
+          "type": "Int32",
+          "seenIn": [
+            "shacct.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

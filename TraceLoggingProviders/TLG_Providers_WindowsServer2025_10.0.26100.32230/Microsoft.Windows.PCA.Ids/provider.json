@@ -1,0 +1,88 @@
+{
+  "providerName": "Microsoft.Windows.PCA.Ids",
+  "guid": "{AFC781F5-1597-4F8F-9A4C-B236FA9633A7}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "pcasvc.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "IdsPcaTelemetry",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Log:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "pcasvc.dll",
+              "function": "?IdsLogInfo@@YAXPEBDZZ",
+              "ea": "0x18007c8b5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Log",
+          "type": "AnsiString",
+          "seenIn": [
+            "pcasvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IdsReRuleStatus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "RuleId:UnicodeString",
+            "RuleEvalResult:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "pcasvc.dll",
+              "function": "?IdsLogRuleStatus@@YAXPEAG_N@Z",
+              "ea": "0x18007c93d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "pcasvc.dll"
+          ]
+        },
+        {
+          "fieldName": "RuleEvalResult",
+          "type": "Bool32",
+          "seenIn": [
+            "pcasvc.dll"
+          ]
+        },
+        {
+          "fieldName": "RuleId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "pcasvc.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

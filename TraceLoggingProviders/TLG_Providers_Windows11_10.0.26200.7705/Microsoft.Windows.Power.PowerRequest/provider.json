@@ -1,0 +1,70 @@
+{
+  "providerName": "Microsoft.Windows.Power.PowerRequest",
+  "guid": "{BCDFFF62-2656-4C74-86C3-5605D3A0B634}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "energy.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "PowerRequest",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "sessionGuid:GUID",
+            "requestType:UInt32",
+            "requestorName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "energy.dll",
+              "function": "?LocalTelemetryAnalysis@PowerRequestTroubleshooter@@MEAAXU_GUID@@@Z",
+              "ea": "0x18006169a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "energy.dll",
+              "function": "?LocalTelemetryAnalysis@PowerRequestTroubleshooter@@MEAAXU_GUID@@@Z",
+              "ea": "0x180061747",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "energy.dll",
+              "function": "?LocalTelemetryAnalysis@PowerRequestTroubleshooter@@MEAAXU_GUID@@@Z",
+              "ea": "0x180061812",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "requestType",
+          "type": "UInt32",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "requestorName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "energy.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

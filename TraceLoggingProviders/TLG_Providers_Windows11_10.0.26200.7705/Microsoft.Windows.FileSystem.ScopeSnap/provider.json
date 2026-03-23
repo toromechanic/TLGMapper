@@ -1,0 +1,82 @@
+{
+  "providerName": "Microsoft.Windows.FileSystem.ScopeSnap",
+  "guid": "{D2F37B94-92A5-44E2-AFC9-2F4489D39268}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "PITR.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "ScopeSnapScopingChangeDiffAreaMaxSize",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "OriginalVolumeGuid:UnicodeString",
+            "ErrorCode:Int32",
+            "OriginalDiffAreaMaxSize:Int64",
+            "CurrentDiffAreaMaxSize:Int64",
+            "IsExternalCall:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "PITR.dll",
+              "function": "?ChangeDiffAreaMaximumSize@ScopeSnapshotHelper@@SAJPEAJPEA_KPEBG_JE@Z",
+              "ea": "0x18003db65",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CurrentDiffAreaMaxSize",
+          "type": "Int64",
+          "seenIn": [
+            "PITR.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "Int32",
+          "seenIn": [
+            "PITR.dll"
+          ]
+        },
+        {
+          "fieldName": "IsExternalCall",
+          "type": "Bool32",
+          "seenIn": [
+            "PITR.dll"
+          ]
+        },
+        {
+          "fieldName": "OriginalDiffAreaMaxSize",
+          "type": "Int64",
+          "seenIn": [
+            "PITR.dll"
+          ]
+        },
+        {
+          "fieldName": "OriginalVolumeGuid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "PITR.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "PITR.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

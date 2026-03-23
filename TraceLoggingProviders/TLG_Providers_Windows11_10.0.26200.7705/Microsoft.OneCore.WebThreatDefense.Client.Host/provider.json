@@ -1,0 +1,466 @@
+{
+  "providerName": "Microsoft.OneCore.WebThreatDefense.Client.Host",
+  "guid": "{C7BFADBC-5497-4160-BBA0-4E8E0EAFA9E6}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "wtdhost.dll"
+  ],
+  "uniqueEventCount": 13,
+  "events": [
+    {
+      "eventName": "CreateFile",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Handle:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtdhost.dll",
+              "function": "sub_180002CBC",
+              "ea": "0x180002dd1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Handle",
+          "type": "HexInt64",
+          "seenIn": [
+            "wtdhost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CreateFileError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Error:UInt32(Win32Error)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtdhost.dll",
+              "function": "sub_180002CBC",
+              "ea": "0x180002d81",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Error",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "wtdhost.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "wtdhost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EventIoCompletionError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Error:UInt32(Win32Error)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtdhost.dll",
+              "function": "WtdhWaitForSensorEvent",
+              "ea": "0x180002c36",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Error",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "wtdhost.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "wtdhost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EventIoPacketReceived",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Pid:UInt32(PID)",
+            "ProcSeqId:UInt64",
+            "SensorId:UInt32",
+            "EventId:UInt16",
+            "DurationInUs:UInt64",
+            "MaxDataSize:UInt32",
+            "Data:UInt8[](Hex)"
+          ],
+          "callers": [
+            {
+              "binary": "wtdhost.dll",
+              "function": "WtdhWaitForSensorEvent",
+              "ea": "0x180002b3c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Data",
+          "type": "UInt8[](Hex)",
+          "seenIn": [
+            "wtdhost.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationInUs",
+          "type": "UInt64",
+          "seenIn": [
+            "wtdhost.dll"
+          ]
+        },
+        {
+          "fieldName": "EventId",
+          "type": "UInt16",
+          "seenIn": [
+            "wtdhost.dll"
+          ]
+        },
+        {
+          "fieldName": "MaxDataSize",
+          "type": "UInt32",
+          "seenIn": [
+            "wtdhost.dll"
+          ]
+        },
+        {
+          "fieldName": "Pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "wtdhost.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcSeqId",
+          "type": "UInt64",
+          "seenIn": [
+            "wtdhost.dll"
+          ]
+        },
+        {
+          "fieldName": "SensorId",
+          "type": "UInt32",
+          "seenIn": [
+            "wtdhost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EventIoPacketRetry",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "PrevDataSizeInB:UInt32",
+            "NewDataSizeInB:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "wtdhost.dll",
+              "function": "WtdhWaitForSensorEvent",
+              "ea": "0x180002ba0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NewDataSizeInB",
+          "type": "UInt32",
+          "seenIn": [
+            "wtdhost.dll"
+          ]
+        },
+        {
+          "fieldName": "PrevDataSizeInB",
+          "type": "UInt32",
+          "seenIn": [
+            "wtdhost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegistrationComplete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "wtdhost.dll",
+              "function": "WtdhRegister",
+              "ea": "0x180002449",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "RegistrationError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Error:UInt32(Win32Error)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtdhost.dll",
+              "function": "WtdhRegister",
+              "ea": "0x1800024a4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Error",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "wtdhost.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "wtdhost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SensorMonitoringStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "wtdhost.dll",
+              "function": "WtdhEnableSensors",
+              "ea": "0x180002fbd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "SensorMonitoringStartError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Error:UInt32(Win32Error)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtdhost.dll",
+              "function": "WtdhEnableSensors",
+              "ea": "0x18000300f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Error",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "wtdhost.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "wtdhost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SensorMonitoringStop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "wtdhost.dll",
+              "function": "WtdhDisableSensors",
+              "ea": "0x180002e86",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "SensorMonitoringStopError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Error:UInt32(Win32Error)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtdhost.dll",
+              "function": "WtdhDisableSensors",
+              "ea": "0x180002edf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Error",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "wtdhost.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "wtdhost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnregistrationError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Error:UInt32(Win32Error)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "wtdhost.dll",
+              "function": "WtdhUnregister",
+              "ea": "0x1800025fc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Error",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "wtdhost.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "wtdhost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UregistrationComplete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "wtdhost.dll",
+              "function": "WtdhUnregister",
+              "ea": "0x18000271c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    }
+  ]
+}

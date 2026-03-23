@@ -1,0 +1,121 @@
+{
+  "providerName": "Microsoft.Office.Deployment.OfficeCsp",
+  "guid": "{F01756F1-23C4-5663-6E27-5CB7E7942AD2}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "ofdeploy.exe",
+    "officecsp.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "CurentStatus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "platform:UnicodeString",
+            "cdnbaseurl:UnicodeString",
+            "versiontoreport:UnicodeString",
+            "updatetoversion:UnicodeString",
+            "officemgmtcom:UnicodeString",
+            "updatesenabled:UnicodeString",
+            "updateurl:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "officecsp.dll",
+              "function": "?get_O365InstallationInfo@CCurrentStatusNode@office@@AEAAJAEAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
+              "ea": "0x18000af38",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "cdnbaseurl",
+          "type": "UnicodeString",
+          "seenIn": [
+            "officecsp.dll"
+          ]
+        },
+        {
+          "fieldName": "officemgmtcom",
+          "type": "UnicodeString",
+          "seenIn": [
+            "officecsp.dll"
+          ]
+        },
+        {
+          "fieldName": "platform",
+          "type": "UnicodeString",
+          "seenIn": [
+            "officecsp.dll"
+          ]
+        },
+        {
+          "fieldName": "updatesenabled",
+          "type": "UnicodeString",
+          "seenIn": [
+            "officecsp.dll"
+          ]
+        },
+        {
+          "fieldName": "updatetoversion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "officecsp.dll"
+          ]
+        },
+        {
+          "fieldName": "updateurl",
+          "type": "UnicodeString",
+          "seenIn": [
+            "officecsp.dll"
+          ]
+        },
+        {
+          "fieldName": "versiontoreport",
+          "type": "UnicodeString",
+          "seenIn": [
+            "officecsp.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LaunchODT",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "exitcode:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ofdeploy.exe",
+              "function": "?Launch@DeployEngine@office@@AEBAIAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@0@Z",
+              "ea": "0x140007759",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "exitcode",
+          "type": "UInt32",
+          "seenIn": [
+            "ofdeploy.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

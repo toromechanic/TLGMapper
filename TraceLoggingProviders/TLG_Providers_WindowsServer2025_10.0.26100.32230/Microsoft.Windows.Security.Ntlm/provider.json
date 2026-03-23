@@ -1,0 +1,1276 @@
+{
+  "providerName": "Microsoft.Windows.Security.Ntlm",
+  "guid": "{77811378-E885-4AC2-A580-BC86E4F1BC93}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "LsaIso.exe",
+    "msv1_0.dll"
+  ],
+  "uniqueEventCount": 16,
+  "events": [
+    {
+      "eventName": "CredIsoUpdateRootSecretStatus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "isVsmBased:Int32",
+            "registryStatus:Int32",
+            "registryValueType:UInt32",
+            "existingSecretStatus:Int32",
+            "isRootSecretValid:Int32",
+            "secretCreationStatus:Int32",
+            "bufferWasReencrypted:UInt8(Boolean)",
+            "registryPersistStatus:Int32",
+            "status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "msv1_0.dll",
+              "function": "?UpdateCredentialIsolationSecret@@YAJXZ",
+              "ea": "0x18004d8b4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "bufferWasReencrypted",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "existingSecretStatus",
+          "type": "Int32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "isRootSecretValid",
+          "type": "Int32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "isVsmBased",
+          "type": "Int32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "registryPersistStatus",
+          "type": "Int32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "registryStatus",
+          "type": "Int32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "registryValueType",
+          "type": "UInt32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "secretCreationStatus",
+          "type": "Int32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HardcodedNtlmCall_Aggregate",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "isServerCall:UInt8(Boolean)",
+            "callingImageName:UnicodeString",
+            "svchostTag:UnicodeString",
+            "isOffloadedFromNego:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "msv1_0.dll",
+              "function": "?RecordDirectNtlmCall@NtlmTelemetry@@YAXEE@Z",
+              "ea": "0x18005a2f5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "isServerCall:UInt8(Boolean)",
+            "callingImageName:UnicodeString",
+            "svchostTag:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "msv1_0.dll",
+              "function": "?RecordDirectNtlmCall@NtlmTelemetry@@YAXEE@Z",
+              "ea": "0x18005a391",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "callingImageName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "isOffloadedFromNego",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "isServerCall",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "svchostTag",
+          "type": "UnicodeString",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InsecureApiCall",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "function:AnsiString",
+            "callingImageName:UnicodeString",
+            "logonIdHigh:Int32",
+            "logonIdLow:UInt32",
+            "isTcb:Bool32",
+            "parameterControl:UInt32",
+            "ntlmProtocolSupported:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "msv1_0.dll",
+              "function": "MspLm20GetChallengeResponse",
+              "ea": "0x180022c75",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "callingImageName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "function",
+          "type": "AnsiString",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "isTcb",
+          "type": "Bool32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "logonIdHigh",
+          "type": "Int32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "logonIdLow",
+          "type": "UInt32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "ntlmProtocolSupported",
+          "type": "UInt32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "parameterControl",
+          "type": "UInt32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InsecureApiCall_Aggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "count:Int64",
+            "function:AnsiString",
+            "callingImageName:UnicodeString",
+            "isTcb:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "msv1_0.dll",
+              "function": "?InsecureApiCalled@NtlmTelemetry@@YAXPEBD@Z",
+              "ea": "0x180059c73",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "callingImageName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "function",
+          "type": "AnsiString",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "isTcb",
+          "type": "Bool32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InsecureSettingOverride_Aggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "setting:AnsiString",
+            "cfgSettingValue:UInt32",
+            "secureDefaultValue:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "msv1_0.dll",
+              "function": "?InsecureSettingOverride@NtlmTelemetry@@YAXPEBDKK@Z",
+              "ea": "0x180059d09",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "cfgSettingValue",
+          "type": "UInt32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "secureDefaultValue",
+          "type": "UInt32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "setting",
+          "type": "AnsiString",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IsoRestrictedFunction_Aggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "credGuardEn:Int32",
+            "svchostTag:UnicodeString",
+            "function:AnsiString",
+            "callingImageName:UnicodeString",
+            "isTcb:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "msv1_0.dll",
+              "function": "?IsoRestrictedFunction@NtlmTelemetry@@YAXPEBD@Z",
+              "ea": "0x180059edf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "callingImageName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "credGuardEn",
+          "type": "Int32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "function",
+          "type": "AnsiString",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "isTcb",
+          "type": "Bool32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "svchostTag",
+          "type": "UnicodeString",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LocalSAMLogon_Aggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "status:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "msv1_0.dll",
+              "function": "MsvSamValidate",
+              "ea": "0x1800117e0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "HexInt32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogonUserStop_Aggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "status:HexInt32",
+            "logonType:Int32",
+            "ntlmRunningIsolated:Int32",
+            "logonInfo:CountedString",
+            "localUserAccount:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "msv1_0.dll",
+              "function": "?LogonUserStop@NtlmTelemetry@@YAXJW4_SECURITY_LOGON_TYPE@@PEAU_NETLOGON_LOGON_IDENTITY_INFO@@@Z",
+              "ea": "0x180013f57",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?LogonUserStop@NtlmTelemetry@@YAXJW4_SECURITY_LOGON_TYPE@@PEAU_NETLOGON_LOGON_IDENTITY_INFO@@@Z",
+              "ea": "0x180013f9e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?LogonUserStop@NtlmTelemetry@@YAXJW4_SECURITY_LOGON_TYPE@@PEAU_NETLOGON_LOGON_IDENTITY_INFO@@@Z",
+              "ea": "0x180013fe0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "localUserAccount",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "logonInfo",
+          "type": "CountedString",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "logonType",
+          "type": "Int32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "ntlmRunningIsolated",
+          "type": "Int32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "HexInt32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MspGetStrongCredentialKeyFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "KeyType:UInt32",
+            "SourceType:UInt32",
+            "LogonIdLow:UInt32",
+            "LogonIdHigh:Int32",
+            "Status:Int32",
+            "LocalhostCredIsoObjUsesEncryptedCredentials:UInt8(Boolean)",
+            "CredentialCredIsoObjIsRemote:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "msv1_0.dll",
+              "function": "MspGetStrongCredentialKey",
+              "ea": "0x18000c5f1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CredentialCredIsoObjIsRemote",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "KeyType",
+          "type": "UInt32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "LocalhostCredIsoObjUsesEncryptedCredentials",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "LogonIdHigh",
+          "type": "Int32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "LogonIdLow",
+          "type": "UInt32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "SourceType",
+          "type": "UInt32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "Int32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MsvpCheckSSOPolicy_Aggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "appName:UnicodeString",
+            "hasActiveLogon:UInt8(Boolean)",
+            "logonFlags:UInt32",
+            "logonType:UInt16",
+            "flagMSASSOControl:UInt16",
+            "flagOrgSSOControl:UInt16",
+            "permissive:UInt8(Boolean)",
+            "canTellIsPrivate:UInt8(Boolean)",
+            "isPrivate:UInt8(Boolean)",
+            "retVal:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "msv1_0.dll",
+              "function": "?LogCheckSSOPolicy@NtlmTelemetry@@YAXEKGKKEEEE@Z",
+              "ea": "0x1800100ad",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "appName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "canTellIsPrivate",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "flagMSASSOControl",
+          "type": "UInt16",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "flagOrgSSOControl",
+          "type": "UInt16",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "hasActiveLogon",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "isPrivate",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "logonFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "logonType",
+          "type": "UInt16",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "permissive",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "retVal",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NtlmConsumers_Aggregate",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "credGuardEn:Int32",
+            "svchostTag:UnicodeString",
+            "callingImageName:UnicodeString",
+            "isTcb:Bool32",
+            "isContextHandleValid:Bool32",
+            "isClient:UInt32",
+            "isSSO:UInt32",
+            "ntlmUsageReason:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "msv1_0.dll",
+              "function": "?LogNtlmConsumer@NtlmTelemetry@@YAX_K@Z",
+              "ea": "0x18005a0d1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?LogonUserStop@NtlmTelemetry@@YAXJW4_SECURITY_LOGON_TYPE@@PEAU_NETLOGON_LOGON_IDENTITY_INFO@@@Z",
+              "ea": "0x180013ff9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "credGuardEn:Int32",
+            "svchostTag:UnicodeString",
+            "callingImageName:UnicodeString",
+            "isTcb:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "msv1_0.dll",
+              "function": "?LogNtlmConsumer@NtlmTelemetry@@YAX_K@Z",
+              "ea": "0x18005a19e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "callingImageName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "credGuardEn",
+          "type": "Int32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "isClient",
+          "type": "UInt32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "isContextHandleValid",
+          "type": "Bool32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "isSSO",
+          "type": "UInt32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "isTcb",
+          "type": "Bool32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "ntlmUsageReason",
+          "type": "UInt32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "svchostTag",
+          "type": "UnicodeString",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NtlmCredIsoRpcError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "Function:AnsiString",
+            "Line:Int32",
+            "RpcStatus:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "msv1_0.dll",
+              "function": "?CalculateNtResponse@NtlmCredIsoIum@@UEAAJPEAU_CLEAR_BLOCK@@PEAU_MSV1_0_SECRETS_WRAPPER@@PEAU_LM_RESPONSE@@@Z",
+              "ea": "0x18005d9f2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?CalculateUserSessionKeyNt@NtlmCredIsoIum@@UEAAJPEAU_LM_RESPONSE@@PEAU_MSV1_0_SECRETS_WRAPPER@@PEAU_USER_SESSION_KEY@@@Z",
+              "ea": "0x18005db22",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?CheckRootSecretValidity@NtlmCredIsoIum@@UEAAJKPEAEPEAHPEAKPEAPEAE@Z",
+              "ea": "0x18005dc4c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?CompareCredentials@NtlmCredIsoIum@@UEAAJPEAU_MSV1_0_SECRETS_WRAPPER@@0PEAH11@Z",
+              "ea": "0x180014f1b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?CompareEncryptedNtowfAndDecryptSecrets@NtlmCredIsoIum@@UEAAJPEAU_UNICODE_STRING@@PEAU_MSV1_0_SECRETS_WRAPPER@@@Z",
+              "ea": "0x18005dd85",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?ComparePasswordToSspCredentialPassword@NtlmCredIsoIum@@UEAAJPEAU_UNICODE_STRING@@PEAU_SSP_CREDENTIAL@@PEAH@Z",
+              "ea": "0x180014d8d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?Create@NtlmCredIsoIum@@SAJPEAVNtlmCredIsoApi@@PEAPEAV2@@Z",
+              "ea": "0x18005df21",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?Create@NtlmCredIsoIum@@SAJPEAVNtlmCredIsoApi@@PEAPEAV2@@Z",
+              "ea": "0x18005dfcf",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?Create@NtlmCredIsoIum@@SAJPEAVNtlmCredIsoApi@@PEAPEAV2@@Z",
+              "ea": "0x18005e090",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?DecryptDpapiMasterKey@NtlmCredIsoIum@@UEAAJPEAU_MSV1_0_SECRETS_WRAPPER@@W4_DPAPI_KEY_TYPE@@KPEAEK2K2PEAXPEAKPEAPEAE@Z",
+              "ea": "0x180014b8d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?EncodeCredManPasswordAsNtlmIumPassword@NtlmCredIsoIum@@UEAAJPEAU_UNICODE_STRING@@P6APEAX_K@ZP6AXPEAX@Z@Z",
+              "ea": "0x18005e26d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?EncodePasswordAsSupplementalCredential@NtlmCredIsoIum@@UEAAJPEAU_UNICODE_STRING@@P6APEAX_K@ZP6AXPEAX@Z@Z",
+              "ea": "0x180015296",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?GenerateRootSecret@NtlmCredIsoIum@@UEAAJPEAKPEAPEAE@Z",
+              "ea": "0x18005e426",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?GetCredentialKey@NtlmCredIsoIum@@UEAAJPEAU_MSV1_0_SECRETS_WRAPPER@@PEAXW4_MSV1_0_CREDENTIAL_KEY_TYPE@@PEAU_MSV1_0_CREDENTIAL_KEY@@@Z",
+              "ea": "0x18005e56c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?IsGMSACred@NtlmCredIsoIum@@UEAAJPEAU_MSV1_0_SECRETS_WRAPPER@@PEAH@Z",
+              "ea": "0x180015136",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?Lm20GetNtlm3ChallengeResponse@NtlmCredIsoIum@@UEAAJPEAU_MSV1_0_SECRETS_WRAPPER@@PEAU_UNICODE_STRING@@11QEAEPEAGPEAPEAU_MSV1_0_NTLM3_RESPONSE@@PEAUMSV1_0_LM3_RESPONSE@@PEAU_USER_SESSION_KEY@@PEAU_CLEAR_BLOCK@@@Z",
+              "ea": "0x18005e777",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?MakeOwfsFromIumEncryptedPassword@NtlmCredIsoIum@@UEAAJKPEAEPEAU_MSV1_0_SECRETS_WRAPPER@@@Z",
+              "ea": "0x18005e8e2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?MakeOwfsFromIumSupplementalCredential@NtlmCredIsoIum@@UEAAJPEAU_MSV1_0_IUM_SUPPLEMENTAL_CREDENTIAL@@PEAU_MSV1_0_SECRETS_WRAPPER@@@Z",
+              "ea": "0x18005e9e6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?MakeSecretPasswordNT5@NtlmCredIsoIum@@UEAAJPEAU_UNICODE_STRING@@PEAU_MSV1_0_SECRETS_WRAPPER@@KPEAU_CACHE_PASSWORDS@@@Z",
+              "ea": "0x18005eb2a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?PasswordValidateInteractive@NtlmCredIsoIum@@UEAAJEPEAU_NETLOGON_INTERACTIVE_INFO@@PEAU_MSV1_0_SECRETS_WRAPPER@@PEAKPEAU_USER_SESSION_KEY@@PEAU_CLEAR_BLOCK@@PEAH@Z",
+              "ea": "0x18005ecd7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?PasswordValidateNetwork@NtlmCredIsoIum@@UEAAJEPEAU_NETLOGON_NETWORK_INFO@@PEAU_MSV1_0_SECRETS_WRAPPER@@PEAKPEAU_USER_SESSION_KEY@@PEAU_CLEAR_BLOCK@@PEAH@Z",
+              "ea": "0x18005ee87",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?ProtectCredential@NtlmCredIsoIum@@UEAAJPEAU_MSV1_0_SECRETS_WRAPPER@@@Z",
+              "ea": "0x18001503a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?ProtectSspCredentialPassword@NtlmCredIsoIum@@UEAAJPEAU_SSP_CREDENTIAL@@H@Z",
+              "ea": "0x18001b3d1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "msv1_0.dll",
+              "function": "?UpdateSharedConfiguration@NtlmCredIsoIum@@UEAAJPEAU_NtlmSharedConfiguration@@0@Z",
+              "ea": "0x18005ef96",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Function",
+          "type": "AnsiString",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "Line",
+          "type": "Int32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "RpcStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NtlmIumRpcCleanup",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "LsaIso.exe",
+              "function": "?NtlmIumRpcCleanup@@YAXXZ",
+              "ea": "0x140036a95",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "NtlmIumRpcInit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "LsaIso.exe",
+              "function": "?NtlmIumRpcInit@@YAJPEBU_LsaIsoSupportFunctions@@@Z",
+              "ea": "0x140036af2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "ReadRegistryValue_Aggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "registryValue:AnsiString",
+            "isInRegistry:UInt8(Boolean)",
+            "registryData:HexInt32",
+            "effectiveValue:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "msv1_0.dll",
+              "function": "TraceConfigUpdate",
+              "ea": "0x18004d601",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "effectiveValue",
+          "type": "HexInt32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "isInRegistry",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "registryData",
+          "type": "HexInt32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "registryValue",
+          "type": "AnsiString",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SupplementalCredentialDecryptionError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "function:AnsiString",
+            "LogonIdLow:UInt32",
+            "LogonIdHigh:Int32",
+            "Status:Int32",
+            "CredIsoObjUsesEncryptedCredentials:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "msv1_0.dll",
+              "function": "SspAcceptCredentials",
+              "ea": "0x18000d7fb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CredIsoObjUsesEncryptedCredentials",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "LogonIdHigh",
+          "type": "Int32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "LogonIdLow",
+          "type": "UInt32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "Int32",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        },
+        {
+          "fieldName": "function",
+          "type": "AnsiString",
+          "seenIn": [
+            "msv1_0.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2313 @@
+{
+  "providerName": "Microsoft.Windows.Security.WSC",
+  "guid": "{E6B5B34F-BD4D-5CDC-8346-EF4DC6CF1927}",
+  "os": "Windows 11",
+  "binaryCount": 3,
+  "binaries": [
+    "SecurityCenterBroker.dll",
+    "wscapi.dll",
+    "wscsvc.dll"
+  ],
+  "uniqueEventCount": 46,
+  "events": [
+    {
+      "eventName": "ActivityStoppedAutomatically",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "??$_tlgWriteActivityAutoStop@$0A@$04@@YAXPEBU_tlgProvider_t@@PEBU_GUID@@@Z",
+              "ea": "0x1800328b7",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "CallerValidation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "productName:UnicodeString",
+            "exePath:UnicodeString",
+            "status:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "?LogAmPplVerifiedStatus@@YAXPEBGJ00@Z",
+              "ea": "0x180007578",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wscsvc.dll",
+              "function": "?LogAmPplVerifiedStatus@@YAXPEBGJ00@Z",
+              "ea": "0x180007699",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wscsvc.dll",
+              "function": "?LogAmPplVerifiedStatus@@YAXPEBGJ00@Z",
+              "ea": "0x1800076d1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "exePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DatastoreMigratedVersion",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "datastoreisvtype:UInt32",
+            "datastoremigrated:UInt32",
+            "status:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "?WscMigrationComplete@@YAJW4_SECURITY_PRODUCT_TYPE@@@Z",
+              "ea": "0x18003fff5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wscsvc.dll",
+              "function": "?WscServiceStartup@@YAJH@Z",
+              "ea": "0x18000d384",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wscsvc.dll",
+              "function": "?WscServiceStartup@@YAJH@Z",
+              "ea": "0x18000d480",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "datastoreisvtype",
+          "type": "UInt32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "datastoremigrated",
+          "type": "UInt32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DeviceProtectedStatus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "numOfProducts:UInt32",
+            "protectedStatus:UInt32",
+            "productName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "?WscCleanup@@YAXXZ",
+              "ea": "0x18000c811",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "numOfProducts",
+          "type": "UInt32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "protectedStatus",
+          "type": "UInt32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EnableDefender",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "enable:Bool32",
+            "state:UInt32",
+            "reason:UInt32",
+            "defenderStatus:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "?SetDefenderStatus@@YAJHK@Z",
+              "ea": "0x18000323b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "defenderStatus",
+          "type": "UInt32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "enable",
+          "type": "Bool32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "reason",
+          "type": "UInt32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "state",
+          "type": "UInt32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GetCallerViaWdsp",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "callerExe:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SecurityCenterBroker.dll",
+              "function": "?GetCallerProcessPathViaWdsp@SecurityCenter@Windows@@YAJPEAPEAGK@Z",
+              "ea": "0x180019e40",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "callerExe",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InitiateOfflineCleanStart",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "s_wscInitiateOfflineCleaning",
+              "ea": "0x180035706",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "productName:UnicodeString",
+            "exePath:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "s_wscInitiateOfflineCleaning",
+              "ea": "0x180035867",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "wscsvc.dll",
+              "function": "s_wscInitiateOfflineCleaning",
+              "ea": "0x1800358c7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "exePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InitiateOfflineCleanStop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "s_wscInitiateOfflineCleaning",
+              "ea": "0x1800359eb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LoadProduct",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "exePath:UnicodeString",
+            "companyName:UnicodeString",
+            "productName:UnicodeString",
+            "productVersion:UnicodeString",
+            "state:UInt32",
+            "isDatastoreRegistry:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "?WscTelemetryEventWriteProductLoad@@YAXPEAVCExternalBase@@_N@Z",
+              "ea": "0x1800110a5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "companyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "exePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "isDatastoreRegistry",
+          "type": "Bool32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "state",
+          "type": "UInt32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProductUpgradeToastClicked",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "exePath:UnicodeString",
+            "updateButtonPressed:UInt8(Boolean)",
+            "defenderUiOpened:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "wscapi.dll",
+              "function": "?Activate@WscToastActivationHandler@@UEAAJPEBG0PEBUNOTIFICATION_USER_INPUT_DATA@@K@Z",
+              "ea": "0x18001350a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "defenderUiOpened",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "exePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "updateButtonPressed",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegisterAntiSpyware",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "exePath:UnicodeString",
+            "companyName:UnicodeString",
+            "productName:UnicodeString",
+            "productVersion:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "?WscTelemetryEventWriteProductRegistration@@YAXW4_SECURITY_PRODUCT_TYPE@@PEAVCExternalBase@@@Z",
+              "ea": "0x1800340ba",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "companyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "exePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegisterAntiVirus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "exePath:UnicodeString",
+            "companyName:UnicodeString",
+            "productName:UnicodeString",
+            "productVersion:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "?WscTelemetryEventWriteProductRegistration@@YAXW4_SECURITY_PRODUCT_TYPE@@PEAVCExternalBase@@@Z",
+              "ea": "0x180034116",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "companyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "exePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegisterFirewall",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "exePath:UnicodeString",
+            "companyName:UnicodeString",
+            "productName:UnicodeString",
+            "productVersion:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "?WscTelemetryEventWriteProductRegistration@@YAXW4_SECURITY_PRODUCT_TYPE@@PEAVCExternalBase@@@Z",
+              "ea": "0x1800340ea",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "companyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "exePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RenewSystemDialogClicked",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "companyName:UnicodeString",
+            "dialogType:UInt32",
+            "productName:UnicodeString",
+            "exePath:UnicodeString",
+            "productVersion:UnicodeString",
+            "__TlgCV__:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "wscapi.dll",
+              "function": "?OnCommand@CAMSystemNotification@@QEAAJPEAUIPopupCommand@@@Z",
+              "ea": "0x180010e96",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "companyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "dialogType",
+          "type": "UInt32",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "exePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "productVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ShowDefenderOnUpgradeNotificationNoThirdPartyAVToast",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "wscapi.dll",
+              "function": "?ShowDefenderOnUpgradeNotificationNoThirdPartyAVToast@@YAJXZ",
+              "ea": "0x180013ce8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "ShowDefenderOnUpgradeNotificationNoUpgradeEXEToasts",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "avDisplayName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "wscapi.dll",
+              "function": "?ShowDefenderOnUpgradeNotificationNoUpgradeEXEToasts@@YAJPEAU__MIDL_SecurityCenter_0001@@K@Z",
+              "ea": "0x180013f37",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "avDisplayName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ShowProductUpgradeToasts",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "avDisplayName:UnicodeString",
+            "avPath:UnicodeString",
+            "companyName:UnicodeString",
+            "productVersion:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "wscapi.dll",
+              "function": "?ShowProductUpgradeToasts@@YAJPEAU__MIDL_SecurityCenter_0001@@K@Z",
+              "ea": "0x180014275",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "avDisplayName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "avPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "companyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "productVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ToastNotificationClicked",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "notificationType:Int32",
+            "controlName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "wscapi.dll",
+              "function": "?Activate@WscToastActivationHandler@@UEAAJPEBG0PEBUNOTIFICATION_USER_INPUT_DATA@@K@Z",
+              "ea": "0x1800133ab",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "controlName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "notificationType",
+          "type": "Int32",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ToastNotificationShown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "notificationType:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "wscapi.dll",
+              "function": "?WscToastDisplay@@YAJW4_WscToastTemplateEnum@@AEAV?$vector@PEBGV?$allocator@PEBG@std@@@std@@@Z",
+              "ea": "0x1800159b0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "notificationType",
+          "type": "Int32",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UninstallSystemDialogClicked",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "dialogType:UInt32",
+            "productName:UnicodeString",
+            "exePath:UnicodeString",
+            "__TlgCV__:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "wscapi.dll",
+              "function": "?OnCommand@CAMSystemNotification@@QEAAJPEAUIPopupCommand@@@Z",
+              "ea": "0x180010d28",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "dialogType",
+          "type": "UInt32",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "exePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnregisterAntiSpyware",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "exePath:UnicodeString",
+            "companyName:UnicodeString",
+            "productName:UnicodeString",
+            "productVersion:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "?WscTelemetryEventWriteProductDeregistration@@YAXW4_SECURITY_PRODUCT_TYPE@@PEAVCExternalBase@@@Z",
+              "ea": "0x180033f22",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "companyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "exePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnregisterAntiVirus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "exePath:UnicodeString",
+            "companyName:UnicodeString",
+            "productName:UnicodeString",
+            "productVersion:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "?WscTelemetryEventWriteProductDeregistration@@YAXW4_SECURITY_PRODUCT_TYPE@@PEAVCExternalBase@@@Z",
+              "ea": "0x180033f7e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "companyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "exePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnregisterFirewall",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "exePath:UnicodeString",
+            "companyName:UnicodeString",
+            "productName:UnicodeString",
+            "productVersion:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "?WscTelemetryEventWriteProductDeregistration@@YAXW4_SECURITY_PRODUCT_TYPE@@PEAVCExternalBase@@@Z",
+              "ea": "0x180033f52",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "companyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "exePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UpdateAntiSpyware",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "state:UInt32",
+            "isCurrent:Bool32",
+            "exePath:UnicodeString",
+            "companyName:UnicodeString",
+            "productName:UnicodeString",
+            "productVersion:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "?WscTelemetryEventWriteProductUpdate@@YAXW4_SECURITY_PRODUCT_TYPE@@W4_SECURITY_PRODUCT_STATE@@HPEAVCExternalBase@@@Z",
+              "ea": "0x180012cd2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "companyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "exePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "isCurrent",
+          "type": "Bool32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "state",
+          "type": "UInt32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UpdateAntiVirus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "state:UInt32",
+            "isCurrent:Bool32",
+            "exePath:UnicodeString",
+            "companyName:UnicodeString",
+            "productName:UnicodeString",
+            "productVersion:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "?WscTelemetryEventWriteProductUpdate@@YAXW4_SECURITY_PRODUCT_TYPE@@W4_SECURITY_PRODUCT_STATE@@HPEAVCExternalBase@@@Z",
+              "ea": "0x180012d6c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "companyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "exePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "isCurrent",
+          "type": "Bool32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "state",
+          "type": "UInt32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UpdateFirewall",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "state:UInt32",
+            "isCurrent:Bool32",
+            "exePath:UnicodeString",
+            "companyName:UnicodeString",
+            "productName:UnicodeString",
+            "productVersion:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "?WscTelemetryEventWriteProductUpdate@@YAXW4_SECURITY_PRODUCT_TYPE@@W4_SECURITY_PRODUCT_STATE@@HPEAVCExternalBase@@@Z",
+              "ea": "0x180012d38",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "companyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "exePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "isCurrent",
+          "type": "Bool32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "state",
+          "type": "UInt32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinReInitiateOfflineCleaningFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "wscapi.dll",
+              "function": "wscInitiateOfflineCleaning",
+              "ea": "0x18000ca9a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WscCbpCleanup",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "callerExe:UnicodeString",
+            "HResult:Int32(HResult)",
+            "HResult2:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "SecurityCenterBroker.dll",
+              "function": "?CleanupInvalidRegistrations@WscCbpManager@SecurityCenter@Windows@@QEAAJXZ",
+              "ea": "0x180011218",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult2",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "callerExe",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WscCbpRegister",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "productName:UnicodeString",
+            "callerExe:UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "SecurityCenterBroker.dll",
+              "function": "?Register@WscCloudBackupProvider@SecurityCenter@Windows@@UEAAJPEAU_GUID@@PEAUHSTRING__@@1111W4CloudBackupProviderProductType@23@@Z",
+              "ea": "0x1800153d9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "callerExe",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WscCbpUnregister",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "callerExe:UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "SecurityCenterBroker.dll",
+              "function": "?Unregister@WscCloudBackupProvider@SecurityCenter@Windows@@UEAAJU_GUID@@@Z",
+              "ea": "0x18001816d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "callerExe",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WscDSANewDefaultClicked",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "companyName:UnicodeString",
+            "productVersion:UnicodeString",
+            "productName:UnicodeString",
+            "status:Int64",
+            "__TlgCV__:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "wscapi.dll",
+              "function": "?OnListenedEvent@CRenewDialog@@UEAAXPEAVElement@DirectUI@@PEAUEvent@3@@Z",
+              "ea": "0x18001127a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "companyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "productVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int64",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WscDSAOkDefaultClicked",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "__TlgCV__:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "wscapi.dll",
+              "function": "?OnListenedEvent@CRenewDialog@@UEAAXPEAVElement@DirectUI@@PEAUEvent@3@@Z",
+              "ea": "0x180011385",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WscDSARemediateProduct",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "companyName:UnicodeString",
+            "productName:UnicodeString",
+            "productVersion:UnicodeString",
+            "HResult:HexInt32",
+            "remediationAction:UInt32",
+            "compliance:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "?TraceLoggingWriteRemediationState@@YAXPEAVCThirdPartyManager@@W4RemediationAction@@JPEAHPEBG@Z",
+              "ea": "0x18003c7eb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "HexInt32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "companyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "compliance",
+          "type": "Bool32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "remediationAction",
+          "type": "UInt32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WscDSASameDefaultClicked",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "__TlgCV__:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "wscapi.dll",
+              "function": "?OnListenedEvent@CRenewDialog@@UEAAXPEAVElement@DirectUI@@PEAUEvent@3@@Z",
+              "ea": "0x1800110f0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WscDSASaveDefaultByPtr",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "companyName:UnicodeString",
+            "productName:UnicodeString",
+            "productVersion:UnicodeString",
+            "HResult:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "?WscDSA_SaveDefaultByPtr@@YAJPEAVCWmiEventManagerAvFw@@PEAVCThirdPartyManager@@PEAVCExternalBase@@@Z",
+              "ea": "0x18003e3e2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "HexInt32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "companyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WscDSASystemDialogShown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "notificationType:Int32",
+            "productName:UnicodeString",
+            "companyName:UnicodeString",
+            "productVersion:UnicodeString",
+            "HResult:HexInt32",
+            "__TlgCV__:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "wscapi.dll",
+              "function": "?_CreatePopupDialog@CAMSystemNotification@@AEAAJHI@Z",
+              "ea": "0x180012075",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "HexInt32",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "companyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "notificationType",
+          "type": "Int32",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        },
+        {
+          "fieldName": "productVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WscDpaCleanup",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "callerExe:UnicodeString",
+            "HResult:Int32(HResult)",
+            "HResult2:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "SecurityCenterBroker.dll",
+              "function": "?CleanupInvalidRegistrations@WscDpaManager@SecurityCenter@Windows@@QEAAJXZ",
+              "ea": "0x18000aaa0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult2",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "callerExe",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WscDpaRegister",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "productName:UnicodeString",
+            "callerExe:UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "SecurityCenterBroker.dll",
+              "function": "?Register@WscDataProtection@SecurityCenter@Windows@@UEAAJPEAUHSTRING__@@@Z",
+              "ea": "0x18000dd6c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "callerExe",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WscDpaUnregister",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "callerExe:UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "SecurityCenterBroker.dll",
+              "function": "?Unregister@WscDataProtection@SecurityCenter@Windows@@UEAAJXZ",
+              "ea": "0x18000fe90",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "callerExe",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WscNotifyUserForNearExpiration",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "companyName:UnicodeString",
+            "productName:UnicodeString",
+            "exePath:UnicodeString",
+            "productVersion:UnicodeString",
+            "notificationDays:UInt32",
+            "status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "s_wscNotifyUserForNearExpiration",
+              "ea": "0x1800287fb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "companyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "exePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "notificationDays",
+          "type": "UInt32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WscNotifyUserForRenew",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "companyName:UnicodeString",
+            "productName:UnicodeString",
+            "exePath:UnicodeString",
+            "productVersion:UnicodeString",
+            "notificationType:UInt32",
+            "status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "?AntivirusExpiredMonitoringThreadProc@@YAKPEAX@Z",
+              "ea": "0x180031c4f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "companyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "exePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "notificationType",
+          "type": "UInt32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WscNotifyUserForUninstall",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "companyName:UnicodeString",
+            "productName:UnicodeString",
+            "exePath:UnicodeString",
+            "productVersion:UnicodeString",
+            "status:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "wscsvc.dll",
+              "function": "?AntivirusExpiredMonitoringThreadProc@@YAKPEAX@Z",
+              "ea": "0x180031aae",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "companyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "exePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "productVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int32",
+          "seenIn": [
+            "wscsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WscSecurityAppCleanup",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "forcefieldtype:UInt32",
+            "callerExe:UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "SecurityCenterBroker.dll",
+              "function": "?CleanupInvalidRegistrations@WscSecurityAppManager@SecurityCenter@Windows@@QEAAJXZ",
+              "ea": "0x18001b229",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "callerExe",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "forcefieldtype",
+          "type": "UInt32",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WscSecurityAppRegister",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "forcefieldtype:UInt32",
+            "productName:UnicodeString",
+            "callerExe:UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "SecurityCenterBroker.dll",
+              "function": "?Register@SecurityAppManager@Shell@UI@Windows@@UEAAJW4SecurityAppKind@234@PEAUHSTRING__@@PEAUIUriRuntimeClass@Foundation@4@EPEAU_GUID@@@Z",
+              "ea": "0x18001e06f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "callerExe",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "forcefieldtype",
+          "type": "UInt32",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "productName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WscSecurityAppUnregister",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "forcefieldtype:UInt32",
+            "callerExe:UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "SecurityCenterBroker.dll",
+              "function": "?Unregister@SecurityAppManager@Shell@UI@Windows@@UEAAJW4SecurityAppKind@234@U_GUID@@@Z",
+              "ea": "0x180020096",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "callerExe",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "forcefieldtype",
+          "type": "UInt32",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WscSecurityAppUpdate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "forcefieldtype:UInt32",
+            "callerExe:UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "SecurityCenterBroker.dll",
+              "function": "?UpdateState@SecurityAppManager@Shell@UI@Windows@@UEAAJW4SecurityAppKind@234@U_GUID@@W4SecurityAppState@234@W4SecurityAppSubstatus@234@PEAUIUriRuntimeClass@Foundation@4@@Z",
+              "ea": "0x180020926",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "callerExe",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        },
+        {
+          "fieldName": "forcefieldtype",
+          "type": "UInt32",
+          "seenIn": [
+            "SecurityCenterBroker.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

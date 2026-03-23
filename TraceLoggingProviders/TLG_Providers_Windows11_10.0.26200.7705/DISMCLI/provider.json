@@ -1,0 +1,81 @@
+{
+  "providerName": "DISMCLI",
+  "guid": "{AD05F58E-FC71-40BE-9F09-F258111BA160}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "Dism.exe"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "ActivityStoppedAutomatically",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "Dism.exe",
+              "function": "??$_tlgWriteActivityAutoStop@$0A@$04@@YAXPEBU_tlgProvider_t@@PEBU_GUID@@@Z",
+              "ea": "0x140002ff1",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "DismCliRun",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "Dism.exe",
+              "function": "wmain",
+              "ea": "0x1400070ed",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "Dism.exe",
+              "function": "wmain",
+              "ea": "0x1400071b6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ExitCode_DismCliRun:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "Dism.exe",
+              "function": "wmain",
+              "ea": "0x14000715f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ExitCode_DismCliRun",
+          "type": "Int32",
+          "seenIn": [
+            "Dism.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

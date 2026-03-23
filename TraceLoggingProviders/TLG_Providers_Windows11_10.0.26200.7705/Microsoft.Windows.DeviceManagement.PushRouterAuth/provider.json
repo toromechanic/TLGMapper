@@ -1,0 +1,427 @@
+{
+  "providerName": "Microsoft.Windows.DeviceManagement.PushRouterAuth",
+  "guid": "{455FEFE7-5B3D-485A-BCBB-D0F09A47D1AE}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "prauthproviders.dll"
+  ],
+  "uniqueEventCount": 10,
+  "events": [
+    {
+      "eventName": "ActivityStoppedAutomatically",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "prauthproviders.dll",
+              "function": "??$_tlgWriteActivityAutoStop@$0CAAAAAAAAAAA@$04@@YAXPEBU_tlgProvider_t@@PEBU_GUID@@@Z",
+              "ea": "0x18000531a",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "SyncMLAuthenticate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "prauthproviders.dll",
+              "function": "?Authenticate@SyncmlAuthProvider@@UEAAJPEAUPUSHMSGAUTHDATA@@PEAPEAGPEAK@Z",
+              "ea": "0x18000dc30",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "prauthproviders.dll",
+              "function": "?Authenticate@SyncmlAuthProvider@@UEAAJPEAUPUSHMSGAUTHDATA@@PEAPEAGPEAK@Z",
+              "ea": "0x18000e045",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "SyncMLAuthenticateFailed",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "HResult:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "prauthproviders.dll",
+              "function": "?LogPushrouterSyncMLAuthenticateFailed@CPushrouterLogger@@QEAAXJ@Z",
+              "ea": "0x18000f58f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "HResult:HexInt32",
+            "Headers:UnicodeString",
+            "Bytes:UInt32",
+            "Message:UInt8[](Hex)",
+            "__TlgCV__:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "prauthproviders.dll",
+              "function": "?LogPushrouterSyncMLAuthenticateFailedDetailed@CPushrouterLogger@@QEAAXPEBGKPEAEKJ@Z",
+              "ea": "0x18000f6dd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Bytes",
+          "type": "UInt32",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "HexInt32",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        },
+        {
+          "fieldName": "Headers",
+          "type": "UnicodeString",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        },
+        {
+          "fieldName": "Message",
+          "type": "UInt8[](Hex)",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncMLAuthenticateSucceeded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "prauthproviders.dll",
+              "function": "?LogPushrouterSyncMLAuthenticateSucceeded@CPushrouterLogger@@QEAAXXZ",
+              "ea": "0x18000f76d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "SyncMLValidateWithDefaultNonceTriggerAuthentication",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "fAuthenticated:Int32",
+            "ServerID:UnicodeString",
+            "TriggerBytes:UInt32",
+            "Trigger:UInt8[](Hex)"
+          ],
+          "callers": [
+            {
+              "binary": "prauthproviders.dll",
+              "function": "?ValidateWithDefaultNonce@SyncmlAuthProvider@@AEAAJPEAEK0PEAUtagOMADMACCTINFO@@PEBGW4tagDMACCOUNTLOOKUPTYPE@@20PEAH@Z",
+              "ea": "0x18000eb00",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ServerID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        },
+        {
+          "fieldName": "Trigger",
+          "type": "UInt8[](Hex)",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        },
+        {
+          "fieldName": "TriggerBytes",
+          "type": "UInt32",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        },
+        {
+          "fieldName": "fAuthenticated",
+          "type": "Int32",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncMLValidateWithRegularNonceTriggerAuthentication",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "fAuthenticated:Int32",
+            "ServerID:UnicodeString",
+            "ServerPW:UnicodeString",
+            "NonceBytes:UInt32",
+            "Nonce:UInt8[](Hex)",
+            "TriggerBytes:UInt32",
+            "Trigger:UInt8[](Hex)",
+            "CalculatedDigest:UInt8[N](Hex)",
+            "MessageDigest:UInt8[N](Hex)"
+          ],
+          "callers": [
+            {
+              "binary": "prauthproviders.dll",
+              "function": "?ValidateWithRegularNonce@SyncmlAuthProvider@@AEAAJPEAEK0PEAUtagOMADMACCTINFO@@HPEBG20PEAH@Z",
+              "ea": "0x18000ede8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CalculatedDigest",
+          "type": "UInt8[N](Hex)",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        },
+        {
+          "fieldName": "MessageDigest",
+          "type": "UInt8[N](Hex)",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        },
+        {
+          "fieldName": "Nonce",
+          "type": "UInt8[](Hex)",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        },
+        {
+          "fieldName": "NonceBytes",
+          "type": "UInt32",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        },
+        {
+          "fieldName": "ServerID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        },
+        {
+          "fieldName": "ServerPW",
+          "type": "UnicodeString",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        },
+        {
+          "fieldName": "Trigger",
+          "type": "UInt8[](Hex)",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        },
+        {
+          "fieldName": "TriggerBytes",
+          "type": "UInt32",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        },
+        {
+          "fieldName": "fAuthenticated",
+          "type": "Int32",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SyncMLValidateWithSecondaryNonceNonceNotFound",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "prauthproviders.dll",
+              "function": "?ValidateWithSecondaryNonce@SyncmlAuthProvider@@AEAAJPEAEK0PEAUtagOMADMACCTINFO@@HPEBGW4tagDMACCOUNTLOOKUPTYPE@@20PEAH@Z",
+              "ea": "0x18000f16c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "SyncMLValidateWithSecondaryNonceProblemRetrievingNonce",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "HResult:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "prauthproviders.dll",
+              "function": "?ValidateWithSecondaryNonce@SyncmlAuthProvider@@AEAAJPEAEK0PEAUtagOMADMACCTINFO@@HPEBGW4tagDMACCOUNTLOOKUPTYPE@@20PEAH@Z",
+              "ea": "0x18000f102",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "HexInt32",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WapAuthenticateEnd",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "HResult:HexInt32",
+            "SecParam:UInt32",
+            "PolicyVal:UInt32",
+            "RoleAssigned:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "prauthproviders.dll",
+              "function": "?Authenticate@WapAuthProvider@@UEAAJPEAUPUSHMSGAUTHDATA@@PEAPEAGPEAK@Z",
+              "ea": "0x18000699e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "HexInt32",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyVal",
+          "type": "UInt32",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        },
+        {
+          "fieldName": "RoleAssigned",
+          "type": "UInt32",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        },
+        {
+          "fieldName": "SecParam",
+          "type": "UInt32",
+          "seenIn": [
+            "prauthproviders.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WapAuthenticateStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "prauthproviders.dll",
+              "function": "?Authenticate@WapAuthProvider@@UEAAJPEAUPUSHMSGAUTHDATA@@PEAPEAGPEAK@Z",
+              "ea": "0x1800067d5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    }
+  ]
+}

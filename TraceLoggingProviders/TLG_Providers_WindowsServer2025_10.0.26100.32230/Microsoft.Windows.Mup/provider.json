@@ -1,0 +1,72 @@
+{
+  "providerName": "Microsoft.Windows.Mup",
+  "guid": "{323F25F8-A2D6-5789-081E-8BB0DE69FDC2}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "mup.sys"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "OtherMailslotNameHFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HashOfMailslotName:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "mup.sys",
+              "function": "MupWriteTelemetryOtherRemoteMailslotFailed",
+              "ea": "0x140004bc7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HashOfMailslotName",
+          "type": "HexInt64",
+          "seenIn": [
+            "mup.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WellKnownMailslotNameFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "MailslotName:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "mup.sys",
+              "function": "MupWriteTelemetryKnownRemoteMailslotFailed",
+              "ea": "0x140002117",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "MailslotName",
+          "type": "CountedString",
+          "seenIn": [
+            "mup.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

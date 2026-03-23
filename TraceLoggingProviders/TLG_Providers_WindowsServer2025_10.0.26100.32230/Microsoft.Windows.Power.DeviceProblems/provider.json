@@ -1,0 +1,50 @@
+{
+  "providerName": "Microsoft.Windows.Power.DeviceProblems",
+  "guid": "{CDEF60FA-5777-4B02-9980-1E2C0DF22635}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "energy.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "ProblemsDetected",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "sessionGuid:GUID",
+            "problemsDetected:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "energy.dll",
+              "function": "?LocalTelemetryAnalysis@DevicesTroubleshooter@@MEAAXU_GUID@@@Z",
+              "ea": "0x180033fbd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "problemsDetected",
+          "type": "UInt8",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "energy.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

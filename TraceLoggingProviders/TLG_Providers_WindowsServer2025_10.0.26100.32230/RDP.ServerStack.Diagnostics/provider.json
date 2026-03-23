@@ -1,0 +1,709 @@
+{
+  "providerName": "RDP.ServerStack.Diagnostics",
+  "guid": "{CA341B3C-B9D2-4D0F-9BD3-D88183596DB9}",
+  "os": "WindowsServer2025",
+  "binaryCount": 3,
+  "binaries": [
+    "mstscax.dll",
+    "rdpbase.dll",
+    "rdpnanoTransport.dll"
+  ],
+  "uniqueEventCount": 6,
+  "events": [
+    {
+      "eventName": "ConnectionCheckpoint",
+      "variantCount": 8,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "operation:UInt32",
+            "udpType:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "mstscax.dll",
+              "function": "?OnICEUpdateConnectionType@CRdpUdpTransport@@UEAAJIPEAURdpNanoIceConnectionInfo@@@Z",
+              "ea": "0x1803e075d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rdpbase.dll",
+              "function": "RDPServerStackDiagnostics_LogShortpathCheckpoint",
+              "ea": "0x180102585",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "operation:UInt32",
+            "json:CountedAnsiString(UTF8)"
+          ],
+          "callers": [
+            {
+              "binary": "mstscax.dll",
+              "function": "RDPServerStackDiagnostics_LogShortpathPublicCheckpoint",
+              "ea": "0x180408a0d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rdpbase.dll",
+              "function": "RDPServerStackDiagnostics_LogShortpathPublicCheckpoint",
+              "ea": "0x180102682",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "operation:UInt32",
+            "json:AnsiString(UTF8)"
+          ],
+          "callers": [
+            {
+              "binary": "mstscax.dll",
+              "function": "RDPServerStackDiagnostics_LogShortpathPublicCheckpoint",
+              "ea": "0x180408a57",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rdpbase.dll",
+              "function": "RDPServerStackDiagnostics_LogShortpathPublicCheckpoint",
+              "ea": "0x1801026cc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "operation:UInt32",
+            "connectionQOEScore:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpbase.dll",
+              "function": "?RDPServerStackDiagnostics_LogConnectionQOEScore@@YAXAEBU_GUID@@I@Z",
+              "ea": "0x18010207a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "operation:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpbase.dll",
+              "function": "RDPServerStackDiagnostics_LogCheckpoint",
+              "ea": "0x1801020d7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "operation:UInt32",
+            "disconnectSource:UInt32",
+            "code:UInt32",
+            "codeSymbolic:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "rdpbase.dll",
+              "function": "RDPServerStackDiagnostics_LogDisconnect",
+              "ea": "0x18010223e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "operation:UInt32",
+            "ShortpathPublicEnabled:Bool32",
+            "ShortpathPrivateEnabled:Bool32",
+            "udpPort:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpbase.dll",
+              "function": "RDPServerStackDiagnostics_LogShortpathCheckpoint",
+              "ea": "0x1801024e9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "operation:UInt32",
+            "FallbackReason:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "rdpbase.dll",
+              "function": "RDPServerStackDiagnostics_LogShortpathFallbackCheckpoint",
+              "ea": "0x1801025f0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FallbackReason",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "ShortpathPrivateEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "ShortpathPublicEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "code",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "codeSymbolic",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "connectionQOEScore",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "disconnectSource",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "json",
+          "type": "AnsiString(UTF8)",
+          "seenIn": [
+            "mstscax.dll",
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "json",
+          "type": "CountedAnsiString(UTF8)",
+          "seenIn": [
+            "mstscax.dll",
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "operation",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll",
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "udpPort",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "udpType",
+          "type": "AnsiString",
+          "seenIn": [
+            "mstscax.dll",
+            "rdpbase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ConnectionContext",
+      "variantCount": 6,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "udpUse:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "mstscax.dll",
+              "function": "?OnICEUpdateConnectionType@CRdpUdpTransport@@UEAAJIPEAURdpNanoIceConnectionInfo@@@Z",
+              "ea": "0x1803e0572",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mstscax.dll",
+              "function": "?OnICEUpdateConnectionType@CRdpUdpTransport@@UEAAJIPEAURdpNanoIceConnectionInfo@@@Z",
+              "ea": "0x1803e05bc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rdpbase.dll",
+              "function": "?OnICEUpdateConnectionType@CRdpUdpTransport@@UEAAJIPEAURdpNanoIceConnectionInfo@@@Z",
+              "ea": "0x18011db1b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rdpbase.dll",
+              "function": "?OnICEUpdateConnectionType@CRdpUdpTransport@@UEAAJIPEAURdpNanoIceConnectionInfo@@@Z",
+              "ea": "0x18011db69",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rdpbase.dll",
+              "function": "RDPServerStackDiagnostics_LogContext",
+              "ea": "0x18010216a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "udpType:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "mstscax.dll",
+              "function": "?OnICEUpdateConnectionType@CRdpUdpTransport@@UEAAJIPEAURdpNanoIceConnectionInfo@@@Z",
+              "ea": "0x1803e0687",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mstscax.dll",
+              "function": "?OnICEUpdateConnectionType@CRdpUdpTransport@@UEAAJIPEAURdpNanoIceConnectionInfo@@@Z",
+              "ea": "0x1803e06d4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rdpbase.dll",
+              "function": "?OnICEUpdateConnectionType@CRdpUdpTransport@@UEAAJIPEAURdpNanoIceConnectionInfo@@@Z",
+              "ea": "0x18011dc2c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rdpbase.dll",
+              "function": "?OnICEUpdateConnectionType@CRdpUdpTransport@@UEAAJIPEAURdpNanoIceConnectionInfo@@@Z",
+              "ea": "0x18011dc7b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rdpbase.dll",
+              "function": "RDPServerStackDiagnostics_LogContext",
+              "ea": "0x180102194",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "connectionQOEScore:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpbase.dll",
+              "function": "RDPServerStackDiagnostics_LogContext",
+              "ea": "0x180102141",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "sessionId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpbase.dll",
+              "function": "RDPServerStackDiagnostics_LogContext",
+              "ea": "0x1801021bf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "displayCount:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "rdpbase.dll",
+              "function": "RDPServerStackDiagnostics_LogStringContext",
+              "ea": "0x180102730",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "resolution:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "rdpbase.dll",
+              "function": "RDPServerStackDiagnostics_LogStringContext",
+              "ea": "0x180102742",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "connectionQOEScore",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "displayCount",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "resolution",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "udpType",
+          "type": "AnsiString",
+          "seenIn": [
+            "mstscax.dll",
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "udpUse",
+          "type": "UInt32",
+          "seenIn": [
+            "mstscax.dll",
+            "rdpbase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ConnectionEnd",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "rdpbase.dll",
+              "function": "RDPServerStackDiagnostics_LogDisconnect",
+              "ea": "0x18010229a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rdpbase.dll",
+              "function": "RDPServerStackDiagnostics_LogFailure",
+              "ea": "0x18010243e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "ConnectionFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "source:UInt32",
+            "operation:UInt32",
+            "code:UInt32",
+            "codeSymbolic:AnsiString",
+            "message:AnsiString",
+            "internal:Bool32",
+            "disconnectTimeToDetectNominal:AnsiString",
+            "disconnectTimeToDetectActual:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "rdpbase.dll",
+              "function": "RDPServerStackDiagnostics_LogFailure",
+              "ea": "0x1801023bb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "code",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "codeSymbolic",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "disconnectTimeToDetectActual",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "disconnectTimeToDetectNominal",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "internal",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "operation",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpbase.dll"
+          ]
+        },
+        {
+          "fieldName": "source",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpbase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ICETurnActiveCloseResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x70000000000",
+          "fields": [
+            "type:AnsiString",
+            "Component:AnsiString",
+            "Subcomponent:AnsiString",
+            "correlationId:AnsiString",
+            "candidate:CountedAnsiString(UTF8)",
+            "response:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpnanoTransport.dll",
+              "function": "_lambda_290ef780d1fbc6ce45cb06d6a5de5fc9_::operator()",
+              "ea": "0x180212f77",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Component",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpnanoTransport.dll"
+          ]
+        },
+        {
+          "fieldName": "Subcomponent",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpnanoTransport.dll"
+          ]
+        },
+        {
+          "fieldName": "candidate",
+          "type": "CountedAnsiString(UTF8)",
+          "seenIn": [
+            "rdpnanoTransport.dll"
+          ]
+        },
+        {
+          "fieldName": "correlationId",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpnanoTransport.dll"
+          ]
+        },
+        {
+          "fieldName": "response",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpnanoTransport.dll"
+          ]
+        },
+        {
+          "fieldName": "type",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpnanoTransport.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ICETurnRefreshResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x70000000000",
+          "fields": [
+            "type:AnsiString",
+            "Component:AnsiString",
+            "Subcomponent:AnsiString",
+            "correlationId:AnsiString",
+            "candidate:CountedAnsiString(UTF8)",
+            "response:UInt32",
+            "timeout:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpnanoTransport.dll",
+              "function": "_lambda_dfb38a5e52403b992bdec6c800b7a492_::operator()",
+              "ea": "0x180213073",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Component",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpnanoTransport.dll"
+          ]
+        },
+        {
+          "fieldName": "Subcomponent",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpnanoTransport.dll"
+          ]
+        },
+        {
+          "fieldName": "candidate",
+          "type": "CountedAnsiString(UTF8)",
+          "seenIn": [
+            "rdpnanoTransport.dll"
+          ]
+        },
+        {
+          "fieldName": "correlationId",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpnanoTransport.dll"
+          ]
+        },
+        {
+          "fieldName": "response",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpnanoTransport.dll"
+          ]
+        },
+        {
+          "fieldName": "timeout",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpnanoTransport.dll"
+          ]
+        },
+        {
+          "fieldName": "type",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpnanoTransport.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

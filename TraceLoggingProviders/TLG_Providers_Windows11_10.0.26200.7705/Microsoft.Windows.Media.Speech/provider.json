@@ -1,0 +1,126 @@
+{
+  "providerName": "Microsoft.Windows.Media.Speech",
+  "guid": "{1B5D7521-F0C0-5486-84BE-4F0E53CE3E50}",
+  "os": "Windows 11",
+  "binaryCount": 3,
+  "binaries": [
+    "Windows.Media.Speech.dll",
+    "Windows.Speech.Shell.dll",
+    "sapi_onecore.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "TranslateSapiError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "sapiError:Int32",
+            "winrtError:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "Windows.Media.Speech.dll",
+              "function": "??$TranslateSapiError@AEAJAEAJ@WindowsMediaSpeechProvider@@SAXAEAJ0@Z",
+              "ea": "0x1800170a3",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "sapiError",
+          "type": "Int32",
+          "seenIn": [
+            "Windows.Media.Speech.dll"
+          ]
+        },
+        {
+          "fieldName": "winrtError",
+          "type": "Int32",
+          "seenIn": [
+            "Windows.Media.Speech.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnexpectedThreadpoolCallbackFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "hr:Int32(HResult)",
+            "function:AnsiString",
+            "file:AnsiString",
+            "lineNumber:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "sapi_onecore.dll",
+              "function": "?UnexpectedThreadpoolCallbackFailure@WindowsMediaSpeechProviderForHelpers@@SAXJPEBD0I@Z",
+              "ea": "0x18012a51d",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Windows.Media.Speech.dll",
+              "function": "?UnexpectedThreadpoolCallbackFailure@WindowsMediaSpeechProviderForHelpers@@SAXJPEBD0I@Z",
+              "ea": "0x18002db91",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Windows.Speech.Shell.dll",
+              "function": "?UnexpectedThreadpoolCallbackFailure@WindowsMediaSpeechProviderForHelpers@@SAXJPEBD0I@Z",
+              "ea": "0x180013ef9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "file",
+          "type": "AnsiString",
+          "seenIn": [
+            "Windows.Media.Speech.dll",
+            "Windows.Speech.Shell.dll",
+            "sapi_onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "function",
+          "type": "AnsiString",
+          "seenIn": [
+            "Windows.Media.Speech.dll",
+            "Windows.Speech.Shell.dll",
+            "sapi_onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "Windows.Media.Speech.dll",
+            "Windows.Speech.Shell.dll",
+            "sapi_onecore.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "Windows.Media.Speech.dll",
+            "Windows.Speech.Shell.dll",
+            "sapi_onecore.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "providerName": "Microsoft.Windows.Security.EDPPolicyMgrApplockerTask",
+  "guid": "{CF84DA43-F447-42DE-AD48-4FEEEA03247D}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "AppLockerCSP.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "EDPPolicyManagerPolicyUpdateTrigger",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PolicyUpdate:Bool32",
+            "PolicyRebootRequired:Bool32",
+            "EDPEnforcementLevel:UInt32",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseIDString:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "AppLockerCSP.dll",
+              "function": "?SetEnterpriseConfig@@YAJKPEBG@Z",
+              "ea": "0x18001d506",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EDPEnforcementLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "AppLockerCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "EnterpriseIDString",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AppLockerCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "EnterpriseIdCount",
+          "type": "UInt32",
+          "seenIn": [
+            "AppLockerCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyRebootRequired",
+          "type": "Bool32",
+          "seenIn": [
+            "AppLockerCSP.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyUpdate",
+          "type": "Bool32",
+          "seenIn": [
+            "AppLockerCSP.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

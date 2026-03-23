@@ -1,0 +1,288 @@
+{
+  "providerName": "Microsoft.Windows.EnergyEstimation",
+  "guid": "{295B5BBA-368E-4A3F-B393-2D0D250B1AD1}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "eeprov.dll"
+  ],
+  "uniqueEventCount": 5,
+  "events": [
+    {
+      "eventName": "BatteryDrain",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "EventVersion:UInt8",
+            "BatteryDrainMilliWattHours:UInt32",
+            "PreviousRemainingCapacityMilliWattHours:UInt32",
+            "RemainingCapacityMilliWattHours:UInt32",
+            "PreviousMaxCapacityMilliWattHours:UInt32",
+            "MaxCapacityMilliWattHours:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "eeprov.dll",
+              "function": "EepGetBatteryDrain",
+              "ea": "0x18001498f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BatteryDrainMilliWattHours",
+          "type": "UInt32",
+          "seenIn": [
+            "eeprov.dll"
+          ]
+        },
+        {
+          "fieldName": "EventVersion",
+          "type": "UInt8",
+          "seenIn": [
+            "eeprov.dll"
+          ]
+        },
+        {
+          "fieldName": "MaxCapacityMilliWattHours",
+          "type": "UInt32",
+          "seenIn": [
+            "eeprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PreviousMaxCapacityMilliWattHours",
+          "type": "UInt32",
+          "seenIn": [
+            "eeprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PreviousRemainingCapacityMilliWattHours",
+          "type": "UInt32",
+          "seenIn": [
+            "eeprov.dll"
+          ]
+        },
+        {
+          "fieldName": "RemainingCapacityMilliWattHours",
+          "type": "UInt32",
+          "seenIn": [
+            "eeprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BatteryDrainFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "EventVersion:UInt8",
+            "NtStatus:UInt32(NTStatus)",
+            "BatteryDrainMilliWattHours:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "eeprov.dll",
+              "function": "EepGetBatteryDrain",
+              "ea": "0x180014a97",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BatteryDrainMilliWattHours",
+          "type": "UInt32",
+          "seenIn": [
+            "eeprov.dll"
+          ]
+        },
+        {
+          "fieldName": "EventVersion",
+          "type": "UInt8",
+          "seenIn": [
+            "eeprov.dll"
+          ]
+        },
+        {
+          "fieldName": "NtStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "eeprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CommitStats",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "EventVersion:UInt8",
+            "ConsumedEnergyMilliJoules:UInt64",
+            "EstimatedEnergyMilliJoules:UInt64",
+            "LossEnergyMilliJoules:UInt64",
+            "UnknownEnergyMilliJoules:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "eeprov.dll",
+              "function": "EepCommitStats",
+              "ea": "0x18000b95f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConsumedEnergyMilliJoules",
+          "type": "UInt64",
+          "seenIn": [
+            "eeprov.dll"
+          ]
+        },
+        {
+          "fieldName": "EstimatedEnergyMilliJoules",
+          "type": "UInt64",
+          "seenIn": [
+            "eeprov.dll"
+          ]
+        },
+        {
+          "fieldName": "EventVersion",
+          "type": "UInt8",
+          "seenIn": [
+            "eeprov.dll"
+          ]
+        },
+        {
+          "fieldName": "LossEnergyMilliJoules",
+          "type": "UInt64",
+          "seenIn": [
+            "eeprov.dll"
+          ]
+        },
+        {
+          "fieldName": "UnknownEnergyMilliJoules",
+          "type": "UInt64",
+          "seenIn": [
+            "eeprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RetrieveAppVersionFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "EventVersion:UInt8",
+            "PackageFullName:UnicodeString",
+            "WinError:UInt32(Win32Error)"
+          ],
+          "callers": [
+            {
+              "binary": "eeprov.dll",
+              "function": "EepPackageToIndex",
+              "ea": "0x180013bb3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EventVersion",
+          "type": "UInt8",
+          "seenIn": [
+            "eeprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "eeprov.dll"
+          ]
+        },
+        {
+          "fieldName": "WinError",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "eeprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RetrieveImageVersionFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "EventVersion:UInt8",
+            "ImageName:UnicodeString",
+            "WinError:UInt32(Win32Error)"
+          ],
+          "callers": [
+            {
+              "binary": "eeprov.dll",
+              "function": "EepImageNameToIndexEx",
+              "ea": "0x180013583",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "eeprov.dll",
+              "function": "EepImageNameToIndexEx",
+              "ea": "0x180013625",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EventVersion",
+          "type": "UInt8",
+          "seenIn": [
+            "eeprov.dll"
+          ]
+        },
+        {
+          "fieldName": "ImageName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "eeprov.dll"
+          ]
+        },
+        {
+          "fieldName": "WinError",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "eeprov.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

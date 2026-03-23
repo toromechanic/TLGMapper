@@ -1,0 +1,80 @@
+{
+  "providerName": "Microsoft.Windows.DeviceManagement.SecurityPolicyCsp",
+  "guid": "{F058515F-DBB8-4C0D-9E21-A6BC2C422EAB}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "dmcsps.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "GetValue: Policy ID and Policy Value",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "dwPolicyId:UInt32",
+            "dwValue:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dmcsps.dll",
+              "function": "?LogDmCspSecurityPolicyIdGet@CDmCspLogger@@QEAAXKK@Z",
+              "ea": "0x180017755",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "dwPolicyId",
+          "type": "UInt32",
+          "seenIn": [
+            "dmcsps.dll"
+          ]
+        },
+        {
+          "fieldName": "dwValue",
+          "type": "UInt32",
+          "seenIn": [
+            "dmcsps.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Policy ID",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "pszPolicyId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "dmcsps.dll",
+              "function": "?LogDmCspSecurityPolicyIdSet@CDmCspLogger@@QEAAXPEBG@Z",
+              "ea": "0x1800177e6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "pszPolicyId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dmcsps.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

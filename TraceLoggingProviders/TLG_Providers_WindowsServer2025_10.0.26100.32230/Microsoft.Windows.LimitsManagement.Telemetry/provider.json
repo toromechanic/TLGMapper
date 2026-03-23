@@ -1,0 +1,134 @@
+{
+  "providerName": "Microsoft.Windows.LimitsManagement.Telemetry",
+  "guid": "{B793EAFA-2323-429C-90D5-7628369BE2CB}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "powrprof.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "LimitsManagementPassiveComplete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "policyName:UnicodeString",
+            "durationInMs:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "powrprof.dll",
+              "function": "?LmTraceThrottleEnd@@YAXPEAU_LM_MITIGATION_REGISTRATION@@@Z",
+              "ea": "0x180011fe5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "durationInMs",
+          "type": "UInt32",
+          "seenIn": [
+            "powrprof.dll"
+          ]
+        },
+        {
+          "fieldName": "policyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "powrprof.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LimitsManagementPassiveHistogram",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "policyName:UnicodeString",
+            "throttleHistogram:UInt32[N]",
+            "bucketThresholds:UInt8[N]"
+          ],
+          "callers": [
+            {
+              "binary": "powrprof.dll",
+              "function": "?LmTracePassiveHistogram@@YAXPEAU_LM_MITIGATION_REGISTRATION@@@Z",
+              "ea": "0x180011e8c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "bucketThresholds",
+          "type": "UInt8[N]",
+          "seenIn": [
+            "powrprof.dll"
+          ]
+        },
+        {
+          "fieldName": "policyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "powrprof.dll"
+          ]
+        },
+        {
+          "fieldName": "throttleHistogram",
+          "type": "UInt32[N]",
+          "seenIn": [
+            "powrprof.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LimitsManagementPassiveValueChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "policyName:UnicodeString",
+            "throttlePercent:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "powrprof.dll",
+              "function": "?LmTraceThrottleChange@@YAXPEAU_LM_MITIGATION_REGISTRATION@@@Z",
+              "ea": "0x180011f30",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "policyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "powrprof.dll"
+          ]
+        },
+        {
+          "fieldName": "throttlePercent",
+          "type": "UInt8",
+          "seenIn": [
+            "powrprof.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "providerName": "Microsoft.Windows.Networking.FlowSteering",
+  "guid": "{662ABF07-6DDA-5B25-C2C5-345236DBB2D2}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "MPSSVC.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "FseAPIError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x4",
+          "fields": [
+            "ErrorMessage:AnsiString",
+            "Error:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "MPSSVC.dll",
+              "function": "FseSetInterpartitionLoopbackAllowed",
+              "ea": "0x1800db970",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Error",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "MPSSVC.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorMessage",
+          "type": "AnsiString",
+          "seenIn": [
+            "MPSSVC.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FseGenericError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x4",
+          "fields": [
+            "ErrorMessage:AnsiString",
+            "Error:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "MPSSVC.dll",
+              "function": "FseOpenHandle",
+              "ea": "0x1800db86d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Error",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "MPSSVC.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorMessage",
+          "type": "AnsiString",
+          "seenIn": [
+            "MPSSVC.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

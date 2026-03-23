@@ -1,0 +1,6618 @@
+{
+  "providerName": "CombaseTraceLoggingProvider",
+  "guid": "{1AFF6089-E863-4D36-BDFD-3581F07440BE}",
+  "os": "Windows 11",
+  "binaryCount": 6,
+  "binaries": [
+    "RuntimeBroker.exe",
+    "combase.dll",
+    "coml2.dll",
+    "ole32.dll",
+    "oledlg.dll",
+    "rpcss.dll"
+  ],
+  "uniqueEventCount": 84,
+  "events": [
+    {
+      "eventName": "ActivatedNonAgileFactoryOfBothClassInNA",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "activatableClassId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?WinRTGetActivationFactoryOfInprocClass@@YAJPEAUIWinRTRuntimeClassInfo@@AEBU_GUID@@PEAPEAX@Z",
+              "ea": "0x18001e27b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "combase.dll",
+              "function": "?WinRTGetActivationFactoryOfInprocClass@@YAJPEAUIWinRTRuntimeClassInfo@@AEBU_GUID@@PEAPEAX@Z",
+              "ea": "0x18001e2ae",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "activatableClassId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ActivatedNonAgileInstanceOfBothClassInNA",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "activatableClassId:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?ActivatedNonAgileInstanceOfBothClassInNA_@ComTrace@@QEAAXPEBG@Z",
+              "ea": "0x1801c329c",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "activatableClassId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AstaCallTimeout",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "IID:GUID",
+            "ProcNum:UInt16",
+            "serverCall->GetCallTraceId():UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?ASTAInvokeInApartment@@YAJPEAVServerCall@@PEAUtagIPIDEntry@@@Z",
+              "ea": "0x180266e88",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IID",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcNum",
+          "type": "UInt16",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "serverCall->GetCallTraceId()",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AstaCallWouldHaveTimedOut",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x200000000000",
+          "fields": [
+            "IID:GUID",
+            "ProcNum:UInt16",
+            "serverCall->GetCallTraceId():UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?HandleQueuedCallTimeouts@ModernSTAWaitContext@@AEAAXXZ",
+              "ea": "0x180196223",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IID",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcNum",
+          "type": "UInt16",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "serverCall->GetCallTraceId()",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BrokenRegistrationSilentlyDowngradedToUnsolicited",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x200000000000",
+          "fields": [
+            "clsid:GUID",
+            "catalogLookupError:Int32(HResult)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?BrokenRegistrationSilentlyDowngradedToUnsolicited_@ComTrace@@QEAAXAEBU_GUID@@J@Z",
+              "ea": "0x1800fe237",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "catalogLookupError",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "clsid",
+          "type": "GUID",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "COMOutOfProcessServerLaunchEnd",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ServerPID:UInt32",
+            "Debugged:Int32",
+            "PrimaryResult:Int32",
+            "SecondaryResult:Int32",
+            "aumid:UnicodeString",
+            "aamActivationId:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?StartServerAndWait@CServerTableEntry@@QEAAJPEAUACTIVATION_PARAMS@@PEAVCClassData@@HPEAVCNamedObject@@PEAJ@Z",
+              "ea": "0x1800f9d42",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Debugged",
+          "type": "Int32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "PrimaryResult",
+          "type": "Int32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "SecondaryResult",
+          "type": "Int32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ServerPID",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "aamActivationId",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "aumid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "COMOutOfProcessServerLaunchStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "CLSID:UnicodeString",
+            "ACID:UnicodeString",
+            "ExecutionPackageName:UnicodeString",
+            "ClientPID:UInt32",
+            "AAMActivationID:UInt64",
+            "ClientPackageName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?StartServerAndWait@CServerTableEntry@@QEAAJPEAUACTIVATION_PARAMS@@PEAVCClassData@@HPEAVCNamedObject@@PEAJ@Z",
+              "ea": "0x1800f9c73",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AAMActivationID",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ACID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "CLSID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientPID",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientPackageName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ExecutionPackageName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ClassLookupInActivationSucceededAfterInitialFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "clsid:GUID",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?ClassLookupInActivationSucceededAfterInitialFailure_@ComTrace@@QEAAXAEBU_GUID@@@Z",
+              "ea": "0x1800fe2ec",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "clsid",
+          "type": "GUID",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Closing PrivateHive",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "hkey:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "??1PrivateHiveReaderRegistryKeyData@RegistrationStoreData@@UEAA@XZ",
+              "ea": "0x18011906a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "combase.dll",
+              "function": "??1PrivateHiveReaderRegistryKeyData@RegistrationStoreData@@UEAA@XZ",
+              "ea": "0x1801190a1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "??1PrivateHiveRegistryKeyData@RegistrationStoreData@@UEAA@XZ",
+              "ea": "0x18014f204",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hkey",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ComActivationInExitProcess",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x200000000000",
+          "fields": [
+            "callerModuleFileName:UnicodeString",
+            "callerModulePdbSignature:GUID",
+            "callerOffset:HexInt32",
+            "activationApi:AnsiString",
+            "clsid ? *clsid : CLSID{}:GUID",
+            "dwClsContext:HexInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?ComActivationInExitProcess_@ComTrace@@QEAAXPEBGAEBU_GUID@@IPEBDPEBU2@K@Z",
+              "ea": "0x1801c022d",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "activationApi",
+          "type": "AnsiString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "callerModuleFileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "callerModulePdbSignature",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "callerOffset",
+          "type": "HexInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "clsid ? *clsid ",
+          "type": " CLSID{}:GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "dwClsContext",
+          "type": "HexInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ComCatalogFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "hr:HexInt32",
+            "catalog:UInt32",
+            "clsid:GUID",
+            "flags:HexInt32",
+            "outofproc:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?ComCatalogFailure_@ComTrace@@QEAAXJW4Catalogs@ComCatalogDiagnosticData@@AEBU_GUID@@K_N@Z",
+              "ea": "0x18015215c",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?ComCatalogFailure_@ComTrace@@QEAAXJW4Catalogs@ComCatalogDiagnosticData@@AEBU_GUID@@K_N@Z",
+              "ea": "0x1800b1aea",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "catalog",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "clsid",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "combase.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "HexInt32",
+          "seenIn": [
+            "combase.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "outofproc",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "combase.dll",
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ComCatalogFailureTelemetry",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "hr:HexInt32",
+            "catalog:UInt32",
+            "clsid:GUID",
+            "flags:HexInt32",
+            "outofproc:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?ComCatalogFailureTelemetry_@ComTrace@@QEAAXJW4Catalogs@ComCatalogDiagnosticData@@AEBU_GUID@@K_N@Z",
+              "ea": "0x1801d2b02",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?ComCatalogFailureTelemetry_@ComTrace@@QEAAXJW4Catalogs@ComCatalogDiagnosticData@@AEBU_GUID@@K_N@Z",
+              "ea": "0x1800b1a32",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "catalog",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "clsid",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "combase.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "HexInt32",
+          "seenIn": [
+            "combase.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "outofproc",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "combase.dll",
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ComError",
+      "variantCount": 5,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "hresult:Int32(HResult)",
+            "code:AnsiString",
+            "message:UnicodeString",
+            "function:AnsiString",
+            "fileName:AnsiString",
+            "lineNumber:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?Error_@ComTrace@@QEAAXJPEBGAEBUDiagnosticsInfo@wil@@@Z",
+              "ea": "0x1800bbbb9",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "combase.dll",
+              "function": "?Error_@ComTrace@@QEAAXJPEBGAEBUDiagnosticsInfo@wil@@@Z",
+              "ea": "0x1800bbbf3",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "coml2.dll",
+              "function": "?Error_@ComTrace@@QEAAXJPEBGAEBUDiagnosticsInfo@wil@@@Z",
+              "ea": "0x180047a0c",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "?Error_@ComTrace@@QEAAXJPEBGAEBUDiagnosticsInfo@wil@@@Z",
+              "ea": "0x18004c7d8",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "?Error_@ComTrace@@QEAAXJPEBGAEBUDiagnosticsInfo@wil@@@Z",
+              "ea": "0x18002097c",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?Error_@ComTrace@@QEAAXJPEBGAEBUDiagnosticsInfo@wil@@@Z",
+              "ea": "0x18000d0a9",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?Error_@ComTrace@@QEAAXJPEBGAEBUDiagnosticsInfo@wil@@@Z",
+              "ea": "0x18000d0e3",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "RuntimeBroker.exe",
+              "function": "?Error_@ComTrace@@QEAAXJPEBGAEBUDiagnosticsInfo@wil@@@Z",
+              "ea": "0x14000e758",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "hresult:Int32(HResult)",
+            "code:AnsiString",
+            "message:UnicodeString",
+            "function:AnsiString",
+            "fileName:AnsiString",
+            "lineNumber:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?Failure_@ComTrace@@QEAAXAEBUFailureInfo@wil@@@Z",
+              "ea": "0x1800bb9b4",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "combase.dll",
+              "function": "?Failure_@ComTrace@@QEAAXAEBUFailureInfo@wil@@@Z",
+              "ea": "0x1800bb9e8",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "coml2.dll",
+              "function": "?Failure_@ComTrace@@QEAAXAEBUFailureInfo@wil@@@Z",
+              "ea": "0x180044c51",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "?Failure_@ComTrace@@QEAAXAEBUFailureInfo@wil@@@Z",
+              "ea": "0x18002f1a0",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?Failure_@ComTrace@@QEAAXAEBUFailureInfo@wil@@@Z",
+              "ea": "0x18000ce81",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?Failure_@ComTrace@@QEAAXAEBUFailureInfo@wil@@@Z",
+              "ea": "0x18000ceb5",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 101,
+          "keyword": "0x0",
+          "fields": [
+            "hresult:Int32(HResult)",
+            "code:AnsiString",
+            "message:UnicodeString",
+            "function:AnsiString",
+            "fileName:AnsiString",
+            "lineNumber:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?NoisyError_@ComTrace@@QEAAXJPEBGAEBUDiagnosticsInfo@wil@@@Z",
+              "ea": "0x1800bbdc5",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "combase.dll",
+              "function": "?NoisyError_@ComTrace@@QEAAXJPEBGAEBUDiagnosticsInfo@wil@@@Z",
+              "ea": "0x1800bbdff",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "coml2.dll",
+              "function": "?NoisyError_@ComTrace@@QEAAXJPEBGAEBUDiagnosticsInfo@wil@@@Z",
+              "ea": "0x180047ca4",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "?NoisyError_@ComTrace@@QEAAXJPEBGAEBUDiagnosticsInfo@wil@@@Z",
+              "ea": "0x18004ca70",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "?NoisyError_@ComTrace@@QEAAXJPEBGAEBUDiagnosticsInfo@wil@@@Z",
+              "ea": "0x180020c14",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?NoisyError_@ComTrace@@QEAAXJPEBGAEBUDiagnosticsInfo@wil@@@Z",
+              "ea": "0x18000bc5a",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "RuntimeBroker.exe",
+              "function": "?NoisyError_@ComTrace@@QEAAXJPEBGAEBUDiagnosticsInfo@wil@@@Z",
+              "ea": "0x14000ea30",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 101,
+          "keyword": "0x0",
+          "fields": [
+            "hresult:Int32(HResult)",
+            "code:AnsiString",
+            "message:UnicodeString",
+            "function:AnsiString",
+            "fileName:AnsiString",
+            "lineNumber:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?NoisyFailure_@ComTrace@@QEAAXAEBUFailureInfo@wil@@@Z",
+              "ea": "0x1800bc158",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "coml2.dll",
+              "function": "?NoisyFailure_@ComTrace@@QEAAXAEBUFailureInfo@wil@@@Z",
+              "ea": "0x1800453ed",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "?NoisyFailure_@ComTrace@@QEAAXAEBUFailureInfo@wil@@@Z",
+              "ea": "0x18004c3a5",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?NoisyFailure_@ComTrace@@QEAAXAEBUFailureInfo@wil@@@Z",
+              "ea": "0x18000bb90",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "hresult:Int32(HResult)",
+            "code:AnsiString",
+            "message:UnicodeString",
+            "function:AnsiString",
+            "fileName:AnsiString",
+            "lineNumber:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?Warning_@ComTrace@@QEAAXJPEBGAEBUDiagnosticsInfo@wil@@@Z",
+              "ea": "0x1800bc56a",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "coml2.dll",
+              "function": "?Warning_@ComTrace@@QEAAXJPEBGAEBUDiagnosticsInfo@wil@@@Z",
+              "ea": "0x180048328",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "?Warning_@ComTrace@@QEAAXJPEBGAEBUDiagnosticsInfo@wil@@@Z",
+              "ea": "0x18004cf44",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "?Warning_@ComTrace@@QEAAXJPEBGAEBUDiagnosticsInfo@wil@@@Z",
+              "ea": "0x180021298",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?Warning_@ComTrace@@QEAAXJPEBGAEBUDiagnosticsInfo@wil@@@Z",
+              "ea": "0x18005a838",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "RuntimeBroker.exe",
+              "function": "?Warning_@ComTrace@@QEAAXJPEBGAEBUDiagnosticsInfo@wil@@@Z",
+              "ea": "0x14000f424",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "code",
+          "type": "AnsiString",
+          "seenIn": [
+            "RuntimeBroker.exe",
+            "combase.dll",
+            "coml2.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "RuntimeBroker.exe",
+            "combase.dll",
+            "coml2.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "function",
+          "type": "AnsiString",
+          "seenIn": [
+            "RuntimeBroker.exe",
+            "combase.dll",
+            "coml2.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "RuntimeBroker.exe",
+            "combase.dll",
+            "coml2.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt16",
+          "seenIn": [
+            "RuntimeBroker.exe",
+            "combase.dll",
+            "coml2.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll",
+            "coml2.dll",
+            "ole32.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "RuntimeBroker.exe",
+            "combase.dll",
+            "coml2.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerDCOM: AccessPermission check failed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HRESULT:Int32(HResult)",
+            "IID:GUID",
+            "AppID:GUID",
+            "Client SID:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?CheckAccess@@YAJPEAXKW4TransportLocality@@H0@Z",
+              "ea": "0x18025c362",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppID",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "Client SID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "IID",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerDCOM: CMid initialization failed since there is no mutually acceptable container transport",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "STATUS:UInt32(Win32Error)"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?Initialize@CMid@@AEAAJXZ",
+              "ea": "0x180092aab",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "STATUS",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerDCOM: CServerOid not found",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "STATUS:UInt32(Win32Error)",
+            "OID:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?AddReferencedOid@CrossContainerServerSet@@QEAAJ_K@Z",
+              "ea": "0x180119de5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OID",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "STATUS",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerDCOM: Cannot AddOid after CrossContainerServerSet rundown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "STATUS:UInt32(Win32Error)"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?AddReferencedOid@CrossContainerServerSet@@QEAAJ_K@Z",
+              "ea": "0x180119d5b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "STATUS",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerDCOM: Cannot AddPotentialProxyOid after CrossContainerServerSet rundown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "STATUS:UInt32(Win32Error)"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?AddPotentialProxyOid@CrossContainerServerSet@@QEAAJ_K@Z",
+              "ea": "0x180094a92",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "STATUS",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerDCOM: Cross-container activation failed (client-side)",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HRESULT:Int32(HResult)",
+            "Message:UnicodeString",
+            "File:AnsiString",
+            "Line:UInt32",
+            "CLSID:GUID",
+            "ACID:UnicodeString",
+            "Client:UnicodeString",
+            "Server:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "_lambda_f30530c23adc134da6c15fe4f6c246b2_::operator()",
+              "ea": "0x1800f276f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ACID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "CLSID",
+          "type": "GUID",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "File",
+          "type": "AnsiString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Line",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Server",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerDCOM: Cross-container activation failed (server-side)",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HRESULT:Int32(HResult)",
+            "Message:UnicodeString",
+            "File:AnsiString",
+            "Line:UInt32",
+            "CLSID:GUID",
+            "ACID:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "_lambda_fd5524a10b55206daf8a6066a1673ff1_::operator()",
+              "ea": "0x18010a0c5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ACID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "CLSID",
+          "type": "GUID",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "File",
+          "type": "AnsiString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Line",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerDCOM: CrossContainerObjectResolverSecCallback failed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HRESULT:Int32(HResult)",
+            "Message:UnicodeString",
+            "File:AnsiString",
+            "Line:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "_lambda_3096f407ed6a336751fb3aa59a7bb28d_::operator()",
+              "ea": "0x1800e5d47",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "File",
+          "type": "AnsiString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Line",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerDCOM: CrossContainerResolveOxid failed (client-side)",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "STATUS:UInt32(Win32Error)",
+            "OXID:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?CallCrossContainerResolveOxid@CrossContainerClientSet@@QEAAJ_KPEAPEAUtagDUALSTRINGARRAY@@PEAU_GUID@@PEA_K2PEAUCONTAINERVERSION@@@Z",
+              "ea": "0x180093890",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OXID",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "STATUS",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerDCOM: CrossContainerResolveOxid failed (server-side)",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HRESULT:Int32(HResult)",
+            "Message:UnicodeString",
+            "File:AnsiString",
+            "Line:UInt32",
+            "OXID:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "_lambda_52d1bf8ee74d702a83309e11a38ef14d_::operator()",
+              "ea": "0x1800a8ed8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "File",
+          "type": "AnsiString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Line",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "OXID",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerDCOM: Failed to register ICrossContainerObjectResolver",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "STATUS:UInt32(Win32Error)"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "StartObjectExporter",
+              "ea": "0x1800a174e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "STATUS",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerDCOM: Failed to set custom authentication info on proxy",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "STATUS:UInt32(Win32Error)",
+            "PrincipalName:UnicodeString",
+            "AuthnLevel:UInt32",
+            "AuthnSvc:UInt32",
+            "AuthzSvc:UInt32",
+            "Capabilities:UInt32",
+            "ImpersonationLevel:UInt32",
+            "IdentityTracking:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?SetBlanketOnChannel@@YAJPEAVCClientChannel@@KKPEAGKKPEAXK@Z",
+              "ea": "0x180259801",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AuthnLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "AuthnSvc",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "AuthzSvc",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "Capabilities",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "IdentityTracking",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "ImpersonationLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "PrincipalName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "STATUS",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerDCOM: Failed to set default authentication info on proxy",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "STATUS:UInt32(Win32Error)",
+            "Capabilities:UInt32",
+            "ImpersonationLevel:UInt32",
+            "IdentityTracking:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?CreateDefaultHandle@OXIDEntry@@AEAAJPEAPEAVCChannelHandle@@@Z",
+              "ea": "0x180259553",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Capabilities",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "IdentityTracking",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "ImpersonationLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "STATUS",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerDCOM: Failure in CrossContainerBulkUpdateOidsWorkerLoop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HRESULT:Int32(HResult)",
+            "Message:UnicodeString",
+            "File:AnsiString",
+            "Line:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "_lambda_43ab715192e6ecb8529ebf5edad99f0d_::operator()",
+              "ea": "0x1800ae04b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "File",
+          "type": "AnsiString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Line",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerDCOM: IsPotentialActivateOnHostCallback failed during access check",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HRESULT:Int32(HResult)",
+            "IID:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?CheckAccess@@YAJPEAXKW4TransportLocality@@H0@Z",
+              "ea": "0x18025c103",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "IID",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerDCOM: LaunchPermission check failed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HRESULT:Int32(HResult)",
+            "Class ID:UnicodeString",
+            "Client SID:UnicodeString",
+            "fLaunch:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?LaunchOrActivationAllowed@@YAHPEAXPEAUHSTRING__@@PEAU_SECURITY_DESCRIPTOR@@HHHKPEAVCToken@@K3PEAVCClassData@@@Z",
+              "ea": "0x1800276b0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Class ID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Client SID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "fLaunch",
+          "type": "Bool32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerDCOM: Process failed to register gIncomingContainerAuthnSvc",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "STATUS:UInt32(Win32Error)",
+            "gIncomingContainerAuthnSvc:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?DefaultAuthnServices@@YAJXZ",
+              "ea": "0x18019805c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "combase.dll",
+              "function": "?RegisterAuthnServices@@YAJKPEAUtagSOLE_AUTHENTICATION_SERVICE@@@Z",
+              "ea": "0x180157189",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "STATUS",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "gIncomingContainerAuthnSvc",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerDCOM: RPCSS Listen",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "STATUS:UInt32(Win32Error)",
+            "Protseq:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?StartListeningIfNecessary@@YAJXZ",
+              "ea": "0x18003c25a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Protseq",
+          "type": "UInt16",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "STATUS",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerDCOM: RPCSS failed to register s_dwIncomingContainerAuthnSvc",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "STATUS:UInt32(Win32Error)",
+            "s_dwIncomingContainerAuthnSvc:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "RegisterAuthInfoIfNecessary",
+              "ea": "0x18006918a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "STATUS",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "s_dwIncomingContainerAuthnSvc",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerDCOM: Server failed to listen on requested transport",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "STATUS:UInt32(Win32Error)",
+            "Protseq:UnicodeString",
+            "listen address:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?DoNormalListen@@YAJGPEBG@Z",
+              "ea": "0x18019f05e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Protseq",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "STATUS",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "listen address",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerDCOM: Unable to reach server process",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "STATUS:UInt32(Win32Error)",
+            "IID:GUID",
+            "Method ProcNum:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?CallI_RpcNegotiateTransferSyntax@CMessageCall@@QEAAJAEBU_GUID@@@Z",
+              "ea": "0x180258b27",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "combase.dll",
+              "function": "?RpcReceiveResponse@CAsyncCall@@QEAAJAEBU_GUID@@@Z",
+              "ea": "0x180258b8f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "combase.dll",
+              "function": "?RpcSendRequest@CAsyncCall@@QEAAJAEBU_GUID@@@Z",
+              "ea": "0x180069502",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "combase.dll",
+              "function": "?RpcSendRequestReceiveResponse@CMessageCall@@QEAAJAEBU_GUID@@@Z",
+              "ea": "0x18006831b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "combase.dll",
+              "function": "?RpcSendRequestReceiveResponse@CMessageCall@@QEAAJAEBU_GUID@@@Z",
+              "ea": "0x18006835b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "combase.dll",
+              "function": "?RpcSendResponse@CAsyncCall@@QEAAXPEBU_GUID@@@Z",
+              "ea": "0x18025bf0a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IID",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "Method ProcNum",
+          "type": "UInt16",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "STATUS",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CrossPackageActivationFailureForPrivateHiveOnlyServiceServerClsid",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "clsid:GUID",
+            "packageFullName:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?CrossPackageActivationFailureForPrivateHiveOnlyServiceServerClsid_@ComTrace@@QEAAXAEBU_GUID@@PEBG@Z",
+              "ea": "0x1800f83d8",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "clsid",
+          "type": "GUID",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "packageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DesktopAppxComActivation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32",
+            "UTCReplace_AppSessionGuid:UInt8(Boolean)",
+            "executionPackageFullName:UnicodeString",
+            "deploymentPackageFullName:UnicodeString",
+            "processCreationFlags:UInt32",
+            "exeAbsPath:UnicodeString",
+            "executionPackageFullNameAfterFailure:UnicodeString",
+            "deploymentPackageFullNameAfterFailure:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?LogDesktopAppxComActivationResult@@YAXJPEAUIUserTokenInternal@@PEBG1K1@Z",
+              "ea": "0x18005e1df",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "UTCReplace_AppSessionGuid",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "deploymentPackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "deploymentPackageFullNameAfterFailure",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "exeAbsPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "executionPackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "executionPackageFullNameAfterFailure",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "processCreationFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DeviceCatalogDoesNotExist",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?DeviceCatalogDoesNotExist_@ComTrace@@QEAAXXZ",
+              "ea": "0x1801d2bce",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "EventActivityCtrlGetIdFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "error:UInt32(Win32Error)"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?GetCurrentTraceActivityForPropagation@@YA_NPEAU_GUID@@@Z",
+              "ea": "0x1802582fa",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "error",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExceptionHandledByFilter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "exceptionCode:UInt32(NTStatus)",
+            "moduleName:UnicodeString",
+            "moduleOffset:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?ExceptionHandledByFilter_@ComTrace@@QEAAXKPEBGI@Z",
+              "ea": "0x18019c4b0",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "exceptionCode",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "moduleName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "moduleOffset",
+          "type": "HexInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExcludedActivationOfBothClassWithAgileFactoryInNA",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "activatableClassId:UnicodeString",
+            "exclusionReason:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?WinRTGetActivationFactoryOfInprocClass@@YAJPEAUIWinRTRuntimeClassInfo@@AEBU_GUID@@PEAPEAX@Z",
+              "ea": "0x18001e68a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "combase.dll",
+              "function": "?WinRTGetActivationFactoryOfInprocClass@@YAJPEAUIWinRTRuntimeClassInfo@@AEBU_GUID@@PEAPEAX@Z",
+              "ea": "0x18001e6bd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "activatableClassId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "exclusionReason",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExcludedActivationOfBothClassWithAgileInstanceInNA",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "activatableClassId:UnicodeString",
+            "exclusionReason:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?ExcludedActivationOfBothClassWithAgileInstanceInNA_@ComTrace@@QEAAXPEBGW4BothClassInNAExclusionReason@@@Z",
+              "ea": "0x1801c356d",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "activatableClassId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "exclusionReason",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FailedToCorrectIidMismatchInUnmarshalInterface",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "IID in OBJREF:GUID",
+            "IID requested:GUID",
+            "Handler CLSID:GUID",
+            "HRESULT:Int32(HResult)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?UnmarshalInterface@CStdMarshal@@UEAAJPEAUIStream@@AEBU_GUID@@PEAPEAX@Z",
+              "ea": "0x18025e281",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "Handler CLSID",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "IID in OBJREF",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "IID requested",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FailureOfInterestActivatingBothClassExcludedFromNA",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "activatableClassId:UnicodeString",
+            "exclusionReason:UInt32",
+            "hr:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?FailureOfInterestActivatingBothClassExcludedFromNA_@ComTrace@@QEAAXPEBGW4BothClassInNAExclusionReason@@J@Z",
+              "ea": "0x1801c9597",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "activatableClassId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "exclusionReason",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "HexInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FallbackError",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilResult:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "oledlg.dll",
+              "function": "?ReportTelemetryFailure@TraceLoggingProvider@wil@@IEAAXAEBUFailureInfo@2@@Z",
+              "ea": "0x18001e96d",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilResult:Struct(Signed)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "failureId:UInt32",
+            "failureCount:UInt32",
+            "function:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "oledlg.dll",
+              "function": "?ReportTraceLoggingFailure@TraceLoggingProvider@wil@@IEAAXAEBUFailureInfo@2@@Z",
+              "ea": "0x18001eb2f",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "oledlg.dll"
+          ]
+        },
+        {
+          "fieldName": "callContext",
+          "type": "AnsiString",
+          "seenIn": [
+            "oledlg.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "oledlg.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "oledlg.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "oledlg.dll"
+          ]
+        },
+        {
+          "fieldName": "failureCount",
+          "type": "UInt32",
+          "seenIn": [
+            "oledlg.dll"
+          ]
+        },
+        {
+          "fieldName": "failureId",
+          "type": "UInt32",
+          "seenIn": [
+            "oledlg.dll"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "oledlg.dll"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "oledlg.dll"
+          ]
+        },
+        {
+          "fieldName": "function",
+          "type": "AnsiString",
+          "seenIn": [
+            "oledlg.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "oledlg.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "oledlg.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "oledlg.dll"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "oledlg.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "oledlg.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "oledlg.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "oledlg.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "oledlg.dll"
+          ]
+        },
+        {
+          "fieldName": "wilResult",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "oledlg.dll"
+          ]
+        },
+        {
+          "fieldName": "wilResult",
+          "type": "Struct(Signed)",
+          "seenIn": [
+            "oledlg.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IgnoredInapplicableActivateAsIUFromAuthorizedClient",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x200000000000",
+          "fields": [
+            "clsid:GUID",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?IgnoredInapplicableActivateAsIUFromAuthorizedClient_@ComTrace@@QEAAXAEBU_GUID@@@Z",
+              "ea": "0x1800a534c",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "clsid",
+          "type": "GUID",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IgnoredInapplicableActivateAsIUFromUnauthorizedClient",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x200000000000",
+          "fields": [
+            "clsid:GUID",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?IgnoredInapplicableActivateAsIUFromUnauthorizedClient_@ComTrace@@QEAAXAEBU_GUID@@@Z",
+              "ea": "0x1800fd930",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "clsid",
+          "type": "GUID",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IidMismatchInUnmarshalInterface",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "IID in OBJREF:GUID",
+            "IID requested:GUID",
+            "Handler CLSID:GUID",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?UnmarshalInterface@CStdMarshal@@UEAAJPEAUIStream@@AEBU_GUID@@PEAPEAX@Z",
+              "ea": "0x18025e1de",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Handler CLSID",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "IID in OBJREF",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "IID requested",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InvalidActivateAsIUWithPackagedClsid",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "clsid:GUID",
+            "packageFullName:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?InvalidActivateAsIUWithPackagedClsid_@ComTrace@@QEAAXAEBU_GUID@@PEBG@Z",
+              "ea": "0x1800fd9a0",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "clsid",
+          "type": "GUID",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "packageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InvalidActivationAuthenticationLevel",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "CLSID:GUID",
+            "Client:UnicodeString",
+            "AuthnLevel:UInt32",
+            "AuthnLevelSource:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?PickAuthnAndActivate@CRemoteMachine@@AEAAJPEAUACTIVATION_PARAMS@@PEAGPEAPEAXGKGPEAJ@Z",
+              "ea": "0x1800f53d3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?PickAuthnAndActivate@CRemoteMachine@@AEAAJPEAUACTIVATION_PARAMS@@PEAGPEAPEAXGKGPEAJ@Z",
+              "ea": "0x1800f562f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AuthnLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "AuthnLevelSource",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "CLSID",
+          "type": "GUID",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Client",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LoadAppKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "HivePath:UnicodeString",
+            "mountPath:UnicodeString",
+            "Hive:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?LoadAppKey@PrivateHive@RegistrationStoreData@@SAJPEAUHSTRING__@@0KAEAVRegistryKey@@@Z",
+              "ea": "0x18007a5a8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Hive",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "HivePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "mountPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LocalDelegateFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "CRestrictedErrorID:GUID",
+            "Delegate interface pointer:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "RoReportFailedDelegate",
+              "ea": "0x1802658cf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CRestrictedErrorID",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "Delegate interface pointer",
+          "type": "HexInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogClassNotFound",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Hresult:HexInt32",
+            "Clsid:GUID",
+            "Iid:GUID",
+            "Flags:HexInt32",
+            "FlagsForCache:HexInt32",
+            "Tried catalogs:HexInt32",
+            "Found in catalogs:HexInt32",
+            "Accepted catalogs:HexInt32",
+            "Selected catalog:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?LogClassNotFound_@ComTrace@@QEAAXJAEBU_GUID@@0AEBUComCatalogDiagnosticData@@@Z",
+              "ea": "0x1800bc6d8",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?LogClassNotFound_@ComTrace@@QEAAXJAEBU_GUID@@0AEBUComCatalogDiagnosticData@@@Z",
+              "ea": "0x180064be4",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Accepted catalogs",
+          "type": "HexInt32",
+          "seenIn": [
+            "combase.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Clsid",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "combase.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "FlagsForCache",
+          "type": "HexInt32",
+          "seenIn": [
+            "combase.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Found in catalogs",
+          "type": "HexInt32",
+          "seenIn": [
+            "combase.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Hresult",
+          "type": "HexInt32",
+          "seenIn": [
+            "combase.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Iid",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Selected catalog",
+          "type": "HexInt32",
+          "seenIn": [
+            "combase.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Tried catalogs",
+          "type": "HexInt32",
+          "seenIn": [
+            "combase.dll",
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogMachineClassesRootPermissions",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "SD:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "??R_lambda_a9bc1d0765d5b244e30f2953822de5b7_@@QEBAJXZ",
+              "ea": "0x1800ee699",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SD",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogPrivateHiveFileInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "path:UnicodeString",
+            "getFileAttributesError:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?LogPrivateHiveFileInfo_@ComTrace@@QEAAXPEBGK@Z",
+              "ea": "0x1800ba789",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "getFileAttributesError",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "path",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogPrivateHiveStats",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "packageFullname:UnicodeString",
+            "activatableClassCount:UInt32",
+            "serverCount:UInt32",
+            "interfaceCount:UInt32",
+            "psclsidCount:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?LogPrivateHiveStats_@ComTrace@@QEAAXPEBGKKKK@Z",
+              "ea": "0x1800afb31",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "activatableClassCount",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "interfaceCount",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "packageFullname",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "psclsidCount",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "serverCount",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogTokenInfo",
+      "variantCount": 27,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "Authentication Id low part:UInt32",
+            "Authentication Id high part:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18020a222",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1800c5f35",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18001af75",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x180101afe",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "Group Count:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18020a26f",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1800c5f82",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18001afbf",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x180101b48",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "Sid:UnicodeString",
+            "Attributes:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18020a311",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "combase.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18020a415",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1800c601d",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1800c611a",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18001b05a",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18001b157",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x180101bea",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x180101ced",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "Restricted Group Count:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18020a371",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1800c607d",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18001b0ba",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x180101c4a",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "Privilege low part:UInt32",
+            "Privilege high part:UInt32",
+            "Attributes:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18020a4d5",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1800c61da",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18001b217",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x180101daf",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "Primary Group Sid:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18020a666",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1800c636c",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18001b3a9",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x180101fa7",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "Elevation type:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18020a6f3",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1800c63f2",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18001b42f",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18010202d",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "Mandatory Policy:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18020a776",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1800c646e",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18001b4ab",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1801020a9",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "Integrity Level:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18020a900",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1800c65db",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18001b618",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1801021fb",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "uiAccess:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18020a985",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1800c6659",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18001b696",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18010227b",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "sandboxInert:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18020aa06",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1800c66d3",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18001b710",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1801022f7",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "isLowBox:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18020aa87",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1800c674d",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18001b78a",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x180102373",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "lowBoxNumber:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18020ab08",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1800c67c7",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18001b804",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1801023ef",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "Package SID:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18020ac28",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1800c68d9",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18001b916",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18010250a",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "Capability Count:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18020acbb",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1800c6965",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18001b9a2",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18010259b",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "Capability:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18020ad5d",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1800c6a00",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18001ba3d",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18010263a",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "Default Dacl Ace Count:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18020ae94",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1800c6b30",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18001bb6d",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x180102796",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "Ace#:UInt32",
+            "Sid:UnicodeString",
+            "Access Mask:UInt32",
+            "Ace type:UInt8",
+            "Ace Flags:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18020af40",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1800c6bd5",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18001bc12",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x180102842",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "Session Id:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18020b023",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1800c6cb1",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18001bcee",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x180102920",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "isTokenVirtualizationEnabled:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18020b0a6",
+              "confidence": "CallGraph-d3"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1800c6d2d",
+              "confidence": "CallGraph-d3"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x18001bd6a",
+              "confidence": "CallGraph-d3"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "??R_lambda_5606121ef3edaafef306dff3b7d3ca75_@@QEBA@XZ",
+              "ea": "0x1801029a2",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "Attribute Name:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18020b2e6",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x1800c7192",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18001d252",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x180105ba6",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "Value Type:AnsiString",
+            "Value:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18020b347",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x1800c71f3",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18001d2b3",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x180105c07",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "Value Type:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18020b39e",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "combase.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18020b3c3",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "combase.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18020b4ad",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "combase.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18020b539",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "combase.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18020b5c3",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "combase.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18020b63e",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x1800c724a",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x1800c726f",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x1800c7359",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x1800c73e5",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x1800c746f",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x1800c74ea",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18001d30a",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18001d32f",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18001d419",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18001d4a5",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18001d52f",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18001d5aa",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x180105c5e",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x180105c83",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x180105d6d",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x180105df9",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x180105e83",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x180105efe",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "Security Attribute Value:CountedString",
+            "Version:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18020b448",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x1800c72f4",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18001d3b4",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x180105d08",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "Security Attribute Value:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18020b4e3",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x1800c738f",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18001d44f",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x180105da3",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "Security Attribute Value:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18020b58e",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x1800c743a",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18001d4fa",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x180105e4e",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "Token:HexInt64",
+            "Security Attribute Value:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18020b614",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x1800c74c0",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x18001d580",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?LogTokenSecurityAttribute@ComTrace@@QEAAXPEAXPEAU_TOKEN_SECURITY_ATTRIBUTE_V1@@@Z",
+              "ea": "0x180105ed4",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Access Mask",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Ace Flags",
+          "type": "UInt8",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Ace type",
+          "type": "UInt8",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Ace#",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Attribute Name",
+          "type": "CountedString",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Attributes",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Authentication Id high part",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Authentication Id low part",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Capability Count",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Capability",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Default Dacl Ace Count",
+          "type": "UInt16",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Elevation type",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Group Count",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Integrity Level",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Mandatory Policy",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Package SID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Primary Group Sid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Privilege high part",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Privilege low part",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Restricted Group Count",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Security Attribute Value",
+          "type": "CountedString",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Security Attribute Value",
+          "type": "Int64",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Security Attribute Value",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Session Id",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Sid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Token",
+          "type": "HexInt64",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Value Type",
+          "type": "AnsiString",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Value",
+          "type": "UInt16",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "isLowBox",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "isTokenVirtualizationEnabled",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "lowBoxNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "sandboxInert",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "uiAccess",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll",
+            "ole32.dll",
+            "oledlg.dll",
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogVerbose",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "message:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?LogVerbose_@ComTrace@@QEAAXPEBG@Z",
+              "ea": "0x1801e0afe",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?LogVerbose_@ComTrace@@QEAAXPEBG@Z",
+              "ea": "0x1800bc5c4",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll",
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Microsoft.Windows.CUI.Activation",
+      "variantCount": 4,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ComponentProcessId:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?Match@MatchTarget@@QEAAJPEAVCToken@@HHPEAGHJKW4_PSM_ACTIVATE_BACKGROUND_TYPE@@KKPEA_K_KAEBU_GUID@@0PEAUtagBLOB@@PEBGPEAXKKKW4ServerProtectionLevel@@7@Z",
+              "ea": "0x1801090dc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?Match@MatchTarget@@QEAAJPEAVCToken@@HHPEAGHJKW4_PSM_ACTIVATE_BACKGROUND_TYPE@@KKPEA_K_KAEBU_GUID@@0PEAUtagBLOB@@PEBGPEAXKKKW4ServerProtectionLevel@@7@Z",
+              "ea": "0x180109df4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Server:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?Match@MatchTarget@@QEAAJPEAVCToken@@HHPEAGHJKW4_PSM_ACTIVATE_BACKGROUND_TYPE@@KKPEA_K_KAEBU_GUID@@0PEAUtagBLOB@@PEBGPEAXKKKW4ServerProtectionLevel@@7@Z",
+              "ea": "0x180109103",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?Match@MatchTarget@@QEAAJPEAVCToken@@HHPEAGHJKW4_PSM_ACTIVATE_BACKGROUND_TYPE@@KKPEA_K_KAEBU_GUID@@0PEAUtagBLOB@@PEBGPEAXKKKW4ServerProtectionLevel@@7@Z",
+              "ea": "0x18010913f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "lpacAttributes:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?Match@MatchTarget@@QEAAJPEAVCToken@@HHPEAGHJKW4_PSM_ACTIVATE_BACKGROUND_TYPE@@KKPEA_K_KAEBU_GUID@@0PEAUtagBLOB@@PEBGPEAXKKKW4ServerProtectionLevel@@7@Z",
+              "ea": "0x180109e1e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "SID:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?TraceCapabilitySids@CToken@@QEAAJXZ",
+              "ea": "0x1800755c3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?TraceCapabilitySids@CToken@@QEAAJXZ",
+              "ea": "0x1800755dc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ComponentProcessId",
+          "type": "GUID",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "SID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Server",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "lpacAttributes",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Missing Extension. Repairing package",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PackageToRepair:UnicodeString",
+            "MissingExtension:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?FindFirstPackageFromCurrentIndex@CExtensionMainAndOptionalPackagesIterator@@AEAAJXZ",
+              "ea": "0x1800b120c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "MissingExtension",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageToRepair",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "POFExpiredSnapshotRequested",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "CRestrictedErrorID:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?HasSnapshot@CRestrictedError@@UEAAJPEAH@Z",
+              "ea": "0x1801fa08a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CRestrictedErrorID",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "POFReportGenerated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "CRestrictedErrorID:GUID",
+            "HrResult:Int32",
+            "DumpFileSize:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?GenerateAndSubmit@SnapshotReport@@QEAAJXZ",
+              "ea": "0x1801faf9d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CRestrictedErrorID",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "DumpFileSize",
+          "type": "Int64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "HrResult",
+          "type": "Int32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "POFSnapshotExpired",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "CRestrictedErrorID:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?SnapshotCleanupCallback@@YAXPEAU_TP_CALLBACK_INSTANCE@@PEAXPEAU_TP_TIMER@@@Z",
+              "ea": "0x1801fa522",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CRestrictedErrorID",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "POFSnapshotStatistics",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "CRestrictedErrorID:GUID",
+            "TotalCycleCount:UInt64",
+            "TotalWallClockPeriod:UInt64",
+            "VaCloneCycleCount:UInt64",
+            "VaCloneWallClockPeriod:UInt64",
+            "VaSpaceCycleCount:UInt64",
+            "VaSpaceWallClockPeriod:UInt64",
+            "AuxPagesCycleCount:UInt64",
+            "AuxPagesWallClockPeriod:UInt64",
+            "HandlesCycleCount:UInt64",
+            "HandlesWallClockPeriod:UInt64",
+            "ThreadsCycleCount:UInt64",
+            "ThreadsWallClockPeriod:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?LogSnapshotPerformanceCounters@CRestrictedError@@AEAAXXZ",
+              "ea": "0x1801fa1f2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AuxPagesCycleCount",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "AuxPagesWallClockPeriod",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "CRestrictedErrorID",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "HandlesCycleCount",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "HandlesWallClockPeriod",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "ThreadsCycleCount",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "ThreadsWallClockPeriod",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "TotalCycleCount",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "TotalWallClockPeriod",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "VaCloneCycleCount",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "VaCloneWallClockPeriod",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "VaSpaceCycleCount",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "VaSpaceWallClockPeriod",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PackagedServiceComRegistrationInHKLM",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x200000000000",
+          "fields": [
+            "serviceName:UnicodeString",
+            "packageFullName:UnicodeString",
+            "appId:GUID",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?PackagedServiceComRegistrationInHKLM_@ComTrace@@QEAAXPEBG0AEBU_GUID@@@Z",
+              "ea": "0x1800e53e0",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "appId",
+          "type": "GUID",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "packageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "serviceName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PrematureStubRundownDetected",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "IID_of_call_failure:GUID",
+            "Procnum_of_call_failure:UInt32",
+            "HRESULT:Int32(HResult)",
+            "Implemented_interface_1:GUID",
+            "Implemented_interface_2:GUID",
+            "Implemented_interface_3:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?InstrumentPrematureStubRundownFailure@@YAXAEBU_GUID@@K0_K_NJPEAVCStdIdentity@@PEAVCBaseCall@@PEBU1@@Z",
+              "ea": "0x18014acd3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "IID_of_call_failure",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "Implemented_interface_1",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "Implemented_interface_2",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "Implemented_interface_3",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "Procnum_of_call_failure",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PrivateHive Delete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "HivePath:UnicodeString",
+            "Hive:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?Delete@PrivateHive@RegistrationStoreData@@SAJPEAUHSTRING__@@0AEAVRegistryKey@@_N@Z",
+              "ea": "0x18014e335",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Hive",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "HivePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PrivateHive Unload",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Hive:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?Unload@PrivateHive@RegistrationStoreData@@SAJPEAUHKEY__@@@Z",
+              "ea": "0x180186ed0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Hive",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PrivateUserHiveLoadKeyFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32",
+            "Path:UnicodeString",
+            "SamDesired:UInt32",
+            "Flags:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?LoadKey@RegistrationStoreData@@YAJPEAUHSTRING__@@0AEAU_UNICODE_STRING@@KKAEAVRegistryKey@@@Z",
+              "ea": "0x18025d0b4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Flags",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "Path",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "SamDesired",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RemoteCallInExitProcess",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x200000000000",
+          "fields": [
+            "callerModuleFileName:UnicodeString",
+            "callerModulePdbSignature:GUID",
+            "callerOffset:HexInt32",
+            "iid:GUID",
+            "procNum:UInt16",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?RemoteCallInExitProcess_@ComTrace@@QEAAXPEBGAEBU_GUID@@I1G@Z",
+              "ea": "0x1801b7756",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "callerModuleFileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "callerModulePdbSignature",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "callerOffset",
+          "type": "HexInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "iid",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "procNum",
+          "type": "UInt16",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ReportRpcssClientOidLeakMetrics",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "systemUptimeInHours:UInt32",
+            "count:UInt32",
+            "attributableServerOidCount:UInt32",
+            "attributableServerOxidCount:UInt32",
+            "attributableClientOxidCount:UInt32",
+            "attributableProcessCount:UInt32",
+            "attributableTotalMemoryUsage:UInt64",
+            "attributableBindingHandleCount:UInt32",
+            "attributableBindingHandleUniqueEndpointCount:UInt32",
+            "incomplete:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?ReportRpcssClientOidLeakMetrics_@ComTrace@@QEAAXIIIIII_KUBindingHandleMetrics@@_N@Z",
+              "ea": "0x18009f691",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "attributableBindingHandleCount",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "attributableBindingHandleUniqueEndpointCount",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "attributableClientOxidCount",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "attributableProcessCount",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "attributableServerOidCount",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "attributableServerOxidCount",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "attributableTotalMemoryUsage",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "incomplete",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "systemUptimeInHours",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ReportRpcssResourceMetrics",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "SystemUptimeInHours:UInt32",
+            "PrivateCommitUsage:UInt64",
+            "PeakPrivateCommitUsage:UInt64",
+            "SetAppID.CallCount:UInt64",
+            "SetAppID.MeanCallLatency:Double",
+            "GetDefaultSecurityPermissions.CallCount:UInt64",
+            "GetDefaultSecurityPermissions.MeanCallLatency:Double",
+            "AllocateReservedIds.CallCount:UInt64",
+            "AllocateReservedIds.MeanCallLatency:Double",
+            "BulkUpdateOIDs.CallCount:UInt64",
+            "BulkUpdateOIDs.MeanCallLatency:Double",
+            "ClientResolveOXID.CallCount:UInt64",
+            "ClientResolveOXID.MeanCallLatency:Double",
+            "ServerAllocateOXIDAndOIDs.CallCount:UInt64",
+            "ServerAllocateOXIDAndOIDs.MeanCallLatency:Double",
+            "ServerAllocateOIDs.CallCount:UInt64",
+            "ServerAllocateOIDs.MeanCallLatency:Double",
+            "ServerFreeOXIDAndOIDs.CallCount:UInt64",
+            "ServerFreeOXIDAndOIDs.MeanCallLatency:Double",
+            "SetServerOIDFlags.CallCount:UInt64",
+            "SetServerOIDFlags.MeanCallLatency:Double",
+            "Disconnect.CallCount:UInt64",
+            "Disconnect.MeanCallLatency:Double",
+            "GetUpdatedResolverBindings.CallCount:UInt64",
+            "GetUpdatedResolverBindings.MeanCallLatency:Double",
+            "ServerOid.Count:UInt32",
+            "ServerOid.TotalMemoryUsage:UInt64",
+            "ServerOid.Incomplete:UInt8(Boolean)",
+            "ServerOxid.Count:UInt32",
+            "ServerOxid.TotalMemoryUsage:UInt64",
+            "ServerOxid.Incomplete:UInt8(Boolean)",
+            "ClientOid.Count:UInt32",
+            "ClientOid.TotalMemoryUsage:UInt64",
+            "ClientOid.Incomplete:UInt8(Boolean)",
+            "ClientOxid.Count:UInt32",
+            "ClientOxid.TotalMemoryUsage:UInt64",
+            "ClientOxid.Incomplete:UInt8(Boolean)",
+            "Process.Count:UInt32",
+            "Process.TotalMemoryUsage:UInt64",
+            "Process.Incomplete:UInt8(Boolean)",
+            "BindingHandle.Count:UInt32",
+            "BindingHandle.UniqueEndpointCount:UInt32",
+            "BindingHandle.Incomplete:UInt8(Boolean)",
+            "ZombieState.ServerOidCount:UInt32",
+            "ZombieState.ServerOxidCount:UInt32",
+            "ZombieState.ProcessCount:UInt32",
+            "ZombieState.TotalMemoryUsage:UInt64",
+            "ZombieState.BindingHandleCount:UInt32",
+            "ZombieState.BindingHandleUniqueEndpointCount:UInt32",
+            "ZombieState.Incomplete:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?ReportRpcssResourceMetrics_@ComTrace@@QEAAXI_K0ULatencyMeasurements@@1111111111UObjectTypeMetrics@@2222UBindingHandleMetrics@@_NIII034@Z",
+              "ea": "0x18006ef18",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AllocateReservedIds.CallCount",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "AllocateReservedIds.MeanCallLatency",
+          "type": "Double",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "BindingHandle.Count",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "BindingHandle.Incomplete",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "BindingHandle.UniqueEndpointCount",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "BulkUpdateOIDs.CallCount",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "BulkUpdateOIDs.MeanCallLatency",
+          "type": "Double",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientOid.Count",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientOid.Incomplete",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientOid.TotalMemoryUsage",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientOxid.Count",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientOxid.Incomplete",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientOxid.TotalMemoryUsage",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientResolveOXID.CallCount",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientResolveOXID.MeanCallLatency",
+          "type": "Double",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Disconnect.CallCount",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Disconnect.MeanCallLatency",
+          "type": "Double",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "GetDefaultSecurityPermissions.CallCount",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "GetDefaultSecurityPermissions.MeanCallLatency",
+          "type": "Double",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "GetUpdatedResolverBindings.CallCount",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "GetUpdatedResolverBindings.MeanCallLatency",
+          "type": "Double",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "PeakPrivateCommitUsage",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "PrivateCommitUsage",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Process.Count",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Process.Incomplete",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "Process.TotalMemoryUsage",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ServerAllocateOIDs.CallCount",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ServerAllocateOIDs.MeanCallLatency",
+          "type": "Double",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ServerAllocateOXIDAndOIDs.CallCount",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ServerAllocateOXIDAndOIDs.MeanCallLatency",
+          "type": "Double",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ServerFreeOXIDAndOIDs.CallCount",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ServerFreeOXIDAndOIDs.MeanCallLatency",
+          "type": "Double",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ServerOid.Count",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ServerOid.Incomplete",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ServerOid.TotalMemoryUsage",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ServerOxid.Count",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ServerOxid.Incomplete",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ServerOxid.TotalMemoryUsage",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "SetAppID.CallCount",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "SetAppID.MeanCallLatency",
+          "type": "Double",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "SetServerOIDFlags.CallCount",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "SetServerOIDFlags.MeanCallLatency",
+          "type": "Double",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "SystemUptimeInHours",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ZombieState.BindingHandleCount",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ZombieState.BindingHandleUniqueEndpointCount",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ZombieState.Incomplete",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ZombieState.ProcessCount",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ZombieState.ServerOidCount",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ZombieState.ServerOxidCount",
+          "type": "UInt32",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "ZombieState.TotalMemoryUsage",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RoFailFastCalled",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HasStowedException:UInt8(Boolean)",
+            "ErrorCode:Int32",
+            "ExceptionForm:UInt32",
+            "RoFailFastHr:Int32",
+            "FailureLine:Int32",
+            "NumStowedExceptions:UInt32",
+            "NumStowedExceptionsFromThread:UInt32",
+            "CRestrictedErrorID:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?RoFailFastWithErrorContextInternal2@@YAXJKQEAPEAU_STOWED_EXCEPTION_INFORMATION_V2@@@Z",
+              "ea": "0x18010f888",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HasStowedException:UInt8(Boolean)",
+            "RoFailFastHr:Int32",
+            "FailureLine:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?RoFailFastWithErrorContextInternal2@@YAXJKQEAPEAU_STOWED_EXCEPTION_INFORMATION_V2@@@Z",
+              "ea": "0x18010fad7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CRestrictedErrorID",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "Int32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "ExceptionForm",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "FailureLine",
+          "type": "Int32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "HasStowedException",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "NumStowedExceptions",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "NumStowedExceptionsFromThread",
+          "type": "UInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "RoFailFastHr",
+          "type": "Int32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RoFailFastWithSignature",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Signature:UnicodeString",
+            "CRestrictedErrorID:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?RoFailFastWithErrorContextInternal2@@YAXJKQEAPEAU_STOWED_EXCEPTION_INFORMATION_V2@@@Z",
+              "ea": "0x18010f99a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CRestrictedErrorID",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "Signature",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RpcssBindTimeoutDetected",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PathFindFileNameW(_pszExePath):UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?ReportRpcBindTimeout@CProcess@@QEAAXXZ",
+              "ea": "0x180093c2a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "PathFindFileNameW(_pszExePath)",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RpcssBindTimeoutDueToRaceWithSuspension",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PathFindFileNameW(_pszExePath):UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?ReportRpcBindTimeout@CProcess@@QEAAXXZ",
+              "ea": "0x180093b94",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "PathFindFileNameW(_pszExePath)",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RpcssBindTimeoutReported",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PathFindFileNameW(_pszExePath):UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?ReportRpcBindTimeout@CProcess@@QEAAXXZ",
+              "ea": "0x180093c95",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "PathFindFileNameW(_pszExePath)",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RpcssDetectedUnhealthyProcess",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PathFindFileNameW(_pszExePath):UnicodeString",
+            "NTSTATUS:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?ReportUnhealthyProcess@CProcess@@QEAAXJPEAX@Z",
+              "ea": "0x1800a5a1b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "PathFindFileNameW(_pszExePath)",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RpcssFailedToReportRpcBindTimeout",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PathFindFileNameW(_pszExePath):UnicodeString",
+            "RPC_STATUS:UInt32(Win32Error)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rpcss.dll",
+              "function": "?ReportRpcBindTimeout@CProcess@@QEAAXXZ",
+              "ea": "0x180093ac9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "PathFindFileNameW(_pszExePath)",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        },
+        {
+          "fieldName": "RPC_STATUS",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "rpcss.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TracesRateLimited",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?TracesRateLimited_@ComTrace@@QEAAXXZ",
+              "ea": "0x1800bc108",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "coml2.dll",
+              "function": "?TracesRateLimited_@ComTrace@@QEAAXXZ",
+              "ea": "0x1800482be",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ole32.dll",
+              "function": "?TracesRateLimited_@ComTrace@@QEAAXXZ",
+              "ea": "0x18004ceda",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "oledlg.dll",
+              "function": "?TracesRateLimited_@ComTrace@@QEAAXXZ",
+              "ea": "0x18002122e",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "rpcss.dll",
+              "function": "?TracesRateLimited_@ComTrace@@QEAAXXZ",
+              "ea": "0x1800977ae",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "RuntimeBroker.exe",
+              "function": "?TracesRateLimited_@ComTrace@@QEAAXXZ",
+              "ea": "0x14000f3ba",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "User32LoadFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?DiagnoseUser32LoadFailure@@YAJXZ",
+              "ea": "0x18018ff41",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "User32LoadFailureResolvedOnRetry",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?DiagnoseUser32LoadFailure@@YAJXZ",
+              "ea": "0x180190085",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "WinrtAsyncChannelErrorForwarding",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "Async method IID:GUID",
+            "Async method procnum:UInt16",
+            "Async operation name:UnicodeString",
+            "HRESULT:Int32(HResult)",
+            "Delegate interface pointer:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?FilterCompletionErrorWithDelegatePointer@WinrtAsyncChannelOperation@@AEAAJJPEAUIUnknown@@PEAX@Z",
+              "ea": "0x180267a08",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Async method IID",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "Async method procnum",
+          "type": "UInt16",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "Async operation name",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "Delegate interface pointer",
+          "type": "HexInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WrongPackageTypeForActivationFromPackage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "activationApi:AnsiString",
+            "clsid:GUID",
+            "packageFamilyName:UnicodeString",
+            "dwClsContext:HexInt32",
+            "packageType:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?WrongPackageTypeForActivationFromPackage_@ComTrace@@QEAAXPEBG0PEBDAEBU_GUID@@K@Z",
+              "ea": "0x1801c1c1a",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "activationApi",
+          "type": "AnsiString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "clsid",
+          "type": "GUID",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "dwClsContext",
+          "type": "HexInt32",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "packageFamilyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "packageType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WrongPackageTypeForCoAddComDependencyOnPackage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "packageFamilyName:UnicodeString",
+            "packageType:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "combase.dll",
+              "function": "?WrongPackageTypeForCoAddComDependencyOnPackage_@ComTrace@@QEAAXPEBG0@Z",
+              "ea": "0x1801de464",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "packageFamilyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        },
+        {
+          "fieldName": "packageType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "combase.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

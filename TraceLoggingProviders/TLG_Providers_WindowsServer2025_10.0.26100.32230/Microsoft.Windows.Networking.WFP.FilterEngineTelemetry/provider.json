@@ -1,0 +1,128 @@
+{
+  "providerName": "Microsoft.Windows.Networking.WFP.FilterEngineTelemetry",
+  "guid": "{C8B53346-95C2-50CB-C63D-9F9D259A1C45}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "netio.sys"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "AleAuthLayerMemUsage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "AleAuthLayerName:UnicodeString",
+            "AleAuthLayerListIndexSize:UInt64",
+            "AleAuthLayerHashIndexSize:UInt64",
+            "AleAuthLayerTrieIndexSize:UInt64",
+            "AleAuthLayerTotalIndexSize:UInt64",
+            "AleAuthLayerFiltersSize:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "netio.sys",
+              "function": "WfpAleAuthLayerMemUsageTelemetry",
+              "ea": "0x14004d05a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AleAuthLayerFiltersSize",
+          "type": "UInt64",
+          "seenIn": [
+            "netio.sys"
+          ]
+        },
+        {
+          "fieldName": "AleAuthLayerHashIndexSize",
+          "type": "UInt64",
+          "seenIn": [
+            "netio.sys"
+          ]
+        },
+        {
+          "fieldName": "AleAuthLayerListIndexSize",
+          "type": "UInt64",
+          "seenIn": [
+            "netio.sys"
+          ]
+        },
+        {
+          "fieldName": "AleAuthLayerName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "netio.sys"
+          ]
+        },
+        {
+          "fieldName": "AleAuthLayerTotalIndexSize",
+          "type": "UInt64",
+          "seenIn": [
+            "netio.sys"
+          ]
+        },
+        {
+          "fieldName": "AleAuthLayerTrieIndexSize",
+          "type": "UInt64",
+          "seenIn": [
+            "netio.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WfpCalloutInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "driverName:CountedString",
+            "layerIdMask:UInt8[N](Hex)",
+            "calloutBehaviorMask:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "netio.sys",
+              "function": "WfpCalloutTelemetryWriteAllInfo",
+              "ea": "0x140011c63",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "calloutBehaviorMask",
+          "type": "HexInt32",
+          "seenIn": [
+            "netio.sys"
+          ]
+        },
+        {
+          "fieldName": "driverName",
+          "type": "CountedString",
+          "seenIn": [
+            "netio.sys"
+          ]
+        },
+        {
+          "fieldName": "layerIdMask",
+          "type": "UInt8[N](Hex)",
+          "seenIn": [
+            "netio.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

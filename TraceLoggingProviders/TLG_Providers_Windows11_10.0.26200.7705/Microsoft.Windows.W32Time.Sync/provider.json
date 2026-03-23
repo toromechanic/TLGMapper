@@ -1,0 +1,106 @@
+{
+  "providerName": "Microsoft.Windows.W32Time.Sync",
+  "guid": "{13F3DA1B-C22C-4CB1-8C77-ED37787953E9}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "timesync.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "SyncW32Time",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "RequestSource:UInt32",
+            "W32TimeDisabledPriorToSync:UInt8(Boolean)",
+            "UtcTimePriorToSync:FileTime",
+            "UtcTimeAfterSync:FileTime",
+            "LocalTimePriorToSync:SystemTime",
+            "LocalTimeAfterSync:SystemTime",
+            "LastSuccessfulSync:FileTime",
+            "ErrorCode:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "timesync.dll",
+              "function": "SyncW32Time",
+              "ea": "0x180008922",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "Int32",
+          "seenIn": [
+            "timesync.dll"
+          ]
+        },
+        {
+          "fieldName": "LastSuccessfulSync",
+          "type": "FileTime",
+          "seenIn": [
+            "timesync.dll"
+          ]
+        },
+        {
+          "fieldName": "LocalTimeAfterSync",
+          "type": "SystemTime",
+          "seenIn": [
+            "timesync.dll"
+          ]
+        },
+        {
+          "fieldName": "LocalTimePriorToSync",
+          "type": "SystemTime",
+          "seenIn": [
+            "timesync.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "timesync.dll"
+          ]
+        },
+        {
+          "fieldName": "RequestSource",
+          "type": "UInt32",
+          "seenIn": [
+            "timesync.dll"
+          ]
+        },
+        {
+          "fieldName": "UtcTimeAfterSync",
+          "type": "FileTime",
+          "seenIn": [
+            "timesync.dll"
+          ]
+        },
+        {
+          "fieldName": "UtcTimePriorToSync",
+          "type": "FileTime",
+          "seenIn": [
+            "timesync.dll"
+          ]
+        },
+        {
+          "fieldName": "W32TimeDisabledPriorToSync",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "timesync.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

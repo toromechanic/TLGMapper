@@ -1,0 +1,927 @@
+{
+  "providerName": "Microsoft.Windows.Shell.AIX",
+  "guid": "{96B47202-A28B-5A2B-CD48-44932E4A7A2C}",
+  "os": "WindowsServer2025",
+  "binaryCount": 11,
+  "binaries": [
+    "DesktopShellExt.dll",
+    "PenWorkspace.dll",
+    "SettingsEnvironment.Desktop.dll",
+    "SettingsHandlers_A9.dll",
+    "SettingsHandlers_Pen.dll",
+    "ShellAppRuntime.exe",
+    "StartTileData.dll",
+    "Taskbar.dll",
+    "explorer.exe",
+    "twinui.pcshell.dll",
+    "windowsudk.shellcommon.dll"
+  ],
+  "uniqueEventCount": 11,
+  "events": [
+    {
+      "eventName": "AIXInstalledAndRegistrationRefreshed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "attemptsBeforeAixFound:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "DesktopShellExt.dll",
+              "function": "??$AIXInstalledAndRegistrationRefreshed@AEAH@AIXTelemetry@@SAXAEAH@Z",
+              "ea": "0x180060379",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "DesktopShellExt.dll"
+          ]
+        },
+        {
+          "fieldName": "attemptsBeforeAixFound",
+          "type": "UInt32",
+          "seenIn": [
+            "DesktopShellExt.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "C2DEnablement",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "isEnabled:UInt8(Boolean)",
+            "disallowedByRegion:UInt8(Boolean)",
+            "disallowedByHardware:UInt8(Boolean)",
+            "disallowedByEnterpriseFeatureControl:UInt8(Boolean)",
+            "disallowedByPolicy:UInt8(Boolean)",
+            "disallowedByUserSetting:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "explorer.exe",
+              "function": "??$C2DEnablement@AEB_N_N_N_N_NAEB_N@AIXTelemetry@@SAXAEB_N$$QEA_N1110@Z",
+              "ea": "0x140100084",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$C2DEnablement@AEB_N_N_N_N_NAEB_N@AIXTelemetry@@SAXAEB_N$$QEA_N1110@Z",
+              "ea": "0x14002398b",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "disallowedByEnterpriseFeatureControl",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "disallowedByHardware",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "disallowedByPolicy",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "disallowedByRegion",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "disallowedByUserSetting",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "C2DUserSettingChanged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "isEnabled:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "SettingsHandlers_A9.dll",
+              "function": "??$C2DUserSettingChanged@AEB_N@AIXTelemetry@@SAXAEB_N@Z",
+              "ea": "0x18005f030",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "isEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "SettingsHandlers_A9.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CompatibleDriverFound",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "DriverFound:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "explorer.exe",
+              "function": "??$CompatibleDriverFound@AEB_N@AIXTelemetry@@SAXAEB_N@Z",
+              "ea": "0x1400ca459",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$CompatibleDriverFound@AEB_N@AIXTelemetry@@SAXAEB_N@Z",
+              "ea": "0x140023aa0",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DriverFound",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IsC2DAllowedByPolicy",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "IsWipUser:UInt8(Boolean)",
+            "IsAllowedInRegion:UInt8(Boolean)",
+            "IsDeviceCapable:UInt8(Boolean)",
+            "IsAllowedByITPolicy:UInt8(Boolean)",
+            "IsAllowedByVelocity:UInt8(Boolean)",
+            "IsAllowedByEnterpriseFeatureControl:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "explorer.exe",
+              "function": "??$IsC2DAllowedByPolicy@_N_NAEA_NAEB_NAEB_NAEB_N@AIXTelemetry@@SAX$$QEA_N0AEA_NAEB_N22@Z",
+              "ea": "0x1400cae71",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "PenWorkspace.dll",
+              "function": "??$IsC2DAllowedByPolicy@_N_NAEA_NAEB_NAEB_NAEB_N@AIXTelemetry@@SAX$$QEA_N0AEA_NAEB_N22@Z",
+              "ea": "0x18015b66b",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SettingsEnvironment.Desktop.dll",
+              "function": "??$IsC2DAllowedByPolicy@_N_NAEA_NAEB_NAEB_NAEB_N@AIXTelemetry@@SAX$$QEA_N0AEA_NAEB_N22@Z",
+              "ea": "0x18006490d",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "SettingsHandlers_A9.dll",
+              "function": "??$IsC2DAllowedByPolicy@_N_NAEA_NAEB_NAEB_NAEB_N@AIXTelemetry@@SAX$$QEA_N0AEA_NAEB_N22@Z",
+              "ea": "0x1800418f7",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SettingsHandlers_Pen.dll",
+              "function": "??$IsC2DAllowedByPolicy@_N_NAEA_NAEB_NAEB_NAEB_N@AIXTelemetry@@SAX$$QEA_N0AEA_NAEB_N22@Z",
+              "ea": "0x18001c15d",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "twinui.pcshell.dll",
+              "function": "??$IsC2DAllowedByPolicy@_N_NAEA_NAEB_NAEB_NAEB_N@AIXTelemetry@@SAX$$QEA_N0AEA_NAEB_N22@Z",
+              "ea": "0x18057cea1",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsAllowedByEnterpriseFeatureControl",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "PenWorkspace.dll",
+            "SettingsEnvironment.Desktop.dll",
+            "SettingsHandlers_A9.dll",
+            "SettingsHandlers_Pen.dll",
+            "explorer.exe",
+            "twinui.pcshell.dll"
+          ]
+        },
+        {
+          "fieldName": "IsAllowedByITPolicy",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "PenWorkspace.dll",
+            "SettingsEnvironment.Desktop.dll",
+            "SettingsHandlers_A9.dll",
+            "SettingsHandlers_Pen.dll",
+            "explorer.exe",
+            "twinui.pcshell.dll"
+          ]
+        },
+        {
+          "fieldName": "IsAllowedByVelocity",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "PenWorkspace.dll",
+            "SettingsEnvironment.Desktop.dll",
+            "SettingsHandlers_A9.dll",
+            "SettingsHandlers_Pen.dll",
+            "explorer.exe",
+            "twinui.pcshell.dll"
+          ]
+        },
+        {
+          "fieldName": "IsAllowedInRegion",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "PenWorkspace.dll",
+            "SettingsEnvironment.Desktop.dll",
+            "SettingsHandlers_A9.dll",
+            "SettingsHandlers_Pen.dll",
+            "explorer.exe",
+            "twinui.pcshell.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDeviceCapable",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "PenWorkspace.dll",
+            "SettingsEnvironment.Desktop.dll",
+            "SettingsHandlers_A9.dll",
+            "SettingsHandlers_Pen.dll",
+            "explorer.exe",
+            "twinui.pcshell.dll"
+          ]
+        },
+        {
+          "fieldName": "IsWipUser",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "PenWorkspace.dll",
+            "SettingsEnvironment.Desktop.dll",
+            "SettingsHandlers_A9.dll",
+            "SettingsHandlers_Pen.dll",
+            "explorer.exe",
+            "twinui.pcshell.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IsDeviceITManaged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "isManaged:UInt8(Boolean)",
+            "flags:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "DesktopShellExt.dll",
+              "function": "??$IsDeviceITManaged@A6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@AIXTelemetry@@SAXA6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@Z",
+              "ea": "0x1800610a1",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$IsDeviceITManaged@A6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@AIXTelemetry@@SAXA6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@Z",
+              "ea": "0x1400caf8c",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "SettingsHandlers_A9.dll",
+              "function": "??$IsDeviceITManaged@A6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@AIXTelemetry@@SAXA6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@Z",
+              "ea": "0x180038d13",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$IsDeviceITManaged@A6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@AIXTelemetry@@SAXA6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@Z",
+              "ea": "0x140025b51",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "StartTileData.dll",
+              "function": "??$IsDeviceITManaged@A6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@AIXTelemetry@@SAXA6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@Z",
+              "ea": "0x1802da8b5",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "Taskbar.dll",
+              "function": "??$IsDeviceITManaged@A6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@AIXTelemetry@@SAXA6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@Z",
+              "ea": "0x180188cd9",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "windowsudk.shellcommon.dll",
+              "function": "??$IsDeviceITManaged@A6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@AIXTelemetry@@SAXA6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@Z",
+              "ea": "0x1802cf9e8",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "DesktopShellExt.dll",
+            "SettingsHandlers_A9.dll",
+            "ShellAppRuntime.exe",
+            "StartTileData.dll",
+            "Taskbar.dll",
+            "explorer.exe",
+            "windowsudk.shellcommon.dll"
+          ]
+        },
+        {
+          "fieldName": "flags",
+          "type": "UInt32",
+          "seenIn": [
+            "DesktopShellExt.dll",
+            "SettingsHandlers_A9.dll",
+            "ShellAppRuntime.exe",
+            "StartTileData.dll",
+            "Taskbar.dll",
+            "explorer.exe",
+            "windowsudk.shellcommon.dll"
+          ]
+        },
+        {
+          "fieldName": "isManaged",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "DesktopShellExt.dll",
+            "SettingsHandlers_A9.dll",
+            "ShellAppRuntime.exe",
+            "StartTileData.dll",
+            "Taskbar.dll",
+            "explorer.exe",
+            "windowsudk.shellcommon.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IsPBRInProgress",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "isPBRInProgress:UInt8(Boolean)",
+            "isOOBEComplete:UInt8(Boolean)",
+            "installType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "DesktopShellExt.dll",
+              "function": "??$IsPBRInProgress@AEA_NAEB_NAEBK@AIXTelemetry@@SAXAEA_NAEB_NAEBK@Z",
+              "ea": "0x18006119f",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$IsPBRInProgress@AEA_NAEB_NAEBK@AIXTelemetry@@SAXAEA_NAEB_NAEBK@Z",
+              "ea": "0x1400cb047",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "SettingsHandlers_A9.dll",
+              "function": "??$IsPBRInProgress@AEA_NAEB_NAEBK@AIXTelemetry@@SAXAEA_NAEB_NAEBK@Z",
+              "ea": "0x180038e13",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$IsPBRInProgress@AEA_NAEB_NAEBK@AIXTelemetry@@SAXAEA_NAEB_NAEBK@Z",
+              "ea": "0x140025ed3",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "StartTileData.dll",
+              "function": "??$IsPBRInProgress@AEA_NAEB_NAEBK@AIXTelemetry@@SAXAEA_NAEB_NAEBK@Z",
+              "ea": "0x1802da9b3",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "Taskbar.dll",
+              "function": "??$IsPBRInProgress@AEA_NAEB_NAEBK@AIXTelemetry@@SAXAEA_NAEB_NAEBK@Z",
+              "ea": "0x180188dd7",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "windowsudk.shellcommon.dll",
+              "function": "??$IsPBRInProgress@AEA_NAEB_NAEBK@AIXTelemetry@@SAXAEA_NAEB_NAEBK@Z",
+              "ea": "0x1802cfaa3",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "installType",
+          "type": "UInt32",
+          "seenIn": [
+            "DesktopShellExt.dll",
+            "SettingsHandlers_A9.dll",
+            "ShellAppRuntime.exe",
+            "StartTileData.dll",
+            "Taskbar.dll",
+            "explorer.exe",
+            "windowsudk.shellcommon.dll"
+          ]
+        },
+        {
+          "fieldName": "isOOBEComplete",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "DesktopShellExt.dll",
+            "SettingsHandlers_A9.dll",
+            "ShellAppRuntime.exe",
+            "StartTileData.dll",
+            "Taskbar.dll",
+            "explorer.exe",
+            "windowsudk.shellcommon.dll"
+          ]
+        },
+        {
+          "fieldName": "isPBRInProgress",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "DesktopShellExt.dll",
+            "SettingsHandlers_A9.dll",
+            "ShellAppRuntime.exe",
+            "StartTileData.dll",
+            "Taskbar.dll",
+            "explorer.exe",
+            "windowsudk.shellcommon.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OCTask_GetDismState_Begin",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "SettingsEnvironment.Desktop.dll",
+              "function": "?OCTask_GetDismState_Begin@AIXTelemetry@@SAXXZ",
+              "ea": "0x180080d99",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "OCTask_GetDismState_End",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "SettingsEnvironment.Desktop.dll",
+              "function": "?OCTask_GetDismState_End@AIXTelemetry@@SAXXZ",
+              "ea": "0x180080dc5",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "ShouldRemoveComponent",
+      "variantCount": 6,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "ShouldRemoveComponent:UInt8(Boolean)",
+            "isEnterpriseSku:UInt8(Boolean)",
+            "isEduSku:UInt8(Boolean)",
+            "isDeviceITManaged:UInt8(Boolean)",
+            "isDeviceBakerCapable:UInt8(Boolean)",
+            "isAllowedInRegion:UInt8(Boolean)",
+            "isWipUser:UInt8(Boolean)",
+            "isAllowedOnDeviceByPolicy:UInt8(Boolean)",
+            "isBlockedByDriverVersion:UInt8(Boolean)",
+            "isRecallFeatureDisabled:UInt8(Boolean)",
+            "isRecallInstalled:UInt8(Boolean)",
+            "isDlpProviderPolicyConfigured:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "explorer.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x1400ea0be",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x140099b12",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "ShouldRemoveComponent:UInt8(Boolean)",
+            "isEnterpriseSku:UInt8(Boolean)",
+            "isEduSku:UInt8(Boolean)",
+            "isDeviceITManaged:UInt8(Boolean)",
+            "isDeviceBakerCapable:UInt8(Boolean)",
+            "isAllowedInRegion:UInt8(Boolean)",
+            "isWipUser:UInt8(Boolean)",
+            "isAllowedOnDeviceByPolicy:UInt8(Boolean)",
+            "isBlockedByDriverVersion:UInt8(Boolean)",
+            "isRecallFeatureDisabled:UInt8(Boolean)",
+            "isRecallInstalled:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "explorer.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x1400ea1b6",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x140099c47",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "ShouldRemoveComponent:UInt8(Boolean)",
+            "isEnterpriseSku:UInt8(Boolean)",
+            "isEduSku:UInt8(Boolean)",
+            "isDeviceITManaged:UInt8(Boolean)",
+            "isDeviceBakerCapable:UInt8(Boolean)",
+            "isAllowedInRegion:UInt8(Boolean)",
+            "isWipUser:UInt8(Boolean)",
+            "isAllowedOnDeviceByPolicy:UInt8(Boolean)",
+            "isBlockedByDriverVersion:UInt8(Boolean)",
+            "isRecallFeatureDisabled:UInt8(Boolean)",
+            "isDlpProviderPolicyConfigured:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "explorer.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x1400ea2c0",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x140099d77",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "ShouldRemoveComponent:UInt8(Boolean)",
+            "isEnterpriseSku:UInt8(Boolean)",
+            "isEduSku:UInt8(Boolean)",
+            "isDeviceITManaged:UInt8(Boolean)",
+            "isDeviceBakerCapable:UInt8(Boolean)",
+            "isAllowedInRegion:UInt8(Boolean)",
+            "isWipUser:UInt8(Boolean)",
+            "isAllowedOnDeviceByPolicy:UInt8(Boolean)",
+            "isBlockedByDriverVersion:UInt8(Boolean)",
+            "isRecallFeatureDisabled:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "explorer.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x1400ea2f7",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x140099dbf",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "ShouldRemoveComponent:UInt8(Boolean)",
+            "isEnterpriseSku:UInt8(Boolean)",
+            "isEduSku:UInt8(Boolean)",
+            "isDeviceITManaged:UInt8(Boolean)",
+            "isDeviceBakerCapable:UInt8(Boolean)",
+            "isAllowedInRegion:UInt8(Boolean)",
+            "isWipUser:UInt8(Boolean)",
+            "isAllowedOnDeviceByPolicy:UInt8(Boolean)",
+            "isRecallFeatureDisabled:UInt8(Boolean)",
+            "isDlpProviderPolicyConfigured:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "explorer.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x1400ea345",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x140099e21",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "ShouldRemoveComponent:UInt8(Boolean)",
+            "isEnterpriseSku:UInt8(Boolean)",
+            "isEduSku:UInt8(Boolean)",
+            "isDeviceITManaged:UInt8(Boolean)",
+            "isDeviceBakerCapable:UInt8(Boolean)",
+            "isAllowedInRegion:UInt8(Boolean)",
+            "isWipUser:UInt8(Boolean)",
+            "isAllowedOnDeviceByPolicy:UInt8(Boolean)",
+            "isRecallFeatureDisabled:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "explorer.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x1400ea41c",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x140099f22",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "ShouldRemoveComponent",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isAllowedInRegion",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isAllowedOnDeviceByPolicy",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isBlockedByDriverVersion",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isDeviceBakerCapable",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isDeviceITManaged",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isDlpProviderPolicyConfigured",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isEduSku",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isEnterpriseSku",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isRecallFeatureDisabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isRecallInstalled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isWipUser",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TileStoreTransformer_ExclusionHelper",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "IsExcluded:UInt8(Boolean)",
+            "Kind:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "StartTileData.dll",
+              "function": "??$TileStoreTransformer_ExclusionHelper@AEA_NAEBW4ExclusionKind@BlockListHelpers@UnifiedTile@Shell@WindowsInternal@@@AIXTelemetry@@SAXAEA_NAEBW4ExclusionKind@BlockListHelpers@UnifiedTile@Shell@WindowsInternal@@@Z",
+              "ea": "0x1802dad21",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsExcluded",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "StartTileData.dll"
+          ]
+        },
+        {
+          "fieldName": "Kind",
+          "type": "Int32",
+          "seenIn": [
+            "StartTileData.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

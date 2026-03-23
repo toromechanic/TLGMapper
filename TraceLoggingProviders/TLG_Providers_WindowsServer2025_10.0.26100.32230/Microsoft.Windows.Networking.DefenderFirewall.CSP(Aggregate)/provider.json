@@ -1,0 +1,435 @@
+{
+  "providerName": "Microsoft.Windows.Networking.DefenderFirewall.CSP(Aggregate)",
+  "guid": "{C9E8F9EE-0333-43EB-90B5-D30BD5C5658F}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "fwmdmcsp.dll"
+  ],
+  "uniqueEventCount": 6,
+  "events": [
+    {
+      "eventName": "FirewallCommit",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "ruleId:UnicodeString",
+            "name:UnicodeString",
+            "state:UInt32",
+            "result:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "fwmdmcsp.dll",
+              "function": "?FwCspPolEventWriteCommit@@YAXPEBU_FW_CSP_POL_RULE@@K@Z",
+              "ea": "0x18002378c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "count:Int64",
+            "result:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "fwmdmcsp.dll",
+              "function": "?FwCspPolEventWriteTransaction@@YAXK_N@Z",
+              "ea": "0x180023ae0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        },
+        {
+          "fieldName": "name",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        },
+        {
+          "fieldName": "result",
+          "type": "HexInt32",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        },
+        {
+          "fieldName": "result",
+          "type": "UInt32",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        },
+        {
+          "fieldName": "ruleId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        },
+        {
+          "fieldName": "state",
+          "type": "UInt32",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FirewallError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "description:UnicodeString",
+            "returnValue:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "fwmdmcsp.dll",
+              "function": "?FwCspPolEventWriteStatus@@YAXQEBGK@Z",
+              "ea": "0x180023906",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fwmdmcsp.dll",
+              "function": "?FwCspPolEventWriteStatus@@YAXQEBGK@Z",
+              "ea": "0x18002391e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        },
+        {
+          "fieldName": "description",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        },
+        {
+          "fieldName": "returnValue",
+          "type": "HexInt32",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FirewallInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "description:UnicodeString",
+            "returnValue:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "fwmdmcsp.dll",
+              "function": "?FwCspPolEventWriteStatus@@YAXQEBGK@Z",
+              "ea": "0x1800239b0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        },
+        {
+          "fieldName": "description",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        },
+        {
+          "fieldName": "returnValue",
+          "type": "HexInt32",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FirewallRollback",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "count:Int64",
+            "result:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "fwmdmcsp.dll",
+              "function": "?FwCspPolEventWriteTransaction@@YAXK_N@Z",
+              "ea": "0x180023aa8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        },
+        {
+          "fieldName": "result",
+          "type": "UInt32",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Histogram",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "HistogramName:AnsiString",
+            "Buckets:UInt32[]"
+          ],
+          "callers": [
+            {
+              "binary": "fwmdmcsp.dll",
+              "function": "?UploadHistogramIfNotEmpty@@YAXQEAU_HISTOGRAM@@PEAD@Z",
+              "ea": "0x18000de53",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fwmdmcsp.dll",
+              "function": "?UploadHistogramIfNotEmpty@@YAXQEAU_HISTOGRAM@@PEAD@Z",
+              "ea": "0x18000de8b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Buckets",
+          "type": "UInt32[]",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        },
+        {
+          "fieldName": "HistogramName",
+          "type": "AnsiString",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NodeError",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "nodeCommand:AnsiString",
+            "nodeId:Int32",
+            "profileName:UnicodeString",
+            "nodeUri:UnicodeString",
+            "nodeHresult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "fwmdmcsp.dll",
+              "function": "?Add@CFWNode@@UEAAJPEAUIConfigManager2URI@@W4ConfigDataType@@UtagVARIANT@@PEAPEAUICSPNode@@PEAK@Z",
+              "ea": "0x18001780a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fwmdmcsp.dll",
+              "function": "?Clear@CFWNode@@UEAAJXZ",
+              "ea": "0x180019d9b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fwmdmcsp.dll",
+              "function": "?DeleteChild@CFWNode@@UEAAJPEAUIConfigManager2URI@@@Z",
+              "ea": "0x180018550",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fwmdmcsp.dll",
+              "function": "?GetChildNodeNames@CFWNode@@UEAAJPEAKPEAPEAPEAG@Z",
+              "ea": "0x1800157cd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "nodeCommand:AnsiString",
+            "nodeId:Int32",
+            "profileName:UnicodeString",
+            "nodeUri:UnicodeString",
+            "nodeHresult:Int32(HResult)",
+            "createFlag:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "fwmdmcsp.dll",
+              "function": "?CreateNodeInstance@CFWNode@@SAJPEAVCConfigServiceProvider2Impl@@PEAUIConfigManager2URI@@PEBUCSP_NODE_DATA@@HPEAPEAUICSPNode@@PEAK@Z",
+              "ea": "0x18000e8de",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "count:Int64",
+            "nodeCommand:AnsiString",
+            "nodeId:Int32",
+            "profileName:UnicodeString",
+            "nodeUri:UnicodeString",
+            "nodeHresult:Int32(HResult)",
+            "nodeData:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "fwmdmcsp.dll",
+              "function": "?GetValue@CFWNode@@UEAAJPEAUtagVARIANT@@@Z",
+              "ea": "0x18001bc1e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fwmdmcsp.dll",
+              "function": "?SetValue@CFWNode@@UEAAJUtagVARIANT@@@Z",
+              "ea": "0x18001eeda",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        },
+        {
+          "fieldName": "createFlag",
+          "type": "Bool32",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        },
+        {
+          "fieldName": "nodeCommand",
+          "type": "AnsiString",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        },
+        {
+          "fieldName": "nodeData",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        },
+        {
+          "fieldName": "nodeHresult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        },
+        {
+          "fieldName": "nodeId",
+          "type": "Int32",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        },
+        {
+          "fieldName": "nodeUri",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        },
+        {
+          "fieldName": "profileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fwmdmcsp.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

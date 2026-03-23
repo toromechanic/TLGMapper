@@ -1,0 +1,1864 @@
+{
+  "providerName": "Microsoft.Windows.TextInput.LinguisticData",
+  "guid": "{864C5689-9310-594C-5CEF-000695F5ACE8}",
+  "os": "Windows 11",
+  "binaryCount": 6,
+  "binaries": [
+    "ChsEM.dll",
+    "ChxEM.DLL",
+    "InputService.dll",
+    "MSCAND20.DLL",
+    "msctfuimanager.dll",
+    "tabskb.dll"
+  ],
+  "uniqueEventCount": 22,
+  "events": [
+    {
+      "eventName": "AppliedCompositionSuggestion",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000004",
+          "fields": [
+            "editId:GUID",
+            "applicationName:UnicodeString",
+            "inputScope:UInt32",
+            "originalWord:UnicodeString",
+            "appliedWord:UnicodeString",
+            "applyMethod:AnsiString",
+            "locale:UnicodeString",
+            "inputMethodId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "InputService.dll",
+              "function": "?LogAppliedTextSuggestion@TipcLogger@@QEAAJPEBG0GIW4__MIDL___MIDL_itf_inputscope_0000_0000_0001@@W4APPLY_METHOD@@@Z",
+              "ea": "0x18032ad5d",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "applicationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "appliedWord",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "applyMethod",
+          "type": "AnsiString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "editId",
+          "type": "GUID",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "inputMethodId",
+          "type": "UInt32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "inputScope",
+          "type": "UInt32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "locale",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "originalWord",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CandidateApplied",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "editId:GUID",
+            "inputLanguage:UnicodeString",
+            "inputScope:UnicodeString",
+            "layoutType:Int16",
+            "selectionIndex:Int32",
+            "originalInput:UnicodeString",
+            "appliedCandidate:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "tabskb.dll",
+              "function": "?_InsertPrediction@COutputManager@@AEAA_NIW4PredictionInsertMethod@1@G@Z",
+              "ea": "0x1800bddda",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "appliedCandidate",
+          "type": "UnicodeString",
+          "seenIn": [
+            "tabskb.dll"
+          ]
+        },
+        {
+          "fieldName": "editId",
+          "type": "GUID",
+          "seenIn": [
+            "tabskb.dll"
+          ]
+        },
+        {
+          "fieldName": "inputLanguage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "tabskb.dll"
+          ]
+        },
+        {
+          "fieldName": "inputScope",
+          "type": "UnicodeString",
+          "seenIn": [
+            "tabskb.dll"
+          ]
+        },
+        {
+          "fieldName": "layoutType",
+          "type": "Int16",
+          "seenIn": [
+            "tabskb.dll"
+          ]
+        },
+        {
+          "fieldName": "originalInput",
+          "type": "UnicodeString",
+          "seenIn": [
+            "tabskb.dll"
+          ]
+        },
+        {
+          "fieldName": "selectionIndex",
+          "type": "Int32",
+          "seenIn": [
+            "tabskb.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CandidatePageChanged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "editId:GUID",
+            "CurrentPage:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "MSCAND20.DLL",
+              "function": "?_SetPage@CandidateList@@AEAAJHW4CL_PAGE_CHANGE_FOCUS_BEHAVIOR@@W4CL_UI_UPDATE_TYPE@@W4CL_INTERACTION_TYPE@@W4CL_REALIZATION_FLAGS@@W4CL_PAGE_CHANGE_ANIMATION@@@Z",
+              "ea": "0x1800ae68a",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "tabskb.dll",
+              "function": "?_SetPage@CandidateList@@AEAAJHW4CL_PAGE_CHANGE_FOCUS_BEHAVIOR@@W4CL_UI_UPDATE_TYPE@@W4CL_INTERACTION_TYPE@@W4CL_REALIZATION_FLAGS@@W4CL_PAGE_CHANGE_ANIMATION@@@Z",
+              "ea": "0x1800aa4aa",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CurrentPage",
+          "type": "Int32",
+          "seenIn": [
+            "MSCAND20.DLL",
+            "tabskb.dll"
+          ]
+        },
+        {
+          "fieldName": "editId",
+          "type": "GUID",
+          "seenIn": [
+            "MSCAND20.DLL",
+            "tabskb.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CandidateTouchPanEnd",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "editId:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "MSCAND20.DLL",
+              "function": "?_HandleManipulationCompleted@CandidateList@@AEAAXXZ",
+              "ea": "0x1800ac974",
+              "confidence": "CallGraph-d3"
+            },
+            {
+              "binary": "tabskb.dll",
+              "function": "?_HandleManipulationCompleted@CandidateList@@AEAAXXZ",
+              "ea": "0x1800a8e4c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "editId",
+          "type": "GUID",
+          "seenIn": [
+            "MSCAND20.DLL",
+            "tabskb.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CandidateTouchPanStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "editId:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "MSCAND20.DLL",
+              "function": "?_HandleManipulationStarted@CandidateList@@AEAAXXZ",
+              "ea": "0x1800acb26",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "msctfuimanager.dll",
+              "function": "?_HandleManipulationStarted@CandidateList@@AEAAXXZ",
+              "ea": "0x180043e37",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "tabskb.dll",
+              "function": "?_HandleManipulationStarted@CandidateList@@AEAAXXZ",
+              "ea": "0x1800a8ffe",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "editId",
+          "type": "GUID",
+          "seenIn": [
+            "MSCAND20.DLL",
+            "msctfuimanager.dll",
+            "tabskb.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CompositionInput",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "editId:GUID",
+            "ime:UnicodeString",
+            "inputScope:UInt32",
+            "env:UnicodeString",
+            "previousTickCount:UInt64",
+            "actions:UnicodeString",
+            "currentTickCount:UInt64",
+            "app:UnicodeString",
+            "version:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "ChsEM.dll",
+              "function": "?LogEventSession@TelemetryLogger@ChxIME@@IEAAJW4tagEventName@2@AEAV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@U?$pair@V?$shared_ptr@VTelemetryActionObjBase@ChxIME@@@std@@_K@std@@@std@@@std@@@std@@1@Z",
+              "ea": "0x180031b44",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "InputService.dll",
+              "function": "?LogCompositionInputEvent@TelemetryLogger@CHS@ChsIME@@IEAAJXZ",
+              "ea": "0x1801fbc03",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "editId:GUID",
+            "PartA_PrivTags:UInt64",
+            "ime:UnicodeString",
+            "inputScope:UInt32",
+            "env:UnicodeString",
+            "previousTickCount:UInt64",
+            "actions:UnicodeString",
+            "currentTickCount:UInt64",
+            "app:UnicodeString",
+            "version:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "ChxEM.DLL",
+              "function": "?LogEventSession@TelemetryLogger@CHS@ChxIME@@IEAAJW4EventName@23@AEAV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@U?$pair@PEAVTelemetryActionObjBase@CHS@ChxIME@@_K@std@@@std@@@std@@@std@@1@Z",
+              "ea": "0x180037ca4",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "editId:GUID",
+            "PartA_PrivTags:UInt64",
+            "ime:UnicodeString",
+            "keyboardType:UnicodeString",
+            "tsfVersion:UnicodeString",
+            "app:UnicodeString",
+            "inputScope:UInt32",
+            "version:UnicodeString",
+            "previousTickCount:UInt64",
+            "currentTickCount:UInt64",
+            "env:UnicodeString",
+            "selectionCount:UInt32",
+            "totalSelectionIndex:UInt32",
+            "actions:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "InputService.dll",
+              "function": "?LogEventSession@TelemetryLogger@ChxIME@@IEAAJW4tagEventName@2@AEAV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@U?$pair@V?$shared_ptr@VTelemetryActionObjBase@ChxIME@@@std@@_K@std@@@std@@@std@@@std@@1@Z",
+              "ea": "0x180069f66",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ChxEM.DLL",
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "actions",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL",
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "app",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL",
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "currentTickCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL",
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "editId",
+          "type": "GUID",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL",
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "env",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL",
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "ime",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL",
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "inputScope",
+          "type": "UInt32",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL",
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "keyboardType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "previousTickCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL",
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "selectionCount",
+          "type": "UInt32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "totalSelectionIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "tsfVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL",
+            "InputService.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CorrectionIgnored",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "editId:GUID",
+            "inputLanguage:UnicodeString",
+            "inputScope:UnicodeString",
+            "layoutType:Int16",
+            "originalInput:UnicodeString",
+            "autocorrection:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "tabskb.dll",
+              "function": "?_ComputeInsertionData@COutputManager@@AEAAJAEBVCComBSTR@ATL@@0000_KPEAPEAGPEAW4InsertionType@1@@Z",
+              "ea": "0x1800bcb33",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "autocorrection",
+          "type": "UnicodeString",
+          "seenIn": [
+            "tabskb.dll"
+          ]
+        },
+        {
+          "fieldName": "editId",
+          "type": "GUID",
+          "seenIn": [
+            "tabskb.dll"
+          ]
+        },
+        {
+          "fieldName": "inputLanguage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "tabskb.dll"
+          ]
+        },
+        {
+          "fieldName": "inputScope",
+          "type": "UnicodeString",
+          "seenIn": [
+            "tabskb.dll"
+          ]
+        },
+        {
+          "fieldName": "layoutType",
+          "type": "Int16",
+          "seenIn": [
+            "tabskb.dll"
+          ]
+        },
+        {
+          "fieldName": "originalInput",
+          "type": "UnicodeString",
+          "seenIn": [
+            "tabskb.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DPTipcSample",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000004",
+          "fields": [
+            "editId:GUID",
+            "UtcAggParams:Struct(Boolean)",
+            "Period:UInt32",
+            "MaxEvents:UInt32",
+            "Mode:UInt8",
+            "PartA_PrivTags:UInt64",
+            "applicationName:UnicodeString",
+            "inputScope:UInt32",
+            "userText:CountedString",
+            "installedLangauges:UnicodeString",
+            "isHwKbdMode:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "InputService.dll",
+              "function": "?LogShapeWritingText@TipcLogger@@QEAAJPEAUTIPCWord@@IPEAPEAVShapeWritingRunData@@IPEAG2IW4__MIDL___MIDL_itf_inputscope_0000_0000_0001@@@Z",
+              "ea": "0x180075b2e",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "MaxEvents",
+          "type": "UInt32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "Mode",
+          "type": "UInt8",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "Period",
+          "type": "UInt32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "UtcAggParams",
+          "type": "Struct(Boolean)",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "applicationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "editId",
+          "type": "GUID",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "inputScope",
+          "type": "UInt32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "installedLangauges",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "isHwKbdMode",
+          "type": "Bool32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "userText",
+          "type": "CountedString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DirectInput",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "editId:GUID",
+            "ime:UnicodeString",
+            "inputScope:UInt32",
+            "env:UnicodeString",
+            "previousTickCount:UInt64",
+            "actions:UnicodeString",
+            "currentTickCount:UInt64",
+            "app:UnicodeString",
+            "version:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "ChsEM.dll",
+              "function": "?LogEventSession@TelemetryLogger@ChxIME@@IEAAJW4tagEventName@2@AEAV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@U?$pair@V?$shared_ptr@VTelemetryActionObjBase@ChxIME@@@std@@_K@std@@@std@@@std@@@std@@1@Z",
+              "ea": "0x180031a0c",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "InputService.dll",
+              "function": "?LogDirectInputEvent@TelemetryLogger@CHS@ChsIME@@IEAAJXZ",
+              "ea": "0x1801fbe9f",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "editId:GUID",
+            "PartA_PrivTags:UInt64",
+            "ime:UnicodeString",
+            "inputScope:UInt32",
+            "env:UnicodeString",
+            "previousTickCount:UInt64",
+            "actions:UnicodeString",
+            "currentTickCount:UInt64",
+            "app:UnicodeString",
+            "version:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "ChxEM.DLL",
+              "function": "?LogEventSession@TelemetryLogger@CHS@ChxIME@@IEAAJW4EventName@23@AEAV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@U?$pair@PEAVTelemetryActionObjBase@CHS@ChxIME@@_K@std@@@std@@@std@@@std@@1@Z",
+              "ea": "0x180037b5e",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "editId:GUID",
+            "PartA_PrivTags:UInt64",
+            "ime:UnicodeString",
+            "keyboardType:UnicodeString",
+            "tsfVersion:UnicodeString",
+            "app:UnicodeString",
+            "inputScope:UInt32",
+            "version:UnicodeString",
+            "previousTickCount:UInt64",
+            "currentTickCount:UInt64",
+            "env:UnicodeString",
+            "actions:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "InputService.dll",
+              "function": "?LogEventSession@TelemetryLogger@ChxIME@@IEAAJW4tagEventName@2@AEAV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@U?$pair@V?$shared_ptr@VTelemetryActionObjBase@ChxIME@@@std@@_K@std@@@std@@@std@@@std@@1@Z",
+              "ea": "0x180069da2",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ChxEM.DLL",
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "actions",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL",
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "app",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL",
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "currentTickCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL",
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "editId",
+          "type": "GUID",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL",
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "env",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL",
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "ime",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL",
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "inputScope",
+          "type": "UInt32",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL",
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "keyboardType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "previousTickCount",
+          "type": "UInt64",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL",
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "tsfVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL",
+            "InputService.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InitialPredictionInput",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "editId:GUID",
+            "ime:UnicodeString",
+            "inputScope:UInt32",
+            "env:UnicodeString",
+            "previousTickCount:UInt64",
+            "actions:UnicodeString",
+            "currentTickCount:UInt64",
+            "app:UnicodeString",
+            "version:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "InputService.dll",
+              "function": "?LogInitialPredictionInputEvent@TelemetryLogger@CHS@ChsIME@@IEAAJXZ",
+              "ea": "0x1801fc13b",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "actions",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "app",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "currentTickCount",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "editId",
+          "type": "GUID",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "env",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "ime",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "inputScope",
+          "type": "UInt32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "previousTickCount",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InlinePredictionApplied",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000004",
+          "fields": [
+            "editId:GUID",
+            "currentWord:UnicodeString",
+            "appliedWord:UnicodeString",
+            "predShownIndex:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "InputService.dll",
+              "function": "?LogInlinePredictionApplied@FlipLogger@@SAJPEBG0@Z",
+              "ea": "0x180199b90",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "appliedWord",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "currentWord",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "editId",
+          "type": "GUID",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "predShownIndex",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InlinePredictionShown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000004",
+          "fields": [
+            "editId:GUID",
+            "currentWord:UnicodeString",
+            "predictedWord:UnicodeString",
+            "predShownIndex:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "InputService.dll",
+              "function": "?LogInlinePredictionShown@FlipLogger@@SAJPEBG0@Z",
+              "ea": "0x180199d2d",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "currentWord",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "editId",
+          "type": "GUID",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "predShownIndex",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "predictedWord",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InlinePredictionTypeThrough",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000004",
+          "fields": [
+            "editId:GUID",
+            "currentWord:UnicodeString",
+            "predShownIndex:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "InputService.dll",
+              "function": "?LogInlinePredictionTypeThrough@FlipLogger@@SAJPEBG@Z",
+              "ea": "0x180199e7a",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "currentWord",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "editId",
+          "type": "GUID",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "predShownIndex",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InputProcessorSwitch",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "editId:GUID",
+            "oldInputProcessor:UnicodeString",
+            "oldLocale:UnicodeString",
+            "newInputProcessor:UnicodeString",
+            "newLocale:UnicodeString",
+            "switchReason:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "InputService.dll",
+              "function": "?LogInputMethodSwitch@KeyEventProcessor@@AEAAJPEAVInputMethodProxy@@0W4eActivateReason@@@Z",
+              "ea": "0x180108b0f",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "editId",
+          "type": "GUID",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "newInputProcessor",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "newLocale",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "oldInputProcessor",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "oldLocale",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "switchReason",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PerfConvCandUpdate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "editId:GUID",
+            "ime:UnicodeString",
+            "handlerType:UnicodeString",
+            "inputScope:UInt32",
+            "app:UnicodeString",
+            "env:UnicodeString",
+            "perfInfo:UnicodeString",
+            "version:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "ChsEM.dll",
+              "function": "?TryLoggingPerfConvCandUpdateEvent@TelemetryLogger@ChxIME@@IEAAJ_N@Z",
+              "ea": "0x18003856e",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ChxEM.DLL",
+              "function": "?TryLoggingPerfConvCandUpdateEvent@TelemetryLogger@CHS@ChxIME@@IEAAJ_N@Z",
+              "ea": "0x18003ba60",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "app",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL"
+          ]
+        },
+        {
+          "fieldName": "editId",
+          "type": "GUID",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL"
+          ]
+        },
+        {
+          "fieldName": "env",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL"
+          ]
+        },
+        {
+          "fieldName": "handlerType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL"
+          ]
+        },
+        {
+          "fieldName": "ime",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL"
+          ]
+        },
+        {
+          "fieldName": "inputScope",
+          "type": "UInt32",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL"
+          ]
+        },
+        {
+          "fieldName": "perfInfo",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChsEM.dll",
+            "ChxEM.DLL"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PerfKeyInput",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "editId:GUID",
+            "ime:UnicodeString",
+            "inputScope:UInt32",
+            "app:UnicodeString",
+            "env:UnicodeString",
+            "perfInfo:UnicodeString",
+            "version:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "ChxEM.DLL",
+              "function": "?TryLoggingPerfKeyInputEvent@TelemetryLogger@CHS@ChxIME@@IEAAJ_N@Z",
+              "ea": "0x18003be5a",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "app",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChxEM.DLL"
+          ]
+        },
+        {
+          "fieldName": "editId",
+          "type": "GUID",
+          "seenIn": [
+            "ChxEM.DLL"
+          ]
+        },
+        {
+          "fieldName": "env",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChxEM.DLL"
+          ]
+        },
+        {
+          "fieldName": "ime",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChxEM.DLL"
+          ]
+        },
+        {
+          "fieldName": "inputScope",
+          "type": "UInt32",
+          "seenIn": [
+            "ChxEM.DLL"
+          ]
+        },
+        {
+          "fieldName": "perfInfo",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChxEM.DLL"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ChxEM.DLL"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RedSquiggle",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000004",
+          "fields": [
+            "editId:GUID",
+            "word:UnicodeString",
+            "locale:UnicodeString",
+            "applicationName:UnicodeString",
+            "inputScope:UInt32",
+            "isHwKbdMode:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "InputService.dll",
+              "function": "?LogRedSquiggle@TipcLogger@@QEAAJPEBGKW4__MIDL___MIDL_itf_inputscope_0000_0000_0001@@@Z",
+              "ea": "0x18032b539",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "applicationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "editId",
+          "type": "GUID",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "inputScope",
+          "type": "UInt32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "isHwKbdMode",
+          "type": "Bool32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "locale",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "word",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ShapeWritingCorrection",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000004",
+          "fields": [
+            "editId:GUID",
+            "PartA_PrivTags:UInt64",
+            "applicationName:UnicodeString",
+            "inputScope:UInt32",
+            "word:UnicodeString",
+            "shapes:Struct(Boolean)",
+            "x:UInt16[]",
+            "y:UInt16[]",
+            "timeStamp:UInt16[]",
+            "isHwKbdMode:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "InputService.dll",
+              "function": "?LogShapeWritingCorrectionResult@FlipLogger@@SAJGPEBGPEAVShapeWritingRunData@@@Z",
+              "ea": "0x18019a3aa",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "applicationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "editId",
+          "type": "GUID",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "inputScope",
+          "type": "UInt32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "isHwKbdMode",
+          "type": "Bool32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "shapes",
+          "type": "Struct(Boolean)",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "timeStamp",
+          "type": "UInt16[]",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "word",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "x",
+          "type": "UInt16[]",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "y",
+          "type": "UInt16[]",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ShapeWritingWordDeleted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000004",
+          "fields": [
+            "editId:GUID",
+            "locale:UnicodeString",
+            "replacedWord:UnicodeString",
+            "isHwKbdMode:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "InputService.dll",
+              "function": "?UndoShapeCorrection@WordCorrector@@QEAAXXZ",
+              "ea": "0x18019308d",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "editId",
+          "type": "GUID",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "isHwKbdMode",
+          "type": "Bool32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "locale",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "replacedWord",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ShapeWrittenText",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000004",
+          "fields": [
+            "editId:GUID",
+            "PartA_PrivTags:UInt64",
+            "applicationName:UnicodeString",
+            "inputScope:UInt32",
+            "userText:CountedString",
+            "installedLangauges:UnicodeString",
+            "isHwKbdMode:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "InputService.dll",
+              "function": "?LogShapeWritingText@TipcLogger@@QEAAJPEAUTIPCWord@@IPEAPEAVShapeWritingRunData@@IPEAG2IW4__MIDL___MIDL_itf_inputscope_0000_0000_0001@@@Z",
+              "ea": "0x1800759c8",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "applicationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "editId",
+          "type": "GUID",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "inputScope",
+          "type": "UInt32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "installedLangauges",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "isHwKbdMode",
+          "type": "Bool32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "userText",
+          "type": "CountedString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UserAddedWord",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000004",
+          "fields": [
+            "editId:GUID",
+            "PartA_PrivTags:UInt64",
+            "applicationName:UnicodeString",
+            "inputScope:UInt32",
+            "localeName:UnicodeString",
+            "wordAdded:UnicodeString",
+            "isHwKbdMode:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "InputService.dll",
+              "function": "?LogUserAddedWord@FlipLogger@@SAJPEAUIEditBuffer@@JPEBG@Z",
+              "ea": "0x18019af82",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "applicationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "editId",
+          "type": "GUID",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "inputScope",
+          "type": "UInt32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "isHwKbdMode",
+          "type": "Bool32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "localeName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "wordAdded",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UserDeletedWord",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000004",
+          "fields": [
+            "editId:GUID",
+            "PartA_PrivTags:UInt64",
+            "applicationName:UnicodeString",
+            "inputScope:UInt32",
+            "localeName:UnicodeString",
+            "wordDeleted:UnicodeString",
+            "isHwKbdMode:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "InputService.dll",
+              "function": "?LogUserDeletedWord@FlipLogger@@SAJPEBG@Z",
+              "ea": "0x18019b114",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "applicationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "editId",
+          "type": "GUID",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "inputScope",
+          "type": "UInt32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "isHwKbdMode",
+          "type": "Bool32",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "localeName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        },
+        {
+          "fieldName": "wordDeleted",
+          "type": "UnicodeString",
+          "seenIn": [
+            "InputService.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

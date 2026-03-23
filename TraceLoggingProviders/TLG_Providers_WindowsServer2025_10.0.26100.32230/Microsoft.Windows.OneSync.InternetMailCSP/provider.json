@@ -1,0 +1,92 @@
+{
+  "providerName": "Microsoft.Windows.OneSync.InternetMailCSP",
+  "guid": "{B7A67E9E-2118-5941-38A2-12A16FE4DFEF}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "InternetMailCsp.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "AccountAddEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "InternetMailCsp.dll",
+              "function": "?AccountAddEvent@InternetMailCSPProvider@@SAXXZ",
+              "ea": "0x180007674",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "AccountDeleteEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "partnerGuid2:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "InternetMailCsp.dll",
+              "function": "??$AccountDeleteEvent@AEAU_GUID@@@InternetMailCSPProvider@@SAXAEAU_GUID@@@Z",
+              "ea": "0x1800064a1",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "partnerGuid2",
+          "type": "GUID",
+          "seenIn": [
+            "InternetMailCsp.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AccountUpdateEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "partnerGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "InternetMailCsp.dll",
+              "function": "??$AccountUpdateEvent@AEAU_GUID@@@InternetMailCSPProvider@@SAXAEAU_GUID@@@Z",
+              "ea": "0x18000651d",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "partnerGuid",
+          "type": "GUID",
+          "seenIn": [
+            "InternetMailCsp.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

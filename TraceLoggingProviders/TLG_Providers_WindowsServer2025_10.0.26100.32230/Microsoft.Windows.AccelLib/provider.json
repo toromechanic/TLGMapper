@@ -1,0 +1,338 @@
+{
+  "providerName": "Microsoft.Windows.AccelLib",
+  "guid": "{5CE05DCA-DBA8-5AFE-55FD-719050151DE6}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "WinAccel.sys"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "AcceleratorAcquired",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "WorkspaceGuid:GUID",
+            "Type:UInt32",
+            "SubType:UInt32",
+            "DeviceInterface:CountedString",
+            "WorkspaceDeviceHandleCount:UInt32",
+            "Synchronous:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "WinAccel.sys",
+              "function": "AccelpLogAcceleratorAcquired",
+              "ea": "0x1c0004a7d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DeviceInterface",
+          "type": "CountedString",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        },
+        {
+          "fieldName": "SubType",
+          "type": "UInt32",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        },
+        {
+          "fieldName": "Synchronous",
+          "type": "Bool32",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        },
+        {
+          "fieldName": "Type",
+          "type": "UInt32",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        },
+        {
+          "fieldName": "WorkspaceDeviceHandleCount",
+          "type": "UInt32",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        },
+        {
+          "fieldName": "WorkspaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AcceleratorClosed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "WorkspaceGuid:GUID",
+            "Type:UInt32",
+            "SubType:UInt32",
+            "DeviceInterface:CountedString",
+            "WorkspaceDeviceHandleCount:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "WinAccel.sys",
+              "function": "AccelpLogAcceleratorClosed",
+              "ea": "0x1c0004b79",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DeviceInterface",
+          "type": "CountedString",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        },
+        {
+          "fieldName": "SubType",
+          "type": "UInt32",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        },
+        {
+          "fieldName": "Type",
+          "type": "UInt32",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        },
+        {
+          "fieldName": "WorkspaceDeviceHandleCount",
+          "type": "UInt32",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        },
+        {
+          "fieldName": "WorkspaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Error",
+      "variantCount": 4,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "FunctionName:AnsiString",
+            "Status:UInt32(NTStatus)",
+            "WorkspaceGuid:GUID",
+            "InputVersion:UInt16",
+            "InputCount:UInt32",
+            "InputAccelGuid:GUID",
+            "InputFlags:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "WinAccel.sys",
+              "function": "AccelAcquireResourcesAsync",
+              "ea": "0x1c000c1d1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WinAccel.sys",
+              "function": "AccelAcquireResourcesSync",
+              "ea": "0x1c000c8a2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "FunctionName:AnsiString",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "WinAccel.sys",
+              "function": "AccelAcquireResourcesAsync",
+              "ea": "0x1c000c433",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WinAccel.sys",
+              "function": "AccelAcquireResourcesSync",
+              "ea": "0x1c000c961",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WinAccel.sys",
+              "function": "AccelpNotifyUser",
+              "ea": "0x1c000f27d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "FunctionName:AnsiString",
+            "Status:UInt32(NTStatus)",
+            "Reason:AnsiString",
+            "WorkspaceGuid:GUID",
+            "Type:UInt32",
+            "SubType:UInt32",
+            "DeviceInterface:CountedString",
+            "HighestNodeNumber:UInt32",
+            "DeviceNodeNumber:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "WinAccel.sys",
+              "function": "AccelpInitializeResources",
+              "ea": "0x1c000e8fe",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "FunctionName:AnsiString",
+            "Status:UInt32(NTStatus)",
+            "WorkspaceGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "WinAccel.sys",
+              "function": "AccelpNotifyUser",
+              "ea": "0x1c000eea3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DeviceInterface",
+          "type": "CountedString",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        },
+        {
+          "fieldName": "DeviceNodeNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        },
+        {
+          "fieldName": "FunctionName",
+          "type": "AnsiString",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        },
+        {
+          "fieldName": "HighestNodeNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        },
+        {
+          "fieldName": "InputAccelGuid",
+          "type": "GUID",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        },
+        {
+          "fieldName": "InputCount",
+          "type": "UInt32",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        },
+        {
+          "fieldName": "InputFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        },
+        {
+          "fieldName": "InputVersion",
+          "type": "UInt16",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "AnsiString",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        },
+        {
+          "fieldName": "SubType",
+          "type": "UInt32",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        },
+        {
+          "fieldName": "Type",
+          "type": "UInt32",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        },
+        {
+          "fieldName": "WorkspaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "WinAccel.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

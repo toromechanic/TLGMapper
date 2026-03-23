@@ -1,0 +1,1010 @@
+{
+  "providerName": "Microsoft.Windows.DiskSnapshot",
+  "guid": "{115E5164-6BC3-49F7-AB99-A91D6A4C9CEE}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "DiskSnapshot.exe"
+  ],
+  "uniqueEventCount": 7,
+  "events": [
+    {
+      "eventName": "ActivityStoppedAutomatically",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$_tlgWriteActivityAutoStop@$0A@$04@@YAXPEBU_tlgProvider_t@@PEBU_GUID@@@Z",
+              "ea": "0x1400052a9",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "RuleSummaryBatched_v1",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "RuleSummaryData:Struct[](TID)",
+            "volumeType:UInt32",
+            "ruleName:UnicodeString",
+            "sizeMB:UInt32",
+            "fileCount:UInt32",
+            "growthSizeMB:UInt32",
+            "growthFileCount:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "?LogBatchedRuleSummaryEvent@@YAXV?$span@W4byte@gsl@@$0?0@gsl@@_K@Z",
+              "ea": "0x140005f90",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "RuleSummaryData",
+          "type": "Struct[](TID)",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "fileCount",
+          "type": "UInt32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "growthFileCount",
+          "type": "Int32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "growthSizeMB",
+          "type": "UInt32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "ruleName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "sizeMB",
+          "type": "UInt32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "volumeType",
+          "type": "UInt32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RuleSummarySingle_v1",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "volumeType:UInt32",
+            "ruleName:UnicodeString",
+            "sizeMB:UInt32",
+            "fileCount:UInt32",
+            "growthSizeMB:UInt32",
+            "growthFileCount:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "?LogSingleRuleSummaryEvent@@YAXV?$span@W4byte@gsl@@$0?0@gsl@@@Z",
+              "ea": "0x140006020",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "fileCount",
+          "type": "UInt32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "growthFileCount",
+          "type": "Int32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "growthSizeMB",
+          "type": "UInt32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "ruleName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "sizeMB",
+          "type": "UInt32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "volumeType",
+          "type": "UInt32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SnapshotActivity",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "?ProcessVolumesForThisDevice@@YAJPEBUCommandLineArgs@@PEAU_iobuf@@@Z",
+              "ea": "0x140007c39",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "?ProcessVolumesForThisDevice@@YAJPEBUCommandLineArgs@@PEAU_iobuf@@@Z",
+              "ea": "0x140007e7a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "VolumeDetail",
+      "variantCount": 24,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0BAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x140003656",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x10000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0BAAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x140003742",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x100000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0BAAAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x14000382e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x1000000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0BAAAAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x14000391a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x10000000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0BAAAAAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x140003a06",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x100000000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0BAAAAAAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x140003af7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x2000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0CAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x140003be2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x20000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0CAAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x140003cce",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0CAAAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x140003dba",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x2000000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0CAAAAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x140003ea6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x20000000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0CAAAAAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x140003f92",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0CAAAAAAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x140004083",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x4000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0EAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x14000416e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x40000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0EAAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x14000425a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0EAAAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x140004346",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x4000000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0EAAAAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x140004432",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x40000000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0EAAAAAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x14000451e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0EAAAAAAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x14000460f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x8000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0IAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x1400046fa",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x80000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0IAAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x1400047e6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x800000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0IAAAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x1400048d2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x8000000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0IAAAAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x1400049be",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x80000000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0IAAAAAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x140004aaa",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x800000000",
+          "fields": [
+            "volumeType:UInt32",
+            "fileId:UInt64",
+            "parentId:UInt64",
+            "allocatedSizeBytes:UInt64",
+            "filePath:UnicodeString",
+            "ruleName:UnicodeString",
+            "attr:UInt32",
+            "lastAccessTime:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "??$WriteDetailedEvent@$0IAAAAAAAA@@@YAXKQEAU_FILE_RECORD@@_KPEBGPEAU_RULE_BUCKET@@K@Z",
+              "ea": "0x140004b9b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "allocatedSizeBytes",
+          "type": "UInt64",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "attr",
+          "type": "UInt32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "fileId",
+          "type": "UInt64",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "filePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "lastAccessTime",
+          "type": "Int64",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "parentId",
+          "type": "UInt64",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "ruleName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "volumeType",
+          "type": "UInt32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VolumeSnapshot",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "snapshotTime:SystemTime",
+            "volumeType:UInt32",
+            "volumeGuid:GUID",
+            "sizeBytes:UInt64",
+            "sizeMB:UInt32",
+            "freeBytes:UInt64",
+            "freeMB:UInt32",
+            "osDeploymentState:UInt16",
+            "osArch:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "ProcessVolume",
+              "ea": "0x1400075f1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "freeBytes",
+          "type": "UInt64",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "freeMB",
+          "type": "UInt32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "osArch",
+          "type": "UInt16",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "osDeploymentState",
+          "type": "UInt16",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "sizeBytes",
+          "type": "UInt64",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "sizeMB",
+          "type": "UInt32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "snapshotTime",
+          "type": "SystemTime",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "volumeGuid",
+          "type": "GUID",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "volumeType",
+          "type": "UInt32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VolumeSummary",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "volumeType:UInt32",
+            "systemMB:UInt32",
+            "userMB:UInt32",
+            "otherMB:UInt32",
+            "inboxAppMB:UInt32",
+            "otherAppMB:UInt32",
+            "growthSystemMB:Int32",
+            "growthUserMB:Int32",
+            "growthOtherMB:Int32",
+            "growthInboxAppMB:Int32",
+            "growthOtherAppMB:Int32",
+            "firstRun:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "DiskSnapshot.exe",
+              "function": "SummarizeResults",
+              "ea": "0x1400096b8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "firstRun",
+          "type": "Int32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "growthInboxAppMB",
+          "type": "Int32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "growthOtherAppMB",
+          "type": "Int32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "growthOtherMB",
+          "type": "Int32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "growthSystemMB",
+          "type": "Int32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "growthUserMB",
+          "type": "Int32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "inboxAppMB",
+          "type": "UInt32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "otherAppMB",
+          "type": "UInt32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "otherMB",
+          "type": "UInt32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "systemMB",
+          "type": "UInt32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "userMB",
+          "type": "UInt32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        },
+        {
+          "fieldName": "volumeType",
+          "type": "UInt32",
+          "seenIn": [
+            "DiskSnapshot.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

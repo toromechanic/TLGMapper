@@ -1,0 +1,376 @@
+{
+  "providerName": "Microsoft.Windows.Maps.Services.Bing",
+  "guid": "{1B648321-3416-5266-7387-B58ED4A80D58}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "MapConfiguration.dll",
+    "MapsStore.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "BingBitsHttpRequest",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "url:UnicodeString",
+            "hResult:Int32(HResult)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "MapConfiguration.dll",
+              "function": "?TraceBingBitsHttpRequest_@NetworkRequestWindowsTelemetry@@QEAAXAEBV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@J@Z",
+              "ea": "0x1800316a2",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "MapsStore.dll",
+              "function": "?TraceBingBitsHttpRequest_@NetworkRequestWindowsTelemetry@@QEAAXAEBV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@J@Z",
+              "ea": "0x180035762",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "hResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "url",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BingWinHttpRequest",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "url:UnicodeString",
+            "statusCode:UInt32",
+            "isTokenAvailable:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "MapConfiguration.dll",
+              "function": "?TraceBingWinHttpRequest_@NetworkRequestWindowsTelemetry@@QEAAXAEBV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@K_N@Z",
+              "ea": "0x180031742",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "MapsStore.dll",
+              "function": "?TraceBingWinHttpRequest_@NetworkRequestWindowsTelemetry@@QEAAXAEBV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@K_N@Z",
+              "ea": "0x180035802",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "isTokenAvailable",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "statusCode",
+          "type": "UInt32",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "url",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FallbackError",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilResult:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MapConfiguration.dll",
+              "function": "?ReportTelemetryFailure@TraceLoggingProvider@wil@@IEAAXAEBUFailureInfo@2@@Z",
+              "ea": "0x180031305",
+              "confidence": "GlobalFallback"
+            },
+            {
+              "binary": "MapsStore.dll",
+              "function": "?ReportTelemetryFailure@TraceLoggingProvider@wil@@IEAAXAEBUFailureInfo@2@@Z",
+              "ea": "0x1800353c5",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilResult:Struct(Signed)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "failureId:UInt32",
+            "failureCount:UInt32",
+            "function:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "MapConfiguration.dll",
+              "function": "?ReportTraceLoggingFailure@TraceLoggingProvider@wil@@IEAAXAEBUFailureInfo@2@@Z",
+              "ea": "0x1800314c7",
+              "confidence": "GlobalFallback"
+            },
+            {
+              "binary": "MapsStore.dll",
+              "function": "?ReportTraceLoggingFailure@TraceLoggingProvider@wil@@IEAAXAEBUFailureInfo@2@@Z",
+              "ea": "0x180035587",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "callContext",
+          "type": "AnsiString",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "failureCount",
+          "type": "UInt32",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "failureId",
+          "type": "UInt32",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "function",
+          "type": "AnsiString",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "wilResult",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        },
+        {
+          "fieldName": "wilResult",
+          "type": "Struct(Signed)",
+          "seenIn": [
+            "MapConfiguration.dll",
+            "MapsStore.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

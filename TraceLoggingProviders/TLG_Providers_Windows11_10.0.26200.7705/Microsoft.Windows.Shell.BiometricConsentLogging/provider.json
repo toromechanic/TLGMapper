@@ -1,0 +1,128 @@
+{
+  "providerName": "Microsoft.Windows.Shell.BiometricConsentLogging",
+  "guid": "{990F8B2C-47BB-5C00-7037-F9344968D95A}",
+  "os": "Windows 11",
+  "binaryCount": 3,
+  "binaries": [
+    "CustomShellHost.exe",
+    "ShellAppRuntime.exe",
+    "explorer.exe"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "ShouldShowUnusedBiometricConsentForUserWithBiometrics",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "shouldShowConsent:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "??$ShouldShowUnusedBiometricConsentForUserWithBiometrics@AEA_N@BiometricConsentTelemetry@@SAXAEA_N@Z",
+              "ea": "0x140023d0a",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$ShouldShowUnusedBiometricConsentForUserWithBiometrics@AEA_N@BiometricConsentTelemetry@@SAXAEA_N@Z",
+              "ea": "0x1400637a8",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$ShouldShowUnusedBiometricConsentForUserWithBiometrics@AEA_N@BiometricConsentTelemetry@@SAXAEA_N@Z",
+              "ea": "0x1400637e5",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$ShouldShowUnusedBiometricConsentForUserWithBiometrics@AEA_N@BiometricConsentTelemetry@@SAXAEA_N@Z",
+              "ea": "0x14002a70e",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "shouldShowConsent",
+          "type": "Int32",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnusedBiometricConsentCompleted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "userOobeExitReason:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "??$UnusedBiometricConsentCompleted@W4UserOOBEExitReason@@@BiometricConsentTelemetry@@SAX$$QEAW4UserOOBEExitReason@@@Z",
+              "ea": "0x1400258b1",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$UnusedBiometricConsentCompleted@W4UserOOBEExitReason@@@BiometricConsentTelemetry@@SAX$$QEAW4UserOOBEExitReason@@@Z",
+              "ea": "0x140107f43",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$UnusedBiometricConsentCompleted@W4UserOOBEExitReason@@@BiometricConsentTelemetry@@SAX$$QEAW4UserOOBEExitReason@@@Z",
+              "ea": "0x14002c2c1",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "userOobeExitReason",
+          "type": "UInt32",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

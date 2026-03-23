@@ -1,0 +1,90 @@
+{
+  "providerName": "Microsoft.Windows.Security.Shutinit",
+  "guid": "{C1376338-0984-48B8-B933-9C7D779FD84D}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "advapi32.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "InitiateShutdownHelper",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ClientHint:UnicodeString",
+            "ParentProcessName:UnicodeString",
+            "PackageFullName:UnicodeString",
+            "AppId:UnicodeString",
+            "SvcHostServiceName:UnicodeString",
+            "SvcHostModules:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "advapi32.dll",
+              "function": "ReportInitiateShutdownHelperTelemetry",
+              "ea": "0x1800321b7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "advapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientHint",
+          "type": "UnicodeString",
+          "seenIn": [
+            "advapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "advapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ParentProcessName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "advapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "advapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "SvcHostModules",
+          "type": "UInt32",
+          "seenIn": [
+            "advapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "SvcHostServiceName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "advapi32.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

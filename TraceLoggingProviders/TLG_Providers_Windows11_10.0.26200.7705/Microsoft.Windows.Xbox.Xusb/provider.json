@@ -1,0 +1,110 @@
+{
+  "providerName": "Microsoft.Windows.Xbox.Xusb",
+  "guid": "{69FA5E0C-F343-52E7-2AAD-54EDE6FF3DBD}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "xusb22.sys"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "CompleteReadUrb::DropHidPacket",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "m_asyncSelectiveSuspendThreadRunning != 0:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "xusb22.sys",
+              "function": "?CompleteReadUrb@HidDevice@@AEAAXPEBEK@Z",
+              "ea": "0x140009776",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "xusb22.sys"
+          ]
+        },
+        {
+          "fieldName": "m_asyncSelectiveSuspendThreadRunning != 0",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "xusb22.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Initialize",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "xusb22.sys",
+              "function": "?Initialize@XInputControllerDevice@@AEAA_NXZ",
+              "ea": "0x140012c79",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "xusb22.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SelectiveSuspendWorkerThread::DropHidPacket",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "xusb22.sys",
+              "function": "?SelectiveSuspendWorkerThread@HidDevice@@SAXPEAU_DEVICE_OBJECT@@PEAX@Z",
+              "ea": "0x14000a6d7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "xusb22.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

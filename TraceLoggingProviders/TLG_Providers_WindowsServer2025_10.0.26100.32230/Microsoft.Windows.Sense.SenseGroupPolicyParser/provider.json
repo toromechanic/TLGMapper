@@ -1,0 +1,135 @@
+{
+  "providerName": "Microsoft.Windows.Sense.SenseGroupPolicyParser",
+  "guid": "{5B2EBE86-1FCD-5107-66C5-2776D56B1949}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "SenseGPParser.exe"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "GroupPolicyParser",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "errorCode:Int32(HResult)",
+            "message:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SenseGPParser.exe",
+              "function": "main",
+              "ea": "0x14000e66e",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "message:UnicodeString",
+            "gpoDN:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SenseGPParser.exe",
+              "function": "main",
+              "ea": "0x14000e7f3",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "errorCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "SenseGPParser.exe"
+          ]
+        },
+        {
+          "fieldName": "gpoDN",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseGPParser.exe"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseGPParser.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegistryPolicyPacked",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "GpoName:UnicodeString",
+            "GpoVersion:UInt32",
+            "KeyPath:UnicodeString",
+            "Values:UnicodeString",
+            "PolicyType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SenseGPParser.exe",
+              "function": "_lambda_b35bd3d832b8493344dfa7d62e8f9282_::operator()",
+              "ea": "0x140007e01",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "GpoName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseGPParser.exe"
+          ]
+        },
+        {
+          "fieldName": "GpoVersion",
+          "type": "UInt32",
+          "seenIn": [
+            "SenseGPParser.exe"
+          ]
+        },
+        {
+          "fieldName": "KeyPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseGPParser.exe"
+          ]
+        },
+        {
+          "fieldName": "PolicyType",
+          "type": "UInt32",
+          "seenIn": [
+            "SenseGPParser.exe"
+          ]
+        },
+        {
+          "fieldName": "Values",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseGPParser.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

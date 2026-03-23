@@ -1,0 +1,58 @@
+{
+  "providerName": "Microsoft.Windows.Bluetooth.HidBth",
+  "guid": "{0575A639-1F8C-510E-8AAA-0AF5E54229AB}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "hidbth.sys"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "HidBthWriteReport",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "BTDeviceAddress:UInt64",
+            "StatusErrorCode:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "hidbth.sys",
+              "function": "HidBthWriteCompletion",
+              "ea": "0x1c0003701",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BTDeviceAddress",
+          "type": "UInt64",
+          "seenIn": [
+            "hidbth.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "hidbth.sys"
+          ]
+        },
+        {
+          "fieldName": "StatusErrorCode",
+          "type": "Int32",
+          "seenIn": [
+            "hidbth.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

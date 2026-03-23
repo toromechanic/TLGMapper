@@ -1,0 +1,177 @@
+{
+  "providerName": "Microsoft.Windows.PITR",
+  "guid": "{5AB4681B-497F-5854-6141-64A7C80D3937}",
+  "os": "WindowsServer2025",
+  "binaryCount": 3,
+  "binaries": [
+    "BootMenuUX.dll",
+    "SettingsHandlers_nt.dll",
+    "SystemSettingsAdminFlows.exe"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "PITRInterfaceCreation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Result:Int32",
+            "DurationMs:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "BootMenuUX.dll",
+              "function": "?PITRTelemetryLogInterfaceCreation@@YAXJK@Z",
+              "ea": "0x18002bce9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "SettingsHandlers_nt.dll",
+              "function": "?PITRTelemetryLogInterfaceCreation@@YAXJK@Z",
+              "ea": "0x180237f29",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "SystemSettingsAdminFlows.exe",
+              "function": "?PITRTelemetryLogInterfaceCreation@@YAXJK@Z",
+              "ea": "0x1400761c9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DurationMs",
+          "type": "UInt32",
+          "seenIn": [
+            "BootMenuUX.dll",
+            "SettingsHandlers_nt.dll",
+            "SystemSettingsAdminFlows.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "BootMenuUX.dll",
+            "SettingsHandlers_nt.dll",
+            "SystemSettingsAdminFlows.exe"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32",
+          "seenIn": [
+            "BootMenuUX.dll",
+            "SettingsHandlers_nt.dll",
+            "SystemSettingsAdminFlows.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PITRSettingsInterfaceCreation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Result:Int32",
+            "DurationMs:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SettingsHandlers_nt.dll",
+              "function": "?PITRTelemetryLogSettingsInterfaceCreation@@YAXJK@Z",
+              "ea": "0x180237fb1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "SystemSettingsAdminFlows.exe",
+              "function": "?PITRTelemetryLogSettingsInterfaceCreation@@YAXJK@Z",
+              "ea": "0x14007624d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DurationMs",
+          "type": "UInt32",
+          "seenIn": [
+            "SettingsHandlers_nt.dll",
+            "SystemSettingsAdminFlows.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "SettingsHandlers_nt.dll",
+            "SystemSettingsAdminFlows.exe"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32",
+          "seenIn": [
+            "SettingsHandlers_nt.dll",
+            "SystemSettingsAdminFlows.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PITRTelemetryInitialized",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "BootMenuUX.dll",
+              "function": "?PITRTelemetryInitialize@@YAJXZ",
+              "ea": "0x18002bc53",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "SettingsHandlers_nt.dll",
+              "function": "?PITRTelemetryInitialize@@YAJXZ",
+              "ea": "0x180237e93",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "SystemSettingsAdminFlows.exe",
+              "function": "?PITRTelemetryInitialize@@YAJXZ",
+              "ea": "0x140076138",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "BootMenuUX.dll",
+            "SettingsHandlers_nt.dll",
+            "SystemSettingsAdminFlows.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

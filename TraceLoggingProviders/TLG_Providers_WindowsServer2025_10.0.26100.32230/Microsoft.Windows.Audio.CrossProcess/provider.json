@@ -1,0 +1,353 @@
+{
+  "providerName": "Microsoft.Windows.Audio.CrossProcess",
+  "guid": "{D375F14E-9624-5A18-F53E-5BCE2043A97F}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "AudioSes.dll",
+    "audiodg.exe"
+  ],
+  "uniqueEventCount": 5,
+  "events": [
+    {
+      "eventName": "CreateCPAudioHistoryReader",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "this:HexInt64",
+            "BytesPerFrame:UInt32",
+            "QueueHistoryProducerOldestItem:UInt32",
+            "QueueHistoryProducerNewestItem:UInt32",
+            "hnsOldestItem:Int64",
+            "hnsNewestItem:Int64",
+            "hnsStartTS:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "audiodg.exe",
+              "function": "?RuntimeClassInitialize@?$CCPAudioHistoryReader@UStaticControlData_V1@@UVolatileControlData_V0@@UControlData_V1@@@@QEAAJ_K0H0PEAUVolatileControlData_V0@@PEAUSharedMessageQueueItem@@III0@Z",
+              "ea": "0x14008107f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BytesPerFrame",
+          "type": "UInt32",
+          "seenIn": [
+            "audiodg.exe"
+          ]
+        },
+        {
+          "fieldName": "QueueHistoryProducerNewestItem",
+          "type": "UInt32",
+          "seenIn": [
+            "audiodg.exe"
+          ]
+        },
+        {
+          "fieldName": "QueueHistoryProducerOldestItem",
+          "type": "UInt32",
+          "seenIn": [
+            "audiodg.exe"
+          ]
+        },
+        {
+          "fieldName": "hnsNewestItem",
+          "type": "Int64",
+          "seenIn": [
+            "audiodg.exe"
+          ]
+        },
+        {
+          "fieldName": "hnsOldestItem",
+          "type": "Int64",
+          "seenIn": [
+            "audiodg.exe"
+          ]
+        },
+        {
+          "fieldName": "hnsStartTS",
+          "type": "UInt64",
+          "seenIn": [
+            "audiodg.exe"
+          ]
+        },
+        {
+          "fieldName": "this",
+          "type": "HexInt64",
+          "seenIn": [
+            "audiodg.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Errors",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x1",
+          "fields": [
+            "Func:AnsiString",
+            "LineNum:UInt32",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "audiodg.exe",
+              "function": "?AudCPTraceLoggingErrorHelper@@YAXPEBDIJ@Z",
+              "ea": "0x1400528b2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "AudioSes.dll",
+              "function": "?AudCPTraceLoggingErrorHelper@@YAXPEBDIJ@Z",
+              "ea": "0x1800fb983",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Func",
+          "type": "AnsiString",
+          "seenIn": [
+            "AudioSes.dll",
+            "audiodg.exe"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "AudioSes.dll",
+            "audiodg.exe"
+          ]
+        },
+        {
+          "fieldName": "LineNum",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll",
+            "audiodg.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GetPosition_Offload",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "this:HexInt64",
+            "u32Flags:UInt32",
+            "pu64Position:UInt64",
+            "pu64QPCPosition:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "audiodg.exe",
+              "function": "?GetPosition_Offload@?$CCrossProcessClientOutputEndpoint@UStaticControlData_V1@@UVolatileControlData_V0@@UControlData_V1@@@@IEAAJPEA_K0@Z",
+              "ea": "0x140087db9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "AudioSes.dll",
+              "function": "?GetPosition_Offload@?$CCrossProcessClientOutputEndpoint@UStaticControlData_V1@@UVolatileControlData_V0@@UControlData_V1@@@@IEAAJPEA_K0@Z",
+              "ea": "0x1800f92a9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "pu64Position",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll",
+            "audiodg.exe"
+          ]
+        },
+        {
+          "fieldName": "pu64QPCPosition",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll",
+            "audiodg.exe"
+          ]
+        },
+        {
+          "fieldName": "this",
+          "type": "HexInt64",
+          "seenIn": [
+            "AudioSes.dll",
+            "audiodg.exe"
+          ]
+        },
+        {
+          "fieldName": "u32Flags",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll",
+            "audiodg.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Glitch",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x2",
+          "fields": [
+            "ContextId:GUID",
+            "glitchTypeEnum:Int32",
+            "glitchTypeString:AnsiString",
+            "numGlitches:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "audiodg.exe",
+              "function": "?Glitch@CCrossProcessEndpointTraceLogger@@QEAAXW4CpGlitchEvent@@PEBDI@Z",
+              "ea": "0x140030235",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "audiodg.exe",
+              "function": "?Glitch@CCrossProcessEndpointTraceLogger@@QEAAXW4CpGlitchEvent@@PEBDI@Z",
+              "ea": "0x140030284",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "AudioSes.dll",
+              "function": "?Glitch@CCrossProcessEndpointTraceLogger@@QEAAXW4CpGlitchEvent@@PEBDI@Z",
+              "ea": "0x180076871",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ContextId",
+          "type": "GUID",
+          "seenIn": [
+            "AudioSes.dll",
+            "audiodg.exe"
+          ]
+        },
+        {
+          "fieldName": "glitchTypeEnum",
+          "type": "Int32",
+          "seenIn": [
+            "AudioSes.dll",
+            "audiodg.exe"
+          ]
+        },
+        {
+          "fieldName": "glitchTypeString",
+          "type": "AnsiString",
+          "seenIn": [
+            "AudioSes.dll",
+            "audiodg.exe"
+          ]
+        },
+        {
+          "fieldName": "numGlitches",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll",
+            "audiodg.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OffloadPositionAdjustment",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "this:HexInt64",
+            "DevicePos:UInt64",
+            "DeviceQPC:Int64",
+            "PreAdjustedPosition:UInt64",
+            "u64ValidFramesRead:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "audiodg.exe",
+              "function": "?GetPosition_Offload@?$CCrossProcessClientOutputEndpoint@UStaticControlData_V1@@UVolatileControlData_V0@@UControlData_V1@@@@IEAAJPEA_K0@Z",
+              "ea": "0x140087d3f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "AudioSes.dll",
+              "function": "?GetPosition_Offload@?$CCrossProcessClientOutputEndpoint@UStaticControlData_V1@@UVolatileControlData_V0@@UControlData_V1@@@@IEAAJPEA_K0@Z",
+              "ea": "0x1800f922f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DevicePos",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll",
+            "audiodg.exe"
+          ]
+        },
+        {
+          "fieldName": "DeviceQPC",
+          "type": "Int64",
+          "seenIn": [
+            "AudioSes.dll",
+            "audiodg.exe"
+          ]
+        },
+        {
+          "fieldName": "PreAdjustedPosition",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll",
+            "audiodg.exe"
+          ]
+        },
+        {
+          "fieldName": "this",
+          "type": "HexInt64",
+          "seenIn": [
+            "AudioSes.dll",
+            "audiodg.exe"
+          ]
+        },
+        {
+          "fieldName": "u64ValidFramesRead",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll",
+            "audiodg.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "providerName": "Microsoft.Windows.Security.Credlocker",
+  "guid": "{1B7DA76E-0A98-4E71-A9A5-DFD0A5262C13}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "vaultsvc.dll"
+  ],
+  "uniqueEventCount": 4,
+  "events": [
+    {
+      "eventName": "CredentialAdditionWithImmediateSync",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "userAccountType:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "vaultsvc.dll",
+              "function": "?VaultCreateCredential@@YAKPEAUIVaultAllocator@@PEAUVaultContext@@PEAU_VAULT_ITEM@@PEAUIVaultCall@@KK@Z",
+              "ea": "0x180010d4d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "userAccountType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "vaultsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CredentialCreation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "appName:UnicodeString",
+            "serviceName:UnicodeString",
+            "userAccountType:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "vaultsvc.dll",
+              "function": "?VaultCreateCredential@@YAKPEAUIVaultAllocator@@PEAUVaultContext@@PEAU_VAULT_ITEM@@PEAUIVaultCall@@KK@Z",
+              "ea": "0x18000f44f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "appName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "vaultsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "serviceName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "vaultsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "userAccountType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "vaultsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CredentialDeletion",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "id:UnicodeString",
+            "appName:UnicodeString",
+            "serviceName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "vaultsvc.dll",
+              "function": "?VaultDeleteCredential@@YAKPEAUVaultContext@@PEAU_GUID@@PEAU_VAULT_ITEM_ELEMENT@@22@Z",
+              "ea": "0x1800188b2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "appName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "vaultsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "id",
+          "type": "UnicodeString",
+          "seenIn": [
+            "vaultsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "serviceName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "vaultsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RoamingCredentialDeletion",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "id:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "vaultsvc.dll",
+              "function": "?VaultDeleteRoamingCredential@@YAKPEBGK@Z",
+              "ea": "0x18004ab0c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "id",
+          "type": "UnicodeString",
+          "seenIn": [
+            "vaultsvc.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1130 @@
+{
+  "providerName": "Microsoft.Windows.CellCore.MobileBroadband.WMBClass",
+  "guid": "{31463556-E3F6-4DDB-9ECE-7BF5B8339C6F}",
+  "os": "Windows 11",
+  "binaryCount": 3,
+  "binaries": [
+    "MbbCx.sys",
+    "cxwmbclass.sys",
+    "vwifimp.sys"
+  ],
+  "uniqueEventCount": 20,
+  "events": [
+    {
+      "eventName": "ConnectResponseTimeout",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "MbbCx.sys",
+              "function": "?MbxMessageCancelRequestsHandler@@YAXPEAU_MBB_REQUEST_MANAGER@@@Z",
+              "ea": "0x14001bbf8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "ConnectSendTimeout",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "MbbCx.sys",
+              "function": "?MbbUtilSendMessageFragmentComplete@@YAXPEAX0J@Z",
+              "ea": "0x140020a10",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "CxWmbClassMBIMFragmenteSendTimeout",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HasOidHandler:Bool32",
+            "CorrespondingOID:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "MbbCx.sys",
+              "function": "?MbbUtilSendMessageFragmentComplete@@YAXPEAX0J@Z",
+              "ea": "0x140020926",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CorrespondingOID",
+          "type": "HexInt32",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "HasOidHandler",
+          "type": "Bool32",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CxWmbClassMpdpCreate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ntStatus:UInt32(NTStatus)",
+            "Stage:UnicodeString",
+            "PrimaryInterface:GUID",
+            "SecondaryInterface:GUID",
+            "cSessionInUse:Int32",
+            "SecondarySessionId:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "MbbCx.sys",
+              "function": "?MbbNdisSetMPDP@@YAHPEAU_MBB_REQUEST_CONTEXT@@PEAEPEAK@Z",
+              "ea": "0x14001524c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MbbCx.sys",
+              "function": "?MbbUtilWwanCreateMPDP@@YAHPEAU_MBB_REQUEST_CONTEXT@@@Z",
+              "ea": "0x140021715",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MbbCx.sys",
+              "function": "?MbbUtilWwanCreateMPDP@@YAHPEAU_MBB_REQUEST_CONTEXT@@@Z",
+              "ea": "0x140021806",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MbbCx.sys",
+              "function": "?MbbUtilWwanCreateMPDP@@YAHPEAU_MBB_REQUEST_CONTEXT@@@Z",
+              "ea": "0x140021995",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PrimaryInterface",
+          "type": "GUID",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "SecondaryInterface",
+          "type": "GUID",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "SecondarySessionId",
+          "type": "Int32",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "Stage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "cSessionInUse",
+          "type": "Int32",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "ntStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CxWmbClassMpdpDelete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ntStatus:UInt32(NTStatus)",
+            "Stage:UnicodeString",
+            "PrimaryInterface:GUID",
+            "SecondaryInterface:GUID",
+            "cSessionInUse:Int32",
+            "SecondarySessionId:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "MbbCx.sys",
+              "function": "?MbbNdisSetMPDP@@YAHPEAU_MBB_REQUEST_CONTEXT@@PEAEPEAK@Z",
+              "ea": "0x1400152e1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MbbCx.sys",
+              "function": "?MbbUtilWwanDeleteMPDP@@YAHPEAU_MBB_REQUEST_CONTEXT@@@Z",
+              "ea": "0x140021b06",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MbbCx.sys",
+              "function": "?MbbUtilWwanDeleteMPDP@@YAHPEAU_MBB_REQUEST_CONTEXT@@@Z",
+              "ea": "0x140021c0b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MbbCx.sys",
+              "function": "?MbbUtilWwanDeleteMPDP@@YAHPEAU_MBB_REQUEST_CONTEXT@@@Z",
+              "ea": "0x140021d82",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PrimaryInterface",
+          "type": "GUID",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "SecondaryInterface",
+          "type": "GUID",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "SecondarySessionId",
+          "type": "Int32",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "Stage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "cSessionInUse",
+          "type": "Int32",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "ntStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CxWmbClassNAInstanceBringDownFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ntStatus:UInt32(NTStatus)",
+            "Stage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MbbCx.sys",
+              "function": "?MbbWwanRemoveSessionFromAdapterList@@YA_NPEAU_MINIPORT_ADAPTER_CONTEXT@@PEAU_MINIPORT_INTERFACE_CONTEXT@@@Z",
+              "ea": "0x140001d13",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Stage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "ntStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CxWmbClassNAInstanceBringUpFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ntStatus:UInt32(NTStatus)",
+            "Stage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "cxwmbclass.sys",
+              "function": "?EvtMbbDeviceCreateAdapter@@YAJPEAUWDFDEVICE__@@PEAU_NETADAPTER_INIT@@@Z",
+              "ea": "0x140002553",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "cxwmbclass.sys",
+              "function": "?EvtMbbDeviceCreateAdapter@@YAJPEAUWDFDEVICE__@@PEAU_NETADAPTER_INIT@@@Z",
+              "ea": "0x140002640",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MbbCx.sys",
+              "function": "_imp_MbbAdapterInitialize_::_2_::_lambda_1_::operator()",
+              "ea": "0x140009641",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Stage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MbbCx.sys",
+            "cxwmbclass.sys"
+          ]
+        },
+        {
+          "fieldName": "ntStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "MbbCx.sys",
+            "cxwmbclass.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CxWmbClassTimeOutOnModemResponse",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HasOidHandler:Bool32",
+            "CorrespondingOID:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "MbbCx.sys",
+              "function": "?MbxMessageCancelRequestsHandler@@YAXPEAU_MBB_REQUEST_MANAGER@@@Z",
+              "ea": "0x14001bb0c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CorrespondingOID",
+          "type": "HexInt32",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "HasOidHandler",
+          "type": "Bool32",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CxwmbclassTxDataPathStatus",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Status:UnicodeString",
+            "ntStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "cxwmbclass.sys",
+              "function": "?MbbSendQCompleteNtb@@YAXPEAX0JPEAU_MDL@@@Z",
+              "ea": "0x140007113",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Status:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "cxwmbclass.sys",
+              "function": "?MbbSendQCompleteNtb@@YAXPEAX0JPEAU_MDL@@@Z",
+              "ea": "0x1400071e5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UnicodeString",
+          "seenIn": [
+            "cxwmbclass.sys"
+          ]
+        },
+        {
+          "fieldName": "ntStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "cxwmbclass.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DeviceInit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Manufacturer:UnicodeString",
+            "Model:UnicodeString",
+            "Stage:UnicodeString",
+            "NtStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "cxwmbclass.sys",
+              "function": "?EvtDevicePrepareHardware@@YAJPEAUWDFDEVICE__@@PEAUWDFCMRESLIST__@@1@Z",
+              "ea": "0x140002289",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "cxwmbclass.sys",
+              "function": "?EvtDriverDeviceAdd@@YAJPEAUWDFDRIVER__@@PEAUWDFDEVICE_INIT@@@Z",
+              "ea": "0x140003a9c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "cxwmbclass.sys",
+              "function": "DriverEntry",
+              "ea": "0x14001b37c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MbbCx.sys",
+              "function": "EvtCxPostPrepareHardware",
+              "ea": "0x14000aaa0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Manufacturer",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MbbCx.sys",
+            "cxwmbclass.sys"
+          ]
+        },
+        {
+          "fieldName": "Model",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MbbCx.sys",
+            "cxwmbclass.sys"
+          ]
+        },
+        {
+          "fieldName": "NtStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "MbbCx.sys",
+            "cxwmbclass.sys"
+          ]
+        },
+        {
+          "fieldName": "Stage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MbbCx.sys",
+            "cxwmbclass.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MbbInvalidIP",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "IpType:AnsiString",
+            "SubnetAddrOrPrefixLen:UInt32",
+            "NtStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "MbbCx.sys",
+              "function": "?MbbIpReportIps@@YAXPEAU_MBB_IPADDRESS_ENTRY@@KPEAT_NET_LUID_LH@@K@Z",
+              "ea": "0x140046159",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "MbbCx.sys",
+              "function": "?MbbIpReportIps@@YAXPEAU_MBB_IPADDRESS_ENTRY@@KPEAT_NET_LUID_LH@@K@Z",
+              "ea": "0x140046249",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "vwifimp.sys",
+              "function": "?MbbIpReportIps@@YAXPEAU_MBB_IPADDRESS_ENTRY@@KPEAT_NET_LUID_LH@@K@Z",
+              "ea": "0x140006cf1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "vwifimp.sys",
+              "function": "?MbbIpReportIps@@YAXPEAU_MBB_IPADDRESS_ENTRY@@KPEAT_NET_LUID_LH@@K@Z",
+              "ea": "0x140006de1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IpType",
+          "type": "AnsiString",
+          "seenIn": [
+            "MbbCx.sys",
+            "vwifimp.sys"
+          ]
+        },
+        {
+          "fieldName": "NtStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "MbbCx.sys",
+            "vwifimp.sys"
+          ]
+        },
+        {
+          "fieldName": "SubnetAddrOrPrefixLen",
+          "type": "UInt32",
+          "seenIn": [
+            "MbbCx.sys",
+            "vwifimp.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MbbPipeReset",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ResetType:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "MbbCx.sys",
+              "function": "?MbbIoInitFromUnwakableDx@MbxDevice@@QEAAJXZ",
+              "ea": "0x14000c7a9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ResetType",
+          "type": "AnsiString",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MbbStandbyData",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "InterfaceGuid:GUID",
+            "Manufacturer:UnicodeString",
+            "Model:UnicodeString",
+            "ActiveTime:UInt64",
+            "DurationTime:UInt64",
+            "RegisterStateWakeCnt:Int32",
+            "SmsWakeCnt:Int32",
+            "UssdWakeCnt:Int32",
+            "PacketServiceWakeCnt:Int32",
+            "UiccWakeCnt:Int32",
+            "ConnectStatusWakeCnt:Int32",
+            "UnknownOrIncomingPacketWakeCnt:Int32",
+            "IllegalWakeCnt:Int32",
+            "PoweredRequestCntInDx:Int32",
+            "PoweredRequestCntInD0:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "MbbCx.sys",
+              "function": "?FlushSleepStudyData@MbxDiagnostics@@QEAAX_N@Z",
+              "ea": "0x1400265ce",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActiveTime",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "ConnectStatusWakeCnt",
+          "type": "Int32",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "DurationTime",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "IllegalWakeCnt",
+          "type": "Int32",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "InterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "Manufacturer",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "Model",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "PacketServiceWakeCnt",
+          "type": "Int32",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "PoweredRequestCntInD0",
+          "type": "Int32",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "PoweredRequestCntInDx",
+          "type": "Int32",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "RegisterStateWakeCnt",
+          "type": "Int32",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "SmsWakeCnt",
+          "type": "Int32",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "UiccWakeCnt",
+          "type": "Int32",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "UnknownOrIncomingPacketWakeCnt",
+          "type": "Int32",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "UssdWakeCnt",
+          "type": "Int32",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OID_Wwan_Preshutdown_Request",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "RequestID:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "MbbCx.sys",
+              "function": "?MbbNdisSetPreshutdown@@YAHPEAU_MBB_REQUEST_CONTEXT@@PEAEPEAK@Z",
+              "ea": "0x1400160a4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "RequestID",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OID_Wwan_Preshutdown_Response",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "RequestID:UInt64",
+            "WwanStatus:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "MbbCx.sys",
+              "function": "?MbbNdisPreshutdownHandler@@YAHPEAU_MBB_REQUEST_CONTEXT@@HW4_MBB_STATUS@@PEAEK@Z",
+              "ea": "0x140033995",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "RequestID",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "WwanStatus",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OptionalServiceCapability",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "IsSARCapable:UInt64",
+            "IsNetworkBlacklistCapable:UInt64",
+            "IsProvisionedContextV2Capable:UInt64",
+            "IsLTEAttachConfigCapable:UInt64",
+            "IsMultiSIMCapable:UInt64",
+            "IsUiccLowLevelCapable:UInt64",
+            "IsDeviceCapsV2Capable:UInt64",
+            "IsPcoCapable:UInt64",
+            "IsDeviceResetCapable:UInt64",
+            "IsBaseStationsInfoCapable:UInt64",
+            "IsModemLoggingConfigCapable:UInt64",
+            "IsUiccAppAccessCapable:UInt64",
+            "IsNetworkParamsReportCapable:UInt64",
+            "IsWakeReasonCapable:UInt64",
+            "Is5GCUePolicyCapable:UInt64",
+            "Is5GModemConfigCapable:UInt64",
+            "Is5GRegistrationParamsCapable:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "MbbCx.sys",
+              "function": "?MbbIoInitFromD3Final@MbxDevice@@QEAAJXZ",
+              "ea": "0x14000c4cd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Is5GCUePolicyCapable",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "Is5GModemConfigCapable",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "Is5GRegistrationParamsCapable",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "IsBaseStationsInfoCapable",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "IsDeviceCapsV2Capable",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "IsDeviceResetCapable",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "IsLTEAttachConfigCapable",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "IsModemLoggingConfigCapable",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "IsMultiSIMCapable",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "IsNetworkBlacklistCapable",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "IsNetworkParamsReportCapable",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "IsPcoCapable",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "IsProvisionedContextV2Capable",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "IsSARCapable",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "IsUiccAppAccessCapable",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "IsUiccLowLevelCapable",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "IsWakeReasonCapable",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RadioStateFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "RequestID:UInt64",
+            "WwanStatus:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "MbbCx.sys",
+              "function": "?MbbNdisRadioStateStatusHandler@@YAHPEAU_MBB_REQUEST_CONTEXT@@HW4_MBB_STATUS@@PEAEK@Z",
+              "ea": "0x1400349bf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "RequestID",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "WwanStatus",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RadioStateSendFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "MbbCx.sys",
+              "function": "?MbbNdisMiniportOidRequestCompletion@@YAXPEAXPEAU_MBB_REQUEST_CONTEXT@@H@Z",
+              "ea": "0x140012df1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "ShutdownCapability",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "IsPreshutdownCapable:UInt64",
+            "ShutdownNotificationCapable:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "MbbCx.sys",
+              "function": "?MbbIoInitFromD3Final@MbxDevice@@QEAAJXZ",
+              "ea": "0x14000c1ef",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsPreshutdownCapable",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        },
+        {
+          "fieldName": "ShutdownNotificationCapable",
+          "type": "UInt64",
+          "seenIn": [
+            "MbbCx.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TxSendFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "cxwmbclass.sys",
+              "function": "MbbBusResetDataPipes",
+              "ea": "0x14000b34e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    }
+  ]
+}

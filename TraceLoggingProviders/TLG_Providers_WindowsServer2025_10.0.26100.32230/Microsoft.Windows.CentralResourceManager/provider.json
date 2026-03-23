@@ -1,0 +1,2638 @@
+{
+  "providerName": "Microsoft.Windows.CentralResourceManager",
+  "guid": "{8215E965-D26E-548E-AF0E-940C1F06F250}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "PsmServiceExtHost.dll"
+  ],
+  "uniqueEventCount": 33,
+  "events": [
+    {
+      "eventName": "ActivityAllocate",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "SessionGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmRpcSrvActivityAllocate",
+              "ea": "0x180031432",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmSrvActivityAllocate",
+              "ea": "0x18003108e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "SessionGuid:GUID",
+            "ClientId:UInt32",
+            "Sid:SID",
+            "ActivityId:UInt32",
+            "ActivityHandle:UInt64",
+            "SimpleActivityDescription:UnicodeString",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmRpcSrvActivityAllocate",
+              "ea": "0x180031505",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmSrvActivityAllocate",
+              "ea": "0x18003116f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityHandle",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "ActivityId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Sid",
+          "type": "SID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SimpleActivityDescription",
+          "type": "UnicodeString",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ActivityCleanup",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x4",
+          "fields": [
+            "SessionGuid:GUID",
+            "ActivityHandle:UInt64",
+            "PolicyId:UInt32",
+            "OutstandingStartCount:UInt32",
+            "Flags:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogActivityStop",
+              "ea": "0x1800335f6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000004",
+          "fields": [
+            "SessionGuid:GUID",
+            "ActivityHandle:UInt64",
+            "PolicyId:UInt32",
+            "OutstandingStartCount:UInt32",
+            "Flags:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogActivityStop",
+              "ea": "0x180033677",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityHandle",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "OutstandingStartCount",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ActivityCoordinatorActivityTelemetry",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000004",
+          "fields": [
+            "ClientImageName:UnicodeString",
+            "TimeSpentOpenMs:UInt64",
+            "LongestTimeSpentOpenMs:UInt64",
+            "TimesOpened:UInt32",
+            "TimeSpentQueuedMs:UInt64",
+            "LongestTimeSpentQueuedMs:UInt64",
+            "TimesQueued:UInt32",
+            "TimeSpentClosedMs:UInt64",
+            "LongestTimeSpentClosedMs:UInt64",
+            "TimesClosed:UInt32",
+            "PolicyConfiguration:UInt8[N]",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogActivityCoordinatorTelemetry",
+              "ea": "0x18002fd45",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClientImageName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "LongestTimeSpentClosedMs",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "LongestTimeSpentOpenMs",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "LongestTimeSpentQueuedMs",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyConfiguration",
+          "type": "UInt8[N]",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "TimeSpentClosedMs",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "TimeSpentOpenMs",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "TimeSpentQueuedMs",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "TimesClosed",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "TimesOpened",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "TimesQueued",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ActivityCoordinatorResourceTelemetry",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000004",
+          "fields": [
+            "WindowStartTime:SystemTime",
+            "InternalStatesCount:UInt8",
+            "TelemetryPollingOpenTimeline:UInt32[N]",
+            "TelemetryPollingClosedTimeline:UInt32[N]",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmGlobalsPeriodicTelemetry",
+              "ea": "0x180065f65",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InternalStatesCount",
+          "type": "UInt8",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "TelemetryPollingClosedTimeline",
+          "type": "UInt32[N]",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "TelemetryPollingOpenTimeline",
+          "type": "UInt32[N]",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "WindowStartTime",
+          "type": "SystemTime",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ActivityCreate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x4",
+          "fields": [
+            "SessionGuid:GUID",
+            "ActivityHandle:UInt64",
+            "PolicyId:UInt32",
+            "RegistrationId:UInt64",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmActivityStart",
+              "ea": "0x18002dc5f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityHandle",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "RegistrationId",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ActivityFree",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "SessionGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogSrvActivityFreeStart",
+              "ea": "0x180032124",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "SessionGuid:GUID",
+            "ClientId:UInt32",
+            "Sid:SID",
+            "ActivityId:UInt32",
+            "ActivityHandle:UInt64",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmRpcSrvActivityFree",
+              "ea": "0x180031d4b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmSrvActivityFree",
+              "ea": "0x180032065",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityHandle",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "ActivityId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Sid",
+          "type": "SID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ActivityQueryWindowClosedReasons",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "SessionGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogSrvActivityQueryWindowClosedReasonsStart",
+              "ea": "0x18000e238",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "SessionGuid:GUID",
+            "ClientId:UInt32",
+            "Sid:SID",
+            "ActivityId:UInt32",
+            "ActivityHandle:UInt64",
+            "Status:UInt32(NTStatus)",
+            "Reasons:UInt32[]"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmSrvActivityQueryWindowClosedReasons",
+              "ea": "0x18000e113",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityHandle",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "ActivityId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Reasons",
+          "type": "UInt32[]",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Sid",
+          "type": "SID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ActivityStart",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "SessionGuid:GUID",
+            "ClientId:UInt32",
+            "Sid:SID",
+            "ActivityId:UInt32",
+            "ActivityHandle:UInt64",
+            "SimpleTaskDescription:UnicodeString",
+            "SimpleSubTaskDescription:UnicodeString",
+            "Reason:UInt32",
+            "FalseConditions:UInt32[]",
+            "CurrentInterruptTime:UInt64",
+            "CurrentUnbiasedTime:UInt64",
+            "ReadyInterruptTime:UInt64",
+            "ReadyUnbiasedTime:UInt64",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogSrvActivityStartStop",
+              "ea": "0x180032d7b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "SessionGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmRpcSrvActivityStart",
+              "ea": "0x180032643",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmSrvActivityStart",
+              "ea": "0x180032bc6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityHandle",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "ActivityId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "CurrentInterruptTime",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "CurrentUnbiasedTime",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "FalseConditions",
+          "type": "UInt32[]",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "ReadyInterruptTime",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "ReadyUnbiasedTime",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Sid",
+          "type": "SID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SimpleSubTaskDescription",
+          "type": "UnicodeString",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SimpleTaskDescription",
+          "type": "UnicodeString",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ActivityStop",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "SessionGuid:GUID",
+            "ClientId:UInt32",
+            "Sid:SID",
+            "ActivityId:UInt32",
+            "ActivityHandle:UInt64",
+            "TimeSpentReady100Ns:UInt64",
+            "TimeSpentNotReady100Ns:UInt64",
+            "StartTime:UInt64",
+            "CurrentTime100Ns:UInt64",
+            "StartsCount:UInt32",
+            "HighestStartReason:UInt32",
+            "Flags:UInt32",
+            "SimpleTaskDescription:UnicodeString",
+            "SimpleSubTaskDescription:UnicodeString",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogSrvActivityStopStop",
+              "ea": "0x180033eaa",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogSrvActivityStopStop",
+              "ea": "0x180034366",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogSrvActivityStopStop",
+              "ea": "0x1800343a1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "SessionGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmRpcSrvActivityStop",
+              "ea": "0x180033bb8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmSrvActivityStop",
+              "ea": "0x180033926",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityHandle",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "ActivityId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "CurrentTime100Ns",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "HighestStartReason",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Sid",
+          "type": "SID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SimpleSubTaskDescription",
+          "type": "UnicodeString",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SimpleTaskDescription",
+          "type": "UnicodeString",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "StartTime",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "StartsCount",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "TimeSpentNotReady100Ns",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "TimeSpentReady100Ns",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ActivityStopAggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "AgCount:Int64",
+            "AgSumTimeSpentReady100Ns:Int64",
+            "AgSumTimeSpentNotReady100Ns:Int64",
+            "AgStartsCount:Int64",
+            "AgHighestStartReason:Int64",
+            "ClientId:UInt32",
+            "ActivityId:UInt32",
+            "SimpleTaskDescription:UnicodeString",
+            "SimpleSubTaskDescription:UnicodeString",
+            "Status:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogSrvActivityStopStop",
+              "ea": "0x180033df9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogSrvActivityStopStop",
+              "ea": "0x180033e4b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogSrvActivityStopStop",
+              "ea": "0x180033e88",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "AgCount",
+          "type": "Int64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "AgHighestStartReason",
+          "type": "Int64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "AgStartsCount",
+          "type": "Int64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "AgSumTimeSpentNotReady100Ns",
+          "type": "Int64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "AgSumTimeSpentReady100Ns",
+          "type": "Int64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SimpleSubTaskDescription",
+          "type": "UnicodeString",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SimpleTaskDescription",
+          "type": "UnicodeString",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ActivityUpdate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x4",
+          "fields": [
+            "SessionGuid:GUID",
+            "ActivityHandle:UInt64",
+            "PolicyId:UInt32",
+            "RegistrationId:UInt64",
+            "State:UInt32",
+            "OldState:UInt32",
+            "NewState:UInt32",
+            "OldStatus:UInt8(Boolean)",
+            "NewStatus:UInt8(Boolean)",
+            "DesiredStatesCount:UInt32",
+            "OldSatisfiedCount:UInt32",
+            "NewSatisfiedCount:UInt32",
+            "OldTransitioningCount:UInt32",
+            "NewTransitioningCount:UInt32",
+            "Unreadied:UInt8(Boolean)",
+            "LastLogTime:UInt64",
+            "CurrentTime:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogActivityUpdate",
+              "ea": "0x18002e807",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityHandle",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "CurrentTime",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "DesiredStatesCount",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "LastLogTime",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "NewSatisfiedCount",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "NewState",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "NewStatus",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "NewTransitioningCount",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "OldSatisfiedCount",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "OldState",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "OldStatus",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "OldTransitioningCount",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "RegistrationId",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "State",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Unreadied",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ActivityWindowClosedReasonSubscribe",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "SessionGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogSrvActivityWindowClosedReasonSubscribeStart",
+              "ea": "0x180030e04",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "SessionGuid:GUID",
+            "ClientId:UInt32",
+            "Sid:SID",
+            "ActivityId:UInt32",
+            "ActivityHandle:UInt64",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogSrvActivityWindowClosedReasonSubscribeStop",
+              "ea": "0x180030d01",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityHandle",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "ActivityId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Sid",
+          "type": "SID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ActivityWindowClosedReasonUnsubscribe",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "SessionGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogSrvActivityWindowClosedReasonUnsubscribeStart",
+              "ea": "0x18006985a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "SessionGuid:GUID",
+            "ClientId:UInt32",
+            "Sid:SID",
+            "ActivityId:UInt32",
+            "ActivityHandle:UInt64",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogSrvActivityWindowClosedReasonUnsubscribeStop",
+              "ea": "0x18006b0fb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityHandle",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "ActivityId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Sid",
+          "type": "SID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CrmStateMonitorSystemDiskUsageIdleTimeGetFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "SessionGuid:GUID",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmStateMonitorSystemDiskUsageIdleTimeGet",
+              "ea": "0x18002cbda",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmStateMonitorSystemDiskUsageTimerCallback",
+              "ea": "0x18002d254",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CrmStateMonitorSystemDiskUsageIndexGetFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "SessionGuid:GUID",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmStateMonitorSystemDiskUsageIndexGet",
+              "ea": "0x18007ac49",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "QueryClientInformationFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "SessionGuid:GUID",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmRpcSrvRegister",
+              "ea": "0x18003e0f5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegistrationAddActivity",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x2",
+          "fields": [
+            "SessionGuid:GUID",
+            "RegistrationId:UInt64",
+            "PolicyId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmRegistrationCreateActivity",
+              "ea": "0x180031851",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmRegistrationCreateActivity",
+              "ea": "0x180031883",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PolicyId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "RegistrationId",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegistrationNotify",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x2",
+          "fields": [
+            "SessionGuid:GUID",
+            "RegistrationId:UInt64",
+            "ActivityHandle:UInt64",
+            "StateChanged:UInt8(Boolean)",
+            "NotificationType:UInt8(Boolean)",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogRegistrationNotify",
+              "ea": "0x18002f5e7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000002",
+          "fields": [
+            "SessionGuid:GUID",
+            "RegistrationId:UInt64",
+            "ActivityHandle:UInt64",
+            "StateChanged:UInt8(Boolean)",
+            "NotificationType:UInt8(Boolean)",
+            "Status:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogRegistrationNotify",
+              "ea": "0x18002f6bf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityHandle",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "NotificationType",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "RegistrationId",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "StateChanged",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegistrationNotifyWindowClosedReasonChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x2",
+          "fields": [
+            "SessionGuid:GUID",
+            "ClientId:UInt32",
+            "Sid:SID",
+            "ActivityId:UInt32",
+            "ActivityHandle:UInt64",
+            "QuietModeData:HexInt32",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogRegistrationNotifyWindowClosedReasonChange",
+              "ea": "0x1800309eb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityHandle",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "ActivityId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "QuietModeData",
+          "type": "HexInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Sid",
+          "type": "SID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegistrationReadyQueueAdd",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "SessionGuid:GUID",
+            "RegistrationId:UInt64",
+            "ActivityHandle:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmRegistrationReadyQueueAdd",
+              "ea": "0x18002eb0f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityHandle",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "RegistrationId",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegistrationReadyQueueRemove",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "SessionGuid:GUID",
+            "RegistrationId:UInt64",
+            "ActivityHandle:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmActivityCleanup",
+              "ea": "0x180033152",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmRegistrationReadyQueueRemove",
+              "ea": "0x18002f883",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityHandle",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "RegistrationId",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegistrationRemoveActivity",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x2",
+          "fields": [
+            "SessionGuid:GUID",
+            "RegistrationId:UInt64",
+            "PolicyId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmRegistrationRemoveActivity",
+              "ea": "0x1800319cc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmRpcSrvActivityFree",
+              "ea": "0x180031c64",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmSrvActivityFree",
+              "ea": "0x180031f7e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PolicyId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "RegistrationId",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegistrationRundown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x2",
+          "fields": [
+            "SessionGuid:GUID",
+            "RegistrationId:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogRegistrationRundownStart",
+              "ea": "0x180030080",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogRegistrationRundownStop",
+              "ea": "0x180030148",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "RegistrationId",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegistrationStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x2",
+          "fields": [
+            "SessionGuid:GUID",
+            "RegistrationId:UInt64",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogRegistrationStart",
+              "ea": "0x18003e903",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "RegistrationId",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegistrationStop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x2",
+          "fields": [
+            "SessionGuid:GUID",
+            "RegistrationId:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogRegistrationStop",
+              "ea": "0x180064818",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "RegistrationId",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SrvRegister",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "SessionGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogSrvRegisterStart",
+              "ea": "0x18003e18c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "SessionGuid:GUID",
+            "ClientId:UInt32",
+            "Sid:SID",
+            "SimpleClientDescription:UnicodeString",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogSrvRegisterStop",
+              "ea": "0x18003e553",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClientId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Sid",
+          "type": "SID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SimpleClientDescription",
+          "type": "UnicodeString",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SrvUnregister",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "SessionGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogSrvUnregisterStart",
+              "ea": "0x1800649d0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "SessionGuid:GUID",
+            "ClientId:UInt32",
+            "Sid:SID"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogSrvUnregisterStop",
+              "ea": "0x18006490c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClientId",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Sid",
+          "type": "SID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StateMonitorActivityRemove",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x8",
+          "fields": [
+            "SessionGuid:GUID",
+            "State:UInt32",
+            "LastListener:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmStateMonitorListenerRemove",
+              "ea": "0x180033367",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmStateMonitorListenerRemove",
+              "ea": "0x1800333a0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "LastListener",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "State",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StateMonitorListenerAdd",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x8",
+          "fields": [
+            "SessionGuid:GUID",
+            "State:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmRegisterToStateMonitor",
+              "ea": "0x18002dfa5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmStateMonitorListenerAdd",
+              "ea": "0x1800599d3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "State",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StateMonitorStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x8",
+          "fields": [
+            "SessionGuid:GUID",
+            "State:UInt32",
+            "InitialState:Binary",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogStateMonitorStart",
+              "ea": "0x180071ca9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InitialState",
+          "type": "Binary",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "State",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StateMonitorStateRundown",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000008",
+          "fields": [
+            "SessionGuid:GUID",
+            "State:UInt32",
+            "PreviousState:Binary",
+            "LastLogTime:UInt64",
+            "NewState:Binary",
+            "CurrentTime:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogStateMonitorRundown",
+              "ea": "0x18003066f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogStateMonitorRundown",
+              "ea": "0x1800306e4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x8",
+          "fields": [
+            "SessionGuid:GUID",
+            "State:UInt32",
+            "PreviousState:Binary",
+            "LastLogTime:UInt64",
+            "NewState:Binary",
+            "CurrentTime:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogStateMonitorRundown",
+              "ea": "0x1800307a7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CurrentTime",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "LastLogTime",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "NewState",
+          "type": "Binary",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "PreviousState",
+          "type": "Binary",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "State",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StateMonitorStateSet",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x8",
+          "fields": [
+            "SessionGuid:GUID",
+            "State:UInt32",
+            "PreviousState:Binary",
+            "LastLogTime:UInt64",
+            "NewState:Binary",
+            "CurrentTime:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogStateMonitorStateSet",
+              "ea": "0x18002d69d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000008",
+          "fields": [
+            "SessionGuid:GUID",
+            "State:UInt32",
+            "PreviousState:Binary",
+            "LastLogTime:UInt64",
+            "NewState:Binary",
+            "CurrentTime:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogStateMonitorStateSet",
+              "ea": "0x18002d7b2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogStateMonitorStateSet",
+              "ea": "0x18002d832",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CurrentTime",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "LastLogTime",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "NewState",
+          "type": "Binary",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "PreviousState",
+          "type": "Binary",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "State",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StateMonitorStop",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000008",
+          "fields": [
+            "SessionGuid:GUID",
+            "State:UInt32",
+            "PreviousState:Binary",
+            "LastLogTime:UInt64",
+            "NewState:Binary",
+            "CurrentTime:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogStateMonitorStop",
+              "ea": "0x180069dea",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x8",
+          "fields": [
+            "SessionGuid:GUID",
+            "State:UInt32",
+            "PreviousState:Binary",
+            "LastLogTime:UInt64",
+            "NewState:Binary",
+            "CurrentTime:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "PsmServiceExtHost.dll",
+              "function": "CrmLogStateMonitorStop",
+              "ea": "0x180069e9f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CurrentTime",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "LastLogTime",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "NewState",
+          "type": "Binary",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "PreviousState",
+          "type": "Binary",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        },
+        {
+          "fieldName": "State",
+          "type": "UInt32",
+          "seenIn": [
+            "PsmServiceExtHost.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

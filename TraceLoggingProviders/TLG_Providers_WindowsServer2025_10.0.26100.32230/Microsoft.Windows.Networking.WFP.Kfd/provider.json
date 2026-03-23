@@ -1,0 +1,50 @@
+{
+  "providerName": "Microsoft.Windows.Networking.WFP.Kfd",
+  "guid": "{5C7051BD-BEDC-52DF-B54E-F6F2706F346A}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "netio.sys"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "WfpInactivateAleFastCache",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "LayerId:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "netio.sys",
+              "function": "InvalidateCache",
+              "ea": "0x14000384e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "netio.sys"
+          ]
+        },
+        {
+          "fieldName": "LayerId",
+          "type": "UInt16",
+          "seenIn": [
+            "netio.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

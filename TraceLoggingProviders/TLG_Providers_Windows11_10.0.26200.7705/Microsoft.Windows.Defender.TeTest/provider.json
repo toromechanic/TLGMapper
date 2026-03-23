@@ -1,0 +1,433 @@
+{
+  "providerName": "Microsoft.Windows.Defender.TeTest",
+  "guid": "{BF94EEEE-F654-4BAA-9F8A-7F9CB446E18E}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "MpSvc.dll",
+    "NisSrv.exe"
+  ],
+  "uniqueEventCount": 12,
+  "events": [
+    {
+      "eventName": "ConnectionMetadata",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ProcessName:UnicodeString",
+            "Uri:UnicodeString",
+            "ResponseCategory:UnicodeString",
+            "Allowed:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MpSvc.dll",
+              "function": "?SendNetworkMetadataToEngine@CNriAgent@MpService@@AEAAJVip_address@stdext@@0Uprocess@network_filter@network_filtering@@Uconnection@connection_logging@7@@Z",
+              "ea": "0x18006014d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Allowed",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "ResponseCategory",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Uri",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DisableRiskyFeatures",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Value:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "MpSvc.dll",
+              "function": "?RefreshNRI@CNriAgent@MpService@@QEAAJXZ",
+              "ea": "0x1800f6c6e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Value",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "MpSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EnableFilter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "NisSrv.exe",
+              "function": "_lambda_98c3f451d0aa82db1dfcf9035a5d33dc_::operator()",
+              "ea": "0x1400236ba",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "NetworkConnectionReputation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Uri:UnicodeString",
+            "Determination:UnicodeString",
+            "EnforcementLevel:UnicodeString",
+            "ConnectionType:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MpSvc.dll",
+              "function": "?ProcessReportNetworkConnectionReputation@CNriAgent@MpService@@AEAAJW4connection_type@network_filtering@@Unavigation@network_filter@4@Vip_address@stdext@@Uprocess@64@V?$variant@Uallow@network_filtering@@Uwarn@2@Ublock@2@@std@@W4enforcement_level@64@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@V?$optional@V?$basic_uri@_W@stdext@@@std@@V?$optional@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@std@@Uduration_event@uri_reputation@4@Uresult_metadata@uri_reputation@4@_K@Z",
+              "ea": "0x1800bb5a4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConnectionType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Determination",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "EnforcementLevel",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Uri",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NpSetIpAddressExclusions",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "IpAddressExclusions:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "NisSrv.exe",
+              "function": "_lambda_0c03666dabaeb865686fd0aa8a0573c7_::operator()",
+              "ea": "0x1400244f4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IpAddressExclusions",
+          "type": "UnicodeString",
+          "seenIn": [
+            "NisSrv.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NpSetPlatformSettings",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "NisSrv.exe",
+              "function": "_lambda_4df02daf85f8299864e798f64cd6562c_::operator()",
+              "ea": "0x140024c90",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "NpSetProcessExceptions",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ProcessExceptions:UnicodeString",
+            "UseDefenderExclusions:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "NisSrv.exe",
+              "function": "_lambda_72d44ec267609e5645b204b2eff000a7_::operator()",
+              "ea": "0x140023db5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ProcessExceptions",
+          "type": "UnicodeString",
+          "seenIn": [
+            "NisSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "UseDefenderExclusions",
+          "type": "UnicodeString",
+          "seenIn": [
+            "NisSrv.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "NpStateChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "EnforcementLevel:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "NisSrv.exe",
+              "function": "_lambda_d01171a980f7bc5878084deb1e5eb20b_::operator()",
+              "ea": "0x14002480e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EnforcementLevel",
+          "type": "UnicodeString",
+          "seenIn": [
+            "NisSrv.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ServerMpUpdateBreakTheGlassStatus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Allow:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "NisSrv.exe",
+              "function": "_lambda_87ba2a394d8b0a417eb2bb4634da61af_::operator()",
+              "ea": "0x140024ea1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Allow",
+          "type": "UnicodeString",
+          "seenIn": [
+            "NisSrv.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SinkholeResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "QuadPart:UInt64",
+            "Hostname:UnicodeString",
+            "EnforcementLevel:UnicodeString",
+            "ConnectionType:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MpSvc.dll",
+              "function": "?ProcessReportSinkholeResult@CNriAgent@MpService@@AEAAJV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@W4enforcement_level@network_filter@network_filtering@@_NUprocess@67@@Z",
+              "ea": "0x18011561a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConnectionType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "EnforcementLevel",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Hostname",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpSvc.dll"
+          ]
+        },
+        {
+          "fieldName": "QuadPart",
+          "type": "UInt64",
+          "seenIn": [
+            "MpSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UpdateAutoResolveList",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "RulesUpdated:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "MpSvc.dll",
+              "function": "?UpdateAutoResolveList@NpFirewallAgent@@QEAAJXZ",
+              "ea": "0x18035892a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "RulesUpdated",
+          "type": "UInt64",
+          "seenIn": [
+            "MpSvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UpdateDomainMapping",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "FQDN:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MpSvc.dll",
+              "function": "?UpdateDomainMapping@NpFirewallAgent@@AEAAXU_GUID@@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@1@Z",
+              "ea": "0x180358b15",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FQDN",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MpSvc.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

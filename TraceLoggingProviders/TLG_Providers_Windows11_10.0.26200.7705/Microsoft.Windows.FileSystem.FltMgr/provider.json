@@ -1,0 +1,875 @@
+{
+  "providerName": "Microsoft.Windows.FileSystem.FltMgr",
+  "guid": "{FD66A680-C052-4375-8CC9-225F923CEF88}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "fltMgr.sys"
+  ],
+  "uniqueEventCount": 12,
+  "events": [
+    {
+      "eventName": "BypassIoNotSupported",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "FilterID:GUID",
+            "FilterName:UnicodeString",
+            "MajorVersion:UInt32",
+            "MinorVersion:UInt32",
+            "DriverTimestamp:FileTime",
+            "SupportedFeatures:HexInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fltMgr.sys",
+              "function": "FltpLogEventBypassIoNotSupported",
+              "ea": "0x18001b240",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "DriverTimestamp",
+          "type": "FileTime",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "FilterID",
+          "type": "GUID",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "FilterName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "MajorVersion",
+          "type": "UInt32",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "MinorVersion",
+          "type": "UInt32",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "SupportedFeatures",
+          "type": "HexInt32",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BypassIoVetoed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "FilterID:GUID",
+            "FilterName:UnicodeString",
+            "MajorVersion:UInt32",
+            "MinorVersion:UInt32",
+            "DriverTimestamp:FileTime",
+            "ProcessName:AnsiString",
+            "Operation:UInt32",
+            "OperationStatus:UInt32(NTStatus)",
+            "VetoingReason:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fltMgr.sys",
+              "function": "FltpLogEventBypassIoVetoed",
+              "ea": "0x180022c3c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "DriverTimestamp",
+          "type": "FileTime",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "FilterID",
+          "type": "GUID",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "FilterName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "MajorVersion",
+          "type": "UInt32",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "MinorVersion",
+          "type": "UInt32",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "Operation",
+          "type": "UInt32",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "OperationStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessName",
+          "type": "AnsiString",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "VetoingReason",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FltSendMessage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "SumElapsedTime:Int64",
+            "ElapsedTimeSquared:Int64",
+            "MinElapsedTime:Int64",
+            "MaxElapsedTime:Int64",
+            "FilterID:GUID",
+            "Status:UInt32(NTStatus)",
+            "TimeoutType:UInt32",
+            "Timeout:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "fltMgr.sys",
+              "function": "FltpTelemetryFltSendMessage",
+              "ea": "0x1800115a0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fltMgr.sys",
+              "function": "FltpTelemetryFltSendMessage",
+              "ea": "0x18001162c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fltMgr.sys",
+              "function": "FltpTelemetryFltSendMessage",
+              "ea": "0x180011674",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "ElapsedTimeSquared",
+          "type": "Int64",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "FilterID",
+          "type": "GUID",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "MaxElapsedTime",
+          "type": "Int64",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "MinElapsedTime",
+          "type": "Int64",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "SumElapsedTime",
+          "type": "Int64",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "Timeout",
+          "type": "Int64",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "TimeoutType",
+          "type": "UInt32",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FreeInstance",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "VolumeGuid:GUID",
+            "FilterID:GUID",
+            "Reason:HexInt32",
+            "Altitude:CountedString",
+            "TeardownStartTime:UInt64",
+            "TeardownCompleteTime:UInt64",
+            "DrainCompleteTime:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fltMgr.sys",
+              "function": "FltpMeasureFreeInstance",
+              "ea": "0x180073bbf",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fltMgr.sys",
+              "function": "FltpMeasureFreeInstance",
+              "ea": "0x180073c37",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fltMgr.sys",
+              "function": "FltpTelemetryFreeInstance",
+              "ea": "0x1800521b2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Altitude",
+          "type": "CountedString",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "DrainCompleteTime",
+          "type": "UInt64",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "FilterID",
+          "type": "GUID",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "HexInt32",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "TeardownCompleteTime",
+          "type": "UInt64",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "TeardownStartTime",
+          "type": "UInt64",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "VolumeGuid",
+          "type": "GUID",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InitInstance",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "VolumeGuid:GUID",
+            "FilterID:GUID",
+            "Status:UInt32(NTStatus)",
+            "Reason:HexInt32",
+            "Altitude:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "fltMgr.sys",
+              "function": "FltpMeasureInitInstance",
+              "ea": "0x1800720ba",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fltMgr.sys",
+              "function": "FltpMeasureInitInstance",
+              "ea": "0x180072117",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "VolumeGuid:GUID",
+            "FilterID:GUID",
+            "Status:UInt32(NTStatus)",
+            "Reason:HexInt32",
+            "Altitude:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "fltMgr.sys",
+              "function": "FltpTelemetryInitInstance",
+              "ea": "0x180052330",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Altitude",
+          "type": "CountedString",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "FilterID",
+          "type": "GUID",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "HexInt32",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "VolumeGuid",
+          "type": "GUID",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LegacyFilters",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "LegacyFilters:CountedString",
+            "NumberOfFilters:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "fltMgr.sys",
+              "function": "FltpTelemetryLegacyFilters",
+              "ea": "0x180052459",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "LegacyFilters",
+          "type": "CountedString",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "NumberOfFilters",
+          "type": "UInt32",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegisterFilter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "FilterID:GUID",
+            "FilterName:CountedString",
+            "Status:UInt32(NTStatus)",
+            "MajorVersion:UInt32",
+            "MinorVersion:UInt32",
+            "TimeStamp:UInt32",
+            "Checksum:UInt32",
+            "FilterSerializedInfo:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "fltMgr.sys",
+              "function": "FltpTelemetryFilterRegistration",
+              "ea": "0x180051ef1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Checksum",
+          "type": "UInt32",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "FilterID",
+          "type": "GUID",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "FilterName",
+          "type": "CountedString",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "FilterSerializedInfo",
+          "type": "CountedString",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "MajorVersion",
+          "type": "UInt32",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "MinorVersion",
+          "type": "UInt32",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "TimeStamp",
+          "type": "UInt32",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StartFiltering",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "FilterID:GUID",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "fltMgr.sys",
+              "function": "FltpTelemetryFilterStartFiltering",
+              "ea": "0x18007b0a5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fltMgr.sys",
+              "function": "FltpTelemetryFltSendMessage",
+              "ea": "0x18001168f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "FilterID",
+          "type": "GUID",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnloadFilter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "FilterID:GUID",
+            "UnloadFlags:HexInt32",
+            "CalledFromDriverUnloadCallback:UInt8(Boolean)",
+            "ElapsedTime (ms):Int64",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "fltMgr.sys",
+              "function": "FltpTelemetryUnloadFilter",
+              "ea": "0x180052cae",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CalledFromDriverUnloadCallback",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "ElapsedTime (ms)",
+          "type": "Int64",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "FilterID",
+          "type": "GUID",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "UnloadFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnregisterFilter",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "FilterID:GUID",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "fltMgr.sys",
+              "function": "FltpTelemetryFilterUnregistration",
+              "ea": "0x1800520eb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FilterID",
+          "type": "GUID",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VolumeAttach",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "VolumeGuid:GUID",
+            "Flags:HexInt32",
+            "FileSystemType:UInt32",
+            "FrameID:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "fltMgr.sys",
+              "function": "FltpTelemetryVolumeAttach",
+              "ea": "0x18007afa6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FileSystemType",
+          "type": "UInt32",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "FrameID",
+          "type": "UInt32",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "VolumeGuid",
+          "type": "GUID",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VolumeMountFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "VolumeGuid:GUID",
+            "FileSystemType:UInt32",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "fltMgr.sys",
+              "function": "FltpTelemetryVolumeMountFailure",
+              "ea": "0x180022f35",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FileSystemType",
+          "type": "UInt32",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        },
+        {
+          "fieldName": "VolumeGuid",
+          "type": "GUID",
+          "seenIn": [
+            "fltMgr.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "providerName": "Microsoft.Windows.Security.Crypto.VSM",
+  "guid": "{92042D56-A1C2-4A71-BF3D-A5040117CA86}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "tcbloader.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "Tpm.Provisioning.Winload",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "SrkProvisioningMs:UInt64",
+            "SrkPolicyReadNTStatus:UInt32(NTStatus)",
+            "SrkSymKeyPolicyValue:UInt32",
+            "SrkSymKeyCapability:UInt32",
+            "SrkAesBitsUsed:UInt32",
+            "SrkAsymKeyPolicyValue:UInt32",
+            "SrkAsymKeyCapability:UInt32",
+            "SrkRsaBitsUsed:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "tcbloader.dll",
+              "function": "OslpProvisionTpmSrk",
+              "ea": "0x180015e94",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "SrkAesBitsUsed",
+          "type": "UInt32",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "SrkAsymKeyCapability",
+          "type": "UInt32",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "SrkAsymKeyPolicyValue",
+          "type": "UInt32",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "SrkPolicyReadNTStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "SrkProvisioningMs",
+          "type": "UInt64",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "SrkRsaBitsUsed",
+          "type": "UInt32",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "SrkSymKeyCapability",
+          "type": "UInt32",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "SrkSymKeyPolicyValue",
+          "type": "UInt32",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VsmLineFunc",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Status:UInt32(NTStatus)",
+            "function:AnsiString",
+            "line:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "tcbloader.dll",
+              "function": "OslpDrtmUnsealAndDecryptLKeyNew",
+              "ea": "0x1800158f3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "tcbloader.dll",
+              "function": "OslpDrtmUnsealAndDecryptLKeyNew",
+              "ea": "0x180015a0a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "function",
+          "type": "AnsiString",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        },
+        {
+          "fieldName": "line",
+          "type": "Int64",
+          "seenIn": [
+            "tcbloader.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

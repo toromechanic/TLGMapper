@@ -1,0 +1,126 @@
+{
+  "providerName": "Microsoft.Windows.Security.BCrypt.Config",
+  "guid": "{EDB31652-03EB-5292-B9FF-EEBF795DCEEC}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "cng.sys"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "CNG_RegKeyNotify_Error",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ErrorMsg:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "cng.sys",
+              "function": "SendTelemetry",
+              "ea": "0x18004fe29",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorMsg",
+          "type": "UnicodeString",
+          "seenIn": [
+            "cng.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "cng.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CNG_RegKeyNotify_Init",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "Silo:AnsiString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "cng.sys",
+              "function": "RegKeyNotificationsInitialize",
+              "ea": "0x1800729f2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "cng.sys"
+          ]
+        },
+        {
+          "fieldName": "Silo",
+          "type": "AnsiString",
+          "seenIn": [
+            "cng.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CNG_RegKeyNotify_Notify",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "Silo:AnsiString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "cng.sys",
+              "function": "ConfigRegChangeWatch",
+              "ea": "0x18003e3d5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "cng.sys"
+          ]
+        },
+        {
+          "fieldName": "Silo",
+          "type": "AnsiString",
+          "seenIn": [
+            "cng.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,509 @@
+{
+  "providerName": "Microsoft.Windows.DynamicApi.Data",
+  "guid": "{D853CF0F-D9FA-55F6-D916-2B3DBBAE132A}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "apisampling.dll"
+  ],
+  "uniqueEventCount": 6,
+  "events": [
+    {
+      "eventName": "ApiSampleData",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Filename:UnicodeString",
+            "ModulesThisPackage:UInt32",
+            "ModulesSent:UInt32",
+            "TotalModuleCount:UInt32",
+            "PackageNumber:UInt32",
+            "DataSize:UInt32",
+            "Data:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "apisampling.dll",
+              "function": "?SendToUTC@SamplePackager@@AEAAJAEAVModulePackage@@@Z",
+              "ea": "0x180033c27",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Filename:UnicodeString",
+            "ModulesThisPackage:UInt32",
+            "ModulesSent:UInt32",
+            "SendMultipleTotalSize:UInt32",
+            "PackageNumber:UInt32",
+            "DataSize:UInt32",
+            "Data:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "apisampling.dll",
+              "function": "?SendToUTCMultiple@SamplePackager@@AEAAJV?$list@U_SIZE_ID_INFO@@V?$allocator@U_SIZE_ID_INFO@@@std@@@std@@@Z",
+              "ea": "0x180033ee2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Data",
+          "type": "AnsiString",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "DataSize",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "Filename",
+          "type": "UnicodeString",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "ModulesSent",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "ModulesThisPackage",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "SendMultipleTotalSize",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "TotalModuleCount",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ApiSampleInfo",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Error Msg:AnsiString",
+            "ErrorCode:UInt32",
+            "result:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "apisampling.dll",
+              "function": "?PackagerWriteLogError@SamplePackager@@AEAAXPEBDIJ@Z",
+              "ea": "0x180033495",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Info Msg:AnsiString",
+            "ErrorCode:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "apisampling.dll",
+              "function": "?PackagerWriteLogInformation@SamplePackager@@AEAAXPEBDI@Z",
+              "ea": "0x180033521",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Error Msg",
+          "type": "AnsiString",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "Info Msg",
+          "type": "AnsiString",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "result",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Coverage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ResetCount:UInt32",
+            "SaveCount:UInt32",
+            "EventIndex:UInt32",
+            "SampleCount:UInt32",
+            "ModuleCount:UInt32",
+            "RemainingSampleCount:UInt32",
+            "RemainingModuleCount:UInt32",
+            "DataVersion:UInt32",
+            "Data:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "apisampling.dll",
+              "function": "?UploadToUTC@CSampler@CovSampler@@AEAAJAEAUUploadContext@12@@Z",
+              "ea": "0x18002be72",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Data",
+          "type": "AnsiString",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "DataVersion",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "EventIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "ModuleCount",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "RemainingModuleCount",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "RemainingSampleCount",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "ResetCount",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "SampleCount",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "SaveCount",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ErrorEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "errorType:UInt32",
+            "counts:UInt32",
+            "error:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "apisampling.dll",
+              "function": "??$ErrorEvent@AEAIAEAIAEAJ@CTraceLog@CovSampler@@SAXAEAI0AEAJ@Z",
+              "ea": "0x18001a277",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "counts",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "error",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "errorType",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UtcUpload",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ResetCount:UInt32",
+            "SaveCount:UInt32",
+            "HRESULT:Int32(HResult)",
+            "PickedSampleCount:UInt32",
+            "PickedModuleCount:UInt32",
+            "UpdatedSampleCount:UInt32",
+            "UpdatedModuleCount:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "apisampling.dll",
+              "function": "?UploadData@CSampler@CovSampler@@AEAAJ_N0@Z",
+              "ea": "0x18002b810",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "PickedModuleCount",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "PickedSampleCount",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "ResetCount",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "SaveCount",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "UpdatedModuleCount",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "UpdatedSampleCount",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WerUpload",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ReportGuid:GUID",
+            "ResetCount:UInt32",
+            "SaveCount:UInt32",
+            "UploadCount:UInt32",
+            "HRESULT:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "apisampling.dll",
+              "function": "?UploadToWER@CSampler@CovSampler@@AEAAJAEAUUploadContext@12@@Z",
+              "ea": "0x18002c3d3",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "ReportGuid",
+          "type": "GUID",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "ResetCount",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "SaveCount",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        },
+        {
+          "fieldName": "UploadCount",
+          "type": "UInt32",
+          "seenIn": [
+            "apisampling.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,507 @@
+{
+  "providerName": "Microsoft.Windows.HypervisorPlatform.Tracing",
+  "guid": "{B5651691-CBA4-572D-AF20-DA83DF3573DB}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "WinHvEmulation.dll",
+    "WinHvPlatform.dll"
+  ],
+  "uniqueEventCount": 8,
+  "events": [
+    {
+      "eventName": "CancelVp",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "DeliveredCancel:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "WinHvPlatform.dll",
+              "function": "??$CancelVp@AEA_N@TracingProvider@WHvApi@@SAXAEA_N@Z",
+              "ea": "0x180026114",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "WinHvPlatform.dll",
+              "function": "??$CancelVp@AEA_N@TracingProvider@WHvApi_v2@@SAXAEA_N@Z",
+              "ea": "0x18003a0a0",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DeliveredCancel",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "WinHvPlatform.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FallbackError",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilResult:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "WinHvEmulation.dll",
+              "function": "?ReportTelemetryFailure@TraceLoggingProvider@wil@@IEAAXAEBUFailureInfo@2@@Z",
+              "ea": "0x180005874",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilResult:Struct(Signed)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "failureId:UInt32",
+            "failureCount:UInt32",
+            "function:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "WinHvEmulation.dll",
+              "function": "?ReportTraceLoggingFailure@TraceLoggingProvider@wil@@IEAAXAEBUFailureInfo@2@@Z",
+              "ea": "0x1800059c3",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WinHvEmulation.dll"
+          ]
+        },
+        {
+          "fieldName": "callContext",
+          "type": "AnsiString",
+          "seenIn": [
+            "WinHvEmulation.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "WinHvEmulation.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WinHvEmulation.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "WinHvEmulation.dll"
+          ]
+        },
+        {
+          "fieldName": "failureCount",
+          "type": "UInt32",
+          "seenIn": [
+            "WinHvEmulation.dll"
+          ]
+        },
+        {
+          "fieldName": "failureId",
+          "type": "UInt32",
+          "seenIn": [
+            "WinHvEmulation.dll"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "WinHvEmulation.dll"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "WinHvEmulation.dll"
+          ]
+        },
+        {
+          "fieldName": "function",
+          "type": "AnsiString",
+          "seenIn": [
+            "WinHvEmulation.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "WinHvEmulation.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "WinHvEmulation.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WinHvEmulation.dll"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "WinHvEmulation.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "WinHvEmulation.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WinHvEmulation.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "WinHvEmulation.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "WinHvEmulation.dll"
+          ]
+        },
+        {
+          "fieldName": "wilResult",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "WinHvEmulation.dll"
+          ]
+        },
+        {
+          "fieldName": "wilResult",
+          "type": "Struct(Signed)",
+          "seenIn": [
+            "WinHvEmulation.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GetRegisters",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Count:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "WinHvPlatform.dll",
+              "function": "??$GetRegisters@I@TracingProvider@WHvApi@@SAX$$QEAI@Z",
+              "ea": "0x180026198",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "WinHvPlatform.dll",
+              "function": "??$GetRegisters@I@TracingProvider@WHvApi_v2@@SAX$$QEAI@Z",
+              "ea": "0x18003a124",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "UInt32",
+          "seenIn": [
+            "WinHvPlatform.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Map",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Gpa:HexInt64",
+            "Va:HexInt64",
+            "Size:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "WinHvPlatform.dll",
+              "function": "?Map@TracingProvider@WHvApi@@SAX_K00@Z",
+              "ea": "0x180013fa4",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "WinHvPlatform.dll",
+              "function": "?Map@TracingProvider@WHvApi_v2@@SAX_K00@Z",
+              "ea": "0x18003cdd0",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Gpa",
+          "type": "HexInt64",
+          "seenIn": [
+            "WinHvPlatform.dll"
+          ]
+        },
+        {
+          "fieldName": "Size",
+          "type": "HexInt64",
+          "seenIn": [
+            "WinHvPlatform.dll"
+          ]
+        },
+        {
+          "fieldName": "Va",
+          "type": "HexInt64",
+          "seenIn": [
+            "WinHvPlatform.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RunVp",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "WinHvPlatform.dll",
+              "function": "?RunVp@Processor@WHvApi@@YAXPEAUWHV_PARTITION@@IPEAXI@Z",
+              "ea": "0x1800280bb",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "WinHvPlatform.dll",
+              "function": "?RunVp@Processor@WHvApi_v2@@YAXPEAUWHV_PARTITION@2@IPEAXI@Z",
+              "ea": "0x18003b82b",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "SetRegisters",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Count:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "WinHvPlatform.dll",
+              "function": "??$SetRegisters@I@TracingProvider@WHvApi@@SAX$$QEAI@Z",
+              "ea": "0x18002640c",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "WinHvPlatform.dll",
+              "function": "??$SetRegisters@I@TracingProvider@WHvApi_v2@@SAX$$QEAI@Z",
+              "ea": "0x18003a1a8",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "UInt32",
+          "seenIn": [
+            "WinHvPlatform.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Unmap",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Gpa:HexInt64",
+            "Size:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "WinHvPlatform.dll",
+              "function": "?Unmap@TracingProvider@WHvApi@@SAX_K0@Z",
+              "ea": "0x180014c6a",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "WinHvPlatform.dll",
+              "function": "?Unmap@TracingProvider@WHvApi_v2@@SAX_K0@Z",
+              "ea": "0x18003d33a",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Gpa",
+          "type": "HexInt64",
+          "seenIn": [
+            "WinHvPlatform.dll"
+          ]
+        },
+        {
+          "fieldName": "Size",
+          "type": "HexInt64",
+          "seenIn": [
+            "WinHvPlatform.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VpExit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Reason:AnsiString",
+            "GuestAddress:HexInt64",
+            "IP:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "WinHvPlatform.dll",
+              "function": "?TraceVpExit@TracingProvider@WHvApi@@CAXAEBUWHV_RUN_VP_EXIT_CONTEXT@@@Z",
+              "ea": "0x18002904d",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "WinHvPlatform.dll",
+              "function": "?TraceVpExit@TracingProvider@WHvApi_v2@@CAXAEBUWHV_RUN_VP_EXIT_CONTEXT@@@Z",
+              "ea": "0x18003c6b9",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "GuestAddress",
+          "type": "HexInt64",
+          "seenIn": [
+            "WinHvPlatform.dll"
+          ]
+        },
+        {
+          "fieldName": "IP",
+          "type": "HexInt64",
+          "seenIn": [
+            "WinHvPlatform.dll"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "AnsiString",
+          "seenIn": [
+            "WinHvPlatform.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "providerName": "Microsoft.Windows.Storage.Spaceparser",
+  "guid": "{73903770-2C2F-5B9E-8740-CF6E2757B8F4}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "spaceparser.sys"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "CdbUnknownOperation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "OpCode:UInt8(String)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "spaceparser.sys",
+              "function": "SpaceParserVerifyCdb",
+              "ea": "0x1c00050cb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "spaceparser.sys"
+          ]
+        },
+        {
+          "fieldName": "OpCode",
+          "type": "UInt8(String)",
+          "seenIn": [
+            "spaceparser.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "spaceparser.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ScsiNtStatusError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "Status:Int32",
+            "CdbOp:UInt8(String)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "spaceparser.sys",
+              "function": "SpaceParserGenerateSenseInfoFromNtStatus",
+              "ea": "0x1c0003ba9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CdbOp",
+          "type": "UInt8(String)",
+          "seenIn": [
+            "spaceparser.sys"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "spaceparser.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "spaceparser.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "Int32",
+          "seenIn": [
+            "spaceparser.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SpaceParserStatus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "NtStatus:Int32",
+            "CallingFunction:AnsiString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "spaceparser.sys",
+              "function": "?NtStatusAggregateLog@@YAXJPEAD@Z",
+              "ea": "0x1c0001987",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CallingFunction",
+          "type": "AnsiString",
+          "seenIn": [
+            "spaceparser.sys"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "spaceparser.sys"
+          ]
+        },
+        {
+          "fieldName": "NtStatus",
+          "type": "Int32",
+          "seenIn": [
+            "spaceparser.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "spaceparser.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

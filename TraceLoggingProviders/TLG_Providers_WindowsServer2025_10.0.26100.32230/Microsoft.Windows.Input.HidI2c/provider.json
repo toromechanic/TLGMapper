@@ -1,0 +1,398 @@
+{
+  "providerName": "Microsoft.Windows.Input.HidI2c",
+  "guid": "{B7651CF4-92FB-5E12-FD62-6DFFDA250E97}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "hidi2c.sys"
+  ],
+  "uniqueEventCount": 8,
+  "events": [
+    {
+      "eventName": "ACPI",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "WDFDEVICE:HexInt64",
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "hidi2c.sys",
+              "function": "_AcpiDsmSupported",
+              "ea": "0x1400174ec",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "hidi2c.sys",
+              "function": "_AcpiGetDeviceMethod",
+              "ea": "0x14001780a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "WDFDEVICE",
+          "type": "HexInt64",
+          "seenIn": [
+            "hidi2c.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "hidi2c.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "Count:Int64",
+            "WDFDEVICE:HexInt64",
+            "status:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "hidi2c.sys",
+              "function": "?TraceLoggingBusDevice@@YAXJPEAUWDFDEVICE__@@@Z",
+              "ea": "0x140005bf1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "hidi2c.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "hidi2c.sys"
+          ]
+        },
+        {
+          "fieldName": "WDFDEVICE",
+          "type": "HexInt64",
+          "seenIn": [
+            "hidi2c.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "hidi2c.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DeviceDriver",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "WDFDEVICE:HexInt64",
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "hidi2c.sys",
+              "function": "OnDeviceAdd",
+              "ea": "0x140016569",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "WDFDEVICE",
+          "type": "HexInt64",
+          "seenIn": [
+            "hidi2c.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "hidi2c.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DevicePNPFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "MessageId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "hidi2c.sys",
+              "function": "?TraceLoggingPNPFailure@@YAXK@Z",
+              "ea": "0x140002eed",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "MessageId",
+          "type": "UInt32",
+          "seenIn": [
+            "hidi2c.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Driver",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "DriverObject:HexInt64",
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "hidi2c.sys",
+              "function": "DriverEntry",
+              "ea": "0x140019261",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DriverObject",
+          "type": "HexInt64",
+          "seenIn": [
+            "hidi2c.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "hidi2c.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GetHidDescriptor",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "TimeInMs:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "hidi2c.sys",
+              "function": "?TraceLoggingGetHidDescriptor@@YAXJI@Z",
+              "ea": "0x1400094ee",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "hidi2c.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "hidi2c.sys"
+          ]
+        },
+        {
+          "fieldName": "TimeInMs",
+          "type": "UInt32",
+          "seenIn": [
+            "hidi2c.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "HID",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "WDFDEVICE:HexInt64",
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "hidi2c.sys",
+              "function": "?HidDestroy@@YAJPEAU_DEVICE_CONTEXT@@W4_WDF_POWER_DEVICE_STATE@@@Z",
+              "ea": "0x14000720c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "hidi2c.sys",
+              "function": "?HidGetDeviceAttributes@@YAJPEAU_DEVICE_CONTEXT@@PEAUWDFREQUEST__@@@Z",
+              "ea": "0x140007654",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "hidi2c.sys",
+              "function": "?HidGetDeviceDescriptor@@YAJPEAU_DEVICE_CONTEXT@@PEAUWDFREQUEST__@@@Z",
+              "ea": "0x1400077c3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "hidi2c.sys",
+              "function": "?HidGetReport@@YAJPEAU_DEVICE_CONTEXT@@PEAUWDFREQUEST__@@W4HID_REPORT_TYPE@@@Z",
+              "ea": "0x140007dd5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "hidi2c.sys",
+              "function": "?HidGetReportDescriptor@@YAJPEAU_DEVICE_CONTEXT@@PEAUWDFREQUEST__@@@Z",
+              "ea": "0x140007edb",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "hidi2c.sys",
+              "function": "?HidGetString@@YAJPEAU_DEVICE_CONTEXT@@PEAUWDFREQUEST__@@@Z",
+              "ea": "0x1400081de",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "hidi2c.sys",
+              "function": "?HidReadReport@@YAJPEAU_DEVICE_CONTEXT@@PEAUWDFREQUEST__@@PEAE@Z",
+              "ea": "0x140008673",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "hidi2c.sys",
+              "function": "?HidSendIdleNotification@@YAJPEAU_DEVICE_CONTEXT@@PEAUWDFREQUEST__@@PEAE@Z",
+              "ea": "0x140008b8f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "hidi2c.sys",
+              "function": "?HidSetReport@@YAJPEAU_DEVICE_CONTEXT@@PEAUWDFREQUEST__@@W4HID_REPORT_TYPE@@@Z",
+              "ea": "0x14000900f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "hidi2c.sys",
+              "function": "?HidWriteReport@@YAJPEAU_DEVICE_CONTEXT@@PEAUWDFREQUEST__@@@Z",
+              "ea": "0x1400093fc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "WDFDEVICE",
+          "type": "HexInt64",
+          "seenIn": [
+            "hidi2c.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "hidi2c.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Power",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "WDFDEVICE:HexInt64",
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "hidi2c.sys",
+              "function": "?PowerIdleIrpCompletion@@YAXPEAU_DEVICE_CONTEXT@@@Z",
+              "ea": "0x14000b0f0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "hidi2c.sys",
+              "function": "?PowerIdleIrpWorkitem@@YAXPEAUWDFWORKITEM__@@@Z",
+              "ea": "0x14000b31e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "WDFDEVICE",
+          "type": "HexInt64",
+          "seenIn": [
+            "hidi2c.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "hidi2c.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

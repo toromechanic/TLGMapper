@@ -1,0 +1,288 @@
+{
+  "providerName": "Microsoft.Windows.Desktop.AIAssistance",
+  "guid": "{AF9AC45E-1AE9-5532-59E6-F4AD05CAEBD2}",
+  "os": "WindowsServer2025",
+  "binaryCount": 5,
+  "binaries": [
+    "SettingsEnvironment.Desktop.dll",
+    "ShellAppRuntime.exe",
+    "Taskbar.dll",
+    "explorer.exe",
+    "twinui.pcshell.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "GetCopilotFeatureEnablementState",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "isCopilotEnabled:Int32",
+            "isCopilotEnabledByUser:Int32",
+            "copilotDisabledReason:UnicodeString",
+            "openUserEligibilityRegKeyStatus:Int32",
+            "saveUserEligibilityRegValueStatus:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "explorer.exe",
+              "function": "??$GetCopilotFeatureEnablementState@AEA_NAEAHAEAPEBGAEAJAEAJ@AIAssistanceTelemetry@@SAXAEA_NAEAHAEAPEBGAEAJ3@Z",
+              "ea": "0x14010120b",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$GetCopilotFeatureEnablementState@AEA_NAEAHAEAPEBGAEAJAEAJ@AIAssistanceTelemetry@@SAXAEA_NAEAHAEAPEBGAEAJ3@Z",
+              "ea": "0x1400253e3",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "copilotDisabledReason",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isCopilotEnabled",
+          "type": "Int32",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isCopilotEnabledByUser",
+          "type": "Int32",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "openUserEligibilityRegKeyStatus",
+          "type": "Int32",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "saveUserEligibilityRegValueStatus",
+          "type": "Int32",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PolicyCheck",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "policyName:UnicodeString",
+            "details:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "explorer.exe",
+              "function": "??$PolicyCheck@AEAY0BA@$$CBGAEAY0BN@$$CBG@AIAssistanceTelemetry@@SAXAEAY0BA@$$CBGAEAY0BN@$$CBG@Z",
+              "ea": "0x14019173c",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$PolicyCheck@AEAY0BA@$$CBGAEAY0BN@$$CBG@AIAssistanceTelemetry@@SAXAEAY0BA@$$CBGAEAY0BN@$$CBG@Z",
+              "ea": "0x1400e6f29",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Taskbar.dll",
+              "function": "??$PolicyCheck@AEAY0BA@$$CBGAEAY0BN@$$CBG@AIAssistanceTelemetry@@SAXAEAY0BA@$$CBGAEAY0BN@$$CBG@Z",
+              "ea": "0x1801a1930",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "details",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "Taskbar.dll",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "policyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ShellAppRuntime.exe",
+            "Taskbar.dll",
+            "explorer.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PolicyCheckError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "policyName:UnicodeString",
+            "details:UnicodeString",
+            "error:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "explorer.exe",
+              "function": "??$PolicyCheckError@AEAY0BA@$$CBGAEAY0CF@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BA@$$CBGAEAY0CF@$$CBGAEAJ@Z",
+              "ea": "0x1400a83a6",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$PolicyCheckError@AEAY0BI@$$CBGPEBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BI@$$CBG$$QEAPEBGAEAJ@Z",
+              "ea": "0x1401039d5",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$PolicyCheckError@AEAY0BM@$$CBGAEAY0DC@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BM@$$CBGAEAY0DC@$$CBGAEAJ@Z",
+              "ea": "0x1400a841a",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$PolicyCheckError@AEAY0BP@$$CBGAEAY0BM@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BP@$$CBGAEAY0BM@$$CBGAEAJ@Z",
+              "ea": "0x140191796",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$PolicyCheckError@AEAY0BP@$$CBGAEAY0BP@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BP@$$CBG0AEAJ@Z",
+              "ea": "0x14019180a",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "SettingsEnvironment.Desktop.dll",
+              "function": "??$PolicyCheckError@AEAY0BM@$$CBGAEAY0DC@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BM@$$CBGAEAY0DC@$$CBGAEAJ@Z",
+              "ea": "0x180064d79",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$PolicyCheckError@AEAY0BA@$$CBGAEAY0CF@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BA@$$CBGAEAY0CF@$$CBGAEAJ@Z",
+              "ea": "0x1400e6fae",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$PolicyCheckError@AEAY0BI@$$CBGPEBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BI@$$CBG$$QEAPEBGAEAJ@Z",
+              "ea": "0x140027481",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$PolicyCheckError@AEAY0BM@$$CBGAEAY0DC@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BM@$$CBGAEAY0DC@$$CBGAEAJ@Z",
+              "ea": "0x1400e7022",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$PolicyCheckError@AEAY0BP@$$CBGAEAY0BM@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BP@$$CBGAEAY0BM@$$CBGAEAJ@Z",
+              "ea": "0x1400e7096",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$PolicyCheckError@AEAY0BP@$$CBGAEAY0BP@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BP@$$CBG0AEAJ@Z",
+              "ea": "0x1400e710a",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Taskbar.dll",
+              "function": "??$PolicyCheckError@AEAY0BA@$$CBGAEAY0CF@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BA@$$CBGAEAY0CF@$$CBGAEAJ@Z",
+              "ea": "0x1801a198a",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "Taskbar.dll",
+              "function": "??$PolicyCheckError@AEAY0BM@$$CBGAEAY0DC@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BM@$$CBGAEAY0DC@$$CBGAEAJ@Z",
+              "ea": "0x1801a19fe",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "twinui.pcshell.dll",
+              "function": "??$PolicyCheckError@AEAY0BM@$$CBGAEAY0DC@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BM@$$CBGAEAY0DC@$$CBGAEAJ@Z",
+              "ea": "0x18060b6e5",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "details",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SettingsEnvironment.Desktop.dll",
+            "ShellAppRuntime.exe",
+            "Taskbar.dll",
+            "explorer.exe",
+            "twinui.pcshell.dll"
+          ]
+        },
+        {
+          "fieldName": "error",
+          "type": "UInt32",
+          "seenIn": [
+            "SettingsEnvironment.Desktop.dll",
+            "ShellAppRuntime.exe",
+            "Taskbar.dll",
+            "explorer.exe",
+            "twinui.pcshell.dll"
+          ]
+        },
+        {
+          "fieldName": "policyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SettingsEnvironment.Desktop.dll",
+            "ShellAppRuntime.exe",
+            "Taskbar.dll",
+            "explorer.exe",
+            "twinui.pcshell.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

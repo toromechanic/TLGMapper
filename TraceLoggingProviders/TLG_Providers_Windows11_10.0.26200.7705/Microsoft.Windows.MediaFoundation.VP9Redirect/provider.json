@@ -1,0 +1,89 @@
+{
+  "providerName": "Microsoft.Windows.MediaFoundation.VP9Redirect",
+  "guid": "{C371B421-5986-5EDC-75B8-BC21C0F8EE81}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "MSVP9DEC.dll",
+    "MSVPXENC.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "OnGetVPxDecoderActivate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ErrorCode:Int32(HResult)",
+            "InstanceId:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "MSVP9DEC.dll",
+              "function": "?CreateInstance@CMSVPxDecoderClassFactory@@UEAAJPEAUIUnknown@@AEBU_GUID@@PEAPEAX@Z",
+              "ea": "0x18000159d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "MSVP9DEC.dll"
+          ]
+        },
+        {
+          "fieldName": "InstanceId",
+          "type": "GUID",
+          "seenIn": [
+            "MSVP9DEC.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OnGetVPxEncoderActivate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ErrorCode:Int32(HResult)",
+            "InstanceId:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "MSVPXENC.dll",
+              "function": "?CreateInstance@CMSVPxEncoderClassFactory@@UEAAJPEAUIUnknown@@AEBU_GUID@@PEAPEAX@Z",
+              "ea": "0x180002e73",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "MSVPXENC.dll"
+          ]
+        },
+        {
+          "fieldName": "InstanceId",
+          "type": "GUID",
+          "seenIn": [
+            "MSVPXENC.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

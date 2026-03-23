@@ -1,0 +1,58 @@
+{
+  "providerName": "Microsoft.Windows.GroupPolicy.RegistryCSE",
+  "guid": "{6FC72ED3-75DA-4BC4-8365-C4228CEAEDFE}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "gpsvc.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "RegistryHandlerData",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "MachinePolicies:Bool32",
+            "RegistryPolicies:AnsiString",
+            "Truncated:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "gpsvc.dll",
+              "function": "?FlushBufferToTelemetryChannel@CGPRegistryTelemetry@@IEAAXXZ",
+              "ea": "0x1800a07b3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "MachinePolicies",
+          "type": "Bool32",
+          "seenIn": [
+            "gpsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "RegistryPolicies",
+          "type": "AnsiString",
+          "seenIn": [
+            "gpsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Truncated",
+          "type": "Bool32",
+          "seenIn": [
+            "gpsvc.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

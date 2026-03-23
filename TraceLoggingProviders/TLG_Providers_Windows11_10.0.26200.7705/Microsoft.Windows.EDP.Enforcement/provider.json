@@ -1,0 +1,2641 @@
+{
+  "providerName": "Microsoft.Windows.EDP.Enforcement",
+  "guid": "{3D1D28B1-73F5-5937-3446-0DE4DF173FF5}",
+  "os": "Windows 11",
+  "binaryCount": 7,
+  "binaries": [
+    "efscore.dll",
+    "efswrt.dll",
+    "exfat.sys",
+    "fastfat.sys",
+    "mrxsmb.sys",
+    "ntfs.sys",
+    "refs.sys"
+  ],
+  "uniqueEventCount": 20,
+  "events": [
+    {
+      "eventName": "AutomaticEncryption",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "FileName:CountedString",
+            "ProcInfo:Struct(TID)",
+            "ProcessFullName:CountedString",
+            "ProcessName:CountedString",
+            "ProcessEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "ThreadEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "ProcessUserSid:CountedString",
+            "ThreadUserSid:CountedString",
+            "EventEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "Result:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "exfat.sys",
+              "function": "EdpEnforcementLog_AutomaticEncryption",
+              "ea": "0x14005aba0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EdpEnforcementLog_AutomaticEncryption",
+              "ea": "0x14005afbc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EdpEnforcementLog_AutomaticEncryption",
+              "ea": "0x14021b917",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EdpEnforcementLog_AutomaticEncryption",
+              "ea": "0x14021b969",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EdpEnforcementLog_AutomaticEncryption",
+              "ea": "0x1402bdf9c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "ProcessName:CountedString",
+            "Result:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "exfat.sys",
+              "function": "EdpEnforcementLog_AutomaticEncryption",
+              "ea": "0x14005ac61",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EdpEnforcementLog_AutomaticEncryption",
+              "ea": "0x14005b068",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EdpEnforcementLog_AutomaticEncryption",
+              "ea": "0x1402c48b2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EdpEnforcementLog_AutomaticEncryption",
+              "ea": "0x1402be048",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "EnterpriseId",
+          "type": "CountedString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "EnterpriseIdCount",
+          "type": "UInt32",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "EventEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "FileName",
+          "type": "CountedString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "PolicyFlags",
+          "type": "UInt64",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "Present",
+          "type": "Bool32",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcInfo",
+          "type": "Struct(TID)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessFullName",
+          "type": "CountedString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessName",
+          "type": "CountedString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessUserSid",
+          "type": "CountedString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ThreadEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ThreadUserSid",
+          "type": "CountedString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BlockEncryptionForInvalidSubject",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "FileName:UnicodeString",
+            "Layer:UnicodeString",
+            "ProcInfo:Struct(TID)",
+            "ProcessFullName:CountedString",
+            "ProcessName:CountedString",
+            "ProcessEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "ThreadEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "ProcessUserSid:CountedString",
+            "ThreadUserSid:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "EdpEnforcementLog_BlockEncryptionForInvalidSubject",
+              "ea": "0x1800e31e7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "efswrt.dll",
+              "function": "EdpEnforcementLog_BlockEncryptionForInvalidSubject",
+              "ea": "0x18006f443",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EnterpriseId",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "EnterpriseIdCount",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "FileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "Layer",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyFlags",
+          "type": "UInt64",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "Present",
+          "type": "Bool32",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcInfo",
+          "type": "Struct(TID)",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessFullName",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessName",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessUserSid",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "ThreadEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "ThreadUserSid",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CopyFileEnforcement",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "EdpAction:UInt32",
+            "SrcFile:UnicodeString",
+            "DstFile:UnicodeString",
+            "IsSrcRemote:Bool32",
+            "IsDstRemote:Bool32",
+            "Result:Int32(HResult)",
+            "ProcInfo:Struct(TID)",
+            "ProcessFullName:CountedString",
+            "ProcessName:CountedString",
+            "ProcessEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "ThreadEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "ProcessUserSid:CountedString",
+            "ThreadUserSid:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "efswrt.dll",
+              "function": "EdpEnforcementLog_CopyFileEnforcement",
+              "ea": "0x18006f8f4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DstFile",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "EdpAction",
+          "type": "UInt32",
+          "seenIn": [
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "EnterpriseId",
+          "type": "CountedString",
+          "seenIn": [
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "EnterpriseIdCount",
+          "type": "UInt32",
+          "seenIn": [
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDstRemote",
+          "type": "Bool32",
+          "seenIn": [
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "IsSrcRemote",
+          "type": "Bool32",
+          "seenIn": [
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyFlags",
+          "type": "UInt64",
+          "seenIn": [
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "Present",
+          "type": "Bool32",
+          "seenIn": [
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcInfo",
+          "type": "Struct(TID)",
+          "seenIn": [
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessFullName",
+          "type": "CountedString",
+          "seenIn": [
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessName",
+          "type": "CountedString",
+          "seenIn": [
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessUserSid",
+          "type": "CountedString",
+          "seenIn": [
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "SrcFile",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "ThreadEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "efswrt.dll"
+          ]
+        },
+        {
+          "fieldName": "ThreadUserSid",
+          "type": "CountedString",
+          "seenIn": [
+            "efswrt.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CopyFileEnforcement.ServiceName",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "serviceName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "efswrt.dll",
+              "function": "EdpEnforcementLog_CopyFileEnforcement",
+              "ea": "0x18006f9c6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "serviceName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efswrt.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Debug_CaptureState",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x1800e2bf3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "efswrt.dll",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x18006ee4b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "exfat.sys",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x14005a4db",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x14005a8ab",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mrxsmb.sys",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x14008ccff",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x140231459",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x1402bd88b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "Debug_DisableProvider",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x1800e2c17",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "efswrt.dll",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x18006ee6f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "exfat.sys",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x14005a4ff",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x14005a8cf",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mrxsmb.sys",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x14008cd3c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x1402314a7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x1402bd8af",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "Debug_EnableProvider",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x1800e2c05",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "efswrt.dll",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x18006ee5d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "exfat.sys",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x14005a4ed",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x14005a8bd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mrxsmb.sys",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x14008cc08",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mrxsmb.sys",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x14008cc49",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x1402313a2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x1402313da",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EEL_EtwEventHandler",
+              "ea": "0x1402bd89d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "DplApplyPolicy",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PolicyString:UnicodeString",
+            "UserSid:UnicodeString",
+            "Result:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "EdpEnforcementLog_DplApplyPolicy",
+              "ea": "0x1800e32cd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PolicyString",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DplStateChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "State:UnicodeString",
+            "UserSid:UnicodeString",
+            "KeyDropDelay:UInt32",
+            "Realtime:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "EEL_DplStateChange_WriteEvent",
+              "ea": "0x1800e2add",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "efswrt.dll",
+              "function": "EEL_DplStateChange_WriteEvent",
+              "ea": "0x18006ed50",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "exfat.sys",
+              "function": "EEL_DplStateChange_WriteEvent",
+              "ea": "0x14005a3db",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EEL_DplStateChange_WriteEvent",
+              "ea": "0x14005a7ac",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mrxsmb.sys",
+              "function": "EEL_DplStateChange_WriteEvent",
+              "ea": "0x1400847c8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EEL_DplStateChange_WriteEvent",
+              "ea": "0x14010de38",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EEL_DplStateChange_WriteEvent",
+              "ea": "0x1402bd78c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "KeyDropDelay",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll",
+            "exfat.sys",
+            "fastfat.sys",
+            "mrxsmb.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "Realtime",
+          "type": "Bool32",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll",
+            "exfat.sys",
+            "fastfat.sys",
+            "mrxsmb.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "State",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll",
+            "exfat.sys",
+            "fastfat.sys",
+            "mrxsmb.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "UserSid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll",
+            "exfat.sys",
+            "fastfat.sys",
+            "mrxsmb.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EdpKeysAccessBlocked",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ProtectorDescriptor:UnicodeString",
+            "UserSid:UnicodeString",
+            "Result:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "EdpEnforcementLog_EdpKeysAccessBlocked",
+              "ea": "0x1800e3385",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ProtectorDescriptor",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FileAccessDenied",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "FileName:CountedString",
+            "FileExtension:CountedString",
+            "ProcInfo:Struct(TID)",
+            "ProcessFullName:CountedString",
+            "ProcessName:CountedString",
+            "ProcessEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "ThreadEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "ProcessUserSid:CountedString",
+            "ThreadUserSid:CountedString",
+            "EventEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "Result:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "exfat.sys",
+              "function": "EdpEnforcementLog_FileAccessDenied",
+              "ea": "0x14005b204",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EdpEnforcementLog_FileAccessDenied",
+              "ea": "0x14005b60c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EdpEnforcementLog_FileAccessDenied",
+              "ea": "0x14010e544",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EdpEnforcementLog_FileAccessDenied",
+              "ea": "0x1402be5ec",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EnterpriseId",
+          "type": "CountedString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "EnterpriseIdCount",
+          "type": "UInt32",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "EventEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "FileExtension",
+          "type": "CountedString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "FileName",
+          "type": "CountedString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "PolicyFlags",
+          "type": "UInt64",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "Present",
+          "type": "Bool32",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcInfo",
+          "type": "Struct(TID)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessFullName",
+          "type": "CountedString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessName",
+          "type": "CountedString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessUserSid",
+          "type": "CountedString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ThreadEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ThreadUserSid",
+          "type": "CountedString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FileAccessDeniedAggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "FileExtension:CountedString",
+            "ProcessName:CountedString",
+            "Result:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "exfat.sys",
+              "function": "EdpEnforcementLog_FileAccessDenied",
+              "ea": "0x14005b2f3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EdpEnforcementLog_FileAccessDenied",
+              "ea": "0x14005b6e7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EdpEnforcementLog_FileAccessDenied",
+              "ea": "0x14010e61f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EdpEnforcementLog_FileAccessDenied",
+              "ea": "0x1402be6c7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "FileExtension",
+          "type": "CountedString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessName",
+          "type": "CountedString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FileRequiresEncryption",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "FileName:CountedString",
+            "Identity:CountedString",
+            "Scenario:Int32",
+            "EventEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "Result:UInt32(NTStatus)",
+            "ProcInfo:Struct(TID)",
+            "ProcessFullName:CountedString",
+            "ProcessName:CountedString",
+            "ProcessEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "ThreadEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "ProcessUserSid:CountedString",
+            "ThreadUserSid:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "exfat.sys",
+              "function": "EdpEnforcementLog_FileRequiresEncryption",
+              "ea": "0x14005b926",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EdpEnforcementLog_FileRequiresEncryption",
+              "ea": "0x14005bd1a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EdpEnforcementLog_FileRequiresEncryption",
+              "ea": "0x14010ec52",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EdpEnforcementLog_FileRequiresEncryption",
+              "ea": "0x1402becfa",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EnterpriseId",
+          "type": "CountedString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "EnterpriseIdCount",
+          "type": "UInt32",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "EventEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "FileName",
+          "type": "CountedString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "Identity",
+          "type": "CountedString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "PolicyFlags",
+          "type": "UInt64",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "Present",
+          "type": "Bool32",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcInfo",
+          "type": "Struct(TID)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessFullName",
+          "type": "CountedString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessName",
+          "type": "CountedString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessUserSid",
+          "type": "CountedString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "Scenario",
+          "type": "Int32",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ThreadEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ThreadUserSid",
+          "type": "CountedString",
+          "seenIn": [
+            "exfat.sys",
+            "fastfat.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InternalError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ErrorCode:UInt32",
+            "ErrorMessage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "EEL_LogInternalError",
+              "ea": "0x1800e2cbd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "efswrt.dll",
+              "function": "EEL_LogInternalError",
+              "ea": "0x18006ef15",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "exfat.sys",
+              "function": "EEL_DplStateChange_WriteEvent",
+              "ea": "0x14005a362",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EEL_LogInternalError",
+              "ea": "0x14005a975",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mrxsmb.sys",
+              "function": "EEL_LogInternalError",
+              "ea": "0x140084889",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EEL_LogInternalError",
+              "ea": "0x14010def9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EEL_LogInternalError",
+              "ea": "0x1402bd955",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll",
+            "exfat.sys",
+            "fastfat.sys",
+            "mrxsmb.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "ErrorMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll",
+            "exfat.sys",
+            "fastfat.sys",
+            "mrxsmb.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PolicyUpdate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "EnterpriseProtectedDomainNames:UnicodeString",
+            "EnforcementLevel:Int32",
+            "RmsTemplateId:UnicodeString",
+            "AllowAzureRms:Bool32",
+            "AllowUserDecryption:Bool32",
+            "RevokeOnUnenroll:Bool32",
+            "HasDataRecoveryCertificate:Bool32",
+            "RequireProtectionUnderLockConfig:Bool32",
+            "Realtime:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "EEL_PolicyUpdate_WriteEvent",
+              "ea": "0x1800e2d68",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "efswrt.dll",
+              "function": "EEL_PolicyUpdate_WriteEvent",
+              "ea": "0x18006efc0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "exfat.sys",
+              "function": "EEL_PolicyUpdate_WriteEvent",
+              "ea": "0x14005a5f2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fastfat.sys",
+              "function": "EEL_PolicyUpdate_WriteEvent",
+              "ea": "0x14005aa20",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "mrxsmb.sys",
+              "function": "EEL_PolicyUpdate_WriteEvent",
+              "ea": "0x140084934",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntfs.sys",
+              "function": "EEL_PolicyUpdate_WriteEvent",
+              "ea": "0x14010dfa4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "refs.sys",
+              "function": "EEL_PolicyUpdate_WriteEvent",
+              "ea": "0x1402bda00",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AllowAzureRms",
+          "type": "Bool32",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll",
+            "exfat.sys",
+            "fastfat.sys",
+            "mrxsmb.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "AllowUserDecryption",
+          "type": "Bool32",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll",
+            "exfat.sys",
+            "fastfat.sys",
+            "mrxsmb.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "EnforcementLevel",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll",
+            "exfat.sys",
+            "fastfat.sys",
+            "mrxsmb.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "EnterpriseProtectedDomainNames",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll",
+            "exfat.sys",
+            "fastfat.sys",
+            "mrxsmb.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "HasDataRecoveryCertificate",
+          "type": "Bool32",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll",
+            "exfat.sys",
+            "fastfat.sys",
+            "mrxsmb.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "Realtime",
+          "type": "Bool32",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll",
+            "exfat.sys",
+            "fastfat.sys",
+            "mrxsmb.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "RequireProtectionUnderLockConfig",
+          "type": "Bool32",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll",
+            "exfat.sys",
+            "fastfat.sys",
+            "mrxsmb.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "RevokeOnUnenroll",
+          "type": "Bool32",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll",
+            "exfat.sys",
+            "fastfat.sys",
+            "mrxsmb.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        },
+        {
+          "fieldName": "RmsTemplateId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll",
+            "efswrt.dll",
+            "exfat.sys",
+            "fastfat.sys",
+            "mrxsmb.sys",
+            "ntfs.sys",
+            "refs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "QueueForEncryption",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "FileName:UnicodeString",
+            "Identity:UnicodeString",
+            "UserSid:UnicodeString",
+            "Result:Int32(HResult)",
+            "QueueFileResult:Int32(HResult)",
+            "WriteQueueResult:Int32(HResult)",
+            "ProcInfo:Struct(TID)",
+            "ProcessFullName:CountedString",
+            "ProcessName:CountedString",
+            "ProcessEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "ThreadEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "ProcessUserSid:CountedString",
+            "ThreadUserSid:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "EdpEnforcementLog_QueueForEncryption",
+              "ea": "0x1800e37fc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EnterpriseId",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "EnterpriseIdCount",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "FileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "Identity",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyFlags",
+          "type": "UInt64",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "Present",
+          "type": "Bool32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcInfo",
+          "type": "Struct(TID)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessFullName",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessName",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessUserSid",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "QueueFileResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ThreadEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ThreadUserSid",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "WriteQueueResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ServiceEncryptionQueue",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "FileName:UnicodeString",
+            "Identity:UnicodeString",
+            "UserSid:UnicodeString",
+            "ProtectorDescriptor:UnicodeString",
+            "EncryptionRequiredForFile:Bool32",
+            "DisableEncryptionOverride:Bool32",
+            "Result:Int32(HResult)",
+            "VerifyRequiresEncryptionResult:Int32(HResult)",
+            "MapProtectorDescriptorResult:Int32(HResult)",
+            "EncryptFileResult:Int32(HResult)",
+            "ProcInfo:Struct(TID)",
+            "ProcessFullName:CountedString",
+            "ProcessName:CountedString",
+            "ProcessEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "ThreadEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "ProcessUserSid:CountedString",
+            "ThreadUserSid:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "EdpEnforcementLog_ServiceEncryptionQueue",
+              "ea": "0x1800e3d18",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DisableEncryptionOverride",
+          "type": "Bool32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "EncryptFileResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "EncryptionRequiredForFile",
+          "type": "Bool32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "EnterpriseId",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "EnterpriseIdCount",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "FileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "Identity",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "MapProtectorDescriptorResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyFlags",
+          "type": "UInt64",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "Present",
+          "type": "Bool32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcInfo",
+          "type": "Struct(TID)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessFullName",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessName",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessUserSid",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProtectorDescriptor",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ThreadEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ThreadUserSid",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "VerifyRequiresEncryptionResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SmbFileAccessDenied",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "ServerName:CountedString",
+            "ServerDnsName:CountedString",
+            "RemoteFilePath:CountedString",
+            "FileExtension:CountedString",
+            "ServerEnterpriseId:CountedString",
+            "ProcInfo:Struct(TID)",
+            "ProcessFullName:CountedString",
+            "ProcessName:CountedString",
+            "ProcessEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "ThreadEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "ProcessUserSid:CountedString",
+            "ThreadUserSid:CountedString",
+            "EventEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "mrxsmb.sys",
+              "function": "EdpEnforcementLog_SmbAccessDenied",
+              "ea": "0x140085006",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EnterpriseId",
+          "type": "CountedString",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "EnterpriseIdCount",
+          "type": "UInt32",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "EventEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "FileExtension",
+          "type": "CountedString",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "PolicyFlags",
+          "type": "UInt64",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "Present",
+          "type": "Bool32",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcInfo",
+          "type": "Struct(TID)",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessFullName",
+          "type": "CountedString",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessName",
+          "type": "CountedString",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessUserSid",
+          "type": "CountedString",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "RemoteFilePath",
+          "type": "CountedString",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "ServerDnsName",
+          "type": "CountedString",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "ServerEnterpriseId",
+          "type": "CountedString",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "ServerName",
+          "type": "CountedString",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "ThreadEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        },
+        {
+          "fieldName": "ThreadUserSid",
+          "type": "CountedString",
+          "seenIn": [
+            "mrxsmb.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TemporalFileAccessAdd",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "FilePaths:UnicodeString",
+            "EfsStreamIds:GUID[]",
+            "ProcessId:Int32",
+            "ProcessUniqueId:Int64",
+            "AppId:UnicodeString",
+            "Result:Int32(HResult)",
+            "ProcInfo:Struct(TID)",
+            "ProcessFullName:CountedString",
+            "ProcessName:CountedString",
+            "ProcessEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "ThreadEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "ProcessUserSid:CountedString",
+            "ThreadUserSid:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "EdpEnforcementLog_TemporalFileAccessAdd",
+              "ea": "0x1800e41e6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "EfsStreamIds",
+          "type": "GUID[]",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "EnterpriseId",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "EnterpriseIdCount",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "FilePaths",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyFlags",
+          "type": "UInt64",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "Present",
+          "type": "Bool32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcInfo",
+          "type": "Struct(TID)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessFullName",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessId",
+          "type": "Int32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessName",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessUniqueId",
+          "type": "Int64",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessUserSid",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ThreadEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ThreadUserSid",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TemporalFileAccessGrantOrError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ProcessUniqueId:Int64",
+            "AppId:UnicodeString",
+            "EfsStreamId:GUID",
+            "Result:Int32(HResult)",
+            "ProcInfo:Struct(TID)",
+            "ProcessFullName:CountedString",
+            "ProcessName:CountedString",
+            "ProcessEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "ThreadEdpContext:Struct(Hex)",
+            "Present:Bool32",
+            "PolicyFlags:UInt64",
+            "EnterpriseIdCount:UInt32",
+            "EnterpriseId:CountedString",
+            "ProcessUserSid:CountedString",
+            "ThreadUserSid:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "efscore.dll",
+              "function": "EdpEnforcementLog_TemporalFileAccessGrantOrError",
+              "ea": "0x1800e466a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "EfsStreamId",
+          "type": "GUID",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "EnterpriseId",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "EnterpriseIdCount",
+          "type": "UInt32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyFlags",
+          "type": "UInt64",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "Present",
+          "type": "Bool32",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcInfo",
+          "type": "Struct(TID)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessFullName",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessName",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessUniqueId",
+          "type": "Int64",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessUserSid",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ThreadEdpContext",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        },
+        {
+          "fieldName": "ThreadUserSid",
+          "type": "CountedString",
+          "seenIn": [
+            "efscore.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

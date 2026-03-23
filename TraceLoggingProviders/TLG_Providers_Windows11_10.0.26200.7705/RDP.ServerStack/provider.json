@@ -1,0 +1,58 @@
+{
+  "providerName": "RDP.ServerStack",
+  "guid": "{78BE48BD-5D52-4E39-823D-226CD5551F37}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "rdpcorets.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "RDPDisconnectReason",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "correlationId:GUID",
+            "serverInitiated:Bool32",
+            "disconnectCode:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpcorets.dll",
+              "function": "?LogRdpDisconnectReason@RDPStackTraceLogging@@YAXU_GUID@@HK@Z",
+              "ea": "0x180008723",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "correlationId",
+          "type": "GUID",
+          "seenIn": [
+            "rdpcorets.dll"
+          ]
+        },
+        {
+          "fieldName": "disconnectCode",
+          "type": "Int32",
+          "seenIn": [
+            "rdpcorets.dll"
+          ]
+        },
+        {
+          "fieldName": "serverInitiated",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpcorets.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

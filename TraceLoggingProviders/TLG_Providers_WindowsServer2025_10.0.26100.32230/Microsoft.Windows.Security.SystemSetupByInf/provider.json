@@ -1,0 +1,86 @@
+{
+  "providerName": "Microsoft.Windows.Security.SystemSetupByInf",
+  "guid": "{07D067F1-E74B-5A46-0F32-5B34E42DB65E}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "scecli.dll",
+    "scesrv.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "ScepConfigureSystemAreaLatency",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Security Template Name:UnicodeString",
+            "Correlation ID:UInt32",
+            "Area:UnicodeString",
+            "Latency (us):Int64"
+          ],
+          "callers": [
+            {
+              "binary": "scecli.dll",
+              "function": "?ScepLogInfLatency@@YAXPEAT_LARGE_INTEGER@@0PEBG1K@Z",
+              "ea": "0x180017338",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "scesrv.dll",
+              "function": "?ScepLogInfLatency@@YAXPEAT_LARGE_INTEGER@@0PEBG1K@Z",
+              "ea": "0x180019d5a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Area",
+          "type": "UnicodeString",
+          "seenIn": [
+            "scecli.dll",
+            "scesrv.dll"
+          ]
+        },
+        {
+          "fieldName": "Correlation ID",
+          "type": "UInt32",
+          "seenIn": [
+            "scecli.dll",
+            "scesrv.dll"
+          ]
+        },
+        {
+          "fieldName": "Latency (us)",
+          "type": "Int64",
+          "seenIn": [
+            "scecli.dll",
+            "scesrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "scecli.dll",
+            "scesrv.dll"
+          ]
+        },
+        {
+          "fieldName": "Security Template Name",
+          "type": "UnicodeString",
+          "seenIn": [
+            "scecli.dll",
+            "scesrv.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

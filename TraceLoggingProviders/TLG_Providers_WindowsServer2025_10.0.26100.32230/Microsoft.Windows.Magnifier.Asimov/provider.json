@@ -1,0 +1,799 @@
+{
+  "providerName": "Microsoft.Windows.Magnifier.Asimov",
+  "guid": "{22BCD1EA-BE3D-4933-8A14-06A5A86B29E4}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "AtBroker.exe",
+    "Magnify.exe"
+  ],
+  "uniqueEventCount": 18,
+  "events": [
+    {
+      "eventName": "InvokeFromSettingAfterSignIn",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AtBroker.exe",
+              "function": "wmain",
+              "ea": "0x14000bfcb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AtBroker.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InvokeFromSettingBeforeSignIn",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AtBroker.exe",
+              "function": "wmain",
+              "ea": "0x14000c002",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AtBroker.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Magnify1xToggleDone_With_Shortcut",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "Magnify.exe",
+              "function": "?ReportMagnifier1XToggleDone@MagnifierTelemetryHelper@@SAX_N@Z",
+              "ea": "0x14004e747",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Magnify1xToggleDone_With_UI",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "Magnify.exe",
+              "function": "?ReportMagnifier1XToggleDone@MagnifierTelemetryHelper@@SAX_N@Z",
+              "ea": "0x14004e773",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MagnifyChangeFocus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Left:UInt32",
+            "Top:UInt32",
+            "Right:UInt32",
+            "Bottom:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "Magnify.exe",
+              "function": "?HandleDelayedFocusChangeEvent@FocusTracker@@AEAAXXZ",
+              "ea": "0x140036d02",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Bottom",
+          "type": "UInt32",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        },
+        {
+          "fieldName": "Left",
+          "type": "UInt32",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        },
+        {
+          "fieldName": "Right",
+          "type": "UInt32",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        },
+        {
+          "fieldName": "Top",
+          "type": "UInt32",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MagnifyChangeZoomLevel",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ZoomValue:Float"
+          ],
+          "callers": [
+            {
+              "binary": "Magnify.exe",
+              "function": "?MagnifierSetScale@MagnifierControl@@QEAAXH@Z",
+              "ea": "0x14003d593",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "Magnify.exe",
+              "function": "?OptionsChanged@FullscreenMagnifier@@UEAAXHH@Z",
+              "ea": "0x140019e92",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "Magnify.exe",
+              "function": "?OptionsChanged@LensMagnifier@@UEAAXHH@Z",
+              "ea": "0x14002390e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        },
+        {
+          "fieldName": "ZoomValue",
+          "type": "Float",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MagnifyGetOption",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "OptionValue:Int32",
+            "OptionKeyName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "Magnify.exe",
+              "function": "wWinMain",
+              "ea": "0x140011bdf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OptionKeyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        },
+        {
+          "fieldName": "OptionValue",
+          "type": "Int32",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MagnifyHandledTouchPan",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "Magnify.exe",
+              "function": "?ProcessActiveHold@FullscreenTouchWindow@@AEAAXHHKK@Z",
+              "ea": "0x14001ebdd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "Magnify.exe",
+              "function": "?ProcessWindowsTIEOutput@FullscreenTouchWindow@@AEAAXPEBUINTERACTION_OUTPUT@@@Z",
+              "ea": "0x14001f348",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "Magnify.exe",
+              "function": "?ProcessWindowsTIEOutput@FullscreenTouchWindow@@AEAAXPEBUINTERACTION_OUTPUT@@@Z",
+              "ea": "0x14001f640",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "Magnify.exe",
+              "function": "?ProcessWindowsTIEOutput@FullscreenTouchWindow@@AEAAXPEBUINTERACTION_OUTPUT@@@Z",
+              "ea": "0x14001f8f3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MagnifyHandledTouchZoom",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ZoomValue:Float"
+          ],
+          "callers": [
+            {
+              "binary": "Magnify.exe",
+              "function": "?HandleButtonPress@FullscreenTouchWindow@@AEAAXH@Z",
+              "ea": "0x14001d781",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "Magnify.exe",
+              "function": "?HandleButtonPress@FullscreenTouchWindow@@AEAAXH@Z",
+              "ea": "0x14001d8cb",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "Magnify.exe",
+              "function": "?HandleButtonPress@FullscreenTouchWindow@@AEAAXH@Z",
+              "ea": "0x14001d95b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "Magnify.exe",
+              "function": "?ProcessActiveHold@FullscreenTouchWindow@@AEAAXHHKK@Z",
+              "ea": "0x14001eca7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "Magnify.exe",
+              "function": "?ProcessWindowsTIEOutput@FullscreenTouchWindow@@AEAAXPEBUINTERACTION_OUTPUT@@@Z",
+              "ea": "0x14001fb0a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        },
+        {
+          "fieldName": "ZoomValue",
+          "type": "Float",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MagnifyInitializationDone",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "Magnify.exe",
+              "function": "?ReportMagnifierInitializationDone@MagnifierTelemetryHelper@@SAXXZ",
+              "ea": "0x14004e7da",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MagnifyLaunch",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "Magnify.exe",
+              "function": "??0TelemetryRegistrar@@QEAA@XZ",
+              "ea": "0x14004e4be",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MagnifyReadingStarted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "InitialReadingVoice:UnicodeString",
+            "InitialReadingSpeed:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "Magnify.exe",
+              "function": "?ReadingOperationStarted@MagnifierTelemetryHelper@@SAXUhstring@winrt@@H@Z",
+              "ea": "0x14004e573",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InitialReadingSpeed",
+          "type": "Int32",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        },
+        {
+          "fieldName": "InitialReadingVoice",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MagnifyReadingStopped",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ReadingDuration:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "Magnify.exe",
+              "function": "?ReadingOperationStopped@MagnifierTelemetryHelper@@SAXXZ",
+              "ea": "0x14004e61c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        },
+        {
+          "fieldName": "ReadingDuration",
+          "type": "UInt64",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MagnifySaveOption",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "OptionValue:Int32",
+            "OptionKeyName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "Magnify.exe",
+              "function": "?SaveLongOption@OptionsKeeper@@AEAAXPEBGK@Z",
+              "ea": "0x14003c9be",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "OptionStringValue:UnicodeString",
+            "OptionKeyName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "Magnify.exe",
+              "function": "?SaveStringOption@OptionsKeeper@@AEAAXPEBGUhstring@winrt@@@Z",
+              "ea": "0x14003cc25",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OptionKeyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        },
+        {
+          "fieldName": "OptionStringValue",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        },
+        {
+          "fieldName": "OptionValue",
+          "type": "Int32",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MagnifySetOption",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "OptionValue:Int32",
+            "OptionKeyName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "Magnify.exe",
+              "function": "?SetOption@OptionsKeeper@@QEAAXW4OPTIONNAME@@J_N@Z",
+              "ea": "0x14003cd60",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "OptionStringValue:UnicodeString",
+            "OptionKeyName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "Magnify.exe",
+              "function": "?SetOption@OptionsKeeper@@QEAAXW4OPTIONNAME@@Uhstring@winrt@@_N@Z",
+              "ea": "0x14003ce75",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OptionKeyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        },
+        {
+          "fieldName": "OptionStringValue",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        },
+        {
+          "fieldName": "OptionValue",
+          "type": "Int32",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MagnifyShutDown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "Magnify.exe",
+              "function": "wWinMain",
+              "ea": "0x140011eff",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ReadingCommandIssued",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ReadingActionSource:UnicodeString",
+            "ReadingAction:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "Magnify.exe",
+              "function": "?ReportCommandInformation@MagnifierTelemetryHelper@@SAXAEBUReadingActionInfo@@@Z",
+              "ea": "0x14004e701",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        },
+        {
+          "fieldName": "ReadingAction",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        },
+        {
+          "fieldName": "ReadingActionSource",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SessionTime",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "seconds:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "Magnify.exe",
+              "function": "wWinMain",
+              "ea": "0x140011eb9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        },
+        {
+          "fieldName": "seconds",
+          "type": "UInt64",
+          "seenIn": [
+            "Magnify.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

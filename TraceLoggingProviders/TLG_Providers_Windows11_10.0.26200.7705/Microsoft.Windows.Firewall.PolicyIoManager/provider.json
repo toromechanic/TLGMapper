@@ -1,0 +1,360 @@
+{
+  "providerName": "Microsoft.Windows.Firewall.PolicyIoManager",
+  "guid": "{E90CB4C0-C7B6-4F18-A53A-187934AD4B55}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "fwpolicyiomgr.dll"
+  ],
+  "uniqueEventCount": 7,
+  "events": [
+    {
+      "eventName": "FwAggregateThreadWaitTimeAndHoldTimeForGpLock",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "totalThreadWaitAndLockHoldTimeMs:Int64",
+            "minThreadWaitAndLockHoldTimeMs:Int64",
+            "maxThreadWaitAndLockHoldTimeMs:Int64",
+            "totalGpLockHoldTimeMs:Int64",
+            "minGpLockHoldTimeMs:Int64",
+            "maxGpLockHoldTimeMs:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "fwpolicyiomgr.dll",
+              "function": "?FwTelemetryEventWriteGpLockTimeout@@YAX_K0QEAD@Z",
+              "ea": "0x180011c41",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "fwpolicyiomgr.dll",
+              "function": "?FwTelemetryEventWriteGpLockTimeout@@YAX_K0QEAD@Z",
+              "ea": "0x180011ca4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "fwpolicyiomgr.dll"
+          ]
+        },
+        {
+          "fieldName": "maxGpLockHoldTimeMs",
+          "type": "Int64",
+          "seenIn": [
+            "fwpolicyiomgr.dll"
+          ]
+        },
+        {
+          "fieldName": "maxThreadWaitAndLockHoldTimeMs",
+          "type": "Int64",
+          "seenIn": [
+            "fwpolicyiomgr.dll"
+          ]
+        },
+        {
+          "fieldName": "minGpLockHoldTimeMs",
+          "type": "Int64",
+          "seenIn": [
+            "fwpolicyiomgr.dll"
+          ]
+        },
+        {
+          "fieldName": "minThreadWaitAndLockHoldTimeMs",
+          "type": "Int64",
+          "seenIn": [
+            "fwpolicyiomgr.dll"
+          ]
+        },
+        {
+          "fieldName": "totalGpLockHoldTimeMs",
+          "type": "Int64",
+          "seenIn": [
+            "fwpolicyiomgr.dll"
+          ]
+        },
+        {
+          "fieldName": "totalThreadWaitAndLockHoldTimeMs",
+          "type": "Int64",
+          "seenIn": [
+            "fwpolicyiomgr.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FwCorruptedDynamicKeywordAddress",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "keywordAddressId:UnicodeString",
+            "encodedKeywordAddress:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fwpolicyiomgr.dll",
+              "function": "FwSubSectionLoadDynamicKeywordAddresses",
+              "ea": "0x180005467",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "fwpolicyiomgr.dll",
+              "function": "FwSubSectionLoadDynamicKeywordAddresses",
+              "ea": "0x180005502",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fwpolicyiomgr.dll"
+          ]
+        },
+        {
+          "fieldName": "encodedKeywordAddress",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fwpolicyiomgr.dll"
+          ]
+        },
+        {
+          "fieldName": "keywordAddressId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fwpolicyiomgr.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FwCorruptedHyperVVMCreator",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "id:UnicodeString",
+            "encodedHyperVVMCreator:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fwpolicyiomgr.dll",
+              "function": "FwLoadHyperVVMCreatorsFromRegistry",
+              "ea": "0x180004dc0",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "fwpolicyiomgr.dll",
+              "function": "FwLoadHyperVVMCreatorsFromRegistry",
+              "ea": "0x180004e6c",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fwpolicyiomgr.dll"
+          ]
+        },
+        {
+          "fieldName": "encodedHyperVVMCreator",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fwpolicyiomgr.dll"
+          ]
+        },
+        {
+          "fieldName": "id",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fwpolicyiomgr.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FwCorruptedHyperVVMSetting",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "id:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fwpolicyiomgr.dll",
+              "function": "FwGetHyperVVMCreatorIdsFromRegistry",
+              "ea": "0x1800350c0",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fwpolicyiomgr.dll"
+          ]
+        },
+        {
+          "fieldName": "id",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fwpolicyiomgr.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FwCorruptedRuleAfterWriteEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "encodedRule:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fwpolicyiomgr.dll",
+              "function": "FwGetAdvPolicyRule",
+              "ea": "0x180005d28",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fwpolicyiomgr.dll"
+          ]
+        },
+        {
+          "fieldName": "encodedRule",
+          "type": "UnicodeString",
+          "seenIn": [
+            "fwpolicyiomgr.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FwCorruptedRuleEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "regIndex:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fwpolicyiomgr.dll",
+              "function": "?FwAdvPolicySubSectionLoadRules@@YAJPEAU_tag_FW_RULE_MANIPULATOR@@PEAUHKEY__@@PEBGPEAPEAU_tag_FW_BLOB_RULE@@PEAKKK@Z",
+              "ea": "0x18000621c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fwpolicyiomgr.dll"
+          ]
+        },
+        {
+          "fieldName": "regIndex",
+          "type": "UInt64",
+          "seenIn": [
+            "fwpolicyiomgr.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FwThreadWaitTimeAndHoldTimeForGpLockCritical",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "callerFunctionName:AnsiString",
+            "threadWaitAndLockHoldTimeMs:UInt64",
+            "gpLockHoldTimeMs:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fwpolicyiomgr.dll",
+              "function": "?FwTelemetryEventWriteGpLockTimeout@@YAX_K0QEAD@Z",
+              "ea": "0x180011dd8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "callerFunctionName",
+          "type": "AnsiString",
+          "seenIn": [
+            "fwpolicyiomgr.dll"
+          ]
+        },
+        {
+          "fieldName": "gpLockHoldTimeMs",
+          "type": "UInt64",
+          "seenIn": [
+            "fwpolicyiomgr.dll"
+          ]
+        },
+        {
+          "fieldName": "threadWaitAndLockHoldTimeMs",
+          "type": "UInt64",
+          "seenIn": [
+            "fwpolicyiomgr.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

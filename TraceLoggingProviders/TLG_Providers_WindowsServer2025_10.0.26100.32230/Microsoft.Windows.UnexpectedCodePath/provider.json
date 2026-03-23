@@ -1,0 +1,142 @@
+{
+  "providerName": "Microsoft.Windows.UnexpectedCodePath",
+  "guid": "{DF280ED0-43D2-4E7A-BF82-901D268ACFA0}",
+  "os": "WindowsServer2025",
+  "binaryCount": 3,
+  "binaries": [
+    "ntdll.dll",
+    "ntkrla57.exe",
+    "ntoskrnl.exe"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "CodePath",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Id:UInt64",
+            "CodePathIndex:UInt32",
+            "ErrorCode:UInt32",
+            "count:UInt32",
+            "IRQL:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ntdll.dll",
+              "function": "UcOnUnexpectedCodePath",
+              "ea": "0x1801574df",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "UcpLogUnexpectedCodePathEvent",
+              "ea": "0x14061479d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "UcpLogUnexpectedCodePathEvent",
+              "ea": "0x14068bf29",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CodePathIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "ntdll.dll",
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "ntdll.dll",
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "IRQL",
+          "type": "UInt32",
+          "seenIn": [
+            "ntdll.dll",
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Id",
+          "type": "UInt64",
+          "seenIn": [
+            "ntdll.dll",
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "UInt32",
+          "seenIn": [
+            "ntdll.dll",
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UcpTriggeredNodeCount",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ntdll.dll",
+              "function": "UcpFindOrCreateTelemetryRecord",
+              "ea": "0x180157782",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "UcpFindOrCreateTelemetryRecord",
+              "ea": "0x140614511",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "UcpFindOrCreateTelemetryRecord",
+              "ea": "0x14068bcea",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "UInt64",
+          "seenIn": [
+            "ntdll.dll",
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

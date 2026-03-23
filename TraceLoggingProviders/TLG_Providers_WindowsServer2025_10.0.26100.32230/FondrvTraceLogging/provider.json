@@ -1,0 +1,97 @@
+{
+  "providerName": "FondrvTraceLogging",
+  "guid": "{2283AC0F-ECCE-488B-BE55-9A1D9462A837}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "atmlib.dll",
+    "fontdrvhost.exe"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "ATMBackDoorEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "EscapeId:UInt32",
+            "CodePathIndex:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "fontdrvhost.exe",
+              "function": "TraceLoggingATMBackDoorEvent",
+              "ea": "0x14009b012",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CodePathIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "fontdrvhost.exe"
+          ]
+        },
+        {
+          "fieldName": "EscapeId",
+          "type": "UInt32",
+          "seenIn": [
+            "fontdrvhost.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "fontdrvhost.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CallFromATMAPIs",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "EscapeId:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "atmlib.dll",
+              "function": "CallDriver",
+              "ea": "0x1800071a1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EscapeId",
+          "type": "UInt32",
+          "seenIn": [
+            "atmlib.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "atmlib.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "providerName": "Microsoft.Windows.Console.Launcher",
+  "guid": "{770AA552-671A-5E97-579B-151709EC0DBD}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "conhost.exe"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "IsLegacyLoaded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "ConsoleLegacy:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "conhost.exe",
+              "function": "ActivateLegacyConhost",
+              "ea": "0x140041fdc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConsoleLegacy",
+          "type": "Bool32",
+          "seenIn": [
+            "conhost.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "conhost.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

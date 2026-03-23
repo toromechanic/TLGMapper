@@ -1,0 +1,658 @@
+{
+  "providerName": "Microsoft.Windows.Power.Troubleshooter",
+  "guid": "{B5086F75-81ED-4487-8D0A-5E9114AFC2E9}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "pots.dll"
+  ],
+  "uniqueEventCount": 7,
+  "events": [
+    {
+      "eventName": "AbnormalResetOccurred",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "pots.dll",
+              "function": "PoWdiLogAbnormalResetTelemetry",
+              "ea": "0x180002b9f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "SleepDirtyTransition",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "sleepState:UInt32",
+            "attributes:HexInt32",
+            "bugcheckCode:HexInt32",
+            "bugcheckP1:UInt64",
+            "bugcheckP2:UInt64",
+            "bugcheckP3:UInt64",
+            "bugcheckP4:UInt64",
+            "bootAppStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "pots.dll",
+              "function": "PoWdiLogDirtySleepTelemetry",
+              "ea": "0x180002fcb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "attributes",
+          "type": "HexInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "bootAppStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "bugcheckCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "bugcheckP1",
+          "type": "UInt64",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "bugcheckP2",
+          "type": "UInt64",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "bugcheckP3",
+          "type": "UInt64",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "bugcheckP4",
+          "type": "UInt64",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "sleepState",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SleepReliability",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "successFailure:UInt32",
+            "sleepState:UInt32",
+            "attributes:UInt32",
+            "statusCode:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "pots.dll",
+              "function": "PoWdiLogDirtySleepTelemetry",
+              "ea": "0x180002f7e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "pots.dll",
+              "function": "PoWdiLogTelemetryData",
+              "ea": "0x1800037d3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "attributes",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "sleepState",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "statusCode",
+          "type": "UnicodeString",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "successFailure",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SleepResumeBugcheck",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "attributes:UInt32",
+            "bugcheckCode:UnicodeString",
+            "bugcheckP1:UnicodeString",
+            "bugcheckP2:UnicodeString",
+            "bugcheckP3:UnicodeString",
+            "bugcheckP4:UnicodeString",
+            "bootAppStatus:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "pots.dll",
+              "function": "PoWdiLogDirtySleepTelemetry",
+              "ea": "0x180002ec8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "attributes",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "bootAppStatus",
+          "type": "UnicodeString",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "bugcheckCode",
+          "type": "UnicodeString",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "bugcheckP1",
+          "type": "UnicodeString",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "bugcheckP2",
+          "type": "UnicodeString",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "bugcheckP3",
+          "type": "UnicodeString",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "bugcheckP4",
+          "type": "UnicodeString",
+          "seenIn": [
+            "pots.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SleepResumePerformance",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "totalSleepTime:UInt32",
+            "totalResumeTime:UInt32",
+            "hiberFileReadTime:UInt32",
+            "hiberFileWriteTime:UInt32",
+            "biosInitTime:UInt32",
+            "hiberPagesReadPerMs:UInt32",
+            "driverInitTime:UInt32",
+            "sleepState:UInt32",
+            "attributes:UInt32",
+            "overallResumeTime:UInt32",
+            "hiberfileWrittenSize:UInt32",
+            "biosCorruptPagesCount:UInt32",
+            "biosCorruptFirstPage:UInt64",
+            "biosCorruptPageLast:UInt64",
+            "postTime:UInt64",
+            "resumeAppTime:UInt64",
+            "PostResumeAppTime:UInt64",
+            "pagesProcessed:UInt64",
+            "bootPagesProcessed:UInt64",
+            "kernelPagesProcessed:UInt64",
+            "securePagesProcessed:UInt64",
+            "hiberWriteRate:UInt64",
+            "compressionRate:UInt64",
+            "resumeIoTime:UInt64",
+            "decompressTime:UInt64",
+            "effectiveState:UInt32",
+            "totalHibernateTime:UInt32",
+            "noMultiStageResumeReason:UInt32",
+            "checkpointTime:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "pots.dll",
+              "function": "PoWdiLogTelemetryData",
+              "ea": "0x180003a71",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PostResumeAppTime",
+          "type": "UInt64",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "attributes",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "biosCorruptFirstPage",
+          "type": "UInt64",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "biosCorruptPageLast",
+          "type": "UInt64",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "biosCorruptPagesCount",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "biosInitTime",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "bootPagesProcessed",
+          "type": "UInt64",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "checkpointTime",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "compressionRate",
+          "type": "UInt64",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "decompressTime",
+          "type": "UInt64",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "driverInitTime",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "effectiveState",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "hiberFileReadTime",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "hiberFileWriteTime",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "hiberPagesReadPerMs",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "hiberWriteRate",
+          "type": "UInt64",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "hiberfileWrittenSize",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "kernelPagesProcessed",
+          "type": "UInt64",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "noMultiStageResumeReason",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "overallResumeTime",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "pagesProcessed",
+          "type": "UInt64",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "postTime",
+          "type": "UInt64",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "resumeAppTime",
+          "type": "UInt64",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "resumeIoTime",
+          "type": "UInt64",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "securePagesProcessed",
+          "type": "UInt64",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "sleepState",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "totalHibernateTime",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "totalResumeTime",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "totalSleepTime",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SleepResumeReason",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "WakeSourceText:CountedString",
+            "WakeTimerOwner:CountedString",
+            "WakeTimerContext:CountedString",
+            "SleepState:UInt32",
+            "IsBatteryStatsReliable:Bool32",
+            "AcOnLine:Bool32",
+            "RemainingCapacity:UInt32",
+            "MaxCapacity:UInt32",
+            "IsAcpiTimer:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "pots.dll",
+              "function": "PoWdiLogResumeEvent",
+              "ea": "0x1800033f2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AcOnLine",
+          "type": "Bool32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "IsAcpiTimer",
+          "type": "Bool32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "IsBatteryStatsReliable",
+          "type": "Bool32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "MaxCapacity",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "RemainingCapacity",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "SleepState",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "WakeSourceText",
+          "type": "CountedString",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "WakeTimerContext",
+          "type": "CountedString",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "WakeTimerOwner",
+          "type": "CountedString",
+          "seenIn": [
+            "pots.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SleepResumeVeto",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "sleepState:UInt32",
+            "attributes:UInt32",
+            "vetoType:UInt32",
+            "vetoName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "pots.dll",
+              "function": "PoWdiLogVetoTelemetry",
+              "ea": "0x180003d84",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "attributes",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "sleepState",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "vetoName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "pots.dll"
+          ]
+        },
+        {
+          "fieldName": "vetoType",
+          "type": "UInt32",
+          "seenIn": [
+            "pots.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

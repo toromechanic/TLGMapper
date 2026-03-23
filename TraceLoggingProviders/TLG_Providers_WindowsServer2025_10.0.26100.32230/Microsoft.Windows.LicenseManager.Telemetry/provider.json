@@ -1,0 +1,3477 @@
+{
+  "providerName": "Microsoft.Windows.LicenseManager.Telemetry",
+  "guid": "{AF9F58EC-0C04-4BE9-9EB5-55FF6DBE72D7}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "LicenseManager.dll",
+    "LicenseManagerApi.dll"
+  ],
+  "uniqueEventCount": 50,
+  "events": [
+    {
+      "eventName": "BeginAcquireStoreLicenseForPackageActivation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PackageFullName:UnicodeString",
+            "StorePackageActivationOptions:HexInt32",
+            "UserContext:HexInt64",
+            "ResultCode:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManagerApi.dll",
+              "function": "BeginAcquireStoreLicenseForPackageActivation2",
+              "ea": "0x180011556",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        },
+        {
+          "fieldName": "ResultCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        },
+        {
+          "fieldName": "StorePackageActivationOptions",
+          "type": "HexInt32",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        },
+        {
+          "fieldName": "UserContext",
+          "type": "HexInt64",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BeginUsageAuditHasNoLease",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "contentId:UnicodeString",
+            "usage:UInt32",
+            "hasLease:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?LogAuditBeginEvent@KeyMachine@@IEAAXXZ",
+              "ea": "0x180046564",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "contentId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "hasLease",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "usage",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DoAuditLeaseUsageForUnexpectedGrantReason",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ContentId:UnicodeString",
+            "LicenseGrantReason:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?DoAuditLeaseUsage@KeyMachine@@KAXAEBV?$ComPtr@UIStoredLeaseDocument@@@WRL@Microsoft@@AEBVContentIdString@@_KAEBU_GUID@@AEBV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@AEAK@Z",
+              "ea": "0x180074812",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ContentId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "LicenseGrantReason",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DoLicenseUseCompletedAuditing",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ContentId:UnicodeString",
+            "HResult:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?EnterState@Invalid@KeyMachine@@UEBAXAEAV2@@Z",
+              "ea": "0x1800b6db8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ContentId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DropLeaseSuccess",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "__TlgCV__:AnsiString",
+            "PartB_Ms.Qos.OutgoingServiceRequest:Struct(NTStatus)",
+            "operationName:UnicodeString",
+            "targetUri:UnicodeString",
+            "latencyMs:Int32",
+            "serviceErrorCode:UnicodeString",
+            "succeeded:UInt8(Boolean)",
+            "requestMethod:UnicodeString",
+            "responseContentType:UnicodeString",
+            "protocol:UnicodeString",
+            "protocolStatusCode:Int32",
+            "dependencyOperationName:UnicodeString",
+            "dependencyOperationVersion:UnicodeString",
+            "dependencyName:UnicodeString",
+            "dependencyType:UnicodeString",
+            "responseSizeBytes:Int32",
+            "leaseId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?LogDropLeaseSuccess@@YAXPEBDPEBGAEBVHttpRequest@@AEBVHttpResponse@@_K@Z",
+              "ea": "0x18009b165",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartB_Ms.Qos.OutgoingServiceRequest",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyOperationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyOperationVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "latencyMs",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "leaseId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "operationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "protocol",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "protocolStatusCode",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "requestMethod",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "responseContentType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "responseSizeBytes",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "serviceErrorCode",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "succeeded",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "targetUri",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EnsureStoreLicenseForOptionalPackageUsage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PackageFullName:UnicodeString",
+            "SessionID:HexInt32",
+            "OptionalPackageFullName:UnicodeString",
+            "Latency:Int64",
+            "ResultCode:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManagerApi.dll",
+              "function": "EnsureStoreLicenseForOptionalPackageUsage",
+              "ea": "0x180011b32",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Latency",
+          "type": "Int64",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        },
+        {
+          "fieldName": "OptionalPackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        },
+        {
+          "fieldName": "ResultCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionID",
+          "type": "HexInt32",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EnsureStoreLicenseForPackageActivation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PackageFullName:UnicodeString",
+            "SessionID:HexInt32",
+            "Latency:Int64",
+            "ResultCode:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManagerApi.dll",
+              "function": "EnsureStoreLicenseForPackageActivation2",
+              "ea": "0x18001212e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Latency",
+          "type": "Int64",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        },
+        {
+          "fieldName": "ResultCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionID",
+          "type": "HexInt32",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EnterInvalidStateFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ContentId:UnicodeString",
+            "HResult:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?EnterState@Invalid@KeyMachine@@UEBAXAEAV2@@Z",
+              "ea": "0x1800b6ea0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ContentId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExchangeKeyForEntitlementSuccess",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "__TlgCV__:AnsiString",
+            "PartB_Ms.Qos.OutgoingServiceRequest:Struct(NTStatus)",
+            "operationName:UnicodeString",
+            "targetUri:UnicodeString",
+            "latencyMs:Int32",
+            "serviceErrorCode:UnicodeString",
+            "succeeded:UInt8(Boolean)",
+            "requestMethod:UnicodeString",
+            "responseContentType:UnicodeString",
+            "protocol:UnicodeString",
+            "protocolStatusCode:Int32",
+            "dependencyOperationName:UnicodeString",
+            "dependencyOperationVersion:UnicodeString",
+            "dependencyName:UnicodeString",
+            "dependencyType:UnicodeString",
+            "responseSizeBytes:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?LogExchangeForEntitlementSuccess@@YAXPEBDAEBVHttpRequest@@AEBVHttpResponse@@_K@Z",
+              "ea": "0x18009b398",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartB_Ms.Qos.OutgoingServiceRequest",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyOperationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyOperationVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "latencyMs",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "operationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "protocol",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "protocolStatusCode",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "requestMethod",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "responseContentType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "responseSizeBytes",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "serviceErrorCode",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "succeeded",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "targetUri",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ExistingOSLicenseInstalled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "installed:UInt8(Boolean)",
+            "contentId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?LogExistingOSLicenseInstalled@@YAX_NPEBG@Z",
+              "ea": "0x18009b462",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "contentId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "installed",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FullNegotiateForcedBecauseMissingLeaseIsRequired",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "ContentId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?DoLicenseThreadProc@KeyMachine@@KAKPEAX@Z",
+              "ea": "0x1800183c7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ContentId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FullNegotiateForcedBecauseOfKeyQuality",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "ContentId:UnicodeString",
+            "Quality:UInt32",
+            "QualityDetailCode:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?DoLicenseThreadProc@KeyMachine@@KAKPEAX@Z",
+              "ea": "0x180017fcf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ContentId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "Quality",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "QualityDetailCode",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FullNegotiateForcedBecauseOfNoLocalLicense",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "ContentId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?DoLicenseThreadProc@KeyMachine@@KAKPEAX@Z",
+              "ea": "0x18001842d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ContentId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GetConsoleUserIdsLinkedToPuid",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PUID:UnicodeString",
+            "ErrorCode:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?GetConsoleUserIdsLinkedToPuid@KeyMachine@@KA?AV?$vector@IV?$allocator@I@std@@@std@@AEBV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@3@AEBV?$ComPtr@UILicenseIdentityContext@@@WRL@Microsoft@@@Z",
+              "ea": "0x1800b8503",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PUID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InvalidPushNotificationContent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "RawContent:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?HandleNotificationReceived@WnsNotificationSink@@QEAAJPEAUIWpnNotification@@@Z",
+              "ea": "0x18009e147",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?NotificationCallback@WnsNotificationSink@@UEAAJKPEBG00U_WPN_FILE_TIME@@KKH0HPEBD@Z",
+              "ea": "0x18009e505",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "RawContent",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "JsonIsMalformed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "operationName:AnsiString",
+            "ServerName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?LogMalformedJson@@YAXPEBDPEBG@Z",
+              "ea": "0x18009b4d1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ServerName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "operationName",
+          "type": "AnsiString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LicenseManagerBlockingActivationOrResume",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PackageFullName:UnicodeString",
+            "Reason:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?ServiceEnsureLicenseForPackageActivationImpl@@YAJPEAXPEBGK1KQEBU_GUID@@@Z",
+              "ea": "0x1800b94f7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Package`FullName:UnicodeString",
+            "Reason:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?ServicePrecacheLicenseForPackageResumeImpl@@YAJPEAXPEBGK1@Z",
+              "ea": "0x1800b9652",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "Package`FullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LicenseServiceFault",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "__TlgCV__:AnsiString",
+            "PartB_Ms.Qos.OutgoingServiceRequest:Struct(NTStatus)",
+            "operationName:UnicodeString",
+            "targetUri:UnicodeString",
+            "latencyMs:Int32",
+            "serviceErrorCode:UnicodeString",
+            "succeeded:UInt8(Boolean)",
+            "requestMethod:UnicodeString",
+            "responseContentType:UnicodeString",
+            "protocol:UnicodeString",
+            "protocolStatusCode:Int32",
+            "dependencyOperationName:UnicodeString",
+            "dependencyOperationVersion:UnicodeString",
+            "dependencyName:UnicodeString",
+            "dependencyType:UnicodeString",
+            "responseSizeBytes:Int32",
+            "description:UnicodeString",
+            "param:UnicodeString",
+            "serverId:UnicodeString",
+            "source:UnicodeString",
+            "target:UnicodeString",
+            "data:UnicodeString",
+            "TokenBrokerResult:Int32",
+            "NumberOfMSATickets:Int32",
+            "NumberOfAADTickets:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?LogServiceFault@@YAXPEBDPEBG1AEBVHttpRequest@@AEBVHttpResponse@@AEBVvalue@json@web@@_KAEBV?$ComPtr@UILicenseIdentityInternalSnapshot@@@WRL@Microsoft@@@Z",
+              "ea": "0x1800451c8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NumberOfAADTickets",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "NumberOfMSATickets",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PartB_Ms.Qos.OutgoingServiceRequest",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "TokenBrokerResult",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "data",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyOperationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyOperationVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "description",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "latencyMs",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "operationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "param",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "protocol",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "protocolStatusCode",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "requestMethod",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "responseContentType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "responseSizeBytes",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "serverId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "serviceErrorCode",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "source",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "succeeded",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "target",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "targetUri",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogRequestSubscriptionRootsSuccess",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "__TlgCV__:AnsiString",
+            "PartB_Ms.Qos.OutgoingServiceRequest:Struct(NTStatus)",
+            "operationName:UnicodeString",
+            "targetUri:UnicodeString",
+            "latencyMs:Int32",
+            "serviceErrorCode:UnicodeString",
+            "succeeded:UInt8(Boolean)",
+            "requestMethod:UnicodeString",
+            "responseContentType:UnicodeString",
+            "protocol:UnicodeString",
+            "protocolStatusCode:Int32",
+            "dependencyOperationName:UnicodeString",
+            "dependencyOperationVersion:UnicodeString",
+            "dependencyName:UnicodeString",
+            "dependencyType:UnicodeString",
+            "responseSizeBytes:Int32",
+            "contentId:UnicodeString",
+            "leaseCount:Int64",
+            "keyCount:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?LogRequestSubscriptionRootsSuccess@@YAXPEBDPEBG1AEBVHttpRequest@@AEBVHttpResponse@@AEBVvalue@json@web@@_K@Z",
+              "ea": "0x18009b87e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartB_Ms.Qos.OutgoingServiceRequest",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "contentId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyOperationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyOperationVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "keyCount",
+          "type": "Int64",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "latencyMs",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "leaseCount",
+          "type": "Int64",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "operationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "protocol",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "protocolStatusCode",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "requestMethod",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "responseContentType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "responseSizeBytes",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "serviceErrorCode",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "succeeded",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "targetUri",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogRequestUserRootSuccess",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "__TlgCV__:AnsiString",
+            "PartB_Ms.Qos.OutgoingServiceRequest:Struct(NTStatus)",
+            "operationName:UnicodeString",
+            "targetUri:UnicodeString",
+            "latencyMs:Int32",
+            "serviceErrorCode:UnicodeString",
+            "succeeded:UInt8(Boolean)",
+            "requestMethod:UnicodeString",
+            "responseContentType:UnicodeString",
+            "protocol:UnicodeString",
+            "protocolStatusCode:Int32",
+            "dependencyOperationName:UnicodeString",
+            "dependencyOperationVersion:UnicodeString",
+            "dependencyName:UnicodeString",
+            "dependencyType:UnicodeString",
+            "responseSizeBytes:Int32",
+            "contentId:UnicodeString",
+            "leaseCount:Int64",
+            "keyCount:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?LogRequestUserRootSuccess@@YAXPEBDPEBG1AEBVHttpRequest@@AEBVHttpResponse@@AEBVvalue@json@web@@_K@Z",
+              "ea": "0x18009bc0d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartB_Ms.Qos.OutgoingServiceRequest",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "contentId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyOperationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyOperationVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "keyCount",
+          "type": "Int64",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "latencyMs",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "leaseCount",
+          "type": "Int64",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "operationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "protocol",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "protocolStatusCode",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "requestMethod",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "responseContentType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "responseSizeBytes",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "serviceErrorCode",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "succeeded",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "targetUri",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OptionalPackageRundownNotificationForStoreLicense",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PackageFullName:UnicodeString",
+            "SessionID:HexInt32",
+            "OptionalPackageFullName:UnicodeString",
+            "ResultCode:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManagerApi.dll",
+              "function": "OptionalPackageRundownNotificationForStoreLicense",
+              "ea": "0x1800124fe",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OptionalPackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        },
+        {
+          "fieldName": "ResultCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionID",
+          "type": "HexInt32",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PackageRundownNotificationForStoreLicense",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PackageFullName:UnicodeString",
+            "SessionID:HexInt32",
+            "ResultCode:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManagerApi.dll",
+              "function": "PackageRundownNotificationForStoreLicense2",
+              "ea": "0x1800127a1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        },
+        {
+          "fieldName": "ResultCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionID",
+          "type": "HexInt32",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PackageSuspendedNotificationForStoreLicense",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PackageFullName:UnicodeString",
+            "SessionID:HexInt32",
+            "ResultCode:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManagerApi.dll",
+              "function": "PackageSuspendedNotificationForStoreLicense2",
+              "ea": "0x180012ad2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        },
+        {
+          "fieldName": "ResultCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionID",
+          "type": "HexInt32",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PassRootLookupError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ErrorCode:UInt32",
+            "PassContentId:UnicodeString",
+            "PassLeaseId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?RequestRootLicenses@LicenseProxyService@@UEAAJPEAUILicenseRootRequestData@@PEAPEAUILicenseRootResponseData@@@Z",
+              "ea": "0x180021706",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PassContentId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PassLeaseId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PrecacheStoreLicenseForPackageResume",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PackageFullName:UnicodeString",
+            "SessionID:HexInt32",
+            "Latency:Int64",
+            "ResultCode:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManagerApi.dll",
+              "function": "PrecacheStoreLicenseForPackageResume2",
+              "ea": "0x180012fee",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Latency",
+          "type": "Int64",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        },
+        {
+          "fieldName": "ResultCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        },
+        {
+          "fieldName": "SessionID",
+          "type": "HexInt32",
+          "seenIn": [
+            "LicenseManagerApi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PublishWnfForExpiredTrial",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x200000000000",
+          "fields": [
+            "Reason:UInt32",
+            "PackageFullName:UnicodeString",
+            "UserIdStr:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?PublishWnfForExpiredTrial@LicenseInstanceChangeListener@@QEAAXXZ",
+              "ea": "0x18007f852",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "UserIdStr",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PublishWnfForExpiredTrialFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartB_Ms.Telemetry.Error:Struct(PID)",
+            "ErrorMessage:UnicodeString",
+            "ErrorCode:UInt32(NTStatus)",
+            "ErrorLocation:AnsiString",
+            "LineNumber:UInt32",
+            "ErrorMethod:AnsiString",
+            "PackageFullName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?PublishWnfForExpiredTrial@LicenseInstanceChangeListener@@QEAAXXZ",
+              "ea": "0x18007f7c5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorLocation",
+          "type": "AnsiString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorMethod",
+          "type": "AnsiString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "LineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PartB_Ms.Telemetry.Error",
+          "type": "Struct(PID)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PublishWnfForOfflinePcChangeFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartB_Ms.Telemetry.Error:Struct(PID)",
+            "ErrorMessage:UnicodeString",
+            "ErrorCode:Int32(HResult)",
+            "ErrorLocation:AnsiString",
+            "LineNumber:UInt32",
+            "ErrorMethod:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?WnfEventHandlerForOfflinePcChangeImpl@@YAJU_WNF_STATE_NAME@@KPEAU_WNF_TYPE_ID@@PEAXPEBXK@Z",
+              "ea": "0x180083f44",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorLocation",
+          "type": "AnsiString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorMethod",
+          "type": "AnsiString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "LineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PartB_Ms.Telemetry.Error",
+          "type": "Struct(PID)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PublishWnfForTrialLicense",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "Reason:UInt32",
+            "PackageFullName:UnicodeString",
+            "UserIdStr:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?PublishWnfForTrialLicense@@YAXPEBGV?$ComPtr@UILicenseInstance@@@WRL@Microsoft@@@Z",
+              "ea": "0x1800800e6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "NTSTATUS:UInt32",
+            "Reason:UInt32",
+            "PackageFullName:UnicodeString",
+            "UserIdStr:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?PublishWnfForTrialLicense@@YAXPEBGV?$ComPtr@UILicenseInstance@@@WRL@Microsoft@@@Z",
+              "ea": "0x180080403",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NTSTATUS",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "UserIdStr",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PublishWnfForTrialLicenseFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartB_Ms.Telemetry.Error:Struct(PID)",
+            "ErrorMessage:UnicodeString",
+            "ErrorCode:UInt32(NTStatus)",
+            "ErrorLocation:AnsiString",
+            "LineNumber:UInt32",
+            "ErrorMethod:AnsiString",
+            "PackageFullName:UnicodeString",
+            "UserIdStr:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?PublishWnfForTrialLicense@@YAXPEBGV?$ComPtr@UILicenseInstance@@@WRL@Microsoft@@@Z",
+              "ea": "0x180080072",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?PublishWnfForTrialLicense@@YAXPEBGV?$ComPtr@UILicenseInstance@@@WRL@Microsoft@@@Z",
+              "ea": "0x18008037d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorLocation",
+          "type": "AnsiString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorMethod",
+          "type": "AnsiString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "LineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PartB_Ms.Telemetry.Error",
+          "type": "Struct(PID)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "UserIdStr",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PushNotificationChannelFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "ErrorCode:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?Start@WnsListener@@UEAAXXZ",
+              "ea": "0x18009f7ed",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ReactiveLicensingResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HResult:UInt32",
+            "AppPackageFullName:UnicodeString",
+            "latencyMs:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?LogReactiveLicensingResult@@YAXJAEBV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@_K@Z",
+              "ea": "0x18004491b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppPackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "latencyMs",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RenewLeaseSuccess",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "__TlgCV__:AnsiString",
+            "PartB_Ms.Qos.OutgoingServiceRequest:Struct(NTStatus)",
+            "operationName:UnicodeString",
+            "targetUri:UnicodeString",
+            "latencyMs:Int32",
+            "serviceErrorCode:UnicodeString",
+            "succeeded:UInt8(Boolean)",
+            "requestMethod:UnicodeString",
+            "responseContentType:UnicodeString",
+            "protocol:UnicodeString",
+            "protocolStatusCode:Int32",
+            "dependencyOperationName:UnicodeString",
+            "dependencyOperationVersion:UnicodeString",
+            "dependencyName:UnicodeString",
+            "dependencyType:UnicodeString",
+            "responseSizeBytes:Int32",
+            "leaseId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?LogRenewLeaseSuccess@@YAXPEBDPEBGAEBVHttpRequest@@AEBVHttpResponse@@AEBVvalue@json@web@@_K@Z",
+              "ea": "0x180060a01",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartB_Ms.Qos.OutgoingServiceRequest",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyOperationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyOperationVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "latencyMs",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "leaseId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "operationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "protocol",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "protocolStatusCode",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "requestMethod",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "responseContentType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "responseSizeBytes",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "serviceErrorCode",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "succeeded",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "targetUri",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RequestLicenseSuccess",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "__TlgCV__:AnsiString",
+            "PartB_Ms.Qos.OutgoingServiceRequest:Struct(NTStatus)",
+            "operationName:UnicodeString",
+            "targetUri:UnicodeString",
+            "latencyMs:Int32",
+            "serviceErrorCode:UnicodeString",
+            "succeeded:UInt8(Boolean)",
+            "requestMethod:UnicodeString",
+            "responseContentType:UnicodeString",
+            "protocol:UnicodeString",
+            "protocolStatusCode:Int32",
+            "dependencyOperationName:UnicodeString",
+            "dependencyOperationVersion:UnicodeString",
+            "dependencyName:UnicodeString",
+            "dependencyType:UnicodeString",
+            "responseSizeBytes:Int32",
+            "contentId:UnicodeString",
+            "leaseCount:Int64",
+            "keyCount:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?LogRequestLicenseSuccess@@YAXPEBDPEBG1AEBVHttpRequest@@AEBVHttpResponse@@AEBVvalue@json@web@@_K@Z",
+              "ea": "0x180025b3e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartB_Ms.Qos.OutgoingServiceRequest",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "contentId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyOperationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyOperationVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "dependencyType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "keyCount",
+          "type": "Int64",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "latencyMs",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "leaseCount",
+          "type": "Int64",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "operationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "protocol",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "protocolStatusCode",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "requestMethod",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "responseContentType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "responseSizeBytes",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "serviceErrorCode",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "succeeded",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "targetUri",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RootMachineInitialConnectFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HResult:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?Connect@Initial@RootMachine@@UEBAXAEAV2@AEBV?$ComPtr@UILicenseIdentityContext@@@WRL@Microsoft@@AEBV?$ComPtr@UIRootsCallback@@@45@@Z",
+              "ea": "0x1800bc717",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RootMachineInitialEnsureAllKeysAndLeasesFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "HResult:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?EnsureAllKeysAndLeases@Initial@RootMachine@@UEBAXAEAV2@AEBV?$ComPtr@UIRootsCallback@@@WRL@Microsoft@@@Z",
+              "ea": "0x1800bc802",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SatisfactionError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "__TlgCV__:AnsiString",
+            "FaultCode:Int32",
+            "Description:UnicodeString",
+            "ServerId:UnicodeString",
+            "TokenBrokerResult:Int32",
+            "NumberOfMSATickets:Int32",
+            "NumberOfAADTickets:Int32",
+            "ContentId:UnicodeString",
+            "PackageFamilyName:UnicodeString",
+            "ValidExistingKey:UInt8(Boolean)",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?LogSatisfactionError@@YAXPEBDAEBVHttpResponse@@AEBVvalue@json@web@@AEBV?$ComPtr@UILicenseIdentityInternalSnapshot@@@WRL@Microsoft@@PEBG4_NJ@Z",
+              "ea": "0x18009bf38",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ContentId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "Description",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "FaultCode",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "NumberOfAADTickets",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "NumberOfMSATickets",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFamilyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ServerId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "TokenBrokerResult",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ValidExistingKey",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ServiceBeginAcquireLicenseImpl",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PackageFullName:UnicodeString",
+            "IsSystemUsage:Bool32",
+            "CurrectTick:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?ServiceBeginAcquireLicenseImpl@@YAJPEAXPEBGH_K@Z",
+              "ea": "0x18000a825",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CurrectTick",
+          "type": "UInt64",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "IsSystemUsage",
+          "type": "Bool32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ServiceEnsureLicenseForOptionalPackageUsageImpl",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PackageFullName:UnicodeString",
+            "ErrorCode:UInt32",
+            "DurationBlockingPackageMount:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?ServiceEnsureLicenseForOptionalPackageUsageImpl@@YAJPEAXPEBGK11U_GUID@@@Z",
+              "ea": "0x1800819bf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DurationBlockingPackageMount",
+          "type": "UInt64",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ServiceEnsureLicenseForPackageActivationImpl",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PackageFullName:UnicodeString",
+            "ErrorCode:UInt32",
+            "DurationBlockingAppActive:UInt64",
+            "CurrectTick:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?ServiceEnsureLicenseForPackageActivationImpl@@YAJPEAXPEBGK1KQEBU_GUID@@@Z",
+              "ea": "0x180081da8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CurrectTick",
+          "type": "UInt64",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationBlockingAppActive",
+          "type": "UInt64",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ServiceOptionalPackageRundownNotificationImpl",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PackageFullName:UnicodeString",
+            "ErrorCode:UInt32",
+            "DurationBlockingPackageCleanup:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?ServiceOptionalPackageRundownNotificationImpl@@YAJPEBGK00@Z",
+              "ea": "0x18005b5d6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DurationBlockingPackageCleanup",
+          "type": "UInt64",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ServicePackageRundownNotificationImpl",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PackageFullName:UnicodeString",
+            "ErrorCode:UInt32",
+            "DurationBlockingPackageCleanup:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?ServicePackageRundownNotificationImpl@@YAJPEBGK0@Z",
+              "ea": "0x180008c4e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DurationBlockingPackageCleanup",
+          "type": "UInt64",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ServicePackageSuspendedNotificationImpl",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PackageFullName:UnicodeString",
+            "ErrorCode:UInt32",
+            "DurationBlockingAppSuspend:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?ServicePackageSuspendedNotificationImpl@@YAJPEBGK0KQEBU_GUID@@@Z",
+              "ea": "0x180082274",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DurationBlockingAppSuspend",
+          "type": "UInt64",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ServicePrecacheLicenseForPackageResumeImpl",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PackageFullName:UnicodeString",
+            "ErrorCode:UInt32",
+            "DurationBlockingAppActive:UInt64",
+            "CurrectTick:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?ServicePrecacheLicenseForPackageResumeImpl@@YAJPEAXPEBGK1@Z",
+              "ea": "0x1800825f8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CurrectTick",
+          "type": "UInt64",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationBlockingAppActive",
+          "type": "UInt64",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnexpectedRunningKeyState",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ErrorCode:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?GetExistingKeysAndLeasesFromStoredKeys@LicenseManagerCore@@AEAAXAEBV?$ComPtr@UILicenseIdentityContext@@@WRL@Microsoft@@_NAEAV?$ComArray@U?$ComInterfaceTraits@UIStoredKeyDocument@@@@@@AEAV?$ComArray@U?$ComInterfaceTraits@UIStoredLeaseDocument@@@@@@@Z",
+              "ea": "0x18001cdd2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnhandledPushNotification",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Code:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?HandleNotificationReceived@WnsNotificationSink@@QEAAJPEAUIWpnNotification@@@Z",
+              "ea": "0x18009e2ef",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Code",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnleaseOptionalPackageFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartB_Ms.Telemetry.Error:Struct(PID)",
+            "ErrorMessage:UnicodeString",
+            "ErrorCode:Int32(HResult)",
+            "ErrorLocation:AnsiString",
+            "LineNumber:UInt32",
+            "ErrorMethod:AnsiString",
+            "PackageFullName:UnicodeString",
+            "OptionalPackageFullName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?UnleaseAllPackages@@YAXPEBGK0@Z",
+              "ea": "0x1800b9942",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorLocation",
+          "type": "AnsiString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorMethod",
+          "type": "AnsiString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "LineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "OptionalPackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PartB_Ms.Telemetry.Error",
+          "type": "Struct(PID)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UsageAuditHasTimeButNoKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "contentId:UnicodeString",
+            "usage:UInt32",
+            "hasLease:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?LogAuditCompetionEvent@KeyMachine@@IEAAXAEBV?$ComPtr@UIStoredKeyDocument@@@WRL@Microsoft@@AEBV?$ComPtr@UIStoredLeaseDocument@@@34@_K@Z",
+              "ea": "0x18004a47e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "contentId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "hasLease",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "usage",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UserRootLookupError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ErrorCode:UInt32",
+            "UserRootContentId:UnicodeString",
+            "UserRootLeaseId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?RequestRootLicenses@LicenseProxyService@@UEAAJPEAUILicenseRootRequestData@@PEAPEAUILicenseRootResponseData@@@Z",
+              "ea": "0x18002147f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "UserRootContentId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "UserRootLeaseId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WnsCallbackRegistrationSuccess",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "__TlgCV__:AnsiString",
+            "PartB_Ms.Qos.OutgoingServiceRequest:Struct(NTStatus)",
+            "operationName:UnicodeString",
+            "TargetUri:UnicodeString",
+            "LatencyMs:Int32",
+            "ServiceErrorCode:UnicodeString",
+            "Succeeded:UInt8(Boolean)",
+            "RequestMethod:UnicodeString",
+            "ResponseContentType:UnicodeString",
+            "Protocol:UnicodeString",
+            "ProtocolStatusCode:Int32",
+            "DependencyOperationName:UnicodeString",
+            "DependencyOperationVersion:UnicodeString",
+            "DependencyName:UnicodeString",
+            "DependencyType:UnicodeString",
+            "ResponseSizeBytes:Int32",
+            "NumberOfLeaseUris:Int32",
+            "ChannelUri:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "LicenseManager.dll",
+              "function": "?LogWnsCallbackRegistrationSuccess@@YAXPEBDIPEBGAEBVHttpRequest@@AEBVHttpResponse@@_K@Z",
+              "ea": "0x18009c1e9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ChannelUri",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "DependencyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "DependencyOperationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "DependencyOperationVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "DependencyType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "LatencyMs",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "NumberOfLeaseUris",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PartB_Ms.Qos.OutgoingServiceRequest",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "Protocol",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ProtocolStatusCode",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "RequestMethod",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ResponseContentType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ResponseSizeBytes",
+          "type": "Int32",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ServiceErrorCode",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "Succeeded",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetUri",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        },
+        {
+          "fieldName": "operationName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "LicenseManager.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

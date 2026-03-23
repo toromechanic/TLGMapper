@@ -1,0 +1,68 @@
+{
+  "providerName": "Microsoft.Windows.HyperV.VID",
+  "guid": "{1111450B-DACC-40A3-84AB-F7DBA4A6E63A}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "Vid.sys",
+    "Vid_wvid.inf_amd64_aa2da30d32523d2c_116C4C45.sys"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "VmMemInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "VmGuid:GUID",
+            "Pid:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "Vid.sys",
+              "function": "VsmmProcesspLogVmMemInfo",
+              "ea": "0x140070b39",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "Vid_wvid.inf_amd64_aa2da30d32523d2c_116C4C45.sys",
+              "function": "VsmmProcesspLogVmMemInfo",
+              "ea": "0x140070b39",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Vid.sys",
+            "Vid_wvid.inf_amd64_aa2da30d32523d2c_116C4C45.sys"
+          ]
+        },
+        {
+          "fieldName": "Pid",
+          "type": "UInt64",
+          "seenIn": [
+            "Vid.sys",
+            "Vid_wvid.inf_amd64_aa2da30d32523d2c_116C4C45.sys"
+          ]
+        },
+        {
+          "fieldName": "VmGuid",
+          "type": "GUID",
+          "seenIn": [
+            "Vid.sys",
+            "Vid_wvid.inf_amd64_aa2da30d32523d2c_116C4C45.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

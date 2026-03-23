@@ -1,0 +1,1155 @@
+{
+  "providerName": "Microsoft.Windows.Security.CodeIntegrity.Driver",
+  "guid": "{3EB30880-CC91-5EB0-24A0-50A6A52315FC}",
+  "os": "WindowsServer2025",
+  "binaryCount": 6,
+  "binaries": [
+    "CodeIntegrityAggregator.dll",
+    "ci.dll",
+    "winload.exe",
+    "winload_System32_C0274587.exe",
+    "winresume.exe",
+    "winresume_System32_BE9DCAB2.exe"
+  ],
+  "uniqueEventCount": 5,
+  "events": [
+    {
+      "eventName": "AggregatedBlock",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "EventVersion:UInt32",
+            "DriverInfo:UnicodeString",
+            "CertificateInfo:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "CodeIntegrityAggregator.dll",
+              "function": "?SendAggregatedEventBlock@CodeIntegrityAggregator@Diagnostics@Microsoft@@AEAAXAEBV?$basic_stringstream@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@0@Z",
+              "ea": "0x180018497",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CertificateInfo",
+          "type": "UnicodeString",
+          "seenIn": [
+            "CodeIntegrityAggregator.dll"
+          ]
+        },
+        {
+          "fieldName": "DriverInfo",
+          "type": "UnicodeString",
+          "seenIn": [
+            "CodeIntegrityAggregator.dll"
+          ]
+        },
+        {
+          "fieldName": "EventVersion",
+          "type": "UInt32",
+          "seenIn": [
+            "CodeIntegrityAggregator.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "CodeIntegrityAggregator.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AggregatedLoad",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "EventVersion:UInt32",
+            "DriverInfo:UnicodeString",
+            "CertificateInfo:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "CodeIntegrityAggregator.dll",
+              "function": "?SendAggregatedEventAllow@CodeIntegrityAggregator@Diagnostics@Microsoft@@AEAAXAEBV?$basic_stringstream@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@0@Z",
+              "ea": "0x18001838b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CertificateInfo",
+          "type": "UnicodeString",
+          "seenIn": [
+            "CodeIntegrityAggregator.dll"
+          ]
+        },
+        {
+          "fieldName": "DriverInfo",
+          "type": "UnicodeString",
+          "seenIn": [
+            "CodeIntegrityAggregator.dll"
+          ]
+        },
+        {
+          "fieldName": "EventVersion",
+          "type": "UInt32",
+          "seenIn": [
+            "CodeIntegrityAggregator.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "CodeIntegrityAggregator.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Allow",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "InternalEventVersion:UInt32",
+            "FileName:CountedString",
+            "AuthenticodeAlgId:UInt32",
+            "AuthenticodeFileHash:UInt8[](Hex)",
+            "IsEmbeddedSigned:UInt16",
+            "IsRuntime:UInt16",
+            "Timestamp:UInt32",
+            "VerificationStatus:HexInt32",
+            "RootPolicyBits:HexInt32",
+            "SigningTime:FileTime",
+            "CurrentSystemTime:FileTime",
+            "TBSHashAlgID:UInt32",
+            "TBSHash:UInt8[]",
+            "SecureRequiredFlags:HexInt32",
+            "SigningScenario:UInt32",
+            "IsPageHashSigned:UInt16",
+            "Publisher:CountedString",
+            "Issuer:CountedString",
+            "ValidFrom:SystemTime",
+            "ValidTo:SystemTime",
+            "FailedPicrootExceptionsPolicy:UInt8(Boolean)",
+            "PicrootExceptionsPolicyVersion:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ci.dll",
+              "function": "CiAuditDriverAllow",
+              "ea": "0x1800599b3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "InternalEventVersion:UInt32",
+            "FileName:UnicodeString",
+            "AuthenticodeAlgId:UInt32",
+            "AuthenticodeFileHash:UInt8[]",
+            "IsEmbeddedSigned:UInt16",
+            "IsRuntime:UInt16",
+            "Timestamp:UInt32",
+            "VerificationStatus:HexInt32",
+            "RootPolicyBits:HexInt32",
+            "SigningTime:FileTime",
+            "CurrentSystemTime:FileTime",
+            "SigningScenario:UInt32",
+            "TBSHashAlgID:UInt32",
+            "TBSHash:UInt8[]",
+            "SecureRequiredFlags:HexInt32",
+            "IsPageHashSigned:UInt16",
+            "Issuer:CountedString",
+            "Publisher:CountedString",
+            "ValidFrom:FileTime",
+            "ValidTo:FileTime",
+            "FailedPicrootExceptionsPolicy:UInt8(Boolean)",
+            "PicrootExceptionsPolicyVersion:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "winload.exe",
+              "function": "ImgpFireAllowEventToCIAggregator",
+              "ea": "0x1800a8373",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winload_System32_C0274587.exe",
+              "function": "ImgpFireAllowEventToCIAggregator",
+              "ea": "0x1800a8373",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winresume.exe",
+              "function": "ImgpFireAllowEventToCIAggregator",
+              "ea": "0x483f63",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winresume_System32_BE9DCAB2.exe",
+              "function": "ImgpFireAllowEventToCIAggregator",
+              "ea": "0x483f63",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AuthenticodeAlgId",
+          "type": "UInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "AuthenticodeFileHash",
+          "type": "UInt8[]",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "AuthenticodeFileHash",
+          "type": "UInt8[](Hex)",
+          "seenIn": [
+            "ci.dll"
+          ]
+        },
+        {
+          "fieldName": "CurrentSystemTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "FailedPicrootExceptionsPolicy",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "FileName",
+          "type": "CountedString",
+          "seenIn": [
+            "ci.dll"
+          ]
+        },
+        {
+          "fieldName": "FileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "InternalEventVersion",
+          "type": "UInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "IsEmbeddedSigned",
+          "type": "UInt16",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "IsPageHashSigned",
+          "type": "UInt16",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "IsRuntime",
+          "type": "UInt16",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "Issuer",
+          "type": "CountedString",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "PicrootExceptionsPolicyVersion",
+          "type": "UInt64",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "Publisher",
+          "type": "CountedString",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "RootPolicyBits",
+          "type": "HexInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "SecureRequiredFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "SigningScenario",
+          "type": "UInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "SigningTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "TBSHash",
+          "type": "UInt8[]",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "TBSHashAlgID",
+          "type": "UInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "Timestamp",
+          "type": "UInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "ValidFrom",
+          "type": "FileTime",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "ValidFrom",
+          "type": "SystemTime",
+          "seenIn": [
+            "ci.dll"
+          ]
+        },
+        {
+          "fieldName": "ValidTo",
+          "type": "FileTime",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "ValidTo",
+          "type": "SystemTime",
+          "seenIn": [
+            "ci.dll"
+          ]
+        },
+        {
+          "fieldName": "VerificationStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Block",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "InternalEventVersion:UInt32",
+            "FileName:CountedString",
+            "StatusCode:HexInt32",
+            "AuthenticodeAlgId:UInt32",
+            "AuthenticodeFileHash:UInt8[]",
+            "IsSignatureBlocked:UInt16",
+            "IsEmbeddedSigned:UInt16",
+            "IsRuntime:UInt16",
+            "Timestamp:UInt32",
+            "VerificationStatus:HexInt32",
+            "RootPolicyBits:HexInt32",
+            "SigningTime:FileTime",
+            "CurrentSystemTime:FileTime",
+            "SigningScenario:UInt32",
+            "TBSHashAlgID:UInt32",
+            "TBSHash:UInt8[]",
+            "SecureRequiredFlags:HexInt32",
+            "IsPageHashSigned:UInt16",
+            "Issuer:CountedString",
+            "Publisher:CountedString",
+            "ValidFrom:FileTime",
+            "ValidTo:FileTime",
+            "FailedPicrootExceptionsPolicy:UInt8(Boolean)",
+            "PicrootExceptionsPolicyVersion:UInt64",
+            "FailedPolicyGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "ci.dll",
+              "function": "CiInstrumentDriverBlock",
+              "ea": "0x18005a71f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "InternalEventVersion:UInt32",
+            "FileName:UnicodeString",
+            "StatusCode:HexInt32",
+            "AuthenticodeAlgId:UInt32",
+            "AuthenticodeFileHash:UInt8[]",
+            "IsSignatureBlocked:UInt16",
+            "IsEmbeddedSigned:UInt16",
+            "IsRuntime:UInt16",
+            "Timestamp:UInt32",
+            "VerificationStatus:HexInt32",
+            "RootPolicyBits:HexInt32",
+            "SigningTime:FileTime",
+            "CurrentSystemTime:FileTime",
+            "SigningScenario:UInt32",
+            "TBSHashAlgID:UInt32",
+            "TBSHash:UInt8[]",
+            "SecureRequiredFlags:HexInt32",
+            "IsPageHashSigned:UInt16",
+            "Issuer:CountedString",
+            "Publisher:CountedString",
+            "ValidFrom:FileTime",
+            "ValidTo:FileTime",
+            "FailedPicrootExceptionsPolicy:UInt8(Boolean)",
+            "PicrootExceptionsPolicyVersion:UInt64",
+            "FailedPolicyGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "winload.exe",
+              "function": "ImgpFireBlockEventToCIAggregator",
+              "ea": "0x1800a87d6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winload_System32_C0274587.exe",
+              "function": "ImgpFireBlockEventToCIAggregator",
+              "ea": "0x1800a87d6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winresume.exe",
+              "function": "ImgpFireBlockEventToCIAggregator",
+              "ea": "0x4843c6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winresume_System32_BE9DCAB2.exe",
+              "function": "ImgpFireBlockEventToCIAggregator",
+              "ea": "0x4843c6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AuthenticodeAlgId",
+          "type": "UInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "AuthenticodeFileHash",
+          "type": "UInt8[]",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "CurrentSystemTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "FailedPicrootExceptionsPolicy",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "FailedPolicyGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "FileName",
+          "type": "CountedString",
+          "seenIn": [
+            "ci.dll"
+          ]
+        },
+        {
+          "fieldName": "FileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "InternalEventVersion",
+          "type": "UInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "IsEmbeddedSigned",
+          "type": "UInt16",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "IsPageHashSigned",
+          "type": "UInt16",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "IsRuntime",
+          "type": "UInt16",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "IsSignatureBlocked",
+          "type": "UInt16",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "Issuer",
+          "type": "CountedString",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "PicrootExceptionsPolicyVersion",
+          "type": "UInt64",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "Publisher",
+          "type": "CountedString",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "RootPolicyBits",
+          "type": "HexInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "SecureRequiredFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "SigningScenario",
+          "type": "UInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "SigningTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "StatusCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "TBSHash",
+          "type": "UInt8[]",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "TBSHashAlgID",
+          "type": "UInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "Timestamp",
+          "type": "UInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "ValidFrom",
+          "type": "FileTime",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "ValidTo",
+          "type": "FileTime",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "VerificationStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Retry",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "InternalEventVersion:UInt32",
+            "FileName:CountedString",
+            "StatusCode:HexInt32",
+            "AuthenticodeAlgId:UInt32",
+            "AuthenticodeFileHash:UInt8[]",
+            "IsEmbeddedSigned:UInt16",
+            "RevokedWithContinue:UInt16",
+            "VerificationStatus:HexInt32",
+            "RootPolicyBits:HexInt32",
+            "SigningTime:FileTime",
+            "TBSHashAlgID:UInt32",
+            "TBSHash:UInt8[]",
+            "Issuer:CountedString",
+            "Publisher:CountedString",
+            "ValidFrom:FileTime",
+            "ValidTo:FileTime",
+            "FailedPolicyGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "ci.dll",
+              "function": "CiInstrumentDriverSignatureRetry",
+              "ea": "0x18005aae3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "InternalEventVersion:UInt32",
+            "FileName:UnicodeString",
+            "StatusCode:HexInt32",
+            "AuthenticodeAlgId:UInt32",
+            "AuthenticodeFileHash:UInt8[]",
+            "IsEmbeddedSigned:UInt16",
+            "RevokedWithContinue:UInt16",
+            "VerificationStatus:HexInt32",
+            "RootPolicyBits:HexInt32",
+            "SigningTime:FileTime",
+            "TBSHashAlgID:UInt32",
+            "TBSHash:UInt8[]",
+            "Issuer:CountedString",
+            "Publisher:CountedString",
+            "ValidFrom:FileTime",
+            "ValidTo:FileTime",
+            "FailedPolicyGuid:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "winload.exe",
+              "function": "ImgpFireRetryEventToCIAggregator",
+              "ea": "0x1800a8c72",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winload_System32_C0274587.exe",
+              "function": "ImgpFireRetryEventToCIAggregator",
+              "ea": "0x1800a8c72",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winresume.exe",
+              "function": "ImgpFireRetryEventToCIAggregator",
+              "ea": "0x484862",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winresume_System32_BE9DCAB2.exe",
+              "function": "ImgpFireRetryEventToCIAggregator",
+              "ea": "0x484862",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AuthenticodeAlgId",
+          "type": "UInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "AuthenticodeFileHash",
+          "type": "UInt8[]",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "FailedPolicyGuid",
+          "type": "GUID",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "FileName",
+          "type": "CountedString",
+          "seenIn": [
+            "ci.dll"
+          ]
+        },
+        {
+          "fieldName": "FileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "InternalEventVersion",
+          "type": "UInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "IsEmbeddedSigned",
+          "type": "UInt16",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "Issuer",
+          "type": "CountedString",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "Publisher",
+          "type": "CountedString",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "RevokedWithContinue",
+          "type": "UInt16",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "RootPolicyBits",
+          "type": "HexInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "SigningTime",
+          "type": "FileTime",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "StatusCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "TBSHash",
+          "type": "UInt8[]",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "TBSHashAlgID",
+          "type": "UInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "ValidFrom",
+          "type": "FileTime",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "ValidTo",
+          "type": "FileTime",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        },
+        {
+          "fieldName": "VerificationStatus",
+          "type": "HexInt32",
+          "seenIn": [
+            "ci.dll",
+            "winload.exe",
+            "winload_System32_C0274587.exe",
+            "winresume.exe",
+            "winresume_System32_BE9DCAB2.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2148 @@
+{
+  "providerName": "Microsoft.Windows.RemoteDesktop.RAIL.RdpInit",
+  "guid": "{4A49AFE3-776E-467A-ACA0-71F9C6C8499F}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "rdpinit.exe"
+  ],
+  "uniqueEventCount": 44,
+  "events": [
+    {
+      "eventName": "ActivateApplicationSucceeded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ProcessId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "_lambda_a5bfa5eb335270fb257c0bc46e2bcd05_::operator()",
+              "ea": "0x140030cd8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ProcessId",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AppExecute",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "activityId:GUID",
+            "pid:UInt32",
+            "executableName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?LogAppExecute@RdpInitLogger@RdpRailTelemetryTraceLogging@@SAXU_GUID@@KPEBG@Z",
+              "ea": "0x14001b572",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "activityId",
+          "type": "GUID",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "executableName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "pid",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CloakSyncComponent::AddWindow",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "hwnd:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?AddWindow@CloakSyncComponent@@UEAAJPEAUHWND__@@@Z",
+              "ea": "0x140040b62",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hwnd",
+          "type": "HexInt64",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CloakSyncComponent::OnWindowCloakedLocally",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "hwnd:HexInt64",
+            "CloakedLocallyNonRdp:Bool32",
+            "CloakedLocallyRdp:Bool32",
+            "ShouldResync:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?OnWindowCloakedLocally@CloakSyncComponent@@UEAAJPEAUHWND__@@@Z",
+              "ea": "0x14004106a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CloakedLocallyNonRdp",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "CloakedLocallyRdp",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "ShouldResync",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "hwnd",
+          "type": "HexInt64",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CloakSyncComponent::OnWindowCloakedRemotely",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "hwnd:HexInt64",
+            "AlreadyCloakedLocally:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?OnWindowCloakedRemotely@CloakSyncComponent@@UEAAJPEAUHWND__@@@Z",
+              "ea": "0x1400412a9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AlreadyCloakedLocally",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "hwnd",
+          "type": "HexInt64",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CloakSyncComponent::OnWindowUncloakedLocally",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "hwnd:HexInt64",
+            "CloakedRemotely:Bool32",
+            "CloakedLocally:Bool32",
+            "ShouldResync:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?OnWindowUncloakedLocally@CloakSyncComponent@@UEAAJPEAUHWND__@@@Z",
+              "ea": "0x1400414e1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CloakedLocally",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "CloakedRemotely",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "ShouldResync",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "hwnd",
+          "type": "HexInt64",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CloakSyncComponent::OnWindowUncloakedRemotely",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "hwnd:HexInt64",
+            "CloakedLocallyRdp:Bool32",
+            "CloakedLocallyNonRdp:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?OnWindowUncloakedRemotely@CloakSyncComponent@@UEAAJPEAUHWND__@@@Z",
+              "ea": "0x14004180a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CloakedLocallyNonRdp",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "CloakedLocallyRdp",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "hwnd",
+          "type": "HexInt64",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CloakSyncComponent::RemoveWindow",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "hwnd:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?RemoveWindow@CloakSyncComponent@@UEAAJPEAUHWND__@@@Z",
+              "ea": "0x140041b4e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hwnd",
+          "type": "HexInt64",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CloakSyncComponent::Reset",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?Reset@CloakSyncComponent@@UEAAJXZ",
+              "ea": "0x140041cad",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "WindowsResynced:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?Reset@CloakSyncComponent@@UEAAJXZ",
+              "ea": "0x140041f31",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "WindowsResynced",
+          "type": "UInt64",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CloakSyncComponent::ResyncWindow",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "hwnd:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?ResyncWindow@CloakSyncComponent@@UEAAJPEAUHWND__@@@Z",
+              "ea": "0x14004200e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hwnd",
+          "type": "HexInt64",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CreateBinarySwitchMutex_AlreadyExists",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?CreateBinarySwitchMutex@@YAJAEAV?$unique_any_t@V?$unique_storage@U?$handle_null_resource_policy@P6AHPEAX@Z$1?CloseHandle@@YAH0@Z@details@wil@@@details@wil@@@wil@@@Z",
+              "ea": "0x14002a16c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "CreateBinarySwitchMutex_Success",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?CreateBinarySwitchMutex@@YAJAEAV?$unique_any_t@V?$unique_storage@U?$handle_null_resource_policy@P6AHPEAX@Z$1?CloseHandle@@YAH0@Z@details@wil@@@details@wil@@@wil@@@Z",
+              "ea": "0x14002a17e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "CreateRailTrayIcon",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "hIcon:HexInt64",
+            "maxWidth:UInt32",
+            "maxHeight:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?OnProperties@CShellNotifyManager@@IEAAHPEBU_TRAYNOTIFYDATAW@@PEAUtagRDPTRAYICON@@@Z",
+              "ea": "0x14003ca37",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hIcon",
+          "type": "HexInt64",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "maxHeight",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "maxWidth",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Error",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "file:AnsiString",
+            "line:Int32",
+            "func:AnsiString",
+            "m:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?RailLogMessage@@YAXEPEBDH0PEBGZZ",
+              "ea": "0x140016ffa",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "file",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "func",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "line",
+          "type": "Int32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "m",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IconEscCreated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "MaskBpp:Int32",
+            "MaskWidth:Int32",
+            "MaskHeight:Int32",
+            "MaskDataSize:UInt32",
+            "ColorBpp:UInt16",
+            "ColorWidth:Int32",
+            "ColorHeight:Int32",
+            "ColorColorTableCount:UInt64",
+            "ColorDataSize:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?FillIconEscHelper@CRailIcon@@IEBAJIPEAUtagBITMAPINFOHEADER@@PEAEI0PEAUtagRGBQUAD@@I1IPEAPEAEPEAI@Z",
+              "ea": "0x1400435eb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ColorBpp",
+          "type": "UInt16",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "ColorColorTableCount",
+          "type": "UInt64",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "ColorDataSize",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "ColorHeight",
+          "type": "Int32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "ColorWidth",
+          "type": "Int32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "MaskBpp",
+          "type": "Int32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "MaskDataSize",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "MaskHeight",
+          "type": "Int32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "MaskWidth",
+          "type": "Int32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Info",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "file:AnsiString",
+            "line:Int32",
+            "func:AnsiString",
+            "m:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?RailLogMessage@@YAXEPEBDH0PEBGZZ",
+              "ea": "0x140016fdc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "file",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "func",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "line",
+          "type": "Int32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "m",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IsV2BinaryModeSupported",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Supported:UInt8(Boolean)",
+            "Policy:UInt8(Boolean)",
+            "IsShellAppRuntimeEnabled:UInt8(Boolean)",
+            "IsRdpShellExtensionHostAvailable:UInt8(Boolean)",
+            "ServerOS:UInt8(Boolean)",
+            "OnPrem:UInt8(Boolean)",
+            "IsHiDefRailEnabled:UInt8(Boolean)",
+            "IsShellConfigV2KeyValid:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?IsV2BinaryModeSupported@@YA_NXZ",
+              "ea": "0x14002a8cb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Supported:UInt8(Boolean)",
+            "Policy:UInt8(Boolean)",
+            "IsShellAppRuntimeEnabled:UInt8(Boolean)",
+            "IsRdpShellExtensionHostAvailable:UInt8(Boolean)",
+            "ServerOS:UInt8(Boolean)",
+            "OnPrem:UInt8(Boolean)",
+            "IsHiDefRailEnabled:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?IsV2BinaryModeSupported@@YA_NXZ",
+              "ea": "0x14002a97c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsHiDefRailEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "IsRdpShellExtensionHostAvailable",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "IsShellAppRuntimeEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "IsShellConfigV2KeyValid",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "OnPrem",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "Policy",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "ServerOS",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "Supported",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LaunchShellAppRuntime",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "winStationReturnValue:UInt8(Boolean)",
+            "EnableUniversalAppsForCustomShell:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?ShouldLaunchShellAppRuntime@@YA_NPEBQEBU_tlgProvider_t@@PEAW4ShellAppRuntimeLaunchOption@@@Z",
+              "ea": "0x14002ae31",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "propertyValue->Type:UInt16",
+            "propertyValue->u.ulVal:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?ShouldLaunchShellAppRuntime@@YA_NPEBQEBU_tlgProvider_t@@PEAW4ShellAppRuntimeLaunchOption@@@Z",
+              "ea": "0x14002ae69",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EnableUniversalAppsForCustomShell",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "propertyValue->Type",
+          "type": "UInt16",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "propertyValue->u.ulVal",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "winStationReturnValue",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogLevelError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "file:AnsiString",
+            "line:Int32",
+            "func:AnsiString",
+            "fmt:UnicodeString",
+            "hr:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?RailLogMessage@@YAXEPEBDH0PEBGZZ",
+              "ea": "0x14001705f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "file",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "fmt",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "func",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "HexInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "line",
+          "type": "Int32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OnAppBarMessage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Hwnd:HexInt32",
+            "Message:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?HandleValidatedMessage@CAppBarManager@@UEAA_JPEAUtagCOPYDATASTRUCT@@@Z",
+              "ea": "0x140039711",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Hwnd",
+          "type": "HexInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "Message",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OnShellNotifyEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "WindowId:HexInt32",
+            "ShellId:UInt32",
+            "Msg:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?OnShellNotifyEvent@CShellNotifyManager@@UEAAJPEAVITSAsyncResult@@_K@Z",
+              "ea": "0x14003cf00",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Msg",
+          "type": "HexInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "ShellId",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "WindowId",
+          "type": "HexInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RailCheckAndHandleCrashLoop_CrashDetected",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "currentCrashCount:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?CheckAndHandleCrashLoop@RailUtils@@YAJPEBQEBU_tlgProvider_t@@KK@Z",
+              "ea": "0x14000909b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "currentCrashCount",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RailCheckAndHandleCrashLoop_Logoff",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "maxCrashCount:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?CheckAndHandleCrashLoop@RailUtils@@YAJPEBQEBU_tlgProvider_t@@KK@Z",
+              "ea": "0x140008ff1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "maxCrashCount",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RdpInitVersion",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "activityId:GUID",
+            "sessionId:UInt32",
+            "isSxS:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?LogRdpInitVersion@RdpInitLogger@RdpRailTelemetryTraceLogging@@SAXU_GUID@@KH@Z",
+              "ea": "0x14001b60d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "activityId",
+          "type": "GUID",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "isSxS",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ResetBitmapInfoColor",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "MaskWidth:Int32",
+            "MaskHeight:Int32",
+            "MaskBpp:UInt16",
+            "MaskColorTableCount:Int32",
+            "MaskColorTableSize:UInt32",
+            "MaskDataSize:UInt32",
+            "ColorWidth:Int32",
+            "ColorHeight:Int32",
+            "ColorBpp:UInt16",
+            "ColorColorTableCount:Int32",
+            "ColorImportantColors:UInt32",
+            "ColorColorTableSize:UInt32",
+            "ColorDataSize:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?ResetBitmapInfo@CRailIcon@@IEAAJH@Z",
+              "ea": "0x140043eea",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ColorBpp",
+          "type": "UInt16",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "ColorColorTableCount",
+          "type": "Int32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "ColorColorTableSize",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "ColorDataSize",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "ColorHeight",
+          "type": "Int32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "ColorImportantColors",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "ColorWidth",
+          "type": "Int32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "MaskBpp",
+          "type": "UInt16",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "MaskColorTableCount",
+          "type": "Int32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "MaskColorTableSize",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "MaskDataSize",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "MaskHeight",
+          "type": "Int32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "MaskWidth",
+          "type": "Int32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ResetBitmapInfoMono",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "MaskWidth:Int32",
+            "MaskHeight:Int32",
+            "MaskBpp:UInt16",
+            "MaskColorTableCount:Int32",
+            "MaskColorTableSize:UInt32",
+            "MaskDataSize:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?ResetBitmapInfo@CRailIcon@@IEAAJH@Z",
+              "ea": "0x140043d9b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "MaskBpp",
+          "type": "UInt16",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "MaskColorTableCount",
+          "type": "Int32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "MaskColorTableSize",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "MaskDataSize",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "MaskHeight",
+          "type": "Int32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "MaskWidth",
+          "type": "Int32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ResyncTrayIcon",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Hwnd:HexInt32",
+            "UID:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?SyncItem@CShellNotifyManager@@MEAAHPEAUtagRDPTRAYICON@@@Z",
+              "ea": "0x14003db8b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Hwnd",
+          "type": "HexInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "UID",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ResyncTrayIcon_SkipHidden",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Hwnd:HexInt32",
+            "UID:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?SyncItem@CShellNotifyManager@@MEAAHPEAUtagRDPTRAYICON@@@Z",
+              "ea": "0x14003dbed",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Hwnd",
+          "type": "HexInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "UID",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RunInV1BinaryMode",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?RunInV1BinaryMode@@YAJAEAVCTSDevPlatExeMain@@_NK@Z",
+              "ea": "0x14001869f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rdpinit.exe",
+              "function": "_lambda_0feb08ca6961ff28537359e94295b917_::operator()",
+              "ea": "0x140008912",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "SendAppBarEdge",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Hwnd:HexInt64",
+            "EdgeNum:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?SendAppBarEdge@CRailOrderEncoderHelper@@QEAAJPEAUHWND__@@E@Z",
+              "ea": "0x140037d45",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EdgeNum",
+          "type": "UInt8",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "Hwnd",
+          "type": "HexInt64",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SendAppBarState",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Hwnd:HexInt64",
+            "IsAppBar:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?SendAppBarState@CRailOrderEncoderHelper@@QEAAJPEAUHWND__@@H@Z",
+              "ea": "0x140037f1a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Hwnd",
+          "type": "HexInt64",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "IsAppBar",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SendOverlayIcon",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Hwnd:HexInt64",
+            "HIcon:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?SendOverlayIcon@CRailOrderEncoderHelper@@QEAAJPEAUHWND__@@PEAUHICON__@@@Z",
+              "ea": "0x1400380fd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HIcon",
+          "type": "HexInt64",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "Hwnd",
+          "type": "HexInt64",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SendOverlayIconDescription",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Hwnd:HexInt64",
+            "Description:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?SendOverlayIconDescription@CRailOrderEncoderHelper@@QEAAJPEAUHWND__@@PEAG@Z",
+              "ea": "0x140038300",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Description",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "Hwnd",
+          "type": "HexInt64",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SendTabInformation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Hwnd:HexInt64",
+            "TaskbarButtonRemoved:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?SendTabInformation@CRailOrderEncoderHelper@@QEAAJPEAUHWND__@@H@Z",
+              "ea": "0x1400384d6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Hwnd",
+          "type": "HexInt64",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "TaskbarButtonRemoved",
+          "type": "Bool32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SendTrayIconAdd",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Hwnd:HexInt32",
+            "UID:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?SendTrayIconAdd@CRailOrderEncoderHelper@@QEAAJKIIPEAUHICON__@@KKIIPEAG11@Z",
+              "ea": "0x140038684",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Hwnd",
+          "type": "HexInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "UID",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SendTrayIconDelete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Hwnd:HexInt32",
+            "UID:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?SendTrayIconDelete@CRailOrderEncoderHelper@@QEAAJKI@Z",
+              "ea": "0x14003886b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Hwnd",
+          "type": "HexInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "UID",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SendTrayIconModify",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Hwnd:HexInt32",
+            "UID:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?SendTrayIconModify@CRailOrderEncoderHelper@@QEAAJKIIPEAUHICON__@@KKIIPEAG11@Z",
+              "ea": "0x1400389fc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Hwnd",
+          "type": "HexInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "UID",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ShellNotificationLaunchedInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "activityId:GUID",
+            "shellNotificationOwnerHandle:UInt32",
+            "processName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?LogShellNotificationLaunchedInfo@RdpInitLogger@RdpRailTelemetryTraceLogging@@SAXU_GUID@@IPEBG@Z",
+              "ea": "0x14001b6ae",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "activityId",
+          "type": "GUID",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "processName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "shellNotificationOwnerHandle",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StateTransitionFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "activityId:GUID",
+            "oldStateId:UInt32",
+            "oldState:UnicodeString",
+            "newStateId:UInt32",
+            "newState:UnicodeString",
+            "initEventId:UInt32",
+            "initEvent:UnicodeString",
+            "result:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?LogStateTransitionFailure@RdpInitLogger@RdpRailTelemetryTraceLogging@@SAXU_GUID@@IPEBGI1I1J@Z",
+              "ea": "0x14001b824",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "activityId",
+          "type": "GUID",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "initEvent",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "initEventId",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "newState",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "newStateId",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "oldState",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "oldStateId",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "result",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StateTransitionSuccess",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "activityId:GUID",
+            "oldStateId:UInt32",
+            "oldState:UnicodeString",
+            "newStateId:UInt32",
+            "newState:UnicodeString",
+            "initEventId:UInt32",
+            "initEvent:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?LogStateTransitionSuccess@RdpInitLogger@RdpRailTelemetryTraceLogging@@SAXU_GUID@@IPEBGI1I1@Z",
+              "ea": "0x14001b989",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "activityId",
+          "type": "GUID",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "initEvent",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "initEventId",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "newState",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "newStateId",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "oldState",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "oldStateId",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TrayErrorEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "activityId:GUID",
+            "trayEventId:UInt32",
+            "trayEvent:UnicodeString",
+            "result:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?LogTrayErrorEvent@RdpInitLogger@RdpRailTelemetryTraceLogging@@SAXU_GUID@@IPEBGJ@Z",
+              "ea": "0x14001baa0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "activityId",
+          "type": "GUID",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "result",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "trayEvent",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "trayEventId",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TrayEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "activityId:GUID",
+            "trayEventId:UInt32",
+            "trayEvent:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?LogTrayEvent@RdpInitLogger@RdpRailTelemetryTraceLogging@@SAXU_GUID@@IPEBG@Z",
+              "ea": "0x14001bb08",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "activityId",
+          "type": "GUID",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "trayEvent",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "trayEventId",
+          "type": "UInt32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Verbose",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "file:AnsiString",
+            "line:Int32",
+            "func:AnsiString",
+            "m:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?RailLogMessage@@YAXEPEBDH0PEBGZZ",
+              "ea": "0x140016fcd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "file",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "func",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "line",
+          "type": "Int32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "m",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Warning",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "file:AnsiString",
+            "line:Int32",
+            "func:AnsiString",
+            "m:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "rdpinit.exe",
+              "function": "?RailLogMessage@@YAXEPEBDH0PEBGZZ",
+              "ea": "0x140016feb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "file",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "func",
+          "type": "AnsiString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "line",
+          "type": "Int32",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        },
+        {
+          "fieldName": "m",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rdpinit.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

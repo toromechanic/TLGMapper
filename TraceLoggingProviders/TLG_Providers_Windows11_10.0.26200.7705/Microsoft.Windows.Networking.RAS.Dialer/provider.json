@@ -1,0 +1,1386 @@
+{
+  "providerName": "Microsoft.Windows.Networking.RAS.Dialer",
+  "guid": "{79EEBE3E-AAB1-4639-94C8-05A1706A6417}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "rasapi32.dll",
+    "rasmans.dll"
+  ],
+  "uniqueEventCount": 5,
+  "events": [
+    {
+      "eventName": "ConnectionComplete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "DeviceName:UnicodeString",
+            "ConnectionState:UInt32",
+            "ProfileName:UnicodeString",
+            "ConnectionHandle:HexInt64",
+            "TunnelProtocol:Int32",
+            "PPPAuthProtocol:Int32",
+            "PPPAuthProtocolData:Int32",
+            "IkeV2AuthProtocol:Int32",
+            "IsEAPMSCHAPForIKEv2:Bool32",
+            "RasAuthType:Int32",
+            "DisableMobility:Bool32",
+            "ErrorCode:HexInt32",
+            "ExtendedErrorCode:HexInt32",
+            "ErrorMessage:UnicodeString",
+            "DisconnectType:UInt32",
+            "CanceledByUser:Bool32",
+            "WlanSignalQualityList:UInt32[]",
+            "PlumbIKEv2TSAsRoutes:UInt32",
+            "IsAIdEqualToCoGuid:Bool32",
+            "IsAIdEmpty:Bool32",
+            "VpnStrategy:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rasapi32.dll",
+              "function": "TelemetryEventWriteConnectionComplete",
+              "ea": "0x18007f445",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CanceledByUser",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ConnectionHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ConnectionState",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "DeviceName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "DisableMobility",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "DisconnectType",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ExtendedErrorCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "IkeV2AuthProtocol",
+          "type": "Int32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "IsAIdEmpty",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "IsAIdEqualToCoGuid",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "IsEAPMSCHAPForIKEv2",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "PPPAuthProtocol",
+          "type": "Int32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "PPPAuthProtocolData",
+          "type": "Int32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "PlumbIKEv2TSAsRoutes",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ProfileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "RasAuthType",
+          "type": "Int32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "TunnelProtocol",
+          "type": "Int32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "VpnStrategy",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "WlanSignalQualityList",
+          "type": "UInt32[]",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ConnectionCreate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ProfileName:UnicodeString",
+            "ConnectionType:UInt32",
+            "DialMode:UInt32",
+            "OverridePreference:UInt32",
+            "RedialAttempts:UInt32",
+            "RedialSeconds:UInt32",
+            "IdleDisconnectSeconds:Int32",
+            "RedialOnLinkFailure:Bool32",
+            "AuthRestrictions:UInt32",
+            "VpnStrategy:UInt32",
+            "DataEncryption:UInt32",
+            "AutoLogOn:Bool32",
+            "UseRasCredentials:Bool32",
+            "ExcludedProtocols:UInt32",
+            "LcpExtensions:Bool32",
+            "SwCompression:Bool32",
+            "NegotiateMultilinkAlways:Bool32",
+            "CallbackMode:UInt32",
+            "ProfileGuid:GUID",
+            "BypassProxyForLocal:Bool32",
+            "NumCustomIPSECPolicies:UInt32",
+            "NumConfiguredEKUs:UInt32",
+            "NumServers:UInt32",
+            "NumRoutes:UInt32",
+            "NumNrptRules:UInt32",
+            "AutoTriggerCapable:Bool32",
+            "NumClassicAppIds:UInt32",
+            "NumAppIds:UInt32",
+            "NumDnsSearchSuffixes:UInt32",
+            "IsPowerShellCreated:Bool32",
+            "DisableDefaultDnsSuffixes:Bool32",
+            "NumTrustedNetworks:UInt32",
+            "ProxySettingsModified:Bool32",
+            "NumPerAppTrafficFilters:UInt32",
+            "AlwaysOnCapable:Bool32",
+            "IsDeviceComplianceEnabled:Bool32",
+            "IsDeviceComplianceSSOEnabled:Bool32",
+            "IsDeviceComplianceSSOEKUConfigured:Bool32",
+            "IsDeviceComplianceSSOIssuerHashConfigured:Bool32",
+            "ApnProviderId:UnicodeString",
+            "ApnAccessPointName:UnicodeString",
+            "ApnIsCompressionEnabled:Bool32",
+            "CustomRasDialDll:UnicodeString",
+            "ManagementPackageFullName:UnicodeString",
+            "ProtocolListLength:UInt32",
+            "ProtocolListArray:UInt32[]",
+            "ProtocolListRetryTimeInHours:UInt32",
+            "ProtocolListCurrentProtocol:UInt32",
+            "ProtocolListTimeOfLastProtocolSelection:FileTime",
+            "FlagSet:UInt32",
+            "NetworkOutageTime:UInt32",
+            "Ipv4InterfaceMetric:UInt32",
+            "Ipv6InterfaceMetric:UInt32",
+            "EapType:UInt32",
+            "ConnectionHandle:HexInt64",
+            "BitmapProfileProperties:UInt8[N](Boolean)",
+            "IsAIdEqualToCoGuid:Bool32",
+            "IsAIdEmpty:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "rasapi32.dll",
+              "function": "TelemetryEventWriteCreateConnection",
+              "ea": "0x18007fc34",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AlwaysOnCapable",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ApnAccessPointName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ApnIsCompressionEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ApnProviderId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "AuthRestrictions",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "AutoLogOn",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "AutoTriggerCapable",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "BitmapProfileProperties",
+          "type": "UInt8[N](Boolean)",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "BypassProxyForLocal",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "CallbackMode",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ConnectionHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ConnectionType",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "CustomRasDialDll",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "DataEncryption",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "DialMode",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "DisableDefaultDnsSuffixes",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "EapType",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ExcludedProtocols",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "FlagSet",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "IdleDisconnectSeconds",
+          "type": "Int32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "Ipv4InterfaceMetric",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "Ipv6InterfaceMetric",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "IsAIdEmpty",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "IsAIdEqualToCoGuid",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDeviceComplianceEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDeviceComplianceSSOEKUConfigured",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDeviceComplianceSSOEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDeviceComplianceSSOIssuerHashConfigured",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "IsPowerShellCreated",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "LcpExtensions",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ManagementPackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "NegotiateMultilinkAlways",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "NetworkOutageTime",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "NumAppIds",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "NumClassicAppIds",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "NumConfiguredEKUs",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "NumCustomIPSECPolicies",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "NumDnsSearchSuffixes",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "NumNrptRules",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "NumPerAppTrafficFilters",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "NumRoutes",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "NumServers",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "NumTrustedNetworks",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "OverridePreference",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ProfileGuid",
+          "type": "GUID",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ProfileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ProtocolListArray",
+          "type": "UInt32[]",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ProtocolListCurrentProtocol",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ProtocolListLength",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ProtocolListRetryTimeInHours",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ProtocolListTimeOfLastProtocolSelection",
+          "type": "FileTime",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ProxySettingsModified",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "RedialAttempts",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "RedialOnLinkFailure",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "RedialSeconds",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "SwCompression",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "UseRasCredentials",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "VpnStrategy",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PhonebookEntryLog",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PbkEntryOp:UnicodeString",
+            "PbkEntryOpHr:Int32(HResult)",
+            "ProfileName:UnicodeString",
+            "ConnectionType:UInt32",
+            "DialMode:UInt32",
+            "OverridePreference:UInt32",
+            "RedialAttempts:UInt32",
+            "RedialSeconds:UInt32",
+            "IdleDisconnectSeconds:Int32",
+            "RedialOnLinkFailure:Bool32",
+            "AuthRestrictions:UInt32",
+            "VpnStrategy:UInt32",
+            "DataEncryption:UInt32",
+            "AutoLogOn:Bool32",
+            "UseRasCredentials:Bool32",
+            "ExcludedProtocols:UInt32",
+            "LcpExtensions:Bool32",
+            "SwCompression:Bool32",
+            "NegotiateMultilinkAlways:Bool32",
+            "CallbackMode:UInt32",
+            "ProfileGuid:GUID",
+            "BypassProxyForLocal:Bool32",
+            "NumCustomIPSECPolicies:UInt32",
+            "NumConfiguredEKUs:UInt32",
+            "NumServers:UInt32",
+            "NumRoutes:UInt32",
+            "NumNrptRules:UInt32",
+            "AutoTriggerCapable:Bool32",
+            "NumClassicAppIds:UInt32",
+            "NumAppIds:UInt32",
+            "NumDnsSearchSuffixes:UInt32",
+            "IsPowerShellCreated:Bool32",
+            "DisableDefaultDnsSuffixes:Bool32",
+            "NumTrustedNetworks:UInt32",
+            "ProxySettingsModified:Bool32",
+            "NumPerAppTrafficFilters:UInt32",
+            "AlwaysOnCapable:Bool32",
+            "IsDeviceComplianceEnabled:Bool32",
+            "IsDeviceComplianceSSOEnabled:Bool32",
+            "IsDeviceComplianceSSOEKUConfigured:Bool32",
+            "IsDeviceComplianceSSOIssuerHashConfigured:Bool32",
+            "ApnProviderId:UnicodeString",
+            "ApnAccessPointName:UnicodeString",
+            "ApnIsCompressionEnabled:Bool32",
+            "CustomRasDialDll:UnicodeString",
+            "ManagementPackageFullName:UnicodeString",
+            "ProtocolListLength:UInt32",
+            "ProtocolListArray:UInt32[]",
+            "ProtocolListRetryTimeInHours:UInt32",
+            "ProtocolListCurrentProtocol:UInt32",
+            "ProtocolListTimeOfLastProtocolSelection:FileTime",
+            "FlagSet:UInt32",
+            "NetworkOutageTime:UInt32",
+            "Ipv4InterfaceMetric:UInt32",
+            "Ipv6InterfaceMetric:UInt32",
+            "EapType:UInt32",
+            "BitmapProfileProperties:UInt8[N](Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "rasapi32.dll",
+              "function": "TelemetryEventWritePhonebookEntry",
+              "ea": "0x1800db38f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "rasmans.dll",
+              "function": "TelemetryEventWritePhonebookEntry",
+              "ea": "0x18007fd57",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AlwaysOnCapable",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "ApnAccessPointName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "ApnIsCompressionEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "ApnProviderId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "AuthRestrictions",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "AutoLogOn",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "AutoTriggerCapable",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "BitmapProfileProperties",
+          "type": "UInt8[N](Boolean)",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "BypassProxyForLocal",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "CallbackMode",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "ConnectionType",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "CustomRasDialDll",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "DataEncryption",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "DialMode",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "DisableDefaultDnsSuffixes",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "EapType",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "ExcludedProtocols",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "FlagSet",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "IdleDisconnectSeconds",
+          "type": "Int32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "Ipv4InterfaceMetric",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "Ipv6InterfaceMetric",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDeviceComplianceEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDeviceComplianceSSOEKUConfigured",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDeviceComplianceSSOEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDeviceComplianceSSOIssuerHashConfigured",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "IsPowerShellCreated",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "LcpExtensions",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "ManagementPackageFullName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "NegotiateMultilinkAlways",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "NetworkOutageTime",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "NumAppIds",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "NumClassicAppIds",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "NumConfiguredEKUs",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "NumCustomIPSECPolicies",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "NumDnsSearchSuffixes",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "NumNrptRules",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "NumPerAppTrafficFilters",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "NumRoutes",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "NumServers",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "NumTrustedNetworks",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "OverridePreference",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "PbkEntryOp",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "PbkEntryOpHr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "ProfileGuid",
+          "type": "GUID",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "ProfileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "ProtocolListArray",
+          "type": "UInt32[]",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "ProtocolListCurrentProtocol",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "ProtocolListLength",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "ProtocolListRetryTimeInHours",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "ProtocolListTimeOfLastProtocolSelection",
+          "type": "FileTime",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "ProxySettingsModified",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "RedialAttempts",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "RedialOnLinkFailure",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "RedialSeconds",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "SwCompression",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "UseRasCredentials",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "VpnStrategy",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll",
+            "rasmans.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StateChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "DeviceName:UnicodeString",
+            "ConnectionState:UInt32",
+            "ErrorCode:HexInt32",
+            "ExtendedErrorCode:HexInt32",
+            "ErrorMessage:UnicodeString",
+            "ProfileName:UnicodeString",
+            "ConnectionHandle:HexInt64",
+            "IsAIdEqualToCoGuid:Bool32",
+            "IsAIdEmpty:Bool32",
+            "DeviceType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rasapi32.dll",
+              "function": "TelemetryEventWriteStateChange",
+              "ea": "0x180052c1f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConnectionHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ConnectionState",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "DeviceName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "DeviceType",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ExtendedErrorCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "IsAIdEmpty",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "IsAIdEqualToCoGuid",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ProfileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ToastNotification",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ProfileName:UnicodeString",
+            "TagName:UnicodeString",
+            "AutoTriggerToastType:UInt32",
+            "IsSilentNotification:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "rasapi32.dll",
+              "function": "?TelemetryEventWriteToastNotification@@YAXPEBG0IH@Z",
+              "ea": "0x18009fca4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AutoTriggerToastType",
+          "type": "UInt32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "IsSilentNotification",
+          "type": "Bool32",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "ProfileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "TagName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasapi32.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

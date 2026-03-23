@@ -1,0 +1,72 @@
+{
+  "providerName": "Microsoft-Windows-Security-EFS-EDPAudit",
+  "guid": "{0C017B8D-7629-4AD6-A268-578A14E9DD65}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "edpauditapi.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "EdpAuditLogProtectionRemoved",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "edpauditapi.dll",
+              "function": "EdpAuditLogProtectionRemoved",
+              "ea": "0x180013ecf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "edpauditapi.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EdpAuditRead",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "edpauditapi.dll",
+              "function": "EdpAuditRead",
+              "ea": "0x180006a6a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "status",
+          "type": "UInt32",
+          "seenIn": [
+            "edpauditapi.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

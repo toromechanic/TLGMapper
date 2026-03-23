@@ -1,0 +1,182 @@
+{
+  "providerName": "Microsoft.Windows.Pos.CX",
+  "guid": "{13895BC5-E1F8-4144-9F24-4E48868F8220}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "PosCx.dll"
+  ],
+  "uniqueEventCount": 4,
+  "events": [
+    {
+      "eventName": "CXDriverEntry",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "Function:UnicodeString",
+            "StackStatus:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "PosCx.dll",
+              "function": "DriverEntry",
+              "ea": "0x180001d60",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "Message:UnicodeString",
+            "NTStatus:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "PosCx.dll",
+              "function": "DriverEntry",
+              "ea": "0x180001e9f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PosCx.dll",
+              "function": "DriverEntry",
+              "ea": "0x180001fe4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "Function:UnicodeString",
+            "NTStatus:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "PosCx.dll",
+              "function": "DriverEntry",
+              "ea": "0x180002049",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Function",
+          "type": "UnicodeString",
+          "seenIn": [
+            "PosCx.dll"
+          ]
+        },
+        {
+          "fieldName": "Message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "PosCx.dll"
+          ]
+        },
+        {
+          "fieldName": "NTStatus",
+          "type": "Int32",
+          "seenIn": [
+            "PosCx.dll"
+          ]
+        },
+        {
+          "fieldName": "StackStatus",
+          "type": "UnicodeString",
+          "seenIn": [
+            "PosCx.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CXOnDriverUnload",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "Stack Status:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "PosCx.dll",
+              "function": "OnDriverUnload",
+              "ea": "0x1800021dc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Stack Status",
+          "type": "UnicodeString",
+          "seenIn": [
+            "PosCx.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DriverError_call_PosCxOpen",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "PosCx.dll",
+              "function": "?PospCxGetPendingEventUnsafe@@YAJPEAUPOS_CX_DEVICE_EXTENSION@@PEAUWDFREQUEST__@@@Z",
+              "ea": "0x180003455",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "PospCxNotifyEvent_SilentFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "PosCx.dll",
+              "function": "?PospCxGetPendingEventUnsafe@@YAJPEAUPOS_CX_DEVICE_EXTENSION@@PEAUWDFREQUEST__@@@Z",
+              "ea": "0x1800034c3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "PosCx.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

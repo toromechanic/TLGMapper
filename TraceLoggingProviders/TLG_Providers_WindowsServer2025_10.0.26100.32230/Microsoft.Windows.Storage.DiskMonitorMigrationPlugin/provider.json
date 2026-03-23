@@ -1,0 +1,197 @@
+{
+  "providerName": "Microsoft.Windows.Storage.DiskMonitorMigrationPlugin",
+  "guid": "{5A50496B-FD09-5318-20D4-9133E63B82FF}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "DiskMonMigPlugin.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "DiskStateChanges",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "disks:Int32",
+            "partitions:Int32",
+            "volumes:Int32",
+            "emptyDisks:Int32",
+            "rawVolumes:Int32",
+            "allChangesUsb:UInt8(Boolean)",
+            "previousDiskState:CountedString",
+            "currentDiskState:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "DiskMonMigPlugin.dll",
+              "function": "?ComparePreviousDisksWithCurrent@@YAJPEAV_bstr_t@@PEAJPEAV?$vector@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@V?$allocator@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@@2@@std@@@Z",
+              "ea": "0x180017c09",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "disks:Int32",
+            "partitions:Int32",
+            "volumes:Int32",
+            "emptyDisks:Int32",
+            "rawVolumes:Int32",
+            "allChangesUsb:UInt8(Boolean)",
+            "previousDiskState:CountedString",
+            "currentDiskState:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "DiskMonMigPlugin.dll",
+              "function": "?ComparePreviousDisksWithCurrent@@YAJPEAV_bstr_t@@PEAJPEAV?$vector@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@V?$allocator@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@@2@@std@@@Z",
+              "ea": "0x180017d84",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "DiskMonMigPlugin.dll"
+          ]
+        },
+        {
+          "fieldName": "allChangesUsb",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "DiskMonMigPlugin.dll"
+          ]
+        },
+        {
+          "fieldName": "currentDiskState",
+          "type": "CountedString",
+          "seenIn": [
+            "DiskMonMigPlugin.dll"
+          ]
+        },
+        {
+          "fieldName": "disks",
+          "type": "Int32",
+          "seenIn": [
+            "DiskMonMigPlugin.dll"
+          ]
+        },
+        {
+          "fieldName": "emptyDisks",
+          "type": "Int32",
+          "seenIn": [
+            "DiskMonMigPlugin.dll"
+          ]
+        },
+        {
+          "fieldName": "partitions",
+          "type": "Int32",
+          "seenIn": [
+            "DiskMonMigPlugin.dll"
+          ]
+        },
+        {
+          "fieldName": "previousDiskState",
+          "type": "CountedString",
+          "seenIn": [
+            "DiskMonMigPlugin.dll"
+          ]
+        },
+        {
+          "fieldName": "rawVolumes",
+          "type": "Int32",
+          "seenIn": [
+            "DiskMonMigPlugin.dll"
+          ]
+        },
+        {
+          "fieldName": "volumes",
+          "type": "Int32",
+          "seenIn": [
+            "DiskMonMigPlugin.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DiskStateLoadFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "DiskMonMigPlugin.dll",
+              "function": "?ComparePreviousDisksWithCurrent@@YAJPEAV_bstr_t@@PEAJPEAV?$vector@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@V?$allocator@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@@2@@std@@@Z",
+              "ea": "0x18001a1da",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "DiskMonMigPlugin.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DiskStateUnchanged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "currentDiskState:CountedString"
+          ],
+          "callers": [
+            {
+              "binary": "DiskMonMigPlugin.dll",
+              "function": "?ComparePreviousDisksWithCurrent@@YAJPEAV_bstr_t@@PEAJPEAV?$vector@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@V?$allocator@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@@2@@std@@@Z",
+              "ea": "0x18001782b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "DiskMonMigPlugin.dll"
+          ]
+        },
+        {
+          "fieldName": "currentDiskState",
+          "type": "CountedString",
+          "seenIn": [
+            "DiskMonMigPlugin.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

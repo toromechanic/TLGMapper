@@ -1,0 +1,82 @@
+{
+  "providerName": "Microsoft.Windows.Print.PmcSnap",
+  "guid": "{521120E3-343E-42A2-BD71-A1B1FF655655}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "pmcsnap.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "Loaded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "pmcsnap.dll",
+              "function": "_DllInit",
+              "ea": "0x1800029c9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "PrintersChildrenPrepareComplete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "pmcsnap.dll",
+              "function": "?ChildrenPrepare@TPMCNodePrinters@@UEAAJXZ",
+              "ea": "0x18003ee8e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "pmcsnap.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnLoaded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "pmcsnap.dll",
+              "function": "_DllUninit",
+              "ea": "0x180002a4a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    }
+  ]
+}

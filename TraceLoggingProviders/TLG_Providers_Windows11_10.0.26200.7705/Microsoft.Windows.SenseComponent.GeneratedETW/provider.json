@@ -1,0 +1,664 @@
+{
+  "providerName": "Microsoft.Windows.SenseComponent.GeneratedETW",
+  "guid": "{847EA814-C451-4174-9DF0-EB3262151960}",
+  "os": "Windows 11",
+  "binaryCount": 4,
+  "binaries": [
+    "MsSense.dll",
+    "SenseCE.exe",
+    "SenseDlpProcessor.exe",
+    "SenseIR.exe"
+  ],
+  "uniqueEventCount": 6,
+  "events": [
+    {
+      "eventName": "OnboardingManager",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "message:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?ControlServiceStopState@SenseServiceSettings@Onboarding@sense@@UEAAJ_N@Z",
+              "ea": "0x180469ff6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "errorCode:Int32(HResult)",
+            "message:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?ControlServiceStopState@SenseServiceSettings@Onboarding@sense@@UEAAJ_N@Z",
+              "ea": "0x18046a02f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "errorCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PerformanceCounter",
+      "variantCount": 5,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "CounterName:UnicodeString",
+            "ConfigurationVersion:UnicodeString",
+            "GlobalProbingCount:UInt64",
+            "ProbingCount:UInt64",
+            "MinimumValue:Double",
+            "MaximumValue:Double",
+            "AverageValue:Double",
+            "Probes:UnicodeString",
+            "ProbingCountSystem:UInt64",
+            "MinimumValueSystem:Double",
+            "MaximumValueSystem:Double",
+            "AverageValueSystem:Double",
+            "ProbesSystem:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?GetCurrentCounterState@PerformanceCounter@sense@@AEAAXAEAVvalue@json@web@@@Z",
+              "ea": "0x1804687db",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseIR.exe",
+              "function": "?GetCurrentCounterState@PerformanceCounter@sense@@AEAAXAEAVvalue@json@web@@@Z",
+              "ea": "0x1400d4beb",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "CounterName:UnicodeString",
+            "ConfigurationVersion:UnicodeString",
+            "GlobalProbingCount:UInt64",
+            "ProbingCountSystem:UInt64",
+            "MinimumValueSystem:Double",
+            "MaximumValueSystem:Double",
+            "AverageValueSystem:Double",
+            "ProbesSystem:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?GetCurrentCounterState@PerformanceCounter@sense@@AEAAXAEAVvalue@json@web@@@Z",
+              "ea": "0x180468909",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseIR.exe",
+              "function": "?GetCurrentCounterState@PerformanceCounter@sense@@AEAAXAEAVvalue@json@web@@@Z",
+              "ea": "0x1400d4d19",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "CounterName:UnicodeString",
+            "ConfigurationVersion:UnicodeString",
+            "GlobalProbingCount:UInt64",
+            "ProbingCount:UInt64",
+            "MinimumValue:Double",
+            "MaximumValue:Double",
+            "AverageValue:Double",
+            "Probes:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?GetCurrentCounterState@PerformanceCounter@sense@@AEAAXAEAVvalue@json@web@@@Z",
+              "ea": "0x180468a2f",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseIR.exe",
+              "function": "?GetCurrentCounterState@PerformanceCounter@sense@@AEAAXAEAVvalue@json@web@@@Z",
+              "ea": "0x1400d4e3f",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "CounterName:UnicodeString",
+            "GlobalProbingCount:UInt64",
+            "ProbingCount:UInt64",
+            "MinimumValue:Double",
+            "MaximumValue:Double",
+            "AverageValue:Double",
+            "ProbingCountSystem:UInt64",
+            "MinimumValueSystem:Double",
+            "MaximumValueSystem:Double",
+            "AverageValueSystem:Double"
+          ],
+          "callers": [
+            {
+              "binary": "SenseCE.exe",
+              "function": "?SendReport@PerformanceCounter@Performance@SenseDlp@@QEAAXXZ",
+              "ea": "0x14008495b",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?SendReport@PerformanceCounter@Performance@SenseDlp@@QEAAXXZ",
+              "ea": "0x1400da0eb",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "CounterName:UnicodeString",
+            "GlobalProbingCount:UInt64",
+            "ProbingCount:UInt64",
+            "MinimumValue:Double",
+            "MaximumValue:Double",
+            "AverageValue:Double"
+          ],
+          "callers": [
+            {
+              "binary": "SenseCE.exe",
+              "function": "?SendReport@PerformanceCounter@Performance@SenseDlp@@QEAAXXZ",
+              "ea": "0x140084a48",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?SendReport@PerformanceCounter@Performance@SenseDlp@@QEAAXXZ",
+              "ea": "0x1400da1d8",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AverageValue",
+          "type": "Double",
+          "seenIn": [
+            "MsSense.dll",
+            "SenseCE.exe",
+            "SenseDlpProcessor.exe",
+            "SenseIR.exe"
+          ]
+        },
+        {
+          "fieldName": "AverageValueSystem",
+          "type": "Double",
+          "seenIn": [
+            "MsSense.dll",
+            "SenseCE.exe",
+            "SenseDlpProcessor.exe",
+            "SenseIR.exe"
+          ]
+        },
+        {
+          "fieldName": "ConfigurationVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll",
+            "SenseIR.exe"
+          ]
+        },
+        {
+          "fieldName": "CounterName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll",
+            "SenseCE.exe",
+            "SenseDlpProcessor.exe",
+            "SenseIR.exe"
+          ]
+        },
+        {
+          "fieldName": "GlobalProbingCount",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll",
+            "SenseCE.exe",
+            "SenseDlpProcessor.exe",
+            "SenseIR.exe"
+          ]
+        },
+        {
+          "fieldName": "MaximumValue",
+          "type": "Double",
+          "seenIn": [
+            "MsSense.dll",
+            "SenseCE.exe",
+            "SenseDlpProcessor.exe",
+            "SenseIR.exe"
+          ]
+        },
+        {
+          "fieldName": "MaximumValueSystem",
+          "type": "Double",
+          "seenIn": [
+            "MsSense.dll",
+            "SenseCE.exe",
+            "SenseDlpProcessor.exe",
+            "SenseIR.exe"
+          ]
+        },
+        {
+          "fieldName": "MinimumValue",
+          "type": "Double",
+          "seenIn": [
+            "MsSense.dll",
+            "SenseCE.exe",
+            "SenseDlpProcessor.exe",
+            "SenseIR.exe"
+          ]
+        },
+        {
+          "fieldName": "MinimumValueSystem",
+          "type": "Double",
+          "seenIn": [
+            "MsSense.dll",
+            "SenseCE.exe",
+            "SenseDlpProcessor.exe",
+            "SenseIR.exe"
+          ]
+        },
+        {
+          "fieldName": "Probes",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll",
+            "SenseIR.exe"
+          ]
+        },
+        {
+          "fieldName": "ProbesSystem",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll",
+            "SenseIR.exe"
+          ]
+        },
+        {
+          "fieldName": "ProbingCount",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll",
+            "SenseCE.exe",
+            "SenseDlpProcessor.exe",
+            "SenseIR.exe"
+          ]
+        },
+        {
+          "fieldName": "ProbingCountSystem",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll",
+            "SenseCE.exe",
+            "SenseDlpProcessor.exe",
+            "SenseIR.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SenseDlpCommon",
+      "variantCount": 5,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "message:UnicodeString",
+            "HasProxyConfiguration:UInt8(Boolean)",
+            "ProxyURL:UnicodeString",
+            "ShouldTryWithStaticProxyFirst:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "SenseCE.exe",
+              "function": "?ExecuteRequest@HttpClient@SenseDlp@@AEAA?AVhttp_response@http@web@@V?$function@$$A6A?AVhttp_request@http@web@@XZ@std@@AEBVhttp_headers@45@AEBV?$unordered_map@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@V12@U?$hash@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@2@U?$equal_to@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@V12@@std@@@2@@7@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@7@@Z",
+              "ea": "0x1400b072a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "message:AnsiString",
+            "statusCode:UInt16",
+            "header_server:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SenseCE.exe",
+              "function": "?ExecuteRequest@HttpClient@SenseDlp@@AEAA?AVhttp_response@http@web@@V?$function@$$A6A?AVhttp_request@http@web@@XZ@std@@AEBVhttp_headers@45@AEBV?$unordered_map@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@V12@U?$hash@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@2@U?$equal_to@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@V12@@std@@@2@@7@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@7@@Z",
+              "ea": "0x1400b09e2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "message:UnicodeString",
+            "Error code:Int32",
+            "shouldUseProxy:UInt8(Boolean)",
+            "m_proxyUrl:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SenseCE.exe",
+              "function": "?ExecuteRequest@HttpClient@SenseDlp@@AEAA?AVhttp_response@http@web@@V?$function@$$A6A?AVhttp_request@http@web@@XZ@std@@AEBVhttp_headers@45@AEBV?$unordered_map@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@V12@U?$hash@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@2@U?$equal_to@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@V12@@std@@@2@@7@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@7@@Z",
+              "ea": "0x1401a1f38",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "message:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SenseCE.exe",
+              "function": "?ExecuteRequest@HttpClient@SenseDlp@@AEAA?AVhttp_response@http@web@@V?$function@$$A6A?AVhttp_request@http@web@@XZ@std@@AEBVhttp_headers@45@AEBV?$unordered_map@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@V12@U?$hash@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@2@U?$equal_to@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@V12@@std@@@2@@7@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@7@@Z",
+              "ea": "0x1401a1fb0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "message:UnicodeString",
+            "shouldUseProxy:UInt8(Boolean)",
+            "m_proxyUrl:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SenseCE.exe",
+              "function": "?ExecuteRequest@HttpClient@SenseDlp@@AEAA?AVhttp_response@http@web@@V?$function@$$A6A?AVhttp_request@http@web@@XZ@std@@AEBVhttp_headers@45@AEBV?$unordered_map@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@V12@U?$hash@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@2@U?$equal_to@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@V12@@std@@@2@@7@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@7@@Z",
+              "ea": "0x1401a2212",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Error code",
+          "type": "Int32",
+          "seenIn": [
+            "SenseCE.exe"
+          ]
+        },
+        {
+          "fieldName": "HasProxyConfiguration",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "SenseCE.exe"
+          ]
+        },
+        {
+          "fieldName": "ProxyURL",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseCE.exe"
+          ]
+        },
+        {
+          "fieldName": "ShouldTryWithStaticProxyFirst",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "SenseCE.exe"
+          ]
+        },
+        {
+          "fieldName": "header_server",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseCE.exe"
+          ]
+        },
+        {
+          "fieldName": "m_proxyUrl",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseCE.exe"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "AnsiString",
+          "seenIn": [
+            "SenseCE.exe"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseCE.exe"
+          ]
+        },
+        {
+          "fieldName": "shouldUseProxy",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "SenseCE.exe"
+          ]
+        },
+        {
+          "fieldName": "statusCode",
+          "type": "UInt16",
+          "seenIn": [
+            "SenseCE.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SenseDlpProcessor",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "errorCode:Int32",
+            "message:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?InitializeComponent@RegistryPolicyHandler@dlp@sense@@AEAAXAEBW4PolicyType@123@@Z",
+              "ea": "0x1400de5bf",
+              "confidence": "Direct-Nearest"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?ReadConfigFromRegistry@RegistryPolicyHandler@dlp@sense@@AEAAJAEBW4PolicyType@123@AEA_N@Z",
+              "ea": "0x1400decd3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?SubscribeToRegistryChange@RegistryPolicyHandler@dlp@sense@@UEAAXAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@0V?$function@$$A6AXV?$shared_ptr@$$CBVCommand@cyberData@sense@@@std@@@Z@5@@Z",
+              "ea": "0x1400def9e",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "message:UnicodeString",
+            "keyName:UnicodeString",
+            "changeKind:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "_lambda_8cfdd69a0b9a6a34fc7e9e0db964da42_::operator()",
+              "ea": "0x1400de01a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "changeKind",
+          "type": "Int32",
+          "seenIn": [
+            "SenseDlpProcessor.exe"
+          ]
+        },
+        {
+          "fieldName": "errorCode",
+          "type": "Int32",
+          "seenIn": [
+            "SenseDlpProcessor.exe"
+          ]
+        },
+        {
+          "fieldName": "keyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseDlpProcessor.exe"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseDlpProcessor.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SenseIR",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "errorCode:Int32(HResult)",
+            "message:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SenseIR.exe",
+              "function": "?MainBody@@YAHHQEAPEB_W@Z",
+              "ea": "0x140071119",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "errorCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "SenseIR.exe"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseIR.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SensePerformance",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "message:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?GetCurrentCounterState@PerformanceCounter@sense@@AEAAXAEAVvalue@json@web@@@Z",
+              "ea": "0x18046862d",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseIR.exe",
+              "function": "?GetCurrentCounterState@PerformanceCounter@sense@@AEAAXAEAVvalue@json@web@@@Z",
+              "ea": "0x1400d4a3d",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "message",
+          "type": "AnsiString",
+          "seenIn": [
+            "MsSense.dll",
+            "SenseIR.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5508 @@
+{
+  "providerName": "Microsoft.Windows.Shell.AIX",
+  "guid": "{96B47202-A28B-5A2B-CD48-44932E4A7A2C}",
+  "os": "Windows 11",
+  "binaryCount": 18,
+  "binaries": [
+    "AIXView.dll",
+    "ClickToDo.exe",
+    "CustomShellHost.exe",
+    "DesktopShellExt.dll",
+    "DiscoveryOverlay.dll",
+    "Feedback.dll",
+    "PenService.dll",
+    "PenWorkspace.dll",
+    "SettingsEnvironment.Desktop.dll",
+    "SettingsHandlers_A9.dll",
+    "SettingsHandlers_Pen.dll",
+    "ShellAppRuntime.exe",
+    "ShellConfigTask.dll",
+    "StartTileData.dll",
+    "Taskbar.dll",
+    "explorer.exe",
+    "twinui.pcshell.dll",
+    "windowsudk.shellcommon.dll"
+  ],
+  "uniqueEventCount": 108,
+  "events": [
+    {
+      "eventName": "AIXCloudConfigRetrieved",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "flightId:UnicodeString",
+            "config:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_180041FD0",
+              "ea": "0x180042004",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "config",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "flightId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AIXFeedback",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ComponentId:UnicodeString",
+            "AdditionalInfo:UnicodeString",
+            "feedbackType:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "Feedback.dll",
+              "function": "sub_180036110",
+              "ea": "0x180036154",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AdditionalInfo",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "ComponentId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "feedbackType",
+          "type": "Int32",
+          "seenIn": [
+            "Feedback.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AIXInstalledAndRegistrationRefreshed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "attemptsBeforeAixFound:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "DesktopShellExt.dll",
+              "function": "??$AIXInstalledAndRegistrationRefreshed@AEAH@AIXTelemetry@@SAXAEAH@Z",
+              "ea": "0x180064809",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "DesktopShellExt.dll"
+          ]
+        },
+        {
+          "fieldName": "attemptsBeforeAixFound",
+          "type": "UInt32",
+          "seenIn": [
+            "DesktopShellExt.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AIXLaunched",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18009AA84",
+              "ea": "0x18009aab7",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1802E85F4",
+              "ea": "0x1802e862f",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll",
+            "DiscoveryOverlay.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AIXProtocolLaunch",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "protocol:UnicodeString",
+            "name:UnicodeString",
+            "data:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18004F4C4",
+              "ea": "0x18004f500",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "data",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "name",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "protocol",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AIXWindowedViewInit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "viewId:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_180064F1C",
+              "ea": "0x180064f49",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "viewId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AIXWindowedViewInvoked",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "viewId:UnicodeString",
+            "windowedViewInvokeType:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_180064F84",
+              "ea": "0x180064fb7",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "viewId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "windowedViewInvokeType",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AIX_Output_Debug_String",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "debugString:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18003AFA4",
+              "ea": "0x18003afc7",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_180042058",
+              "ea": "0x180042072",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18008ACF8",
+              "ea": "0x18008ad1b",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ClickToDo.exe",
+              "function": "WinMain",
+              "ea": "0x1400122b1",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ClickToDo.exe",
+              "function": "WinMain",
+              "ea": "0x140012372",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ClickToDo.exe",
+              "function": "WinMain",
+              "ea": "0x1400123de",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1802CC03C",
+              "ea": "0x1802cc05f",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1802CC080",
+              "ea": "0x1802cc09a",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "debugString",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AIXView.dll",
+            "ClickToDo.exe",
+            "DiscoveryOverlay.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ActivityError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(Signed)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "failureId:UInt32",
+            "failureCount:UInt32",
+            "function:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18005E640",
+              "ea": "0x18005e689",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "callContext",
+          "type": "AnsiString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "failureCount",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "failureId",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "function",
+          "type": "AnsiString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(Signed)",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ActivityIntermediateStop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18005EDBC",
+              "ea": "0x18005ee3e",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(String)",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AreModelsAvailable",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ModelsAvailable:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18006E97C",
+              "ea": "0x18006e995",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1801CA2D8",
+              "ea": "0x1801ca2f1",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ModelsAvailable",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "AIXView.dll",
+            "DiscoveryOverlay.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "C2DEnablement",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "isEnabled:UInt8(Boolean)",
+            "disallowedByRegion:UInt8(Boolean)",
+            "disallowedByHardware:UInt8(Boolean)",
+            "disallowedByEnterpriseFeatureControl:UInt8(Boolean)",
+            "disallowedByPolicy:UInt8(Boolean)",
+            "disallowedByUserSetting:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "??$C2DEnablement@AEB_N_N_N_N_NAEB_N@AIXTelemetry@@SAXAEB_N$$QEA_N1110@Z",
+              "ea": "0x14001e5ab",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$C2DEnablement@AEB_N_N_N_N_NAEB_N@AIXTelemetry@@SAXAEB_N$$QEA_N1110@Z",
+              "ea": "0x140101404",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$C2DEnablement@AEB_N_N_N_N_NAEB_N@AIXTelemetry@@SAXAEB_N$$QEA_N1110@Z",
+              "ea": "0x140024faf",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "disallowedByEnterpriseFeatureControl",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "disallowedByHardware",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "disallowedByPolicy",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "disallowedByRegion",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "disallowedByUserSetting",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "C2DLaunched",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "windowedViewInvokeType:UInt32",
+            "callingSource:UnicodeString",
+            "correlationId:GUID",
+            "providedInvokePoint:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1801CA318",
+              "ea": "0x1801ca365",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "windowedViewInvokeType:UInt32",
+            "callingSource:UnicodeString",
+            "correlationId:GUID",
+            "providedInvokePoint:UInt8(Boolean)",
+            "foregroundApp:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1801CA3EC",
+              "ea": "0x1801ca444",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1801CA4E0",
+              "ea": "0x1801ca535",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "DiscoveryOverlay.dll"
+          ]
+        },
+        {
+          "fieldName": "callingSource",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DiscoveryOverlay.dll"
+          ]
+        },
+        {
+          "fieldName": "correlationId",
+          "type": "GUID",
+          "seenIn": [
+            "DiscoveryOverlay.dll"
+          ]
+        },
+        {
+          "fieldName": "foregroundApp",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DiscoveryOverlay.dll"
+          ]
+        },
+        {
+          "fieldName": "providedInvokePoint",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "DiscoveryOverlay.dll"
+          ]
+        },
+        {
+          "fieldName": "windowedViewInvokeType",
+          "type": "UInt32",
+          "seenIn": [
+            "DiscoveryOverlay.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "C2DUserSettingChanged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "isEnabled:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "SettingsHandlers_A9.dll",
+              "function": "??$C2DUserSettingChanged@AEB_N@AIXTelemetry@@SAXAEB_N@Z",
+              "ea": "0x1800600d0",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "isEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "SettingsHandlers_A9.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ClickToDoPerfTestOverlayShown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_1800798F0",
+              "ea": "0x180079923",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1801D3EF0",
+              "ea": "0x1801d3f2b",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll",
+            "DiscoveryOverlay.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ClickToDoPerfTestStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_180079940",
+              "ea": "0x180079973",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1801D3F44",
+              "ea": "0x1801d3f7f",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll",
+            "DiscoveryOverlay.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CloakState_Mismatch",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_180079DC8",
+              "ea": "0x180079ddd",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1801D43B8",
+              "ea": "0x1801d43cd",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "CompatibleDriverFound",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "DriverFound:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "??$CompatibleDriverFound@AEB_N@AIXTelemetry@@SAXAEB_N@Z",
+              "ea": "0x14001e8ac",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$CompatibleDriverFound@AEB_N@AIXTelemetry@@SAXAEB_N@Z",
+              "ea": "0x1400cb409",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$CompatibleDriverFound@AEB_N@AIXTelemetry@@SAXAEB_N@Z",
+              "ea": "0x1400252b0",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "??$CompatibleDriverFound@AEB_N@AIXTelemetry@@SAXAEB_N@Z",
+              "ea": "0x18000e280",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DriverFound",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "ShellConfigTask.dll",
+            "explorer.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ConfigTask_UninstallDismConfirmed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?ConfigTask_UninstallDismConfirmed@AIXTelemetry@@SAXXZ",
+              "ea": "0x18001516d",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ConfigTask_UninstallDismStaged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?ConfigTask_UninstallDismStaged@AIXTelemetry@@SAXXZ",
+              "ea": "0x180015209",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DismEnableFeatureFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?DismEnableFeatureFailed@AIXTelemetry@@SAXXZ",
+              "ea": "0x1800156dd",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DismEnableFeatureSkipped",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?DismEnableFeatureSkipped@AIXTelemetry@@SAXXZ",
+              "ea": "0x180015779",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DismEnableFeatureSucceeded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "limitAccessState:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "??$DismEnableFeatureSucceeded@AEB_N@AIXTelemetry@@SAXAEB_N@Z",
+              "ea": "0x18000e326",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "limitAccessState",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DismEnablementAndAccessStatus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "isEnabled:UInt8(Boolean)",
+            "isAllowed:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "??$DismEnablementAndAccessStatus@AEA_NAEA_N@AIXTelemetry@@SAXAEA_N0@Z",
+              "ea": "0x18000e421",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "isAllowed",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "isEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FallbackError",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilResult:Struct(NTStatus)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "ClickToDo.exe",
+              "function": "?ReportTelemetryFailure@TraceLoggingProvider@wil@@IEAAXAEBUFailureInfo@2@@Z",
+              "ea": "0x14000e398",
+              "confidence": "GlobalFallback"
+            },
+            {
+              "binary": "Feedback.dll",
+              "function": "sub_180003660",
+              "ea": "0x180003796",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Feedback.dll",
+              "function": "sub_180003B90",
+              "ea": "0x180003c34",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilResult:Struct(Signed)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "failureId:UInt32",
+            "failureCount:UInt32",
+            "function:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "ClickToDo.exe",
+              "function": "?ReportTraceLoggingFailure@TraceLoggingProvider@wil@@IEAAXAEBUFailureInfo@2@@Z",
+              "ea": "0x14000e4e7",
+              "confidence": "GlobalFallback"
+            },
+            {
+              "binary": "Feedback.dll",
+              "function": "sub_180003660",
+              "ea": "0x1800038cd",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Feedback.dll",
+              "function": "sub_180003CF0",
+              "ea": "0x180003d83",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ClickToDo.exe",
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "callContext",
+          "type": "AnsiString",
+          "seenIn": [
+            "ClickToDo.exe",
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "ClickToDo.exe",
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ClickToDo.exe",
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "ClickToDo.exe",
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "failureCount",
+          "type": "UInt32",
+          "seenIn": [
+            "ClickToDo.exe",
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "failureId",
+          "type": "UInt32",
+          "seenIn": [
+            "ClickToDo.exe",
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "ClickToDo.exe",
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "ClickToDo.exe",
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "function",
+          "type": "AnsiString",
+          "seenIn": [
+            "ClickToDo.exe",
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "ClickToDo.exe",
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "ClickToDo.exe",
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ClickToDo.exe",
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "ClickToDo.exe",
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "ClickToDo.exe",
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ClickToDo.exe",
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "ClickToDo.exe",
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "ClickToDo.exe",
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "wilResult",
+          "type": "Struct(NTStatus)",
+          "seenIn": [
+            "ClickToDo.exe",
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "wilResult",
+          "type": "Struct(Signed)",
+          "seenIn": [
+            "ClickToDo.exe",
+            "Feedback.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FeedbackWithAdditionalInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ComponentId:UnicodeString",
+            "AdditionalInfo:UnicodeString",
+            "feedbackType:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "Feedback.dll",
+              "function": "sub_1800361C4",
+              "ea": "0x180036208",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AdditionalInfo",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "ComponentId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Feedback.dll"
+          ]
+        },
+        {
+          "fieldName": "feedbackType",
+          "type": "Int32",
+          "seenIn": [
+            "Feedback.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FirstRunExperienceDismissed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18005D388",
+              "ea": "0x18005d3bb",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FirstRunExperienceShown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18005D3D8",
+              "ea": "0x18005d40b",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IncorrectConfigStateDetected",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?ShouldRunPolicyConfigurationTask@AIXPolicyHelper@@YA_NPEAW4ShouldRunPolicyTaskReason@@@Z",
+              "ea": "0x18002f1d8",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "InitialTask_Disabled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?InitialTask_Disabled@AIXTelemetry@@SAXXZ",
+              "ea": "0x18001c0d1",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InitialTask_InstallCompleted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?Worker@CRecallConfigTaskHandler@@EEAAJXZ",
+              "ea": "0x180022a47",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InitialTask_OOBECompleteSignalReceived",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?InitialTask_OOBECompleteSignalReceived@AIXTelemetry@@SAXXZ",
+              "ea": "0x18001c16d",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InitialTask_OOBEInEnduserSessionSignalReceived",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?InitialTask_OOBEInEnduserSessionSignalReceived@AIXTelemetry@@SAXXZ",
+              "ea": "0x18001c209",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InitialTask_ReinstallOnIPUCompleted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?Worker@CRecallConfigTaskHandler@@EEAAJXZ",
+              "ea": "0x1800222b4",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InitialTask_ReinstallOnIPUSkipped",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?InitialTask_ReinstallOnIPUSkipped@AIXTelemetry@@SAXXZ",
+              "ea": "0x18001c2a5",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InitialTask_SkippedOnTaskRerun",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?InitialTask_SkippedOnTaskRerun@AIXTelemetry@@SAXXZ",
+              "ea": "0x18001c341",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InitialTask_Started",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?InitialTask_Started@AIXTelemetry@@SAXXZ",
+              "ea": "0x18001c3dd",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InitialTask_UninstallCompleted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?Worker@CRecallConfigTaskHandler@@EEAAJXZ",
+              "ea": "0x180022900",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InitialTask_WaitForCorrectOOBEStateFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?InitialTask_WaitForCorrectOOBEStateFailed@AIXTelemetry@@SAXXZ",
+              "ea": "0x18001c479",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IsAllowedByPolicy",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "isAllowedByPolicy:UInt8(Boolean)",
+            "isEduOrEnterpriseSku:UInt8(Boolean)",
+            "isDeviceITManaged:UInt8(Boolean)",
+            "isDeviceBakerCapable:UInt8(Boolean)",
+            "isAllowedInRegion:UInt8(Boolean)",
+            "isWipUser:UInt8(Boolean)",
+            "isPolicyConfigured:UInt8(Boolean)",
+            "isPolicyEnabled:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "??$IsAllowedByPolicy@AEA_N_NAEB_NAEA_NAEB_NAEB_NAEB_N_N@AIXTelemetry@@SAXAEA_N$$QEA_NAEB_N02221@Z",
+              "ea": "0x18000ecc0",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "isAllowedByPolicy",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "isAllowedInRegion",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "isDeviceBakerCapable",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "isDeviceITManaged",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "isEduOrEnterpriseSku",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "isPolicyConfigured",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "isPolicyEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "isWipUser",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IsC2DAllowedByPolicy",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "IsWipUser:UInt8(Boolean)",
+            "IsAllowedInRegion:UInt8(Boolean)",
+            "IsDeviceCapable:UInt8(Boolean)",
+            "IsAllowedByITPolicy:UInt8(Boolean)",
+            "IsAllowedByVelocity:UInt8(Boolean)",
+            "IsAllowedByEnterpriseFeatureControl:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "explorer.exe",
+              "function": "??$IsC2DAllowedByPolicy@_N_NAEA_NAEB_NAEB_NAEB_N@AIXTelemetry@@SAX$$QEA_N0AEA_NAEB_N22@Z",
+              "ea": "0x1400cbe21",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "PenService.dll",
+              "function": "??$IsC2DAllowedByPolicy@_N_NAEA_NAEB_NAEB_NAEB_N@AIXTelemetry@@SAX$$QEA_N0AEA_NAEB_N22@Z",
+              "ea": "0x180014b6d",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "PenWorkspace.dll",
+              "function": "??$IsC2DAllowedByPolicy@_N_NAEA_NAEB_NAEB_NAEB_N@AIXTelemetry@@SAX$$QEA_N0AEA_NAEB_N22@Z",
+              "ea": "0x18015b66b",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SettingsEnvironment.Desktop.dll",
+              "function": "??$IsC2DAllowedByPolicy@_N_NAEA_NAEB_NAEB_NAEB_N@AIXTelemetry@@SAX$$QEA_N0AEA_NAEB_N22@Z",
+              "ea": "0x18006316d",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "SettingsHandlers_A9.dll",
+              "function": "??$IsC2DAllowedByPolicy@_N_NAEA_NAEB_NAEB_NAEB_N@AIXTelemetry@@SAX$$QEA_N0AEA_NAEB_N22@Z",
+              "ea": "0x1800429d7",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SettingsHandlers_Pen.dll",
+              "function": "??$IsC2DAllowedByPolicy@_N_NAEA_NAEB_NAEB_NAEB_N@AIXTelemetry@@SAX$$QEA_N0AEA_NAEB_N22@Z",
+              "ea": "0x18001b261",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "??$IsC2DAllowedByPolicy@_N_NAEA_NAEB_NAEB_NAEB_N@AIXTelemetry@@SAX$$QEA_N0AEA_NAEB_N22@Z",
+              "ea": "0x18000edd1",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "twinui.pcshell.dll",
+              "function": "??$IsC2DAllowedByPolicy@_N_NAEA_NAEB_NAEB_NAEB_N@AIXTelemetry@@SAX$$QEA_N0AEA_NAEB_N22@Z",
+              "ea": "0x180587c11",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsAllowedByEnterpriseFeatureControl",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "PenService.dll",
+            "PenWorkspace.dll",
+            "SettingsEnvironment.Desktop.dll",
+            "SettingsHandlers_A9.dll",
+            "SettingsHandlers_Pen.dll",
+            "ShellConfigTask.dll",
+            "explorer.exe",
+            "twinui.pcshell.dll"
+          ]
+        },
+        {
+          "fieldName": "IsAllowedByITPolicy",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "PenService.dll",
+            "PenWorkspace.dll",
+            "SettingsEnvironment.Desktop.dll",
+            "SettingsHandlers_A9.dll",
+            "SettingsHandlers_Pen.dll",
+            "ShellConfigTask.dll",
+            "explorer.exe",
+            "twinui.pcshell.dll"
+          ]
+        },
+        {
+          "fieldName": "IsAllowedByVelocity",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "PenService.dll",
+            "PenWorkspace.dll",
+            "SettingsEnvironment.Desktop.dll",
+            "SettingsHandlers_A9.dll",
+            "SettingsHandlers_Pen.dll",
+            "ShellConfigTask.dll",
+            "explorer.exe",
+            "twinui.pcshell.dll"
+          ]
+        },
+        {
+          "fieldName": "IsAllowedInRegion",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "PenService.dll",
+            "PenWorkspace.dll",
+            "SettingsEnvironment.Desktop.dll",
+            "SettingsHandlers_A9.dll",
+            "SettingsHandlers_Pen.dll",
+            "ShellConfigTask.dll",
+            "explorer.exe",
+            "twinui.pcshell.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDeviceCapable",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "PenService.dll",
+            "PenWorkspace.dll",
+            "SettingsEnvironment.Desktop.dll",
+            "SettingsHandlers_A9.dll",
+            "SettingsHandlers_Pen.dll",
+            "ShellConfigTask.dll",
+            "explorer.exe",
+            "twinui.pcshell.dll"
+          ]
+        },
+        {
+          "fieldName": "IsWipUser",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "PenService.dll",
+            "PenWorkspace.dll",
+            "SettingsEnvironment.Desktop.dll",
+            "SettingsHandlers_A9.dll",
+            "SettingsHandlers_Pen.dll",
+            "ShellConfigTask.dll",
+            "explorer.exe",
+            "twinui.pcshell.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IsCTAMachine",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "isCTAMachine:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "??$IsCTAMachine@AEA_N@AIXTelemetry@@SAXAEA_N@Z",
+              "ea": "0x18000eed4",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "isCTAMachine",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IsClickToDoSupported",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "HardwareSupport:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18008AD3C",
+              "ea": "0x18008ad55",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1802CC198",
+              "ea": "0x1802cc1b1",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HardwareSupport",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "AIXView.dll",
+            "DiscoveryOverlay.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IsDeviceITManaged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "isManaged:UInt8(Boolean)",
+            "flags:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "??$IsDeviceITManaged@A6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@AIXTelemetry@@SAXA6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@Z",
+              "ea": "0x140020725",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DesktopShellExt.dll",
+              "function": "??$IsDeviceITManaged@A6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@AIXTelemetry@@SAXA6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@Z",
+              "ea": "0x180065531",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$IsDeviceITManaged@A6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@AIXTelemetry@@SAXA6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@Z",
+              "ea": "0x1400cbf3c",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "SettingsHandlers_A9.dll",
+              "function": "??$IsDeviceITManaged@A6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@AIXTelemetry@@SAXA6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@Z",
+              "ea": "0x180039d93",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$IsDeviceITManaged@A6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@AIXTelemetry@@SAXA6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@Z",
+              "ea": "0x140027129",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "??$IsDeviceITManaged@A6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@AIXTelemetry@@SAXA6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@Z",
+              "ea": "0x18000ef83",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "StartTileData.dll",
+              "function": "??$IsDeviceITManaged@A6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@AIXTelemetry@@SAXA6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@Z",
+              "ea": "0x1802d61a5",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "Taskbar.dll",
+              "function": "??$IsDeviceITManaged@A6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@AIXTelemetry@@SAXA6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@Z",
+              "ea": "0x180188d29",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "windowsudk.shellcommon.dll",
+              "function": "??$IsDeviceITManaged@A6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@AIXTelemetry@@SAXA6A_NXZAEBW4IsDeviceITManagedFlags@AIXPolicyHelper@@@Z",
+              "ea": "0x1802d64e8",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "DesktopShellExt.dll",
+            "SettingsHandlers_A9.dll",
+            "ShellAppRuntime.exe",
+            "ShellConfigTask.dll",
+            "StartTileData.dll",
+            "Taskbar.dll",
+            "explorer.exe",
+            "windowsudk.shellcommon.dll"
+          ]
+        },
+        {
+          "fieldName": "flags",
+          "type": "UInt32",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "DesktopShellExt.dll",
+            "SettingsHandlers_A9.dll",
+            "ShellAppRuntime.exe",
+            "ShellConfigTask.dll",
+            "StartTileData.dll",
+            "Taskbar.dll",
+            "explorer.exe",
+            "windowsudk.shellcommon.dll"
+          ]
+        },
+        {
+          "fieldName": "isManaged",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "DesktopShellExt.dll",
+            "SettingsHandlers_A9.dll",
+            "ShellAppRuntime.exe",
+            "ShellConfigTask.dll",
+            "StartTileData.dll",
+            "Taskbar.dll",
+            "explorer.exe",
+            "windowsudk.shellcommon.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IsDisableC2DPolicyActive",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "IsDisabledByUserPolicy:UInt8(Boolean)",
+            "IsDisabledByMachinePolicy:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18008AD7C",
+              "ea": "0x18008ad9c",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1802CC1D8",
+              "ea": "0x1802cc1f8",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsDisabledByMachinePolicy",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "AIXView.dll",
+            "DiscoveryOverlay.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDisabledByUserPolicy",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "AIXView.dll",
+            "DiscoveryOverlay.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IsPBRInProgress",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "isPBRInProgress:UInt8(Boolean)",
+            "isOOBEComplete:UInt8(Boolean)",
+            "installType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "??$IsPBRInProgress@AEA_NAEB_NAEBK@AIXTelemetry@@SAXAEA_NAEB_NAEBK@Z",
+              "ea": "0x140020aa7",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DesktopShellExt.dll",
+              "function": "??$IsPBRInProgress@AEA_NAEB_NAEBK@AIXTelemetry@@SAXAEA_NAEB_NAEBK@Z",
+              "ea": "0x18006562f",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$IsPBRInProgress@AEA_NAEB_NAEBK@AIXTelemetry@@SAXAEA_NAEB_NAEBK@Z",
+              "ea": "0x1400cbff7",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "SettingsHandlers_A9.dll",
+              "function": "??$IsPBRInProgress@AEA_NAEB_NAEBK@AIXTelemetry@@SAXAEA_NAEB_NAEBK@Z",
+              "ea": "0x180039e93",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$IsPBRInProgress@AEA_NAEB_NAEBK@AIXTelemetry@@SAXAEA_NAEB_NAEBK@Z",
+              "ea": "0x1400274ab",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "??$IsPBRInProgress@AEA_NAEB_NAEBK@AIXTelemetry@@SAXAEA_NAEB_NAEBK@Z",
+              "ea": "0x18000f083",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "StartTileData.dll",
+              "function": "??$IsPBRInProgress@AEA_NAEB_NAEBK@AIXTelemetry@@SAXAEA_NAEB_NAEBK@Z",
+              "ea": "0x1802d62a3",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "Taskbar.dll",
+              "function": "??$IsPBRInProgress@AEA_NAEB_NAEBK@AIXTelemetry@@SAXAEA_NAEB_NAEBK@Z",
+              "ea": "0x180188e27",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "windowsudk.shellcommon.dll",
+              "function": "??$IsPBRInProgress@AEA_NAEB_NAEBK@AIXTelemetry@@SAXAEA_NAEB_NAEBK@Z",
+              "ea": "0x1802d65a3",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "installType",
+          "type": "UInt32",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "DesktopShellExt.dll",
+            "SettingsHandlers_A9.dll",
+            "ShellAppRuntime.exe",
+            "ShellConfigTask.dll",
+            "StartTileData.dll",
+            "Taskbar.dll",
+            "explorer.exe",
+            "windowsudk.shellcommon.dll"
+          ]
+        },
+        {
+          "fieldName": "isOOBEComplete",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "DesktopShellExt.dll",
+            "SettingsHandlers_A9.dll",
+            "ShellAppRuntime.exe",
+            "ShellConfigTask.dll",
+            "StartTileData.dll",
+            "Taskbar.dll",
+            "explorer.exe",
+            "windowsudk.shellcommon.dll"
+          ]
+        },
+        {
+          "fieldName": "isPBRInProgress",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "DesktopShellExt.dll",
+            "SettingsHandlers_A9.dll",
+            "ShellAppRuntime.exe",
+            "ShellConfigTask.dll",
+            "StartTileData.dll",
+            "Taskbar.dll",
+            "explorer.exe",
+            "windowsudk.shellcommon.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IsRecallSupported",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "VelocityEnabled:UInt8(Boolean)",
+            "HardwareSupport:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18008ADD8",
+              "ea": "0x18008adf8",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HardwareSupport",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "VelocityEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LanguageModelNotInstalled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18007DD60",
+              "ea": "0x18007dd93",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ClickToDo.exe",
+              "function": "?LanguageModelNotInstalled@ModelManagementHelpersTelemetry@@SAXXZ",
+              "ea": "0x14000d84c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1801DBD10",
+              "ea": "0x1801dbd4b",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll",
+            "ClickToDo.exe",
+            "DiscoveryOverlay.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MaxRecallInstallAttemptsDetected",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?LogMaxInstallAttempts@@YAJAEAV?$tip_test@V?$merged_data@U_tip_A9PolicyTaskTipTest@@U1@@details@tip2@@@tip2@@@Z",
+              "ea": "0x18002d988",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "MeetsPhiDriverRequirements_FoundQComNPU",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "meetsMinVersion:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "??$MeetsPhiDriverRequirements_FoundQComNPU@AEA_N@AIXTelemetry@@SAXAEA_N@Z",
+              "ea": "0x18000f100",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "meetsMinVersion",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MeetsPhiDriverRequirements_Result",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "validOrNotApplicable:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "??$MeetsPhiDriverRequirements_Result@AEB_N@AIXTelemetry@@SAXAEB_N@Z",
+              "ea": "0x18000f180",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "validOrNotApplicable",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MeetsPhiDriverRequirements_Start",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?MeetsPhiDriverRequirements@AIXPolicyHelper@@YA_NXZ",
+              "ea": "0x18001f3a0",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "ModelCheckEnded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "WasTimeout:UInt8(Boolean)",
+            "DurationMs:UInt64",
+            "ModelsAvailable:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1801CAAE8",
+              "ea": "0x1801cab2a",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DurationMs",
+          "type": "UInt64",
+          "seenIn": [
+            "DiscoveryOverlay.dll"
+          ]
+        },
+        {
+          "fieldName": "ModelsAvailable",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "DiscoveryOverlay.dll"
+          ]
+        },
+        {
+          "fieldName": "WasTimeout",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "DiscoveryOverlay.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ModelInstallation_Completed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?InstallModels@@YAXXZ",
+              "ea": "0x18001d08e",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "ModelInstallation_Failed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ModelName:UInt32",
+            "hr:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "??$ModelInstallation_Failed@W4ModelName@@AEBJ@AIXTelemetry@@SAX$$QEAW4ModelName@@AEBJ@Z",
+              "ea": "0x18000f259",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ModelName",
+          "type": "UInt32",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ModelInstallation_IsCTAMachine",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ModelName:UInt32",
+            "IsCTAMachine:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "??$ModelInstallation_IsCTAMachine@W4ModelName@@AEA_N@AIXTelemetry@@SAX$$QEAW4ModelName@@AEA_N@Z",
+              "ea": "0x18000f309",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsCTAMachine",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "ModelName",
+          "type": "UInt32",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ModelInstallation_Started",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?InstallModels@@YAXXZ",
+              "ea": "0x18001c512",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "ModelInstallation_Succeeded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ModelName:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "??$ModelInstallation_Succeeded@W4ModelName@@@AIXTelemetry@@SAX$$QEAW4ModelName@@@Z",
+              "ea": "0x18000f36c",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ModelName",
+          "type": "UInt32",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OCTask_GetDismState_Begin",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "SettingsEnvironment.Desktop.dll",
+              "function": "?OCTask_GetDismState_Begin@AIXTelemetry@@SAXXZ",
+              "ea": "0x18007ffc9",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?GetDismFeatureState@AIXPolicyHelper@@YAKXZ",
+              "ea": "0x18001badc",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "OCTask_GetDismState_End",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "SettingsEnvironment.Desktop.dll",
+              "function": "?OCTask_GetDismState_End@AIXTelemetry@@SAXXZ",
+              "ea": "0x18007fff5",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?GetDismFeatureState@AIXPolicyHelper@@YAKXZ",
+              "ea": "0x18001bbfb",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "PolicyTaskShouldRun",
+      "variantCount": 4,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "shouldRun:UInt8(Boolean)",
+            "isBakerCapable:UInt8(Boolean)",
+            "isITManaged:UInt8(Boolean)",
+            "isAllowedInRegion:UInt8(Boolean)",
+            "isPolicyConfigured:UInt8(Boolean)",
+            "isAllowedOnDeviceByPolicy:UInt8(Boolean)",
+            "meetsAdditionalDriverRequirements:UInt8(Boolean)",
+            "isFeatureDisabled:UInt8(Boolean)",
+            "lastOperationKind:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?PolicyTaskShouldRun_@AIXTelemetry@@QEAAX_N0000000K@Z",
+              "ea": "0x18002dacf",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "shouldRun:UInt8(Boolean)",
+            "isBakerCapable:UInt8(Boolean)",
+            "isITManaged:UInt8(Boolean)",
+            "isAllowedInRegion:UInt8(Boolean)",
+            "isPolicyConfigured:UInt8(Boolean)",
+            "isAllowedOnDeviceByPolicy:UInt8(Boolean)",
+            "meetsAdditionalDriverRequirements:UInt8(Boolean)",
+            "isFeatureDisabled:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?PolicyTaskShouldRun_@AIXTelemetry@@QEAAX_N0000000K@Z",
+              "ea": "0x18002dbec",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "shouldRun:UInt8(Boolean)",
+            "isBakerCapable:UInt8(Boolean)",
+            "isITManaged:UInt8(Boolean)",
+            "isAllowedInRegion:UInt8(Boolean)",
+            "isPolicyConfigured:UInt8(Boolean)",
+            "isAllowedOnDeviceByPolicy:UInt8(Boolean)",
+            "lastOperationKind:UInt32",
+            "isFeatureDisabled:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?PolicyTaskShouldRun_@AIXTelemetry@@QEAAX_N0000000K@Z",
+              "ea": "0x18002dcf4",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "shouldRun:UInt8(Boolean)",
+            "isBakerCapable:UInt8(Boolean)",
+            "isITManaged:UInt8(Boolean)",
+            "isAllowedInRegion:UInt8(Boolean)",
+            "isPolicyConfigured:UInt8(Boolean)",
+            "isAllowedOnDeviceByPolicy:UInt8(Boolean)",
+            "isFeatureDisabled:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?PolicyTaskShouldRun_@AIXTelemetry@@QEAAX_N0000000K@Z",
+              "ea": "0x18002ddf3",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "isAllowedInRegion",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "isAllowedOnDeviceByPolicy",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "isBakerCapable",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "isFeatureDisabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "isITManaged",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "isPolicyConfigured",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "lastOperationKind",
+          "type": "UInt32",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "meetsAdditionalDriverRequirements",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "shouldRun",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PolicyTask_AttemptedInstallStateDetected",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?PolicyTask_AttemptedInstallStateDetected@AIXTelemetry@@SAXXZ",
+              "ea": "0x18002df49",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PolicyTask_AttemptedUninstallStateDetected",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?PolicyTask_AttemptedUninstallStateDetected@AIXTelemetry@@SAXXZ",
+              "ea": "0x18002dfe5",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PolicyTask_InstallCompleted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?Worker@CRecallPolicyTaskHandler@@EEAAJXZ",
+              "ea": "0x18003165a",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PolicyTask_InstallDismConfirmed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?PolicyTask_InstallDismConfirmed@AIXTelemetry@@SAXXZ",
+              "ea": "0x18002e081",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PolicyTask_ShouldRunPolicyConfigurationTask",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "shouldRunPolicyConfigurationTask:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "??$PolicyTask_ShouldRunPolicyConfigurationTask@_N@AIXTelemetry@@SAX$$QEA_N@Z",
+              "ea": "0x18002848e",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "shouldRunPolicyConfigurationTask",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PolicyTask_Started",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?PolicyTask_Started@AIXTelemetry@@SAXXZ",
+              "ea": "0x18002e11d",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PolicyTask_UninstallCompleted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?Worker@CRecallPolicyTaskHandler@@EEAAJXZ",
+              "ea": "0x180031816",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PolicyTask_UninstallDismConfirmed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?PolicyTask_UninstallDismConfirmed@AIXTelemetry@@SAXXZ",
+              "ea": "0x18002e1b9",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RecallNudge_BadgeCleared",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_180091328",
+              "ea": "0x18009135b",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RecallNudge_BadgeSet",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_180091378",
+              "ea": "0x1800913ab",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RecallNudge_SkippedDueToControlGroup",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_1800913C8",
+              "ea": "0x1800913fb",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RecallNudge_ToastActionActivated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_180091418",
+              "ea": "0x18009144b",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RecallNudge_ToastDismissed_ByUser",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_180091468",
+              "ea": "0x18009149b",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RecallNudge_ToastDismissed_TimedOut",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_1800914B8",
+              "ea": "0x1800914eb",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RecallNudge_ToastFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "errorCode:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18008AE34",
+              "ea": "0x18008ae60",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "errorCode",
+          "type": "Int32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RecallNudge_ToastFired",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_180091508",
+              "ea": "0x18009153b",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RecallWSBNudge_ToastActionActivated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18006964C",
+              "ea": "0x18006967f",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RecallWSBNudge_ToastDismissed_ByUser",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18006969C",
+              "ea": "0x1800696cf",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RecallWSBNudge_ToastDismissed_TimedOut",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_1800696EC",
+              "ea": "0x18006971f",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RecallWSBNudge_ToastFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "errorCode:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_1800650DC",
+              "ea": "0x180065108",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "errorCode",
+          "type": "Int32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RecallWSBNudge_ToastFired",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18006973C",
+              "ea": "0x18006976f",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ScreenrayLaunched",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "windowedViewInvokeType:UInt32",
+            "entryPoint:UInt32",
+            "correlationId:GUID",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18006EFB0",
+              "ea": "0x18006efff",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18006F064",
+              "ea": "0x18006f0b3",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1801CAC28",
+              "ea": "0x1801cac77",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1801CACDC",
+              "ea": "0x1801cad2b",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1801CAD90",
+              "ea": "0x1801caddf",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1801CAE44",
+              "ea": "0x1801cae93",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1801CAEF8",
+              "ea": "0x1801caf47",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1801CAFAC",
+              "ea": "0x1801caffb",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1801CB060",
+              "ea": "0x1801cb0af",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1801CB114",
+              "ea": "0x1801cb163",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll",
+            "DiscoveryOverlay.dll"
+          ]
+        },
+        {
+          "fieldName": "correlationId",
+          "type": "GUID",
+          "seenIn": [
+            "AIXView.dll",
+            "DiscoveryOverlay.dll"
+          ]
+        },
+        {
+          "fieldName": "entryPoint",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll",
+            "DiscoveryOverlay.dll"
+          ]
+        },
+        {
+          "fieldName": "windowedViewInvokeType",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll",
+            "DiscoveryOverlay.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SetOCVisibility",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "visible:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "??$SetOCVisibility@AEA_N@AIXTelemetry@@SAXAEA_N@Z",
+              "ea": "0x18000f8fc",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "visible",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ShellConfigTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ShouldDeleteRecallData_DisableAIAnalysisPolicyEnabled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?IsA9DataAnalysisDisabledByGroupPolicy@@YA_NXZ",
+              "ea": "0x18002d8b9",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "ShouldDeleteRecallData_ITManagedNotConfigured",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?IsA9DataAnalysisDisabledByGroupPolicy@@YA_NXZ",
+              "ea": "0x18002d8a2",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "ShouldDeleteRecallData_PackageNotFound",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?Worker@CRecallPolicyTaskHandler@@EEAAJXZ",
+              "ea": "0x1800319c0",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "ShouldRemoveComponent",
+      "variantCount": 6,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "ShouldRemoveComponent:UInt8(Boolean)",
+            "isEnterpriseSku:UInt8(Boolean)",
+            "isEduSku:UInt8(Boolean)",
+            "isDeviceITManaged:UInt8(Boolean)",
+            "isDeviceBakerCapable:UInt8(Boolean)",
+            "isAllowedInRegion:UInt8(Boolean)",
+            "isWipUser:UInt8(Boolean)",
+            "isAllowedOnDeviceByPolicy:UInt8(Boolean)",
+            "isBlockedByDriverVersion:UInt8(Boolean)",
+            "isRecallFeatureDisabled:UInt8(Boolean)",
+            "isRecallInstalled:UInt8(Boolean)",
+            "isDlpProviderPolicyConfigured:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x1400982f2",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x1400eb1de",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x14009c632",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x180020a62",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "ShouldRemoveComponent:UInt8(Boolean)",
+            "isEnterpriseSku:UInt8(Boolean)",
+            "isEduSku:UInt8(Boolean)",
+            "isDeviceITManaged:UInt8(Boolean)",
+            "isDeviceBakerCapable:UInt8(Boolean)",
+            "isAllowedInRegion:UInt8(Boolean)",
+            "isWipUser:UInt8(Boolean)",
+            "isAllowedOnDeviceByPolicy:UInt8(Boolean)",
+            "isBlockedByDriverVersion:UInt8(Boolean)",
+            "isRecallFeatureDisabled:UInt8(Boolean)",
+            "isRecallInstalled:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x140098427",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x1400eb2d6",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x14009c767",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x180020b97",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "ShouldRemoveComponent:UInt8(Boolean)",
+            "isEnterpriseSku:UInt8(Boolean)",
+            "isEduSku:UInt8(Boolean)",
+            "isDeviceITManaged:UInt8(Boolean)",
+            "isDeviceBakerCapable:UInt8(Boolean)",
+            "isAllowedInRegion:UInt8(Boolean)",
+            "isWipUser:UInt8(Boolean)",
+            "isAllowedOnDeviceByPolicy:UInt8(Boolean)",
+            "isBlockedByDriverVersion:UInt8(Boolean)",
+            "isRecallFeatureDisabled:UInt8(Boolean)",
+            "isDlpProviderPolicyConfigured:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x140098557",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x1400eb3e0",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x14009c897",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x180020cc7",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "ShouldRemoveComponent:UInt8(Boolean)",
+            "isEnterpriseSku:UInt8(Boolean)",
+            "isEduSku:UInt8(Boolean)",
+            "isDeviceITManaged:UInt8(Boolean)",
+            "isDeviceBakerCapable:UInt8(Boolean)",
+            "isAllowedInRegion:UInt8(Boolean)",
+            "isWipUser:UInt8(Boolean)",
+            "isAllowedOnDeviceByPolicy:UInt8(Boolean)",
+            "isBlockedByDriverVersion:UInt8(Boolean)",
+            "isRecallFeatureDisabled:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x14009859f",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x1400eb417",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x14009c8df",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x180020d0f",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "ShouldRemoveComponent:UInt8(Boolean)",
+            "isEnterpriseSku:UInt8(Boolean)",
+            "isEduSku:UInt8(Boolean)",
+            "isDeviceITManaged:UInt8(Boolean)",
+            "isDeviceBakerCapable:UInt8(Boolean)",
+            "isAllowedInRegion:UInt8(Boolean)",
+            "isWipUser:UInt8(Boolean)",
+            "isAllowedOnDeviceByPolicy:UInt8(Boolean)",
+            "isRecallFeatureDisabled:UInt8(Boolean)",
+            "isDlpProviderPolicyConfigured:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x140098601",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x1400eb465",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x14009c941",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x180020d71",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "ShouldRemoveComponent:UInt8(Boolean)",
+            "isEnterpriseSku:UInt8(Boolean)",
+            "isEduSku:UInt8(Boolean)",
+            "isDeviceITManaged:UInt8(Boolean)",
+            "isDeviceBakerCapable:UInt8(Boolean)",
+            "isAllowedInRegion:UInt8(Boolean)",
+            "isWipUser:UInt8(Boolean)",
+            "isAllowedOnDeviceByPolicy:UInt8(Boolean)",
+            "isRecallFeatureDisabled:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x140098702",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x1400eb53c",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x14009ca42",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellConfigTask.dll",
+              "function": "?ShouldRemoveComponent@AIXTelemetry@@SAH_N00000000000@Z",
+              "ea": "0x180020e72",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "ShellConfigTask.dll",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "ShouldRemoveComponent",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "ShellConfigTask.dll",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isAllowedInRegion",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "ShellConfigTask.dll",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isAllowedOnDeviceByPolicy",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "ShellConfigTask.dll",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isBlockedByDriverVersion",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "ShellConfigTask.dll",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isDeviceBakerCapable",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "ShellConfigTask.dll",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isDeviceITManaged",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "ShellConfigTask.dll",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isDlpProviderPolicyConfigured",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "ShellConfigTask.dll",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isEduSku",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "ShellConfigTask.dll",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isEnterpriseSku",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "ShellConfigTask.dll",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isRecallFeatureDisabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "ShellConfigTask.dll",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isRecallInstalled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "ShellConfigTask.dll",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isWipUser",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "ShellConfigTask.dll",
+            "explorer.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StartupError_AlreadyExists",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ClickToDo.exe",
+              "function": "WinMain",
+              "ea": "0x14001241b",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "StartupError_TipFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "StartupStage:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_180060A58",
+              "ea": "0x180060a71",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1802619C4",
+              "ea": "0x1802619dd",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "StartupStage",
+          "type": "Int32",
+          "seenIn": [
+            "AIXView.dll",
+            "DiscoveryOverlay.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "StartupError_VelocityDisabled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ClickToDo.exe",
+              "function": "WinMain",
+              "ea": "0x1400126d3",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "Startup_StageChanged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "StartupStage:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18008B1B0",
+              "ea": "0x18008b1c9",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1802CC2B0",
+              "ea": "0x1802cc2c9",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "StartupStage",
+          "type": "Int32",
+          "seenIn": [
+            "AIXView.dll",
+            "DiscoveryOverlay.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TileStoreTransformer_ExclusionHelper",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "IsExcluded:UInt8(Boolean)",
+            "Kind:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "StartTileData.dll",
+              "function": "??$TileStoreTransformer_ExclusionHelper@AEA_NAEBW4ExclusionKind@BlockListHelpers@UnifiedTile@Shell@WindowsInternal@@@AIXTelemetry@@SAXAEA_NAEBW4ExclusionKind@BlockListHelpers@UnifiedTile@Shell@WindowsInternal@@@Z",
+              "ea": "0x1802d6611",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsExcluded",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "StartTileData.dll"
+          ]
+        },
+        {
+          "fieldName": "Kind",
+          "type": "Int32",
+          "seenIn": [
+            "StartTileData.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TriggerModelAcquisition",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ClickToDo.exe",
+              "function": "TriggerModelAcquisition$_ResumeCoro$1",
+              "ea": "0x14000f0bb",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "TriggerModelAcquisition_CanWorkloadsBeAcquired",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "error:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ClickToDo.exe",
+              "function": "??$TriggerModelAcquisition_CanWorkloadsBeAcquired@I@AIXTelemetry@@SAX$$QEAI@Z",
+              "ea": "0x140007a80",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "error",
+          "type": "UInt32",
+          "seenIn": [
+            "ClickToDo.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TriggerModelAcquisition_SAMImageObjectExtractor",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ClickToDo.exe",
+              "function": "TriggerModelAcquisition$_ResumeCoro$1",
+              "ea": "0x14000f3e2",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "TriggerModelAcquisition_TryEnableWorkloadsAsync",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ClickToDo.exe",
+              "function": "TriggerModelAcquisition$_ResumeCoro$1",
+              "ea": "0x14000f235",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "TriggerModelAcquisition_TryEnsureLanguageModelAcquired",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "ClickToDo.exe",
+              "function": "TriggerModelAcquisition$_ResumeCoro$1",
+              "ea": "0x14000f2e2",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "TryGetFactoryFromCompatibleExtension",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NoPrint)",
+            "threadId:UInt32",
+            "ExtensionId:UnicodeString",
+            "ClassId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18005EC44",
+              "ea": "0x18005ecda",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(Signed)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "failureId:UInt32",
+            "failureCount:UInt32",
+            "function:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18005EEB0",
+              "ea": "0x18005ef09",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18005EEB0",
+              "ea": "0x18005f088",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClassId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "ExtensionId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "callContext",
+          "type": "AnsiString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "failureCount",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "failureId",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "function",
+          "type": "AnsiString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(NoPrint)",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(Signed)",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(String)",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TryGetFactoryFromCompatibleExtension_LookupFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "IsNull:UInt8(Boolean)",
+            "DevKitMajorVersion:UInt16",
+            "ExtensionMajorVersion:UInt16",
+            "DevKitMinorVersion:UInt16",
+            "ExtensionMinorVersion:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18005AF00",
+              "ea": "0x18005af3a",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DevKitMajorVersion",
+          "type": "UInt16",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "DevKitMinorVersion",
+          "type": "UInt16",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "ExtensionMajorVersion",
+          "type": "UInt16",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "ExtensionMinorVersion",
+          "type": "UInt16",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "IsNull",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TryGetInstanceFromCompatibleExtension",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NoPrint)",
+            "threadId:UInt32",
+            "ExtensionId:UnicodeString",
+            "ClassId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_180082300",
+              "ea": "0x180082396",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(Signed)",
+            "hresult:UInt32",
+            "fileName:AnsiString",
+            "lineNumber:UInt32",
+            "module:AnsiString",
+            "failureType:UInt32",
+            "message:UnicodeString",
+            "threadId:UInt32",
+            "callContext:AnsiString",
+            "originatingContextId:UInt32",
+            "originatingContextName:AnsiString",
+            "originatingContextMessage:UnicodeString",
+            "currentContextId:UInt32",
+            "currentContextName:AnsiString",
+            "currentContextMessage:UnicodeString",
+            "failureId:UInt32",
+            "failureCount:UInt32",
+            "function:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_180082AD0",
+              "ea": "0x180082b29",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_180082AD0",
+              "ea": "0x180082ca8",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClassId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "ExtensionId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "callContext",
+          "type": "AnsiString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "currentContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "failureCount",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "failureId",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "failureType",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "fileName",
+          "type": "AnsiString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "function",
+          "type": "AnsiString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "lineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "module",
+          "type": "AnsiString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextId",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "originatingContextName",
+          "type": "AnsiString",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(NoPrint)",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(Signed)",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(String)",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TryGetInstanceFromCompatibleExtension_LookupFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "IsNull:UInt8(Boolean)",
+            "DevKitMajorVersion:UInt16",
+            "ExtensionMajorVersion:UInt16",
+            "DevKitMinorVersion:UInt16",
+            "ExtensionMinorVersion:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18006F6B4",
+              "ea": "0x18006f6ee",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DevKitMajorVersion",
+          "type": "UInt16",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "DevKitMinorVersion",
+          "type": "UInt16",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "ExtensionMajorVersion",
+          "type": "UInt16",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "ExtensionMinorVersion",
+          "type": "UInt16",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "IsNull",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UI_Thread_No_Ack",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_180083548",
+              "ea": "0x18008355d",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1801E4964",
+              "ea": "0x1801e4979",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "WinClickScreenrayDuration",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "durationMs:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18006F788",
+              "ea": "0x18006f805",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1801CB4C0",
+              "ea": "0x1801cb53d",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll",
+            "DiscoveryOverlay.dll"
+          ]
+        },
+        {
+          "fieldName": "durationMs",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll",
+            "DiscoveryOverlay.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinClickScreenrayLaunch_TipFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "currentMode:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18006F848",
+              "ea": "0x18006f861",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "DiscoveryOverlay.dll",
+              "function": "sub_1801CB580",
+              "ea": "0x1801cb599",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "currentMode",
+          "type": "Int32",
+          "seenIn": [
+            "AIXView.dll",
+            "DiscoveryOverlay.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WindowingMode",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "windowingMode:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18009A7F8",
+              "ea": "0x18009a821",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "windowingMode",
+          "type": "UInt16",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ZeroStateBadgeClearFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "errorCode:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_18008B1F0",
+              "ea": "0x18008b21c",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        },
+        {
+          "fieldName": "errorCode",
+          "type": "Int32",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ZeroStateBadgeCleared",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AIXView.dll",
+              "function": "sub_1800938CC",
+              "ea": "0x1800938ff",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "AIXView.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

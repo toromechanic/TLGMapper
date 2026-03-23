@@ -1,0 +1,59 @@
+{
+  "providerName": "Microsoft.Windows.Shell.Desktop.ThemeHoldback",
+  "guid": "{E2693402-779E-42CD-9162-B53AE6F15E25}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "UXInit.dll",
+    "uxtheme.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "ThemeVersionValidated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "isLiftedTheme:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "UXInit.dll",
+              "function": "??$ThemeVersionValidated@_N@ThemeHoldbackTelemetry@@SAX$$QEA_N@Z",
+              "ea": "0x180006a55",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "uxtheme.dll",
+              "function": "??$ThemeVersionValidated@_N@ThemeHoldbackTelemetry@@SAX$$QEA_N@Z",
+              "ea": "0x18003b9bd",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "UXInit.dll",
+            "uxtheme.dll"
+          ]
+        },
+        {
+          "fieldName": "isLiftedTheme",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "UXInit.dll",
+            "uxtheme.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

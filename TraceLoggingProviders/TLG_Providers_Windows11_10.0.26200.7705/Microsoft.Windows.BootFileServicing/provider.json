@@ -1,0 +1,439 @@
+{
+  "providerName": "Microsoft.Windows.BootFileServicing",
+  "guid": "{C77B0B58-FAC1-5614-4523-86A46166AB49}",
+  "os": "Windows 11",
+  "binaryCount": 4,
+  "binaries": [
+    "bcdboot.exe",
+    "bfsvc.exe",
+    "bootsvc.dll",
+    "windlp.dll"
+  ],
+  "uniqueEventCount": 6,
+  "events": [
+    {
+      "eventName": "BfsIsBitLockerResealNeededForBootmgrServicingFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Hr:Int32(HResult)",
+            "Action:UnicodeString",
+            "IsBitlockerResealNeededPcr4:Bool32",
+            "IsBitlockerResealNeededPcr7:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "bootsvc.dll",
+              "function": "BfsIsBitLockerResealNeededForBootmgrServicing",
+              "ea": "0x180010238",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Action",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bootsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "bootsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "IsBitlockerResealNeededPcr4",
+          "type": "Bool32",
+          "seenIn": [
+            "bootsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "IsBitlockerResealNeededPcr7",
+          "type": "Bool32",
+          "seenIn": [
+            "bootsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bootsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BfsIsBitLockerResealNeededForBootmgrServicingSucceeded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Action:UnicodeString",
+            "IsBitlockerResealNeededPcr4:Bool32",
+            "IsBitlockerResealNeededPcr7:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "bootsvc.dll",
+              "function": "BfsIsBitLockerResealNeededForBootmgrServicing",
+              "ea": "0x180010313",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Action",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bootsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "IsBitlockerResealNeededPcr4",
+          "type": "Bool32",
+          "seenIn": [
+            "bootsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "IsBitlockerResealNeededPcr7",
+          "type": "Bool32",
+          "seenIn": [
+            "bootsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bootsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BfsResealBitLockerWithRetryFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Hr:Int32(HResult)",
+            "Action:UnicodeString",
+            "FlagOut:UInt32",
+            "RetryCount:UInt32",
+            "FveApiFound:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "bootsvc.dll",
+              "function": "BfsResealBitLockerWithRetry",
+              "ea": "0x1800109ee",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Action",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bootsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "FlagOut",
+          "type": "UInt32",
+          "seenIn": [
+            "bootsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "FveApiFound",
+          "type": "Bool32",
+          "seenIn": [
+            "bootsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "bootsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bootsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "RetryCount",
+          "type": "UInt32",
+          "seenIn": [
+            "bootsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BfsResealBitLockerWithRetrySucceeded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "FlagOut:UInt32",
+            "RetryCount:UInt32",
+            "FveApiFound:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "bootsvc.dll",
+              "function": "BfsResealBitLockerWithRetry",
+              "ea": "0x180010a66",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FlagOut",
+          "type": "UInt32",
+          "seenIn": [
+            "bootsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "FveApiFound",
+          "type": "Bool32",
+          "seenIn": [
+            "bootsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bootsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "RetryCount",
+          "type": "UInt32",
+          "seenIn": [
+            "bootsvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BfsvcFilesServicingResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ErrorCode:UInt32(Win32Error)",
+            "BootExFiles:Bool32",
+            "HasBootmgfwCertAuthChanged:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "bcdboot.exe",
+              "function": "BfsServiceBootFilesEx2",
+              "ea": "0x14000be98",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bfsvc.exe",
+              "function": "BfsServiceBootFilesEx2",
+              "ea": "0x140003765",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bootsvc.dll",
+              "function": "BfsServiceBootFilesEx2",
+              "ea": "0x18000a26d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "windlp.dll",
+              "function": "BfsServiceBootFilesEx2",
+              "ea": "0x18003e888",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BootExFiles",
+          "type": "Bool32",
+          "seenIn": [
+            "bcdboot.exe",
+            "bfsvc.exe",
+            "bootsvc.dll",
+            "windlp.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "bcdboot.exe",
+            "bfsvc.exe",
+            "bootsvc.dll",
+            "windlp.dll"
+          ]
+        },
+        {
+          "fieldName": "HasBootmgfwCertAuthChanged",
+          "type": "Bool32",
+          "seenIn": [
+            "bcdboot.exe",
+            "bfsvc.exe",
+            "bootsvc.dll",
+            "windlp.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bcdboot.exe",
+            "bfsvc.exe",
+            "bootsvc.dll",
+            "windlp.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BfsvcSyspartRepair",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "Caller:UInt32",
+            "ChkDskRun:Bool32",
+            "ChkDskErrorCode:UInt32(Win32Error)",
+            "BcdInitialized:Bool32",
+            "BcdErrorCode:UInt32(Win32Error)",
+            "BootFilesServiced:Bool32",
+            "ServicingErrorCode:UInt32(Win32Error)",
+            "ErrorCode:UInt32(Win32Error)"
+          ],
+          "callers": [
+            {
+              "binary": "bcdboot.exe",
+              "function": "BfsRepairSystemPartition",
+              "ea": "0x14000a170",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bootsvc.dll",
+              "function": "BfsRepairSystemPartition",
+              "ea": "0x180002003",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BcdErrorCode",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "bcdboot.exe",
+            "bootsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "BcdInitialized",
+          "type": "Bool32",
+          "seenIn": [
+            "bcdboot.exe",
+            "bootsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "BootFilesServiced",
+          "type": "Bool32",
+          "seenIn": [
+            "bcdboot.exe",
+            "bootsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Caller",
+          "type": "UInt32",
+          "seenIn": [
+            "bcdboot.exe",
+            "bootsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "ChkDskErrorCode",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "bcdboot.exe",
+            "bootsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "ChkDskRun",
+          "type": "Bool32",
+          "seenIn": [
+            "bcdboot.exe",
+            "bootsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "bcdboot.exe",
+            "bootsvc.dll"
+          ]
+        },
+        {
+          "fieldName": "ServicingErrorCode",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "bcdboot.exe",
+            "bootsvc.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

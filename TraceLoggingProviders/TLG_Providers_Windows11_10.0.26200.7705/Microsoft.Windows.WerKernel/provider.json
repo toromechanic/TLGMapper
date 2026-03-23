@@ -1,0 +1,144 @@
+{
+  "providerName": "Microsoft.Windows.WerKernel",
+  "guid": "{165B9147-D66E-5F42-13B2-83614F6CD257}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "werkernel.sys"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "WerKernelCreateReport",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ComponentName:UnicodeString",
+            "RequestedPolicy:UInt32",
+            "GrantedPolicy:UInt32",
+            "Status:UInt32(NTStatus)",
+            "ThrottleCheckResult:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "werkernel.sys",
+              "function": "WerLiveKernelCreateReportExt",
+              "ea": "0x14000ba5a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ComponentName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "werkernel.sys"
+          ]
+        },
+        {
+          "fieldName": "GrantedPolicy",
+          "type": "UInt32",
+          "seenIn": [
+            "werkernel.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "werkernel.sys"
+          ]
+        },
+        {
+          "fieldName": "RequestedPolicy",
+          "type": "UInt32",
+          "seenIn": [
+            "werkernel.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "werkernel.sys"
+          ]
+        },
+        {
+          "fieldName": "ThrottleCheckResult",
+          "type": "HexInt32",
+          "seenIn": [
+            "werkernel.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WerKernelSubmitReport",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ComponentName:UnicodeString",
+            "Policy:UInt32",
+            "ReportId:UnicodeString",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "werkernel.sys",
+              "function": "WerLiveKernelSubmitReportExt",
+              "ea": "0x14000bddd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ComponentName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "werkernel.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "werkernel.sys"
+          ]
+        },
+        {
+          "fieldName": "Policy",
+          "type": "UInt32",
+          "seenIn": [
+            "werkernel.sys"
+          ]
+        },
+        {
+          "fieldName": "ReportId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "werkernel.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "werkernel.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "providerName": "Microsoft.Web.Platform.IDBServer",
+  "guid": "{DB5AFA36-72BE-5EE9-FB28-349CCDFC00AD}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "webplatstorageserver.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "IDBServerCreateDatabase",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "hresult:Int32(HResult)",
+            "contextFlags:UInt32",
+            "durationMicroseconds:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "webplatstorageserver.dll",
+              "function": "?OpenDatabaseFileAndAttachSessionInternal@@YAJ_KPEBG_NKKQEBGKPEA_KPEAK2@Z",
+              "ea": "0x18004e9e8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "contextFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "webplatstorageserver.dll"
+          ]
+        },
+        {
+          "fieldName": "durationMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "webplatstorageserver.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "webplatstorageserver.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IndexedDbSharedDatabaseUsage",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "AppId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "webplatstorageserver.dll",
+              "function": "?SetPerPackageIDBState@@YAJKQEBG_N@Z",
+              "ea": "0x180008c41",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "webplatstorageserver.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

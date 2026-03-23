@@ -1,0 +1,89 @@
+{
+  "providerName": "Microsoft.Windows.CmBatt",
+  "guid": "{CF38994B-91C9-4583-ACA1-B5638AC732C4}",
+  "os": "Windows 11",
+  "binaryCount": 2,
+  "binaries": [
+    "CmBatt.sys",
+    "CmBatt_cmbatt.inf_amd64_123dbb8cf0c9975e_1B88664F.sys"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "CmBattChargingWatchdogSupport",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "classHandle:HexInt64",
+            "chargingWatchdogState:UInt32",
+            "chargingWatchdogPeriod:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "CmBatt.sys",
+              "function": "CmBattGetExtendedSupport",
+              "ea": "0x14000e7ae",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "CmBatt.sys",
+              "function": "CmBattGetExtendedSupport",
+              "ea": "0x14000e7e8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "CmBatt_cmbatt.inf_amd64_123dbb8cf0c9975e_1B88664F.sys",
+              "function": "CmBattGetExtendedSupport",
+              "ea": "0x14000e7ae",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "CmBatt_cmbatt.inf_amd64_123dbb8cf0c9975e_1B88664F.sys",
+              "function": "CmBattGetExtendedSupport",
+              "ea": "0x14000e7e8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "CmBatt.sys",
+            "CmBatt_cmbatt.inf_amd64_123dbb8cf0c9975e_1B88664F.sys"
+          ]
+        },
+        {
+          "fieldName": "chargingWatchdogPeriod",
+          "type": "UInt32",
+          "seenIn": [
+            "CmBatt.sys",
+            "CmBatt_cmbatt.inf_amd64_123dbb8cf0c9975e_1B88664F.sys"
+          ]
+        },
+        {
+          "fieldName": "chargingWatchdogState",
+          "type": "UInt32",
+          "seenIn": [
+            "CmBatt.sys",
+            "CmBatt_cmbatt.inf_amd64_123dbb8cf0c9975e_1B88664F.sys"
+          ]
+        },
+        {
+          "fieldName": "classHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "CmBatt.sys",
+            "CmBatt_cmbatt.inf_amd64_123dbb8cf0c9975e_1B88664F.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

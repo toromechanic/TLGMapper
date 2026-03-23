@@ -1,0 +1,2225 @@
+{
+  "providerName": "Microsoft.Windows.Audio.License",
+  "guid": "{030FA765-F1AE-448E-955B-44D76073E1DC}",
+  "os": "Windows 11",
+  "binaryCount": 3,
+  "binaries": [
+    "AudioSes.dll",
+    "SpatialAudioLicenseSrv.exe",
+    "audiosrv.dll"
+  ],
+  "uniqueEventCount": 60,
+  "events": [
+    {
+      "eventName": "AppServiceGetRuntimeParametersTimeOut",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "licenseAppPackageFamilyName:UnicodeString",
+            "licenseAppServiceName:UnicodeString",
+            "spatialAudioSubtype:UnicodeString",
+            "audioRendererId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SpatialAudioLicenseSrv.exe",
+              "function": "?GetRuntimeParametersFromAppService@SpatialAudioLicenseBrokerImpl@@UEAAJPEBG000PEAPEAUIUnknown@@@Z",
+              "ea": "0x14000d4f4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "audioRendererId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "licenseAppPackageFamilyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "licenseAppServiceName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "spatialAudioSubtype",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AppServiceOpenAsyncTimeOut",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "packageFamilyName:UnicodeString",
+            "appServiceName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SpatialAudioLicenseSrv.exe",
+              "function": "?OpenAppServiceConnection@SpatialAudioLicenseBrokerImpl@@AEAAJPEBG0_N@Z",
+              "ea": "0x14000e939",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "appServiceName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "packageFamilyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AtmosCheck",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "TelemetryVersion:Int32",
+            "ContextId:GUID",
+            "CallOrigin:AnsiString",
+            "LicenseEvaluation:AnsiString",
+            "ErrorCode:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?TraceResult@AtmosCheck@@AEAAXJ_N@Z",
+              "ea": "0x180060926",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "TelemetryVersion:Int32",
+            "ContextId:GUID",
+            "CallOrigin:AnsiString",
+            "LicenseEvaluation:AnsiString",
+            "ErrorCode:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?TraceResult@AtmosCheck@@AEAAXJ_N@Z",
+              "ea": "0x180060a40",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CallOrigin",
+          "type": "AnsiString",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "ContextId",
+          "type": "GUID",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "LicenseEvaluation",
+          "type": "AnsiString",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "TelemetryVersion",
+          "type": "Int32",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AtmosCheck::GetLicenseStatusForEndpointId called, but not in AppService mode.",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?GetLicenseStatusForEndpointId@AtmosCheck@@AEAAJPEBG0PEAU__MIDL___MIDL_itf_spatialaudiolicenseserver_0000_0000_0001@@@Z",
+              "ea": "0x180008ee8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "AtmosCheck::PerformLicenseCheck: shutdown, aborting.",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?PerformLicenseCheck@AtmosCheck@@QEAAJ_N@Z",
+              "ea": "0x180060836",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "AtmosCheck::PerformLicenseCheckHelper: shutdown, aborting.",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?PerformLicenseCheckHelper@AtmosCheck@@AEAAXPEBGHPEAUEndpointSpecificSpatialTechInfo@1@PEA_N@Z",
+              "ea": "0x180008930",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "AtmosCheck::RefreshLicenseStatus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "spatialAudioSubtype:UnicodeString",
+            "endpointLicenseChanged:UInt8(Boolean)",
+            "endpoint:UnicodeString",
+            "endpointLicenseChanged:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?RefreshLicenseStatus@AtmosCheck@@QEAAJPEBG@Z",
+              "ea": "0x180148338",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "endpoint",
+          "type": "UnicodeString",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "endpointLicenseChanged",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "spatialAudioSubtype",
+          "type": "UnicodeString",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AtmosCheck::RefreshSpatialAudioLicenseModelState",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "atLeastOneAppServiceChange:UInt8(Boolean)",
+            "m_fUseAppService:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?RefreshSpatialAudioLicenseModelState@AtmosCheck@@AEAAJPEA_N@Z",
+              "ea": "0x18008fa0e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "atLeastOneAppServiceChange",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "m_fUseAppService",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AtmosCheck::UpdateLicenseMap Failed to get EndpointID",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?UpdateLicenseMapForAllEndpoints@AtmosCheck@@AEAAJXZ",
+              "ea": "0x180155d4b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AtmosCheckError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "Msg:AnsiString",
+            "ErrorCode:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?Trace@AtmosCheck@@AEAAXPEBDJ@Z",
+              "ea": "0x180060f11",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "Msg",
+          "type": "AnsiString",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AtmosCheckFailedToCommunicateWithAppService",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?GetLicenseStatusForEndpointId@AtmosCheck@@AEAAJPEBG0PEAU__MIDL___MIDL_itf_spatialaudiolicenseserver_0000_0000_0001@@@Z",
+              "ea": "0x18000943e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AtmosCheckFailedToCreateGracePeriodTimer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?ScheduleGracePeriodTimer@AtmosCheck@@AEAAXXZ",
+              "ea": "0x180155421",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AtmosCheckFailedToCreateLicenseRecheckTimer.",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?UpdateLicenseRefreshTimer@AtmosCheck@@AEAAXXZ",
+              "ea": "0x18007e51b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AtmosCheckGetLicenseStatus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)",
+            "isLicensed:Int32",
+            "isRendererCapable:Int32",
+            "endpointId:UnicodeString",
+            "spatialAudioSubtype:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?GetLicenseStatusForEndpointId@AtmosCheck@@AEAAJPEBG0PEAU__MIDL___MIDL_itf_spatialaudiolicenseserver_0000_0000_0001@@@Z",
+              "ea": "0x180009605",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "endpointId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "isLicensed",
+          "type": "Int32",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "isRendererCapable",
+          "type": "Int32",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "spatialAudioSubtype",
+          "type": "UnicodeString",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AtmosCheckGetLicenseStatusFailedToGetInterfaceId",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "pszEndpointId:UnicodeString",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?GetLicenseStatusForEndpointId@AtmosCheck@@AEAAJPEBG0PEAU__MIDL___MIDL_itf_spatialaudiolicenseserver_0000_0000_0001@@@Z",
+              "ea": "0x18000959b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "pszEndpointId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AtmosCheckGetLicenseStatusFallBackToLastKnownState.",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "previous value:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?GetLicenseStatusForEndpointId@AtmosCheck@@AEAAJPEBG0PEAU__MIDL___MIDL_itf_spatialaudiolicenseserver_0000_0000_0001@@@Z",
+              "ea": "0x1800094ef",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "previous value",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AtmosCheckGetLicenseStatusNoEndpoint",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "default value:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?GetLicenseStatusForEndpointId@AtmosCheck@@AEAAJPEBG0PEAU__MIDL___MIDL_itf_spatialaudiolicenseserver_0000_0000_0001@@@Z",
+              "ea": "0x1800094b8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "default value",
+          "type": "Int32",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AtmosCheckGetLicenseStatusNoUser",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "default value:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?GetLicenseStatusForEndpointId@AtmosCheck@@AEAAJPEBG0PEAU__MIDL___MIDL_itf_spatialaudiolicenseserver_0000_0000_0001@@@Z",
+              "ea": "0x18000951b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "default value",
+          "type": "Int32",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AtmosCheckInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Msg:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?Trace@AtmosCheck@@AEAAXPEBDJ@Z",
+              "ea": "0x180060e4b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "audiosrv.dll",
+              "function": "?Trace@AtmosCheck@@AEAAXPEBDJ@Z",
+              "ea": "0x180060e83",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Msg",
+          "type": "AnsiString",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AtmosCheckReceivedShellReadyNotification",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "_lambda_dd5e4bdce0082be678d741b69c1fb6f5_::operator()",
+              "ea": "0x180146298",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "AtmosCheckReceivedUserAddedNotification",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "_lambda_f46bdb08c2206e7cf90c126dcb69ff8f_::operator()",
+              "ea": "0x180146304",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "AtmosCheckRefreshPlatformLicenses",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "numLicenses:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?RefreshPlatformLicenses@AtmosCheck@@AEAAXXZ",
+              "ea": "0x1800a2524",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "numLicenses",
+          "type": "UInt64",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AtmosCheckRefreshPlatformLicensesLicenseStateChanged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?RefreshPlatformLicenses@AtmosCheck@@AEAAXXZ",
+              "ea": "0x1800a25eb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "AtmosCheckScheduleGracePeriodTimerGracePeriod",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "msToWait:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?ScheduleGracePeriodTimer@AtmosCheck@@AEAAXXZ",
+              "ea": "0x1801554b5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "msToWait",
+          "type": "Int32",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AtmosLicenseCheck",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "TelemetryVersion:Int32",
+            "ContextId:GUID",
+            "DDPlusDecEnabled:Int32(HResult)",
+            "MatEncEnabled:Int32(HResult)",
+            "DolbyHeadphonesEncEnabled:Int32(HResult)",
+            "DolbySpeakersEncEnabled:Int32(HResult)",
+            "DtsxHeadphonesEncEnabled:Int32(HResult)",
+            "DtsxSpeakersEncEnabled:Int32(HResult)",
+            "DtsxHdmiEncEnabled:Int32(HResult)",
+            "LicenseEvaluation:AnsiString",
+            "ErrorCode:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?TraceResult@AtmosLicenseCheck@@AEAAXJ_N@Z",
+              "ea": "0x180064e88",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "TelemetryVersion:Int32",
+            "ContextId:GUID",
+            "DDPlusDecEnabled:Int32(HResult)",
+            "MatEncEnabled:Int32(HResult)",
+            "DolbyHeadphonesEncEnabled:Int32(HResult)",
+            "DolbySpeakersEncEnabled:Int32(HResult)",
+            "DtsxHeadphonesEncEnabled:Int32(HResult)",
+            "DtsxSpeakersEncEnabled:Int32(HResult)",
+            "DtsxHdmiEncEnabled:Int32(HResult)",
+            "LicenseEvaluation:AnsiString",
+            "ErrorCode:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?TraceResult@AtmosLicenseCheck@@AEAAXJ_N@Z",
+              "ea": "0x180064f68",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ContextId",
+          "type": "GUID",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "DDPlusDecEnabled",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "DolbyHeadphonesEncEnabled",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "DolbySpeakersEncEnabled",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "DtsxHdmiEncEnabled",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "DtsxHeadphonesEncEnabled",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "DtsxSpeakersEncEnabled",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "LicenseEvaluation",
+          "type": "AnsiString",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "MatEncEnabled",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "TelemetryVersion",
+          "type": "Int32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AtmosLicenseCheck::GetLicenseStatus called, but not in AppService mode.",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?GetLicenseStatus@AtmosLicenseCheck@@AEAAJPEBGPEA_N1PEAJ@Z",
+              "ea": "0x18006ff0b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "AtmosLicenseCheck::PerformConditionalLicenseCheckAsync - check event Global\\Client_Atmos_Check_Event",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "fEventIsSignaled:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?WaitForAudioServiceAndRefreshLicenses@AtmosLicenseCheck@@UEAAJXZ",
+              "ea": "0x18004a954",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "fEventIsSignaled",
+          "type": "Bool32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AtmosLicenseCheckAppServiceConnectionFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "DDPlusDecConnectionStatus:Int32(HResult)",
+            "MatEncConnectionStatus:Int32(HResult)",
+            "DolbyHeadphonesConnectionStatus:Int32(HResult)",
+            "DolbySpeakersEncConectionStatus:Int32(HResult)",
+            "DtsxHeadphonesEncConnectionStatus:Int32(HResult)",
+            "DtsxSpeakersEncConnectionStatus:Int32(HResult)",
+            "DtsxHdmiEncConnectionStatus:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?LogAnyConnectionErrors@AtmosLicenseCheck@@AEBAXXZ",
+              "ea": "0x1800664ca",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DDPlusDecConnectionStatus",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "DolbyHeadphonesConnectionStatus",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "DolbySpeakersEncConectionStatus",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "DtsxHdmiEncConnectionStatus",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "DtsxHeadphonesEncConnectionStatus",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "DtsxSpeakersEncConnectionStatus",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "MatEncConnectionStatus",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AtmosLicenseCheckError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "Msg:AnsiString",
+            "ErrorCode:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?Trace@AtmosLicenseCheck@@CAXPEBDJ@Z",
+              "ea": "0x18004aa40",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "Msg",
+          "type": "AnsiString",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AtmosLicenseCheckInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Msg:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?Trace@AtmosLicenseCheck@@CAXPEBDJ@Z",
+              "ea": "0x18004aa1b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Msg",
+          "type": "AnsiString",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CancelLicenseRefreshTimerClosedTimer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?CancelLicenseRefreshTimer@AtmosCheck@@AEAAXXZ",
+              "ea": "0x180146907",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "GetRuntimeParametersFailedToOpenAppService",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "spatialAudioSubtype:UnicodeString",
+            "endpointID:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SpatialAudioLicenseSrv.exe",
+              "function": "?GetRuntimeParametersFromAppService@SpatialAudioLicenseBrokerImpl@@UEAAJPEBG000PEAPEAUIUnknown@@@Z",
+              "ea": "0x14000d056",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "endpointID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "spatialAudioSubtype",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OnDeviceStateChanged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "endpointId:UnicodeString",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "_lambda_0179159fd80b7ba430bde494eedc6b2a_::operator()",
+              "ea": "0x180145dba",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "endpointId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OpenAsyncResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "packageFamilyName:UnicodeString",
+            "appServiceName:UnicodeString",
+            "connectionStatus:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SpatialAudioLicenseSrv.exe",
+              "function": "?OpenAppServiceConnection@SpatialAudioLicenseBrokerImpl@@AEAAJPEBG0_N@Z",
+              "ea": "0x14000eb5a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "appServiceName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "connectionStatus",
+          "type": "UInt32",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "packageFamilyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PackageSkippedNotFromTrustedSource",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?ScanForInstalledSpatialAudioSubtypeAppServices@@YAJPEAUSpatialAudioFormatSubtypeInfo@@HPEA_NPEBU_tlgProvider_t@@@Z",
+              "ea": "0x180154d3d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "RefreshLicenseStatusTriggeringCallback",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "spatialAudioSubtype:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?RefreshLicenseStatus@AtmosCheck@@QEAAJPEBG@Z",
+              "ea": "0x180148416",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "spatialAudioSubtype",
+          "type": "UnicodeString",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RefreshPlatformLicensesFailedToObtainLicenses",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?RefreshPlatformLicenses@AtmosCheck@@AEAAXXZ",
+              "ea": "0x1800a2625",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegisterWaitForSingleObject Error",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "HRESULT_FROM_WIN32(GetLastError()):Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "_lambda_f5f4f75dc837a2f22584ae1b4b94d09e_::operator()",
+              "ea": "0x18014648b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HRESULT_FROM_WIN32(GetLastError())",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ScanForInstalledSpatialAudioSubtypeAppServices",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "numMediaPackages:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?ScanForInstalledSpatialAudioSubtypeAppServices@@YAJPEAUSpatialAudioFormatSubtypeInfo@@HPEA_NPEBU_tlgProvider_t@@@Z",
+              "ea": "0x180148ec5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "*foundAtLeastOne:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?ScanForInstalledSpatialAudioSubtypeAppServices@@YAJPEAUSpatialAudioFormatSubtypeInfo@@HPEA_NPEBU_tlgProvider_t@@@Z",
+              "ea": "0x1801550e7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "*foundAtLeastOne",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "numMediaPackages",
+          "type": "UInt32",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ScheduleGracePeriodTimer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?ScheduleGracePeriodTimer@AtmosCheck@@AEAAXXZ",
+              "ea": "0x18015550a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "SendLicenseStateRequestToAppService",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Command:UnicodeString",
+            "endpointID:UnicodeString",
+            "subtype:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SpatialAudioLicenseSrv.exe",
+              "function": "?SendRequest@SpatialAudioLicenseBrokerImpl@@AEAAJPEBG0PEAUAppServiceRequestResponsePayload@1@@Z",
+              "ea": "0x14001c62d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Command",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "endpointID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "subtype",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SendLicenseStatusRequestFailedToOpenAppService",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)",
+            "endpointID:UnicodeString",
+            "subtype:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SpatialAudioLicenseSrv.exe",
+              "function": "?SendRequest@SpatialAudioLicenseBrokerImpl@@AEAAJPEBG0PEAUAppServiceRequestResponsePayload@1@@Z",
+              "ea": "0x14001c6a8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "endpointID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "subtype",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SendMessageAsyncTimedOut",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "appPackageFamilyName:UnicodeString",
+            "appServiceName:UnicodeString",
+            "endpointInstanceId:UnicodeString",
+            "spatialAudioSubtype:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SpatialAudioLicenseSrv.exe",
+              "function": "?SendRequest@SpatialAudioLicenseBrokerImpl@@AEAAJPEBG0PEAUAppServiceRequestResponsePayload@1@@Z",
+              "ea": "0x14001cc39",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "appPackageFamilyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "appServiceName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "endpointInstanceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "spatialAudioSubtype",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SendRequestToAppServiceResponse",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "requestCommand:UnicodeString",
+            "requestAudioRendererId:UnicodeString",
+            "requestSpatialAudioSubtype:UnicodeString",
+            "responseStatusCode:UInt32",
+            "responseStatusString:UnicodeString",
+            "responseLaunchUri:UnicodeString",
+            "responseIsRendererCapable:UInt8",
+            "responseExpirationDateTicks:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "SpatialAudioLicenseSrv.exe",
+              "function": "?SendRequest@SpatialAudioLicenseBrokerImpl@@AEAAJPEBG0PEAUAppServiceRequestResponsePayload@1@@Z",
+              "ea": "0x14001d1b3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "requestAudioRendererId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "requestCommand",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "requestSpatialAudioSubtype",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "responseExpirationDateTicks",
+          "type": "Int64",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "responseIsRendererCapable",
+          "type": "UInt8",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "responseLaunchUri",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "responseStatusCode",
+          "type": "UInt32",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "responseStatusString",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SetExpiryTimer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PreviousRefreshDate:UInt64",
+            "LicenseRefreshDate:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?SetExpiryTimer@AtmosCheck@@AEAAX_K@Z",
+              "ea": "0x18015566a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "LicenseRefreshDate",
+          "type": "UInt64",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PreviousRefreshDate",
+          "type": "UInt64",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SetExpiryTimerFailedToCreateTimer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?SetExpiryTimer@AtmosCheck@@AEAAX_K@Z",
+              "ea": "0x1801555ea",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SpatialAudioLicenseBroker No user",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "SpatialAudioLicenseSrv.exe",
+              "function": "?GetCurrentUser@SpatialAudioLicenseBrokerImpl@@CAJPEAPEAUIUser@System@Windows@@@Z",
+              "ea": "0x14000c71f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "SpatialAudioLicenseBroker [SendRequest] Received response.",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "responseStatusCode:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SpatialAudioLicenseSrv.exe",
+              "function": "?SendRequest@SpatialAudioLicenseBrokerImpl@@AEAAJPEBG0PEAUAppServiceRequestResponsePayload@1@@Z",
+              "ea": "0x14001ccd1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "responseStatusCode",
+          "type": "UInt32",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SpatialAudioLicenseBroker: AppService not found.",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "subtype:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SpatialAudioLicenseSrv.exe",
+              "function": "?GetAppServiceDetails@SpatialAudioLicenseBrokerImpl@@CAJPEBGAEAV?$vector@USpatialAudioAppDetails@@V?$allocator@USpatialAudioAppDetails@@@std@@@std@@@Z",
+              "ea": "0x14000ae72",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "SpatialAudioLicenseSrv.exe",
+              "function": "?GetAppServiceDetails@SpatialAudioLicenseBrokerImpl@@CAJPEBGPEAPEAG1@Z",
+              "ea": "0x14000b075",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "subtype",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SpatialAudioLicenseBroker: Attempting to open AppService.",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "SpatialAudioLicenseSrv.exe",
+              "function": "?OpenAppServiceConnection@SpatialAudioLicenseBrokerImpl@@AEAAJPEBG0_N@Z",
+              "ea": "0x14000e14b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "SpatialAudioLicenseBroker: EvaluateLicense",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "systemDateInFileTimeTicks:Int64",
+            "expirationDateInFileTimeTicks:Int64",
+            "isValid:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "SpatialAudioLicenseSrv.exe",
+              "function": "?EvaluateLicense@SpatialAudioLicenseBrokerImpl@@CAJ_JPEAH@Z",
+              "ea": "0x14000abe5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "expirationDateInFileTimeTicks",
+          "type": "Int64",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "isValid",
+          "type": "Int32",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "systemDateInFileTimeTicks",
+          "type": "Int64",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SpatialAudioLicenseBroker: GetRuntimeParametersFromAppService",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "spatialAudioSubtype:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SpatialAudioLicenseSrv.exe",
+              "function": "?GetRuntimeParametersFromAppService@SpatialAudioLicenseBrokerImpl@@UEAAJPEBG000PEAPEAUIUnknown@@@Z",
+              "ea": "0x14000d104",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "spatialAudioSubtype",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SpatialAudioLicenseBroker: No AppServices installed.",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "SpatialAudioLicenseSrv.exe",
+              "function": "?GetAppServiceDetails@SpatialAudioLicenseBrokerImpl@@CAJPEBGAEAV?$vector@USpatialAudioAppDetails@@V?$allocator@USpatialAudioAppDetails@@@std@@@std@@@Z",
+              "ea": "0x14000ae2e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "SpatialAudioLicenseSrv.exe",
+              "function": "?GetAppServiceDetails@SpatialAudioLicenseBrokerImpl@@CAJPEBGPEAPEAG1@Z",
+              "ea": "0x14000b031",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "SpatialAudioLicenseBroker: [GetRuntimeParametersFromAppService] Received response.",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "SpatialAudioLicenseSrv.exe",
+              "function": "?GetRuntimeParametersFromAppService@SpatialAudioLicenseBrokerImpl@@UEAAJPEBG000PEAPEAUIUnknown@@@Z",
+              "ea": "0x14000d58a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "SpatialAudioLicenseBroker: [GetRuntimeParametersFromAppService] Response status",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "response status:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SpatialAudioLicenseSrv.exe",
+              "function": "?GetRuntimeParametersFromAppService@SpatialAudioLicenseBrokerImpl@@UEAAJPEBG000PEAPEAUIUnknown@@@Z",
+              "ea": "0x14000d5dc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "response status",
+          "type": "UInt32",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SpatialAudioLicenseBroker: [SendRequest] Expected Value was not returned.",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "STATUS:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SpatialAudioLicenseSrv.exe",
+              "function": "_lambda_290eeb106f7182d9265f58df74c1fb7d_::operator()",
+              "ea": "0x14000a7a4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "STATUS",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SpatialAudioLicenseBrokerGetLicenseStatusFromAppService",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "isLicenseValid:Int32",
+            "isRendererCapable:Int32",
+            "expirationDateTicks:UInt64",
+            "spatialAudioSubtype:UnicodeString",
+            "audioRendererId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SpatialAudioLicenseSrv.exe",
+              "function": "?GetLicenseStatusFromAppService@SpatialAudioLicenseBrokerImpl@@UEAAJPEBG000PEAU__MIDL___MIDL_itf_spatialaudiolicenseserver_0000_0000_0001@@@Z",
+              "ea": "0x14000cd85",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "audioRendererId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "expirationDateTicks",
+          "type": "UInt64",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "isLicenseValid",
+          "type": "Int32",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "isRendererCapable",
+          "type": "Int32",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        },
+        {
+          "fieldName": "spatialAudioSubtype",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SpatialAudioLicenseSrv.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SpatialAudioLicenseSrvSetUserContext",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "SpatialAudioLicenseSrv.exe",
+              "function": "?OpenAppServiceConnection@SpatialAudioLicenseBrokerImpl@@AEAAJPEBG0_N@Z",
+              "ea": "0x14000e6ef",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "StaticAtmosRefreshTimerCallback",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?StaticAtmosRefreshTimerCallback@AtmosCheck@@SAXPEAU_TP_CALLBACK_INSTANCE@@PEAXPEAU_TP_TIMER@@@Z",
+              "ea": "0x180079a92",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "StaticGracePeriodExpiredFired",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?StaticGracePeriodExpiredFired@AtmosCheck@@SAXPEAU_TP_CALLBACK_INSTANCE@@PEAXPEAU_TP_TIMER@@@Z",
+              "ea": "0x180155742",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    }
+  ]
+}

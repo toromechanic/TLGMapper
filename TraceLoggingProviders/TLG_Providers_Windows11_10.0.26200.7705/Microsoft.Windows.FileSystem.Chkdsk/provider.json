@@ -1,0 +1,2999 @@
+{
+  "providerName": "Microsoft.Windows.FileSystem.Chkdsk",
+  "guid": "{A3A38AAA-2521-4849-9B65-AE781B455984}",
+  "os": "Windows 11",
+  "binaryCount": 4,
+  "binaries": [
+    "autochk.exe",
+    "uexfat.dll",
+    "ufat.dll",
+    "untfs.dll"
+  ],
+  "uniqueEventCount": 6,
+  "events": [
+    {
+      "eventName": "ChkdskCompleted",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "chkdskCountAttributesDeleted:UInt32",
+            "chkdskCountAttributeListEntriesDeleted:UInt32",
+            "chkdskCountReparsePointAttributeListEntriesDeleted:UInt32",
+            "chkdskCountCloudFileReparsePointsDeleted:UInt32",
+            "chkdskCountIndexEntriesDeleted:UInt32",
+            "chkdskCountCloudFileReparsePointIndexEntriesDeleted:UInt32",
+            "chkdskCountReparsePointIndexEntriesDeleted:UInt32",
+            "chkdskCountReparsePointsDeleted:UInt32",
+            "chkdskVolumeGuid:GUID",
+            "chkdskFileSystemName:UnicodeString",
+            "busType:UInt32",
+            "nativeNVMe:Bool32",
+            "chkdskAutocheck:Int32",
+            "chkdskFixLevel:Int32",
+            "chkdskExitStatus:UInt32",
+            "chkdskSourceTag:UInt32",
+            "chkdskResult:Bool32",
+            "chkdskAborted:Bool32",
+            "chkdskDuration:UInt64",
+            "chkdskSequenceNumber:UInt32",
+            "chkdskVolumeIsDirty:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "autochk.exe",
+              "function": "?SpotFixVerify@NTFS_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KPEAKPEBVWSTRING@@@Z",
+              "ea": "0x1400652be",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@NTFS_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x14006caa7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@NTFS_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x14006d392",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "chkdskVolumeGuid:GUID",
+            "chkdskFileSystemName:UnicodeString",
+            "busType:UInt32",
+            "nativeNVMe:Bool32",
+            "chkdskAutocheck:Int32",
+            "chkdskFixLevel:Int32",
+            "chkdskExitStatus:UInt32",
+            "chkdskSourceTag:UInt32",
+            "chkdskResult:Bool32",
+            "chkdskAborted:Bool32",
+            "chkdskDuration:UInt64",
+            "chkdskSequenceNumber:UInt32",
+            "chkdskVolumeIsDirty:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x140051d39",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?ChkdskEx@@YAEPEBVWSTRING@@PEAVMESSAGE@@EPEAU_CHKDSKEX_FN_PARAM@@PEAK@Z",
+              "ea": "0x180002853",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "ChkdskEx",
+              "ea": "0x180004a0f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "chkdskFix:Bool32",
+            "chkdskAutocheckScheduled:Bool32",
+            "chkdskCountAttributesDeleted:UInt32",
+            "chkdskCountAttributeListEntriesDeleted:UInt32",
+            "chkdskCountReparsePointAttributeListEntriesDeleted:UInt32",
+            "chkdskCountCloudFileReparsePointsDeleted:UInt32",
+            "chkdskCountIndexEntriesDeleted:UInt32",
+            "chkdskCountCloudFileReparsePointIndexEntriesDeleted:UInt32",
+            "chkdskCountReparsePointIndexEntriesDeleted:UInt32",
+            "chkdskCountReparsePointsDeleted:UInt32",
+            "chkdskVolumeGuid:GUID",
+            "chkdskFileSystemName:UnicodeString",
+            "busType:UInt32",
+            "nativeNVMe:Bool32",
+            "chkdskAutocheck:Int32",
+            "chkdskFixLevel:Int32",
+            "chkdskExitStatus:UInt32",
+            "chkdskSourceTag:UInt32",
+            "chkdskResult:Bool32",
+            "chkdskAborted:Bool32",
+            "chkdskDuration:UInt64",
+            "chkdskSequenceNumber:UInt32",
+            "chkdskVolumeIsDirty:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "untfs.dll",
+              "function": "ChkdskEx",
+              "ea": "0x1800118e1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "busType",
+          "type": "UInt32",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskAborted",
+          "type": "Bool32",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskAutocheck",
+          "type": "Int32",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskAutocheckScheduled",
+          "type": "Bool32",
+          "seenIn": [
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskCountAttributeListEntriesDeleted",
+          "type": "UInt32",
+          "seenIn": [
+            "autochk.exe",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskCountAttributesDeleted",
+          "type": "UInt32",
+          "seenIn": [
+            "autochk.exe",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskCountCloudFileReparsePointIndexEntriesDeleted",
+          "type": "UInt32",
+          "seenIn": [
+            "autochk.exe",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskCountCloudFileReparsePointsDeleted",
+          "type": "UInt32",
+          "seenIn": [
+            "autochk.exe",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskCountIndexEntriesDeleted",
+          "type": "UInt32",
+          "seenIn": [
+            "autochk.exe",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskCountReparsePointAttributeListEntriesDeleted",
+          "type": "UInt32",
+          "seenIn": [
+            "autochk.exe",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskCountReparsePointIndexEntriesDeleted",
+          "type": "UInt32",
+          "seenIn": [
+            "autochk.exe",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskCountReparsePointsDeleted",
+          "type": "UInt32",
+          "seenIn": [
+            "autochk.exe",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskDuration",
+          "type": "UInt64",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskExitStatus",
+          "type": "UInt32",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskFileSystemName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskFix",
+          "type": "Bool32",
+          "seenIn": [
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskFixLevel",
+          "type": "Int32",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskResult",
+          "type": "Bool32",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskSequenceNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskSourceTag",
+          "type": "UInt32",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskVolumeGuid",
+          "type": "GUID",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskVolumeIsDirty",
+          "type": "Bool32",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "nativeNVMe",
+          "type": "Bool32",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ChkdskRunInfo",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "chkdskProgramName:UnicodeString",
+            "chkdskVolumeSize:Int64",
+            "chkdskHouseKeepingBitmask:HexInt64",
+            "chkdskArgumentsBitmask:HexInt64",
+            "chkdskVolumeGuid:GUID",
+            "busType:UInt32",
+            "nativeNVMe:Bool32",
+            "chkdskNumberUserFiles:Int64",
+            "chkdskDuration:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "autochk.exe",
+              "function": "?SendTelemetry@NTFS_SA@@AEAAEPEBVWSTRING@@PEAUNTFS_CHKDSK_REPORT@@PEAVNTFS_CHKDSK_INFO@@JPEAU_VOLUME_CORRUPTION_STATE@@@Z",
+              "ea": "0x140063fba",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "untfs.dll",
+              "function": "?SendTelemetry@NTFS_SA@@AEAAEPEBVWSTRING@@PEAUNTFS_CHKDSK_REPORT@@PEAVNTFS_CHKDSK_INFO@@JPEAU_VOLUME_CORRUPTION_STATE@@@Z",
+              "ea": "0x180050d7d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ClusterSize:UInt64",
+            "ClusterCount:UInt64",
+            "SectorSize:UInt32",
+            "chkdskVolumeSize:UInt64",
+            "SystemClusters:UInt64",
+            "DirClusters:UInt64",
+            "FileClusters:UInt64",
+            "BadClusters:UInt64",
+            "FreeClusters:UInt64",
+            "chkdskVolumeGuid:GUID",
+            "HiddenClusters:UInt64",
+            "EaSize:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x140051b8b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000cfab",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x180011070",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "volumeCorruptionNtStatus:UInt32",
+            "volumeCorruptionState:UInt32",
+            "volumeCorruptionFlags:UInt32",
+            "chkdskProgramName:UnicodeString",
+            "chkdskVolumeSize:Int64",
+            "chkdskHouseKeepingBitmask:HexInt64",
+            "chkdskArgumentsBitmask:HexInt64",
+            "chkdskVolumeGuid:GUID",
+            "busType:UInt32",
+            "nativeNVMe:Bool32",
+            "chkdskNumberUserFiles:Int64",
+            "chkdskDuration:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "untfs.dll",
+              "function": "?SendTelemetry@NTFS_SA@@AEAAEPEBVWSTRING@@PEAUNTFS_CHKDSK_REPORT@@PEAVNTFS_CHKDSK_INFO@@JPEAU_VOLUME_CORRUPTION_STATE@@@Z",
+              "ea": "0x180050b88",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BadClusters",
+          "type": "UInt64",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll"
+          ]
+        },
+        {
+          "fieldName": "ClusterCount",
+          "type": "UInt64",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll"
+          ]
+        },
+        {
+          "fieldName": "ClusterSize",
+          "type": "UInt64",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll"
+          ]
+        },
+        {
+          "fieldName": "DirClusters",
+          "type": "UInt64",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll"
+          ]
+        },
+        {
+          "fieldName": "EaSize",
+          "type": "UInt64",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll"
+          ]
+        },
+        {
+          "fieldName": "FileClusters",
+          "type": "UInt64",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll"
+          ]
+        },
+        {
+          "fieldName": "FreeClusters",
+          "type": "UInt64",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll"
+          ]
+        },
+        {
+          "fieldName": "HiddenClusters",
+          "type": "UInt64",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll"
+          ]
+        },
+        {
+          "fieldName": "SectorSize",
+          "type": "UInt32",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll"
+          ]
+        },
+        {
+          "fieldName": "SystemClusters",
+          "type": "UInt64",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll"
+          ]
+        },
+        {
+          "fieldName": "busType",
+          "type": "UInt32",
+          "seenIn": [
+            "autochk.exe",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskArgumentsBitmask",
+          "type": "HexInt64",
+          "seenIn": [
+            "autochk.exe",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskDuration",
+          "type": "UnicodeString",
+          "seenIn": [
+            "autochk.exe",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskHouseKeepingBitmask",
+          "type": "HexInt64",
+          "seenIn": [
+            "autochk.exe",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskNumberUserFiles",
+          "type": "Int64",
+          "seenIn": [
+            "autochk.exe",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskProgramName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "autochk.exe",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskVolumeGuid",
+          "type": "GUID",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskVolumeSize",
+          "type": "Int64",
+          "seenIn": [
+            "autochk.exe",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskVolumeSize",
+          "type": "UInt64",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll"
+          ]
+        },
+        {
+          "fieldName": "nativeNVMe",
+          "type": "Bool32",
+          "seenIn": [
+            "autochk.exe",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "volumeCorruptionFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "volumeCorruptionNtStatus",
+          "type": "UInt32",
+          "seenIn": [
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "volumeCorruptionState",
+          "type": "UInt32",
+          "seenIn": [
+            "untfs.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ChkdskStageEntered",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "chkdskStage:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "autochk.exe",
+              "function": "?ProcessFiles@NTFS_SA@@AEAAEVBIG_INT@@PEAV2@PEAKPEAEPEAVNTFS_FRS_STRUCTURE@@W4FIX_LEVEL@@PEAVNTFS_ATTRIBUTE@@PEAVNTFS_BITMAP@@7PEAVNTFS_UPCASE_TABLE@@PEAVNTFS_ATTRIBUTE_COLUMNS@@PEAVNUMBER_SET@@PEAUNTFS_CHKDSK_REPORT@@PEAVNTFS_CHKDSK_INFO@@PEAVMESSAGE@@@Z",
+              "ea": "0x1400863f6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverAllUserFiles@@YAEPEAVNTFS_CHKDSK_INFO@@EPEAVNTFS_MASTER_FILE_TABLE@@PEAVNUMBER_SET@@PEAVMESSAGE@@@Z",
+              "ea": "0x140061f9b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverFreeSpace@@YAEPEAVNTFS_CHKDSK_INFO@@PEAVNTFS_MASTER_FILE_TABLE@@PEAVNUMBER_SET@@PEAVMESSAGE@@@Z",
+              "ea": "0x140062311",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?ValidateIndices@NTFS_SA@@AEAAEPEAVNTFS_CHKDSK_INFO@@PEAVDIGRAPH@@PEAVNTFS_MASTER_FILE_TABLE@@PEBVNTFS_ATTRIBUTE_COLUMNS@@PEAUNTFS_CHKDSK_REPORT@@PEAVNUMBER_SET@@GEPEAE6E@Z",
+              "ea": "0x1400801c5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?ValidateSecurityDescriptors@NTFS_SA@@AEAAEPEAVNTFS_CHKDSK_INFO@@PEAUNTFS_CHKDSK_REPORT@@PEAVNTFS_MASTER_FILE_TABLE@@PEAVNUMBER_SET@@EW4FIX_LEVEL@@PEAVMESSAGE@@E@Z",
+              "ea": "0x140072526",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x14004fb8b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x14005023d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x1400509ed",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x140050b11",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x1400510a7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x140051275",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000b675",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000bb95",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000bf53",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000c17a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000c36c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000c4ec",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000c658",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000c7fe",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000c989",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000ee5c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000f3fe",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000fc8e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000fdab",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x1800100ee",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18001029c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "untfs.dll",
+              "function": "?ProcessFiles@NTFS_SA@@AEAAEVBIG_INT@@PEAV2@PEAKPEAEPEAVNTFS_FRS_STRUCTURE@@W4FIX_LEVEL@@PEAVNTFS_ATTRIBUTE@@PEAVNTFS_BITMAP@@7PEAVNTFS_UPCASE_TABLE@@PEAVNTFS_ATTRIBUTE_COLUMNS@@PEAVNUMBER_SET@@PEAUNTFS_CHKDSK_REPORT@@PEAVNTFS_CHKDSK_INFO@@PEAVMESSAGE@@@Z",
+              "ea": "0x180066fe9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "untfs.dll",
+              "function": "?RecoverAllUserFiles@@YAEPEAVNTFS_CHKDSK_INFO@@EPEAVNTFS_MASTER_FILE_TABLE@@PEAVNUMBER_SET@@PEAVMESSAGE@@@Z",
+              "ea": "0x18004e586",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "untfs.dll",
+              "function": "?RecoverFreeSpace@@YAEPEAVNTFS_CHKDSK_INFO@@PEAVNTFS_MASTER_FILE_TABLE@@PEAVNUMBER_SET@@PEAVMESSAGE@@@Z",
+              "ea": "0x18004e9cc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "untfs.dll",
+              "function": "?ValidateIndices@NTFS_SA@@AEAAEPEAVNTFS_CHKDSK_INFO@@PEAVDIGRAPH@@PEAVNTFS_MASTER_FILE_TABLE@@PEBVNTFS_ATTRIBUTE_COLUMNS@@PEAUNTFS_CHKDSK_REPORT@@PEAVNUMBER_SET@@GEPEAE6E@Z",
+              "ea": "0x180032bde",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "untfs.dll",
+              "function": "?ValidateSecurityDescriptors@NTFS_SA@@AEAAEPEAVNTFS_CHKDSK_INFO@@PEAUNTFS_CHKDSK_REPORT@@PEAVNTFS_MASTER_FILE_TABLE@@PEAVNUMBER_SET@@EW4FIX_LEVEL@@PEAVMESSAGE@@E@Z",
+              "ea": "0x18006cb46",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "chkdskStage",
+          "type": "UInt16",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ChkdskStarting",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "chkdskVolumeGuid:GUID",
+            "chkdskFileSystemName:UnicodeString",
+            "busType:UInt32",
+            "nativeNVMe:Bool32",
+            "chkdskAutocheck:Int32",
+            "chkdskFixLevel:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "autochk.exe",
+              "function": "?SpotFixVerify@NTFS_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KPEAKPEBVWSTRING@@@Z",
+              "ea": "0x14006441f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@NTFS_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x1400684fd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@NTFS_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x14006d11f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?ChkdskEx@@YAEPEBVWSTRING@@PEAVMESSAGE@@EPEAU_CHKDSKEX_FN_PARAM@@PEAK@Z",
+              "ea": "0x1800026f4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "ChkdskEx",
+              "ea": "0x1800048eb",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "untfs.dll",
+              "function": "ChkdskEx",
+              "ea": "0x180010c92",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "chkdskVolumeGuid:GUID",
+            "chkdskFileSystemName:UnicodeString",
+            "chkdskAutocheck:Int32",
+            "chkdskFixLevel:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x14004faa6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "busType",
+          "type": "UInt32",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskAutocheck",
+          "type": "Int32",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskFileSystemName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskFixLevel",
+          "type": "Int32",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskVolumeGuid",
+          "type": "GUID",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "nativeNVMe",
+          "type": "Bool32",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ChkdskVerbEncountered",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "chkdskVerb:UInt32",
+            "chkdskVerbOutcome:UInt32",
+            "chkdskVerbOutcomeStatus:UInt32",
+            "chkdskVerbHeaderFlags:HexInt32",
+            "chkdskVerbSourceId:UInt32",
+            "chkdskVerbSignature:UInt64",
+            "chkdskVerbObjectId:UInt64",
+            "chkdskVerbDuration:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "autochk.exe",
+              "function": "?ForceFullChkdsk@NTFS_SPOTFIX_COMMANDS@@UEAAEPEAVNTFS_CHKDSK_INFO@@K@Z",
+              "ea": "0x14008c6c6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?ProcessInput@NTFS_SPOTCHECKING_COMMANDS@@IEAAEPEAXPEAE@Z",
+              "ea": "0x140095c63",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "untfs.dll",
+              "function": "?ForceFullChkdsk@NTFS_SPOTFIX_COMMANDS@@UEAAEPEAVNTFS_CHKDSK_INFO@@K@Z",
+              "ea": "0x180073678",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "untfs.dll",
+              "function": "?ProcessInput@NTFS_SPOTCHECKING_COMMANDS@@IEAAEPEAXPEAE@Z",
+              "ea": "0x18007da0a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "untfs.dll",
+              "function": "?PutCommand@NTFS_PROSCAN_COMMANDS@@AEAAEW4_CORRUPTION_VERB@@PEAXKK1PEAW4_CORRUPTION_OUTCOME@@K_K@Z",
+              "ea": "0x1800669e5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "untfs.dll",
+              "function": "?SendForceFullChkdskVerb@NTFS_SPOTCHECKING_UTILS@@SAEPEAX0K@Z",
+              "ea": "0x18007f3c2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "chkdskVerb:UInt32",
+            "chkdskVerbSourceId:UInt32",
+            "chkdskResult:Bool32",
+            "chkdskVerbDuration:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverFreeSpace@FAT_SA@@AEAAEPEAU_FATCHK_REPORT@@PEAVMESSAGE@@@Z",
+              "ea": "0x14004c39e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004c7ad",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004c8d1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004c9ec",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004cb90",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004ccf1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004cdd7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004ceb5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004d0c5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004d17b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004d222",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004d27a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004d3b4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004d4c5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004d6ba",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004d85a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004d897",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004d94d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004da4c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004da99",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004dad6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004db76",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004dc39",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004dd43",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004dd7d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x14004ddb7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RelocateNewFat32RootDirectory@FAT_SA@@AEAAEPEAU_FATCHK_REPORT@@PEAVBITVECTOR@@PEAVMESSAGE@@@Z",
+              "ea": "0x14004e0bb",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?RelocateNewFat32RootDirectory@FAT_SA@@AEAAEPEAU_FATCHK_REPORT@@PEAVBITVECTOR@@PEAVMESSAGE@@@Z",
+              "ea": "0x14004e223",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x14004e592",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x14004e672",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x14004e740",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x14004e81c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x14004e940",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x14004eb1a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x14004eb86",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x14004ebec",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x14004ed76",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x14004ee6e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x14004ef10",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x14004efe8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x14004f0a5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x14004f181",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x14004f245",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x14004fc36",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x14004fc95",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x14004fd10",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x14004fde3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x14004fe85",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x1400502d6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x140050529",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x1400505f4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x14005068d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x140050729",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x1400507fd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x1400508da",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x14005096e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x140050a99",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x140050bdc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x140050c8f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x140050d87",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x140050e08",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x140050e7c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x140050fb5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x14005103c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x140051161",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x1400511fd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x140051314",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x140051402",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x140051c70",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFixFat32RootDir@FAT_SA@@AEAAEPEAVBITVECTOR@@PEAVMESSAGE@@PEAU_FATCHK_REPORT@@PEAE@Z",
+              "ea": "0x1400524a0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFixFat32RootDir@FAT_SA@@AEAAEPEAVBITVECTOR@@PEAVMESSAGE@@PEAU_FATCHK_REPORT@@PEAE@Z",
+              "ea": "0x140052614",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFixFat32RootDir@FAT_SA@@AEAAEPEAVBITVECTOR@@PEAVMESSAGE@@PEAU_FATCHK_REPORT@@PEAE@Z",
+              "ea": "0x14005273b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?VerifyAndFixFat32RootDir@FAT_SA@@AEAAEPEAVBITVECTOR@@PEAVMESSAGE@@PEAU_FATCHK_REPORT@@PEAE@Z",
+              "ea": "0x1400527ba",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x140052e99",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x1400530f5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x14005376e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x1400538df",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x140053a5a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x140053e64",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x140053f9d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x140054116",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x1400541d1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x140054278",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x140054336",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x1400544d6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x140054594",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x140054759",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x14005485c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x14005492d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "autochk.exe",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x140054b07",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?ProcessRootDirectory@EXFAT_SA@@AEAAEW4FIX_LEVEL@@PEAVMESSAGE@@PEAVEXFATDIR@@EPEAE@Z",
+              "ea": "0x18000815d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?ProcessRootDirectory@EXFAT_SA@@AEAAEW4FIX_LEVEL@@PEAVMESSAGE@@PEAVEXFATDIR@@EPEAE@Z",
+              "ea": "0x18000821c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?ProcessRootDirectory@EXFAT_SA@@AEAAEW4FIX_LEVEL@@PEAVMESSAGE@@PEAVEXFATDIR@@EPEAE@Z",
+              "ea": "0x180008400",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?ProcessRootDirectory@EXFAT_SA@@AEAAEW4FIX_LEVEL@@PEAVMESSAGE@@PEAVEXFATDIR@@EPEAE@Z",
+              "ea": "0x18000851a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?ProcessRootDirectory@EXFAT_SA@@AEAAEW4FIX_LEVEL@@PEAVMESSAGE@@PEAVEXFATDIR@@EPEAE@Z",
+              "ea": "0x1800085eb",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?ProcessRootDirectory@EXFAT_SA@@AEAAEW4FIX_LEVEL@@PEAVMESSAGE@@PEAVEXFATDIR@@EPEAE@Z",
+              "ea": "0x18000866c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?ProcessRootDirectory@EXFAT_SA@@AEAAEW4FIX_LEVEL@@PEAVMESSAGE@@PEAVEXFATDIR@@EPEAE@Z",
+              "ea": "0x18000879d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?ProcessRootDirectory@EXFAT_SA@@AEAAEW4FIX_LEVEL@@PEAVMESSAGE@@PEAVEXFATDIR@@EPEAE@Z",
+              "ea": "0x180008960",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?ProcessRootDirectory@EXFAT_SA@@AEAAEW4FIX_LEVEL@@PEAVMESSAGE@@PEAVEXFATDIR@@EPEAE@Z",
+              "ea": "0x180008a2f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?ProcessRootDirectory@EXFAT_SA@@AEAAEW4FIX_LEVEL@@PEAVMESSAGE@@PEAVEXFATDIR@@EPEAE@Z",
+              "ea": "0x180008b1a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?ProcessRootDirectory@EXFAT_SA@@AEAAEW4FIX_LEVEL@@PEAVMESSAGE@@PEAVEXFATDIR@@EPEAE@Z",
+              "ea": "0x180008b7b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?ReWalkDirectoryTree@EXFAT_SA@@QEAAEEW4FIX_LEVEL@@PEAEPEAVEXFAT_LIST@@PEAVMESSAGE@@@Z",
+              "ea": "0x180008fd0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?ReWalkDirectoryTree@EXFAT_SA@@QEAAEEW4FIX_LEVEL@@PEAEPEAVEXFAT_LIST@@PEAVMESSAGE@@@Z",
+              "ea": "0x1800090ee",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?ReWalkDirectoryTree@EXFAT_SA@@QEAAEEW4FIX_LEVEL@@PEAEPEAVEXFAT_LIST@@PEAVMESSAGE@@@Z",
+              "ea": "0x18000922f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?ReWalkDirectoryTree@EXFAT_SA@@QEAAEEW4FIX_LEVEL@@PEAEPEAVEXFAT_LIST@@PEAVMESSAGE@@@Z",
+              "ea": "0x1800092f4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?ReWalkDirectoryTree@EXFAT_SA@@QEAAEEW4FIX_LEVEL@@PEAEPEAVEXFAT_LIST@@PEAVMESSAGE@@@Z",
+              "ea": "0x1800094c6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?ReWalkDirectoryTree@EXFAT_SA@@QEAAEEW4FIX_LEVEL@@PEAEPEAVEXFAT_LIST@@PEAVMESSAGE@@@Z",
+              "ea": "0x1800096c0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?ReWalkDirectoryTree@EXFAT_SA@@QEAAEEW4FIX_LEVEL@@PEAEPEAVEXFAT_LIST@@PEAVMESSAGE@@@Z",
+              "ea": "0x180009895",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?ReWalkDirectoryTree@EXFAT_SA@@QEAAEEW4FIX_LEVEL@@PEAEPEAVEXFAT_LIST@@PEAVMESSAGE@@@Z",
+              "ea": "0x180009906",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?ReWalkDirectoryTree@EXFAT_SA@@QEAAEEW4FIX_LEVEL@@PEAEPEAVEXFAT_LIST@@PEAVMESSAGE@@@Z",
+              "ea": "0x180009a94",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?RecoverFreeSpace@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@PEAE@Z",
+              "ea": "0x18000a1c5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?RecoverFreeSpace@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@PEAE@Z",
+              "ea": "0x18000a260",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?RecoverLostClusters@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EEPEAVEXFAT_LIST@@@Z",
+              "ea": "0x18000a45e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?RecoverLostClusters@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EEPEAVEXFAT_LIST@@@Z",
+              "ea": "0x18000a5d8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?RecoverLostClusters@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EEPEAVEXFAT_LIST@@@Z",
+              "ea": "0x18000a6be",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?RecoverLostClusters@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EEPEAVEXFAT_LIST@@@Z",
+              "ea": "0x18000a74a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?RecoverLostClusters@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EEPEAVEXFAT_LIST@@@Z",
+              "ea": "0x18000a836",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?RecoverLostClusters@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EEPEAVEXFAT_LIST@@@Z",
+              "ea": "0x18000a934",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?RecoverLostClusters@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EEPEAVEXFAT_LIST@@@Z",
+              "ea": "0x18000aa8b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?RecoverLostClusters@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EEPEAVEXFAT_LIST@@@Z",
+              "ea": "0x18000ab50",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?RecoverLostClusters@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EEPEAVEXFAT_LIST@@@Z",
+              "ea": "0x18000ac04",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?RecoverLostClusters@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EEPEAVEXFAT_LIST@@@Z",
+              "ea": "0x18000ac9c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?RecoverLostClusters@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EEPEAVEXFAT_LIST@@@Z",
+              "ea": "0x18000ad60",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?RecoverLostClusters@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EEPEAVEXFAT_LIST@@@Z",
+              "ea": "0x18000adec",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?RecoverLostClusters@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EEPEAVEXFAT_LIST@@@Z",
+              "ea": "0x18000af4f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?RecoverLostClusters@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EEPEAVEXFAT_LIST@@@Z",
+              "ea": "0x18000b00c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?RecoverLostClusters@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EEPEAVEXFAT_LIST@@@Z",
+              "ea": "0x18000b120",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?RecoverLostClusters@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EEPEAVEXFAT_LIST@@@Z",
+              "ea": "0x18000b1bf",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000b737",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000b8e1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000b956",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000ba60",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000bb36",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000bcb9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000bd48",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000bdf4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000bec1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000c05f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000c25a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000c440",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000c5c1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000c725",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000c8c4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000ca4e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000cba8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFix@EXFAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000cc56",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixBootRegion@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x18000d390",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixBootRegion@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x18000d41b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixBootRegion@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x18000d4fd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixBootRegion@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x18000d586",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixBootRegion@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x18000d63c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixBootRegion@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x18000d726",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixBootRegion@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x18000d7a8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixBootRegion@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x18000d843",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixRootDirectoryPhase2@EXFAT_SA@@AEAAEPEAVEXFATBITMAP@@EEW4FIX_LEVEL@@PEAEPEAVMESSAGE@@@Z",
+              "ea": "0x18000d992",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixRootDirectoryPhase2@EXFAT_SA@@AEAAEPEAVEXFATBITMAP@@EEW4FIX_LEVEL@@PEAEPEAVMESSAGE@@@Z",
+              "ea": "0x18000da56",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixRootDirectoryPhase2@EXFAT_SA@@AEAAEPEAVEXFATBITMAP@@EEW4FIX_LEVEL@@PEAEPEAVMESSAGE@@@Z",
+              "ea": "0x18000daf9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixRootDirectoryPhase2@EXFAT_SA@@AEAAEPEAVEXFATBITMAP@@EEW4FIX_LEVEL@@PEAEPEAVMESSAGE@@@Z",
+              "ea": "0x18000dbd8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixVolumeBitmap@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000dd41",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixVolumeBitmap@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000de35",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixVolumeBitmap@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000dfd3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixVolumeBitmap@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000e08c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixVolumeBitmap@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000e130",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixVolumeBitmap@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000e264",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixVolumeBitmap@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000e3c1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixVolumeBitmap@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000e495",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixVolumeBitmap@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000e51d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixVolumeBitmap@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000e5d1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixVolumeBitmap@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000e660",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixVolumeBitmap@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000e7a0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixVolumeBitmap@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000e85b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixVolumeBitmap@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000e8fa",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifyAndFixVolumeBitmap@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000e98c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?VerifySectorPattern@EXFAT_SA@@QEAAEKK@Z",
+              "ea": "0x18000ea47",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?WalkDirectoryTree@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000ecfd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?WalkDirectoryTree@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000edda",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?WalkDirectoryTree@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000eeab",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?WalkDirectoryTree@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000f01f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?WalkDirectoryTree@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000f158",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?WalkDirectoryTree@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000f2b5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?WalkDirectoryTree@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000f339",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?WalkDirectoryTree@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000f644",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?WalkDirectoryTree@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000f780",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?WalkDirectoryTree@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000f853",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?WalkDirectoryTree@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000f9fb",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?WalkDirectoryTree@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000fa9d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "uexfat.dll",
+              "function": "?WalkDirectoryTree@EXFAT_SA@@QEAAEW4FIX_LEVEL@@PEAVMESSAGE@@EPEAVEXFATBITMAP@@PEAVEXFAT_LIST@@PEAE@Z",
+              "ea": "0x18000fb9b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RebuildEaHeader@FAT_SA@@AEAAEPEAKPEAU_EA_INFO@@KPEAVMEM@@PEAVEA_HEADER@@PEAVBITVECTOR@@W4FIX_LEVEL@@PEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAE@Z",
+              "ea": "0x18000a3b3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RebuildEaHeader@FAT_SA@@AEAAEPEAKPEAU_EA_INFO@@KPEAVMEM@@PEAVEA_HEADER@@PEAVBITVECTOR@@W4FIX_LEVEL@@PEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAE@Z",
+              "ea": "0x18000a47f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RebuildEaHeader@FAT_SA@@AEAAEPEAKPEAU_EA_INFO@@KPEAVMEM@@PEAVEA_HEADER@@PEAVBITVECTOR@@W4FIX_LEVEL@@PEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAE@Z",
+              "ea": "0x18000a522",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RebuildEaHeader@FAT_SA@@AEAAEPEAKPEAU_EA_INFO@@KPEAVMEM@@PEAVEA_HEADER@@PEAVBITVECTOR@@W4FIX_LEVEL@@PEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAE@Z",
+              "ea": "0x18000a669",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RebuildEaHeader@FAT_SA@@AEAAEPEAKPEAU_EA_INFO@@KPEAVMEM@@PEAVEA_HEADER@@PEAVBITVECTOR@@W4FIX_LEVEL@@PEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAE@Z",
+              "ea": "0x18000a7d3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RebuildEaHeader@FAT_SA@@AEAAEPEAKPEAU_EA_INFO@@KPEAVMEM@@PEAVEA_HEADER@@PEAVBITVECTOR@@W4FIX_LEVEL@@PEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAE@Z",
+              "ea": "0x18000a8a6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RebuildEaHeader@FAT_SA@@AEAAEPEAKPEAU_EA_INFO@@KPEAVMEM@@PEAVEA_HEADER@@PEAVBITVECTOR@@W4FIX_LEVEL@@PEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAE@Z",
+              "ea": "0x18000a983",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RebuildEaHeader@FAT_SA@@AEAAEPEAKPEAU_EA_INFO@@KPEAVMEM@@PEAVEA_HEADER@@PEAVBITVECTOR@@W4FIX_LEVEL@@PEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAE@Z",
+              "ea": "0x18000ac04",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverFreeSpace@FAT_SA@@AEAAEPEAU_FATCHK_REPORT@@PEAVMESSAGE@@@Z",
+              "ea": "0x18000b3ca",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000b7cc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000b8ea",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000ba08",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000bbcb",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000bd3d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000be34",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000bf2f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000c16f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000c23d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000c2f5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000c350",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000c4ae",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000c5db",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000c96b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000c9ab",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000c9f3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000cac1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000cbd1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000cc21",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000cc61",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000cd19",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000cdf0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000cf04",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000cf41",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RecoverOrphans@FAT_SA@@IEAAEPEAVBITVECTOR@@W4FIX_LEVEL@@PEAVMESSAGE@@PEAEPEAU_FATCHK_REPORT@@E@Z",
+              "ea": "0x18000cf7e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RelocateNewFat32RootDirectory@FAT_SA@@AEAAEPEAU_FATCHK_REPORT@@PEAVBITVECTOR@@PEAVMESSAGE@@@Z",
+              "ea": "0x18000d2aa",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?RelocateNewFat32RootDirectory@FAT_SA@@AEAAEPEAU_FATCHK_REPORT@@PEAVBITVECTOR@@PEAVMESSAGE@@@Z",
+              "ea": "0x18000d46c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x18000d863",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x18000d950",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x18000da2b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x18000db14",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x18000dc3a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x18000de43",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x18000dec1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x18000df27",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x18000e0d7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x18000e1dc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x18000e289",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x18000e36c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x18000e438",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x18000e520",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?ValidateDirent@FAT_SA@@AEAAEPEAVFAT_DIRENT@@PEBVWSTRING@@W4FIX_LEVEL@@EPEAU_FATCHK_REPORT@@PEAVMESSAGE@@PEAEPEAVBITVECTOR@@5PEAK@Z",
+              "ea": "0x18000e5f3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000ef08",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000ef73",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000eff0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000f0c9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000f16f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000f53b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000f7c0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000f88d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000f92a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000f9c2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000faa4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000fb7f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000fc0f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000fd33",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000fe6d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000ff14",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18000fff7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x180010081",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18001019b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18001022b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x180010335",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18001043b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x18001050e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x180010672",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x1800106ef",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFix@FAT_SA@@UEAAEW4FIX_LEVEL@@PEAVMESSAGE@@KKGPEAKPEBVWSTRING@@@Z",
+              "ea": "0x180011162",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFixFat32RootDir@FAT_SA@@AEAAEPEAVBITVECTOR@@PEAVMESSAGE@@PEAU_FATCHK_REPORT@@PEAE@Z",
+              "ea": "0x1800119ab",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFixFat32RootDir@FAT_SA@@AEAAEPEAVBITVECTOR@@PEAVMESSAGE@@PEAU_FATCHK_REPORT@@PEAE@Z",
+              "ea": "0x180011aee",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFixFat32RootDir@FAT_SA@@AEAAEPEAVBITVECTOR@@PEAVMESSAGE@@PEAU_FATCHK_REPORT@@PEAE@Z",
+              "ea": "0x180011c77",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?VerifyAndFixFat32RootDir@FAT_SA@@AEAAEPEAVBITVECTOR@@PEAVMESSAGE@@PEAU_FATCHK_REPORT@@PEAE@Z",
+              "ea": "0x180011cf5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x1800123e6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x1800125da",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x180012b74",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x180012d15",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x180012ef2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x1800132ab",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x1800133f5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x18001357b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x18001373c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x180013808",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x180013960",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x180013a2f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x180013bd8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x180013ce5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x180013db4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x180013ec2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ufat.dll",
+              "function": "?WalkDirectoryTree@FAT_SA@@AEAAEPEAU_EA_INFO@@PEAGPEAVBITVECTOR@@PEAU_FATCHK_REPORT@@W4FIX_LEVEL@@EPEAVMESSAGE@@EPEAE@Z",
+              "ea": "0x180013f9d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "chkdskResult",
+          "type": "Bool32",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskVerb",
+          "type": "UInt32",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskVerbDuration",
+          "type": "UInt64",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskVerbHeaderFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "autochk.exe",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskVerbObjectId",
+          "type": "UInt64",
+          "seenIn": [
+            "autochk.exe",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskVerbOutcome",
+          "type": "UInt32",
+          "seenIn": [
+            "autochk.exe",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskVerbOutcomeStatus",
+          "type": "UInt32",
+          "seenIn": [
+            "autochk.exe",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskVerbSignature",
+          "type": "UInt64",
+          "seenIn": [
+            "autochk.exe",
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "chkdskVerbSourceId",
+          "type": "UInt32",
+          "seenIn": [
+            "autochk.exe",
+            "uexfat.dll",
+            "ufat.dll",
+            "untfs.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Format",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "formatVolumeId:GUID",
+            "formatFileSystemName:UnicodeString",
+            "busType:UInt32",
+            "nativeNVMe:Bool32",
+            "formatApiCalled:UInt32",
+            "formatVersionMajor:UInt32",
+            "formatVersionMinor:UInt32",
+            "formatFlags:UInt32",
+            "formatClusterSize:UInt32",
+            "formatPhases:UInt32",
+            "formatLogFileSize:UInt32",
+            "formatDuration:UInt64",
+            "formatExitStatus:UInt32",
+            "formatSourceTag:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "untfs.dll",
+              "function": "Format",
+              "ea": "0x18001204b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "untfs.dll",
+              "function": "FormatEx",
+              "ea": "0x180012765",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "busType",
+          "type": "UInt32",
+          "seenIn": [
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "formatApiCalled",
+          "type": "UInt32",
+          "seenIn": [
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "formatClusterSize",
+          "type": "UInt32",
+          "seenIn": [
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "formatDuration",
+          "type": "UInt64",
+          "seenIn": [
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "formatExitStatus",
+          "type": "UInt32",
+          "seenIn": [
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "formatFileSystemName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "formatFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "formatLogFileSize",
+          "type": "UInt32",
+          "seenIn": [
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "formatPhases",
+          "type": "UInt32",
+          "seenIn": [
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "formatSourceTag",
+          "type": "UInt32",
+          "seenIn": [
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "formatVersionMajor",
+          "type": "UInt32",
+          "seenIn": [
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "formatVersionMinor",
+          "type": "UInt32",
+          "seenIn": [
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "formatVolumeId",
+          "type": "GUID",
+          "seenIn": [
+            "untfs.dll"
+          ]
+        },
+        {
+          "fieldName": "nativeNVMe",
+          "type": "Bool32",
+          "seenIn": [
+            "untfs.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

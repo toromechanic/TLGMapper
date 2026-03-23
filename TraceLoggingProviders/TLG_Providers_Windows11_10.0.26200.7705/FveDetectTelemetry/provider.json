@@ -1,0 +1,180 @@
+{
+  "providerName": "FveDetectTelemetry",
+  "guid": "{B142EB8C-3426-11E7-B687-92EBCB67FE33}",
+  "os": "Windows 11",
+  "binaryCount": 4,
+  "binaries": [
+    "ResetEngine.dll",
+    "WinREAgent.dll",
+    "WinREAgent_System32_D02B4B26.dll",
+    "lsasrv.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "FveAddTrustedWimData",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "WinREAgent.dll",
+              "function": "sub_18006D83C",
+              "ea": "0x18006db1c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WinREAgent_System32_D02B4B26.dll",
+              "function": "FveAddTrustedWimData",
+              "ea": "0x18006db1c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "WinREAgent.dll",
+            "WinREAgent_System32_D02B4B26.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FveCheckSuspendBitLockerOnUpgrade",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ShouldSuspendBitlocker:Int32",
+            "IsSecureBootBoundOrBindingPossible:UInt8(Boolean)",
+            "pcrProfile:UInt32",
+            "IsOsPreRS1:UInt8(Boolean)",
+            "AuthUsesFlags:UInt32",
+            "hr:Int32",
+            "LineNumber:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "lsasrv.dll",
+              "function": "FveCheckSuspendBitLockerOnUpgrade",
+              "ea": "0x18012deed",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ResetEngine.dll",
+              "function": "FveCheckSuspendBitLockerOnUpgrade",
+              "ea": "0x180145ecc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AuthUsesFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "ResetEngine.dll",
+            "lsasrv.dll"
+          ]
+        },
+        {
+          "fieldName": "IsOsPreRS1",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ResetEngine.dll",
+            "lsasrv.dll"
+          ]
+        },
+        {
+          "fieldName": "IsSecureBootBoundOrBindingPossible",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ResetEngine.dll",
+            "lsasrv.dll"
+          ]
+        },
+        {
+          "fieldName": "LineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "ResetEngine.dll",
+            "lsasrv.dll"
+          ]
+        },
+        {
+          "fieldName": "ShouldSuspendBitlocker",
+          "type": "Int32",
+          "seenIn": [
+            "ResetEngine.dll",
+            "lsasrv.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "ResetEngine.dll",
+            "lsasrv.dll"
+          ]
+        },
+        {
+          "fieldName": "pcrProfile",
+          "type": "UInt32",
+          "seenIn": [
+            "ResetEngine.dll",
+            "lsasrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "FveRemoveTrustedWimData",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "WinREAgent.dll",
+              "function": "sub_18006DF30",
+              "ea": "0x18006e181",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "WinREAgent_System32_D02B4B26.dll",
+              "function": "FveRemoveTrustedWimData",
+              "ea": "0x18006e181",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "WinREAgent.dll",
+            "WinREAgent_System32_D02B4B26.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

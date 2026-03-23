@@ -1,0 +1,142 @@
+{
+  "providerName": "WebIo",
+  "guid": "{08F93B14-1608-4A72-9CFA-457EECEDBBA7}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "webio.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "WebIoTls13HandshakeFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Requested Host:UnicodeString",
+            "SecureProxy:Bool32",
+            "Tunnel:Bool32",
+            "Error:HexInt32",
+            "Tls fallback will be attempted:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "webio.dll",
+              "function": "WaSslProcessReceiver",
+              "ea": "0x180045529",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "webio.dll",
+              "function": "WaSslProcessReceiver",
+              "ea": "0x180045544",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Error",
+          "type": "HexInt32",
+          "seenIn": [
+            "webio.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "webio.dll"
+          ]
+        },
+        {
+          "fieldName": "Requested Host",
+          "type": "UnicodeString",
+          "seenIn": [
+            "webio.dll"
+          ]
+        },
+        {
+          "fieldName": "SecureProxy",
+          "type": "Bool32",
+          "seenIn": [
+            "webio.dll"
+          ]
+        },
+        {
+          "fieldName": "Tls fallback will be attempted",
+          "type": "Bool32",
+          "seenIn": [
+            "webio.dll"
+          ]
+        },
+        {
+          "fieldName": "Tunnel",
+          "type": "Bool32",
+          "seenIn": [
+            "webio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WebIoTlsFallback",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Requested Host:UnicodeString",
+            "Tls Protocols Failed:UInt32",
+            "Tls Fallback Protocols Succeeded:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "webio.dll",
+              "function": "WaTraceLoggingTlsFallback",
+              "ea": "0x180069c60",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "webio.dll"
+          ]
+        },
+        {
+          "fieldName": "Requested Host",
+          "type": "UnicodeString",
+          "seenIn": [
+            "webio.dll"
+          ]
+        },
+        {
+          "fieldName": "Tls Fallback Protocols Succeeded",
+          "type": "UInt32",
+          "seenIn": [
+            "webio.dll"
+          ]
+        },
+        {
+          "fieldName": "Tls Protocols Failed",
+          "type": "UInt32",
+          "seenIn": [
+            "webio.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

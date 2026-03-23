@@ -1,0 +1,928 @@
+{
+  "providerName": "Microsoft.Windows.Security.Ncrypt",
+  "guid": "{CC848ECF-0639-5866-6928-18FA9DE5F209}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "ncryptprov.dll"
+  ],
+  "uniqueEventCount": 13,
+  "events": [
+    {
+      "eventName": "KeyguardAdoption",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x800000000000",
+          "fields": [
+            "KGUsageCount:Int64",
+            "KGAttestationUsageCount:Int64",
+            "PKCS11UnwrappingCount:Int64",
+            "KeyGuardRunningInProd:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPCryptFinalizeKey",
+              "ea": "0x18003531a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "KGAttestationUsageCount",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "KGUsageCount",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "KeyGuardRunningInProd",
+          "type": "Bool32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PKCS11UnwrappingCount",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MsProvCryptVerifyClaim",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "Count:Int64",
+            "PartA_PrivTags:UInt64",
+            "StatusCode:UInt32(NTStatus)",
+            "ClaimType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "MsProvCryptVerifyClaim",
+              "ea": "0x18004f5d6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClaimType",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "StatusCode",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Performance_MsProvCryptVerifyClaim",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "ClaimType:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "MsProvCryptVerifyClaim",
+              "ea": "0x18004f7b7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClaimType",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Performance_SPCryptCreateClaim",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "ClaimType:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPCryptCreateClaim",
+              "ea": "0x18005738d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClaimType",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Performance_SPCryptFinalizeKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPCryptFinalizeKey",
+              "ea": "0x180035717",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPCryptFinalizeKey",
+              "ea": "0x180035794",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPCryptFinalizeKey",
+              "ea": "0x1800357e8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Performance_SPCryptOpenKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPCryptFinalizeKey",
+              "ea": "0x18003580a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPCryptOpenKey",
+              "ea": "0x180028416",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Performance_SPPkcs11ExportKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "ExportedAlgId:UInt32",
+            "LengthRetrieval:UInt8(Boolean)",
+            "AESLen:UInt32",
+            "PadAlgo:UnicodeString",
+            "Flags:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPPkcs11ExportKey",
+              "ea": "0x1800518a4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AESLen",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "ExportedAlgId",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "LengthRetrieval",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PadAlgo",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Performance_SPPkcs11ImportKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 0,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "totalMicroseconds:Int64",
+            "minMicroseconds:Int64",
+            "maxMicroseconds:Int64",
+            "Algo:UnicodeString",
+            "PadAlgo:CountedString",
+            "Flags:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPPkcs11ImportKey",
+              "ea": "0x1800520a4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Algo",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PadAlgo",
+          "type": "CountedString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "maxMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "minMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "totalMicroseconds",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SPCryptCreateClaim",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "Count:Int64",
+            "PartA_PrivTags:UInt64",
+            "StatusCode:UInt32(NTStatus)",
+            "ClaimType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPCryptCreateClaim",
+              "ea": "0x180057186",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClaimType",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "StatusCode",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SPCryptFinalizeKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "Count:Int64",
+            "PartA_PrivTags:UInt64",
+            "StatusCode:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPCryptFinalizeKey",
+              "ea": "0x180035278",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPCryptFinalizeKey",
+              "ea": "0x1800352b9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPCryptFinalizeKey",
+              "ea": "0x1800352fc",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "StatusCode",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SPCryptOpenKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "Count:Int64",
+            "PartA_PrivTags:UInt64",
+            "StatusCode:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPCryptOpenKey",
+              "ea": "0x180020f78",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "StatusCode",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SPPkcs11ExportKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "Count:Int64",
+            "PartA_PrivTags:UInt64",
+            "StatusCode:Int32(HResult)",
+            "ExportedAlgId:UInt32",
+            "LengthRetrieval:UInt8(Boolean)",
+            "AESLen:UInt32",
+            "PadAlgo:UnicodeString",
+            "Flags:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPPkcs11ExportKey",
+              "ea": "0x1800516e6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AESLen",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "ExportedAlgId",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "LengthRetrieval",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PadAlgo",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "StatusCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SPPkcs11ImportKey",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "Count:Int64",
+            "PartA_PrivTags:UInt64",
+            "StatusCode:Int32(HResult)",
+            "Algo:UnicodeString",
+            "Name:UnicodeString",
+            "PadAlgo:UnicodeString",
+            "ImportKeyUsage:UInt32",
+            "Flags:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ncryptprov.dll",
+              "function": "SPPkcs11ImportKey",
+              "ea": "0x180051f21",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Algo",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "Flags",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "ImportKeyUsage",
+          "type": "UInt32",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "Name",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PadAlgo",
+          "type": "UnicodeString",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        },
+        {
+          "fieldName": "StatusCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "ncryptprov.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

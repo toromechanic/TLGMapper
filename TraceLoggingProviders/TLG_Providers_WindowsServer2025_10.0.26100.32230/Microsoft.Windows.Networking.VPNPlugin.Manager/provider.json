@@ -1,0 +1,579 @@
+{
+  "providerName": "Microsoft.Windows.Networking.VPNPlugin.Manager",
+  "guid": "{542F2110-2C0F-40D7-AA35-3309FE74B8AE}",
+  "os": "WindowsServer2025",
+  "binaryCount": 3,
+  "binaries": [
+    "RasMediaManager.dll",
+    "rasapi32.dll",
+    "rasmans.dll"
+  ],
+  "uniqueEventCount": 7,
+  "events": [
+    {
+      "eventName": "AppTriggered",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ProfileName:UnicodeString",
+            "AppTriggerType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rasmans.dll",
+              "function": "?VpnProfileTelemetryEventWriteAppTriggered@@YAXW4FWPI_VPN_TRIGGER_EVENT_TYPE_@@@Z",
+              "ea": "0x1800d35d6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppTriggerType",
+          "type": "UInt32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "ProfileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AutoConnectMonitorResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ProfileName:UnicodeString",
+            "ConnectionStarted:Bool32",
+            "EnteredNQM:Bool32",
+            "ActiveProfileChanged:Bool32",
+            "InternetConnectivityLost:Bool32",
+            "ProfileConnected:Bool32",
+            "StartIsInternetConnected:Bool32",
+            "StartIsDeviceInside:Bool32",
+            "StartIsProfileActive:Bool32",
+            "EndIsInternetConnected:Bool32",
+            "EndIsDeviceInside:Bool32",
+            "EndIsProfileActive:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "rasmans.dll",
+              "function": "?LogConnectionDetails@@YAXPEAU_TP_CALLBACK_INSTANCE@@PEAXPEAU_TP_TIMER@@@Z",
+              "ea": "0x1800e84d4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActiveProfileChanged",
+          "type": "Bool32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "ConnectionStarted",
+          "type": "Bool32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "EndIsDeviceInside",
+          "type": "Bool32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "EndIsInternetConnected",
+          "type": "Bool32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "EndIsProfileActive",
+          "type": "Bool32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "EnteredNQM",
+          "type": "Bool32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "InternetConnectivityLost",
+          "type": "Bool32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "ProfileConnected",
+          "type": "Bool32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "ProfileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "StartIsDeviceInside",
+          "type": "Bool32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "StartIsInternetConnected",
+          "type": "Bool32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "StartIsProfileActive",
+          "type": "Bool32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LaunchTokenBrokerStatus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "EntryName:UnicodeString",
+            "OperationResult:HexInt32",
+            "WindowsHandle:HexInt64",
+            "TokenRequestStatusCode:UInt32",
+            "TokenRequestHresult:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rasapi32.dll",
+              "function": "LogLaunchTokenBrokerIfRequiredStatus",
+              "ea": "0x1800be272",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "RasMediaManager.dll",
+              "function": "LogLaunchTokenBrokerIfRequiredStatus",
+              "ea": "0x18003406e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EntryName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "RasMediaManager.dll",
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "OperationResult",
+          "type": "HexInt32",
+          "seenIn": [
+            "RasMediaManager.dll",
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "TokenRequestHresult",
+          "type": "HexInt32",
+          "seenIn": [
+            "RasMediaManager.dll",
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "TokenRequestStatusCode",
+          "type": "UInt32",
+          "seenIn": [
+            "RasMediaManager.dll",
+            "rasapi32.dll"
+          ]
+        },
+        {
+          "fieldName": "WindowsHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "RasMediaManager.dll",
+            "rasapi32.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PhysicalConnectionCompleted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ConnectionHandle:HexInt64",
+            "ProfileName:UnicodeString",
+            "IsCanceled:Bool32",
+            "OperationResult:HexInt32",
+            "IsUserTunnel:Bool32",
+            "IsDeviceInNQM:Bool32",
+            "LastPowerState:UInt32",
+            "IsFinalAttempt:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "rasmans.dll",
+              "function": "?LogEndPhysicalConnection@@YAX_NPEAUHRASCONN__@@J00@Z",
+              "ea": "0x1800cf28c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConnectionHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "IsCanceled",
+          "type": "Bool32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDeviceInNQM",
+          "type": "Bool32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "IsFinalAttempt",
+          "type": "Bool32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "IsUserTunnel",
+          "type": "Bool32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "LastPowerState",
+          "type": "UInt32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "OperationResult",
+          "type": "HexInt32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "ProfileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PhysicalConnectionStarted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ConnectionHandle:HexInt64",
+            "ProfileName:UnicodeString",
+            "IsUserTunnel:Bool32",
+            "InterfaceGuid:GUID",
+            "ErrorCode:HexInt32",
+            "IsDeviceInNQM:Bool32",
+            "LastPowerState:UInt32",
+            "LogicalConnectionStartReason:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rasmans.dll",
+              "function": "?LogStartPhysicalConnection@@YAXPEAUHRASCONN__@@_NU_GUID@@K@Z",
+              "ea": "0x1800cfa72",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConnectionHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "HexInt32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "InterfaceGuid",
+          "type": "GUID",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDeviceInNQM",
+          "type": "Bool32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "IsUserTunnel",
+          "type": "Bool32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "LastPowerState",
+          "type": "UInt32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "LogicalConnectionStartReason",
+          "type": "UInt32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "ProfileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RasDisconnectScheduled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ConnectionHandle:HexInt64",
+            "DisconnectReason:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "rasmans.dll",
+              "function": "?LogRasDisconnectScheduled@@YAXPEAXW4_SCHEDULED_DISCONNECT_REASON@@@Z",
+              "ea": "0x1800cf70e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConnectionHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "DisconnectReason",
+          "type": "UInt32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VpnTriggersAndCancellations",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "TotalTriggers:UInt32",
+            "TriggerDateTimes:SystemTime[]",
+            "TriggerTypes:UInt32[]",
+            "TotalCancellations:UInt32",
+            "CancellationDateTimes:SystemTime[]",
+            "CancellationReasons:UInt32[]",
+            "ConnectionHandle:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "rasmans.dll",
+              "function": "?LogTriggersAndCancellationsEvent@@YAXHPEAX@Z",
+              "ea": "0x1800cfd86",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CancellationDateTimes",
+          "type": "SystemTime[]",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "CancellationReasons",
+          "type": "UInt32[]",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "ConnectionHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "TotalCancellations",
+          "type": "UInt32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "TotalTriggers",
+          "type": "UInt32",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "TriggerDateTimes",
+          "type": "SystemTime[]",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        },
+        {
+          "fieldName": "TriggerTypes",
+          "type": "UInt32[]",
+          "seenIn": [
+            "rasmans.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

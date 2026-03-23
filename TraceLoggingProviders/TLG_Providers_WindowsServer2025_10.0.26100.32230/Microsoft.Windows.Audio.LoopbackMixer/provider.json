@@ -1,0 +1,1641 @@
+{
+  "providerName": "Microsoft.Windows.Audio.LoopbackMixer",
+  "guid": "{F286958A-866B-4CB4-B442-BBE01ACB0D30}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "AudioSes.dll"
+  ],
+  "uniqueEventCount": 41,
+  "events": [
+    {
+      "eventName": "**********DATA READY EVENT*********",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ClientID:UInt32",
+            "StreamAddress:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?MixerThreadProc@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006a63f",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClientID",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "StreamAddress",
+          "type": "HexInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "*********Timer elapsed**********",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?MixerThreadProc@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006a1dd",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "*********WaitForMultipleObjectsEx**********",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "EventObject:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?MixerThreadProc@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006a16f",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EventObject",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AddSubmixLoopbackStreamResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1000",
+          "fields": [
+            "submixId:UInt64",
+            "hrAdd:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?UpdateLoopbackStreamList@CLoopbackManager@@UEAAJXZ",
+              "ea": "0x1800e7dbf",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hrAdd",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "submixId",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BufferPosInfoList Insertion Failed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?FillBufferPositionInfo@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x180124383",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "CLoopbackMixer::GetBuffer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ClientReadAddress:HexInt64",
+            "BufferPosition (Bytes):UInt64",
+            "BufferSize (Frames):UInt64",
+            "QPC in ms:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?GetBuffer@CLoopbackMixer@@UEAAJPEAPEAEPEAIPEAKPEA_K3@Z",
+              "ea": "0x180032a02",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BufferPosition (Bytes)",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "BufferSize (Frames)",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientReadAddress",
+          "type": "HexInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "QPC in ms",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CLoopbackMixer::GetBuffer - AUDCLNT_S_BUFFER_EMPTY",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?GetBuffer@CLoopbackMixer@@UEAAJPEAPEAEPEAIPEAKPEA_K3@Z",
+              "ea": "0x180032a69",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "CLoopbackMixer::GetBuffer - debugTimeStamps",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "_lastTimeStamp:UInt64",
+            "pu64QPCPosition:UInt64",
+            "difference:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?GetBuffer@CLoopbackMixer@@UEAAJPEAPEAEPEAIPEAKPEA_K3@Z",
+              "ea": "0x180032a24",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "_lastTimeStamp",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "difference",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "pu64QPCPosition",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CLoopbackMixer::GetNextPacketSize - 0 frames",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?GetNextPacketSize@CLoopbackMixer@@UEAAJPEAI@Z",
+              "ea": "0x18004064d",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "CLoopbackMixer::Initialize",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?Initialize@CLoopbackMixer@@UEAAJW4_AUDCLNT_SHAREMODE@@K_J1PEBUtWAVEFORMATEX@@PEBU_GUID@@@Z",
+              "ea": "0x1800e9387",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "CLoopbackMixer::InitializeMixer - Completed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?InitializeMixer@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x180065983",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "CLoopbackMixer::InitializeMixer created AudioFormatConvertAPO",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?InitializeMixer@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006586d",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "CLoopbackMixer::MixerThreadProc - Buffer is Contiguous",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "QPCPosition:UInt64",
+            "LastQPCPosition:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?MixerThreadProc@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006aa19",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "LastQPCPosition",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "QPCPosition",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CLoopbackMixer::MixerThreadProc - Buffer to write",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "WritePosition:UInt32",
+            "BufferStartPosition:UInt64",
+            "Frames to write:UInt32",
+            "Bytes to write:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?MixerThreadProc@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006abb1",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BufferStartPosition",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "Bytes to write",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "Frames to write",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "WritePosition",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CLoopbackMixer::MixerThreadProc - Contiguous Buffer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ContinguousBuffer:Bool32",
+            "ClientPeriodicity:UInt64",
+            "Current QPC:UInt64",
+            "Last QPC:UInt64",
+            "QPC difference:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?IsCurrentPacketContinguous@@YAH_K0_J@Z",
+              "ea": "0x18004a311",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClientPeriodicity",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "ContinguousBuffer",
+          "type": "Bool32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "Current QPC",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "Last QPC",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "QPC difference",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CLoopbackMixer::MixerThreadProc - CurrentPacketFromFuture - GLITCHED",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "QPCPosition:UInt64",
+            "WritePosition:UInt64",
+            "QPCAdjustment:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?MixerThreadProc@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006aaaa",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "QPCAdjustment",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "QPCPosition",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "WritePosition",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CLoopbackMixer::MixerThreadProc - GetBuffer Details",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "BufferSize (Bytes):UInt64",
+            "Client QPC in ms:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?MixerThreadProc@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006a7ed",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BufferSize (Bytes)",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "Client QPC in ms",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CLoopbackMixer::MixerThreadProc - GetNextPacketSize",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "NextPacketSize:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?MixerThreadProc@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006a702",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "AudioSes.dll",
+              "function": "?MixerThreadProc@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006ae01",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NextPacketSize",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CLoopbackMixer::MixerThreadProc - Packet missed Client Timer - GLITCHED",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Client Index:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?MixerThreadProc@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006a874",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Client Index",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CLoopbackMixer::MixerThreadProc - QPC Adjustment Details",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "QPCAdjustment in HNS:Int64",
+            "New Client QPC:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?MixerThreadProc@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006a8cd",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "New Client QPC",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "QPCAdjustment in HNS",
+          "type": "Int64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CLoopbackMixer::MixerThreadProc - ReadPointerCaughtUpToMixPointer - GLITCHED",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "QPCPosition:UInt64",
+            "WritePosition:UInt64",
+            "lastBufferPos:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?MixerThreadProc@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006a99c",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "QPCPosition",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "WritePosition",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "lastBufferPos",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CLoopbackMixer::MixerThreadProc - SetLastBufferPosition",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "BufferPosition (Bytes):UInt32",
+            "QPC in ms:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?MixerThreadProc@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006acd3",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "BufferPosition (Bytes):UInt64",
+            "QPC in ms:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?MixerThreadProc@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006ad90",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BufferPosition (Bytes)",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "BufferPosition (Bytes)",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "QPC in ms",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CLoopbackMixer::MixerThreadProc - Trim Buffer End",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "DropBufferBytes:UInt32",
+            "BufferSizeRemaining (Bytes):UInt32",
+            "MaxBufferDuration in ms:UInt64",
+            "BufferDropTimeDuration in ms:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?AdjustPacketEndUsingTS@@YAJ_J0PEAUtWAVEFORMATEX@@PEAI@Z",
+              "ea": "0x180044831",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BufferDropTimeDuration in ms",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "BufferSizeRemaining (Bytes)",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "DropBufferBytes",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "MaxBufferDuration in ms",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CLoopbackMixer::MixerThreadProc - Wrap Buffer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "BufferSizeRemaining (Bytes):UInt32",
+            "BufferSize (Bytes):UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?MixerThreadProc@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006ac23",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BufferSize (Bytes)",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "BufferSizeRemaining (Bytes)",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CLoopbackMixer::MixerThreadProc WaitForMultipleObjectsEx",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ReturnValue:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?MixerThreadProc@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006ae5d",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ReturnValue",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CLoopbackMixer::ReleaseBuffer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ClientReadAddress:HexInt64",
+            "ReadBuffer reset start address:HexInt64",
+            "ReadBuffer reset end address:HexInt64",
+            "ReadBuffer reset size:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?ReleaseBuffer@CLoopbackMixer@@UEAAJI@Z",
+              "ea": "0x180041109",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClientReadAddress",
+          "type": "HexInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "ReadBuffer reset end address",
+          "type": "HexInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "ReadBuffer reset size",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "ReadBuffer reset start address",
+          "type": "HexInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CLoopbackMixer::ReleaseBuffer - Read Position Advanced",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "New _readIter:UInt32",
+            "New ReadQPC in ms:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?ReleaseBuffer@CLoopbackMixer@@UEAAJI@Z",
+              "ea": "0x18004119d",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "New ReadQPC in ms",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "New _readIter",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CLoopbackMixer::Start",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?Start@CLoopbackMixer@@UEAAJXZ",
+              "ea": "0x1800e99f6",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "CLoopbackMixer::Stop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?Stop@CLoopbackMixer@@UEAAJXZ",
+              "ea": "0x1800e9b22",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "CLoopbackMixer::s_MixerThreadProc Unable to register with MMCSS",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "ErrorResult:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?s_MixerThreadProc@CLoopbackMixer@@CAKPEAX@Z",
+              "ea": "0x18006b034",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorResult",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CLoopbackStream::CreateLoopbackStream - Capture Buffer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Capture Buffer:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?CreateLoopbackStream@CLoopbackStream@@AEAAJPEAX_KPEBUtWAVEFORMATEX@@PEBU_GUID@@@Z",
+              "ea": "0x1800e7599",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Capture Buffer",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DeleteSubmixLoopbackStreamResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1000",
+          "fields": [
+            "submixId:UInt64",
+            "streamDeleted:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?UpdateLoopbackStreamList@CLoopbackManager@@UEAAJXZ",
+              "ea": "0x1800e7e8c",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "streamDeleted",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "submixId",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LoopbackMixer::AddBuffer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Input BufferPositionAddress:HexInt64",
+            "BufferPositionAddress:HexInt64",
+            "BufferSize:UInt64",
+            "Input buffer first value:Float",
+            "Output buffer first value:Float",
+            "Input buffer last value:Float",
+            "Output buffer last value:Float"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?AddBuffer@@YAJPEAE0I@Z",
+              "ea": "0x18001e148",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BufferPositionAddress",
+          "type": "HexInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "BufferSize",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "Input BufferPositionAddress",
+          "type": "HexInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "Input buffer first value",
+          "type": "Float",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "Input buffer last value",
+          "type": "Float",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "Output buffer first value",
+          "type": "Float",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "Output buffer last value",
+          "type": "Float",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LoopbackMixer::MixerThreadProc",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "StreamCount:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?InitializeMixer@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x1800654ab",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Buffer Size (Frames):UInt32",
+            "Buffer Size (Bytes):UInt32",
+            "LPMIXER MAX Buffer Size (Bytes):UInt64",
+            "Periodicity in hns:UInt64",
+            "WriteAheadBufferCount:UInt64",
+            "LPMIXER MAX Periodicity in ms:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?InitializeMixer@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006578d",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "***START QPC***:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?InitializeMixer@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x1800658fa",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "***START QPC***",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "Buffer Size (Bytes)",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "Buffer Size (Frames)",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "LPMIXER MAX Buffer Size (Bytes)",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "LPMIXER MAX Periodicity in ms",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "Periodicity in hns",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "StreamCount",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "WriteAheadBufferCount",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LoopbackMixer::MixerThreadProc - New Read Buffer Added",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Buffer Position (Bytes):UInt32",
+            "Buffer Size (Bytes):UInt32",
+            "QPC in ms:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?MixerThreadProc@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006a3fe",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Buffer Position (Bytes)",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "Buffer Size (Bytes)",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "QPC in ms",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LoopbackMixer::MixerThreadProc - New Timer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Value in HNS:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?MixerThreadProc@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006a5f2",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Value in HNS",
+          "type": "Int64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LoopbackMixer::MixerThreadProc - Read Position Advanced",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "New _readIter:UInt32",
+            "New ReadQPC in ms:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?MixerThreadProc@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006a385",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "New ReadQPC in ms",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "New _readIter",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LoopbackMixer::MixerThreadProc - ReadWrite Lag",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ReadWriteLag:UInt32",
+            "WriteIter:UInt32",
+            "_readIter:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?MixerThreadProc@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006a28e",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ReadWriteLag",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "WriteIter",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "_readIter",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LoopbackMixer::MixerThreadProc - Write Position Advanced",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "WriteIter:UInt32",
+            "Write Position (Bytes):UInt32",
+            "Write QPC in ms:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?MixerThreadProc@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006a4bc",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Write Position (Bytes)",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "Write QPC in ms",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "WriteIter",
+          "type": "UInt32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LoopbackStreamThresholdExceeded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x1400",
+          "fields": [
+            "countLoopbackStreams:UInt64",
+            "maxLoopbackStreams:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?InitializeMixer@CLoopbackMixer@@AEAAJXZ",
+              "ea": "0x18006545c",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "countLoopbackStreams",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "maxLoopbackStreams",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SaveSubmixOperation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1000",
+          "fields": [
+            "submixId:UInt64",
+            "operation:Int32",
+            "sequenceNumber:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "AudioSes.dll",
+              "function": "?SaveSubmixOperation@CLoopbackManager@@AEAAJ_JW4AddRemoveOperation@1@_K@Z",
+              "ea": "0x1800e7b47",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "operation",
+          "type": "Int32",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "sequenceNumber",
+          "type": "Int64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        },
+        {
+          "fieldName": "submixId",
+          "type": "UInt64",
+          "seenIn": [
+            "AudioSes.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

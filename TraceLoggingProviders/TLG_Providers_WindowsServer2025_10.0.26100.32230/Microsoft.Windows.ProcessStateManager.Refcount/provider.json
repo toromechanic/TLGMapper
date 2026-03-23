@@ -1,0 +1,506 @@
+{
+  "providerName": "Microsoft.Windows.ProcessStateManager.Refcount",
+  "guid": "{23218C03-D099-425A-8778-337A4DDC7BA9}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "psmsrv.dll"
+  ],
+  "uniqueEventCount": 6,
+  "events": [
+    {
+      "eventName": "Application_Deref",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x2",
+          "fields": [
+            "NewRefCount:UInt32",
+            "PsmKey:UnicodeString",
+            "CleanupNeeded:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpDereferenceApplicationEx",
+              "ea": "0x1800055eb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CleanupNeeded",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "NewRefCount",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Application_Ref",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x2",
+          "fields": [
+            "NewRefCount:UInt32",
+            "PsmKey:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpAllocateOrLookupApplicationStruct",
+              "ea": "0x180007c54",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpAllocateOrLookupApplicationStruct",
+              "ea": "0x180007d38",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpAntiStarvationCallback",
+              "ea": "0x1800161d5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpExecutionRequestNotification",
+              "ea": "0x18001a691",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpFindApplication",
+              "ea": "0x180007eec",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpFindApplication",
+              "ea": "0x180007f2d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpFindApplicationByManagerForUser",
+              "ea": "0x180005d0e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpFindApplicationByManagerForUser",
+              "ea": "0x180005d4f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpGetNextApplication",
+              "ea": "0x180003f66",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpGetNextApplicationToCache",
+              "ea": "0x18000237c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpIsProcessInApplicationForUser",
+              "ea": "0x1800044db",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpIsProcessInApplicationForUser",
+              "ea": "0x18000451a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpJobNotificationCallback",
+              "ea": "0x18001340d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpNetQuotaCallbackWnf",
+              "ea": "0x18002641a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpPureHostNotification",
+              "ea": "0x18001e95c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpQueryMemoryUsage2",
+              "ea": "0x180006dbc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpQueryMemoryUsage2",
+              "ea": "0x180006e03",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpQueryProcessListForUser",
+              "ea": "0x180004e60",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpQueryProcessListForUser",
+              "ea": "0x180004e9b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpQuerySharedCommit2",
+              "ea": "0x180006691",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpQuerySharedCommit2",
+              "ea": "0x1800066d8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpReferenceApplication",
+              "ea": "0x180011d46",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NewRefCount",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Host_Deref",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "NewRefCount:UInt32",
+            "PsmKey:UnicodeString",
+            "CleanupNeeded:Bool32",
+            "HostJobType:UInt32",
+            "HostId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpDereferenceHostContext",
+              "ea": "0x180008d86",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpIsProcessInApplicationForUser",
+              "ea": "0x18000462e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpQueryProcessListForUser",
+              "ea": "0x180004fe8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CleanupNeeded",
+          "type": "Bool32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostJobType",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "NewRefCount",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Host_Ref",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "NewRefCount:UInt32",
+            "PsmKey:UnicodeString",
+            "HostJobType:UInt32",
+            "HostId:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpFindHostJobContext",
+              "ea": "0x180006099",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpGetApplicationHostJob",
+              "ea": "0x18000a24d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpGetNextHostJobContext",
+              "ea": "0x180012a03",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpPureHostNotification",
+              "ea": "0x18001e8ac",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpQueryProcessListForUser",
+              "ea": "0x180004d94",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpReferenceHostContext",
+              "ea": "0x180011e1f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x1",
+          "fields": [
+            "NewRefCount:UInt32",
+            "PsmKey:UnicodeString",
+            "HostJobType:UInt32",
+            "HostId:HexInt64",
+            "FoundOnSecondAttempt:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpFindOrCreateHostJobContext",
+              "ea": "0x1800187db",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FoundOnSecondAttempt",
+          "type": "Bool32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostId",
+          "type": "HexInt64",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "HostJobType",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "NewRefCount",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Timer_Deref",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x4",
+          "fields": [
+            "PsmKey:UnicodeString",
+            "NewRefCount:UInt32",
+            "TimerId:GUID",
+            "CleanupNeeded:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpResourceAwareTimerDereference",
+              "ea": "0x18000e056",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CleanupNeeded",
+          "type": "Bool32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "NewRefCount",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "TimerId",
+          "type": "GUID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Timer_Ref",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x4",
+          "fields": [
+            "PsmKey:UnicodeString",
+            "NewRefCount:UInt32",
+            "TimerId:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "psmsrv.dll",
+              "function": "PsmpResourceAwareTimerReference",
+              "ea": "0x18000eaeb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NewRefCount",
+          "type": "UInt32",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "PsmKey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        },
+        {
+          "fieldName": "TimerId",
+          "type": "GUID",
+          "seenIn": [
+            "psmsrv.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

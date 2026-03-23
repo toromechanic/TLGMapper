@@ -1,0 +1,428 @@
+{
+  "providerName": "Microsoft.Windows.Kernel.KernelBase",
+  "guid": "{05F95EFE-7F75-49C7-A994-60A55CC09571}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "KernelBase.dll"
+  ],
+  "uniqueEventCount": 7,
+  "events": [
+    {
+      "eventName": "BaseCopyStreamStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "KernelBase.dll",
+              "function": "BasepBaseCopyStreamStartActivity",
+              "ea": "0x180128ed8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "BaseCopyStreamStop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Status:Int32",
+            "FileSize:Int64",
+            "Source_File_Encrypted:UInt8",
+            "Destination_File_Encrypted:UInt8",
+            "SourceFileEfsVersion:UInt32",
+            "DestinationFileEfsVersion:UInt32",
+            "Source_File_System_Name:UnicodeString",
+            "Destination_File_System_Name:UnicodeString",
+            "Source_File_Device:UInt32",
+            "Destination_File_Device:UInt32",
+            "Input_File_Extension:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "KernelBase.dll",
+              "function": "BaseCopyStream",
+              "ea": "0x1800e0079",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DestinationFileEfsVersion",
+          "type": "UInt32",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "Destination_File_Device",
+          "type": "UInt32",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "Destination_File_Encrypted",
+          "type": "UInt8",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "Destination_File_System_Name",
+          "type": "UnicodeString",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "FileSize",
+          "type": "Int64",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "Input_File_Extension",
+          "type": "UnicodeString",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "SourceFileEfsVersion",
+          "type": "UInt32",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "Source_File_Device",
+          "type": "UInt32",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "Source_File_Encrypted",
+          "type": "UInt8",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "Source_File_System_Name",
+          "type": "UnicodeString",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "Int32",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BasepCopyEncryptionIfNeeded.EdpCopyFileInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "edpAction:UInt32",
+            "protectFileToIdentityStatus:Int32(HResult)",
+            "isDestRemote:Bool32",
+            "CopyFlagsOverride:Bool32",
+            "returnStatus:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "KernelBase.dll",
+              "function": "BasepCopyEncryptionIfNeeded",
+              "ea": "0x180194268",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "KernelBase.dll",
+              "function": "BasepCopyEncryptionIfNeeded",
+              "ea": "0x18019fbc0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CopyFlagsOverride",
+          "type": "Bool32",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "edpAction",
+          "type": "UInt32",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "isDestRemote",
+          "type": "Bool32",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "protectFileToIdentityStatus",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "returnStatus",
+          "type": "Bool32",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BasepCopyEncryptionIfNeeded.GetEnterpriseActionForCopy",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "status:Int32(HResult)",
+            "isDestRemote:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "KernelBase.dll",
+              "function": "BasepGetEdpFileCopyAction",
+              "ea": "0x18011b56d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "KernelBase.dll",
+              "function": "BasepGetEdpFileCopyAction",
+              "ea": "0x18019557b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "isDestRemote",
+          "type": "Bool32",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RegisterApplicationRestart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "commandLine:UnicodeString",
+            "flags:HexInt32",
+            "hresult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "KernelBase.dll",
+              "function": "RegisterApplicationRestart",
+              "ea": "0x1800ad7c4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "KernelBase.dll",
+              "function": "RegisterApplicationRestart",
+              "ea": "0x1800ad7fd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "commandLine",
+          "type": "UnicodeString",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SetDeviceUnlockState",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32",
+            "AppModelUnlockStateSeparatedRegKeyPath:UnicodeString",
+            "PolicyUnlockStateSeparatedRegKeyPath:UnicodeString",
+            "UnlockValue:UnicodeString",
+            "UnlockEnabled:UInt8(Boolean)",
+            "UnlockPolicyRegKeyVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "KernelBase.dll",
+              "function": "KSetIsUnlockSettingEnabled",
+              "ea": "0x18015b202",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppModelUnlockStateSeparatedRegKeyPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyUnlockStateSeparatedRegKeyPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "UnlockEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "UnlockPolicyRegKeyVal",
+          "type": "Int32",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "UnlockValue",
+          "type": "UnicodeString",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnregisterApplicationRestart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "hresult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "KernelBase.dll",
+              "function": "UnregisterApplicationRestart",
+              "ea": "0x1800ad90a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "KernelBase.dll",
+              "function": "UnregisterApplicationRestart",
+              "ea": "0x1800ad945",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "KernelBase.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

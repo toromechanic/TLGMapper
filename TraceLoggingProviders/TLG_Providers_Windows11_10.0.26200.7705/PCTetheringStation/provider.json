@@ -1,0 +1,665 @@
+{
+  "providerName": "PCTetheringStation",
+  "guid": "{585CAB4F-9351-436E-9D99-DC4B41A20DE0}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "TetheringStation.dll"
+  ],
+  "uniqueEventCount": 10,
+  "events": [
+    {
+      "eventName": "PCStationAppConnectEnd",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "InterfaceGUID:GUID",
+            "PeerBtAddr:UnicodeString",
+            "TetheringStationReason:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "TetheringStation.dll",
+              "function": "?AttemptAppConnect@InterfaceMgr@@AEAAKAEAW4InterfaceState@1@@Z",
+              "ea": "0x18000ecbb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "InterfaceGUID:GUID",
+            "PeerBtAddr:UnicodeString",
+            "OperationResult:UInt32",
+            "IsApp:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "TetheringStation.dll",
+              "function": "?ProcessODHConnectWnf@InterfaceMgr@@AEAAXAEAVAutoNotification@@@Z",
+              "ea": "0x1800125d0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "TetheringStation.dll",
+              "function": "?ProcessODHErrorWnf@InterfaceMgr@@AEAAXAEAVAutoNotification@@W4TETHERING_STATION_REASON@@@Z",
+              "ea": "0x180012721",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "TetheringStation.dll",
+              "function": "?TimerCallback@InterfaceMgr@@AEAAXXZ",
+              "ea": "0x180012c89",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InterfaceGUID",
+          "type": "GUID",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "IsApp",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "OperationResult",
+          "type": "UInt32",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "PeerBtAddr",
+          "type": "UnicodeString",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "TetheringStationReason",
+          "type": "UInt32",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PCStationAppConnectStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "InterfaceGUID:GUID",
+            "PeerBtAddr:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "TetheringStation.dll",
+              "function": "?AttemptAppConnect@InterfaceMgr@@AEAAKAEAW4InterfaceState@1@@Z",
+              "ea": "0x18000ec0b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InterfaceGUID",
+          "type": "GUID",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "PeerBtAddr",
+          "type": "UnicodeString",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PCStationBTBringupRequestSend",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "InterfaceGUID:GUID",
+            "PeerBtAddr:UnicodeString",
+            "OperationResult:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "TetheringStation.dll",
+              "function": "?HandleBtConnect@InterfaceMgr@@UEAAXW4BtTransportProtocol@@_K1@Z",
+              "ea": "0x180010ed0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InterfaceGUID",
+          "type": "GUID",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "OperationResult",
+          "type": "UInt32",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "PeerBtAddr",
+          "type": "UnicodeString",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PCStationBTConnectEnd",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "InterfaceGUID:GUID",
+            "PeerBtAddr:UnicodeString",
+            "TetheringStationReason:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "TetheringStation.dll",
+              "function": "?AttemptBtConnect@InterfaceMgr@@AEAAKAEAW4InterfaceState@1@@Z",
+              "ea": "0x18000f08c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "TetheringStation.dll",
+              "function": "?HandleBtConnect@InterfaceMgr@@UEAAXW4BtTransportProtocol@@_K1@Z",
+              "ea": "0x180010d5d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "TetheringStation.dll",
+              "function": "?HandleBtDisconnect@InterfaceMgr@@UEAAXW4BtTransportDisconnectCause@@@Z",
+              "ea": "0x1800110d0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InterfaceGUID",
+          "type": "GUID",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "PeerBtAddr",
+          "type": "UnicodeString",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "TetheringStationReason",
+          "type": "UInt32",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PCStationBTConnectStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "InterfaceGUID:GUID",
+            "PeerBtAddr:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "TetheringStation.dll",
+              "function": "?AttemptBtConnect@InterfaceMgr@@AEAAKAEAW4InterfaceState@1@@Z",
+              "ea": "0x18000ef9e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InterfaceGUID",
+          "type": "GUID",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "PeerBtAddr",
+          "type": "UnicodeString",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PCStationNotSupportBTPairing",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "InterfaceGUID:GUID",
+            "PeerBtAddr:UnicodeString",
+            "OperationResult:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "TetheringStation.dll",
+              "function": "?AttemptBtConnect@InterfaceMgr@@AEAAKAEAW4InterfaceState@1@@Z",
+              "ea": "0x18000f13a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InterfaceGUID",
+          "type": "GUID",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "OperationResult",
+          "type": "UInt32",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "PeerBtAddr",
+          "type": "UnicodeString",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PCStationSupportedDeviceFound",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "InterfaceGUID:GUID",
+            "PeerBtAddr:UnicodeString",
+            "SSID:UnicodeString",
+            "WlanSignalQuality:UInt32",
+            "SataionInterfaceState:UInt32",
+            "BtIsVisible:Bool32",
+            "InjectedByApp:Bool32",
+            "WlanIsVisible:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "TetheringStation.dll",
+              "function": "?Enumerate@InterfaceMgr@@QEAAJU_GUID@@PEAKPEAPEAUTETHERING_INTERFACE_INFO@@@Z",
+              "ea": "0x18000ff7d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "TetheringStation.dll",
+              "function": "?Enumerate@InterfaceMgr@@QEAAJU_GUID@@PEAKPEAPEAUTETHERING_INTERFACE_INFO@@@Z",
+              "ea": "0x180010314",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BtIsVisible",
+          "type": "Bool32",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "InjectedByApp",
+          "type": "Bool32",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "InterfaceGUID",
+          "type": "GUID",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "PeerBtAddr",
+          "type": "UnicodeString",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "SSID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "SataionInterfaceState",
+          "type": "UInt32",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "WlanIsVisible",
+          "type": "Bool32",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "WlanSignalQuality",
+          "type": "UInt32",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PCStationWlanConnectEnd",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "InterfaceGUID:GUID",
+            "PeerBtAddr:UnicodeString",
+            "OperationResult:UInt32",
+            "IsApp:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "TetheringStation.dll",
+              "function": "?AttemptWlanConnectAfterPeerConnect@InterfaceMgr@@AEAAXAEBUTetheringDeviceSettingsUser@@AEAVAutoNotification@@_N@Z",
+              "ea": "0x18000f492",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "TetheringStation.dll",
+              "function": "?HandleWlanConnectComplete@InterfaceMgr@@UEAAXK@Z",
+              "ea": "0x180011a30",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "TetheringStation.dll",
+              "function": "?_ConnectCommon@InterfaceMgr@@AEAAKU_GUID@@0_NW4HotspotNetworkType@1@@Z",
+              "ea": "0x1800137d1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InterfaceGUID",
+          "type": "GUID",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "IsApp",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "OperationResult",
+          "type": "UInt32",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "PeerBtAddr",
+          "type": "UnicodeString",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PCStationWlanConnectStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "InterfaceGUID:GUID",
+            "PeerBtAddr:UnicodeString",
+            "IsApp:UInt8(Boolean)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "TetheringStation.dll",
+              "function": "?AttemptWlanConnectAfterPeerConnect@InterfaceMgr@@AEAAXAEBUTetheringDeviceSettingsUser@@AEAVAutoNotification@@_N@Z",
+              "ea": "0x18000f2ff",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "TetheringStation.dll",
+              "function": "?_ConnectCommon@InterfaceMgr@@AEAAKU_GUID@@0_NW4HotspotNetworkType@1@@Z",
+              "ea": "0x180013661",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InterfaceGUID",
+          "type": "GUID",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "IsApp",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "PeerBtAddr",
+          "type": "UnicodeString",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WlanConnectFailureReason",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "InterfaceGUID:GUID",
+            "Win32Error:UInt32",
+            "OperationResult:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "TetheringStation.dll",
+              "function": "?LogWlanConnectFailureReason@InterfaceMgr@@AEAAXKK@Z",
+              "ea": "0x18001215a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "InterfaceGUID",
+          "type": "GUID",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "OperationResult",
+          "type": "UInt32",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        },
+        {
+          "fieldName": "Win32Error",
+          "type": "UInt32",
+          "seenIn": [
+            "TetheringStation.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

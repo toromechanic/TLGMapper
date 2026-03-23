@@ -1,0 +1,597 @@
+{
+  "providerName": "Microsoft.Windows.InkProcessor",
+  "guid": "{7B56217D-0850-4170-A032-58D76EED3A6A}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "win32kfull.sys"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "InkProcessorEvent",
+      "variantCount": 10,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Status:HexInt32",
+            "Message:AnsiString",
+            "ProviderName:AnsiString",
+            "Command:Struct(Boolean)",
+            "Command:UInt8",
+            "TargetPointerId:UInt32",
+            "OwnerThread:HexInt64",
+            "ActiveCommandsCount:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "win32kfull.sys",
+              "function": "?AddActiveCommand@InkFeedbackProviderBase@@IEAAXPEAVActiveCommand@1@@Z",
+              "ea": "0x1401ec7a1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "win32kfull.sys",
+              "function": "?RemoveActiveCommand@InkFeedbackProviderBase@@IEAAXPEAVActiveCommand@1@@Z",
+              "ea": "0x14022b136",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Status:HexInt32",
+            "Message:AnsiString",
+            "Name:AnsiString",
+            "InkFeedbackProvider:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "win32kfull.sys",
+              "function": "?AddInkFeedbackProvider@InkFeedbackServer@@QEAAJPEAVInkFeedbackProviderBase@@@Z",
+              "ea": "0x140225f35",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "win32kfull.sys",
+              "function": "?RemoveInkFeedbackProvider@InkFeedbackServer@@QEAAJPEAVInkFeedbackProviderBase@@@Z",
+              "ea": "0x140229ee2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Status:HexInt32",
+            "Message:AnsiString",
+            "ProviderName:AnsiString",
+            "InkFeedbackProvider:HexInt64",
+            "Command:UInt8",
+            "Payload:Binary"
+          ],
+          "callers": [
+            {
+              "binary": "win32kfull.sys",
+              "function": "?CreateAndSendSuperWetInkPayloadForCommand@InkDevice@@EEAAJW4INK_FEEDBACK_COMMAND@@PEBXIM@Z",
+              "ea": "0x1402eec51",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Status:HexInt32",
+            "Message:AnsiString",
+            "ProviderName:AnsiString",
+            "InkFeedbackProvider:HexInt64",
+            "ActiveHideCursorRequestsCount:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "win32kfull.sys",
+              "function": "?DoHideInkCursorStart@HideInkCursorProvider@@AEAAJPEBUIFC_HIDE_INK_CURSOR_START_DATA@@@Z",
+              "ea": "0x1401ec972",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "win32kfull.sys",
+              "function": "?DoHideInkCursorStop@HideInkCursorProvider@@AEAAJPEBUIFC_HIDE_INK_CURSOR_STOP_DATA@@@Z",
+              "ea": "0x1402ee80a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Status:HexInt32",
+            "Message:AnsiString",
+            "ProviderName:AnsiString",
+            "InkFeedbackProvider:HexInt64",
+            "CommandData:Struct(SocketAddress)",
+            "PointerId:UInt32",
+            "PenType:UInt8",
+            "PenColor:Struct(Hex)",
+            "A:UInt8",
+            "R:UInt8",
+            "G:UInt8",
+            "B:UInt8",
+            "PenThicknessInPixels:Float",
+            "PenNibShape:UInt8",
+            "PenNibTransform:Struct(TID)",
+            "M11:Float",
+            "M12:Float",
+            "M21:Float",
+            "M22:Float",
+            "M31:Float",
+            "M32:Float",
+            "ClipInPixels:Struct(Hex)",
+            "Left:Float",
+            "Top:Float",
+            "Right:Float",
+            "Bottom:Float",
+            "IgnorePressure:Bool32",
+            "IgnoreTilt:Bool32",
+            "FitToCurve:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "win32kfull.sys",
+              "function": "?DoSuperWetInkStart@InkDevice@@AEAAJPEBUIFC_SUPERWET_INK_START_DATA@@@Z",
+              "ea": "0x1402eee76",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "win32kfull.sys",
+              "function": "?ProcessInkFeedbackCommand@InkDevice@@EEAAJW4INK_FEEDBACK_COMMAND@@PEBXI@Z",
+              "ea": "0x1402ef8a8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Status:HexInt32",
+            "Message:AnsiString",
+            "ProviderName:AnsiString",
+            "InkFeedbackProvider:HexInt64",
+            "CommandData:Struct(NoPrint)",
+            "PointerId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "win32kfull.sys",
+              "function": "?DoSuperWetInkStop@InkDevice@@AEAAJPEBUIFC_SUPERWET_INK_STOP_DATA@@@Z",
+              "ea": "0x1402eefce",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "win32kfull.sys",
+              "function": "?ProcessInkFeedbackCommand@HideInkCursorProvider@@UEAAJW4INK_FEEDBACK_COMMAND@@PEBXI@Z",
+              "ea": "0x1401ec642",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "win32kfull.sys",
+              "function": "?ProcessInkFeedbackCommand@HideInkCursorProvider@@UEAAJW4INK_FEEDBACK_COMMAND@@PEBXI@Z",
+              "ea": "0x1401ec6da",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "win32kfull.sys",
+              "function": "?ProcessInkFeedbackCommand@InkDevice@@EEAAJW4INK_FEEDBACK_COMMAND@@PEBXI@Z",
+              "ea": "0x1402ef69c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Status:HexInt32",
+            "Message:AnsiString",
+            "ProviderName:AnsiString",
+            "Command:Struct(Boolean)",
+            "Command:UInt8",
+            "TargetPointerId:UInt32",
+            "OwnerThread:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "win32kfull.sys",
+              "function": "?EndActiveCommandsByOwnerThread@InkFeedbackProviderBase@@UEAAXPEBX@Z",
+              "ea": "0x1401a9c6d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "win32kfull.sys",
+              "function": "?EndActiveCommandsByPointerId@InkFeedbackProviderBase@@UEAAXI@Z",
+              "ea": "0x1401f1ab3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Status:HexInt32",
+            "Message:AnsiString",
+            "InkDevice:HexInt64",
+            "InkFeedbackProvider:HexInt64",
+            "RawInputManagerDeviceObject:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "win32kfull.sys",
+              "function": "?OnDeviceAttached@InkProcessor@@QEAAJPEAURawInputManagerDeviceObject@@@Z",
+              "ea": "0x14026d90f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "win32kfull.sys",
+              "function": "?OnDeviceRemoved@InkProcessor@@QEAAXPEAURawInputManagerDeviceObject@@@Z",
+              "ea": "0x1402ec242",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Status:HexInt32",
+            "Message:AnsiString",
+            "InkDevice:HexInt64",
+            "RawInputManagerDeviceObject:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "win32kfull.sys",
+              "function": "?OnDeviceClosed@InkProcessor@@QEAAXPEAURawInputManagerDeviceObject@@@Z",
+              "ea": "0x1402ec0bc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "win32kfull.sys",
+              "function": "?OnDeviceOpened@InkProcessor@@QEAAXPEAURawInputManagerDeviceObject@@@Z",
+              "ea": "0x1402ec170",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "Status:HexInt32",
+            "Message:AnsiString",
+            "Command:UInt8"
+          ],
+          "callers": [
+            {
+              "binary": "win32kfull.sys",
+              "function": "?RunForAllProviders@InkFeedbackServer@@AEAAJW4INK_FEEDBACK_COMMAND@@PEBXIP6AJPEAVInkFeedbackProviderBase@@01I@Z@Z",
+              "ea": "0x1401e47bf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "A",
+          "type": "UInt8",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "ActiveCommandsCount",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "ActiveHideCursorRequestsCount",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "B",
+          "type": "UInt8",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "Bottom",
+          "type": "Float",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "ClipInPixels",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "Command",
+          "type": "Struct(Boolean)",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "Command",
+          "type": "UInt8",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "CommandData",
+          "type": "Struct(NoPrint)",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "CommandData",
+          "type": "Struct(SocketAddress)",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "FitToCurve",
+          "type": "Bool32",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "G",
+          "type": "UInt8",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "IgnorePressure",
+          "type": "Bool32",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "IgnoreTilt",
+          "type": "Bool32",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "InkDevice",
+          "type": "HexInt64",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "InkFeedbackProvider",
+          "type": "HexInt64",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "Left",
+          "type": "Float",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "M11",
+          "type": "Float",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "M12",
+          "type": "Float",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "M21",
+          "type": "Float",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "M22",
+          "type": "Float",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "M31",
+          "type": "Float",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "M32",
+          "type": "Float",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "Message",
+          "type": "AnsiString",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "Name",
+          "type": "AnsiString",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "OwnerThread",
+          "type": "HexInt64",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "Payload",
+          "type": "Binary",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "PenColor",
+          "type": "Struct(Hex)",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "PenNibShape",
+          "type": "UInt8",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "PenNibTransform",
+          "type": "Struct(TID)",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "PenThicknessInPixels",
+          "type": "Float",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "PenType",
+          "type": "UInt8",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "PointerId",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "ProviderName",
+          "type": "AnsiString",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "R",
+          "type": "UInt8",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "RawInputManagerDeviceObject",
+          "type": "HexInt64",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "Right",
+          "type": "Float",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "HexInt32",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "TargetPointerId",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        },
+        {
+          "fieldName": "Top",
+          "type": "Float",
+          "seenIn": [
+            "win32kfull.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SuperWetInkDisabledBecausePenHasBeenRecalibrated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "win32kfull.sys",
+              "function": "?ValidatePointer@InkDevice@@AEBAJI@Z",
+              "ea": "0x1402efde5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    }
+  ]
+}

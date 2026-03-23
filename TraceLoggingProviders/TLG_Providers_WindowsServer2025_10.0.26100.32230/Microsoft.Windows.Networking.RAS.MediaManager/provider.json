@@ -1,0 +1,166 @@
+{
+  "providerName": "Microsoft.Windows.Networking.RAS.MediaManager",
+  "guid": "{C6F68DC2-8899-4011-B91F-817ADAD30372}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "RasMediaManager.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "ConnectionCreate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ProfileName:UnicodeString",
+            "ErrorCode:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "RasMediaManager.dll",
+              "function": "?_DialConnection@RasStateMachine@Internal@UX@Networking@Windows@@AEAAXXZ",
+              "ea": "0x180028396",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "RasMediaManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "RasMediaManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ProfileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "RasMediaManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ManualCancel",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "OperationResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "RasMediaManager.dll",
+              "function": "?_LogCancelConnection@RasCategory@Internal@UX@Networking@Windows@@AEAAXJ@Z",
+              "ea": "0x18001e480",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "OperationResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "RasMediaManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "RasMediaManager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RasDisconnectScheduled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ConnectionHandle:HexInt64",
+            "DisconnectReason:UInt32",
+            "ErrorCode:UInt32",
+            "IsUnableToDisconnect:Bool32",
+            "DisconnectAttemptCount:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "RasMediaManager.dll",
+              "function": "?DisconnectRasConnection@RasClient@Internal@UX@Networking@Windows@@QEAAJPEBG0W4DisconnectReason@2345@@Z",
+              "ea": "0x180011f5e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConnectionHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "RasMediaManager.dll"
+          ]
+        },
+        {
+          "fieldName": "DisconnectAttemptCount",
+          "type": "UInt32",
+          "seenIn": [
+            "RasMediaManager.dll"
+          ]
+        },
+        {
+          "fieldName": "DisconnectReason",
+          "type": "UInt32",
+          "seenIn": [
+            "RasMediaManager.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "RasMediaManager.dll"
+          ]
+        },
+        {
+          "fieldName": "IsUnableToDisconnect",
+          "type": "Bool32",
+          "seenIn": [
+            "RasMediaManager.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "RasMediaManager.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

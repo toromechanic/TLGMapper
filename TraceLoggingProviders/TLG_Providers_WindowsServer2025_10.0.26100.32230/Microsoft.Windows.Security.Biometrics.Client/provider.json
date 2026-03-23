@@ -1,0 +1,2318 @@
+{
+  "providerName": "Microsoft.Windows.Security.Biometrics.Client",
+  "guid": "{1B5106B1-7622-4740-AD81-D9C6EE74F124}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "winbio.dll"
+  ],
+  "uniqueEventCount": 64,
+  "events": [
+    {
+      "eventName": "ActivityStoppedAutomatically",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "??$_tlgWriteActivityAutoStop@$0A@$03@@YAXPEBU_tlgProvider_t@@PEBU_GUID@@@Z",
+              "ea": "0x1800096e8",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "BioEnabledSetting",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Enabled:UInt8(Boolean)",
+            "Source:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioGetDomainLogonSetting",
+              "ea": "0x180017502",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioGetEnabledSetting",
+              "ea": "0x1800175df",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Enabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        },
+        {
+          "fieldName": "Source",
+          "type": "UInt32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BioLogonSetting",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "Enabled:UInt8(Boolean)",
+            "Source:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioGetLogonSetting",
+              "ea": "0x180017d22",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Enabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        },
+        {
+          "fieldName": "Source",
+          "type": "UInt32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Error:LegacyApiCall",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "ResultCode:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioOpenSession",
+              "ea": "0x18001a36c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ResultCode",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OnServerBindingFailure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "?Bind@CRpcClient@@QEAAJXZ",
+              "ea": "0x1800088c0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "SetSetting",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32",
+            "bioPolicyType:UInt64",
+            "newValue:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioSetSetting",
+              "ea": "0x18001aee3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        },
+        {
+          "fieldName": "bioPolicyType",
+          "type": "UInt64",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        },
+        {
+          "fieldName": "newValue",
+          "type": "UInt32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioAcquireFocus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioAcquireFocus",
+              "ea": "0x180012af8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_ab9ba6217b66ff7bd552163b0e386002_::operator()",
+              "ea": "0x18000d08f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioAsyncEnumBiometricUnits",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioAsyncEnumBiometricUnits",
+              "ea": "0x180012d35",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_45f1c7a714a433e20c1efc0a1018a41c_::operator()",
+              "ea": "0x18000bc47",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioAsyncEnumDatabases",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioAsyncEnumDatabases",
+              "ea": "0x180012ef5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_4463b0fc6351e9ad2e49c91f86fc4384_::operator()",
+              "ea": "0x18000bbf3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioAsyncEnumServiceProviders",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioAsyncEnumServiceProviders",
+              "ea": "0x1800130e5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_b3b11bbe9482dc5e535aeca6006cc739_::operator()",
+              "ea": "0x18000d3cb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioAsyncMonitorFrameworkChanges",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioAsyncMonitorFrameworkChanges",
+              "ea": "0x1800132ce",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_4da76edcfc743d8fc2f4e3d1ce7cf6a2_::operator()",
+              "ea": "0x18000bd63",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioAsyncOpenFramework",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioAsyncOpenFramework",
+              "ea": "0x1800134db",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_20c47c4ccbd8abb4792fd2078bd1da9f_::operator()",
+              "ea": "0x18000b0a7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioAsyncOpenSession",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioAsyncOpenSession",
+              "ea": "0x1800137fa",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_e2a266890f792e8ad532c8affb995831_::operator()",
+              "ea": "0x18000debf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioCancel",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioCancel",
+              "ea": "0x180013bda",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_efb26059d92d18c1a81755f1c67015a7_::operator()",
+              "ea": "0x18000dfd3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioCaptureSample",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioCaptureSample",
+              "ea": "0x180013d5d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_72ef4bc025b89007d74a04cb883b2e57_::operator()",
+              "ea": "0x18000c44b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioCaptureSampleWithCallback",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioCaptureSampleWithCallback",
+              "ea": "0x1800140a3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_a2ba11e934056ff41cdb039131b15f59_::operator()",
+              "ea": "0x18000cfe7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioCloseFramework",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioCloseFramework",
+              "ea": "0x1800142bf",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_1889e900153125a44a2310029060064f_::operator()",
+              "ea": "0x18000ac73",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioCloseSession",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioCloseSession",
+              "ea": "0x18001447f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_28964df4546fbac0ceab203435630d48_::operator()",
+              "ea": "0x18000b29f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioConsumeFactorsDeletedByService",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioConsumeFactorDeletedByService",
+              "ea": "0x180014640",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_6eea87dc7c6e6f757efb72855ae868f9_::operator()",
+              "ea": "0x18000c33b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioControlUnit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioControlUnit",
+              "ea": "0x180014776",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_3651d9a10311d907969029ee7961f055_::operator()",
+              "ea": "0x18000b86b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioControlUnitPrivileged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioControlUnitPrivileged",
+              "ea": "0x180014b76",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_dfbf60231691a8e3e67d378eccd94b3b_::operator()",
+              "ea": "0x18000ddd7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioDeleteTemplate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioDeleteTemplate",
+              "ea": "0x180014f60",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_129d338699d927c652fec1f948524d66_::operator()",
+              "ea": "0x18000aa53",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioEnrollAuthorize",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioEnrollAuthorize",
+              "ea": "0x1800153b2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_71dc37ee65528dde7e39dd323c626b7c_::operator()",
+              "ea": "0x18000c3f7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioEnrollBegin",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioEnrollBegin",
+              "ea": "0x1800155b2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_73f1703def4ea7d9623cef3d9b2c690f_::operator()",
+              "ea": "0x18000c5af",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioEnrollCapture",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioEnrollCapture",
+              "ea": "0x18001587f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_13b884f368372648b3b22e96b048a23b_::operator()",
+              "ea": "0x18000ab4f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioEnrollCaptureWithCallback",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioEnrollCaptureWithCallback",
+              "ea": "0x180015b20",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_2942d9b2d584b840e2e61070d437f012_::operator()",
+              "ea": "0x18000b2f3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioEnrollCommit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioEnrollCommit",
+              "ea": "0x180015d33",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_4f95a30b2d3187348bd5c05ed0319bec_::operator()",
+              "ea": "0x18000bdb7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioEnrollDiscard",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioEnrollDiscard",
+              "ea": "0x180015feb",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_a632500c799d16120dbe51e911f592c4_::operator()",
+              "ea": "0x18000c803",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_presenceMonitorCallback",
+              "ea": "0x18001224b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioEnrollRevoke",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioEnrollRevoke",
+              "ea": "0x18001624b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_b4f04a50169ad818d2a8a174ab6178a2_::operator()",
+              "ea": "0x18000d41f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioEnrollSelect",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioEnrollSelect",
+              "ea": "0x18001641f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_5b547b2a4b3f0067a2b51652d1da773c_::operator()",
+              "ea": "0x18000c097",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioEnumBiometricUnits",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioEnumBiometricUnits",
+              "ea": "0x1800166bd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_ca3ca017a5906e6a7d0c13f1c169bb2c_::operator()",
+              "ea": "0x18000d8e3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioEnumDatabases",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioEnumDatabases",
+              "ea": "0x180016848",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_7655b1ab6c3327ebeced49653bc48a0f_::operator()",
+              "ea": "0x18000c603",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioEnumEnrollments",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioEnumEnrollments",
+              "ea": "0x180016f5a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_b09ea43ce22b84774e7e8791176b6e4a_::operator()",
+              "ea": "0x18000d2af",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioEnumServiceProviders",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioEnumServiceProviders",
+              "ea": "0x1800172bd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_2cbdca22a6fbf9cfd1d96177620e914b_::operator()",
+              "ea": "0x18000b403",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioGetBiometricDataStorgeConsentInfo",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioGetLastBioUseTime",
+              "ea": "0x180017bd1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_a9cdc4d73f8288e4a413dfbe80e28e08_::operator()",
+              "ea": "0x18000d03b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioGetEnrolledFactors",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioGetEnrolledFactors",
+              "ea": "0x180017821",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_6338dcedf4618aa8bbb420204528a829_::operator()",
+              "ea": "0x18000c1bf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioGetFactorsDeletedByService",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioGetFactorsDeletedByService",
+              "ea": "0x1800179c1",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_ad428a63059b6290b533fe46ed0f92b1_::operator()",
+              "ea": "0x18000d1cb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioGetProperty",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioGetProperty",
+              "ea": "0x180017e56",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_d07f377319dbf6f8d3620fb01ee8cb87_::operator()",
+              "ea": "0x18000db1b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioGetSetting",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioGetSetting",
+              "ea": "0x180018242",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_de61e0810881b457f6db645d8ea368f7_::operator()",
+              "ea": "0x18000dd83",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioIdentify",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioIdentify",
+              "ea": "0x1800183c0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_f766c92b9ab2e043cb33a82fbd975055_::operator()",
+              "ea": "0x18000e217",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioIdentifyAndReleaseTicket",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioIdentifyAndReleaseTicket",
+              "ea": "0x1800186f9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_0e611263e51e3746fc9a679745763acc_::operator()",
+              "ea": "0x18000a9ff",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioIdentifyWithCallback",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioIdentifyWithCallback",
+              "ea": "0x180018a40",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_8803d8b2ae6815ed05d85ba82ffa5ee2_::operator()",
+              "ea": "0x18000c857",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioImproveBegin",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioImproveBegin",
+              "ea": "0x180018c4e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioImproveEnd",
+              "ea": "0x180018e7b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_d8ed04796c9bbe9e74551c01c0bd62d1_::operator()",
+              "ea": "0x18000d473",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioIsESSCapable",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioIsESSCapable",
+              "ea": "0x1800191a8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_2d2a057db0b5f29ad29a0104debbed35_::operator()",
+              "ea": "0x18000b457",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioLocateSensor",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioLocateSensor",
+              "ea": "0x1800192df",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_42dec7af78431bf578cd8ba349ce6c40_::operator()",
+              "ea": "0x18000bb9f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioLocateSensorWithCallback",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioLocateSensorWithCallback",
+              "ea": "0x1800195a0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_de503c0e48d28e69dd4e855cdcebd948_::operator()",
+              "ea": "0x18000dd2f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioLockUnit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioLockUnit",
+              "ea": "0x1800197ae",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_f3c2d5163c58ccd3f415f3f12b73dd55_::operator()",
+              "ea": "0x18000e0cb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioLogonIdentifiedUser",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioLogonIdentifiedUser",
+              "ea": "0x180019a4a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_30bc4e848b87042e266349a58ad7f473_::operator()",
+              "ea": "0x18000b647",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioMonitorPresence",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioMonitorPresence",
+              "ea": "0x180019bcc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_c697a49d59c414c7be4ecfb7b3fccfbc_::operator()",
+              "ea": "0x18000d84b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioOpenSession",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioOpenSession",
+              "ea": "0x18001a125",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_36d49a63ebaa2e9d78a4d327c0b8f5bf_::operator()",
+              "ea": "0x18000b8bf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioProtectData",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioProtectData",
+              "ea": "0x18001a45b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_01a955fe7846fde5c6046f8234479313_::operator()",
+              "ea": "0x18000a733",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioRegisterEventMonitor",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioRegisterEventMonitor",
+              "ea": "0x18001a60e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_2d79c32ad0ce6553639f72e654a5a155_::operator()",
+              "ea": "0x18000b4ab",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioReleaseFocus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioReleaseFocus",
+              "ea": "0x18001a7c8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_7f4d8a60586bef79efd8871366261041_::operator()",
+              "ea": "0x18000c7af",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioSetProperty",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioSetProperty",
+              "ea": "0x18001a996",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_69353bb914994c80ff18668a585d8154_::operator()",
+              "ea": "0x18000c293",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioSetSetting",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioSetSetting",
+              "ea": "0x18001ade9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_693ca0a3b71810305168c7b9f443b74f_::operator()",
+              "ea": "0x18000c2e7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioUnlockUnit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioUnlockUnit",
+              "ea": "0x18001affe",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_963998fd350261e41793ec964751c79a_::operator()",
+              "ea": "0x18000cb4b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioUnprotectData",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioUnprotectData",
+              "ea": "0x18001b29b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_c06acdac277bcf87687916827fca2123_::operator()",
+              "ea": "0x18000d5ff",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioUnregisterEventMonitor",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioUnregisterEventMonitor",
+              "ea": "0x18001b41f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_1b951b6db9117ba72af05bbe1e4e54eb_::operator()",
+              "ea": "0x18000ae2b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioVerify",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioVerify",
+              "ea": "0x18001b583",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_34f8f0743106ab7c29271da1088af6b5_::operator()",
+              "ea": "0x18000b817",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioVerifyAndReleaseTicket",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioVerifyAndReleaseTicket",
+              "ea": "0x18001b8ce",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_2e3208051192c296b3d90e84635ad844_::operator()",
+              "ea": "0x18000b4ff",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioVerifyWithCallback",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioVerifyWithCallback",
+              "ea": "0x18001bc24",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_271bbf06256e19adc93e81eb3756a343_::operator()",
+              "ea": "0x18000b24b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WinBioWait",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "WinBioWait",
+              "ea": "0x18001be4a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_c533b1b3c9fa31975ee3e5d328db1d21_::operator()",
+              "ea": "0x18000d7f7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "_BioLogonIdentifiedUser",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "?_BioLogonIdentifiedUser@@YAJPEAU_WINBIO_IDENTITY@@PEA_K@Z",
+              "ea": "0x180011d11",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_73904d7f85ef6e974fd558f41cce5122_::operator()",
+              "ea": "0x18000c49f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "_frameworkChangeCallback",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "retVal:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "winbio.dll",
+              "function": "_frameworkChangeCallback",
+              "ea": "0x180011f58",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "winbio.dll",
+              "function": "_lambda_41c4f0b82a98e5ae5177e9013c8d0372_::operator()",
+              "ea": "0x18000bb4b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "retVal",
+          "type": "Int32",
+          "seenIn": [
+            "winbio.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

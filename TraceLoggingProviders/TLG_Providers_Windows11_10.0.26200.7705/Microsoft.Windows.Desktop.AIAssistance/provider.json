@@ -1,0 +1,342 @@
+{
+  "providerName": "Microsoft.Windows.Desktop.AIAssistance",
+  "guid": "{AF9AC45E-1AE9-5532-59E6-F4AD05CAEBD2}",
+  "os": "Windows 11",
+  "binaryCount": 6,
+  "binaries": [
+    "CustomShellHost.exe",
+    "SettingsEnvironment.Desktop.dll",
+    "ShellAppRuntime.exe",
+    "Taskbar.dll",
+    "explorer.exe",
+    "twinui.pcshell.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "GetCopilotFeatureEnablementState",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "isCopilotEnabled:Int32",
+            "isCopilotEnabledByUser:Int32",
+            "copilotDisabledReason:UnicodeString",
+            "openUserEligibilityRegKeyStatus:Int32",
+            "saveUserEligibilityRegValueStatus:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "??$GetCopilotFeatureEnablementState@AEA_NAEAHAEAPEBGAEAJAEAJ@AIAssistanceTelemetry@@SAXAEA_NAEAHAEAPEBGAEAJ3@Z",
+              "ea": "0x14001ffb7",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$GetCopilotFeatureEnablementState@AEA_NAEAHAEAPEBGAEAJAEAJ@AIAssistanceTelemetry@@SAXAEA_NAEAHAEAPEBGAEAJ3@Z",
+              "ea": "0x140102403",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$GetCopilotFeatureEnablementState@AEA_NAEAHAEAPEBGAEAJAEAJ@AIAssistanceTelemetry@@SAXAEA_NAEAHAEAPEBGAEAJ3@Z",
+              "ea": "0x1400269bb",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "copilotDisabledReason",
+          "type": "UnicodeString",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isCopilotEnabled",
+          "type": "Int32",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "isCopilotEnabledByUser",
+          "type": "Int32",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "openUserEligibilityRegKeyStatus",
+          "type": "Int32",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "saveUserEligibilityRegValueStatus",
+          "type": "Int32",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "explorer.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PolicyCheck",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "policyName:UnicodeString",
+            "details:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "??$PolicyCheck@AEAY0BA@$$CBGAEAY0BN@$$CBG@AIAssistanceTelemetry@@SAXAEAY0BA@$$CBGAEAY0BN@$$CBG@Z",
+              "ea": "0x1400f0929",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$PolicyCheck@AEAY0BA@$$CBGAEAY0BN@$$CBG@AIAssistanceTelemetry@@SAXAEAY0BA@$$CBGAEAY0BN@$$CBG@Z",
+              "ea": "0x1401a0ccc",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$PolicyCheck@AEAY0BA@$$CBGAEAY0BN@$$CBG@AIAssistanceTelemetry@@SAXAEAY0BA@$$CBGAEAY0BN@$$CBG@Z",
+              "ea": "0x1400f4f49",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Taskbar.dll",
+              "function": "??$PolicyCheck@AEAY0BA@$$CBGAEAY0BN@$$CBG@AIAssistanceTelemetry@@SAXAEAY0BA@$$CBGAEAY0BN@$$CBG@Z",
+              "ea": "0x1801a17b0",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "details",
+          "type": "UnicodeString",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "Taskbar.dll",
+            "explorer.exe"
+          ]
+        },
+        {
+          "fieldName": "policyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "ShellAppRuntime.exe",
+            "Taskbar.dll",
+            "explorer.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PolicyCheckError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "policyName:UnicodeString",
+            "details:UnicodeString",
+            "error:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "??$PolicyCheckError@AEAY0BA@$$CBGAEAY0CF@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BA@$$CBGAEAY0CF@$$CBGAEAJ@Z",
+              "ea": "0x1400f09ae",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "??$PolicyCheckError@AEAY0BI@$$CBGPEBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BI@$$CBG$$QEAPEBGAEAJ@Z",
+              "ea": "0x140022055",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "??$PolicyCheckError@AEAY0BM@$$CBGAEAY0DC@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BM@$$CBGAEAY0DC@$$CBGAEAJ@Z",
+              "ea": "0x1400f0a22",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "??$PolicyCheckError@AEAY0BP@$$CBGAEAY0BM@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BP@$$CBGAEAY0BM@$$CBGAEAJ@Z",
+              "ea": "0x1400f0a96",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "CustomShellHost.exe",
+              "function": "??$PolicyCheckError@AEAY0BP@$$CBGAEAY0BP@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BP@$$CBG0AEAJ@Z",
+              "ea": "0x1400f0b0a",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$PolicyCheckError@AEAY0BA@$$CBGAEAY0CF@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BA@$$CBGAEAY0CF@$$CBGAEAJ@Z",
+              "ea": "0x1400a8596",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$PolicyCheckError@AEAY0BI@$$CBGPEBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BI@$$CBG$$QEAPEBGAEAJ@Z",
+              "ea": "0x140104b3d",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$PolicyCheckError@AEAY0BM@$$CBGAEAY0DC@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BM@$$CBGAEAY0DC@$$CBGAEAJ@Z",
+              "ea": "0x1400a860a",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$PolicyCheckError@AEAY0BP@$$CBGAEAY0BM@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BP@$$CBGAEAY0BM@$$CBGAEAJ@Z",
+              "ea": "0x1401a0d26",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "explorer.exe",
+              "function": "??$PolicyCheckError@AEAY0BP@$$CBGAEAY0BP@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BP@$$CBG0AEAJ@Z",
+              "ea": "0x1401a0d9a",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "SettingsEnvironment.Desktop.dll",
+              "function": "??$PolicyCheckError@AEAY0BM@$$CBGAEAY0DC@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BM@$$CBGAEAY0DC@$$CBGAEAJ@Z",
+              "ea": "0x1800635d9",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$PolicyCheckError@AEAY0BA@$$CBGAEAY0CF@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BA@$$CBGAEAY0CF@$$CBGAEAJ@Z",
+              "ea": "0x1400f4fce",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$PolicyCheckError@AEAY0BI@$$CBGPEBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BI@$$CBG$$QEAPEBGAEAJ@Z",
+              "ea": "0x140028a59",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$PolicyCheckError@AEAY0BM@$$CBGAEAY0DC@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BM@$$CBGAEAY0DC@$$CBGAEAJ@Z",
+              "ea": "0x1400f5042",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$PolicyCheckError@AEAY0BP@$$CBGAEAY0BM@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BP@$$CBGAEAY0BM@$$CBGAEAJ@Z",
+              "ea": "0x1400f50b6",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "??$PolicyCheckError@AEAY0BP@$$CBGAEAY0BP@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BP@$$CBG0AEAJ@Z",
+              "ea": "0x1400f512a",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Taskbar.dll",
+              "function": "??$PolicyCheckError@AEAY0BA@$$CBGAEAY0CF@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BA@$$CBGAEAY0CF@$$CBGAEAJ@Z",
+              "ea": "0x1801a180a",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "Taskbar.dll",
+              "function": "??$PolicyCheckError@AEAY0BM@$$CBGAEAY0DC@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BM@$$CBGAEAY0DC@$$CBGAEAJ@Z",
+              "ea": "0x1801a187e",
+              "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "twinui.pcshell.dll",
+              "function": "??$PolicyCheckError@AEAY0BM@$$CBGAEAY0DC@$$CBGAEAJ@AIAssistanceTelemetry@@SAXAEAY0BM@$$CBGAEAY0DC@$$CBGAEAJ@Z",
+              "ea": "0x1806163c5",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "details",
+          "type": "UnicodeString",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "SettingsEnvironment.Desktop.dll",
+            "ShellAppRuntime.exe",
+            "Taskbar.dll",
+            "explorer.exe",
+            "twinui.pcshell.dll"
+          ]
+        },
+        {
+          "fieldName": "error",
+          "type": "UInt32",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "SettingsEnvironment.Desktop.dll",
+            "ShellAppRuntime.exe",
+            "Taskbar.dll",
+            "explorer.exe",
+            "twinui.pcshell.dll"
+          ]
+        },
+        {
+          "fieldName": "policyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "CustomShellHost.exe",
+            "SettingsEnvironment.Desktop.dll",
+            "ShellAppRuntime.exe",
+            "Taskbar.dll",
+            "explorer.exe",
+            "twinui.pcshell.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

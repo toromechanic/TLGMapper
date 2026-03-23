@@ -1,0 +1,104 @@
+{
+  "providerName": "Microsoft.Windows.Security.Capabilities",
+  "guid": "{27A8FDF4-9B77-575B-BE3B-E7163EF159BB}",
+  "os": "WindowsServer2025",
+  "binaryCount": 3,
+  "binaries": [
+    "ntdll.dll",
+    "ntkrla57.exe",
+    "ntoskrnl.exe"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "RtlCapabilityCheckLatency",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "Latency:Int64",
+            "IsAdmin:UInt8(Boolean)",
+            "IsInteractiveUser:UInt8(Boolean)",
+            "IsAdminCapability:UInt8(Boolean)",
+            "HasCapability:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "ntdll.dll",
+              "function": "RtlCapabilityCheck",
+              "ea": "0x180084641",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntdll.dll",
+              "function": "RtlCapabilityCheck",
+              "ea": "0x18008468f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntkrla57.exe",
+              "function": "RtlpLogCapabilityCheckLatency",
+              "ea": "0x1408a1588",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "ntoskrnl.exe",
+              "function": "RtlpLogCapabilityCheckLatency",
+              "ea": "0x140b2efa1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HasCapability",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntdll.dll",
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "IsAdmin",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntdll.dll",
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "IsAdminCapability",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntdll.dll",
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "IsInteractiveUser",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "ntdll.dll",
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        },
+        {
+          "fieldName": "Latency",
+          "type": "Int64",
+          "seenIn": [
+            "ntdll.dll",
+            "ntkrla57.exe",
+            "ntoskrnl.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

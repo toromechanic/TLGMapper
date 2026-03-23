@@ -1,0 +1,42 @@
+{
+  "providerName": "Microsoft.Windows.Security.BitLocker.EncryptionToast",
+  "guid": "{04493774-364F-4EA2-84C0-83D477100C8C}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "edptask.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "BitLocker.Silent.Service.Start",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "edptask.dll",
+              "function": "?ShouldShowToast@BitLockerToast@@UEAAJPEA_N@Z",
+              "ea": "0x180010f6e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "edptask.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

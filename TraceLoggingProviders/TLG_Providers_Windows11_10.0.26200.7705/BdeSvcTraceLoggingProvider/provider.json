@@ -1,0 +1,1707 @@
+{
+  "providerName": "BdeSvcTraceLoggingProvider",
+  "guid": "{2C801909-D66E-4AE6-ABB5-C92E19681AAB}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "bdesvc.dll"
+  ],
+  "uniqueEventCount": 29,
+  "events": [
+    {
+      "eventName": "BitLocker.AdminlessDE.LoginType",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "IsAdminlessAADJoin:Bool32",
+            "Result:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?ProcessUserLogon@CUserLogonProcessingList@@QEAAJK@Z",
+              "ea": "0x18003242e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bdesvc.dll",
+              "function": "?ProcessUserLogon@CUserLogonProcessingList@@QEAAJK@Z",
+              "ea": "0x180032454",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsAdminlessAADJoin",
+          "type": "Bool32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BitLocker.CFveApi.TcgLogOnSeal",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "WinREEventId:UInt16",
+            "LogSize:UInt32",
+            "Log:Binary"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvcProcessWinREEvent@@YAXPEAU_EVENT_RECORD@@@Z",
+              "ea": "0x180042f12",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Log",
+          "type": "Binary",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "LogSize",
+          "type": "UInt32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "WinREEventId",
+          "type": "UInt16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BitLocker.FveApi.PCR.Values",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "WinREEventId:UInt16",
+            "PcrValuesSize:UInt32",
+            "PCRValues:Binary",
+            "PcrBitMapSource:UInt32",
+            "PcrBitMap:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvcProcessWinREEvent@@YAXPEAU_EVENT_RECORD@@@Z",
+              "ea": "0x180042e89",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PCRValues",
+          "type": "Binary",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PcrBitMap",
+          "type": "UInt32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PcrBitMapSource",
+          "type": "UInt32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PcrValuesSize",
+          "type": "UInt32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "WinREEventId",
+          "type": "UInt16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BitLocker.Silent.Bitlocker.OsAndFdv",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "policyStandardUserEncryption:Int32",
+            "allowStandardUser:UInt8(Boolean)",
+            "IsStandardUserLogon:UInt8(Boolean)",
+            "isTPMavailableChecked:UInt8(Boolean)",
+            "IsTpmUnavailableForEnvironment:UInt8(Boolean)",
+            "isTPMStatusChecked:UInt8(Boolean)",
+            "IsTpmReadyForBitLocker:UInt8(Boolean)",
+            "isWinreChecked:UInt8(Boolean)",
+            "IsWinreConfigured:UInt8(Boolean)",
+            "DiagCodeCounter:UInt32",
+            "HrErrorLog:UnicodeString",
+            "FDVEncryptAttemptCount:UInt32",
+            "FDVEncryptFailedCount:UInt32",
+            "ExitCode:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "BdeSvcApipEnableSilentBitLocker",
+              "ea": "0x18004e648",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DiagCodeCounter",
+          "type": "UInt32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "ExitCode",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "FDVEncryptAttemptCount",
+          "type": "UInt32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "FDVEncryptFailedCount",
+          "type": "UInt32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "HrErrorLog",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "IsStandardUserLogon",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "IsTpmReadyForBitLocker",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "IsTpmUnavailableForEnvironment",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "IsWinreConfigured",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "allowStandardUser",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "isTPMStatusChecked",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "isTPMavailableChecked",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "isWinreChecked",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "policyStandardUserEncryption",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.AAD.Backup.Check",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "numMissingFromAAD:UInt16",
+            "KeyRecordsMissingFromAAD:UnicodeString",
+            "numFoundInAAD:UInt16",
+            "numKeysInAAD:UInt32",
+            "numKeysMarkedBackedupToAAD:UInt16",
+            "isServerError:Int32",
+            "hrClientBackupInfoAndRPStat:Int32",
+            "hrAADBackupInfo:Int32",
+            "hrFormat:Int32",
+            "hr:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvcAADBackupReliabilityCheckAndRPStatWorkerThread@@YAIPEAX@Z",
+              "ea": "0x18002911f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "KeyRecordsMissingFromAAD",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hrAADBackupInfo",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hrClientBackupInfoAndRPStat",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hrFormat",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "isServerError",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "numFoundInAAD",
+          "type": "UInt16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "numKeysInAAD",
+          "type": "UInt32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "numKeysMarkedBackedupToAAD",
+          "type": "UInt16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "numMissingFromAAD",
+          "type": "UInt16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.AAD.BackupOrClearInfo.Error",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32(HResult)",
+            "RecoveryPasswordGUID:GUID",
+            "FveStatusFlag:Int32",
+            "IsDomainJoined:Bool32",
+            "IsBestRecoveryPassword:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BackUpRecoveryPasswordOrClearBackupInfo@@YAXPEBGPEBU_GUID@@PEAU_LIST_ENTRY@@@Z",
+              "ea": "0x1800402ad",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32(HResult)",
+            "RecoveryPasswordGUID:GUID",
+            "FveStatusFlag:UInt32",
+            "IsDomainJoined:Bool32",
+            "IsBestRecoveryPassword:Bool32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BackUpRecoveryPasswordOrClearBackupInfo@@YAXPEBGPEBU_GUID@@PEAU_LIST_ENTRY@@@Z",
+              "ea": "0x18004045d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FveStatusFlag",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "FveStatusFlag",
+          "type": "UInt32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "IsBestRecoveryPassword",
+          "type": "Bool32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "IsDomainJoined",
+          "type": "Bool32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "RecoveryPasswordGUID",
+          "type": "GUID",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.AAD.BackupOrClearInfo.Result",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32(HResult)",
+            "IsDomainJoined:Bool32",
+            "LineNumber:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BackUpRecoveryPasswordOrClearBackupInfo@@YAXPEBGPEBU_GUID@@PEAU_LIST_ENTRY@@@Z",
+              "ea": "0x1800405c1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsDomainJoined",
+          "type": "Bool32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "LineNumber",
+          "type": "UInt32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.BSvc.Suspend.Resume",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "DidSetupSuspend:UInt8(Boolean)",
+            "ClearKeyCounter:UInt32",
+            "ExitCode:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?TryResumeOSVolumeProtection@@YAJPEAXPEBG@Z",
+              "ea": "0x180047585",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClearKeyCounter",
+          "type": "UInt32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "DidSetupSuspend",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "ExitCode",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Boot.Failure",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "FveID:GUID",
+            "IsRecoveryHit:Bool32",
+            "RecEventCount:UInt16",
+            "RecEventSize:UInt64",
+            "RecEvent1:Binary",
+            "RecEvent2:Binary",
+            "RecEvent3:Binary",
+            "RecEvent4:Binary",
+            "RecEvent5:Binary",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?CheckForKernelModeEventsToProcess@@YAXPEAV?$map@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@UVolumeEntry@@U?$less@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@UVolumeEntry@@@std@@@2@@std@@@Z",
+              "ea": "0x18000be8a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FveID",
+          "type": "GUID",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "IsRecoveryHit",
+          "type": "Bool32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "RecEvent1",
+          "type": "Binary",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "RecEvent2",
+          "type": "Binary",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "RecEvent3",
+          "type": "Binary",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "RecEvent4",
+          "type": "Binary",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "RecEvent5",
+          "type": "Binary",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "RecEventCount",
+          "type": "UInt16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "RecEventSize",
+          "type": "UInt64",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Boot.Success",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?CheckForKernelModeEventsToProcess@@YAXPEAV?$map@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@UVolumeEntry@@U?$less@V?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@UVolumeEntry@@@std@@@2@@std@@@Z",
+              "ea": "0x18000bff4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Client.RP.Rolling.Action",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "RetryCount:UInt32",
+            "hr:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvcPersistentRequestWorkerThread@@YAIPEAX@Z",
+              "ea": "0x1800558eb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "RetryCount",
+          "type": "UInt32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Client.RP.Rolling.Info",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "IsKeyRotationEnabled:UInt8(Boolean)",
+            "RecoverySeen:UInt8(Boolean)",
+            "WinREUnlock:UInt8(Boolean)",
+            "hrWNFEvent:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvcProcessWinREEvent@@YAXPEAU_EVENT_RECORD@@@Z",
+              "ea": "0x180043236",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bdesvc.dll",
+              "function": "?ProcessBootErrorLog@@YAIPEAX@Z",
+              "ea": "0x18002d940",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "IsKeyRotationEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "RecoverySeen",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "WinREUnlock",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hrWNFEvent",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Persistent.Request.Callback.Error",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32",
+            "ErrorLine:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvcPersistentRequestCallback@@YAJU_WNF_STATE_NAME@@KPEAU_WNF_TYPE_ID@@PEAXPEBXK@Z",
+              "ea": "0x1800451a3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorLine",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Recovery.ReSeal",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "FveID:GUID",
+            "WinREEventId:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvcProcessWinREEvent@@YAXPEAU_EVENT_RECORD@@@Z",
+              "ea": "0x18004231d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FveID",
+          "type": "GUID",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "WinREEventId",
+          "type": "UInt16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Recovery.WinRERecovery",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "FveID:GUID",
+            "ApplicationPath:UnicodeString",
+            "WinREEventId:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvcProcessWinREEvent@@YAXPEAU_EVENT_RECORD@@@Z",
+              "ea": "0x1800428d1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "BcdSettingId:Int32",
+            "WinREEventId:UInt16",
+            "FveID:GUID",
+            "ApplicationPath:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvcProcessWinREEvent@@YAXPEAU_EVENT_RECORD@@@Z",
+              "ea": "0x180042a6a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "FveID:GUID",
+            "WinREEventId:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvcProcessWinREEvent@@YAXPEAU_EVENT_RECORD@@@Z",
+              "ea": "0x1800430cd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ApplicationPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "BcdSettingId",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "FveID",
+          "type": "GUID",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "WinREEventId",
+          "type": "UInt16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Recovery.WinRERecoveryError",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ErrorCode:Int32",
+            "WinREEventId:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvcProcessWinREEvent@@YAXPEAU_EVENT_RECORD@@@Z",
+              "ea": "0x180042cab",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorCode",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "WinREEventId",
+          "type": "UInt16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Recovery.bootmgrRecovery",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "bootmgrEventId:UInt16",
+            "BcdSettingId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?ProcessBootErrorLog@@YAIPEAX@Z",
+              "ea": "0x18002dd79",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bdesvc.dll",
+              "function": "?ProcessBootErrorLog@@YAIPEAX@Z",
+              "ea": "0x18002ddcb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ErrorCode:UInt32",
+            "bootmgrEventId:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?ProcessBootErrorLog@@YAIPEAX@Z",
+              "ea": "0x18002e11d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bdesvc.dll",
+              "function": "?ProcessBootErrorLog@@YAIPEAX@Z",
+              "ea": "0x18002e161",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BcdSettingId",
+          "type": "UInt32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "bootmgrEventId",
+          "type": "UInt16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.RecoveryPWDCountStat",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "OSVRPCount:Int16",
+            "IsOSVEncryptable:UInt8(Boolean)",
+            "TotalFDVRPCount:UInt16",
+            "TotalEncryptedFDVCount:UInt16",
+            "TotalFDVCount:UInt16",
+            "MaxFDVRPCount:UInt16",
+            "FDV1RPCount:Int16",
+            "FDV2RPCount:Int16",
+            "FDV3RPCount:Int16",
+            "FDV4RPCount:Int16",
+            "FDV5RPCount:Int16",
+            "hrClientBackupInfoAndRPStat:Int32",
+            "hrFrequencyCheck:Int32",
+            "hr:Int32",
+            "isAADBackupCheckAllowed:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvcAADBackupReliabilityCheckAndRPStatWorkerThread@@YAIPEAX@Z",
+              "ea": "0x180029236",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FDV1RPCount",
+          "type": "Int16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "FDV2RPCount",
+          "type": "Int16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "FDV3RPCount",
+          "type": "Int16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "FDV4RPCount",
+          "type": "Int16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "FDV5RPCount",
+          "type": "Int16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "IsOSVEncryptable",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "MaxFDVRPCount",
+          "type": "UInt16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "OSVRPCount",
+          "type": "Int16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "TotalEncryptedFDVCount",
+          "type": "UInt16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "TotalFDVCount",
+          "type": "UInt16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "TotalFDVRPCount",
+          "type": "UInt16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hrClientBackupInfoAndRPStat",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hrFrequencyCheck",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "isAADBackupCheckAllowed",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Resurrected.Recovery",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32(HResult)",
+            "RecoveryFlags:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?FireNVRAMRecoveryTelemetry@@YAJK@Z",
+              "ea": "0x1800438d6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "RecoveryFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.Server.RP.Rolling.Action",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hrAlertMDMServerKeyRotation:Int32",
+            "hrKeyRotation:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvRotateRecoveryPasswordsThread@@YAIPEAX@Z",
+              "ea": "0x180055215",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hrAlertMDMServerKeyRotation",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hrKeyRotation",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.WinRE.Invalid.SecureBoot",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "WinREEventId:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvcProcessWinREEvent@@YAXPEAU_EVENT_RECORD@@@Z",
+              "ea": "0x180042ba2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvcProcessWinREEvent@@YAXPEAU_EVENT_RECORD@@@Z",
+              "ea": "0x18004301b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "WinREEventId",
+          "type": "UInt16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.WinRE.Protection.Disabled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "WinREEventId:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvcProcessWinREEvent@@YAXPEAU_EVENT_RECORD@@@Z",
+              "ea": "0x180042dd4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "WinREEventId",
+          "type": "UInt16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Bitlocker.WinRE.Unlock",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x400000000000",
+          "fields": [
+            "FveID:GUID",
+            "WinREEventId:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvcProcessWinREEvent@@YAXPEAU_EVENT_RECORD@@@Z",
+              "ea": "0x180042580",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FveID",
+          "type": "GUID",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "WinREEventId",
+          "type": "UInt16",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Persistent.Request.Subscription.Error",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvcSubscribeForPersistentRequestTrigger@@YAJXZ",
+              "ea": "0x180036888",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Persistent.Request.TimerHandler.Error",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32",
+            "RequestTimerDelay:UInt32",
+            "ErrorLine:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?BdeSvcRegisterPersistentRequestTimerHandler@@YAJXZ",
+              "ea": "0x180035fd0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ErrorLine",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "RequestTimerDelay",
+          "type": "UInt32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessAdminlessProvisionStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "CommandLine:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?ProcessNonAdminUserLogon@CUserLogonProcessingList@@IEAAJQEAG@Z",
+              "ea": "0x180052097",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "CommandLine",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessAdminlessProvisionStop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "FinalResult:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?ProcessNonAdminUserLogon@CUserLogonProcessingList@@IEAAJQEAG@Z",
+              "ea": "0x1800523b4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FinalResult",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProvisionAdminlessDEDataVolume",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Volume:UnicodeString",
+            "Result:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?ProcessNonAdminUserLogon@CUserLogonProcessingList@@IEAAJQEAG@Z",
+              "ea": "0x1800522a3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Result",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Volume",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProvisionAdminlessDEOSVolume",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Volume:UnicodeString",
+            "Result:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "bdesvc.dll",
+              "function": "?ProcessNonAdminUserLogon@CUserLogonProcessingList@@IEAAJQEAG@Z",
+              "ea": "0x180052209",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Result",
+          "type": "Int32",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Volume",
+          "type": "UnicodeString",
+          "seenIn": [
+            "bdesvc.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

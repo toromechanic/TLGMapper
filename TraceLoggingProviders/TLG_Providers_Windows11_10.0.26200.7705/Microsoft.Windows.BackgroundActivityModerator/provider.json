@@ -1,0 +1,2419 @@
+{
+  "providerName": "Microsoft.Windows.BackgroundActivityModerator",
+  "guid": "{D82215E3-BDDF-54FA-895B-685099453B1C}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "bam.sys"
+  ],
+  "uniqueEventCount": 35,
+  "events": [
+    {
+      "eventName": "ActionCommitProcessStateChange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "pid:UInt32(PID)"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampCommitThrottledProcessStateChange",
+              "ea": "0x140018925",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampCommitThrottledProcessStateChange",
+              "ea": "0x14001894d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ActionUpdateProcessPolicy",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "pid:UInt32(PID)"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampUpdateThrottledProcessPolicy",
+              "ea": "0x140010f1a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampUpdateThrottledProcessPolicy",
+              "ea": "0x140010f42",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "BampApplyUserPresencePolicy",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "UserPresenceAction:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottlingWorkerDispatchActionItem",
+              "ea": "0x1400174bd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottlingWorkerDispatchActionItem",
+              "ea": "0x1400174f4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "UserPresenceAction",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CancelProcessActionItem",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "pid:UInt32(PID)",
+            "processAction:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampCancelThrottledProcessActionItem",
+              "ea": "0x14001310c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampCancelThrottledProcessActionItem",
+              "ea": "0x140013142",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "processAction",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CheckPerMechanismExemption",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "pid:UInt32(PID)",
+            "mechanism:UInt32",
+            "isExempted:UInt8(Boolean)",
+            "processExemptionState:HexInt32",
+            "mechanismEnabledExemptions:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampComputeThrottledProcessPolicy",
+              "ea": "0x1400117e0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampComputeThrottledProcessPolicy",
+              "ea": "0x140011858",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampComputeThrottledProcessPolicy",
+              "ea": "0x1400118f0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampComputeThrottledProcessPolicy",
+              "ea": "0x140011953",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampIsPerMechanismExemptionActive",
+              "ea": "0x140017161",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampIsPerMechanismExemptionActive",
+              "ea": "0x1400171d2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "isExempted",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "mechanism",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "mechanismEnabledExemptions",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "processExemptionState",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GetCurrentExemptionState",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "pid:UInt32(PID)",
+            "allMechanismExemptions:HexInt32",
+            "perMechanismExemptions:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampComputeThrottledProcessPolicy",
+              "ea": "0x1400116d3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampComputeThrottledProcessPolicy",
+              "ea": "0x14001172e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampGetThrottledProcessExemptionState",
+              "ea": "0x140016559",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampGetThrottledProcessExemptionState",
+              "ea": "0x1400165ac",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "allMechanismExemptions",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "perMechanismExemptions",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GlobalSettings",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "bamEnabled:UInt8(Boolean)",
+            "timerDelayMs:UInt32",
+            "timerCoalesceMs:UInt32",
+            "telemetryIntervalMs:UInt32",
+            "debounceIntervalMs:UInt32",
+            "recheckSettingsIntervalMs:UInt32",
+            "scavengeUserSettingsIntervalMs:UInt32",
+            "userSettingsLifetimeMs:UInt32",
+            "defaultPolicyFlags:HexInt32",
+            "defaultExemptionFlags:HexInt32[]"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottlingWorkerDispatchActionItem",
+              "ea": "0x140017f0b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottlingWorkerDispatchActionItem",
+              "ea": "0x140017f7c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "bamEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "debounceIntervalMs",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "defaultExemptionFlags",
+          "type": "HexInt32[]",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "defaultPolicyFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "recheckSettingsIntervalMs",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "scavengeUserSettingsIntervalMs",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "telemetryIntervalMs",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "timerCoalesceMs",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "timerDelayMs",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "userSettingsLifetimeMs",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ParentProcessConnectionNotConfigured",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "pid:UInt32(PID)",
+            "parentPid:UInt32(PID)"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampStartThrottledProcessInformation",
+              "ea": "0x140015a22",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampStartThrottledProcessInformation",
+              "ea": "0x140015a48",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "parentPid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PolicyApplied",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "pid:UInt32(PID)",
+            "appliedPolicy:Struct(String)",
+            "appliedPolicyFlags:HexInt32",
+            "appliedPpmPolicy:UInt32",
+            "requestedPolicy:Struct(String)",
+            "requestedPolicyFlags:HexInt32",
+            "requestedPpmPolicy:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampUpdateThrottledProcessPolicy",
+              "ea": "0x140010ff6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampUpdateThrottledProcessPolicy",
+              "ea": "0x140011047",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "appliedPolicy",
+          "type": "Struct(String)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "appliedPolicyFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "appliedPpmPolicy",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "requestedPolicy",
+          "type": "Struct(String)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "requestedPolicyFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "requestedPpmPolicy",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessPolicyNotChanged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "pid:UInt32(PID)",
+            "processPolicy:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampUpdateThrottledProcessPolicy",
+              "ea": "0x1400111d3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampUpdateThrottledProcessPolicy",
+              "ea": "0x140011203",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "processPolicy",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessRegistered",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "pid:UInt32(PID)",
+            "status:UInt32(NTStatus)",
+            "imageFileName:CountedString",
+            "allowedPolicy:HexInt32",
+            "allowedExemptions:HexInt32[]",
+            "userSettingState:UInt32",
+            "parentPid:UInt32(PID)"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottlingRegisterProcessEx",
+              "ea": "0x140014826",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottlingRegisterProcessEx",
+              "ea": "0x1400148a5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "allowedExemptions",
+          "type": "HexInt32[]",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "allowedPolicy",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "imageFileName",
+          "type": "CountedString",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "parentPid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "userSettingState",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessRundown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "pid:UInt32(PID)",
+            "imageFileName:CountedString",
+            "processSequenceId:UInt32",
+            "currentPolicy:Struct(String)",
+            "currentPolicyFlags:HexInt32",
+            "currentPpmPolicy:UInt32",
+            "committedWindowFlags:HexInt32",
+            "committedActivityFlags:HexInt32",
+            "committedControlMask:HexInt32",
+            "committedStateMask:HexInt32",
+            "allowedPolicy:HexInt32",
+            "allowedPerMechanismExemptions:HexInt32[]",
+            "processUserSettingState:UInt32",
+            "allMechanismExemptionFlags:HexInt32",
+            "perMechanismExemptionFlags:HexInt32",
+            "parentPid:UInt32(PID)"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampLogThrottlingRundownEventsCallback",
+              "ea": "0x140016336",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampLogThrottlingRundownEventsCallback",
+              "ea": "0x14001636c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "allMechanismExemptionFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "allowedPerMechanismExemptions",
+          "type": "HexInt32[]",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "allowedPolicy",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "committedActivityFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "committedControlMask",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "committedStateMask",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "committedWindowFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "currentPolicy",
+          "type": "Struct(String)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "currentPolicyFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "currentPpmPolicy",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "imageFileName",
+          "type": "CountedString",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "parentPid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "perMechanismExemptionFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "processSequenceId",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "processUserSettingState",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessStateCommitted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "pid:UInt32(PID)",
+            "newState:Struct(PID)",
+            "newWindowFlags:HexInt32",
+            "newActivityFlags:HexInt32",
+            "newControlMask:HexInt32",
+            "newStateMask:HexInt32",
+            "newUserState:UInt32",
+            "oldState:Struct(PID)",
+            "oldWindowFlags:HexInt32",
+            "oldActivityFlags:HexInt32",
+            "oldControlMask:HexInt32",
+            "oldStateMask:HexInt32",
+            "oldUserState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampCommitThrottledProcessStateChange",
+              "ea": "0x140018af7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampCommitThrottledProcessStateChange",
+              "ea": "0x140018b74",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "newActivityFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "newControlMask",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "newState",
+          "type": "Struct(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "newStateMask",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "newUserState",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "newWindowFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "oldActivityFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "oldControlMask",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "oldState",
+          "type": "Struct(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "oldStateMask",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "oldUserState",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "oldWindowFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessStateUpdated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "pid:UInt32(PID)",
+            "windowFlags:HexInt32",
+            "activityFlags:HexInt32",
+            "controlMask:HexInt32",
+            "stateMask:HexInt32",
+            "userState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottledProcessWakeNotificationCallback",
+              "ea": "0x140016deb",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottledProcessWakeNotificationCallback",
+              "ea": "0x140016e4d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampUpdateThrottledProcessState",
+              "ea": "0x140014e1b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampUpdateThrottledProcessState",
+              "ea": "0x140014e6b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "activityFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "controlMask",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "stateMask",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "userState",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "windowFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessTerminated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "pid:UInt32(PID)"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottlingOnProcessTerminated",
+              "ea": "0x140013fa8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottlingOnProcessTerminated",
+              "ea": "0x140013fd4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessWindowReport",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "report:HexInt64",
+            "callingProcess:UInt32(PID)"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampProcessWindowReportApply",
+              "ea": "0x1400140e7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampProcessWindowReportApply",
+              "ea": "0x140014117",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "report:HexInt64",
+            "pid:UInt32(PID)",
+            "windowState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampProcessWindowReportApply",
+              "ea": "0x140014254",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampProcessWindowReportApply",
+              "ea": "0x140014286",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "report:HexInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampProcessWindowReportApply",
+              "ea": "0x140014397",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampProcessWindowReportApply",
+              "ea": "0x1400143ce",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "callingProcess",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "report",
+          "type": "HexInt64",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "windowState",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessWindowStateUpdate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "status:UInt32(NTStatus)",
+            "pid:UInt32(PID)",
+            "windowState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampProcessWindowStateUpdate",
+              "ea": "0x14000d96a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "windowState",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PropagateState",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "pid:UInt32(PID)",
+            "ancestorState:Struct(PID)",
+            "newWindowFlags:HexInt32",
+            "newActivityFlags:HexInt32",
+            "newControlMask:HexInt32",
+            "newStateMask:HexInt32",
+            "newUserState:UInt32",
+            "oldAncestorState:Struct(PID)",
+            "oldWindowFlags:HexInt32",
+            "oldActivityFlags:HexInt32",
+            "oldControlMask:HexInt32",
+            "oldStateMask:HexInt32",
+            "oldUserState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottlingProcessPropagateStateToChildren",
+              "ea": "0x140012e7a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottlingProcessPropagateStateToChildren",
+              "ea": "0x140012ec8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ancestorState",
+          "type": "Struct(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "newActivityFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "newControlMask",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "newStateMask",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "newUserState",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "newWindowFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "oldActivityFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "oldAncestorState",
+          "type": "Struct(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "oldControlMask",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "oldStateMask",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "oldUserState",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "oldWindowFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "QueueProcessActionItem",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "pid:UInt32(PID)",
+            "processAction:UInt32",
+            "dueTimeMs:UInt32",
+            "flags:HexInt32",
+            "inserted:UInt8(Boolean)",
+            "requeued:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampQueueThrottledProcessActionItem",
+              "ea": "0x140013879",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampQueueThrottledProcessActionItem",
+              "ea": "0x1400138e8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottledProcessWakeNotificationCallback",
+              "ea": "0x140016fd2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottledProcessWakeNotificationCallback",
+              "ea": "0x14001703c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampUpdateThrottledProcessState",
+              "ea": "0x140014fe0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampUpdateThrottledProcessState",
+              "ea": "0x14001504a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "dueTimeMs",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "flags",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "inserted",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "processAction",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "requeued",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RecheckGlobalSettings",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "bamEnabled:UInt8(Boolean)",
+            "timerDelayMs:UInt32",
+            "timerCoalesceMs:UInt32",
+            "telemetryIntervalMs:UInt32",
+            "debounceIntervalMs:UInt32",
+            "recheckSettingsIntervalMs:UInt32",
+            "scavengeUserSettingsIntervalMs:UInt32",
+            "userSettingsLifetimeMs:UInt32",
+            "defaultPolicyFlags:HexInt32",
+            "defaultExemptionFlags:HexInt32[]"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottlingWorkerDispatchActionItem",
+              "ea": "0x140017d3d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottlingWorkerDispatchActionItem",
+              "ea": "0x140017db6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "bamEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "debounceIntervalMs",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "defaultExemptionFlags",
+          "type": "HexInt32[]",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "defaultPolicyFlags",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "recheckSettingsIntervalMs",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "scavengeUserSettingsIntervalMs",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "telemetryIntervalMs",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "timerCoalesceMs",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "timerDelayMs",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "userSettingsLifetimeMs",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ScavengeUserSettings",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "scavengeUserSettingsIntervalMs:UInt32",
+            "userSettingsLifetimeMs:UInt32",
+            "expireBeforeTimestampNs:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottlingWorkerDispatchActionItem",
+              "ea": "0x1400179ab",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottlingWorkerDispatchActionItem",
+              "ea": "0x140017a01",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottlingWorkerDispatchActionItem",
+              "ea": "0x140017aac",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottlingWorkerDispatchActionItem",
+              "ea": "0x140017ae6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "expireBeforeTimestampNs",
+          "type": "UInt64",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "scavengeUserSettingsIntervalMs",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "userSettingsLifetimeMs",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ScavengerAction",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "sid:CountedString",
+            "appKey:CountedString",
+            "appExists:UInt8(Boolean)",
+            "status:UInt32(NTStatus)",
+            "expireBeforeTimestamp:HexInt64",
+            "timestamp:HexInt64",
+            "throttleState:UInt32",
+            "entryRemoved:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampScavengeUserSettingsCallback",
+              "ea": "0x14000dbeb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "appExists",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "appKey",
+          "type": "CountedString",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "entryRemoved",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "expireBeforeTimestamp",
+          "type": "HexInt64",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "sid",
+          "type": "CountedString",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "throttleState",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "timestamp",
+          "type": "HexInt64",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SetPpmPolicy",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "pid:UInt32(PID)",
+            "ppmPolicy:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampSetThrottledProcessPpmPolicy",
+              "ea": "0x140011c6b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampSetThrottledProcessPpmPolicy",
+              "ea": "0x140011ca1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "ppmPolicy",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SetProcessThrottleState",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "pid:UInt32(PID)",
+            "status:UInt32(NTStatus)",
+            "controlMask:HexInt32",
+            "stateMask:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottlingSetProcessThrottleState",
+              "ea": "0x140012a94",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottlingSetProcessThrottleState",
+              "ea": "0x140012ad5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "controlMask",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "stateMask",
+          "type": "HexInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SetTimerDelay",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "pid:UInt32(PID)",
+            "status:UInt32(NTStatus)",
+            "delayMs:UInt32",
+            "coalesceMs:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampSetThrottledProcessTimerDelay",
+              "ea": "0x14000d0a8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "coalesceMs",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "delayMs",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SetTimerResolutionPolicy",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "pid:UInt32(PID)",
+            "timerResolutionPolicy:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampSetThrottledProcessTimerResolutionPolicy",
+              "ea": "0x140011d97",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampSetThrottledProcessTimerResolutionPolicy",
+              "ea": "0x140011dcd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "timerResolutionPolicy",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SetUserSettings",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "sid:CountedString",
+            "appKey:CountedString",
+            "status:UInt32(NTStatus)",
+            "userSettingState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottlingSetUserSettings",
+              "ea": "0x14000de8d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "appKey",
+          "type": "CountedString",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "sid",
+          "type": "CountedString",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "userSettingState",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SeverConnectionWithChildProcesses",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "HandleToULong(CallingProcess->UniqueProcessId):UInt32(PID)",
+            "Status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampSeverConnectionWithChildProcesses",
+              "ea": "0x1400169d7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HandleToULong(CallingProcess->UniqueProcessId)",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ThrottledProcessRegainedFocus",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "pid:UInt32(PID)",
+            "imageFileName:CountedString",
+            "backgroundDurationMs:UInt64",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottlingWorkerDispatchActionItem",
+              "ea": "0x140017750",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottlingWorkerDispatchActionItem",
+              "ea": "0x1400177c6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "backgroundDurationMs",
+          "type": "UInt64",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "imageFileName",
+          "type": "CountedString",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UpdateProcessUserSetting",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "pid:UInt32(PID)",
+            "stateChanged:UInt8(Boolean)",
+            "userSettingState:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottlingSetUserSettingsProcessInfo",
+              "ea": "0x14000df83",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "stateChanged",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "userSettingState",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UserSettings.AddOrUpdate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "sid:CountedString",
+            "appKey:CountedString",
+            "userSettingState:UInt32",
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BamUserSettingsAddOrUpdate",
+              "ea": "0x14001271a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BamUserSettingsAddOrUpdate",
+              "ea": "0x14001278d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "appKey",
+          "type": "CountedString",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "sid",
+          "type": "CountedString",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "userSettingState",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UserSettings.CheckOrigin",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "path:CountedString",
+            "status:UInt32(NTStatus)",
+            "remote:UInt8(Boolean)",
+            "removable:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BamUserSettingsCheckOrigin",
+              "ea": "0x140012462",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BamUserSettingsCheckOrigin",
+              "ea": "0x1400124b6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "path",
+          "type": "CountedString",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "remote",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "removable",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UserSettings.InitializeUser",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "sid:CountedString",
+            "userRemoved:UInt8(Boolean)",
+            "status:UInt32(NTStatus)",
+            "version:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampInitializeUsersCallback",
+              "ea": "0x14000eaf9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "sid",
+          "type": "CountedString",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "userRemoved",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "version",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UserSettings.SettingsGet",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "sid:CountedString",
+            "appKey:CountedString",
+            "userSettingState:UInt32",
+            "status:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BamUserSettingsGet",
+              "ea": "0x1400132ff",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BamUserSettingsGet",
+              "ea": "0x14001335a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "appKey",
+          "type": "CountedString",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "sid",
+          "type": "CountedString",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "userSettingState",
+          "type": "UInt32",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WakeNotification",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "pid:UInt32(PID)",
+            "wakeCounters:UInt32[]"
+          ],
+          "callers": [
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottledProcessWakeNotificationCallback",
+              "ea": "0x140016ee4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "bam.sys",
+              "function": "BampThrottledProcessWakeNotificationCallback",
+              "ea": "0x140016f2e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "pid",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "bam.sys"
+          ]
+        },
+        {
+          "fieldName": "wakeCounters",
+          "type": "UInt32[]",
+          "seenIn": [
+            "bam.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

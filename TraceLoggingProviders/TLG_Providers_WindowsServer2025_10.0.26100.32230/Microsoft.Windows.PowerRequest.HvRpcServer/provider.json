@@ -1,0 +1,630 @@
+{
+  "providerName": "Microsoft.Windows.PowerRequest.HvRpcServer",
+  "guid": "{1EB946EB-F63B-46D3-BECF-833D95CAD6C4}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "umpoext.dll"
+  ],
+  "uniqueEventCount": 11,
+  "events": [
+    {
+      "eventName": "ActivityStarted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PowerRequestHandle:HexInt64",
+            "Result:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?UmpoHvContainerActivityCallback@@YAXPEAU_CMS_ACTIVITY_NOTIFICATION@@PEAX@Z",
+              "ea": "0x18001b0bf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PowerRequestHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ActivityStopRequested",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PowerRequestHandle:HexInt64",
+            "Reason:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?UmpoHvContainerActivityCallback@@YAXPEAU_CMS_ACTIVITY_NOTIFICATION@@PEAX@Z",
+              "ea": "0x18001b115",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PowerRequestHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "Int32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ClientRequestCreate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "VmId:GUID",
+            "PowerRequestId:Int32",
+            "PowerRequestHandle:HexInt64",
+            "Reason:UnicodeString",
+            "Requester:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "UmpoHvRpcCreatePowerRequest",
+              "ea": "0x18001bb83",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PowerRequestHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "PowerRequestId",
+          "type": "Int32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UnicodeString",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "Requester",
+          "type": "UnicodeString",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "VmId",
+          "type": "GUID",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ClientRequestDelete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PowerRequestHandle:HexInt64",
+            "Reason:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?UmpoHvCleanupPowerRequest@@YAXPEAU_HV_CLIENT_POWER_REQUEST@@PEBG@Z",
+              "ea": "0x18001afdb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PowerRequestHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UnicodeString",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ClientRequestRundown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "VmId:GUID",
+            "PowerRequestId:Int32",
+            "PowerRequestHandle:HexInt64",
+            "Reason:UnicodeString",
+            "Requester:UnicodeString",
+            "TypesEnabled:UInt8[N](Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?UmpoHvPowerRequestServerRundown@@YAXXZ",
+              "ea": "0x18001b4c3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PowerRequestHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "PowerRequestId",
+          "type": "Int32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UnicodeString",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "Requester",
+          "type": "UnicodeString",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "TypesEnabled",
+          "type": "UInt8[N](Boolean)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "VmId",
+          "type": "GUID",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ClientRequestUpdate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PowerRequestHandle:HexInt64",
+            "RequestType:Int32",
+            "Enable:Bool32",
+            "EnableMask:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "UmpoHvRpcUpdatePowerRequest",
+              "ea": "0x18001c305",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Enable",
+          "type": "Bool32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "EnableMask",
+          "type": "UInt32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "PowerRequestHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "RequestType",
+          "type": "Int32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CmsContainerStartFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "VmId:GUID",
+            "PowerRequestHandle:HexInt64",
+            "Reason:UnicodeString",
+            "Requester:UnicodeString",
+            "HRESULT:Int32(HResult)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "UmpoHvRpcUpdatePowerRequest",
+              "ea": "0x18001c254",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "PowerRequestHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UnicodeString",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "Requester",
+          "type": "UnicodeString",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "VmId",
+          "type": "GUID",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CmsCreateActivityFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "VmId:GUID",
+            "PowerRequestHandle:HexInt64",
+            "Reason:UnicodeString",
+            "Requester:UnicodeString",
+            "HRESULT:Int32(HResult)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "UmpoHvRpcUpdatePowerRequest",
+              "ea": "0x18001c0b1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "PowerRequestHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UnicodeString",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "Requester",
+          "type": "UnicodeString",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "VmId",
+          "type": "GUID",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CmsStartActivityAsyncFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "VmId:GUID",
+            "PowerRequestHandle:HexInt64",
+            "Reason:UnicodeString",
+            "Requester:UnicodeString",
+            "HRESULT:Int32(HResult)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "UmpoHvRpcUpdatePowerRequest",
+              "ea": "0x18001c18a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "PowerRequestHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UnicodeString",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "Requester",
+          "type": "UnicodeString",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "VmId",
+          "type": "GUID",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerExit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "VmId:GUID",
+            "PowerRequestHandle:HexInt64",
+            "Reason:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?UmpoHvContainerNotificationCallback@@YAXPEAU_CMS_CONTAINER_NOTIFICATION@@PEAX@Z",
+              "ea": "0x18001b1f3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "PowerRequestHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "Int32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "VmId",
+          "type": "GUID",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ContainerTearDown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "VmId:GUID",
+            "PowerRequestHandle:HexInt64",
+            "Reason:Int32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "umpoext.dll",
+              "function": "?UmpoHvContainerNotificationCallback@@YAXPEAU_CMS_CONTAINER_NOTIFICATION@@PEAX@Z",
+              "ea": "0x18001b22f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "PowerRequestHandle",
+          "type": "HexInt64",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "Int32",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        },
+        {
+          "fieldName": "VmId",
+          "type": "GUID",
+          "seenIn": [
+            "umpoext.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

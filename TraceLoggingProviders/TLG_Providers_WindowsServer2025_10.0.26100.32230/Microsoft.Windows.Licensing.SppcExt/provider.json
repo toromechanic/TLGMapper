@@ -1,0 +1,180 @@
+{
+  "providerName": "Microsoft.Windows.Licensing.SppcExt",
+  "guid": "{5D473D89-8BE8-4AC9-A48A-8D2950C9820B}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "sppcext.dll"
+  ],
+  "uniqueEventCount": 3,
+  "events": [
+    {
+      "eventName": "CheckPaygoLicenseForCurrentOsProduct",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Result:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "sppcext.dll",
+              "function": "SLActivateProduct",
+              "ea": "0x1800316a5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Result",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "sppcext.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EnsureModernLicenseForCurrentOsProduct",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Result:Int32(HResult)",
+            "LMResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "sppcext.dll",
+              "function": "SLActivateProduct",
+              "ea": "0x18003195a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "sppcext.dll",
+              "function": "SLActivateProduct",
+              "ea": "0x180031a6c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "LMResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "sppcext.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "sppcext.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProductActivation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "AppId:UnicodeString",
+            "SkuId:UnicodeString",
+            "ProductKeyType:UnicodeString",
+            "InOOBE:UInt32",
+            "Ticks:UInt32",
+            "ActivationType:UInt32",
+            "Result:UInt32",
+            "GenuineState:UInt32",
+            "DependsOn:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "sppcext.dll",
+              "function": "sub_180027CAC",
+              "ea": "0x18002cb89",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivationType",
+          "type": "UInt32",
+          "seenIn": [
+            "sppcext.dll"
+          ]
+        },
+        {
+          "fieldName": "AppId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "sppcext.dll"
+          ]
+        },
+        {
+          "fieldName": "DependsOn",
+          "type": "UnicodeString",
+          "seenIn": [
+            "sppcext.dll"
+          ]
+        },
+        {
+          "fieldName": "GenuineState",
+          "type": "UInt32",
+          "seenIn": [
+            "sppcext.dll"
+          ]
+        },
+        {
+          "fieldName": "InOOBE",
+          "type": "UInt32",
+          "seenIn": [
+            "sppcext.dll"
+          ]
+        },
+        {
+          "fieldName": "ProductKeyType",
+          "type": "UnicodeString",
+          "seenIn": [
+            "sppcext.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "UInt32",
+          "seenIn": [
+            "sppcext.dll"
+          ]
+        },
+        {
+          "fieldName": "SkuId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "sppcext.dll"
+          ]
+        },
+        {
+          "fieldName": "Ticks",
+          "type": "UInt32",
+          "seenIn": [
+            "sppcext.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

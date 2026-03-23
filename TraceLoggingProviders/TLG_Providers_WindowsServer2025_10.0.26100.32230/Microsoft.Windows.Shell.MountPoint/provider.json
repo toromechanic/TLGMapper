@@ -1,0 +1,50 @@
+{
+  "providerName": "Microsoft.Windows.Shell.MountPoint",
+  "guid": "{9BCF507E-184A-57F6-FD3A-76AB0CFC97EC}",
+  "os": "WindowsServer2025",
+  "binaryCount": 2,
+  "binaries": [
+    "shell32.dll",
+    "windows.storage.dll"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "VolumeNotFound",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "volumeName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "shell32.dll",
+              "function": "??$VolumeNotFound@AEAPEBG@MountPointTelemetry@@SAXAEAPEBG@Z",
+              "ea": "0x18056d88b",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "windows.storage.dll",
+              "function": "??$VolumeNotFound@AEAPEBG@MountPointTelemetry@@SAXAEAPEBG@Z",
+              "ea": "0x18004b5b8",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "volumeName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "shell32.dll",
+            "windows.storage.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

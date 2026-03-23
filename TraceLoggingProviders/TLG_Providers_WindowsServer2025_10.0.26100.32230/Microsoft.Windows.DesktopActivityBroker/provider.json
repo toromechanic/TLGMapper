@@ -1,0 +1,681 @@
+{
+  "providerName": "Microsoft.Windows.DesktopActivityBroker",
+  "guid": "{D0C9C5EF-166E-5120-7D14-EB037693C807}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "dab.dll"
+  ],
+  "uniqueEventCount": 11,
+  "events": [
+    {
+      "eventName": "Consumer_CalculateNextRuntime",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ConsumerName:UnicodeString",
+            "ErrorCode:UInt32",
+            "FailCode:UInt32",
+            "ScheduledDelaySeconds:UInt32",
+            "RandomDelaySeconds:UInt32",
+            "NextRunTime:FileTime(DateTimeUTC)",
+            "NextRunEndBoundaryCompare:FileTime(DateTimeUTC)"
+          ],
+          "callers": [
+            {
+              "binary": "dab.dll",
+              "function": "?DabTimeTriggerCalculateNextRuntime@@YAKPEAU_DAB_TRIGGER_CONSUMER_BLOCK@@U_FILETIME@@PEAU2@@Z",
+              "ea": "0x18000775c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConsumerName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "FailCode",
+          "type": "UInt32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "NextRunEndBoundaryCompare",
+          "type": "FileTime(DateTimeUTC)",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "NextRunTime",
+          "type": "FileTime(DateTimeUTC)",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "RandomDelaySeconds",
+          "type": "UInt32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "ScheduledDelaySeconds",
+          "type": "UInt32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Consumer_ScheduleTimer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ConsumerName:UnicodeString",
+            "ErrorCode:UInt32(Win32Error)",
+            "FailCode:UInt32",
+            "ObservedTimeUtc:FileTime(DateTimeUTC)",
+            "NextRuntimeUtc:FileTime(DateTimeUTC)",
+            "ValidityDurationSeconds:UInt32",
+            "ClockType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dab.dll",
+              "function": "DabpTimeTriggerScheduleTimer",
+              "ea": "0x180007626",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClockType",
+          "type": "UInt32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "ConsumerName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "FailCode",
+          "type": "UInt32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "NextRuntimeUtc",
+          "type": "FileTime(DateTimeUTC)",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "ObservedTimeUtc",
+          "type": "FileTime(DateTimeUTC)",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "ValidityDurationSeconds",
+          "type": "UInt32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Consumer_TimeTriggerFired",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "dab.dll",
+              "function": "DabpTimeTriggerArrivedCallback",
+              "ea": "0x180008361",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ConsumerName:UnicodeString",
+            "ErrorCode:UInt32",
+            "FailCode:UInt32",
+            "MissedRun:Bool32",
+            "TempNextRuntime:FileTime(DateTimeUTC)"
+          ],
+          "callers": [
+            {
+              "binary": "dab.dll",
+              "function": "DabpTimeTriggerArrivedCallback",
+              "ea": "0x1800083d9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConsumerName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "FailCode",
+          "type": "UInt32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "MissedRun",
+          "type": "Bool32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "TempNextRuntime",
+          "type": "FileTime(DateTimeUTC)",
+          "seenIn": [
+            "dab.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DAB_LocalToUtcTimes",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "FailCode:UInt32",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "dab.dll",
+              "function": "?DabpLocalToUtcTimes@@YAJU_FILETIME@@PEAU_SYSTEMTIME@@PEAU1@@Z",
+              "ea": "0x18000c529",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FailCode",
+          "type": "UInt32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "dab.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DabUtilsSetTimeTriggerTimer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ConsumerName:UnicodeString",
+            "DueTimeUtc:FileTime(DateTimeUTC)"
+          ],
+          "callers": [
+            {
+              "binary": "dab.dll",
+              "function": "DabUtilsSetTimeTriggerTimer",
+              "ea": "0x180007e0a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConsumerName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "DueTimeUtc",
+          "type": "FileTime(DateTimeUTC)",
+          "seenIn": [
+            "dab.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DabpConsumeEvents_ProcessTraceReturned",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Status:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "dab.dll",
+              "function": "?DabpConsumeEvents@@YAKPEAX@Z",
+              "ea": "0x18000cbf1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DabpHandleTimeChange",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "dab.dll",
+              "function": "DabpHandleTimeChange",
+              "ea": "0x18000221f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "OldTime:FileTime",
+            "NewTime:FileTime"
+          ],
+          "callers": [
+            {
+              "binary": "dab.dll",
+              "function": "DabpHandleTimeChange",
+              "ea": "0x180002232",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NewTime",
+          "type": "FileTime",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "OldTime",
+          "type": "FileTime",
+          "seenIn": [
+            "dab.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "MissedRunAtStartDelayQueued",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "DelaySeconds:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dab.dll",
+              "function": "?DabModuleStart@@YAXPEAU_DAB_MODULE_GLOBALS@@@Z",
+              "ea": "0x180010984",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DelaySeconds",
+          "type": "UInt32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Time_GetMonthlyDelay",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "NowUtc:FileTime",
+            "StartBoundaryUtc:SystemTime",
+            "MonthMask:UInt16",
+            "ClockTriggerType:UInt32",
+            "DateOfMonthMask:UInt32",
+            "WeekMask:UInt8",
+            "DayOfWeekMask:UInt8",
+            "SearchDirection:Bool32",
+            "DelaySeconds:UInt32",
+            "ResultCode:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dab.dll",
+              "function": "DabpGetMonthlyDelay",
+              "ea": "0x18000fd7a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClockTriggerType",
+          "type": "UInt32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "DateOfMonthMask",
+          "type": "UInt32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "DayOfWeekMask",
+          "type": "UInt8",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "DelaySeconds",
+          "type": "UInt32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "MonthMask",
+          "type": "UInt16",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "NowUtc",
+          "type": "FileTime",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "ResultCode",
+          "type": "UInt32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "SearchDirection",
+          "type": "Bool32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "StartBoundaryUtc",
+          "type": "SystemTime",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "WeekMask",
+          "type": "UInt8",
+          "seenIn": [
+            "dab.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Time_GetOneTimeOrDailyDelay",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Succeeded:Bool32",
+            "FailCode:UInt32",
+            "DelaySeconds:UInt32",
+            "ClockTriggerType:UInt32",
+            "ObservedTimeUtc:FileTime(DateTimeUTC)",
+            "StartBoundaryUtc:FileTime(DateTimeUTC)"
+          ],
+          "callers": [
+            {
+              "binary": "dab.dll",
+              "function": "DabpGetOneTimeOrDailyDelay",
+              "ea": "0x180008676",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ClockTriggerType",
+          "type": "UInt32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "DelaySeconds",
+          "type": "UInt32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "FailCode",
+          "type": "UInt32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "ObservedTimeUtc",
+          "type": "FileTime(DateTimeUTC)",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "StartBoundaryUtc",
+          "type": "FileTime(DateTimeUTC)",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "Succeeded",
+          "type": "Bool32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Time_GetWeeklyDelay",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "NowUtc:FileTime",
+            "StartBoundaryUtc:SystemTime",
+            "DayOfWeekMask:UInt8",
+            "DayOfWeekMask:UInt8",
+            "SearchDirection:Bool32",
+            "DelaySecs:UInt32",
+            "ResultCode:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "dab.dll",
+              "function": "DabpGetWeeklyDelay",
+              "ea": "0x18001007c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DayOfWeekMask",
+          "type": "UInt8",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "DelaySecs",
+          "type": "UInt32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "NowUtc",
+          "type": "FileTime",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "ResultCode",
+          "type": "UInt32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "SearchDirection",
+          "type": "Bool32",
+          "seenIn": [
+            "dab.dll"
+          ]
+        },
+        {
+          "fieldName": "StartBoundaryUtc",
+          "type": "SystemTime",
+          "seenIn": [
+            "dab.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

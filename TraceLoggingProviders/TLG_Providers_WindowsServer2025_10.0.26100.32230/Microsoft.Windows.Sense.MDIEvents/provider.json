@@ -1,0 +1,111 @@
+{
+  "providerName": "Microsoft.Windows.Sense.MDIEvents",
+  "guid": "{6D4EEB1E-5E8E-50C1-9EB2-F9EF83E5E18A}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "MsSense.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "SenseCyberAggregator",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "message:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?StartReportingEvents@Aggregator@cyberComm@sense@@UEAA_NXZ",
+              "ea": "0x18034c60d",
+              "confidence": "CallGraph-d3"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "message",
+          "type": "AnsiString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SenseCyberEventIdGenerator",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "message:AnsiString",
+            "epochResetCountbuid:UInt32",
+            "isDefault:UInt8(Boolean)"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?GetAndIncEpoch@EventIdGenerator@cyberComm@sense@@AEAAGXZ",
+              "ea": "0x18034fb3d",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "message:AnsiString",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?GetAndIncEpoch@EventIdGenerator@cyberComm@sense@@AEAAGXZ",
+              "ea": "0x18034fc12",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "epochResetCountbuid",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "isDefault",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "AnsiString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

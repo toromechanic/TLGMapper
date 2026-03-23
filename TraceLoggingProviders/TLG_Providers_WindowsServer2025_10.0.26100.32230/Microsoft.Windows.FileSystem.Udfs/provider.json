@@ -1,0 +1,82 @@
+{
+  "providerName": "Microsoft.Windows.FileSystem.Udfs",
+  "guid": "{227449E1-BDDC-4E48-A31C-27523BD264F2}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "udfs.sys"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "Mount",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "volumeId:GUID",
+            "status:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "udfs.sys",
+              "function": "UdfTelemetryMount",
+              "ea": "0x1400599eb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "volumeId:GUID",
+            "status:HexInt32",
+            "mediaType:HexInt32",
+            "volumeMountedReadOnly:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "udfs.sys",
+              "function": "UdfTelemetryMount",
+              "ea": "0x140059a1e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "mediaType",
+          "type": "HexInt32",
+          "seenIn": [
+            "udfs.sys"
+          ]
+        },
+        {
+          "fieldName": "status",
+          "type": "HexInt32",
+          "seenIn": [
+            "udfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeId",
+          "type": "GUID",
+          "seenIn": [
+            "udfs.sys"
+          ]
+        },
+        {
+          "fieldName": "volumeMountedReadOnly",
+          "type": "Bool32",
+          "seenIn": [
+            "udfs.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

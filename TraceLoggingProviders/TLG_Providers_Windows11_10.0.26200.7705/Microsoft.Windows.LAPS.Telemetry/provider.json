@@ -1,0 +1,729 @@
+{
+  "providerName": "Microsoft.Windows.LAPS.Telemetry",
+  "guid": "{F406BF66-550C-59A7-009E-45F7A834BFC5}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "laps.dll"
+  ],
+  "uniqueEventCount": 14,
+  "events": [
+    {
+      "eventName": "ActivityStoppedAutomatically",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "laps.dll",
+              "function": "??$_tlgWriteActivityAutoStop@$0CAAAAAAAAAAA@$04@@YAXPEBU_tlgProvider_t@@PEBU_GUID@@@Z",
+              "ea": "0x18000d946",
+              "confidence": "GlobalFallback"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "Admin forced password reset in Azure mode",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "laps.dll",
+              "function": "?DoAzureCoreProcessing@LapsCore@@AEAAJPEAVLapsCoreProcessingState@@W4_OP_REQUEST_TYPE@@@Z",
+              "ea": "0x1800102bd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "CheckADPasswordUpdateFactors",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ulPasswordUpdateFactors:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "laps.dll",
+              "function": "?CheckADPasswordUpdateFactors@LapsCore@@AEAAJPEAVLapsCoreProcessingState@@PEAVLdapComputer@@PEAVAccountManager@@PEA_KPEAK@Z",
+              "ea": "0x18000ec4e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "ulPasswordUpdateFactors",
+          "type": "UInt32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Configured account is an MSA account",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "laps.dll",
+              "function": "?StaticFindByNameOrRid@LocalAdminAccount@@CAJPEAGKPEAPEAV1@@Z",
+              "ea": "0x18001d8d2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "laps.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DeleteNewAttributes failed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ldapRet:UInt32",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "laps.dll",
+              "function": "?DeleteNewAttributes@LdapComputer@@AEAAJXZ",
+              "ea": "0x1800187bf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "ldapRet",
+          "type": "UInt32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DoADCoreProcessingStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "laps.dll",
+              "function": "?DoADCoreProcessing@LapsCore@@AEAAJPEAVLapsCoreProcessingState@@W4_OP_REQUEST_TYPE@@@Z",
+              "ea": "0x18000f74f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "DoADCoreProcessingStop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "laps.dll",
+              "function": "?DoADCoreProcessing@LapsCore@@AEAAJPEAVLapsCoreProcessingState@@W4_OP_REQUEST_TYPE@@@Z",
+              "ea": "0x18000fdf3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "laps.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DoAzureCoreProcessingActivity",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "laps.dll",
+              "function": "?DoAzureCoreProcessing@LapsCore@@AEAAJPEAVLapsCoreProcessingState@@W4_OP_REQUEST_TYPE@@@Z",
+              "ea": "0x18000ff89",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "laps.dll",
+              "function": "?DoAzureCoreProcessing@LapsCore@@AEAAJPEAVLapsCoreProcessingState@@W4_OP_REQUEST_TYPE@@@Z",
+              "ea": "0x180010777",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "laps.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Failed to find or load local account",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "pszAccountNameSearch:UnicodeString",
+            "Status:UInt32(NTStatus)",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "laps.dll",
+              "function": "?StaticFindByNameOrRid@LocalAdminAccount@@CAJPEAGKPEAPEAV1@@Z",
+              "ea": "0x18001d7a8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "pszAccountNameSearch",
+          "type": "UnicodeString",
+          "seenIn": [
+            "laps.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Forced password update requested",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "laps.dll",
+              "function": "?DoADCoreProcessing@LapsCore@@AEAAJPEAVLapsCoreProcessingState@@W4_OP_REQUEST_TYPE@@@Z",
+              "ea": "0x18000f974",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "LAPSPolicyConfiguration",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "PolicySource:UInt32",
+            "BackupDirectory:UInt32",
+            "PasswordAgeDays:UInt32",
+            "PasswordComplexity:UInt32",
+            "PasswordLength:UInt32",
+            "AdminAccountName:UnicodeString",
+            "PasswordExpirationProtectionRequired:Bool32",
+            "ADPasswordEncryptionEnabled:Bool32",
+            "ADPasswordEncryptionPrincipal:UnicodeString",
+            "ADEncryptedPasswordHistorySize:UInt32",
+            "ADBackupDSRMPassword:Bool32",
+            "PostAuthResetDelay:UInt32",
+            "PostAuthActions:UInt32",
+            "AutomaticAccountManagementEnabled:Bool32",
+            "AutomaticAccountManagementTarget:UInt32",
+            "AutomaticAccountManagementNameOrPrefix:UnicodeString",
+            "AutomaticAccountManagementEnableAccount:Bool32",
+            "AutomaticAccountManagementRandomizeName:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "laps.dll",
+              "function": "?LogState@GPOConfig@@QEAAXXZ",
+              "ea": "0x18000b702",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ADBackupDSRMPassword",
+          "type": "Bool32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "ADEncryptedPasswordHistorySize",
+          "type": "UInt32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "ADPasswordEncryptionEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "ADPasswordEncryptionPrincipal",
+          "type": "UnicodeString",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "AdminAccountName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "AutomaticAccountManagementEnableAccount",
+          "type": "Bool32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "AutomaticAccountManagementEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "AutomaticAccountManagementNameOrPrefix",
+          "type": "UnicodeString",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "AutomaticAccountManagementRandomizeName",
+          "type": "Bool32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "AutomaticAccountManagementTarget",
+          "type": "UInt32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "BackupDirectory",
+          "type": "UInt32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "PasswordAgeDays",
+          "type": "UInt32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "PasswordComplexity",
+          "type": "UInt32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "PasswordExpirationProtectionRequired",
+          "type": "Bool32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "PasswordLength",
+          "type": "UInt32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicySource",
+          "type": "UInt32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "PostAuthActions",
+          "type": "UInt32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "PostAuthResetDelay",
+          "type": "UInt32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LAPSRegistryConfiguration",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "_PolicySource:UInt32",
+            "_pszAdministratorAccountName:UnicodeString",
+            "_dwLastAccountRidUpdated:UInt32",
+            "_pszLastEncryptionTargetSid:UnicodeString",
+            "_ullLastPasswordUpdateTime:FileTime(DateTimeUTC)",
+            "_ullAzurePasswordExpiryTime:FileTime(DateTimeUTC)",
+            "_fLegacyADSchemaValidated:Bool32",
+            "_fNewADSchemaValidated:Bool32",
+            "_AzureDeploymentType:UInt32",
+            "_fLegacyLAPSInstalled:Bool32",
+            "_fCDJConfiguredForPPE:Bool32",
+            "_fDSRMMode:Bool32",
+            "_ulTestHookFlags:UInt32",
+            "_ullPostAuthResetDeadline:FileTime(DateTimeUTC)",
+            "_ullPostAuthResetAuthenticationTime:FileTime(DateTimeUTC)",
+            "_pszPostAuthResetAccountSid:UnicodeString",
+            "_ulPostAuthResetRetryCount:UInt32",
+            "_ulPostAuthActions:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "laps.dll",
+              "function": "?LogState@RegistryState@@QEAAXXZ",
+              "ea": "0x180025255",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "_AzureDeploymentType",
+          "type": "UInt32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "_PolicySource",
+          "type": "UInt32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "_dwLastAccountRidUpdated",
+          "type": "UInt32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "_fCDJConfiguredForPPE",
+          "type": "Bool32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "_fDSRMMode",
+          "type": "Bool32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "_fLegacyADSchemaValidated",
+          "type": "Bool32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "_fLegacyLAPSInstalled",
+          "type": "Bool32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "_fNewADSchemaValidated",
+          "type": "Bool32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "_pszAdministratorAccountName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "_pszLastEncryptionTargetSid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "_pszPostAuthResetAccountSid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "_ulPostAuthActions",
+          "type": "UInt32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "_ulPostAuthResetRetryCount",
+          "type": "UInt32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "_ulTestHookFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "_ullAzurePasswordExpiryTime",
+          "type": "FileTime(DateTimeUTC)",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "_ullLastPasswordUpdateTime",
+          "type": "FileTime(DateTimeUTC)",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "_ullPostAuthResetAuthenticationTime",
+          "type": "FileTime(DateTimeUTC)",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "_ullPostAuthResetDeadline",
+          "type": "FileTime(DateTimeUTC)",
+          "seenIn": [
+            "laps.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Password update not required",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "laps.dll",
+              "function": "?DoADCoreProcessing@LapsCore@@AEAAJPEAVLapsCoreProcessingState@@W4_OP_REQUEST_TYPE@@@Z",
+              "ea": "0x18000fd16",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "laps.dll",
+              "function": "?DoAzureCoreProcessing@LapsCore@@AEAAJPEAVLapsCoreProcessingState@@W4_OP_REQUEST_TYPE@@@Z",
+              "ea": "0x1800106c0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "SendSynchronousWebRequest",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "laps.dll",
+              "function": "?DoAzurePasswordUpdateHelper@LapsCore@@AEAAJPEAG0000K_K1K@Z",
+              "ea": "0x180010f28",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "laps.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "laps.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

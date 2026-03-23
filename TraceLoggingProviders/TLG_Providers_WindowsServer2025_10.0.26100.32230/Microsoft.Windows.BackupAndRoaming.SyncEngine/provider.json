@@ -1,0 +1,72 @@
+{
+  "providerName": "Microsoft.Windows.BackupAndRoaming.SyncEngine",
+  "guid": "{95EA8EB8-6F34-45BC-8FA3-BAFEAF6C9915}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "IESettingSync.exe"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "RoamingCompositesettingHandler_PartialApply",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "SettingUnitId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "IESettingSync.exe",
+              "function": "?ApplyUnit@CCompositeSettingHandler@@UEAAJPEAUISettingUnit@@00@Z",
+              "ea": "0x14001f730",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SettingUnitId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "IESettingSync.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "TotalFavoritesRoamed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "NumberOfFavoritesRoamed:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "IESettingSync.exe",
+              "function": "?GetUnits@CBrowserFavoritesSettingHandler@@UEAAJPEAPEAUIObjectArray@@@Z",
+              "ea": "0x140015e99",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NumberOfFavoritesRoamed",
+          "type": "UInt32",
+          "seenIn": [
+            "IESettingSync.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

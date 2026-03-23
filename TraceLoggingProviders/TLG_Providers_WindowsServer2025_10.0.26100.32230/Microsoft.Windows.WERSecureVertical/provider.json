@@ -1,0 +1,50 @@
+{
+  "providerName": "Microsoft.Windows.WERSecureVertical",
+  "guid": "{97945555-B04C-47C0-B399-E453D509A5F0}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "WerFaultSecure.exe"
+  ],
+  "uniqueEventCount": 1,
+  "events": [
+    {
+      "eventName": "UserVerticalCrashed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ExceptionCode:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "WerFaultSecure.exe",
+              "function": "WerFaultExceptionFilter",
+              "ea": "0x14000782b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ExceptionCode",
+          "type": "UInt32",
+          "seenIn": [
+            "WerFaultSecure.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WerFaultSecure.exe"
+          ]
+        }
+      ]
+    }
+  ]
+}

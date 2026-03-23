@@ -1,0 +1,623 @@
+{
+  "providerName": "Microsoft.Windows.PITR",
+  "guid": "{5AB4681B-497F-5854-6141-64A7C80D3937}",
+  "os": "Windows 11",
+  "binaryCount": 4,
+  "binaries": [
+    "BootMenuUX.dll",
+    "PITRTask.dll",
+    "SettingsHandlers_nt.dll",
+    "SystemSettingsAdminFlows.exe"
+  ],
+  "uniqueEventCount": 9,
+  "events": [
+    {
+      "eventName": "CreateSnapshot",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "SnapshotId:UnicodeString",
+            "CreationTimeUTC:FileTime",
+            "CreationTimeLocal:FileTime",
+            "DurationMs:UInt32",
+            "ActivityId:GUID",
+            "HRESULT:Int32",
+            "SnapshotSizeBytes:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "PITRTask.dll",
+              "function": "?PITRTelemetry_CreateSnapshot@@YAXPEBGU_FILETIME@@1KPEBU_GUID@@J_J@Z",
+              "ea": "0x18000d609",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityId",
+          "type": "GUID",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "CreationTimeLocal",
+          "type": "FileTime",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "CreationTimeUTC",
+          "type": "FileTime",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationMs",
+          "type": "UInt32",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "SnapshotId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "SnapshotSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DeleteSnapshot",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "SnapshotId:UnicodeString",
+            "ActivityId:GUID",
+            "HRESULT:Int32",
+            "Reason:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "PITRTask.dll",
+              "function": "?PITRTelemetry_DeleteSnapshot@@YAXPEBGPEBU_GUID@@J0@Z",
+              "ea": "0x18000d729",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityId",
+          "type": "GUID",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "UnicodeString",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "SnapshotId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GetAllSnapshotSize",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ActivityId:GUID",
+            "UsedSpaceBytes:Int64",
+            "AllocatedSpaceBytes:Int64",
+            "MaxSpaceBytes:Int64",
+            "SnapshotCount:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "PITRTask.dll",
+              "function": "?PITRTelemetry_GetAllSnapshotsSizeWithVSS@@YAX_J00KPEBU_GUID@@@Z",
+              "ea": "0x18000da8c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityId",
+          "type": "GUID",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "AllocatedSpaceBytes",
+          "type": "Int64",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "MaxSpaceBytes",
+          "type": "Int64",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "SnapshotCount",
+          "type": "UInt32",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "UsedSpaceBytes",
+          "type": "Int64",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GetIndividualSnapshotSize",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ActivityId:GUID",
+            "SnapshotId:UnicodeString",
+            "SnapshotSizeBytes:Int64"
+          ],
+          "callers": [
+            {
+              "binary": "PITRTask.dll",
+              "function": "?PITRTelemetry_GetIndividualSnapshotSize@@YAXPEBG_JPEBU_GUID@@@Z",
+              "ea": "0x18000dba5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityId",
+          "type": "GUID",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "SnapshotId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "SnapshotSizeBytes",
+          "type": "Int64",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PITRInterfaceCreation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Result:Int32",
+            "DurationMs:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "BootMenuUX.dll",
+              "function": "?PITRTelemetryLogInterfaceCreation@@YAXJK@Z",
+              "ea": "0x18002c039",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PITRTask.dll",
+              "function": "?PITRTelemetryLogInterfaceCreation@@YAXJK@Z",
+              "ea": "0x18000ebb6",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "SettingsHandlers_nt.dll",
+              "function": "?PITRTelemetryLogInterfaceCreation@@YAXJK@Z",
+              "ea": "0x1802387d9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "SystemSettingsAdminFlows.exe",
+              "function": "?PITRTelemetryLogInterfaceCreation@@YAXJK@Z",
+              "ea": "0x140077b79",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DurationMs",
+          "type": "UInt32",
+          "seenIn": [
+            "BootMenuUX.dll",
+            "PITRTask.dll",
+            "SettingsHandlers_nt.dll",
+            "SystemSettingsAdminFlows.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "BootMenuUX.dll",
+            "PITRTask.dll",
+            "SettingsHandlers_nt.dll",
+            "SystemSettingsAdminFlows.exe"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32",
+          "seenIn": [
+            "BootMenuUX.dll",
+            "PITRTask.dll",
+            "SettingsHandlers_nt.dll",
+            "SystemSettingsAdminFlows.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PITRSettingsInterfaceCreation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "Result:Int32",
+            "DurationMs:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "PITRTask.dll",
+              "function": "?PITRTelemetryLogSettingsInterfaceCreation@@YAXJK@Z",
+              "ea": "0x18000ec9e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "SettingsHandlers_nt.dll",
+              "function": "?PITRTelemetryLogSettingsInterfaceCreation@@YAXJK@Z",
+              "ea": "0x180238861",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "SystemSettingsAdminFlows.exe",
+              "function": "?PITRTelemetryLogSettingsInterfaceCreation@@YAXJK@Z",
+              "ea": "0x140077bfd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DurationMs",
+          "type": "UInt32",
+          "seenIn": [
+            "PITRTask.dll",
+            "SettingsHandlers_nt.dll",
+            "SystemSettingsAdminFlows.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "PITRTask.dll",
+            "SettingsHandlers_nt.dll",
+            "SystemSettingsAdminFlows.exe"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32",
+          "seenIn": [
+            "PITRTask.dll",
+            "SettingsHandlers_nt.dll",
+            "SystemSettingsAdminFlows.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PITRTaskExecution",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ActivityId:GUID",
+            "Result:Int32",
+            "DurationMs:UInt32",
+            "FeatureActive:UInt8(Boolean)",
+            "RetryAttempt:UInt32",
+            "ErrorDetails:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "PITRTask.dll",
+              "function": "?PITRTelemetryLogTaskExecution@@YAXPEBU_GUID@@JKHKPEBG@Z",
+              "ea": "0x18000d48a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityId",
+          "type": "GUID",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationMs",
+          "type": "UInt32",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "ErrorDetails",
+          "type": "UnicodeString",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "FeatureActive",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "Result",
+          "type": "Int32",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "RetryAttempt",
+          "type": "UInt32",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PITRTelemetryInitialized",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "BootMenuUX.dll",
+              "function": "?PITRTelemetryInitialize@@YAJXZ",
+              "ea": "0x18002bfa3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "PITRTask.dll",
+              "function": "?PITRTelemetryInitialize@@YAJXZ",
+              "ea": "0x18000ead3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "SettingsHandlers_nt.dll",
+              "function": "?PITRTelemetryInitialize@@YAJXZ",
+              "ea": "0x180238743",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "SystemSettingsAdminFlows.exe",
+              "function": "?PITRTelemetryInitialize@@YAJXZ",
+              "ea": "0x140077ae8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "BootMenuUX.dll",
+            "PITRTask.dll",
+            "SettingsHandlers_nt.dll",
+            "SystemSettingsAdminFlows.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SnapshotSettingValue",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x800000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "ActivityId:GUID",
+            "Setting:UnicodeString",
+            "Value:UInt32",
+            "UsedDefault:UInt8(Boolean)",
+            "Level:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "PITRTask.dll",
+              "function": "?PITRTelemetry_SnapshotSettingValue@@YAXPEBGKHW4PITR_SETTINGS_LEVEL@PITR@@PEBU_GUID@@@Z",
+              "ea": "0x18000e60b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActivityId",
+          "type": "GUID",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "Level",
+          "type": "UnicodeString",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "Setting",
+          "type": "UnicodeString",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "UsedDefault",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        },
+        {
+          "fieldName": "Value",
+          "type": "UInt32",
+          "seenIn": [
+            "PITRTask.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

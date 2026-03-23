@@ -1,0 +1,673 @@
+{
+  "providerName": "Microsoft.Windows.Sense.SubAuth",
+  "guid": "{77CB80F8-86BD-4585-A2D1-11DA05457535}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "SenseSubAuth.dll"
+  ],
+  "uniqueEventCount": 6,
+  "events": [
+    {
+      "eventName": "PolicyRemoved",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PolicyTag:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SenseSubAuth.dll",
+              "function": "?RemovePolicy@ExodusServerBase@SubAuth@sense@@QEAAXK@Z",
+              "ea": "0x18000a5ed",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PolicyTag",
+          "type": "UInt32",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "PolicyUpdated",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PolicyTag:UInt32",
+            "PolicyPriority:UInt32",
+            "Version:UnicodeString",
+            "Hash:UnicodeString",
+            "NumOfAccounts:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "SenseSubAuth.dll",
+              "function": "?UpdatePolicy@ExodusServerBase@SubAuth@sense@@UEAAXKKAEBV?$vector@UExodusRule@SubAuth@sense@@V?$allocator@UExodusRule@SubAuth@sense@@@std@@@std@@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@5@1@Z",
+              "ea": "0x18000b0b2",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Hash",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "NumOfAccounts",
+          "type": "UInt64",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyPriority",
+          "type": "UInt32",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyTag",
+          "type": "UInt32",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SenseSubAuth",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x0",
+          "fields": [
+            "message:UnicodeString",
+            "PolicyTag:UInt32",
+            "PolicyPriority:UInt32",
+            "AuthProtocol:UInt32",
+            "LogonLevel:UInt32",
+            "LogonDomainName:UnicodeString",
+            "UserName:UnicodeString",
+            "Workstation:UnicodeString",
+            "LogonId:Int64",
+            "AccountSid:UnicodeString",
+            "TargetHost:UnicodeString",
+            "TargetFqdn:UnicodeString",
+            "TargetSpnRaw:UnicodeString",
+            "TargetSpnServiceClass:UnicodeString",
+            "TargetSpnInstanceName:UnicodeString",
+            "TargetSpnServiceName:UnicodeString",
+            "TargetSpnPort:UInt16",
+            "Action:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SenseSubAuth.dll",
+              "function": "?EvaluateLogonRequest@ExodusServerBase@SubAuth@sense@@IEAAJW4_NETLOGON_LOGON_INFO_CLASS@@W4AuthenticationProtocol@23@AEBVUserIdentity@23@AEBVAuthTargetInfo@23@@Z",
+              "ea": "0x180009834",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "message:UnicodeString",
+            "PolicyTag:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SenseSubAuth.dll",
+              "function": "?RemovePolicy@ExodusServerBase@SubAuth@sense@@QEAAXK@Z",
+              "ea": "0x18000a59b",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "message:UnicodeString",
+            "PolicyTag:UInt32",
+            "PolicyPriority:UInt32",
+            "Version:UnicodeString",
+            "Hash:UnicodeString",
+            "NumOfAccounts:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "SenseSubAuth.dll",
+              "function": "?UpdatePolicy@ExodusServerBase@SubAuth@sense@@UEAAXKKAEBV?$vector@UExodusRule@SubAuth@sense@@V?$allocator@UExodusRule@SubAuth@sense@@@std@@@std@@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@5@1@Z",
+              "ea": "0x18000b004",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AccountSid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "Action",
+          "type": "UInt32",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "AuthProtocol",
+          "type": "UInt32",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "Hash",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "LogonDomainName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "LogonId",
+          "type": "Int64",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "LogonLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "NumOfAccounts",
+          "type": "UInt64",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyPriority",
+          "type": "UInt32",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyTag",
+          "type": "UInt32",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetFqdn",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetHost",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetSpnInstanceName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetSpnPort",
+          "type": "UInt16",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetSpnRaw",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetSpnServiceClass",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetSpnServiceName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "UserName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "Version",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "Workstation",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SubauthInitCompleted",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "HRESULT:Int32",
+            "LdapHRESULT:Int32",
+            "LdapError:UInt32",
+            "DomainName:UnicodeString",
+            "ComputerAccountName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SenseSubAuth.dll",
+              "function": "?Initialize@ExodusServerBase@SubAuth@sense@@QEAAJXZ",
+              "ea": "0x180009e95",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ComputerAccountName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "DomainName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "HRESULT",
+          "type": "Int32",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "LdapError",
+          "type": "UInt32",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "LdapHRESULT",
+          "type": "Int32",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UserLogonRequestAudited",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PolicyTag:UInt32",
+            "AuthProtocol:UInt32",
+            "LogonLevel:UInt32",
+            "LogonDomainName:UnicodeString",
+            "UserName:UnicodeString",
+            "Workstation:UnicodeString",
+            "LogonId:Int64",
+            "AccountSid:UnicodeString",
+            "TargetHost:UnicodeString",
+            "TargetFqdn:UnicodeString",
+            "TargetSpnRaw:UnicodeString",
+            "TargetSpnServiceClass:UnicodeString",
+            "TargetSpnInstanceName:UnicodeString",
+            "TargetSpnServiceName:UnicodeString",
+            "TargetSpnPort:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "SenseSubAuth.dll",
+              "function": "?EvaluateLogonRequest@ExodusServerBase@SubAuth@sense@@IEAAJW4_NETLOGON_LOGON_INFO_CLASS@@W4AuthenticationProtocol@23@AEBVUserIdentity@23@AEBVAuthTargetInfo@23@@Z",
+              "ea": "0x180009a70",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AccountSid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "AuthProtocol",
+          "type": "UInt32",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "LogonDomainName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "LogonId",
+          "type": "Int64",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "LogonLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyTag",
+          "type": "UInt32",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetFqdn",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetHost",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetSpnInstanceName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetSpnPort",
+          "type": "UInt16",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetSpnRaw",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetSpnServiceClass",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetSpnServiceName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "UserName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "Workstation",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UserLogonRequestBlocked",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PolicyTag:UInt32",
+            "AuthProtocol:UInt32",
+            "LogonLevel:UInt32",
+            "LogonDomainName:UnicodeString",
+            "UserName:UnicodeString",
+            "Workstation:UnicodeString",
+            "LogonId:Int64",
+            "AccountSid:UnicodeString",
+            "TargetHost:UnicodeString",
+            "TargetFqdn:UnicodeString",
+            "TargetSpnRaw:UnicodeString",
+            "TargetSpnServiceClass:UnicodeString",
+            "TargetSpnInstanceName:UnicodeString",
+            "TargetSpnServiceName:UnicodeString",
+            "TargetSpnPort:UInt16"
+          ],
+          "callers": [
+            {
+              "binary": "SenseSubAuth.dll",
+              "function": "?EvaluateLogonRequest@ExodusServerBase@SubAuth@sense@@IEAAJW4_NETLOGON_LOGON_INFO_CLASS@@W4AuthenticationProtocol@23@AEBVUserIdentity@23@AEBVAuthTargetInfo@23@@Z",
+              "ea": "0x180009cae",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AccountSid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "AuthProtocol",
+          "type": "UInt32",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "LogonDomainName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "LogonId",
+          "type": "Int64",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "LogonLevel",
+          "type": "UInt32",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyTag",
+          "type": "UInt32",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetFqdn",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetHost",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetSpnInstanceName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetSpnPort",
+          "type": "UInt16",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetSpnRaw",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetSpnServiceClass",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "TargetSpnServiceName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "UserName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        },
+        {
+          "fieldName": "Workstation",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseSubAuth.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

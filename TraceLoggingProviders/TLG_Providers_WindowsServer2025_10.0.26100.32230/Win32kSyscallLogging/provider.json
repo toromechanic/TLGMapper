@@ -1,0 +1,112 @@
+{
+  "providerName": "Win32kSyscallLogging",
+  "guid": "{CE20D1CC-FAEE-4EF6-9BF2-2837CEF71258}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "win32kbase.sys"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "SysCallFilterBlockedAggregate",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x800000000000",
+          "fields": [
+            "count:Int64",
+            "SyscallName:AnsiString",
+            "AppContainerSid:UnicodeString",
+            "ProcessCommandLine:UnicodeString",
+            "filterSetId:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "NtUserWin32kSysCallFilterStub",
+              "ea": "0x14014513f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppContainerSid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessCommandLine",
+          "type": "UnicodeString",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "SyscallName",
+          "type": "AnsiString",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "count",
+          "type": "Int64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "filterSetId",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SysCallSPIBlockedByFiltering",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "SPIAction:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "xxxSystemParametersInfo",
+              "ea": "0x14017339b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SPIAction",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "providerName": "Microsoft.Windows.Networking.WfpLwfs",
+  "guid": "{75441F26-C4ED-4585-90BD-1C7B9C6A55F7}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "wfplwfs.sys"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "L2WfpLwfsAreVSwitchLayersEmptyEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "L2WfpLwfsAreVSwitchLayersEmpty:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "wfplwfs.sys",
+              "function": "L2KfdLogVSwitchLayerEmptyAtCompartmentCreationTelemetry",
+              "ea": "0x14001075e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "L2WfpLwfsAreVSwitchLayersEmpty",
+          "type": "Bool32",
+          "seenIn": [
+            "wfplwfs.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "L2WfpLwfsVSwitchExtensionAttachEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "wfplwfs.sys",
+              "function": "LwfvSwitchAttach",
+              "ea": "0x14001679e",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    }
+  ]
+}

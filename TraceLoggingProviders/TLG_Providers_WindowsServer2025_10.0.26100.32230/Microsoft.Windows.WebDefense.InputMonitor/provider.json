@@ -1,0 +1,1093 @@
+{
+  "providerName": "Microsoft.Windows.WebDefense.InputMonitor",
+  "guid": "{E6784D21-0865-42F1-AE28-0E057F56F3B5}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "win32kbase.sys"
+  ],
+  "uniqueEventCount": 25,
+  "events": [
+    {
+      "eventName": "CharFocusLimitExceeded",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "SessionId:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpWorkerRoutine",
+              "ea": "0x14005c21a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CompleteRpc",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "SessionId:UInt32",
+            "NtStatus:UInt32(NTStatus)",
+            "RpcStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpCompleteRpc",
+              "ea": "0x14014759a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NtStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "RpcStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CompleteRpcFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "SessionId:UInt32",
+            "NtStatus:UInt32(NTStatus)",
+            "RpcStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpCompleteRpc",
+              "ea": "0x14014755a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NtStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "RpcStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ImWorkerWaitFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpWorkerRoutine",
+              "ea": "0x14005c0e6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ImpRpcAsyncResponseHandlerFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "SessionId:UInt32",
+            "NtStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpRpcAsyncResponseHandler",
+              "ea": "0x14023d730",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NtStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ImpRpcAsyncUnInit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpRpcAsyncUnInit",
+              "ea": "0x14014a70b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpRpcAsyncUnInit",
+              "ea": "0x14014a749",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "ImpShutdownWorker",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ImpIsActive:UInt32",
+            "SessionId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpShutdownWorker",
+              "ea": "0x1401466d3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpShutdownWorker",
+              "ea": "0x1401466fb",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ImpIsActive",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessStringFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "SessionId:UInt32",
+            "NtStatus:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpProcessSequence",
+              "ea": "0x14005c6ce",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NtStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ProcessedSequence",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ImpIsActive:UInt32",
+            "SessionId:UInt32",
+            "HWND:HexInt64",
+            "FocusCount:UInt64",
+            "Flags:UInt16",
+            "SequenceCount:UInt16",
+            "ProcessUniqueId:UInt32(PID)",
+            "ProcessSequenceId:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpProcessSequence",
+              "ea": "0x14005c582",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpProcessSequence",
+              "ea": "0x14005c631",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Flags",
+          "type": "UInt16",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "FocusCount",
+          "type": "UInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "HWND",
+          "type": "HexInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "ImpIsActive",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessSequenceId",
+          "type": "UInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessUniqueId",
+          "type": "UInt32(PID)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "SequenceCount",
+          "type": "UInt16",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "QueueChar",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "SessionId:UInt32",
+            "HWND:HexInt64",
+            "FocusCount:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpQueueCharacter",
+              "ea": "0x14005ba92",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpQueueCharacter",
+              "ea": "0x14005bac4",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FocusCount",
+          "type": "UInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "HWND",
+          "type": "HexInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "QueueCharFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "SessionId:UInt32",
+            "NtStatus:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpQueueCharacter",
+              "ea": "0x14005bb78",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NtStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RpcAsyncInit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "NtStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpRpcAsyncInit",
+              "ea": "0x140136449",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NtStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RpcAsyncInitFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "NtStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpRpcAsyncInit",
+              "ea": "0x1401363ac",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NtStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RpcAsyncResponseHandler",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "SessionId:UInt32",
+            "ImpIsActive:UInt32",
+            "NtStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpRpcAsyncResponseHandler",
+              "ea": "0x14023d770",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ImpIsActive",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "NtStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RpcConnectFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "SessionId:UInt32",
+            "NtStatus:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImSessionStart",
+              "ea": "0x140135edd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NtStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RpcDisconnectFailed",
+      "variantCount": 2,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "SessionId:UInt32",
+            "NtStatus:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImSessionStop",
+              "ea": "0x14023d529",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "RpcStatus:UInt32(NTStatus)",
+            "SessionId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpRpcDisconnect",
+              "ea": "0x140147423",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NtStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "RpcStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RpcQueryEnabledStateAsync",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "NtStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpRpcQueryEnabledStateAsync",
+              "ea": "0x140148af6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NtStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RpcQueryEnabledStateAsyncFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "NtStatus:UInt32(NTStatus)"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpRpcQueryEnabledStateAsync",
+              "ea": "0x140148aa6",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NtStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SessionStart",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "SessionId:UInt32",
+            "ActiveConsoleId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImSessionStart",
+              "ea": "0x140135fa1",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ActiveConsoleId",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SessionStop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "SessionId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImSessionStop",
+              "ea": "0x14023d631",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SetBasePriorityFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpWorkerRoutine",
+              "ea": "0x14005bfe5",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SetQoSFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Status:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImpWorkerRoutine",
+              "ea": "0x14005c066",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "Status",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WaitForWorkerShutdownFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "SessionId:UInt32",
+            "NtStatus:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImSessionStop",
+              "ea": "0x14023d497",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NtStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WorkCleanupFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "SessionId:UInt32",
+            "NtStatus:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImSessionStop",
+              "ea": "0x14023d5c0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NtStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WorkInitFailed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [
+            "SessionId:UInt32",
+            "NtStatus:UInt32(NTStatus)",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImSessionStart",
+              "ea": "0x140135df3",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "win32kbase.sys",
+              "function": "ImSessionStart",
+              "ea": "0x140135e3c",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "NtStatus",
+          "type": "UInt32(NTStatus)",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        },
+        {
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "win32kbase.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

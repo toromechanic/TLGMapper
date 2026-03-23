@@ -1,0 +1,1752 @@
+{
+  "providerName": "Microsoft.Windows.EnterpriseManagement.ResourceManager",
+  "guid": "{6B865228-DEFA-455A-9E25-27D71E8FE5FA}",
+  "os": "WindowsServer2025",
+  "binaryCount": 5,
+  "binaries": [
+    "DmOsConfig.dll",
+    "configmanager2.dll",
+    "dcsvc.dll",
+    "enterprisecsps.dll",
+    "enterpriseresourcemanager.dll"
+  ],
+  "uniqueEventCount": 8,
+  "events": [
+    {
+      "eventName": "DeleteResource",
+      "variantCount": 8,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "L\"DeleteResourcePathFromDifferentSource Failed. ERROR_FILE_NOT_FOUND can be expected.\":UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "EnterpriseResourceManagerStore_ReplaceResourceNodePath",
+              "ea": "0x1800dfb2b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "EnterpriseResourceManagerStore_ReplaceResourceNodePath",
+              "ea": "0x180128e3b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "EnterpriseResourceManagerStore_ReplaceResourceNodePath",
+              "ea": "0x1801b082b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_ReplaceResourceNodePath",
+              "ea": "0x180005d4b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "pszMessage:UnicodeString",
+            "HResult:Int32(HResult)",
+            "__TlgCV__:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "?LogDeleteResources@CResourceManagerLogger@@QEAAXPEBGJ@Z",
+              "ea": "0x180012264",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "DeleteStartTime:SystemTime"
+          ],
+          "callers": [
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_DeleteResource",
+              "ea": "0x1800049b3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "L\"Invalid Input Arguments\":UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_DeleteResource",
+              "ea": "0x180004a16",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "EnrollmentID:UnicodeString",
+            "UserSID:UnicodeString",
+            "ContextID:UnicodeString",
+            "URIPath:UnicodeString",
+            "ResourceType:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_DeleteResource",
+              "ea": "0x180004a68",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "L\"Invalid Enrollment\":UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_DeleteResource",
+              "ea": "0x180004b06",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "L\"Server not Enrolled\":UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_DeleteResource",
+              "ea": "0x180004b7a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "DeleteEndTime:SystemTime",
+            "HRESULTForResourceDelete:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_DeleteResource",
+              "ea": "0x180004c2a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ContextID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "DeleteEndTime",
+          "type": "SystemTime",
+          "seenIn": [
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "DeleteStartTime",
+          "type": "SystemTime",
+          "seenIn": [
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "EnrollmentID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "HRESULTForResourceDelete",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "L\"DeleteResourcePathFromDifferentSource Failed. ERROR_FILE_NOT_FOUND can be expected.\"",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "L\"Invalid Enrollment\"",
+          "type": "UnicodeString",
+          "seenIn": [
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "L\"Invalid Input Arguments\"",
+          "type": "UnicodeString",
+          "seenIn": [
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "L\"Server not Enrolled\"",
+          "type": "UnicodeString",
+          "seenIn": [
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "ResourceType",
+          "type": "Int32",
+          "seenIn": [
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "URIPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "pszMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "enterpriseresourcemanager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DeleteResourceFromDifferentSource",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ExistingEnrollmentID:UnicodeString",
+            "ResourceURI:UnicodeString",
+            "Command:UInt32",
+            "UserType:UInt32",
+            "HResult:Int32(HResult)",
+            "__TlgCV__:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "?LogDeleteResourceFromDifferentSource@CResourceManagerLogger@@QEAAXPEBG0KKJ@Z",
+              "ea": "0x18001a358",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "?LogDeleteResourceFromDifferentSource@CResourceManagerLogger@@QEAAXPEBG0KKJ@Z",
+              "ea": "0x1800f464c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "?LogDeleteResourceFromDifferentSource@CResourceManagerLogger@@QEAAXPEBG0KKJ@Z",
+              "ea": "0x18018e4c0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "?LogDeleteResourceFromDifferentSource@CResourceManagerLogger@@QEAAXPEBG0KKJ@Z",
+              "ea": "0x180012200",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Command",
+          "type": "UInt32",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "ExistingEnrollmentID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "ResourceURI",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "UserType",
+          "type": "UInt32",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "IsDoNotTrackPath",
+      "variantCount": 4,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "L\"Start\":UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "EnterpriseResourceManagerStore_IsDoNotTrackPath",
+              "ea": "0x1800df18a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "EnterpriseResourceManagerStore_IsDoNotTrackPath",
+              "ea": "0x18012849a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "EnterpriseResourceManagerStore_IsDoNotTrackPath",
+              "ea": "0x1801afe25",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_IsDoNotTrackPath",
+              "ea": "0x1800050ca",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "L\"Error reading Path\":UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "EnterpriseResourceManagerStore_IsDoNotTrackPath",
+              "ea": "0x1800df36f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "EnterpriseResourceManagerStore_IsDoNotTrackPath",
+              "ea": "0x18012867f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "EnterpriseResourceManagerStore_IsDoNotTrackPath",
+              "ea": "0x1801afff0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_IsDoNotTrackPath",
+              "ea": "0x1800052af",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "L\"DoNotTrack Path\":UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "EnterpriseResourceManagerStore_IsDoNotTrackPath",
+              "ea": "0x1800df3f0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "EnterpriseResourceManagerStore_IsDoNotTrackPath",
+              "ea": "0x180128700",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "EnterpriseResourceManagerStore_IsDoNotTrackPath",
+              "ea": "0x1801b0046",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_IsDoNotTrackPath",
+              "ea": "0x180005330",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "pfDoNotTrack:Bool32",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "EnterpriseResourceManagerStore_IsDoNotTrackPath",
+              "ea": "0x1800df443",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "EnterpriseResourceManagerStore_IsDoNotTrackPath",
+              "ea": "0x180128753",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "EnterpriseResourceManagerStore_IsDoNotTrackPath",
+              "ea": "0x1801b00a2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_IsDoNotTrackPath",
+              "ea": "0x180005383",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "L\"DoNotTrack Path\"",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "L\"Error reading Path\"",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "L\"Start\"",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "pfDoNotTrack",
+          "type": "Bool32",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "RemoveAllIgnoredUri",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "L\"Start\":UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_RemoveAllIgnoredUri",
+              "ea": "0x180005bc8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "DeleteRegKey:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_RemoveAllIgnoredUri",
+              "ea": "0x180005c76",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_RemoveAllIgnoredUri",
+              "ea": "0x180005ccf",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DeleteRegKey",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "L\"Start\"",
+          "type": "UnicodeString",
+          "seenIn": [
+            "enterpriseresourcemanager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SaveIgnoredURI",
+      "variantCount": 3,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "L\"Start\":UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_SaveIgnoredURI",
+              "ea": "0x180005df7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "URINumber:Int32",
+            "URIPath:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_SaveIgnoredURI",
+              "ea": "0x180006024",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_SaveIgnoredURI",
+              "ea": "0x1800060ea",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "L\"Start\"",
+          "type": "UnicodeString",
+          "seenIn": [
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "URINumber",
+          "type": "Int32",
+          "seenIn": [
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "URIPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "enterpriseresourcemanager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SearchAllowedCspList",
+      "variantCount": 8,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "L\"CSP not in tracked list\":UnicodeString",
+            "pszCspName:UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x1800e237c",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x18012b694",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x1801b27b0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x180010708",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "L\"Error finding CSP\":UnicodeString",
+            "pszCspName:UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x1800e240a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x18012b722",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x1801b282e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x180010796",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "\"InitializeFromString\":AnsiString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x1800e29cf",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x18012bce7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x1801b2c43",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x180010d5b",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "\"CoCreateInstance\":AnsiString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x1800e2a6d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x18012bd7e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x1801b2c60",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x180010df2",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "\"Get subpath\":AnsiString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x1800e2b16",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x18012be20",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x1801b2cdf",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x180010e94",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "Opening regkey:UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x1800e2c52",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x18012bf55",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x1801b2d59",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x180010fc9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "\"Enum regkey\":AnsiString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x1800e2ccf",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x18012bfd2",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x1801b2db5",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x180011046",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "L\"Caught exception\":UnicodeString",
+            "pszCspName:UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x1800f0630",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x180139cd7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x1801c54a0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "SearchAllowedCspList",
+              "ea": "0x1800138ef",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "\"CoCreateInstance\"",
+          "type": "AnsiString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "\"Enum regkey\"",
+          "type": "AnsiString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "\"Get subpath\"",
+          "type": "AnsiString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "\"InitializeFromString\"",
+          "type": "AnsiString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "L\"CSP not in tracked list\"",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "L\"Caught exception\"",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "L\"Error finding CSP\"",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "Opening regkey",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "pszCspName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "VerifyIfResourceIsModifiableByDifferentConfigurationSource",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "ExistingEnrollmentID:UnicodeString",
+            "ExistingEnrollmentType:UInt32",
+            "NewEnrollmentID:UnicodeString",
+            "NewEnrollmentType:UInt32",
+            "ResourceURI:UnicodeString",
+            "Command:UInt32",
+            "AllowAccess:Bool32",
+            "HResult:Int32(HResult)",
+            "__TlgCV__:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "configmanager2.dll",
+              "function": "?LogCheckIfResourceIsModifiable@CResourceManagerLogger@@QEAAXPEBGI0I0KHJ@Z",
+              "ea": "0x18005d05e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "dcsvc.dll",
+              "function": "?LogCheckIfResourceIsModifiable@CResourceManagerLogger@@QEAAXPEBGI0I0KHJ@Z",
+              "ea": "0x18001a1d9",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "?LogCheckIfResourceIsModifiable@CResourceManagerLogger@@QEAAXPEBGI0I0KHJ@Z",
+              "ea": "0x1800f44cd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "?LogCheckIfResourceIsModifiable@CResourceManagerLogger@@QEAAXPEBGI0I0KHJ@Z",
+              "ea": "0x18018e3da",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "?LogCheckIfResourceIsModifiable@CResourceManagerLogger@@QEAAXPEBGI0I0KHJ@Z",
+              "ea": "0x180012081",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AllowAccess",
+          "type": "Bool32",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "configmanager2.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "Command",
+          "type": "UInt32",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "configmanager2.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "ExistingEnrollmentID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "configmanager2.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "ExistingEnrollmentType",
+          "type": "UInt32",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "configmanager2.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "configmanager2.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "NewEnrollmentID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "configmanager2.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "NewEnrollmentType",
+          "type": "UInt32",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "configmanager2.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "ResourceURI",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "configmanager2.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "configmanager2.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WriteResource",
+      "variantCount": 9,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "pszMessage:UnicodeString",
+            "HResult:Int32(HResult)",
+            "__TlgCV__:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "?LogWriteResources@CResourceManagerLogger@@QEAAXPEBGJ@Z",
+              "ea": "0x18001a3bc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "?LogWriteResources@CResourceManagerLogger@@QEAAXPEBGJ@Z",
+              "ea": "0x1800f46b0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "?LogWriteResources@CResourceManagerLogger@@QEAAXPEBGJ@Z",
+              "ea": "0x18018e550",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "?LogWriteResources@CResourceManagerLogger@@QEAAXPEBGJ@Z",
+              "ea": "0x1800122c0",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "WriteStartTime:SystemTime"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1800dfbe0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x180128ef0",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1801b08dd",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1800061bd",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "EnrollmentID:UnicodeString",
+            "UserSID:UnicodeString",
+            "ContextID:UnicodeString",
+            "URIPath:UnicodeString",
+            "ResourceType:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1800dfd6d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x18012907d",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1801b0990",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x180006287",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "L\"Error Finding Enrollment\":UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1800dfdec",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1801290fc",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1801b0a0f",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x180006306",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "L\"Server not Enrolled\":UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1800dfe53",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x180129163",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1801b0a7b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x180006382",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "L\"Error Checking DoNotTrack Path\":UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1800dfebb",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1801291cb",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1801b0ae4",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1800063f7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "L\"DoNotTrack Path\":UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1800dfede",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1801291ee",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1801b0b1a",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x18000642a",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "keyword": "0x0",
+          "fields": [
+            "L\"Invalid Input Arguments\":UnicodeString",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1800dff2b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x18012923b",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1801b0912",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x180006210",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "WriteEndTime:SystemTime",
+            "HRESULTForResourceProvision:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "dcsvc.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1800dffc8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "DmOsConfig.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1801292d8",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterprisecsps.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1801b0b9e",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "enterpriseresourcemanager.dll",
+              "function": "EnterpriseResourceManagerStore_WriteResourceNodePath",
+              "ea": "0x1800064d9",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ContextID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "EnrollmentID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "HRESULTForResourceProvision",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "L\"DoNotTrack Path\"",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "L\"Error Checking DoNotTrack Path\"",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "L\"Error Finding Enrollment\"",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "L\"Invalid Input Arguments\"",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "L\"Server not Enrolled\"",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "ResourceType",
+          "type": "Int32",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "URIPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "WriteEndTime",
+          "type": "SystemTime",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "WriteStartTime",
+          "type": "SystemTime",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "__TlgCV__",
+          "type": "AnsiString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        },
+        {
+          "fieldName": "pszMessage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DmOsConfig.dll",
+            "dcsvc.dll",
+            "enterprisecsps.dll",
+            "enterpriseresourcemanager.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

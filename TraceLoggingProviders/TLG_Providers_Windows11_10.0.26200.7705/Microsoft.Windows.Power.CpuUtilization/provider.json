@@ -1,0 +1,112 @@
+{
+  "providerName": "Microsoft.Windows.Power.CpuUtilization",
+  "guid": "{91F575CD-50CA-496A-97E0-11BC7F12C659}",
+  "os": "Windows 11",
+  "binaryCount": 1,
+  "binaries": [
+    "energy.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "CpuAverageUtilization",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "sessionGuid:GUID",
+            "systemBusyTime:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "energy.dll",
+              "function": "?LocalTelemetryAnalysis@CpuUtilizationTroubleshooter@@MEAAXU_GUID@@@Z",
+              "ea": "0x180022ac8",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "sessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "systemBusyTime",
+          "type": "UInt32",
+          "seenIn": [
+            "energy.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CpuTopProcesses",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "sessionGuid:GUID",
+            "processName:UnicodeString",
+            "processUtilization:UInt32",
+            "moduleName:UnicodeString",
+            "ModuleUtilization:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "energy.dll",
+              "function": "?LocalTelemetryAnalysis@CpuUtilizationTroubleshooter@@MEAAXU_GUID@@@Z",
+              "ea": "0x180022cb3",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ModuleUtilization",
+          "type": "UInt32",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "moduleName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "processName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "processUtilization",
+          "type": "UInt32",
+          "seenIn": [
+            "energy.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionGuid",
+          "type": "GUID",
+          "seenIn": [
+            "energy.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

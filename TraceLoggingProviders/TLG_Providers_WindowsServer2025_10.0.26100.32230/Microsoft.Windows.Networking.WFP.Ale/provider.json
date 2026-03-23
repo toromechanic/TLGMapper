@@ -1,0 +1,212 @@
+{
+  "providerName": "Microsoft.Windows.Networking.WFP.Ale",
+  "guid": "{8F1EBC88-8917-5EE3-66D9-0570C60676BE}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "tcpip.sys"
+  ],
+  "uniqueEventCount": 4,
+  "events": [
+    {
+      "eventName": "AleAuthConnectionTimes",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "TrieIndexEnabled:Bool32",
+            "ConnectionDirection:UInt16",
+            "AddressType:UInt8",
+            "Buckets:UInt32[]"
+          ],
+          "callers": [
+            {
+              "binary": "tcpip.sys",
+              "function": "WfpAleAuthHistogramUpload",
+              "ea": "0x1400df8d7",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "tcpip.sys",
+              "function": "WfpAleAuthLogHistogramDatapointWorkQueueRoutine",
+              "ea": "0x1400df278",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AddressType",
+          "type": "UInt8",
+          "seenIn": [
+            "tcpip.sys"
+          ]
+        },
+        {
+          "fieldName": "Buckets",
+          "type": "UInt32[]",
+          "seenIn": [
+            "tcpip.sys"
+          ]
+        },
+        {
+          "fieldName": "ConnectionDirection",
+          "type": "UInt16",
+          "seenIn": [
+            "tcpip.sys"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "tcpip.sys"
+          ]
+        },
+        {
+          "fieldName": "TrieIndexEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "tcpip.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AleBfeWatchDogExpired",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "tcpip.sys",
+              "function": "WfpAleBfeWatchDogCallback",
+              "ea": "0x140176f83",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "AleReAuthConnection",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "AddressFamily:UInt16",
+            "ConnectionDirection:UInt16",
+            "ReauthReason:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "tcpip.sys",
+              "function": "WfpAleReauthorizePerfCounterIncrement",
+              "ea": "0x1400e1c30",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "tcpip.sys",
+              "function": "WfpAleReauthorizePerfCounterIncrement",
+              "ea": "0x1400e1c61",
+              "confidence": "Direct-Preceding"
+            },
+            {
+              "binary": "tcpip.sys",
+              "function": "WfpAleReauthorizePerfCounterIncrement",
+              "ea": "0x1400e1ca7",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AddressFamily",
+          "type": "UInt16",
+          "seenIn": [
+            "tcpip.sys"
+          ]
+        },
+        {
+          "fieldName": "ConnectionDirection",
+          "type": "UInt16",
+          "seenIn": [
+            "tcpip.sys"
+          ]
+        },
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "tcpip.sys"
+          ]
+        },
+        {
+          "fieldName": "ReauthReason",
+          "type": "UInt32",
+          "seenIn": [
+            "tcpip.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Authorize svchost service connection at connect layer",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "SubProcessTag:UInt64",
+            "ProcessId:UInt64",
+            "ProcessPath:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "tcpip.sys",
+              "function": "WfpAleReauthorizePerfCounterIncrement",
+              "ea": "0x1400e1cca",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ProcessId",
+          "type": "UInt64",
+          "seenIn": [
+            "tcpip.sys"
+          ]
+        },
+        {
+          "fieldName": "ProcessPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "tcpip.sys"
+          ]
+        },
+        {
+          "fieldName": "SubProcessTag",
+          "type": "UInt64",
+          "seenIn": [
+            "tcpip.sys"
+          ]
+        }
+      ]
+    }
+  ]
+}

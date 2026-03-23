@@ -1,0 +1,88 @@
+{
+  "providerName": "Microsoft-Windows-Verifier",
+  "guid": "{9B698003-2DB1-5618-D2E2-A7A137E494BE}",
+  "os": "WindowsServer2025",
+  "binaryCount": 1,
+  "binaries": [
+    "verifier.dll"
+  ],
+  "uniqueEventCount": 2,
+  "events": [
+    {
+      "eventName": "Shutdown",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ProcessName:UnicodeString",
+            "VerifierFlags:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "verifier.dll",
+              "function": "_DllMain",
+              "ea": "0x18000a816",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ProcessName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "verifier.dll"
+          ]
+        },
+        {
+          "fieldName": "VerifierFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "verifier.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Startup",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "ProcessName:UnicodeString",
+            "VerifierFlags:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "verifier.dll",
+              "function": "_DllMain",
+              "ea": "0x18000a76f",
+              "confidence": "Direct-Preceding"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ProcessName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "verifier.dll"
+          ]
+        },
+        {
+          "fieldName": "VerifierFlags",
+          "type": "UInt32",
+          "seenIn": [
+            "verifier.dll"
+          ]
+        }
+      ]
+    }
+  ]
+}

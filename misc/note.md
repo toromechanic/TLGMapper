@@ -1,1 +1,3 @@
 To create the JSON file of provider information found here, I first extracted the provider data from each binary using the [TraceLogging metadata blob parser](https://gist.github.com/mattifestation/edbac1614694886c8ef4583149f53658) developed by [Matt Graeber's](https://github.com/mattifestation). Finally, I compiled all the results into a single JSON file.
+
+The reason this list has a slightly higher provider count compared to the provider index lists I created (tlg_provider_index_Windows11_10.0.26200.7705.json / tlg_provider_index_Windows2025_10.0.26100.32230.json) is that any provider that could not be linked to an event is counted as 'Unknown'.

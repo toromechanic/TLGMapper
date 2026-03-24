@@ -15,8 +15,6 @@ This is useful for the following, as well as other purposes such as forensics an
 - 🕵️ **Reverse engineering** — quickly understand what TraceLogging ETW events a binary produces without running it.
 - 🛡️ **Detection engineering** — by identifying the TraceLogging ETW events that a binary can emit, it helps discover events useful for detecting malicious activity.
 
----
-
 ## ⚙️ How It Works
 
 The script operates in two stages:
@@ -39,16 +37,12 @@ Walks every function in the binary via `DataRefsFrom` and `CodeRefsFrom`, then a
 | 🌐 4 | **GlobalFallback** | Binary contains only one provider |
 | ❓ 5 | **Unknown** | No provider could be resolved |
 
----
-
 ## 📋 Requirements
 
 - 🧰 **IDA Pro** (with IDAPython) — tested with IDA 8.x+
 - 💻 **x64 PE binary** — the script currently supports 64-bit binaries only
 
 No external Python packages are required; the script uses only IDA's built-in modules.
-
----
 
 ## 🚀 Usage
 
@@ -89,8 +83,6 @@ Each resolved event record contains:
 | 📍 `InstructionEA` | Address of the referencing instruction |
 | ✅ `Confidence` | Resolution method used (see priority chain above) |
 
----
-
 ## 💡 Example Output
 
 ```
@@ -126,7 +118,7 @@ Each resolved event record contains:
   [Direct-Preceding]: 365
 ```
 
----
+https://github.com/user-attachments/assets/c25b7da1-351f-4150-9729-ca8d3fd07264
 
 ## ⚠️ Limitations
 

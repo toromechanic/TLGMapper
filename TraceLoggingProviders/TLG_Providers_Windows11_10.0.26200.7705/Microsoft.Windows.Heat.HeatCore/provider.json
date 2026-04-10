@@ -1,13 +1,13 @@
 {
   "providerName": "Microsoft.Windows.Heat.HeatCore",
   "guid": "{55A5DC53-E24E-5B53-5B52-EA83A0CC4E0C}",
-  "os": "Windows 11",
+  "os": "Windows11",
   "binaryCount": 2,
   "binaries": [
     "HeatCore.dll",
     "WindowsDefaultHeatProcessor.dll"
   ],
-  "uniqueEventCount": 8,
+  "uniqueEventCount": 9,
   "events": [
     {
       "eventName": "HeatCapable",
@@ -202,6 +202,26 @@
           ]
         }
       ]
+    },
+    {
+      "eventName": "HeatFallback",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "HeatCore.dll",
+              "function": "?DequeueAndProcessMessages@DedicatedThreadProcessorHost@@AEAAJXZ",
+              "ea": "0x180004c75",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
     },
     {
       "eventName": "HeatPerfFailure",

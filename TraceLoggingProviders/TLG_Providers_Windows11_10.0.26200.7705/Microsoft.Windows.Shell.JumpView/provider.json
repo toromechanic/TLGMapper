@@ -1,7 +1,7 @@
 {
   "providerName": "Microsoft.Windows.Shell.JumpView",
   "guid": "{F6148764-178D-4A19-B984-14B90F352C9C}",
-  "os": "Windows 11",
+  "os": "Windows11",
   "binaryCount": 4,
   "binaries": [
     "JumpViewUI.dll",
@@ -9,7 +9,7 @@
     "Windows.Internal.Shell.Broker.dll",
     "twinui.pcshell.dll"
   ],
-  "uniqueEventCount": 45,
+  "uniqueEventCount": 46,
   "events": [
     {
       "eventName": "ActivityError",
@@ -5451,6 +5451,84 @@
           "type": "UInt64",
           "seenIn": [
             "StartTileData.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "JumpViewAppLaunch",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "appId:UnicodeString",
+            "appPath:UnicodeString",
+            "category:UInt32",
+            "location:UInt32",
+            "index:UInt32",
+            "isElevated:Bool32",
+            "sessionId:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "JumpViewUI.dll",
+              "function": "?AppLaunch_@JumpViewProvider@@QEAAXPEB_W0W4CategoryType@JumpViewTelemetry@@W4Location@PerfTrack@@I_NAEBU_GUID@@@Z",
+              "ea": "0x1800d6b06",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "appId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "JumpViewUI.dll"
+          ]
+        },
+        {
+          "fieldName": "appPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "JumpViewUI.dll"
+          ]
+        },
+        {
+          "fieldName": "category",
+          "type": "UInt32",
+          "seenIn": [
+            "JumpViewUI.dll"
+          ]
+        },
+        {
+          "fieldName": "index",
+          "type": "UInt32",
+          "seenIn": [
+            "JumpViewUI.dll"
+          ]
+        },
+        {
+          "fieldName": "isElevated",
+          "type": "Bool32",
+          "seenIn": [
+            "JumpViewUI.dll"
+          ]
+        },
+        {
+          "fieldName": "location",
+          "type": "UInt32",
+          "seenIn": [
+            "JumpViewUI.dll"
+          ]
+        },
+        {
+          "fieldName": "sessionId",
+          "type": "GUID",
+          "seenIn": [
+            "JumpViewUI.dll"
           ]
         }
       ]

@@ -2,7 +2,7 @@
   "providerName": "Microsoft-Windows-Shell-Launcher",
   "guid": "{3D6120A6-0986-51C4-213A-E2975903051D}",
   "os": "WindowsServer2025",
-  "binaryCount": 10,
+  "binaryCount": 12,
   "binaries": [
     "JumpViewUI.dll",
     "ShellAppRuntime.exe",
@@ -10,6 +10,8 @@
     "StartDocked.dll",
     "StartMenu.dll",
     "StartTileData.dll",
+    "Taskbar.dll",
+    "Windows.Internal.Shell.Broker.dll",
     "explorer.exe",
     "twinui.pcshell.dll",
     "windows.storage.dll",
@@ -5671,6 +5673,79 @@
           "type": "UnicodeString",
           "seenIn": [
             "StartMenu.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AppLaunch",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "AppId:UnicodeString",
+            "AppPackage:UnicodeString",
+            "Location:UInt32",
+            "PinningSource:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "Taskbar.dll",
+              "function": "?AppLaunch_@LauncherAppLaunchTelemetry@@QEAAXPEBG0W4Location@LauncherTelemetry@@0@Z",
+              "ea": "0x1800c3677",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Windows.Internal.Shell.Broker.dll",
+              "function": "?AppLaunch_@LauncherAppLaunchTelemetry@@QEAAXPEBG0W4Location@LauncherTelemetry@@0@Z",
+              "ea": "0x18004c115",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Taskbar.dll",
+            "Windows.Internal.Shell.Broker.dll"
+          ]
+        },
+        {
+          "fieldName": "AppPackage",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Taskbar.dll",
+            "Windows.Internal.Shell.Broker.dll"
+          ]
+        },
+        {
+          "fieldName": "Location",
+          "type": "UInt32",
+          "seenIn": [
+            "Taskbar.dll",
+            "Windows.Internal.Shell.Broker.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Taskbar.dll",
+            "Windows.Internal.Shell.Broker.dll"
+          ]
+        },
+        {
+          "fieldName": "PinningSource",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Taskbar.dll",
+            "Windows.Internal.Shell.Broker.dll"
           ]
         }
       ]
@@ -14588,26 +14663,6 @@
           ]
         }
       ]
-    },
-    {
-      "eventName": "LauncherTipContextMenuLogOffInvoked",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 5,
-          "keyword": "0x200000000000",
-          "fields": [],
-          "callers": [
-            {
-              "binary": "twinui.pcshell.dll",
-              "function": "?_ExecuteShutdownCommand@CLauncherTipContextMenu@@AEAAXV?$ComPtr@V?$CRefCountedObject@ULauncherTipShutdownMenuCommand@CLauncherTipContextMenu@@@@@WRL@Microsoft@@PEBUtagRECT@@@Z",
-              "ea": "0x1805f11c7",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": []
     },
     {
       "eventName": "LayoutCustomizationRestrictionType",
@@ -29550,8 +29605,31 @@
     },
     {
       "eventName": "StartUnifiedTileInitializationActivity",
-      "variantCount": 2,
+      "variantCount": 3,
       "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(NoPrint)",
+            "threadId:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "StartDocked.dll",
+              "function": "?GetUnifiedTileManagerObject@TileDataCollectionFactory@StartDocked@@YAPE$AAVUnifiedTileManager@UnifiedTile@Shell@WindowsInternal@@XZ",
+              "ea": "0x180006708",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "StartDocked.dll",
+              "function": "?GetUnifiedTileManagerObject@TileDataCollectionFactory@StartDocked@@YAPE$AAVUnifiedTileManager@UnifiedTile@Shell@WindowsInternal@@XZ",
+              "ea": "0x18000673a",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
         {
           "level": 5,
           "keyword": "0x0",
@@ -29728,6 +29806,13 @@
         {
           "fieldName": "threadId",
           "type": "UInt32",
+          "seenIn": [
+            "StartDocked.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(NoPrint)",
           "seenIn": [
             "StartDocked.dll"
           ]
@@ -31896,13 +31981,13 @@
               "binary": "explorer.exe",
               "function": "?StopActivity@TerminateShellApplications@LauncherTerminationTelemetry@@MEAAXXZ",
               "ea": "0x140017649",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "explorer.exe",
               "function": "?StopActivity@TerminateShellApplications@LauncherTerminationTelemetry@@MEAAXXZ",
               "ea": "0x140017680",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         },

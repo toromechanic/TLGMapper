@@ -1,7 +1,7 @@
 {
   "providerName": "Microsoft.Windows.SenseCe",
   "guid": "{D104B3F8-0B00-481D-AFDF-8D41E719EA56}",
-  "os": "Windows 11",
+  "os": "Windows11",
   "binaryCount": 5,
   "binaries": [
     "MipDlp.dll",
@@ -10,67 +10,8 @@
     "SenseCE.exe",
     "SenseDlpProcessor.exe"
   ],
-  "uniqueEventCount": 6,
+  "uniqueEventCount": 4,
   "events": [
-    {
-      "eventName": "DLP",
-      "variantCount": 2,
-      "variants": [
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "FilePath:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?GetLabels@SenseCeRunner@dlp@sense@@QEBAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@PEAXW4CEFileType_@@AEAULabelsResult@SenseDlp@@@Z",
-              "ea": "0x1801d0106",
-              "confidence": "CallGraph-d3"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?GetRMSInfo@SenseCeRunner@dlp@sense@@QEBAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@PEAXAEAURmsResult@SenseDlp@@@Z",
-              "ea": "0x1801d0428",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        },
-        {
-          "level": 3,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?ReInitializeSenseCe@SenseCeRunner@dlp@sense@@QEAAJXZ",
-              "ea": "0x1801d4800",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "FilePath",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
     {
       "eventName": "FallbackError",
       "variantCount": 2,
@@ -102,13 +43,13 @@
               "binary": "MipDlp.dll",
               "function": "sub_180025D10",
               "ea": "0x180025db8",
-              "confidence": "GlobalFallback"
+              "confidence": "SingleProvider"
             },
             {
               "binary": "MipDlp_Windows Defender Advanced Threat Protection_D48F2D4D.dll",
               "function": "?ReportTelemetryFailure@TraceLoggingProvider@wil@@IEAAXAEBUFailureInfo@2@@Z",
               "ea": "0x180026068",
-              "confidence": "GlobalFallback"
+              "confidence": "SingleProvider"
             }
           ]
         },
@@ -141,13 +82,13 @@
               "binary": "MipDlp.dll",
               "function": "sub_180025E70",
               "ea": "0x180025f03",
-              "confidence": "GlobalFallback"
+              "confidence": "SingleProvider"
             },
             {
               "binary": "MipDlp_Windows Defender Advanced Threat Protection_D48F2D4D.dll",
               "function": "?ReportTraceLoggingFailure@TraceLoggingProvider@wil@@IEAAXAEBUFailureInfo@2@@Z",
               "ea": "0x1800261b3",
-              "confidence": "GlobalFallback"
+              "confidence": "SingleProvider"
             }
           ]
         }
@@ -317,7 +258,7 @@
     },
     {
       "eventName": "SenseCE",
-      "variantCount": 151,
+      "variantCount": 152,
       "variants": [
         {
           "level": 4,
@@ -330,25 +271,25 @@
               "binary": "MipDlp.dll",
               "function": "sub_18002BEE0",
               "ea": "0x18002c08e",
-              "confidence": "Direct-Preceding"
+              "confidence": "SingleProvider"
             },
             {
               "binary": "MipDlp.dll",
               "function": "sub_18002BEE0",
               "ea": "0x18002c0c8",
-              "confidence": "Direct-Preceding"
+              "confidence": "SingleProvider"
             },
             {
               "binary": "MipDlp_Windows Defender Advanced Threat Protection_D48F2D4D.dll",
               "function": "?TracelogTelemetryCallback@MipSdkWrapper@MipDlp@@SAJPEB_W@Z",
               "ea": "0x18002bf1e",
-              "confidence": "Direct-Preceding"
+              "confidence": "SingleProvider"
             },
             {
               "binary": "MipDlp_Windows Defender Advanced Threat Protection_D48F2D4D.dll",
               "function": "?TracelogTelemetryCallback@MipSdkWrapper@MipDlp@@SAJPEB_W@Z",
               "ea": "0x18002bf58",
-              "confidence": "Direct-Preceding"
+              "confidence": "SingleProvider"
             },
             {
               "binary": "SenseCE.exe",
@@ -360,13 +301,13 @@
               "binary": "SenseCE.exe",
               "function": "?Evaluate@PolicyEvaluator@SenseDlp@@QEAAJW4NpeMode@2@PEB_W1UCeCloudCallParams_@@PEAIAEAVvalue@json@web@@@Z",
               "ea": "0x1400502bb",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
               "function": "?GetCoAuthFileLabeling@labeling@SenseDlp@@YA?AV?$vector@UFileLabel@labeling@SenseDlp@@V?$allocator@UFileLabel@labeling@SenseDlp@@@std@@@std@@V?$shared_ptr@VOplockedHandle@Common@SenseDlp@@@4@W4CEFileType_@@AEAJAEAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@4@_K@Z",
               "ea": "0x140089ca3",
-              "confidence": "CallGraph-d1"
+              "confidence": "CallGraph-d2"
             },
             {
               "binary": "SenseCE.exe",
@@ -378,7 +319,7 @@
               "binary": "SenseCE.exe",
               "function": "?GetFileLabeling@labeling@SenseDlp@@YA?AV?$vector@UFileLabel@labeling@SenseDlp@@V?$allocator@UFileLabel@labeling@SenseDlp@@@std@@@std@@V?$shared_ptr@VOplockedHandle@Common@SenseDlp@@@4@W4CEFileType_@@AEAJAEAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@4@_K@Z",
               "ea": "0x14008a29e",
-              "confidence": "CallGraph-d1"
+              "confidence": "CallGraph-d2"
             },
             {
               "binary": "SenseCE.exe",
@@ -390,7 +331,7 @@
               "binary": "SenseCE.exe",
               "function": "?GetFileLabelingImpl@labeling@SenseDlp@@YA?AV?$vector@UFileLabel@labeling@SenseDlp@@V?$allocator@UFileLabel@labeling@SenseDlp@@@std@@@std@@V?$shared_ptr@VOplockedHandle@Common@SenseDlp@@@4@W4CEFileType_@@_N@Z",
               "ea": "0x14008a52a",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -414,7 +355,7 @@
               "binary": "SenseCE.exe",
               "function": "?Init@DynamicMCEModule@SenseDlp@@QEAAXV?$com_ptr_t@UIPropertyBag@@Uerr_exception_policy@wil@@@wil@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@111_N12W4ScopedSensitiveInformationTypesMode_@@112AEA_N@Z",
               "ea": "0x14004160f",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -426,7 +367,7 @@
               "binary": "SenseCE.exe",
               "function": "?IsPdfEncrypted@FileEncryptionDetector@Common@SenseDlp@@SA_NAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@V?$shared_ptr@VOplockedHandle@Common@SenseDlp@@@5@IAEAJ@Z",
               "ea": "0x14007f7c6",
-              "confidence": "CallGraph-d1"
+              "confidence": "CallGraph-d2"
             },
             {
               "binary": "SenseCE.exe",
@@ -444,7 +385,7 @@
               "binary": "SenseCE.exe",
               "function": "?MainBody@@YAHHQEAPEB_W@Z",
               "ea": "0x140025bb7",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -480,13 +421,13 @@
               "binary": "SenseCE.exe",
               "function": "ClassifyFile",
               "ea": "0x14002e2ef",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
               "function": "InitConfig",
               "ea": "0x14003076b",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -565,13 +506,13 @@
               "binary": "SenseCE.exe",
               "function": "?DetectFormat@DprtTextExtractionProvider@DlpParser@SenseDlp@@QEAA?AVDprtTrueFileTypeResponse@23@PEAX_KAEBUTrueFileTypeDetectionConfigurations@23@@Z",
               "ea": "0x1400709cf",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
               "function": "?DetectFormat@DprtTextExtractionProvider@DlpParser@SenseDlp@@QEAA?AVDprtTrueFileTypeResponse@23@PEAX_KAEBUTrueFileTypeDetectionConfigurations@23@@Z",
               "ea": "0x140070b3e",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -703,7 +644,7 @@
               "binary": "SenseCE.exe",
               "function": "??0AggregatedMonitor@Performance@SenseDlp@@QEAA@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AEBV?$set@W4MonitorType@Performance@SenseDlp@@U?$less@W4MonitorType@Performance@SenseDlp@@@std@@V?$allocator@W4MonitorType@Performance@SenseDlp@@@5@@4@@Z",
               "ea": "0x140082ed8",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -715,7 +656,7 @@
               "binary": "SenseCE.exe",
               "function": "??0AggregatedMonitor@Performance@SenseDlp@@QEAA@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AEBV?$set@W4MonitorType@Performance@SenseDlp@@U?$less@W4MonitorType@Performance@SenseDlp@@@std@@V?$allocator@W4MonitorType@Performance@SenseDlp@@@5@@4@@Z",
               "ea": "0x140083022",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -733,7 +674,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "??0AggregatedMonitor@Performance@SenseDlp@@QEAA@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AEBV?$set@W4MonitorType@Performance@SenseDlp@@U?$less@W4MonitorType@Performance@SenseDlp@@@std@@V?$allocator@W4MonitorType@Performance@SenseDlp@@@5@@4@@Z",
               "ea": "0x1400d8740",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -745,7 +686,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "??0AggregatedMonitor@Performance@SenseDlp@@QEAA@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AEBV?$set@W4MonitorType@Performance@SenseDlp@@U?$less@W4MonitorType@Performance@SenseDlp@@@std@@V?$allocator@W4MonitorType@Performance@SenseDlp@@@5@@4@@Z",
               "ea": "0x1400d888a",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -773,7 +714,7 @@
               "binary": "SenseCE.exe",
               "function": "??0CPUMonitor@Performance@SenseDlp@@QEAA@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
               "ea": "0x140083c92",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -785,7 +726,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "??0CPUMonitor@Performance@SenseDlp@@QEAA@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
               "ea": "0x1400d9482",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -808,13 +749,13 @@
               "binary": "SenseCE.exe",
               "function": "??0MonitorScheduler@Performance@SenseDlp@@QEAA@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@V?$set@W4MonitorType@Performance@SenseDlp@@U?$less@W4MonitorType@Performance@SenseDlp@@@std@@V?$allocator@W4MonitorType@Performance@SenseDlp@@@5@@4@I@Z",
               "ea": "0x1400838ab",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
               "function": "??0MonitorScheduler@Performance@SenseDlp@@QEAA@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@V?$set@W4MonitorType@Performance@SenseDlp@@U?$less@W4MonitorType@Performance@SenseDlp@@@std@@V?$allocator@W4MonitorType@Performance@SenseDlp@@@5@@4@I@Z",
               "ea": "0x1400d909b",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -876,7 +817,7 @@
               "binary": "SenseCE.exe",
               "function": "?CompareEvaluationResults@PolicyEvaluator@SenseDlp@@AEBAJPEB_WAEBVvalue@json@web@@1AEAV?$vector@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@V?$allocator@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@2@@std@@AEAV?$basic_stringstream@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@7@AEAH@Z",
               "ea": "0x140199d49",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -936,7 +877,7 @@
               "binary": "SenseCE.exe",
               "function": "?DumpNextDlpFile@ArchiveExtractor@SenseDlp@@QEAAJAEBU_GUID@@V?$unique_any_t@V?$unique_storage@U?$handle_null_resource_policy@P6AHPEAX@Z$1?CloseHandle@@YAH0@Z@details@wil@@@details@wil@@@wil@@@Z",
               "ea": "0x140187c9c",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -948,7 +889,7 @@
               "binary": "SenseCE.exe",
               "function": "?DumpNextDlpFile@ArchiveExtractorManager@SenseDlp@@QEAAJAEBU_GUID@@V?$unique_any_t@V?$unique_storage@U?$handle_null_resource_policy@P6AHPEAX@Z$1?CloseHandle@@YAH0@Z@details@wil@@@details@wil@@@wil@@@Z",
               "ea": "0x140183f42",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -1014,13 +955,13 @@
               "binary": "SenseCE.exe",
               "function": "?GetNextDlpFileCandidateInfo@ArchiveExtractor@SenseDlp@@QEAAJAEBU_GUID@@AEAUArchiveInternalFileInfo@2@@Z",
               "ea": "0x14018867d",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
               "function": "?GetNextDlpFileCandidateInfo@ArchiveExtractorManager@SenseDlp@@QEAAJAEBU_GUID@@AEAUArchiveInternalFileInfo@2@@Z",
               "ea": "0x14018439b",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -1038,19 +979,19 @@
               "binary": "SenseCE.exe",
               "function": "?GetTrueFileType@ArchiveExtractorManager@SenseDlp@@QEAAXAEBU_GUID@@PEAUCeTrueFileTypeResult_@@@Z",
               "ea": "0x14018449b",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
               "function": "?Init@DynamicMCEModule@SenseDlp@@QEAAXV?$com_ptr_t@UIPropertyBag@@Uerr_exception_policy@wil@@@wil@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@111_N12W4ScopedSensitiveInformationTypesMode_@@112AEA_N@Z",
               "ea": "0x140041a3d",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
               "function": "?Init@DynamicMCEModule@SenseDlp@@QEAAXV?$com_ptr_t@UIPropertyBag@@Uerr_exception_policy@wil@@@wil@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@111_N12W4ScopedSensitiveInformationTypesMode_@@112AEA_N@Z",
               "ea": "0x140041b4b",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -1062,7 +1003,7 @@
               "binary": "SenseCE.exe",
               "function": "?InitMpGear@ArchiveExtractorManager@SenseDlp@@AEAAJXZ",
               "ea": "0x1401846b7",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -1086,13 +1027,13 @@
               "binary": "SenseCE.exe",
               "function": "?MainBody@@YAHHQEAPEB_W@Z",
               "ea": "0x140025303",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
               "function": "?MainBody@@YAHHQEAPEB_W@Z",
               "ea": "0x1400253e6",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -1146,7 +1087,7 @@
               "binary": "SenseCE.exe",
               "function": "?ParseDlpFileUsingDprt@@YAJUCeDlpParsingRequest_@@PEAUCeDlpParsingResult_@@@Z",
               "ea": "0x140037a2f",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -1254,25 +1195,25 @@
               "binary": "SenseCE.exe",
               "function": "?UpdateRulePackageDetails@DynamicMCEModule@SenseDlp@@QEAAJW4ScopedSensitiveInformationTypesMode_@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@_N2AEA_N@Z",
               "ea": "0x140042e28",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
               "function": "?UpdateRulePackageDetails@DynamicMCEModule@SenseDlp@@QEAAJW4ScopedSensitiveInformationTypesMode_@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@_N2AEA_N@Z",
               "ea": "0x140042ec4",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
               "function": "?UploadBuffer@DataUploader@SenseDlp@@AEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@PEB_W@Z",
               "ea": "0x140055fcb",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
               "function": "?UploadBuffer@DataUploader@SenseDlp@@AEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@PEB_W@Z",
               "ea": "0x14005630a",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -1314,7 +1255,7 @@
               "binary": "SenseCE.exe",
               "function": "EvaluatePolicy",
               "ea": "0x14003169e",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -1392,7 +1333,7 @@
               "binary": "SenseCE.exe",
               "function": "SetPolicyEvaluationRules",
               "ea": "0x14003149d",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -1428,7 +1369,7 @@
               "binary": "SenseCE.exe",
               "function": "UploadData",
               "ea": "0x140031978",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -1498,13 +1439,13 @@
               "binary": "SenseCE.exe",
               "function": "?CheckImageDimensionsAndCompress@ImageHandler@SenseDlp@@QEAAJAEAV?$CComPtr@UIStream@@@ATL@@0AEAUReadFileParams@2@AEAVvalue@json@web@@@Z",
               "ea": "0x14006b4cf",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
               "function": "?CheckImageDimensionsAndCompress@ImageHandler@SenseDlp@@QEAAJAEAV?$CComPtr@UIStream@@@ATL@@0AEAUReadFileParams@2@AEAVvalue@json@web@@@Z",
               "ea": "0x14006ba37",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -1587,7 +1528,7 @@
               "binary": "SenseCE.exe",
               "function": "?CheckImageDimensionsAndCompress@ImageHandler@SenseDlp@@QEAAJAEAV?$CComPtr@UIStream@@@ATL@@0AEAUReadFileParams@2@AEAVvalue@json@web@@@Z",
               "ea": "0x14006b6de",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -1679,7 +1620,7 @@
               "binary": "SenseCE.exe",
               "function": "?CompareEvaluationResults@PolicyEvaluator@SenseDlp@@AEBAJPEB_WAEBVvalue@json@web@@1AEAV?$vector@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@V?$allocator@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@2@@std@@AEAV?$basic_stringstream@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@7@AEAH@Z",
               "ea": "0x14004f748",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -1707,7 +1648,7 @@
               "binary": "SenseCE.exe",
               "function": "?GetNextDlpFileCandidateInfo@ArchiveExtractor@SenseDlp@@QEAAJAEBU_GUID@@AEAUArchiveInternalFileInfo@2@@Z",
               "ea": "0x140188335",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -1870,7 +1811,7 @@
               "binary": "SenseCE.exe",
               "function": "?Extract@DprtTextExtractionProvider@DlpParser@SenseDlp@@AEAA?AVDprtResponse@23@AEBUTextExtractionRequest@23@AEBUTextExtractionConfigurations@23@P6AHPEAHPEA_WPEAPEA_W2@Z@Z",
               "ea": "0x140070fc7",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -1904,7 +1845,7 @@
               "binary": "SenseCE.exe",
               "function": "?ExtractLabelsForLegacyOfficeFiles@DprtPropertiesExtractor@DlpParser@SenseDlp@@AEAAXXZ",
               "ea": "0x140076021",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -1973,13 +1914,13 @@
               "binary": "SenseCE.exe",
               "function": "?GetCoAuthFileLabeling@labeling@SenseDlp@@YA?AV?$vector@UFileLabel@labeling@SenseDlp@@V?$allocator@UFileLabel@labeling@SenseDlp@@@std@@@std@@V?$shared_ptr@VOplockedHandle@Common@SenseDlp@@@4@W4CEFileType_@@AEAJAEAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@4@_K@Z",
               "ea": "0x140089aab",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
               "function": "?GetFileLabeling@labeling@SenseDlp@@YA?AV?$vector@UFileLabel@labeling@SenseDlp@@V?$allocator@UFileLabel@labeling@SenseDlp@@@std@@@std@@V?$shared_ptr@VOplockedHandle@Common@SenseDlp@@@4@W4CEFileType_@@AEAJAEAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@4@_K@Z",
               "ea": "0x14008a0a6",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -2321,7 +2262,7 @@
               "binary": "SenseCE.exe",
               "function": "?HandleAzureSdkException@UploadWorker@StreamUploader@SenseDlp@@AEAAXAEBVstorage_exception@storage@azure@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
               "ea": "0x1400c5a17",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -2338,7 +2279,7 @@
               "binary": "SenseCE.exe",
               "function": "?HandleInnerHttpException@UploadWorker@StreamUploader@SenseDlp@@AEAAXAEBVstorage_exception@storage@azure@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
               "ea": "0x1401a2f99",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -2389,13 +2330,13 @@
               "binary": "SenseCE.exe",
               "function": "?Init@DynamicMCEModule@SenseDlp@@QEAAXV?$com_ptr_t@UIPropertyBag@@Uerr_exception_policy@wil@@@wil@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@111_N12W4ScopedSensitiveInformationTypesMode_@@112AEA_N@Z",
               "ea": "0x1400413de",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
               "function": "InitConfig",
               "ea": "0x14003099e",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -2434,7 +2375,7 @@
               "binary": "SenseCE.exe",
               "function": "?PerformUpload@UploadWorker@StreamUploader@SenseDlp@@AEAA_KAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@0@Z",
               "ea": "0x1401a32b8",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -2462,7 +2403,7 @@
               "binary": "SenseCE.exe",
               "function": "?IsPdfEncrypted@FileEncryptionDetector@Common@SenseDlp@@SA_NAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@V?$shared_ptr@VOplockedHandle@Common@SenseDlp@@@5@IAEAJ@Z",
               "ea": "0x14007f5dc",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -2896,7 +2837,7 @@
               "binary": "SenseCE.exe",
               "function": "?OpenArchiveFile@ArchiveExtractor@SenseDlp@@QEAAJAEBU_GUID@@PEAUMpGearHandleType@@V?$unique_any_t@V?$unique_storage@U?$handle_null_resource_policy@P6AHPEAX@Z$1?CloseHandle@@YAH0@Z@details@wil@@@details@wil@@@wil@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@_K@Z",
               "ea": "0x140189917",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -2912,7 +2853,7 @@
               "binary": "SenseCE.exe",
               "function": "?ParseDlpFileUsingDprt@@YAJUCeDlpParsingRequest_@@PEAUCeDlpParsingResult_@@@Z",
               "ea": "0x140037408",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -2924,13 +2865,13 @@
               "binary": "SenseCE.exe",
               "function": "GetLabels",
               "ea": "0x14002eb7d",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
               "function": "IsPdfEncrypted",
               "ea": "0x14003020e",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -2948,7 +2889,7 @@
               "binary": "SenseCE.exe",
               "function": "?ParseDlpFileUsingDprt@@YAJUCeDlpParsingRequest_@@PEAUCeDlpParsingResult_@@@Z",
               "ea": "0x1400376d6",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -2965,7 +2906,7 @@
               "binary": "SenseCE.exe",
               "function": "?ParseDlpFileUsingNativeMethod@@YAJAEBUCeDlpParsingRequest_@@PEAUCeDlpParsingResult_@@@Z",
               "ea": "0x140037f96",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -3002,7 +2943,7 @@
               "binary": "SenseCE.exe",
               "function": "?ParseParameters@@YA_NHPEAPEB_WAEAV?$unique_any_t@V?$event_t@V?$unique_storage@U?$resource_policy@PEAXP6AXPEAX@_E$1?CloseHandle@details@wil@@YAX0@ZU?$integral_constant@_K$0A@@wistd@@PEAXPEAX$0A@$$T@details@wil@@@details@wil@@Uerr_exception_policy@3@@wil@@@wil@@1AEAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AEAI3@Z",
               "ea": "0x140026086",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -3095,7 +3036,7 @@
               "binary": "SenseCE.exe",
               "function": "?ProcessImages@EmbeddedImagesHandler@SenseDlp@@QEAAJAEBUImageProcessingRequest@2@AEAUImageProcessingResponse@2@AEAVvalue@json@web@@@Z",
               "ea": "0x140051c24",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -3113,7 +3054,7 @@
               "binary": "SenseCE.exe",
               "function": "?ProcessImages@EmbeddedImagesHandler@SenseDlp@@QEAAJAEBUImageProcessingRequest@2@AEAUImageProcessingResponse@2@AEAVvalue@json@web@@@Z",
               "ea": "0x140051fb8",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -3345,7 +3286,7 @@
               "binary": "SenseCE.exe",
               "function": "?ReadFile@Office2003FileReader@SenseDlp@@UEAA?AV?$CComPtr@UIStream@@@ATL@@AEAUReadFileParams@2@AEAVvalue@json@web@@@Z",
               "ea": "0x140061698",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -3426,7 +3367,7 @@
               "binary": "SenseCE.exe",
               "function": "?ValidateRegisteredIFilter@Office2003FileReader@SenseDlp@@AEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
               "ea": "0x140062220",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -3469,6 +3410,29 @@
               "binary": "SenseCE.exe",
               "function": "?SecureCallback@@YAJPEAX0@Z",
               "ea": "0x14003ad7e",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "message:AnsiString",
+            "TelemetryName:UnicodeString",
+            "TelemetriesInfoAsJson:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SenseCE.exe",
+              "function": "?SendTelemetry@MonitoringReport@SenseDlp@@QEAAX_N@Z",
+              "ea": "0x1400829dd",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?SendTelemetry@MonitoringReport@SenseDlp@@QEAAX_N@Z",
+              "ea": "0x1400d831d",
               "confidence": "CallGraph-d1"
             }
           ]
@@ -3611,7 +3575,7 @@
               "binary": "SenseCE.exe",
               "function": "?Upload@UploadWorker@StreamUploader@SenseDlp@@QEAAXAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@0@Z",
               "ea": "0x1400c6adf",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -3628,7 +3592,7 @@
               "binary": "SenseCE.exe",
               "function": "?Upload@UploadWorker@StreamUploader@SenseDlp@@QEAAXAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@0@Z",
               "ea": "0x1401a3443",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -3701,7 +3665,7 @@
               "binary": "SenseCE.exe",
               "function": "?UploadData@DataUploader@SenseDlp@@QEAAJPEB_W0UCeCloudCallParams_@@AEAVvalue@json@web@@@Z",
               "ea": "0x140056d9d",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -3721,7 +3685,7 @@
               "binary": "SenseCE.exe",
               "function": "?UploadResourceInternal@UploaderUtils@StreamUploader@SenseDlp@@CAJV?$shared_ptr@VIStreamer@Streamer@SenseDlp@@@std@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@5@11KV?$function@$$A6AXAEAVUploadManager@StreamUploader@SenseDlp@@W4UploadStatus@23@GAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@HJ@Z@5@@Z",
               "ea": "0x1400c1a6a",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -3841,7 +3805,7 @@
               "binary": "SenseCE.exe",
               "function": "?UploadToBlob@UploadWorker@StreamUploader@SenseDlp@@AEAA_NAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@0AEA_K@Z",
               "ea": "0x1400c7172",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -3931,7 +3895,7 @@
               "binary": "SenseCE.exe",
               "function": "?ValidateRegisteredIFilter@Office2003FileReader@SenseDlp@@AEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
               "ea": "0x1400624d9",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -4062,7 +4026,7 @@
               "binary": "SenseCE.exe",
               "function": "GetRMSInfo",
               "ea": "0x14002f377",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -4110,7 +4074,7 @@
               "binary": "SenseCE.exe",
               "function": "Init",
               "ea": "0x14002c948",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -4147,7 +4111,7 @@
               "binary": "SenseCE.exe",
               "function": "ParseFile",
               "ea": "0x14002d391",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -4170,7 +4134,7 @@
               "binary": "SenseCE.exe",
               "function": "ParseFile",
               "ea": "0x14002db22",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -4186,7 +4150,7 @@
               "binary": "SenseCE.exe",
               "function": "UpdateSyncAppData",
               "ea": "0x14002fd0f",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -4758,6 +4722,22 @@
           "type": "UInt32",
           "seenIn": [
             "SenseCE.exe"
+          ]
+        },
+        {
+          "fieldName": "TelemetriesInfoAsJson",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseCE.exe",
+            "SenseDlpProcessor.exe"
+          ]
+        },
+        {
+          "fieldName": "TelemetryName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseCE.exe",
+            "SenseDlpProcessor.exe"
           ]
         },
         {
@@ -5845,13 +5825,13 @@
               "binary": "MsSense.dll",
               "function": "?Execute@InitConfigCall@@MEAAHPEAX@Z",
               "ea": "0x18048f565",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
               "function": "?Execute@InitConfigCall@@MEAAHPEAX@Z",
               "ea": "0x1401b9ce5",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -5940,7 +5920,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?CheckIfDatabaseUpgradeNeeded@DatabaseManager@SenseDlp@@UEAAJXZ",
               "ea": "0x14021b32e",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -5988,7 +5968,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?CreateFileEntry@DatabaseManager@SenseDlp@@UEAAJ_KU_FILE_ID_128@@AEBUFileAttributes@Common@2@AEA_KAEA_N@Z",
               "ea": "0x14021b94c",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -6054,7 +6034,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?CreateFileEntry@DatabaseManager@SenseDlp@@UEAAJ_KU_FILE_ID_128@@AEBUFileAttributes@Common@2@AEA_KAEA_N@Z",
               "ea": "0x14021bd8c",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -6072,6 +6052,12 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?CreateFileEntry@DatabaseManager@SenseDlp@@UEAAJ_KU_FILE_ID_128@@AEBUFileAttributes@Common@2@AEA_KAEA_N@Z",
               "ea": "0x14021bea5",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?CreateFileEntry@DatabaseManager@SenseDlp@@UEAAJ_KU_FILE_ID_128@@AEBUFileAttributes@Common@2@AEA_KAEA_N@Z",
+              "ea": "0x14021beef",
               "confidence": "CallGraph-d1"
             },
             {
@@ -6107,6 +6093,12 @@
             {
               "binary": "SenseDlpProcessor.exe",
               "function": "?CreateFileToClassify@DatabaseManager@SenseDlp@@UEAAJ_K_K@Z",
+              "ea": "0x14021c1fc",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?CreateFileToClassify@DatabaseManager@SenseDlp@@UEAAJ_K_K@Z",
               "ea": "0x14021c292",
               "confidence": "CallGraph-d1"
             },
@@ -6126,7 +6118,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?CreateFolderPath@DatabaseManager@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AEA_K_N@Z",
               "ea": "0x14021c45f",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -6143,6 +6135,12 @@
             {
               "binary": "SenseDlpProcessor.exe",
               "function": "?CreateFolderPath@DatabaseManager@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AEA_K_N@Z",
+              "ea": "0x14021c57f",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?CreateFolderPath@DatabaseManager@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AEA_K_N@Z",
               "ea": "0x14021c62c",
               "confidence": "CallGraph-d1"
             },
@@ -6150,7 +6148,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?CreateFoldersToVisit@DatabaseManager@SenseDlp@@UEAAJAEBV?$vector@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@V?$allocator@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@2@@std@@@Z",
               "ea": "0x14021c757",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -6186,7 +6184,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?CreateScanJob@DatabaseManager@SenseDlp@@UEAAJ_NAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@11_K22W4Phase@2@W4Status@2@W4StatusChangeReason@2@111IIII@Z",
               "ea": "0x14021cd54",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -6299,6 +6297,12 @@
             {
               "binary": "SenseDlpProcessor.exe",
               "function": "?CreateScanJob@DatabaseManager@SenseDlp@@UEAAJ_NAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@11_K22W4Phase@2@W4Status@2@W4StatusChangeReason@2@111IIII@Z",
+              "ea": "0x14021d4b1",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?CreateScanJob@DatabaseManager@SenseDlp@@UEAAJ_NAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@11_K22W4Phase@2@W4Status@2@W4StatusChangeReason@2@111IIII@Z",
               "ea": "0x14021d550",
               "confidence": "CallGraph-d1"
             },
@@ -6336,24 +6340,30 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?DatabaseInitialization@DatabaseManager@SenseDlp@@UEAAJXZ",
               "ea": "0x14021d93d",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
               "function": "?DatabaseInitialization@DatabaseManager@SenseDlp@@UEAAJXZ",
               "ea": "0x14021d9cf",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
               "function": "?DatabaseInitialization@DatabaseManager@SenseDlp@@UEAAJXZ",
               "ea": "0x14021da61",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
               "function": "?DatabaseInitialization@DatabaseManager@SenseDlp@@UEAAJXZ",
               "ea": "0x14021daf3",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?DatabaseInitialization@DatabaseManager@SenseDlp@@UEAAJXZ",
+              "ea": "0x14021db36",
               "confidence": "CallGraph-d1"
             },
             {
@@ -6366,6 +6376,12 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?DatabaseVacuum@DatabaseManager@SenseDlp@@UEAAJXZ",
               "ea": "0x14021dcea",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?DatabaseVacuum@DatabaseManager@SenseDlp@@UEAAJXZ",
+              "ea": "0x14021dd2d",
               "confidence": "CallGraph-d1"
             },
             {
@@ -6419,6 +6435,12 @@
             {
               "binary": "SenseDlpProcessor.exe",
               "function": "?DropFolderPathsByStatus@DatabaseManager@SenseDlp@@UEAAJW4Status@2@@Z",
+              "ea": "0x14021e229",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?DropFolderPathsByStatus@DatabaseManager@SenseDlp@@UEAAJW4Status@2@@Z",
               "ea": "0x14021e2bf",
               "confidence": "CallGraph-d1"
             },
@@ -6432,7 +6454,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?DropTemporaryTables@DatabaseManager@SenseDlp@@UEAAJXZ",
               "ea": "0x14021e43d",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -6444,6 +6466,12 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?DropTemporaryTables@DatabaseManager@SenseDlp@@UEAAJXZ",
               "ea": "0x14021e4d2",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?DropTemporaryTables@DatabaseManager@SenseDlp@@UEAAJXZ",
+              "ea": "0x14021e515",
               "confidence": "CallGraph-d1"
             },
             {
@@ -6672,7 +6700,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?GetFolderCountByStatus@DatabaseManager@SenseDlp@@UEAAJAEA_KAEBV?$unordered_set@HU?$hash@H@std@@U?$equal_to@H@2@V?$allocator@H@2@@std@@@Z",
               "ea": "0x1402203f8",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -6732,7 +6760,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?GetFolderToVisit@DatabaseManager@SenseDlp@@UEAAJAEAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AEA_KAEA_N@Z",
               "ea": "0x140220b49",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -7158,7 +7186,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?GetScanPhaseAndStatus@DatabaseManager@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AEAW4Phase@2@AEAW4Status@2@@Z",
               "ea": "0x140222f2a",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -7266,7 +7294,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?GetUserInfoByJobId@DatabaseManager@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AEAV34@11@Z",
               "ea": "0x1402239fd",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -7348,6 +7376,12 @@
             },
             {
               "binary": "SenseDlpProcessor.exe",
+              "function": "?MigrateDataFromOldSchemaToNewSchema@DatabaseManager@SenseDlp@@AEAAJAEAVDatabase@StateRepository@@@Z",
+              "ea": "0x140224a49",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
               "function": "?PopulateFileAttributes@DatabaseManager@SenseDlp@@AEAAJAEAVStatement@StateRepository@@AEAUFileAttributes@Common@2@@Z",
               "ea": "0x140224b98",
               "confidence": "CallGraph-d1"
@@ -7392,7 +7426,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?PopulateFileAttributes@DatabaseManager@SenseDlp@@AEAAJAEAVStatement@StateRepository@@AEAUFileAttributes@Common@2@@Z",
               "ea": "0x140224e43",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -7451,6 +7485,12 @@
             {
               "binary": "SenseDlpProcessor.exe",
               "function": "?RemoveAllVisitedFolders@DatabaseManager@SenseDlp@@UEAAJXZ",
+              "ea": "0x14022541d",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?RemoveAllVisitedFolders@DatabaseManager@SenseDlp@@UEAAJXZ",
               "ea": "0x1402254b3",
               "confidence": "CallGraph-d1"
             },
@@ -7475,7 +7515,19 @@
             {
               "binary": "SenseDlpProcessor.exe",
               "function": "?RemoveScanJobByJobId@DatabaseManager@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
+              "ea": "0x1402256d1",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?RemoveScanJobByJobId@DatabaseManager@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
               "ea": "0x140225764",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?RemoveVisitedFolders@DatabaseManager@SenseDlp@@UEAAJAEBV?$vector@_KV?$allocator@_K@std@@@std@@@Z",
+              "ea": "0x140225881",
               "confidence": "CallGraph-d1"
             },
             {
@@ -7529,6 +7581,12 @@
             {
               "binary": "SenseDlpProcessor.exe",
               "function": "?SetUserInfoByJobId@DatabaseManager@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@000@Z",
+              "ea": "0x140225d93",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?SetUserInfoByJobId@DatabaseManager@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@000@Z",
               "ea": "0x140225e31",
               "confidence": "CallGraph-d1"
             },
@@ -7548,6 +7606,12 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?UpdateDcsJobUrlForFile@DatabaseManager@SenseDlp@@UEAAJ_KAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
               "ea": "0x140225ffa",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?UpdateDcsJobUrlForFile@DatabaseManager@SenseDlp@@UEAAJ_KAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
+              "ea": "0x14022603d",
               "confidence": "CallGraph-d1"
             },
             {
@@ -7607,6 +7671,12 @@
             {
               "binary": "SenseDlpProcessor.exe",
               "function": "?UpdateFileProperties@DatabaseManager@SenseDlp@@UEAAJ_KAEBUFileAttributes@Common@2@@Z",
+              "ea": "0x1402264c5",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?UpdateFileProperties@DatabaseManager@SenseDlp@@UEAAJ_KAEBUFileAttributes@Common@2@@Z",
               "ea": "0x140226563",
               "confidence": "CallGraph-d1"
             },
@@ -7626,6 +7696,12 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?UpdateFolderPathStatus@DatabaseManager@SenseDlp@@UEAAJ_KW4Status@2@_N@Z",
               "ea": "0x140226808",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?UpdateFolderPathStatus@DatabaseManager@SenseDlp@@UEAAJ_KW4Status@2@_N@Z",
+              "ea": "0x14022684b",
               "confidence": "CallGraph-d1"
             },
             {
@@ -7655,6 +7731,12 @@
             {
               "binary": "SenseDlpProcessor.exe",
               "function": "?UpdateFolderToVisitStatus@DatabaseManager@SenseDlp@@UEAAJ_KW4Status@2@_N@Z",
+              "ea": "0x140226afb",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?UpdateFolderToVisitStatus@DatabaseManager@SenseDlp@@UEAAJ_KW4Status@2@_N@Z",
               "ea": "0x140226b96",
               "confidence": "CallGraph-d1"
             },
@@ -7679,6 +7761,12 @@
             {
               "binary": "SenseDlpProcessor.exe",
               "function": "?UpdateJobVersionByJobId@DatabaseManager@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@0@Z",
+              "ea": "0x140226db7",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?UpdateJobVersionByJobId@DatabaseManager@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@0@Z",
               "ea": "0x140226e4d",
               "confidence": "CallGraph-d1"
             },
@@ -7686,7 +7774,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?UpdateScanJobStatus@DatabaseManager@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@W4Status@2@W4StatusChangeReason@2@_K@Z",
               "ea": "0x140226f1b",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -7721,6 +7809,12 @@
             {
               "binary": "SenseDlpProcessor.exe",
               "function": "?UpdateScanJobStatus@DatabaseManager@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@W4Status@2@W4StatusChangeReason@2@_K@Z",
+              "ea": "0x14022718a",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?UpdateScanJobStatus@DatabaseManager@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@W4Status@2@W4StatusChangeReason@2@_K@Z",
               "ea": "0x140227228",
               "confidence": "CallGraph-d1"
             },
@@ -7740,7 +7834,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?UpdateScanPhaseAndStatus@DatabaseManager@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@W4Status@2@W4Phase@2@W4StatusChangeReason@2@_K@Z",
               "ea": "0x14022738d",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -7776,6 +7870,12 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?UpdateScanPhaseAndStatus@DatabaseManager@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@W4Status@2@W4Phase@2@W4StatusChangeReason@2@_K@Z",
               "ea": "0x140227620",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?UpdateScanPhaseAndStatus@DatabaseManager@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@W4Status@2@W4Phase@2@W4StatusChangeReason@2@_K@Z",
+              "ea": "0x140227664",
               "confidence": "CallGraph-d1"
             },
             {
@@ -7823,6 +7923,12 @@
             {
               "binary": "SenseDlpProcessor.exe",
               "function": "?UpdateScanStatusForFile@DatabaseManager@SenseDlp@@UEAAJ_KW4FileStatusFlag@2@@Z",
+              "ea": "0x140227a0c",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?UpdateScanStatusForFile@DatabaseManager@SenseDlp@@UEAAJ_KW4FileStatusFlag@2@@Z",
               "ea": "0x140227aa2",
               "confidence": "CallGraph-d1"
             },
@@ -7836,7 +7942,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?UpdateTimeStampByJobId@DatabaseManager@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@_N_K@Z",
               "ea": "0x140227bbf",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -7859,6 +7965,12 @@
             {
               "binary": "SenseDlpProcessor.exe",
               "function": "?UpdateTimeStampByJobId@DatabaseManager@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@_N_K@Z",
+              "ea": "0x140227d6e",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?UpdateTimeStampByJobId@DatabaseManager@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@_N_K@Z",
               "ea": "0x140227e04",
               "confidence": "CallGraph-d1"
             },
@@ -7866,13 +7978,13 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?UpgradeDatabaseSchema@DatabaseManager@SenseDlp@@UEAAJXZ",
               "ea": "0x140227efe",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
               "function": "?UpgradeDatabaseSchema@DatabaseManager@SenseDlp@@UEAAJXZ",
               "ea": "0x140227f43",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -7896,6 +8008,12 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?UpsertSchemaVersion@DatabaseManager@SenseDlp@@AEAAJAEAVDatabase@StateRepository@@@Z",
               "ea": "0x14022810c",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?UpsertSchemaVersion@DatabaseManager@SenseDlp@@AEAAJAEAVDatabase@StateRepository@@@Z",
+              "ea": "0x140228151",
               "confidence": "CallGraph-d1"
             },
             {
@@ -7950,7 +8068,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?CheckIfDatabaseUpgradeNeeded@DatabaseManager@SenseDlp@@UEAAJXZ",
               "ea": "0x14021b3d5",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -7992,13 +8110,13 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?GetFileProperties@DatabaseManager@SenseDlp@@UEAAJAEBU_FILE_ID_INFO@@AEAUFileAttributes@Common@2@AEA_K@Z",
               "ea": "0x14021f43c",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
               "function": "?GetFileProperties@DatabaseManager@SenseDlp@@UEAAJ_KAEAUFileAttributes@Common@2@@Z",
               "ea": "0x14021f6f6",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -8257,6 +8375,12 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?IncrementFileCountByJobId@DatabaseManager@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@IIII_N@Z",
               "ea": "0x1402240f1",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?IncrementFileCountByJobId@DatabaseManager@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@IIII_N@Z",
+              "ea": "0x140224136",
               "confidence": "CallGraph-d1"
             },
             {
@@ -8634,7 +8758,7 @@
               "binary": "SenseCE.exe",
               "function": "?NormalizeValueByCPUCores@CPUInfo@Common@SenseDlp@@SAXAEAN@Z",
               "ea": "0x1401aa443",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -8658,13 +8782,13 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?NormalizeValueByCPUCores@CPUInfo@Common@SenseDlp@@SAXAEAN@Z",
               "ea": "0x140282eea",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
               "function": "?PopulateFilterCriteria@FileFilteringLogic@SenseDlp@@QEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AEAH@Z",
               "ea": "0x1402285e0",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -8809,7 +8933,7 @@
               "binary": "SenseCE.exe",
               "function": "?GetCurrentExePathLocation@Common@SenseDlp@@YA?AV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@XZ",
               "ea": "0x1400796de",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -8824,7 +8948,7 @@
               "binary": "SenseCE.exe",
               "function": "?GetCurrentLibraryLocation@Common@SenseDlp@@YA?AV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@XZ",
               "ea": "0x140079939",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -9034,7 +9158,7 @@
               "binary": "SenseCE.exe",
               "function": "?NormalizeValueByCPUCores@CPUInfo@Common@SenseDlp@@SAXAEAN@Z",
               "ea": "0x1401aa4c4",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -9046,7 +9170,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "??0FileModifiedDateFilter@SenseDlp@@QEAA@AEBVvalue@json@web@@0@Z",
               "ea": "0x14022a2df",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseDlpProcessor.exe",
@@ -9094,7 +9218,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?NormalizeValueByCPUCores@CPUInfo@Common@SenseDlp@@SAXAEAN@Z",
               "ea": "0x140282f6b",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -9145,13 +9269,13 @@
               "binary": "SenseCE.exe",
               "function": "?ReadBlockUsingFileHandle@OplockedHandle@Common@SenseDlp@@QEAAJPEAE_K1AEA_K@Z",
               "ea": "0x140078ec5",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
               "function": "?ReadBlockUsingFileHandle@OplockedHandle@Common@SenseDlp@@QEAAJPEAE_K1AEA_K@Z",
               "ea": "0x1400790de",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -9188,7 +9312,7 @@
               "binary": "SenseCE.exe",
               "function": "?ReadBlockUsingFileHandle@OplockedHandle@Common@SenseDlp@@QEAAJPEAE_K1AEA_K@Z",
               "ea": "0x14007904a",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -9211,7 +9335,7 @@
               "binary": "SenseCE.exe",
               "function": "?RegOpenKeyWithBackupPrivilege@Registry@Common@SenseDlp@@YAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AEAV?$unique_any_t@V?$unique_storage@U?$resource_policy@PEAUHKEY__@@P6AJPEAU1@@Z$1?RegCloseKey@@YAJ0@ZU?$integral_constant@_K$0A@@wistd@@PEAU1@PEAU1@$0A@$$T@details@wil@@@details@wil@@@wil@@PEAUHKEY__@@K@Z",
               "ea": "0x140097530",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "SenseCE.exe",
@@ -9334,7 +9458,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?CreateFilterCriteria@FilterCriteriaFactory@SenseDlp@@SA?AV?$shared_ptr@VIFilterCriteria@SenseDlp@@@std@@W4FilterType@2@Vvalue@json@web@@1@Z",
               "ea": "0x1402290f6",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -9443,7 +9567,7 @@
               "binary": "SenseDlpProcessor.exe",
               "function": "?GetSubfoldersAndFiles@WindowsFileSystemTraversal@SenseDlp@@UEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AEAV?$vector@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@V?$allocator@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@2@@4@1@Z",
               "ea": "0x14022a71f",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -9961,66 +10085,6 @@
           "type": "UInt32",
           "seenIn": [
             "SenseCE.exe"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "SenseDlpProcessor",
-      "variantCount": 2,
-      "variants": [
-        {
-          "level": 2,
-          "keyword": "0x0",
-          "fields": [
-            "errorCode:Int32",
-            "message:AnsiString"
-          ],
-          "callers": [
-            {
-              "binary": "SenseDlpProcessor.exe",
-              "function": "?RecreateDatabase@ColdDataScanManager@dlp@sense@@AEAAJXZ",
-              "ea": "0x1400c0f75",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "SenseDlpProcessor.exe",
-              "function": "?StopAndResetMonitoringReport@ColdDataScanManager@dlp@sense@@AEAAXXZ",
-              "ea": "0x1400c1bca",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "errorCode",
-          "type": "Int32",
-          "seenIn": [
-            "SenseDlpProcessor.exe"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "AnsiString",
-          "seenIn": [
-            "SenseDlpProcessor.exe"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "UnicodeString",
-          "seenIn": [
-            "SenseDlpProcessor.exe"
           ]
         }
       ]

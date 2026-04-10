@@ -6,7 +6,7 @@
   "binaries": [
     "AppXDeploymentClient.dll"
   ],
-  "uniqueEventCount": 31,
+  "uniqueEventCount": 32,
   "events": [
     {
       "eventName": "ActivityError",
@@ -1301,7 +1301,7 @@
               "binary": "AppXDeploymentClient.dll",
               "function": "?CheckComCallerHasCapabilitiesImpl@@YAJIPEAPEBGPEAHIPEAGPEAPEAX1@Z",
               "ea": "0x1800340a8",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         }
@@ -1331,6 +1331,44 @@
         {
           "fieldName": "isAppContainerCaller",
           "type": "Bool32",
+          "seenIn": [
+            "AppXDeploymentClient.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Package status for user requires registration",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Package:UnicodeString",
+            "PackageStatus:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "AppXDeploymentClient.dll",
+              "function": "EnsurePackageFamilyIsRegisteredBeforeActivation",
+              "ea": "0x18001490e",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Package",
+          "type": "UnicodeString",
+          "seenIn": [
+            "AppXDeploymentClient.dll"
+          ]
+        },
+        {
+          "fieldName": "PackageStatus",
+          "type": "UInt32",
           "seenIn": [
             "AppXDeploymentClient.dll"
           ]

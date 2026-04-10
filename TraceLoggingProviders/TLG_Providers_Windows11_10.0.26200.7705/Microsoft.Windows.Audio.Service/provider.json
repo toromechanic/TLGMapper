@@ -1,12 +1,12 @@
 {
   "providerName": "Microsoft.Windows.Audio.Service",
   "guid": "{3D2B6366-47A4-5E10-6974-E5F7DE0D3F28}",
-  "os": "Windows 11",
+  "os": "Windows11",
   "binaryCount": 1,
   "binaries": [
     "audiosrv.dll"
   ],
-  "uniqueEventCount": 179,
+  "uniqueEventCount": 181,
   "events": [
     {
       "eventName": "AcquirePdcTimerActivation",
@@ -154,7 +154,7 @@
               "binary": "audiosrv.dll",
               "function": "?AddAuxiliaryInputStream@CSharedStreamGroupProxy@@UEAAJU_GUID@@_JPEAUIBridgeStreamInstanceProxy@@PEBG@Z",
               "ea": "0x1800ee207",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         }
@@ -927,7 +927,7 @@
               "binary": "audiosrv.dll",
               "function": "?CaptureState@CVADServer@@QEAAXXZ",
               "ea": "0x180065e21",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d2"
             }
           ]
         }
@@ -1493,7 +1493,7 @@
               "binary": "audiosrv.dll",
               "function": "?CreateInternalLoopbackStream@CAudioResourceManager@@IEAAJPEBG_J_NPEAUIStreamGroupProxy@@PEAPEAUIBridgeStreamInstanceProxy@@@Z",
               "ea": "0x1800b7272",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         }
@@ -1937,7 +1937,7 @@
               "binary": "audiosrv.dll",
               "function": "?CreateStream@CAudioResourceManager@@UEAAJPEAUIAudioProcess@@PEAUIAudioStreamInfo@@KHHHHHH_JPEAUEndpointCharacteristicsDescriptor@@KW4_AUDCLNT_SHAREMODE@@PEAUIAudioGraphCallback@@PEAUtWAVEFORMATEX@@22PEBU_GUID@@77KPEBGKPEBUSPATIAL_STREAM_PROPERTIES@@W4_BridgeStreamProperties@@2KPEAUIProcessSubmixProxy@@PEAUSystemAudioStream@@@Z",
               "ea": "0x1800b8b95",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         }
@@ -3091,6 +3091,100 @@
       ]
     },
     {
+      "eventName": "CreateSaDeviceAPOCountMismatch",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x400000000400",
+          "fields": [
+            "connectorType:UInt32",
+            "deviceMode:UInt32",
+            "volumeAPOPresent:UInt8(Boolean)",
+            "muteAPOPresent:UInt8(Boolean)",
+            "meterAPOPresent:UInt8(Boolean)",
+            "accessibilityAPOPresent:UInt8(Boolean)",
+            "numMFXAPOs:UInt32",
+            "numEFXAPOs:UInt32",
+            "APOCount:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?CreateSaDevice@@YAJPEAUEndpointCharacteristicsDescriptor@@W4_AUDCLNT_SHAREMODE@@KW4__MIDL___MIDL_itf_audioengineendpoint_0000_0000_0001@@U_GUID@@3_J4PEBUtWAVEFORMATEX@@53PEBU4@6PEAPEAUIAudioDeviceGraph@@@Z",
+              "ea": "0x18008786c",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "APOCount",
+          "type": "UInt32",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "accessibilityAPOPresent",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "connectorType",
+          "type": "UInt32",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "deviceMode",
+          "type": "UInt32",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "meterAPOPresent",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "muteAPOPresent",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "numEFXAPOs",
+          "type": "UInt32",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "numMFXAPOs",
+          "type": "UInt32",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        },
+        {
+          "fieldName": "volumeAPOPresent",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
       "eventName": "CreateSaDeviceFailedToReadCurrentSpatialSettings",
       "variantCount": 1,
       "variants": [
@@ -3344,7 +3438,7 @@
               "binary": "audiosrv.dll",
               "function": "asm_AudioServerInitializeStream",
               "ea": "0x1800b02d5",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         }
@@ -3787,7 +3881,7 @@
               "binary": "audiosrv.dll",
               "function": "??1CSharedStreamGroupProxy@@MEAA@XZ",
               "ea": "0x180025387",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         }
@@ -4296,7 +4390,7 @@
               "binary": "audiosrv.dll",
               "function": "?OnMediaNotification@EffectPackConfigurationManager@@UEAAJPEAUMEDIA_NOTIFICATION_BLOCK@@@Z",
               "ea": "0x1800f55ea",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         }
@@ -6183,7 +6277,7 @@
               "binary": "audiosrv.dll",
               "function": "?ActivatorCallback@CPdcActivationClient@@IEAAXPEAVCVADServer@@@Z",
               "ea": "0x18007eb45",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             }
           ]
         }
@@ -6327,7 +6421,7 @@
               "binary": "audiosrv.dll",
               "function": "?OnPoStandbyAudioRequestReceived@@YAJW4_PO_STANDBY_AUDIO_POLICY@@@Z",
               "ea": "0x1801041d2",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         }
@@ -6618,13 +6712,13 @@
               "binary": "audiosrv.dll",
               "function": "_lambda_d5f979e76b75a7011e48ce4548210420_::operator()",
               "ea": "0x18010145b",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "audiosrv.dll",
               "function": "_lambda_f4c65606035aa670aca23c583ca49328_::operator()",
               "ea": "0x1801015d7",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         }
@@ -6773,7 +6867,7 @@
               "binary": "audiosrv.dll",
               "function": "?QueryAvailabilitySaDeviceResource@CConstraintModelResourceManager@@UEAAHPEAUEndpointCharacteristicsDescriptor@@U_GUID@@W4__MIDL___MIDL_itf_audioengineendpoint_0000_0000_0001@@K@Z",
               "ea": "0x1800e846a",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         }
@@ -7077,7 +7171,7 @@
               "binary": "audiosrv.dll",
               "function": "_lambda_fa8a63ffb9e2d07f36e2a5d920e2dfd3_::operator()",
               "ea": "0x1800b594e",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         }
@@ -7384,6 +7478,36 @@
       ]
     },
     {
+      "eventName": "ResetDeviceFormat",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x20",
+          "fields": [
+            "EndpointId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "audiosrv.dll",
+              "function": "?ResetDeviceFormat@CPolicyConfig@@UEAAJPEBG@Z",
+              "ea": "0x1800fde2c",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EndpointId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "audiosrv.dll"
+          ]
+        }
+      ]
+    },
+    {
       "eventName": "SaDeviceCreationResult",
       "variantCount": 1,
       "variants": [
@@ -7602,7 +7726,7 @@
               "binary": "audiosrv.dll",
               "function": "?CreateAudioSession@CAudioSessionManager@@QEAAJPEAUIAudioProcess@@AEAVCAudioSessionInstanceId@@KKKPEAPEAVCAudioSession@@@Z",
               "ea": "0x18001b0a3",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         }
@@ -7677,7 +7801,7 @@
               "binary": "audiosrv.dll",
               "function": "?Disconnect@CAudioSession@@UEAAJW4AudioServerSessionDisconnectReason@@_N@Z",
               "ea": "0x18002c25c",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             }
           ]
         }
@@ -7770,13 +7894,13 @@
               "binary": "audiosrv.dll",
               "function": "?NewState@CAudioSession@@MEAAXW4_AudioSessionState@@@Z",
               "ea": "0x1800297cb",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "audiosrv.dll",
               "function": "?NewState@CAudioSession@@MEAAXW4_AudioSessionState@@@Z",
               "ea": "0x1800297eb",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         }
@@ -7840,7 +7964,7 @@
               "binary": "audiosrv.dll",
               "function": "?SetAudioEffect@CVADServer@@QEAAJU_GUID@@H@Z",
               "ea": "0x180104de1",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         }
@@ -9891,7 +10015,7 @@
               "binary": "audiosrv.dll",
               "function": "?UpdatePMPOnStreamGroup@CSharedStreamGroupProxy@@UEAAJAEBVCProcessingModeParameters@@@Z",
               "ea": "0x1800f23d5",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         }

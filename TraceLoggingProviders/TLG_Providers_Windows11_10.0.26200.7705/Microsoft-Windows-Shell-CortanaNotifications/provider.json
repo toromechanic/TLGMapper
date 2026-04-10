@@ -1,13 +1,51 @@
 {
   "providerName": "Microsoft-Windows-Shell-CortanaNotifications",
   "guid": "{F1F31E13-D7AA-438C-AB17-9E435309F5EF}",
-  "os": "Windows 11",
+  "os": "Windows11",
   "binaryCount": 1,
   "binaries": [
     "NotificationController.dll"
   ],
-  "uniqueEventCount": 1,
+  "uniqueEventCount": 2,
   "events": [
+    {
+      "eventName": "SupressingToastSinceMarkedAsNonIncremental",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "groupId:UnicodeString",
+            "itemId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "NotificationController.dll",
+              "function": "?AddItem@NotificationDataModel@@AEAA_NAEAVNotificationGroup@@AEBV?$shared_ptr@VNotificationItem@@@std@@@Z",
+              "ea": "0x180043ba8",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "groupId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "NotificationController.dll"
+          ]
+        },
+        {
+          "fieldName": "itemId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "NotificationController.dll"
+          ]
+        }
+      ]
+    },
     {
       "eventName": "ToastNotificationBannerStarted",
       "variantCount": 1,

@@ -1,7 +1,7 @@
 {
   "providerName": "Microsoft.Windows.SenseDlpProcessor.GeneratedETW",
   "guid": "{8EEEE7AC-B77B-5D48-DEA3-FDE9ADB80960}",
-  "os": "Windows 11",
+  "os": "Windows11",
   "binaryCount": 1,
   "binaries": [
     "SenseDlpProcessor.exe"
@@ -9,43 +9,165 @@
   "uniqueEventCount": 2,
   "events": [
     {
-      "eventName": "DLP",
+      "eventName": "ColdDataScanProgressReportingEvent",
       "variantCount": 1,
       "variants": [
         {
-          "level": 3,
+          "level": 5,
           "keyword": "0x0",
           "fields": [
-            "message:UnicodeString",
-            "isColdDataScanInstance:UInt8(Boolean)"
+            "PolicyId:UnicodeString",
+            "PolicyVersion:UnicodeString",
+            "TraceInfo:UnicodeString",
+            "StartTime:UInt64",
+            "EndTime:UInt64",
+            "JobStatus:UInt8",
+            "JobPhase:UInt8",
+            "JobStatusChangeReason:UInt8",
+            "PreviousJobStatus:UInt8",
+            "PreviousJobPhase:UInt8",
+            "ProcessedItemsCount:UInt32",
+            "TotalItemsCount:UInt32",
+            "FailedItemsCount:UInt32",
+            "SkippedItemsCount:UInt32",
+            "UserSid:SID",
+            "AadUserId:UnicodeString",
+            "AadUserUpn:UnicodeString",
+            "ScopedFileExtensionCounts:UnicodeString"
           ],
           "callers": [
             {
               "binary": "SenseDlpProcessor.exe",
-              "function": "?GetTextExtractionSize@SenseCe@dlp@sense@@QEAAJAEBV?$shared_ptr@UFileEntity@cyberData@sense@@@std@@W4FileTextExtractionType@23@IIIAEAI@Z",
-              "ea": "0x1401080af",
-              "confidence": "CallGraph-d3"
-            },
-            {
-              "binary": "SenseDlpProcessor.exe",
-              "function": "_lambda_d9dfb3189443cc23a5c031b5a7826d61_::operator()",
-              "ea": "0x140102f85",
-              "confidence": "CallGraph-d3"
+              "function": "?GenerateETWProgressEvent@dlp@sense@@YAXAEAV?$shared_ptr@UScanJobAttributes@SenseDlp@@@std@@AEAV?$shared_ptr@VIDatabaseManager@SenseDlp@@@4@AEAV?$shared_ptr@VErrorInformation@dlp@sense@@@4@AEAV?$shared_ptr@VAdditionalInformation@dlp@sense@@@4@AEAV?$shared_ptr@VDlpConfigurationManager@dlp@sense@@@4@@Z",
+              "ea": "0x1400c5edf",
+              "confidence": "CallGraph-d1"
             }
           ]
         }
       ],
       "fieldSummary": [
         {
-          "fieldName": "isColdDataScanInstance",
-          "type": "UInt8(Boolean)",
+          "fieldName": "AadUserId",
+          "type": "UnicodeString",
           "seenIn": [
             "SenseDlpProcessor.exe"
           ]
         },
         {
-          "fieldName": "message",
+          "fieldName": "AadUserUpn",
           "type": "UnicodeString",
+          "seenIn": [
+            "SenseDlpProcessor.exe"
+          ]
+        },
+        {
+          "fieldName": "EndTime",
+          "type": "UInt64",
+          "seenIn": [
+            "SenseDlpProcessor.exe"
+          ]
+        },
+        {
+          "fieldName": "FailedItemsCount",
+          "type": "UInt32",
+          "seenIn": [
+            "SenseDlpProcessor.exe"
+          ]
+        },
+        {
+          "fieldName": "JobPhase",
+          "type": "UInt8",
+          "seenIn": [
+            "SenseDlpProcessor.exe"
+          ]
+        },
+        {
+          "fieldName": "JobStatus",
+          "type": "UInt8",
+          "seenIn": [
+            "SenseDlpProcessor.exe"
+          ]
+        },
+        {
+          "fieldName": "JobStatusChangeReason",
+          "type": "UInt8",
+          "seenIn": [
+            "SenseDlpProcessor.exe"
+          ]
+        },
+        {
+          "fieldName": "PolicyId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseDlpProcessor.exe"
+          ]
+        },
+        {
+          "fieldName": "PolicyVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseDlpProcessor.exe"
+          ]
+        },
+        {
+          "fieldName": "PreviousJobPhase",
+          "type": "UInt8",
+          "seenIn": [
+            "SenseDlpProcessor.exe"
+          ]
+        },
+        {
+          "fieldName": "PreviousJobStatus",
+          "type": "UInt8",
+          "seenIn": [
+            "SenseDlpProcessor.exe"
+          ]
+        },
+        {
+          "fieldName": "ProcessedItemsCount",
+          "type": "UInt32",
+          "seenIn": [
+            "SenseDlpProcessor.exe"
+          ]
+        },
+        {
+          "fieldName": "ScopedFileExtensionCounts",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseDlpProcessor.exe"
+          ]
+        },
+        {
+          "fieldName": "SkippedItemsCount",
+          "type": "UInt32",
+          "seenIn": [
+            "SenseDlpProcessor.exe"
+          ]
+        },
+        {
+          "fieldName": "StartTime",
+          "type": "UInt64",
+          "seenIn": [
+            "SenseDlpProcessor.exe"
+          ]
+        },
+        {
+          "fieldName": "TotalItemsCount",
+          "type": "UInt32",
+          "seenIn": [
+            "SenseDlpProcessor.exe"
+          ]
+        },
+        {
+          "fieldName": "TraceInfo",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SenseDlpProcessor.exe"
+          ]
+        },
+        {
+          "fieldName": "UserSid",
+          "type": "SID",
           "seenIn": [
             "SenseDlpProcessor.exe"
           ]
@@ -54,7 +176,7 @@
     },
     {
       "eventName": "SenseDlpProcessor",
-      "variantCount": 3,
+      "variantCount": 1,
       "variants": [
         {
           "level": 5,
@@ -62,74 +184,30 @@
           "fields": [
             "message:UnicodeString",
             "win32Path:UnicodeString",
+            "isDprtEnabled:UInt8(Boolean)",
             "fileStatus:Int32"
           ],
           "callers": [
             {
               "binary": "SenseDlpProcessor.exe",
-              "function": "?ExtractFileText@ClassificationJob@dlp@sense@@AEAAJUFileAttributes@Common@SenseDlp@@AEAV?$shared_ptr@UDlpData@dlp@sense@@@std@@AEAW4FileStatusFlag@6@AEAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@8@AEAV?$shared_ptr@UFileEntity@cyberData@sense@@@8@@Z",
-              "ea": "0x1400d3d58",
-              "confidence": "CallGraph-d3"
-            },
-            {
-              "binary": "SenseDlpProcessor.exe",
-              "function": "?ExtractFileText@ClassificationJob@dlp@sense@@AEAAJUFileAttributes@Common@SenseDlp@@AEAV?$shared_ptr@UDlpData@dlp@sense@@@std@@AEAW4FileStatusFlag@6@AEAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@8@AEAV?$shared_ptr@UFileEntity@cyberData@sense@@@8@@Z",
-              "ea": "0x1400d40d5",
-              "confidence": "CallGraph-d2"
-            }
-          ]
-        },
-        {
-          "level": 2,
-          "keyword": "0x0",
-          "fields": [
-            "errorCode:Int32",
-            "message:UnicodeString",
-            "ScanJobPolicyId:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "SenseDlpProcessor.exe",
-              "function": "?GenerateETWProgressEvent@dlp@sense@@YAXAEAV?$shared_ptr@UScanJobAttributes@SenseDlp@@@std@@AEAV?$shared_ptr@VIDatabaseManager@SenseDlp@@@4@AEAV?$shared_ptr@VErrorInformation@dlp@sense@@@4@AEAV?$shared_ptr@VAdditionalInformation@dlp@sense@@@4@AEAV?$shared_ptr@VDlpConfigurationManager@dlp@sense@@@4@@Z",
-              "ea": "0x1400c5cdb",
+              "function": "?FallbackForTextExtraction@ClassificationJob@dlp@sense@@AEAAJAEAV?$shared_ptr@UFileEntity@cyberData@sense@@@std@@AEAV?$shared_ptr@UDlpData@dlp@sense@@@5@AEAV?$shared_ptr@VTimeout@dlp@sense@@@5@AEAV?$shared_ptr@VColdDataScanManager@dlp@sense@@@5@AEAW4FileStatusFlag@SenseDlp@@_N@Z",
+              "ea": "0x1400d4911",
               "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 3,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "SenseDlpProcessor.exe",
-              "function": "?ParseDlpFile@ClassificationJob@dlp@sense@@AEAAJAEAV?$shared_ptr@UFileEntity@cyberData@sense@@@std@@AEAV?$shared_ptr@UDlpData@dlp@sense@@@5@_NAEAV?$shared_ptr@VTimeout@dlp@sense@@@5@AEAV?$shared_ptr@VColdDataScanManager@dlp@sense@@@5@@Z",
-              "ea": "0x1400d565b",
-              "confidence": "CallGraph-d2"
             }
           ]
         }
       ],
       "fieldSummary": [
         {
-          "fieldName": "ScanJobPolicyId",
-          "type": "UnicodeString",
-          "seenIn": [
-            "SenseDlpProcessor.exe"
-          ]
-        },
-        {
-          "fieldName": "errorCode",
-          "type": "Int32",
-          "seenIn": [
-            "SenseDlpProcessor.exe"
-          ]
-        },
-        {
           "fieldName": "fileStatus",
           "type": "Int32",
+          "seenIn": [
+            "SenseDlpProcessor.exe"
+          ]
+        },
+        {
+          "fieldName": "isDprtEnabled",
+          "type": "UInt8(Boolean)",
           "seenIn": [
             "SenseDlpProcessor.exe"
           ]

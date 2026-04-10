@@ -10,7 +10,7 @@
     "wlansec.dll",
     "wlansvc.dll"
   ],
-  "uniqueEventCount": 23,
+  "uniqueEventCount": 32,
   "events": [
     {
       "eventName": "[FAIL][Connect] Association complete",
@@ -397,6 +397,68 @@
           "seenIn": [
             "WdiWiFi.sys",
             "WifiCx.sys"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "[FAIL][Recovery] Recovery action failed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x2",
+          "fields": [
+            "Action:AnsiString",
+            "Win32Err:UInt32(Win32Error)",
+            "Interface:GUID",
+            "Ssid:CountedAnsiString(UTF8)",
+            "Bssid:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "wlansvc.dll",
+              "function": "?TriggerRecoveryAction@@YAXPEAU_WDIAG_RECOVERY_DATA@@W4WDIAG_RECOVERY_ACTION@@PEBUWCM_WNF_INTERFACE_CONNECTION_STATE_INFO@@@Z",
+              "ea": "0x1801c66fd",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Action",
+          "type": "AnsiString",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Bssid",
+          "type": "AnsiString",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Interface",
+          "type": "GUID",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Ssid",
+          "type": "CountedAnsiString(UTF8)",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Win32Err",
+          "type": "UInt32(Win32Error)",
+          "seenIn": [
+            "wlansvc.dll"
           ]
         }
       ]
@@ -960,6 +1022,198 @@
       ]
     },
     {
+      "eventName": "[INFO][Profile] Deleting profile",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x5",
+          "fields": [
+            "ProfileName:UnicodeString",
+            "Interface:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "wlansvc.dll",
+              "function": "?DeleteProfile@ProfileManager@@QEAAKPEAXKPEBU_GUID@@KPEBGH_N@Z",
+              "ea": "0x18020ba86",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Interface",
+          "type": "GUID",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "ProfileName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "[INFO][Recovery] Bad L3 connectivity reported",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x2",
+          "fields": [
+            "Interface:GUID",
+            "Ssid:CountedAnsiString(UTF8)",
+            "Bssid:AnsiString",
+            "TimeInBadStateMs:UInt32",
+            "ProfilePreviousConnectivity:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "wlansvc.dll",
+              "function": "?UpdateRecoveryStateBadConnectivity@@YA?AW4WDIAG_RECOVERY_ACTION@@PEBUWCM_WNF_INTERFACE_CONNECTION_STATE_INFO@@PEAU_WDIAG_RECOVERY_DATA@@W4ProfileConnectivityCapability@recovery@wlan@@PEBU_WLAN_CONNECTION_ATTRIBUTES@@@Z",
+              "ea": "0x1801c686a",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Bssid",
+          "type": "AnsiString",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Interface",
+          "type": "GUID",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "ProfilePreviousConnectivity",
+          "type": "AnsiString",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Ssid",
+          "type": "CountedAnsiString(UTF8)",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "TimeInBadStateMs",
+          "type": "UInt32",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "[INFO][Recovery] Good L3 connectivity established",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x2",
+          "fields": [
+            "Interface:GUID",
+            "Ssid:CountedAnsiString(UTF8)",
+            "Bssid:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "wlansvc.dll",
+              "function": "?UpdateRecoveryStateGoodConnectivity@@YAXPEAU_WDIAG_RECOVERY_DATA@@PEBU_WLAN_CONNECTION_ATTRIBUTES@@@Z",
+              "ea": "0x1801c6eee",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Bssid",
+          "type": "AnsiString",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Interface",
+          "type": "GUID",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Ssid",
+          "type": "CountedAnsiString(UTF8)",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "[INFO][Recovery] Request recovery action",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x2",
+          "fields": [
+            "Interface:GUID",
+            "Ssid:CountedAnsiString(UTF8)",
+            "Action:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "wlansvc.dll",
+              "function": "?TriggerRecoveryAction@@YAXPEAU_WDIAG_RECOVERY_DATA@@W4WDIAG_RECOVERY_ACTION@@PEBUWCM_WNF_INTERFACE_CONNECTION_STATE_INFO@@@Z",
+              "ea": "0x1801c6589",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Action",
+          "type": "AnsiString",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Interface",
+          "type": "GUID",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Ssid",
+          "type": "CountedAnsiString(UTF8)",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        }
+      ]
+    },
+    {
       "eventName": "[INFO][Recovery] Update profile connectivity capability",
       "variantCount": 1,
       "variants": [
@@ -1045,6 +1299,66 @@
         {
           "fieldName": "NumResults",
           "type": "UInt32",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "[INFO][Scan] Send scan request to driver",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x3",
+          "fields": [
+            "Interface:GUID",
+            "ScanType:AnsiString",
+            "FlushCache:Int32",
+            "UsedHiddenSsidList:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "wlansvc.dll",
+              "function": "?PerformScanRequest@@YAKAEAU_WLAN_INTERFACE_CONTEXT@@AEAU_DOT11_MSM_SCAN_REQUEST@@P6AXPEAXK@Z2@Z",
+              "ea": "0x1800be0ac",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "wlansvc.dll",
+              "function": "?PerformScanRequest@@YAKAEAU_WLAN_INTERFACE_CONTEXT@@AEAU_DOT11_MSM_SCAN_REQUEST@@P6AXPEAXK@Z2@Z",
+              "ea": "0x1800be0ed",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "FlushCache",
+          "type": "Int32",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Interface",
+          "type": "GUID",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "ScanType",
+          "type": "AnsiString",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "UsedHiddenSsidList",
+          "type": "Int32",
           "seenIn": [
             "wlansvc.dll"
           ]
@@ -1177,6 +1491,106 @@
       ]
     },
     {
+      "eventName": "[VERB][Recovery] Connection notification received",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x2",
+          "fields": [
+            "Interface:GUID",
+            "Ssid:CountedAnsiString(UTF8)",
+            "Bssid:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "wlansvc.dll",
+              "function": "?UpdateRecoveryStateConnected@@YAXPEBU_WD_INTERFACE_CONTEXT@@PEBU_WLAN_MSM_NOTIFICATION_DATA@@@Z",
+              "ea": "0x1801c6b0b",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Bssid",
+          "type": "AnsiString",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Interface",
+          "type": "GUID",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Ssid",
+          "type": "CountedAnsiString(UTF8)",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "[VERB][Recovery] Disconnection notification received",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x2",
+          "fields": [
+            "Interface:GUID",
+            "Ssid:CountedAnsiString(UTF8)",
+            "Bssid:AnsiString",
+            "Reason:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "wlansvc.dll",
+              "function": "?UpdateRecoveryStateDisconnected@@YAXPEBU_WD_INTERFACE_CONTEXT@@PEBU_WLAN_MSM_NOTIFICATION_DATA@@@Z",
+              "ea": "0x1801c6d8f",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Bssid",
+          "type": "AnsiString",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Interface",
+          "type": "GUID",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Reason",
+          "type": "AnsiString",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Ssid",
+          "type": "CountedAnsiString(UTF8)",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        }
+      ]
+    },
+    {
       "eventName": "[VERB][Scan] Scanned network",
       "variantCount": 1,
       "variants": [
@@ -1249,6 +1663,60 @@
         {
           "fieldName": "NumBssids",
           "type": "UInt32",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Ssid",
+          "type": "CountedAnsiString(UTF8)",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "[WARN][Connect] Connection cancelled",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 3,
+          "keyword": "0x4",
+          "fields": [
+            "Interface:GUID",
+            "Profile:UnicodeString",
+            "Ssid:CountedAnsiString(UTF8)",
+            "ConnectionMode:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "wlansvc.dll",
+              "function": "?HandleConnectionCompleteCancelled@@YA?AUStateMachineTrigger@interface_context@wlansvc@@AEAU_WLAN_INTERFACE_CONTEXT@@PEAU_DOT11_MSM_PROFILE@@@Z",
+              "ea": "0x18011a545",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConnectionMode",
+          "type": "AnsiString",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Interface",
+          "type": "GUID",
+          "seenIn": [
+            "wlansvc.dll"
+          ]
+        },
+        {
+          "fieldName": "Profile",
+          "type": "UnicodeString",
           "seenIn": [
             "wlansvc.dll"
           ]

@@ -1,7 +1,7 @@
 {
   "providerName": "Microsoft.Windows.SenseComponent.GeneratedETW",
   "guid": "{847EA814-C451-4174-9DF0-EB3262151960}",
-  "os": "Windows 11",
+  "os": "Windows11",
   "binaryCount": 4,
   "binaries": [
     "MsSense.dll",
@@ -9,7 +9,7 @@
     "SenseDlpProcessor.exe",
     "SenseIR.exe"
   ],
-  "uniqueEventCount": 6,
+  "uniqueEventCount": 4,
   "events": [
     {
       "eventName": "OnboardingManager",
@@ -527,12 +527,6 @@
               "function": "?ReadConfigFromRegistry@RegistryPolicyHandler@dlp@sense@@AEAAJAEBW4PolicyType@123@AEA_N@Z",
               "ea": "0x1400decd3",
               "confidence": "Direct-Preceding"
-            },
-            {
-              "binary": "SenseDlpProcessor.exe",
-              "function": "?SubscribeToRegistryChange@RegistryPolicyHandler@dlp@sense@@UEAAXAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@0V?$function@$$A6AXV?$shared_ptr@$$CBVCommand@cyberData@sense@@@std@@@Z@5@@Z",
-              "ea": "0x1400def9e",
-              "confidence": "CallGraph-d1"
             }
           ]
         },
@@ -581,81 +575,6 @@
           "type": "UnicodeString",
           "seenIn": [
             "SenseDlpProcessor.exe"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "SenseIR",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 2,
-          "keyword": "0x0",
-          "fields": [
-            "errorCode:Int32(HResult)",
-            "message:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "SenseIR.exe",
-              "function": "?MainBody@@YAHHQEAPEB_W@Z",
-              "ea": "0x140071119",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "errorCode",
-          "type": "Int32(HResult)",
-          "seenIn": [
-            "SenseIR.exe"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "UnicodeString",
-          "seenIn": [
-            "SenseIR.exe"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "SensePerformance",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 3,
-          "keyword": "0x0",
-          "fields": [
-            "message:AnsiString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?GetCurrentCounterState@PerformanceCounter@sense@@AEAAXAEAVvalue@json@web@@@Z",
-              "ea": "0x18046862d",
-              "confidence": "CallGraph-d1"
-            },
-            {
-              "binary": "SenseIR.exe",
-              "function": "?GetCurrentCounterState@PerformanceCounter@sense@@AEAAXAEAVvalue@json@web@@@Z",
-              "ea": "0x1400d4a3d",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "message",
-          "type": "AnsiString",
-          "seenIn": [
-            "MsSense.dll",
-            "SenseIR.exe"
           ]
         }
       ]

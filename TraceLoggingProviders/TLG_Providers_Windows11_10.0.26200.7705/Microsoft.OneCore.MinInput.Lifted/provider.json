@@ -1,7 +1,7 @@
 {
   "providerName": "Microsoft.OneCore.MinInput.Lifted",
   "guid": "{4164F1C3-F0B5-55AB-F0F5-8B6E128C59AF}",
-  "os": "Windows 11",
+  "os": "Windows11",
   "binaryCount": 4,
   "binaries": [
     "Microsoft.InputStateManager.dll",
@@ -9,8 +9,45 @@
     "Microsoft.UI.Input.dll",
     "Microsoft.UI.Input_Microsoft.WindowsAppRuntime.vNext.CBS_8wekyb3d8bbwe_525D42B5.dll"
   ],
-  "uniqueEventCount": 83,
+  "uniqueEventCount": 84,
   "events": [
+    {
+      "eventName": "ContextualProcessing/OnHitTest",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x1",
+          "fields": [
+            "Processor:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "Microsoft.InputStateManager.dll",
+              "function": "?OnHitTest@ContextualProcessorManager@@QEAAJPEAUHitTestInfo@@PEAVInputContext@@PEAUIInputBuffer@@PEAPEAUIInputTarget@@PEAW4ContextualProcessorState@@@Z",
+              "ea": "0x18003471f",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Microsoft.InputStateManager_Microsoft.WindowsAppRuntime.vNext.CBS_8wekyb3d8bbwe_484293A8.dll",
+              "function": "?OnHitTest@ContextualProcessorManager@@QEAAJPEAUHitTestInfo@@PEAVInputContext@@PEAUIInputBuffer@@PEAPEAUIInputTarget@@PEAW4ContextualProcessorState@@@Z",
+              "ea": "0x1800375bf",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Processor",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Microsoft.InputStateManager.dll",
+            "Microsoft.InputStateManager_Microsoft.WindowsAppRuntime.vNext.CBS_8wekyb3d8bbwe_484293A8.dll"
+          ]
+        }
+      ]
+    },
     {
       "eventName": "ContextualProcessing/OnInput",
       "variantCount": 1,

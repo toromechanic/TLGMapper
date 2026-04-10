@@ -10,7 +10,7 @@
     "SettingsHandlers_nt.dll",
     "SystemSettingsThresholdAdminFlowUI.dll"
   ],
-  "uniqueEventCount": 20,
+  "uniqueEventCount": 21,
   "events": [
     {
       "eventName": "ActivityError",
@@ -1172,6 +1172,36 @@
         {
           "fieldName": "PartA_PrivTags",
           "type": "UInt64",
+          "seenIn": [
+            "SettingsHandlers_nt.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LockScreenRotatingImagesEnabledChanged",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "enabled:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "SettingsHandlers_nt.dll",
+              "function": "?EnableLockScreenRotatingImages@LockScreenChooseBackgroundType@Personalization@SystemSettings@@AEAAJ_N@Z",
+              "ea": "0x18012a292",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "enabled",
+          "type": "Bool32",
           "seenIn": [
             "SettingsHandlers_nt.dll"
           ]

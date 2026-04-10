@@ -12,16 +12,16 @@ Two-stage approach:
             per event using instruction proximity and call-graph analysis.
 
 Resolution priority chain:
-  1. Direct-Preceding    — same function, nearest preceding prov ref
-  2. Direct-Nearest      — same function, closest prov ref by address
-  3. CallGraph-dN        — DFS through callees, event-proximity-aware
-  4. GlobalFallback      — binary has only one provider
-  5. Unknown
+  1. SingleProvider       — Binary contains only one provider
+  2. Direct-Preceding     — Provider ref appears before the event ref in the same function
+  3. Direct-Nearest       — Closest provider ref by address in the same function
+  4. CallGraph-dN         — DFS through callees (max depth: 3), searching backward first
+  5. Unknown              — No provider could be resolved
 
 Results are displayed in IDA chooser windows. Batch mode writes CSV.
 
 Usage (GUI):  File > Script file > TLGMapper.py
-Usage (batch): ida64.exe -A -o"C:\output\<binary>.i64" -S"TLGMapper.py C:\output" -LC:\output\log.txt <binary>
+Usage (batch): ida64.exe -A -o"C:\\output\\<binary>.i64" -S"TLGMapper.py C:\\output" -LC:\\output\\log.txt <binary>
 """
 
 import idaapi
@@ -83,42 +83,42 @@ class MemReader:
         return self.ea
 
     def u8(self):
-        v = ida_bytes.get_byte(self.ea); self.ea += 1; return v
+        val = ida_bytes.get_byte(self.ea); self.ea += 1; return val
 
     def u16(self):
-        v = ida_bytes.get_wide_word(self.ea); self.ea += 2; return v
+        val = ida_bytes.get_wide_word(self.ea); self.ea += 2; return val
 
     def u32(self):
-        v = ida_bytes.get_wide_dword(self.ea); self.ea += 4; return v
+        val = ida_bytes.get_wide_dword(self.ea); self.ea += 4; return val
 
     def u64(self):
-        v = ida_bytes.get_qword(self.ea); self.ea += 8; return v
+        val = ida_bytes.get_qword(self.ea); self.ea += 8; return val
 
-    def raw(self, n):
-        v = ida_bytes.get_bytes(self.ea, n); self.ea += n; return v
+    def raw(self, size):
+        val = ida_bytes.get_bytes(self.ea, size); self.ea += size; return val
 
     def cstr(self):
         out = bytearray()
         for _ in range(4096):
-            b = ida_bytes.get_byte(self.ea); self.ea += 1
-            if b == 0: break
-            out.append(b)
+            byte = ida_bytes.get_byte(self.ea); self.ea += 1
+            if byte == 0: break
+            out.append(byte)
         else:
             return None
         if not out: return None
         try: return out.decode("utf-8")
         except: return None
 
-    def skip(self, n):
-        self.ea += n
+    def skip(self, size):
+        self.ea += size
 
 
 def _fmt_guid(raw):
     if not raw or len(raw) != 16: return "Unknown"
-    d1, d2, d3 = struct.unpack("<IHH", raw[:8])
-    d4 = raw[8:]
-    return (f"{{{d1:08X}-{d2:04X}-{d3:04X}"
-            f"-{d4[:2].hex().upper()}-{d4[2:].hex().upper()}}}")
+    data1, data2, data3 = struct.unpack("<IHH", raw[:8])
+    data4 = raw[8:]
+    return (f"{{{data1:08X}-{data2:04X}-{data3:04X}"
+            f"-{data4[:2].hex().upper()}-{data4[2:].hex().upper()}}}")
 
 
 def _align8(ea):
@@ -144,13 +144,13 @@ def find_etw0_headers():
         ea = seg.start_ea
         while ea <= seg.end_ea - 16:
             if ida_bytes.get_bytes(ea, 4) == _TLG_SIGNATURE:
-                sz = ida_bytes.get_wide_word(ea + 4)
-                mg = ida_bytes.get_qword(ea + 8)
-                if sz == 16 and mg == _TLG_MAGIC:
-                    fl = ida_bytes.get_byte(ea + 7)
+                size = ida_bytes.get_wide_word(ea + 4)
+                magic = ida_bytes.get_qword(ea + 8)
+                if size == 16 and magic == _TLG_MAGIC:
+                    flags = ida_bytes.get_byte(ea + 7)
                     headers.append(ea)
                     print(f"  [+] ETW0 header at {hex(ea)} "
-                          f"(flags={'64bit' if fl & 1 else '32bit'})")
+                          f"(flags={'64bit' if flags & 1 else '32bit'})")
                     ea += 16; continue
             ea += 4
     return headers
@@ -160,28 +160,28 @@ def find_etw0_headers():
 # Stage A-2: Parse event fields
 # ---------------------------------------------------------------------------
 
-def parse_event_fields(r, end_ea):
+def parse_event_fields(reader, end_ea):
     fields = []
-    while r.pos < end_ea:
-        fn = r.cstr()
-        if fn is None: break
-        inv = r.u8()
-        it = inv & 0x1F
-        arr = "[]" if inv & 0x40 else ("[N]" if inv & 0x20 else "")
-        ots = ""
-        if inv & 0x80:
-            ov = r.u8(); ot = ov & 0x7F
-            ots = TLGOUT_NAMES.get(ot, str(ot))
-            if ov & 0x80:
+    while reader.pos < end_ea:
+        field_name = reader.cstr()
+        if field_name is None: break
+        in_value = reader.u8()
+        in_type = in_value & 0x1F
+        array_suffix = "[]" if in_value & 0x40 else ("[N]" if in_value & 0x20 else "")
+        out_type_str = ""
+        if in_value & 0x80:
+            out_value = reader.u8(); out_type = out_value & 0x7F
+            out_type_str = TLGOUT_NAMES.get(out_type, str(out_type))
+            if out_value & 0x80:
                 for _ in range(4):
-                    if (r.u8() & 0x80) == 0: break
-        if (inv & 0x60) == 0x20: r.u16()
-        if (inv & 0x60) == 0x60:
-            ts = r.u16(); r.skip(ts)
-        nm = TLGIN_NAMES.get(it, str(it))
-        t = f"{nm}{arr}"
-        if ots: t += f"({ots})"
-        fields.append(f"{fn}:{t}")
+                    if (reader.u8() & 0x80) == 0: break
+        if (in_value & 0x60) == 0x20: reader.u16()
+        if (in_value & 0x60) == 0x60:
+            type_size = reader.u16(); reader.skip(type_size)
+        type_name = TLGIN_NAMES.get(in_type, str(in_type))
+        formatted = f"{type_name}{array_suffix}"
+        if out_type_str: formatted += f"({out_type_str})"
+        fields.append(f"{field_name}:{formatted}")
     return fields
 
 
@@ -189,87 +189,91 @@ def parse_event_fields(r, end_ea):
 # Stage A-2: Parse blobs
 # ---------------------------------------------------------------------------
 
-def _parse_provider_traits(r, end_pos):
-    gg = None
-    if r.pos < end_pos:
-        cs = r.u16(); ct = r.u8()
-        if ct == 1 and cs >= 19:
-            gg = _fmt_guid(r.raw(16))
+def _parse_provider_traits(reader, end_pos):
+    group_guid = None
+    if reader.pos < end_pos:
+        chunk_size = reader.u16(); chunk_type = reader.u8()
+        if chunk_type == 1 and chunk_size >= 19:
+            group_guid = _fmt_guid(reader.raw(16))
         else:
-            r.skip(max(0, cs - 3))
-    r.ea = end_pos
-    return gg
+            reader.skip(max(0, chunk_size - 3))
+    reader.ea = end_pos
+    return group_guid
 
 
 def parse_blobs(header_ea):
-    r = MemReader(header_ea + 16)
+    reader = MemReader(header_ea + 16)
     providers, events = [], []
-    unk_run = 0
+    unknown_run = 0
 
     while True:
-        bt = r.u8()
-        if bt == 1: break  # _TlgBlobEnd
+        blob_type = reader.u8()
+        if blob_type == 1: break  # _TlgBlobEnd
 
-        if bt == 0:  # padding
-            unk_run = 0; continue
+        if blob_type == 0:  # padding
+            unknown_run = 0; continue
 
-        if bt == 4:  # _TlgBlobProvider3
-            bs = r.pos - 1
-            guid = r.raw(16)
-            rs = r.pos
-            rem = r.u16()
-            ep = r.pos + rem - 2
-            nm = r.cstr()
-            gg = _parse_provider_traits(r, ep)
-            providers.append({"name": nm or "?", "guid": _fmt_guid(guid),
-                              "group_guid": gg, "rs_addr": rs,
-                              "blob_start": bs, "blob_end": r.pos})
-            unk_run = 0; continue
+        if blob_type == 4:  # _TlgBlobProvider3
+            guid = reader.raw(16)
+            registration_addr = reader.pos
+            remaining = reader.u16()
+            end_pos = reader.pos + remaining - 2
+            name = reader.cstr()
+            group_guid = _parse_provider_traits(reader, end_pos)
+            providers.append({"name": name or "?", "guid": _fmt_guid(guid),
+                              "group_guid": group_guid,
+                              "rs_addr": registration_addr})
+            unknown_run = 0; continue
 
-        if bt == 2:  # _TlgBlobProvider (legacy, no GUID)
-            bs = r.pos - 1
-            rs = r.pos
-            rem = r.u16()
-            ep = r.pos + rem - 2
-            nm = r.cstr()
-            gg = _parse_provider_traits(r, ep)
-            providers.append({"name": nm or "?", "guid": "Unknown(Type2)",
-                              "group_guid": gg, "rs_addr": rs,
-                              "blob_start": bs, "blob_end": r.pos})
-            unk_run = 0; continue
+        if blob_type == 2:  # _TlgBlobProvider (legacy, no GUID)
+            registration_addr = reader.pos
+            remaining = reader.u16()
+            end_pos = reader.pos + remaining - 2
+            name = reader.cstr()
+            group_guid = _parse_provider_traits(reader, end_pos)
+            providers.append({"name": name or "?", "guid": "Unknown(Type2)",
+                              "group_guid": group_guid,
+                              "rs_addr": registration_addr})
+            unknown_run = 0; continue
 
-        if bt in (3, 6):  # _TlgBlobEvent3 / _TlgBlobEvent4
-            bs = r.pos - 1
-            ch = r.u8(); lv = r.u8(); op = r.u8(); kw = r.u64()
-            rem = r.u16(); ep = r.pos + rem - 2
+        if blob_type in (3, 6):  # _TlgBlobEvent3 / _TlgBlobEvent4
+            blob_start = reader.pos - 1
+            channel = reader.u8(); level = reader.u8()
+            opcode = reader.u8(); keyword = reader.u64()
+            remaining = reader.u16()
+            end_pos = reader.pos + remaining - 2
             for _ in range(4):
-                if (r.u8() & 0x80) == 0: break
-            nm = r.cstr()
-            fl = parse_event_fields(r, ep)
-            r.ea = ep
-            events.append({"name": nm or "?", "channel": ch, "level": lv,
-                           "opcode": op, "keyword": hex(kw), "fields": fl,
-                           "blob_start": bs, "blob_end": r.pos})
-            unk_run = 0; continue
+                if (reader.u8() & 0x80) == 0: break
+            name = reader.cstr()
+            fields = parse_event_fields(reader, end_pos)
+            reader.ea = end_pos
+            events.append({"name": name or "?", "channel": channel,
+                           "level": level, "opcode": opcode,
+                           "keyword": hex(keyword), "fields": fields,
+                           "blob_start": blob_start, "blob_end": reader.pos})
+            unknown_run = 0; continue
 
-        if bt == 5:  # _TlgBlobEvent2 (legacy, no Channel)
-            bs = r.pos - 1
-            lv = r.u8(); op = r.u8(); r.u16()  # task
-            kw = r.u64(); rem = r.u16(); ep = r.pos + rem - 2
+        if blob_type == 5:  # _TlgBlobEvent2 (legacy, no Channel)
+            blob_start = reader.pos - 1
+            level = reader.u8(); opcode = reader.u8(); reader.u16()  # task
+            keyword = reader.u64()
+            remaining = reader.u16()
+            end_pos = reader.pos + remaining - 2
             for _ in range(4):
-                if (r.u8() & 0x80) == 0: break
-            nm = r.cstr()
-            fl = parse_event_fields(r, ep)
-            r.ea = ep
-            events.append({"name": nm or "?", "channel": 0x0B, "level": lv,
-                           "opcode": op, "keyword": hex(kw), "fields": fl,
-                           "blob_start": bs, "blob_end": r.pos})
-            unk_run = 0; continue
+                if (reader.u8() & 0x80) == 0: break
+            name = reader.cstr()
+            fields = parse_event_fields(reader, end_pos)
+            reader.ea = end_pos
+            events.append({"name": name or "?", "channel": 0x0B,
+                           "level": level, "opcode": opcode,
+                           "keyword": hex(keyword), "fields": fields,
+                           "blob_start": blob_start, "blob_end": reader.pos})
+            unknown_run = 0; continue
 
         # Unknown byte — skip and keep trying
-        unk_run += 1
-        if unk_run > 128:
-            print(f"  [!] Stopping parse after 128 unknown bytes at {hex(r.pos)}")
+        unknown_run += 1
+        if unknown_run > 128:
+            print(f"  [!] Stopping parse after 128 unknown bytes at {hex(reader.pos)}")
             break
 
     return providers, events
@@ -281,21 +285,22 @@ def parse_blobs(header_ea):
 
 def find_provider_structs(parsed_providers):
     """Match known rs_addr values against qwords in .data."""
-    rs_lookup = {p["rs_addr"]: p for p in parsed_providers}
-    pmap, bases = {}, set()
+    registration_lookup = {p["rs_addr"]: p for p in parsed_providers}
+    provider_map, known_bases = {}, set()
 
     for seg_ea in idautils.Segments():
         seg = ida_segment.getseg(seg_ea)
         if not seg or (seg.perm & _EXEC_FLAG): continue
         ea = _align8(seg.start_ea)
         while ea < seg.end_ea - 8:
-            v = ida_bytes.get_qword(ea)
-            if v in rs_lookup:
+            val = ida_bytes.get_qword(ea)
+            if val in registration_lookup:
                 base = ea - 8
-                pi = rs_lookup[v]; bases.add(base)
-                for off in range(0, 64, 8):
-                    pmap[base + off] = pi
-                print(f"  [+] _tlgProvider_t '{pi['name']}' at {hex(base)}")
+                prov_info = registration_lookup[val]
+                known_bases.add(base)
+                for offset in range(0, 64, 8):
+                    provider_map[base + offset] = prov_info
+                print(f"  [+] _tlgProvider_t '{prov_info['name']}' at {hex(base)}")
             ea += 8
 
     # Pass 2: indirect pointers
@@ -304,132 +309,156 @@ def find_provider_structs(parsed_providers):
         if not seg or (seg.perm & _EXEC_FLAG): continue
         ea = _align8(seg.start_ea)
         while ea < seg.end_ea - 8:
-            v = ida_bytes.get_qword(ea)
-            if v in bases and ea not in pmap:
-                pmap[ea] = pmap[v]
+            val = ida_bytes.get_qword(ea)
+            if val in known_bases and ea not in provider_map:
+                provider_map[ea] = provider_map[val]
             ea += 8
 
-    return pmap
+    return provider_map
 
 
 
 # ---------------------------------------------------------------------------
-# Stage B: Link events to functions and resolve providers
+# Stage B: Provider-Event Resolution
 # ---------------------------------------------------------------------------
 
 def _evt_for_addr(addr, events):
-    for e in events:
-        if e["blob_start"] <= addr < e["blob_end"]:
-            return e
+    for evt in events:
+        if evt["blob_start"] <= addr < evt["blob_end"]:
+            return evt
     return None
 
 
-def link_events(pmap, events, providers):
-    """Stage B: walk functions, match DataRefsFrom, resolve providers."""
+def link_events(provider_map, events, providers):
+    """Stage B: walk functions, match DataRefsFrom, resolve providers.
 
-    # --- Pre-compute: single provider fallback ---
-    uniq_map = set(p["name"] for p in pmap.values()) if pmap else set()
-    uniq_parsed = set(p["name"] for p in providers) if providers else set()
-    single = None
-    if len(uniq_map) == 1:
-        single = list(pmap.values())[0]
-    elif not uniq_map and len(uniq_parsed) == 1:
-        single = providers[0]
+    Resolution priority (based on empirical validation):
+      1. SingleProvider       — Binary contains only one provider
+      2. Direct-Preceding     — Provider ref appears before the event ref in the same function
+      3. Direct-Nearest       — Closest provider ref by address in the same function
+      4. CallGraph-dN         — DFS through callees (max depth: 3), searching backward first
+      5. Unknown              — No provider could be resolved
+    """
+
+    # --- Pre-compute: single provider detection ---
+    unique_mapped = set(p["name"] for p in provider_map.values()) if provider_map else set()
+    unique_parsed = set(p["name"] for p in providers) if providers else set()
+    single_provider = None
+    if len(unique_mapped) == 1:
+        single_provider = list(provider_map.values())[0]
+    elif not unique_mapped and len(unique_parsed) == 1:
+        single_provider = providers[0]
 
     # --- B-1: Walk functions ---
     print("[*] Walking functions for data references...")
-    f_provs = {}   # func → [(inst_ea, prov_info)]
-    f_evts = {}    # func → [(inst_ea, evt_info)]
-    f_calls = {}   # func → [(inst_ea, callee_ea)]
+    func_providers = {}   # func_ea → [(inst_ea, prov_info)]
+    func_events = {}      # func_ea → [(inst_ea, evt_info)]
+    func_calls = {}       # func_ea → [(inst_ea, callee_ea)]
 
-    for fea in idautils.Functions():
-        pr, ev, cl = [], [], []
-        for h in idautils.FuncItems(fea):
-            for d in idautils.DataRefsFrom(h):
-                d = int(d)
-                if d in pmap:
-                    pr.append((h, pmap[d]))
-                e = _evt_for_addr(d, events)
-                if e is not None:
-                    ev.append((h, e))
-            for c in idautils.CodeRefsFrom(h, 0):
-                cf = ida_funcs.get_func(c)
-                if cf and cf.start_ea != fea:
-                    cl.append((h, cf.start_ea))
-        f_provs[fea] = pr
-        f_evts[fea] = ev
-        f_calls[fea] = cl
+    for func_ea in idautils.Functions():
+        prov_refs, evt_refs, call_refs = [], [], []
+        for head in idautils.FuncItems(func_ea):
+            for data_ref in idautils.DataRefsFrom(head):
+                data_ref = int(data_ref)
+                if data_ref in provider_map:
+                    prov_refs.append((head, provider_map[data_ref]))
+                evt = _evt_for_addr(data_ref, events)
+                if evt is not None:
+                    evt_refs.append((head, evt))
+            for code_ref in idautils.CodeRefsFrom(head, 0):
+                callee = ida_funcs.get_func(code_ref)
+                if callee and callee.start_ea != func_ea:
+                    call_refs.append((head, callee.start_ea))
+        func_providers[func_ea] = prov_refs
+        func_events[func_ea] = evt_refs
+        func_calls[func_ea] = call_refs
 
     # Deduplicated callee list for DFS
-    f_callees = {}
-    for fea, pairs in f_calls.items():
-        seen, lst = set(), []
-        for _, tgt in pairs:
-            if tgt not in seen: seen.add(tgt); lst.append(tgt)
-        f_callees[fea] = lst
+    func_callees = {}
+    for func_ea, pairs in func_calls.items():
+        seen, targets = set(), []
+        for _, target in pairs:
+            if target not in seen: seen.add(target); targets.append(target)
+        func_callees[func_ea] = targets
 
-    def _cg_dfs(fea, d=0, mx=3, vis=None):
-        if vis is None: vis = set()
-        if fea in vis: return None, 0
-        vis.add(fea)
-        refs = f_provs.get(fea, [])
-        if refs: return refs[0][1], d
-        if d < mx:
-            for t in f_callees.get(fea, []):
-                r, dd = _cg_dfs(t, d + 1, mx, vis)
-                if r: return r, dd
+    def _callgraph_dfs(func_ea, depth=0, max_depth=3, visited=None):
+        if visited is None: visited = set()
+        if func_ea in visited: return None, 0
+        visited.add(func_ea)
+        refs = func_providers.get(func_ea, [])
+        if refs: return refs[0][1], depth
+        if depth < max_depth:
+            for target in func_callees.get(func_ea, []):
+                result, found_depth = _callgraph_dfs(target, depth + 1, max_depth, visited)
+                if result: return result, found_depth
         return None, 0
 
     # --- B-2: Resolve ---
     print("[*] Resolving providers per event...")
     results = []
 
-    for fea, erefs in f_evts.items():
-        if not erefs: continue
-        caller = ida_funcs.get_func_name(fea)
-        prefs = f_provs.get(fea, [])
-        cpairs = f_calls.get(fea, [])
+    for func_ea, evt_refs in func_events.items():
+        if not evt_refs: continue
+        caller_name = ida_funcs.get_func_name(func_ea)
+        prov_refs = func_providers.get(func_ea, [])
+        call_pairs = func_calls.get(func_ea, [])
 
-        for eea, einfo in erefs:
-            pn, pg, conf = "Unknown", "Unknown", "Unresolved"
+        for event_ea, event_info in evt_refs:
+            prov_name, prov_guid, confidence = "Unknown", "Unknown", "Unresolved"
 
-            # 1/2: Direct
-            if prefs:
-                pre = [(a, p) for a, p in prefs if a < eea]
-                if pre:
-                    _, bp = max(pre, key=lambda x: x[0])
-                    pn, pg, conf = bp["name"], bp["guid"], "Direct-Preceding"
-                else:
-                    _, bp = min(prefs, key=lambda x: abs(x[0] - eea))
-                    pn, pg, conf = bp["name"], bp["guid"], "Direct-Nearest"
+            # 1: SingleProvider — Single provider in binary
+            if single_provider:
+                prov_name = single_provider["name"]
+                prov_guid = single_provider["guid"]
+                confidence = "SingleProvider"
 
-            # 3: CallGraph (proximity-aware)
-            if conf == "Unresolved" and cpairs:
-                fol = sorted([(a, t) for a, t in cpairs if a > eea], key=lambda x: x[0])
-                for _, t in fol:
-                    r, d = _cg_dfs(t, d=1)
-                    if r:
-                        pn, pg, conf = r["name"], r["guid"], f"CallGraph-d{d}"
+            # 2: Direct-Preceding — Provider ref appears before the event ref in the same function
+            if confidence == "Unresolved" and prov_refs:
+                preceding = [(addr, prov) for addr, prov in prov_refs if addr < event_ea]
+                if preceding:
+                    _, best_prov = max(preceding, key=lambda x: x[0])
+                    prov_name = best_prov["name"]
+                    prov_guid = best_prov["guid"]
+                    confidence = "Direct-Preceding"
+
+            # 3: Direct-Nearest — Closest provider ref by address in the same function
+            if confidence == "Unresolved" and prov_refs:
+                _, best_prov = min(prov_refs, key=lambda x: abs(x[0] - event_ea))
+                prov_name = best_prov["name"]
+                prov_guid = best_prov["guid"]
+                confidence = "Direct-Nearest"
+
+            # 4: CallGraph — DFS through callees (max depth: 3), searching backward first
+            if confidence == "Unresolved" and call_pairs:
+                backward_calls = sorted(
+                    [(addr, target) for addr, target in call_pairs if addr <= event_ea],
+                    key=lambda x: x[0], reverse=True)
+                for _, target in backward_calls:
+                    result, depth = _callgraph_dfs(target, depth=1)
+                    if result:
+                        prov_name = result["name"]
+                        prov_guid = result["guid"]
+                        confidence = f"CallGraph-d{depth}"
                         break
-            if conf == "Unresolved" and cpairs:
-                bef = sorted([(a, t) for a, t in cpairs if a <= eea], key=lambda x: x[0], reverse=True)
-                for _, t in bef:
-                    r, d = _cg_dfs(t, d=1)
-                    if r:
-                        pn, pg, conf = r["name"], r["guid"], f"CallGraph-d{d}"
+            if confidence == "Unresolved" and call_pairs:
+                forward_calls = sorted(
+                    [(addr, target) for addr, target in call_pairs if addr > event_ea],
+                    key=lambda x: x[0])
+                for _, target in forward_calls:
+                    result, depth = _callgraph_dfs(target, depth=1)
+                    if result:
+                        prov_name = result["name"]
+                        prov_guid = result["guid"]
+                        confidence = f"CallGraph-d{depth}"
                         break
 
-            # 4: GlobalFallback
-            if conf == "Unresolved" and single:
-                pn, pg, conf = single["name"], single["guid"], "GlobalFallback"
-
-            flds = ", ".join(einfo.get("fields", [])) or "(none)"
+            fields_str = ", ".join(event_info.get("fields", [])) or "(none)"
             results.append({
-                "Caller": caller, "InstructionEA": hex(eea),
-                "Provider": pn, "GUID": pg,
-                "Event": einfo["name"], "Level": einfo["level"],
-                "Keyword": einfo["keyword"], "Fields": flds,
-                "Confidence": conf,
+                "Caller": caller_name, "InstructionEA": hex(event_ea),
+                "Provider": prov_name, "GUID": prov_guid,
+                "Event": event_info["name"], "Level": event_info["level"],
+                "Keyword": event_info["keyword"], "Fields": fields_str,
+                "Confidence": confidence,
             })
 
     return results
@@ -493,11 +522,13 @@ class TLGEventChooser(ida_kernwin.Choose):
 # ---------------------------------------------------------------------------
 
 def write_csv(results, path):
-    fns = ["Caller", "InstructionEA", "Provider", "GUID",
-           "Event", "Level", "Keyword", "Fields", "Confidence"]
+    fieldnames = ["Caller", "InstructionEA", "Provider", "GUID",
+                  "Event", "Level", "Keyword", "Fields", "Confidence"]
     try:
         with open(path, "w", newline="", encoding="utf-8") as f:
-            w = csv.DictWriter(f, fieldnames=fns); w.writeheader(); w.writerows(results)
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(results)
         print(f"[+] CSV saved: {path}")
     except Exception as e:
         print(f"[!] CSV error: {e}")
@@ -513,8 +544,6 @@ def main():
 
         # Wait for IDA's auto-analysis to complete.
         # Essential when running against raw binaries (.exe/.dll/.sys)
-        # in batch mode — without this, Functions() and DataRefsFrom
-        # may return incomplete results. Harmless when opening .i64.
         ida_auto.auto_wait()
 
         print("=" * 60)
@@ -528,62 +557,62 @@ def main():
             return
 
         # A-2: Parse blobs
-        all_provs, all_evts = [], []
-        for h in headers:
-            p, e = parse_blobs(h)
-            all_provs.extend(p); all_evts.extend(e)
+        all_providers, all_events = [], []
+        for header_ea in headers:
+            provs, evts = parse_blobs(header_ea)
+            all_providers.extend(provs); all_events.extend(evts)
 
-        print(f"\n[*] Parsed: {len(all_provs)} provider(s), {len(all_evts)} event(s)")
-        for p in all_provs:
-            print(f"  Provider: {p['name']}  GUID={p['guid']}")
-        for e in all_evts:
-            print(f"  Event: {e['name']}  Level={e['level']}  "
-                  f"Keyword={e['keyword']}  Fields={len(e.get('fields', []))}")
+        print(f"\n[*] Parsed: {len(all_providers)} provider(s), {len(all_events)} event(s)")
+        for prov in all_providers:
+            print(f"  Provider: {prov['name']}  GUID={prov['guid']}")
+        for evt in all_events:
+            print(f"  Event: {evt['name']}  Level={evt['level']}  "
+                  f"Keyword={evt['keyword']}  Fields={len(evt.get('fields', []))}")
 
-        if not all_evts:
+        if not all_events:
             print("[-] No events found in metadata.")
             return
 
         # A-3: _tlgProvider_t
         print("\n[*] Locating _tlgProvider_t runtime structures...")
-        pmap = find_provider_structs(all_provs)
-        if not pmap:
+        provider_map = find_provider_structs(all_providers)
+        if not provider_map:
             print("[!] No _tlgProvider_t found in .data. "
-                  "Only GlobalFallback will be available.")
+                  "Only SingleProvider will be available.")
 
         # B: Link
-        results = link_events(pmap, all_evts, all_provs)
+        results = link_events(provider_map, all_events, all_providers)
 
         if results:
             results.sort(key=lambda x: (x["Provider"], x["Event"], x["Caller"]))
         print(f"\n[*] Total linked: {len(results)}")
 
         # Summary
-        ps = {}
-        for r in results:
-            ps.setdefault(r["Provider"], set()).add(r["Event"])
-        for p, es in sorted(ps.items()):
-            print(f"  {p}: {len(es)} unique event(s)")
-        cs = {}
-        for r in results:
-            cs[r["Confidence"]] = cs.get(r["Confidence"], 0) + 1
-        for c, n in sorted(cs.items()):
-            print(f"  [{c}]: {n}")
+        provider_events = {}
+        for row in results:
+            provider_events.setdefault(row["Provider"], set()).add(row["Event"])
+        for prov, evts in sorted(provider_events.items()):
+            print(f"  {prov}: {len(evts)} unique event(s)")
+        confidence_counts = {}
+        for row in results:
+            confidence_counts[row["Confidence"]] = confidence_counts.get(row["Confidence"], 0) + 1
+        for conf, count in sorted(confidence_counts.items()):
+            print(f"  [{conf}]: {count}")
 
         # Choosers
-        bn = ida_nalt.get_root_filename() or "unknown"
-        if all_evts:
-            TLGEventChooser(f"TLG events — {bn}", all_evts).Show()
+        binary_name = ida_nalt.get_root_filename() or "unknown"
+        if all_events:
+            TLGEventChooser(f"TLG events — {binary_name}", all_events).Show()
         if results:
-            TLGLinkedChooser(f"TLG linked — {bn}", results).Show()
+            TLGLinkedChooser(f"TLG linked — {binary_name}", results).Show()
 
         # Batch CSV
         if len(idc.ARGV) > 1:
-            od = idc.ARGV[1]
-            if not os.path.exists(od):
-                try: os.makedirs(od)
-                except: od = "."
-            write_csv(results, os.path.join(od, f"{bn}_tlg.csv"))
+            output_dir = idc.ARGV[1]
+            if not os.path.exists(output_dir):
+                try: os.makedirs(output_dir)
+                except: output_dir = "."
+            write_csv(results, os.path.join(output_dir, f"{binary_name}_tlg.csv"))
 
     except Exception as e:
         print(f"[!] FATAL: {e}")

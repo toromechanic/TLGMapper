@@ -1,7 +1,7 @@
 {
   "providerName": "Microsoft.Windows.Shell.Desktop.UserLogonTelemetry",
   "guid": "{4846D1C4-912A-4306-B173-24970E40621B}",
-  "os": "Windows 11",
+  "os": "Windows11",
   "binaryCount": 4,
   "binaries": [
     "CustomShellHost.exe",
@@ -9,54 +9,8 @@
     "explorer.exe",
     "winlogon.exe"
   ],
-  "uniqueEventCount": 9,
+  "uniqueEventCount": 8,
   "events": [
-    {
-      "eventName": "StopEnduserOobeSessionTransition",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 5,
-          "keyword": "0x800000000000",
-          "fields": [
-            "isCompleted:UInt8(Boolean)",
-            "PartA_PrivTags:UInt64"
-          ],
-          "callers": [
-            {
-              "binary": "CustomShellHost.exe",
-              "function": "?s_PerUserSetupWaitMethod@CLogonTaskFramework@@CAJPEAV1@PEAVLogonTask@LogonFrameworkTelemetry@@@Z",
-              "ea": "0x1400c7ad7",
-              "confidence": "CallGraph-d2"
-            },
-            {
-              "binary": "ShellAppRuntime.exe",
-              "function": "?s_PerUserSetupWaitMethod@CLogonTaskFramework@@CAJPEAV1@PEAVLogonTask@LogonFrameworkTelemetry@@@Z",
-              "ea": "0x1400cc129",
-              "confidence": "CallGraph-d2"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "PartA_PrivTags",
-          "type": "UInt64",
-          "seenIn": [
-            "CustomShellHost.exe",
-            "ShellAppRuntime.exe"
-          ]
-        },
-        {
-          "fieldName": "isCompleted",
-          "type": "UInt8(Boolean)",
-          "seenIn": [
-            "CustomShellHost.exe",
-            "ShellAppRuntime.exe"
-          ]
-        }
-      ]
-    },
     {
       "eventName": "UserBlockingLogonTasksStart_V2",
       "variantCount": 1,

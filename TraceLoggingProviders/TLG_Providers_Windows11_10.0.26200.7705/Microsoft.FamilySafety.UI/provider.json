@@ -1,13 +1,13 @@
 {
   "providerName": "Microsoft.FamilySafety.UI",
   "guid": "{0EB5D084-6594-56C7-3885-B8841BAF9D48}",
-  "os": "Windows 11",
+  "os": "Windows11",
   "binaryCount": 2,
   "binaries": [
     "Wpc.dll",
     "WpcMon.exe"
   ],
-  "uniqueEventCount": 16,
+  "uniqueEventCount": 18,
   "events": [
     {
       "eventName": "ActivityError",
@@ -2031,6 +2031,52 @@
       ]
     },
     {
+      "eventName": "SendRequestResult",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "SendRequestResult:UInt32",
+            "ResultCode:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "WpcMon.exe",
+              "function": "?LogSendRequestResult@MonitorUILogger@Logging@UI@wpc@@SAXIJ@Z",
+              "ea": "0x14002756c",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "WpcMon.exe"
+          ]
+        },
+        {
+          "fieldName": "ResultCode",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "WpcMon.exe"
+          ]
+        },
+        {
+          "fieldName": "SendRequestResult",
+          "type": "UInt32",
+          "seenIn": [
+            "WpcMon.exe"
+          ]
+        }
+      ]
+    },
+    {
       "eventName": "ShowAppTimeLimitToast",
       "variantCount": 3,
       "variants": [
@@ -2224,6 +2270,44 @@
         {
           "fieldName": "wilActivity",
           "type": "Struct(String)",
+          "seenIn": [
+            "WpcMon.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "ShowDisallowed",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "AppId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "WpcMon.exe",
+              "function": "?LogShowDisallowed@MonitorUILogger@Logging@UI@wpc@@SAXAEBVAnyRuntimeApp@appids@@AEBW4EnforcementReason@TimeLimits@4@AEBV?$Optional@VDateTime@@@@@Z",
+              "ea": "0x140027650",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AppId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "WpcMon.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
           "seenIn": [
             "WpcMon.exe"
           ]

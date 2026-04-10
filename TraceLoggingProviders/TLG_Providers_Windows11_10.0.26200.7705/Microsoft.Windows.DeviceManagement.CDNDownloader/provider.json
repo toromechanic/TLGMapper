@@ -1,12 +1,12 @@
 {
   "providerName": "Microsoft.Windows.DeviceManagement.CDNDownloader",
   "guid": "{C280A7FD-E32E-4594-A073-C29658BEA931}",
-  "os": "Windows 11",
+  "os": "Windows11",
   "binaryCount": 1,
   "binaries": [
     "DeviceEnroller.exe"
   ],
-  "uniqueEventCount": 3,
+  "uniqueEventCount": 5,
   "events": [
     {
       "eventName": "ActivityError",
@@ -274,6 +274,44 @@
       ]
     },
     {
+      "eventName": "Error",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 2,
+          "keyword": "0x200000000000",
+          "fields": [
+            "Message:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "DeviceEnroller.exe",
+              "function": "?LogTelemetryError@@YAXPEBGZZ",
+              "ea": "0x140052834",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DeviceEnroller.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "DeviceEnroller.exe"
+          ]
+        }
+      ]
+    },
+    {
       "eventName": "HandleWatchDog_Activity",
       "variantCount": 3,
       "variants": [
@@ -467,6 +505,44 @@
         {
           "fieldName": "wilActivity",
           "type": "Struct(String)",
+          "seenIn": [
+            "DeviceEnroller.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Info",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x200000000000",
+          "fields": [
+            "Message:UnicodeString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "DeviceEnroller.exe",
+              "function": "?LogTelemetryInfo@@YAXPEBGZZ",
+              "ea": "0x140052940",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Message",
+          "type": "UnicodeString",
+          "seenIn": [
+            "DeviceEnroller.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
           "seenIn": [
             "DeviceEnroller.exe"
           ]

@@ -31,10 +31,10 @@ Walks every function in the binary via `DataRefsFrom` and `CodeRefsFrom`, then a
 
 | Priority | Method | Description |
 |----------|--------|-------------|
-| 🥇 1 | **Direct-Preceding** | Provider ref appears before the event ref in the same function |
-| 🥈 2 | **Direct-Nearest** | Closest provider ref by address in the same function |
-| 🥉 3 | **CallGraph-d*N*** | DFS through callees (max depth 3), proximity-aware |
-| 🌐 4 | **GlobalFallback** | Binary contains only one provider |
+| 🥇 1 | **SingleProvider** | Binary contains only one provider |
+| 🥈 2 | **Direct-Preceding** | Provider ref appears before the event ref in the same function |
+| 🥉 3 | **Direct-Nearest** | Closest provider ref by address in the same function |
+| 🔗 4 | **CallGraph-d*N*** | DFS through callees (max depth 3), searching backward first |
 | ❓ 5 | **Unknown** | No provider could be resolved |
 
 ## 📋 Requirements

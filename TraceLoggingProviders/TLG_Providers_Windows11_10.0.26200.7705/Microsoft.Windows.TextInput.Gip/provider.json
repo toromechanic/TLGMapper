@@ -1,12 +1,12 @@
 {
   "providerName": "Microsoft.Windows.TextInput.Gip",
   "guid": "{89DB9EAC-5750-580C-39D6-6978396822DD}",
-  "os": "Windows 11",
+  "os": "Windows11",
   "binaryCount": 1,
   "binaries": [
     "tsf3gip.dll"
   ],
-  "uniqueEventCount": 50,
+  "uniqueEventCount": 53,
   "events": [
     {
       "eventName": "ActivityError",
@@ -508,13 +508,13 @@
               "binary": "tsf3gip.dll",
               "function": "?HandleHotKey@LegacyBopomofoIme@Gip@@UEAA?AUHotKeyResult@2@GAEBUKeyEventHostInfo@@AEAVEditBufferAdapter@2@@Z",
               "ea": "0x180078e9d",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "tsf3gip.dll",
               "function": "?HandleHotKey@LegacyBopomofoIme@Gip@@UEAA?AUHotKeyResult@2@GAEBUKeyEventHostInfo@@AEAVEditBufferAdapter@2@@Z",
               "ea": "0x180078f03",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "tsf3gip.dll",
@@ -538,7 +538,7 @@
               "binary": "tsf3gip.dll",
               "function": "?HandleInputScopeChanged@ChtInputScopeHandler@Gip@@UEAAXW4__MIDL___MIDL_itf_inputscope_0000_0000_0001@@AEAVEditBufferAdapter@2@@Z",
               "ea": "0x18007fb9e",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             },
             {
               "binary": "tsf3gip.dll",
@@ -829,6 +829,46 @@
           ]
         }
       ]
+    },
+    {
+      "eventName": "EditBufferAdapter::StartComposition",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "tsf3gip.dll",
+              "function": "?StartComposition@EditBufferAdapter@Gip@@QEAAXW4ReadingStringType@2@@Z",
+              "ea": "0x180057a1a",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
+      "eventName": "EditBufferAdapter::StartCompositionWithRange",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "tsf3gip.dll",
+              "function": "?StartComposition@EditBufferAdapter@Gip@@QEAAXUTextRange@2@W4ReadingStringType@2@@Z",
+              "ea": "0x18005777f",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
     },
     {
       "eventName": "Failure",
@@ -1601,6 +1641,36 @@
       ]
     },
     {
+      "eventName": "InputController::CreateHandlers",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "localeId:HexInt32"
+          ],
+          "callers": [
+            {
+              "binary": "tsf3gip.dll",
+              "function": "?CreateHandlers@InputController@Gip@@IEAA?AV?$tuple@V?$unique_ptr@VCompositionHandler@Gip@@U?$default_delete@VCompositionHandler@Gip@@@std@@@std@@V?$unique_ptr@VTextSuggestionHandler@Gip@@U?$default_delete@VTextSuggestionHandler@Gip@@@std@@@2@V?$unique_ptr@VSipHandler@Gip@@U?$default_delete@VSipHandler@Gip@@@std@@@2@V?$unique_ptr@VInputScopeHandler@Gip@@U?$default_delete@VInputScopeHandler@Gip@@@std@@@2@@std@@KPEAUIMtfSuggestionNotify@@PEAUIMtfSuggestionClient@@PEAVLegacyIME@2@@Z",
+              "ea": "0x18002bcaa",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "localeId",
+          "type": "HexInt32",
+          "seenIn": [
+            "tsf3gip.dll"
+          ]
+        }
+      ]
+    },
+    {
       "eventName": "InputController::Initialize",
       "variantCount": 1,
       "variants": [
@@ -1615,7 +1685,7 @@
               "binary": "tsf3gip.dll",
               "function": "?Initialize@InputController@Gip@@QEAAXKPEAUIExternalComponents@2@@Z",
               "ea": "0x18002f5e8",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         }
@@ -1742,7 +1812,7 @@
               "binary": "tsf3gip.dll",
               "function": "?HookVirtualKey@KanaKeyStateManager@Gip@@UEAA_NGAEBUKeyEventHostInfo@@PEB_WAEBVEditBufferAdapter@2@AEBVInputState@2@@Z",
               "ea": "0x18004c409",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         }
@@ -1855,7 +1925,7 @@
               "binary": "tsf3gip.dll",
               "function": "?OnEditBufferChanging@KanaKeyStateManager@Gip@@UEAAXAEBVEditBufferAdapter@2@AEBVInputState@2@@Z",
               "ea": "0x18004c885",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         }
@@ -1991,7 +2061,7 @@
               "binary": "tsf3gip.dll",
               "function": "?TryMakeLegacyIme@LegacyIME@Gip@@SA?AV?$unique_ptr@VLegacyIME@Gip@@U?$default_delete@VLegacyIME@Gip@@@std@@@std@@KAEAV?$shared_ptr@V?$EventDispatcher@W4InputEvent@Gip@@V?$EventListener@W4InputEvent@Gip@@@2@@Gip@@@4@PEAV?$EventDispatcher@W4LearningEvent@Gip@@V?$EventListener@W4LearningEvent@Gip@@@2@@2@PEAUIImeCommonAPIClassFactory@@@Z",
               "ea": "0x1800443e7",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d1"
             }
           ]
         }

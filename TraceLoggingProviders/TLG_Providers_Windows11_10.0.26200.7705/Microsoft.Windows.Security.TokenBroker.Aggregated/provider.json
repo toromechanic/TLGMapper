@@ -1,13 +1,193 @@
 {
   "providerName": "Microsoft.Windows.Security.TokenBroker.Aggregated",
   "guid": "{339F227C-579C-4259-860C-F810655E6466}",
-  "os": "Windows 11",
+  "os": "Windows11",
   "binaryCount": 1,
   "binaries": [
     "Windows.Security.Authentication.Web.Core.dll"
   ],
-  "uniqueEventCount": 1,
+  "uniqueEventCount": 3,
   "events": [
+    {
+      "eventName": "WebTokenRequestResultOperation",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "PartA_PrivTags:UInt64",
+            "wilActivity:Struct(String)",
+            "hresult:UInt32",
+            "threadId:UInt32",
+            "webTokenRequestStatus:UInt32",
+            "errorCode:UInt32",
+            "responseCount:UInt32",
+            "isCacheHit:UInt8(Boolean)",
+            "isCacheExpired:UInt8(Boolean)",
+            "isCacheReadSkipped:UInt8(Boolean)",
+            "isCacheWriteSkipped:UInt8(Boolean)",
+            "cacheLookupResult:Int32",
+            "cacheWriteResult:Int32",
+            "silentTaskId:GUID",
+            "isSpuriousActivation:Bool32",
+            "isCallerAppContainer:Bool32",
+            "convertedChildHwnd:Bool32",
+            "silentTaskState:UInt32",
+            "silentTaskErrorReason:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "Windows.Security.Authentication.Web.Core.dll",
+              "function": "?Stop@WebTokenRequestResultOperation@WamClientLogProvider@@QEAAXPEBVCWebTokenRequestResultOperation@Core@Web@Authentication@Security@Windows@@PEAUIWebTokenRequestResult@45678@@Z",
+              "ea": "0x18000aebd",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "Windows.Security.Authentication.Web.Core.dll",
+              "function": "?Stop@WebTokenRequestResultOperation@WamClientLogProvider@@QEAAXPEBVCWebTokenRequestResultOperation@Core@Web@Authentication@Security@Windows@@PEAUIWebTokenRequestResult@45678@@Z",
+              "ea": "0x18000aef3",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "cacheLookupResult",
+          "type": "Int32",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "cacheWriteResult",
+          "type": "Int32",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "convertedChildHwnd",
+          "type": "Bool32",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "errorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "hresult",
+          "type": "UInt32",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "isCacheExpired",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "isCacheHit",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "isCacheReadSkipped",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "isCacheWriteSkipped",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "isCallerAppContainer",
+          "type": "Bool32",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "isSpuriousActivation",
+          "type": "Bool32",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "responseCount",
+          "type": "UInt32",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "silentTaskErrorReason",
+          "type": "UInt32",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "silentTaskId",
+          "type": "GUID",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "silentTaskState",
+          "type": "UInt32",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "threadId",
+          "type": "UInt32",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "webTokenRequestStatus",
+          "type": "UInt32",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "wilActivity",
+          "type": "Struct(String)",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        }
+      ]
+    },
     {
       "eventName": "WebTokenRequestResultOperation_ActivityError",
       "variantCount": 1,
@@ -176,6 +356,188 @@
         {
           "fieldName": "telemetryInfoDeserializeSuccess",
           "type": "UInt8(Boolean)",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WebTokenRequestResultOperation_ActivityStop",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "Count:Int64",
+            "DurationTotal_ms:Int64",
+            "DurationMax_ms:Int64",
+            "isValidOp:UInt8(Boolean)",
+            "isValidResultObject:UInt8(Boolean)",
+            "webTokenRequestStatus:UInt32",
+            "errorCode:UInt32",
+            "entrypoint:UnicodeString",
+            "callingApp:UnicodeString",
+            "serviceName:UnicodeString",
+            "providerId:UnicodeString",
+            "authority:UnicodeString",
+            "scope:UnicodeString",
+            "clientId:UnicodeString",
+            "callerIsEnumeratingAccounts:UInt8(Boolean)",
+            "isRequestTokenAsync:UInt8(Boolean)",
+            "isCacheHit:UInt8(Boolean)",
+            "silentTaskState:UInt32",
+            "silentTaskErrorReason:UInt32",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "Windows.Security.Authentication.Web.Core.dll",
+              "function": "?Stop@WebTokenRequestResultOperation@WamClientLogProvider@@QEAAXPEBVCWebTokenRequestResultOperation@Core@Web@Authentication@Security@Windows@@PEAUIWebTokenRequestResult@45678@@Z",
+              "ea": "0x18000ab8f",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Count",
+          "type": "Int64",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationMax_ms",
+          "type": "Int64",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "DurationTotal_ms",
+          "type": "Int64",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "authority",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "callerIsEnumeratingAccounts",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "callingApp",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "clientId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "entrypoint",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "errorCode",
+          "type": "UInt32",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "isCacheHit",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "isRequestTokenAsync",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "isValidOp",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "isValidResultObject",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "providerId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "scope",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "serviceName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "silentTaskErrorReason",
+          "type": "UInt32",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "silentTaskState",
+          "type": "UInt32",
+          "seenIn": [
+            "Windows.Security.Authentication.Web.Core.dll"
+          ]
+        },
+        {
+          "fieldName": "webTokenRequestStatus",
+          "type": "UInt32",
           "seenIn": [
             "Windows.Security.Authentication.Web.Core.dll"
           ]

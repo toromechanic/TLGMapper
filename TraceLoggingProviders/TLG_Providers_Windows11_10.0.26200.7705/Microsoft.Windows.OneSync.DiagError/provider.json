@@ -1,7 +1,7 @@
 {
   "providerName": "Microsoft.Windows.OneSync.DiagError",
   "guid": "{37EC0F35-026E-5E7E-D3D4-80F32547BFFF}",
-  "os": "Windows 11",
+  "os": "Windows11",
   "binaryCount": 15,
   "binaries": [
     "APHostClient.dll",
@@ -20,8 +20,38 @@
     "networkhelper.dll",
     "syncutil.dll"
   ],
-  "uniqueEventCount": 8,
+  "uniqueEventCount": 14,
   "events": [
+    {
+      "eventName": "AccountVerifier_InvalidRegistryDelete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "accountId:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?CheckRegistryConsistency@AccountVerifier@@QEAAJPEAH@Z",
+              "ea": "0x18004452d",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "accountId",
+          "type": "GUID",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
     {
       "eventName": "AccountVerifier_InvalidStoreDefault",
       "variantCount": 1,
@@ -43,6 +73,60 @@
         }
       ],
       "fieldSummary": [
+        {
+          "fieldName": "storeIndex",
+          "type": "UInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "AccountVerifier_InvalidStoreDelete",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "storeId0:HexInt32",
+            "storeId1:HexInt32",
+            "storeId2:HexInt32",
+            "storeIndex:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?CheckStoreConsistency@AccountVerifier@@QEAAJXZ",
+              "ea": "0x180044a6d",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "storeId0",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "storeId1",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "storeId2",
+          "type": "HexInt32",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
         {
           "fieldName": "storeIndex",
           "type": "UInt32",
@@ -337,22 +421,21 @@
       ]
     },
     {
-      "eventName": "IMAP_InvalidServerResponse",
+      "eventName": "IMAP_SocketCancel",
       "variantCount": 1,
       "variants": [
         {
           "level": 5,
-          "keyword": "0x200000000000",
+          "keyword": "0x0",
           "fields": [
-            "details:AnsiString",
-            "pResponse:AnsiString"
+            "details:AnsiString"
           ],
           "callers": [
             {
               "binary": "internetmail.dll",
-              "function": "?GetResponse@CDefaultResponseSink@@UEAAJPEADPEAPEAD@Z",
-              "ea": "0x180068160",
-              "confidence": "CallGraph-d3"
+              "function": "?CloseSocket@SocketHandle@@QEAAJXZ",
+              "ea": "0x180089da3",
+              "confidence": "CallGraph-d1"
             }
           ]
         }
@@ -364,31 +447,55 @@
           "seenIn": [
             "internetmail.dll"
           ]
-        },
+        }
+      ]
+    },
+    {
+      "eventName": "OneSyncService_DBFailedToInit",
+      "variantCount": 1,
+      "variants": [
         {
-          "fieldName": "pResponse",
-          "type": "AnsiString",
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "APHostService.dll",
+              "function": "?InitializeService@APHostService@@AEAAJXZ",
+              "ea": "0x18001901e",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
           "seenIn": [
-            "internetmail.dll"
+            "APHostService.dll"
           ]
         }
       ]
     },
     {
-      "eventName": "OneSyncService_ServiceOnstartingSucceeded",
+      "eventName": "OneSyncService_ServiceFailedToInitialize",
       "variantCount": 1,
       "variants": [
         {
           "level": 5,
-          "keyword": "0x200000000000",
+          "keyword": "0x0",
           "fields": [
+            "hr:Int32(HResult)",
             "durationMs:UInt64"
           ],
           "callers": [
             {
               "binary": "APHostService.dll",
               "function": "_lambda_77bc900f864c5cb152a19d3bc7a86315_::operator()",
-              "ea": "0x18001796f",
+              "ea": "0x1800179b2",
               "confidence": "CallGraph-d2"
             }
           ]
@@ -398,6 +505,13 @@
         {
           "fieldName": "durationMs",
           "type": "UInt64",
+          "seenIn": [
+            "APHostService.dll"
+          ]
+        },
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
           "seenIn": [
             "APHostService.dll"
           ]
@@ -416,6 +530,12 @@
             "hr:Int32(HResult)"
           ],
           "callers": [
+            {
+              "binary": "APHostService.dll",
+              "function": "?InitializeService@APHostService@@AEAAJXZ",
+              "ea": "0x180018e4d",
+              "confidence": "CallGraph-d2"
+            },
             {
               "binary": "APHostService.dll",
               "function": "?InitializeService@APHostService@@AEAAJXZ",
@@ -438,6 +558,82 @@
           "type": "AnsiString",
           "seenIn": [
             "APHostService.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "SNAS_ProviderNotRegistered",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "providerId:GUID",
+            "hr:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "APHostService.dll",
+              "function": "?_GetProvider@Snas@1@AEAAJIHAEAV?$CComPtr@VIAPHostProvider@@@ATL@@@Z",
+              "ea": "0x180013bb4",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "APHostService.dll"
+          ]
+        },
+        {
+          "fieldName": "providerId",
+          "type": "GUID",
+          "seenIn": [
+            "APHostService.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "UnknownDeleteAccountStoreType",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "accountId:GUID",
+            "storeType:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?PurgeDeletedAccount@SyncBookkeeper@@QEAAJAEBU_GUID@@@Z",
+              "ea": "0x18002acb1",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "accountId",
+          "type": "GUID",
+          "seenIn": [
+            "SyncController.dll"
+          ]
+        },
+        {
+          "fieldName": "storeType",
+          "type": "UInt32",
+          "seenIn": [
+            "SyncController.dll"
           ]
         }
       ]
@@ -538,6 +734,36 @@
             "Pimstore.dll",
             "internetmail.dll",
             "networkhelper.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WnfEventNotFound",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "stateName:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "SyncController.dll",
+              "function": "?_SetupActivationCondition@BaseWNFActivity@@AEAAJPEAUActivityActivationConditions@@@Z",
+              "ea": "0x1800568fc",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "stateName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "SyncController.dll"
           ]
         }
       ]

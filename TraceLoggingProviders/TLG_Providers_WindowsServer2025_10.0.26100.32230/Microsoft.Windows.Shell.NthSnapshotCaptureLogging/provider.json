@@ -7,84 +7,8 @@
     "ShellAppRuntime.exe",
     "explorer.exe"
   ],
-  "uniqueEventCount": 8,
+  "uniqueEventCount": 6,
   "events": [
-    {
-      "eventName": "NthBioRecallSetupDeviceIsEDUSKU",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 5,
-          "keyword": "0x800000000000",
-          "fields": [
-            "isEDUSKU:UInt8(Boolean)",
-            "PartA_PrivTags:UInt64"
-          ],
-          "callers": [
-            {
-              "binary": "ShellAppRuntime.exe",
-              "function": "?s_isRecallAllowedOnDevicePolicy@CLogonTaskFramework@@CA_N_N@Z",
-              "ea": "0x1400de3ec",
-              "confidence": "CallGraph-d2"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "PartA_PrivTags",
-          "type": "UInt64",
-          "seenIn": [
-            "ShellAppRuntime.exe"
-          ]
-        },
-        {
-          "fieldName": "isEDUSKU",
-          "type": "UInt8(Boolean)",
-          "seenIn": [
-            "ShellAppRuntime.exe"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "NthBioRecallSetupDeviceIsITManaged",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 5,
-          "keyword": "0x800000000000",
-          "fields": [
-            "isITManaged:UInt8(Boolean)",
-            "PartA_PrivTags:UInt64"
-          ],
-          "callers": [
-            {
-              "binary": "ShellAppRuntime.exe",
-              "function": "?s_isRecallAllowedOnDevicePolicy@CLogonTaskFramework@@CA_N_N@Z",
-              "ea": "0x1400de36b",
-              "confidence": "CallGraph-d2"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "PartA_PrivTags",
-          "type": "UInt64",
-          "seenIn": [
-            "ShellAppRuntime.exe"
-          ]
-        },
-        {
-          "fieldName": "isITManaged",
-          "type": "UInt8(Boolean)",
-          "seenIn": [
-            "ShellAppRuntime.exe"
-          ]
-        }
-      ]
-    },
     {
       "eventName": "NthSnapshotCaptureConsentCompleted",
       "variantCount": 1,
@@ -200,6 +124,12 @@
               "function": "??$NthSnapshotCaptureDeviceIsEU@_N@NthSnapshotCaptureTelemetry@@SAX$$QEA_N@Z",
               "ea": "0x1401030a0",
               "confidence": "CallGraph-d2"
+            },
+            {
+              "binary": "ShellAppRuntime.exe",
+              "function": "?s_shouldLaunchCloudExperienceHostForSnapshotCapture@CLogonTaskFramework@@CA_NW4LogonTypeFlags@@_N@Z",
+              "ea": "0x1400e119b",
+              "confidence": "CallGraph-d1"
             }
           ]
         }
@@ -209,6 +139,7 @@
           "fieldName": "PartA_PrivTags",
           "type": "UInt64",
           "seenIn": [
+            "ShellAppRuntime.exe",
             "explorer.exe"
           ]
         },
@@ -216,6 +147,7 @@
           "fieldName": "isEU",
           "type": "UInt8(Boolean)",
           "seenIn": [
+            "ShellAppRuntime.exe",
             "explorer.exe"
           ]
         }

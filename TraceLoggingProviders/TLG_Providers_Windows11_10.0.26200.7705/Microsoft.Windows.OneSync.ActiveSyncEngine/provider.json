@@ -1,12 +1,12 @@
 {
   "providerName": "Microsoft.Windows.OneSync.ActiveSyncEngine",
   "guid": "{AFA71204-CA19-516E-3B0B-97016857D3D7}",
-  "os": "Windows 11",
+  "os": "Windows11",
   "binaryCount": 1,
   "binaries": [
     "ActiveSyncProvider.dll"
   ],
-  "uniqueEventCount": 32,
+  "uniqueEventCount": 33,
   "events": [
     {
       "eventName": "AccountProperties",
@@ -1606,6 +1606,68 @@
         {
           "fieldName": "syncSentMailResult",
           "type": "Int32",
+          "seenIn": [
+            "ActiveSyncProvider.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "InvalidAutdHeartbeatOutOfRangeResponse",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "partnerGUID:GUID",
+            "minHeartbeat:Int32",
+            "maxHeartbeat:Int32",
+            "currentHeartbeat:Int32",
+            "serverHeartbeat:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "ActiveSyncProvider.dll",
+              "function": "?_CheckForChanges@AUTDExecutor@@MEAAJPEAK@Z",
+              "ea": "0x180089877",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "currentHeartbeat",
+          "type": "Int32",
+          "seenIn": [
+            "ActiveSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "maxHeartbeat",
+          "type": "Int32",
+          "seenIn": [
+            "ActiveSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "minHeartbeat",
+          "type": "Int32",
+          "seenIn": [
+            "ActiveSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "partnerGUID",
+          "type": "GUID",
+          "seenIn": [
+            "ActiveSyncProvider.dll"
+          ]
+        },
+        {
+          "fieldName": "serverHeartbeat",
+          "type": "UInt32",
           "seenIn": [
             "ActiveSyncProvider.dll"
           ]

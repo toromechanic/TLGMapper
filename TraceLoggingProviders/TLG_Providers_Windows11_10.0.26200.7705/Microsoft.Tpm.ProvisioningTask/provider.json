@@ -1,12 +1,12 @@
 {
   "providerName": "Microsoft.Tpm.ProvisioningTask",
   "guid": "{470BAA67-2D7F-4C9C-8BF4-B1B3226F7B17}",
-  "os": "Windows 11",
+  "os": "Windows11",
   "binaryCount": 1,
   "binaries": [
     "TpmCoreProvisioning.dll"
   ],
-  "uniqueEventCount": 78,
+  "uniqueEventCount": 79,
   "events": [
     {
       "eventName": "AcquiredAlreadyExpiredCert",
@@ -1287,7 +1287,7 @@
               "binary": "TpmCoreProvisioning.dll",
               "function": "?TpmCertGetAttestationParamsFromQcWes@@YAJPEAEPEAIH@Z",
               "ea": "0x180105d1b",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d2"
             }
           ]
         }
@@ -1331,6 +1331,76 @@
         {
           "fieldName": "ServerURL",
           "type": "UnicodeString",
+          "seenIn": [
+            "TpmCoreProvisioning.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "CTpmCoreClass::Initialize",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x400000000000",
+          "fields": [
+            "TpmIsPresent:UInt8(Boolean)",
+            "TpmIsVersion20:UInt8(Boolean)",
+            "TpmIsActivated:UInt8(Boolean)",
+            "TpmIsEnabled:UInt8(Boolean)",
+            "TpmIsOwned:UInt8(Boolean)",
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "TpmCoreProvisioning.dll",
+              "function": "?Initialize@CTpmCoreClass@@AEAAJXZ",
+              "ea": "0x18001dac9",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "TpmCoreProvisioning.dll"
+          ]
+        },
+        {
+          "fieldName": "TpmIsActivated",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "TpmCoreProvisioning.dll"
+          ]
+        },
+        {
+          "fieldName": "TpmIsEnabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "TpmCoreProvisioning.dll"
+          ]
+        },
+        {
+          "fieldName": "TpmIsOwned",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "TpmCoreProvisioning.dll"
+          ]
+        },
+        {
+          "fieldName": "TpmIsPresent",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "TpmCoreProvisioning.dll"
+          ]
+        },
+        {
+          "fieldName": "TpmIsVersion20",
+          "type": "UInt8(Boolean)",
           "seenIn": [
             "TpmCoreProvisioning.dll"
           ]
@@ -1943,7 +2013,7 @@
               "binary": "TpmCoreProvisioning.dll",
               "function": "?TpmCertGetEkCertFromWeb@@YAJIHPEAEI0PEAIH@Z",
               "ea": "0x1800aa055",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d2"
             }
           ]
         }
@@ -3704,7 +3774,7 @@
               "binary": "TpmCoreProvisioning.dll",
               "function": "?TpmInfoTrace@ProvisionLoggingProvider@@SAXPEBGIII00I0IHH00EE_NV?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@@Z",
               "ea": "0x1800196d8",
-              "confidence": "CallGraph-d1"
+              "confidence": "CallGraph-d2"
             }
           ]
         },

@@ -1,20 +1,19 @@
 {
   "providerName": "Microsoft.Windows.OneSync.DiagCritical",
   "guid": "{B738411F-062A-505A-9AB3-DF11C892082C}",
-  "os": "Windows 11",
-  "binaryCount": 9,
+  "os": "Windows11",
+  "binaryCount": 8,
   "binaries": [
     "APHostService.dll",
     "ActiveSyncCsp.dll",
     "ActiveSyncProvider.dll",
-    "DavSyncProvider.dll",
     "InternetMailCsp.dll",
     "SyncController.dll",
     "SyncProxy.dll",
     "accountaccessor.dll",
     "syncutil.dll"
   ],
-  "uniqueEventCount": 6,
+  "uniqueEventCount": 4,
   "events": [
     {
       "eventName": "Assert",
@@ -235,52 +234,6 @@
       ]
     },
     {
-      "eventName": "SyncController_UpgradingAccountToCurrentVersion",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 5,
-          "keyword": "0x200000000000",
-          "fields": [
-            "partnerId:HexInt32",
-            "accountVersion:Int32",
-            "currentVersion:Int32"
-          ],
-          "callers": [
-            {
-              "binary": "SyncController.dll",
-              "function": "?_CheckVersionAndUpgradeIfNeeded@SyncBookkeeper@@AEAAJAEBU_GUID@@@Z",
-              "ea": "0x18002e69e",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "accountVersion",
-          "type": "Int32",
-          "seenIn": [
-            "SyncController.dll"
-          ]
-        },
-        {
-          "fieldName": "currentVersion",
-          "type": "Int32",
-          "seenIn": [
-            "SyncController.dll"
-          ]
-        },
-        {
-          "fieldName": "partnerId",
-          "type": "HexInt32",
-          "seenIn": [
-            "SyncController.dll"
-          ]
-        }
-      ]
-    },
-    {
       "eventName": "Warning",
       "variantCount": 1,
       "variants": [
@@ -331,188 +284,6 @@
           "seenIn": [
             "APHostService.dll",
             "SyncController.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "WebDavEngineActivity",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 5,
-          "keyword": "0x200000000000",
-          "fields": [
-            "PartA_PrivTags:UInt64",
-            "wilActivity:Struct(String)",
-            "hresult:UInt32",
-            "threadId:UInt32",
-            "__TlgCV__:AnsiString",
-            "phase:UnicodeString",
-            "partnerGUID:GUID",
-            "dataType:UInt32",
-            "emailDomain:UnicodeString",
-            "syncType:UInt32",
-            "syncHResult:Int32",
-            "downloadCount:Int64",
-            "deletedCount:Int64",
-            "updatedCount:Int64",
-            "uploadCount:Int64",
-            "cardDavServerName:UnicodeString",
-            "calDavServerName:UnicodeString",
-            "syncFolderCount:Int64",
-            "folderErrorCount:Int64",
-            "itemErrorCount:Int64"
-          ],
-          "callers": [
-            {
-              "binary": "DavSyncProvider.dll",
-              "function": "?Stop@WebDavEngineActivity@WebDavEngineProvider@@QEAAXJPEAVTraceLoggingCorrelationVector@@AEBU_GUID@@KI@Z",
-              "ea": "0x1800174bd",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "PartA_PrivTags",
-          "type": "UInt64",
-          "seenIn": [
-            "DavSyncProvider.dll"
-          ]
-        },
-        {
-          "fieldName": "__TlgCV__",
-          "type": "AnsiString",
-          "seenIn": [
-            "DavSyncProvider.dll"
-          ]
-        },
-        {
-          "fieldName": "calDavServerName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "DavSyncProvider.dll"
-          ]
-        },
-        {
-          "fieldName": "cardDavServerName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "DavSyncProvider.dll"
-          ]
-        },
-        {
-          "fieldName": "dataType",
-          "type": "UInt32",
-          "seenIn": [
-            "DavSyncProvider.dll"
-          ]
-        },
-        {
-          "fieldName": "deletedCount",
-          "type": "Int64",
-          "seenIn": [
-            "DavSyncProvider.dll"
-          ]
-        },
-        {
-          "fieldName": "downloadCount",
-          "type": "Int64",
-          "seenIn": [
-            "DavSyncProvider.dll"
-          ]
-        },
-        {
-          "fieldName": "emailDomain",
-          "type": "UnicodeString",
-          "seenIn": [
-            "DavSyncProvider.dll"
-          ]
-        },
-        {
-          "fieldName": "folderErrorCount",
-          "type": "Int64",
-          "seenIn": [
-            "DavSyncProvider.dll"
-          ]
-        },
-        {
-          "fieldName": "hresult",
-          "type": "UInt32",
-          "seenIn": [
-            "DavSyncProvider.dll"
-          ]
-        },
-        {
-          "fieldName": "itemErrorCount",
-          "type": "Int64",
-          "seenIn": [
-            "DavSyncProvider.dll"
-          ]
-        },
-        {
-          "fieldName": "partnerGUID",
-          "type": "GUID",
-          "seenIn": [
-            "DavSyncProvider.dll"
-          ]
-        },
-        {
-          "fieldName": "phase",
-          "type": "UnicodeString",
-          "seenIn": [
-            "DavSyncProvider.dll"
-          ]
-        },
-        {
-          "fieldName": "syncFolderCount",
-          "type": "Int64",
-          "seenIn": [
-            "DavSyncProvider.dll"
-          ]
-        },
-        {
-          "fieldName": "syncHResult",
-          "type": "Int32",
-          "seenIn": [
-            "DavSyncProvider.dll"
-          ]
-        },
-        {
-          "fieldName": "syncType",
-          "type": "UInt32",
-          "seenIn": [
-            "DavSyncProvider.dll"
-          ]
-        },
-        {
-          "fieldName": "threadId",
-          "type": "UInt32",
-          "seenIn": [
-            "DavSyncProvider.dll"
-          ]
-        },
-        {
-          "fieldName": "updatedCount",
-          "type": "Int64",
-          "seenIn": [
-            "DavSyncProvider.dll"
-          ]
-        },
-        {
-          "fieldName": "uploadCount",
-          "type": "Int64",
-          "seenIn": [
-            "DavSyncProvider.dll"
-          ]
-        },
-        {
-          "fieldName": "wilActivity",
-          "type": "Struct(String)",
-          "seenIn": [
-            "DavSyncProvider.dll"
           ]
         }
       ]

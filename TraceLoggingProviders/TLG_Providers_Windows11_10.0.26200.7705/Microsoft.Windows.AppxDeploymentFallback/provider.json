@@ -1,7 +1,7 @@
 {
   "providerName": "Microsoft.Windows.AppxDeploymentFallback",
   "guid": "{AA1B41D3-D193-4660-9B47-DD701BA55841}",
-  "os": "Windows 11",
+  "os": "Windows11",
   "binaryCount": 8,
   "binaries": [
     "AppXDeploymentClient.dll",
@@ -13,7 +13,7 @@
     "AppxSip.dll",
     "ByteCodeGenerator.exe"
   ],
-  "uniqueEventCount": 56,
+  "uniqueEventCount": 45,
   "events": [
     {
       "eventName": "Added module",
@@ -221,84 +221,6 @@
       ]
     },
     {
-      "eventName": "CancelledHungRequest",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 5,
-          "keyword": "0x400000000000",
-          "fields": [
-            "packageFullName:UnicodeString",
-            "operation:UInt32",
-            "packageManagerStateName:UnicodeString",
-            "stackString:UnicodeString",
-            "waitChainInfo:UnicodeString",
-            "hrSubmitWerReport:Int32(HResult)",
-            "PartA_PrivTags:UInt64"
-          ],
-          "callers": [
-            {
-              "binary": "AppXDeploymentServer.dll",
-              "function": "sub_1801DFD0C",
-              "ea": "0x1801e0373",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "PartA_PrivTags",
-          "type": "UInt64",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "hrSubmitWerReport",
-          "type": "Int32(HResult)",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "operation",
-          "type": "UInt32",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "packageFullName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "packageManagerStateName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "stackString",
-          "type": "UnicodeString",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "waitChainInfo",
-          "type": "UnicodeString",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        }
-      ]
-    },
-    {
       "eventName": "Currently Installed Related Set",
       "variantCount": 1,
       "variants": [
@@ -343,7 +265,7 @@
               "binary": "AppXDeploymentServer.dll",
               "function": "sub_180080980",
               "ea": "0x1800811ad",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d2"
             }
           ]
         }
@@ -354,6 +276,68 @@
           "type": "UnicodeString",
           "seenIn": [
             "AppXDeploymentServer.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Database.Analyze",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x200000000000",
+          "fields": [
+            "Database:AnsiString",
+            "ConnectionId:UInt64",
+            "Partition:Int32",
+            "Name:AnsiString",
+            "PartA_PrivTags:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "ApplyTrustOffline.exe",
+              "function": "sub_1400503CC",
+              "ea": "0x1400504e5",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ConnectionId",
+          "type": "UInt64",
+          "seenIn": [
+            "ApplyTrustOffline.exe"
+          ]
+        },
+        {
+          "fieldName": "Database",
+          "type": "AnsiString",
+          "seenIn": [
+            "ApplyTrustOffline.exe"
+          ]
+        },
+        {
+          "fieldName": "Name",
+          "type": "AnsiString",
+          "seenIn": [
+            "ApplyTrustOffline.exe"
+          ]
+        },
+        {
+          "fieldName": "PartA_PrivTags",
+          "type": "UInt64",
+          "seenIn": [
+            "ApplyTrustOffline.exe"
+          ]
+        },
+        {
+          "fieldName": "Partition",
+          "type": "Int32",
+          "seenIn": [
+            "ApplyTrustOffline.exe"
           ]
         }
       ]
@@ -382,7 +366,7 @@
               "binary": "ApplyTrustOffline.exe",
               "function": "sub_14006254C",
               "ea": "0x1400626c6",
-              "confidence": "CallGraph-d2"
+              "confidence": "CallGraph-d1"
             }
           ]
         }
@@ -507,6 +491,26 @@
       ]
     },
     {
+      "eventName": "EnablePackageStatusSkipped",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 4,
+          "keyword": "0x0",
+          "fields": [],
+          "callers": [
+            {
+              "binary": "AppXDeploymentServer.dll",
+              "function": "sub_1800B6900",
+              "ea": "0x1800b6926",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": []
+    },
+    {
       "eventName": "Extension DLLs previously loaded.",
       "variantCount": 1,
       "variants": [
@@ -530,146 +534,6 @@
         {
           "fieldName": "moduleCount",
           "type": "UInt64",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "Failure",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 5,
-          "keyword": "0x0",
-          "fields": [
-            "File:UnicodeString",
-            "Function:UnicodeString",
-            "Failing operation:UnicodeString",
-            "HResult:HexInt32",
-            "Message:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "AppxPackaging.dll",
-              "function": "?Create@AppxBlockMapReader@BlockMap@Packaging@Appx@@SAJPEAUIStream@@PEBG_N1PEAPEAV1234@@Z",
-              "ea": "0x1800250a1",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "Failing operation",
-          "type": "UnicodeString",
-          "seenIn": [
-            "AppxPackaging.dll"
-          ]
-        },
-        {
-          "fieldName": "File",
-          "type": "UnicodeString",
-          "seenIn": [
-            "AppxPackaging.dll"
-          ]
-        },
-        {
-          "fieldName": "Function",
-          "type": "UnicodeString",
-          "seenIn": [
-            "AppxPackaging.dll"
-          ]
-        },
-        {
-          "fieldName": "HResult",
-          "type": "HexInt32",
-          "seenIn": [
-            "AppxPackaging.dll"
-          ]
-        },
-        {
-          "fieldName": "Message",
-          "type": "UnicodeString",
-          "seenIn": [
-            "AppxPackaging.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "FileIntegrityStateLessThanFull",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 5,
-          "keyword": "0x400000000000",
-          "fields": [
-            "fileName:UnicodeString",
-            "access:HexInt32",
-            "isEncrypted:Bool32",
-            "requiresEAIntegrity:Bool32",
-            "fileSizeValid:Bool32",
-            "fileSize:UInt64",
-            "integrityState:UInt32"
-          ],
-          "callers": [
-            {
-              "binary": "AppXDeploymentServer.dll",
-              "function": "sub_1800AA21C",
-              "ea": "0x1800aa5cd",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "access",
-          "type": "HexInt32",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "fileName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "fileSize",
-          "type": "UInt64",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "fileSizeValid",
-          "type": "Bool32",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "integrityState",
-          "type": "UInt32",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "isEncrypted",
-          "type": "Bool32",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "requiresEAIntegrity",
-          "type": "Bool32",
           "seenIn": [
             "AppXDeploymentServer.dll"
           ]
@@ -871,6 +735,36 @@
       ]
     },
     {
+      "eventName": "GetDownlevelInstalledPackageForUser",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "HResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "AppXDeploymentServer.dll",
+              "function": "sub_1802B070C",
+              "ea": "0x1802b07f5",
+              "confidence": "CallGraph-d2"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "AppXDeploymentServer.dll"
+          ]
+        }
+      ]
+    },
+    {
       "eventName": "Getting Main Package indexed row failed",
       "variantCount": 1,
       "variants": [
@@ -916,7 +810,7 @@
               "binary": "AppXDeploymentServer.dll",
               "function": "sub_1800BC3A8",
               "ea": "0x1800bc4c3",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d2"
             }
           ]
         }
@@ -1249,36 +1143,6 @@
       ]
     },
     {
-      "eventName": "MainPackageIgnoredBecauseItHasAlreadyBeenAdded",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 5,
-          "keyword": "0x0",
-          "fields": [
-            "FamilyName:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "AppXDeploymentServer.dll",
-              "function": "sub_18011BC90",
-              "ea": "0x18011c43f",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "FamilyName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        }
-      ]
-    },
-    {
       "eventName": "Multiple frameworks with same version found, choosing not yet installed package",
       "variantCount": 1,
       "variants": [
@@ -1343,7 +1207,7 @@
               "binary": "AppXDeploymentServer.dll",
               "function": "sub_1802734D8",
               "ea": "0x18027353c",
-              "confidence": "CallGraph-d3"
+              "confidence": "CallGraph-d2"
             }
           ]
         }
@@ -1357,26 +1221,6 @@
           ]
         }
       ]
-    },
-    {
-      "eventName": "Package approved for unsigned package origin",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 5,
-          "keyword": "0x0",
-          "fields": [],
-          "callers": [
-            {
-              "binary": "AppXDeploymentServer.dll",
-              "function": "sub_180296360",
-              "ea": "0x180296fe3",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": []
     },
     {
       "eventName": "Package does not exist for current user",
@@ -1432,284 +1276,6 @@
         {
           "fieldName": "packageFullName",
           "type": "UnicodeString",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "PackageManagerStartDeployment",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 5,
-          "keyword": "0x400000000000",
-          "fields": [
-            "DeploymentOperation:UInt32",
-            "Path:UnicodeString",
-            "HasExternalLocation:Bool32",
-            "Flags:UInt32",
-            "FlagsHigh:UInt32",
-            "CallingProcess:UnicodeString",
-            "__TlgCV__:AnsiString"
-          ],
-          "callers": [
-            {
-              "binary": "AppXDeploymentServer.dll",
-              "function": "sub_18014750C",
-              "ea": "0x1801477c7",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "CallingProcess",
-          "type": "UnicodeString",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "DeploymentOperation",
-          "type": "UInt32",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "Flags",
-          "type": "UInt32",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "FlagsHigh",
-          "type": "UInt32",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "HasExternalLocation",
-          "type": "Bool32",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "Path",
-          "type": "UnicodeString",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "__TlgCV__",
-          "type": "AnsiString",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "PackageManagerStartDeploymentForAllApplications",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 5,
-          "keyword": "0x400000000000",
-          "fields": [
-            "DeploymentOperation:UInt32",
-            "SecondaryPaths:UnicodeString",
-            "HasExternalLocation:Bool32",
-            "Flags:UInt32",
-            "FlagsHigh:UInt32",
-            "CallingProcess:UnicodeString",
-            "__TlgCV__:AnsiString",
-            "PartA_PrivTags:UInt64"
-          ],
-          "callers": [
-            {
-              "binary": "AppXDeploymentServer.dll",
-              "function": "sub_18014750C",
-              "ea": "0x180147aca",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "CallingProcess",
-          "type": "UnicodeString",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "DeploymentOperation",
-          "type": "UInt32",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "Flags",
-          "type": "UInt32",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "FlagsHigh",
-          "type": "UInt32",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "HasExternalLocation",
-          "type": "Bool32",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "PartA_PrivTags",
-          "type": "UInt64",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "SecondaryPaths",
-          "type": "UnicodeString",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "__TlgCV__",
-          "type": "AnsiString",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "PackageStatusUpdateOtherAndBadOrNotAvailable",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 5,
-          "keyword": "0x0",
-          "fields": [
-            "packageFullName:UnicodeString",
-            "statusToSet:HexInt32"
-          ],
-          "callers": [
-            {
-              "binary": "ApplyTrustOffline.exe",
-              "function": "sub_1400421A0",
-              "ea": "0x1400423a9",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "packageFullName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "ApplyTrustOffline.exe"
-          ]
-        },
-        {
-          "fieldName": "statusToSet",
-          "type": "HexInt32",
-          "seenIn": [
-            "ApplyTrustOffline.exe"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "PreRegisterAllInboxPackages start",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 5,
-          "keyword": "0x0",
-          "fields": [
-            "ProcessName:UnicodeString",
-            "Options:HexInt32"
-          ],
-          "callers": [
-            {
-              "binary": "AppXDeploymentServer.dll",
-              "function": "sub_1803003B0",
-              "ea": "0x18030046a",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "Options",
-          "type": "HexInt32",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "ProcessName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "RemoveDefaultPackagesSuccess",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 5,
-          "keyword": "0x400000000000",
-          "fields": [
-            "PackageFamilyName:UnicodeString",
-            "PartA_PrivTags:UInt64"
-          ],
-          "callers": [
-            {
-              "binary": "AppXDeploymentServer.dll",
-              "function": "sub_18013840C",
-              "ea": "0x1801390c5",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "PackageFamilyName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "PartA_PrivTags",
-          "type": "UInt64",
           "seenIn": [
             "AppXDeploymentServer.dll"
           ]
@@ -1791,158 +1357,6 @@
         },
         {
           "fieldName": "outgoingPackageFromUpdateList",
-          "type": "UnicodeString",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "ResiliencyRecoverRequestExpiredOnExternalVolume",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 5,
-          "keyword": "0x400000000000",
-          "fields": [
-            "PackageFullName:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "AppXDeploymentServer.dll",
-              "function": "sub_1801DA2E4",
-              "ea": "0x1801da936",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "PackageFullName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "ServiceLifetimeManager::AllowUninstall - Don't call TerminateServicesInPackage",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "Method:UnicodeString",
-            "PackageFullName:UnicodeString",
-            "DoNotServicePackageReason:UInt32"
-          ],
-          "callers": [
-            {
-              "binary": "AppXDeploymentServer.dll",
-              "function": "sub_180113230",
-              "ea": "0x180113376",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "DoNotServicePackageReason",
-          "type": "UInt32",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "Method",
-          "type": "UnicodeString",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "PackageFullName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "ServiceLifetimeManager::TerminateApplications - Don't call TerminateServicesInPackage",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "Method:UnicodeString",
-            "PackageFullName:UnicodeString",
-            "DoNotServicePackageReason:UInt32"
-          ],
-          "callers": [
-            {
-              "binary": "AppXDeploymentServer.dll",
-              "function": "sub_1800FB540",
-              "ea": "0x1800fb692",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "DoNotServicePackageReason",
-          "type": "UInt32",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "Method",
-          "type": "UnicodeString",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        },
-        {
-          "fieldName": "PackageFullName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "AppXDeploymentServer.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "StagingSession could not be retrieved. The package may no longer be accessible or the backup manifest was lost.",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 5,
-          "keyword": "0x0",
-          "fields": [
-            "uri:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "AppXDeploymentServer.dll",
-              "function": "sub_180131300",
-              "ea": "0x18013169d",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "uri",
           "type": "UnicodeString",
           "seenIn": [
             "AppXDeploymentServer.dll"

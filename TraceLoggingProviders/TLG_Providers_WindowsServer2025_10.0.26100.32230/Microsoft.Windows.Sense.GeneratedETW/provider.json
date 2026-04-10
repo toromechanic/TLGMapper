@@ -12,174 +12,8 @@
     "SenseSampleUploader.exe",
     "SenseTracer.exe"
   ],
-  "uniqueEventCount": 90,
+  "uniqueEventCount": 80,
   "events": [
-    {
-      "eventName": "AccountPolicyEnforcer",
-      "variantCount": 4,
-      "variants": [
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:AnsiString",
-            "PolicyName:UnicodeString",
-            "PolicyVersion:UnicodeString",
-            "PolicyHash:UnicodeString",
-            "Accounts:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?Fire@PolicyApplicationGenericEtw@disruption@sense@@QEAAXXZ",
-              "ea": "0x1807a0050",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "UserSid:UnicodeString",
-            "UserName:UnicodeString",
-            "ClientIpAddress:UInt32",
-            "LdapPort:UInt16"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?HandleAccountActiveLdapConnections@AccountPolicyEnforcer@disruption@sense@@AEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
-              "ea": "0x18079ab1b",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:AnsiString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?OnGpoRegistryChange@AccountPolicyEnforcer@disruption@sense@@AEAAXW4RegistryChangeKind@wil@@@Z",
-              "ea": "0x18079b8c2",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 2,
-          "keyword": "0x0",
-          "fields": [
-            "errorCode:Int32(HResult)",
-            "message:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "_lambda_9e15ea32e7efea550682e67a0ac057ad_::operator()",
-              "ea": "0x1807994e1",
-              "confidence": "CallGraph-d1"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "_lambda_bc722678b3cd293006e0170e7127655a_::operator()",
-              "ea": "0x180799b07",
-              "confidence": "CallGraph-d1"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "_lambda_bc722678b3cd293006e0170e7127655a_::operator()",
-              "ea": "0x180799c6f",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "Accounts",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "ClientIpAddress",
-          "type": "UInt32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "LdapPort",
-          "type": "UInt16",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "PolicyHash",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "PolicyName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "PolicyVersion",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "UserName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "UserSid",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "errorCode",
-          "type": "Int32(HResult)",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "AnsiString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
     {
       "eventName": "AccountPolicyEnforcerPolicyApplied",
       "variantCount": 1,
@@ -311,121 +145,132 @@
       ]
     },
     {
-      "eventName": "BackgroundCommandExecution",
+      "eventName": "CloseLdapConnection",
       "variantCount": 1,
       "variants": [
         {
-          "level": 4,
+          "level": 5,
           "keyword": "0x0",
           "fields": [
-            "message:AnsiString",
-            "isInitiated:UInt8(Boolean)"
+            "UserSid:UnicodeString",
+            "UserName:UnicodeString",
+            "ClientIpAddress:UInt32",
+            "LdapPort:UInt16",
+            "Bound:Bool32",
+            "Ssl:Bool32",
+            "Udp:Bool32",
+            "GcPort:Bool32",
+            "GssApi:Bool32",
+            "SpnEgo:Bool32",
+            "Simple:Bool32",
+            "DigestMd5:Bool32",
+            "SigningOn:Bool32",
+            "SealingOn:Bool32"
           ],
           "callers": [
             {
               "binary": "MsSense.dll",
-              "function": "?WorkingProc@BackgroundExecutionCommand@cyberData@sense@@EEAA_N_N@Z",
-              "ea": "0x18040f225",
-              "confidence": "CallGraph-d3"
+              "function": "?HandleAccountActiveLdapConnections@AccountPolicyEnforcer@disruption@sense@@AEAAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
+              "ea": "0x18079ac68",
+              "confidence": "CallGraph-d1"
             }
           ]
         }
       ],
       "fieldSummary": [
         {
-          "fieldName": "isInitiated",
-          "type": "UInt8(Boolean)",
+          "fieldName": "Bound",
+          "type": "Bool32",
           "seenIn": [
             "MsSense.dll"
           ]
         },
         {
-          "fieldName": "message",
-          "type": "AnsiString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "Configuration",
-      "variantCount": 2,
-      "variants": [
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "callbacksNum:UInt64"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?OnCloudConfigurationChange@Configuration@1sense@@QEAA?AV?$shared_ptr@$$CBVResponse@cyberData@sense@@@std@@AEBV?$shared_ptr@$$CBVConfigurationCommand@cyberData@sense@@@4@@Z",
-              "ea": "0x180633476",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "valueName:UnicodeString",
-            "keyName:UnicodeString",
-            "value:UInt32",
-            "prevValue:UInt32"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?UpdateFromRegistryValues@ConfigurationSnapshot@Configuration@sense@@AEAA_NXZ",
-              "ea": "0x18063e96d",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "callbacksNum",
-          "type": "UInt64",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "keyName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "prevValue",
+          "fieldName": "ClientIpAddress",
           "type": "UInt32",
           "seenIn": [
             "MsSense.dll"
           ]
         },
         {
-          "fieldName": "value",
-          "type": "UInt32",
+          "fieldName": "DigestMd5",
+          "type": "Bool32",
           "seenIn": [
             "MsSense.dll"
           ]
         },
         {
-          "fieldName": "valueName",
+          "fieldName": "GcPort",
+          "type": "Bool32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "GssApi",
+          "type": "Bool32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "LdapPort",
+          "type": "UInt16",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "SealingOn",
+          "type": "Bool32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "SigningOn",
+          "type": "Bool32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Simple",
+          "type": "Bool32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "SpnEgo",
+          "type": "Bool32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Ssl",
+          "type": "Bool32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Udp",
+          "type": "Bool32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "UserName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSid",
           "type": "UnicodeString",
           "seenIn": [
             "MsSense.dll"
@@ -435,83 +280,8 @@
     },
     {
       "eventName": "DLP",
-      "variantCount": 14,
+      "variantCount": 1,
       "variants": [
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "MaxPathsSize:UInt32"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?AddFilePath@DlpFileDeleter@dlp@sense@@QEAAXAEBUFilePathInfo@23@@Z",
-              "ea": "0x180222466",
-              "confidence": "CallGraph-d1"
-            },
-            {
-              "binary": "SenseDlpProcessor.exe",
-              "function": "?AddFilePath@DlpFileDeleter@dlp@sense@@QEAAXAEBUFilePathInfo@23@@Z",
-              "ea": "0x14012e386",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 2,
-          "keyword": "0x0",
-          "fields": [
-            "errorCode:Int32(HResult)",
-            "message:UnicodeString",
-            "FilePath:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?CallPolicyEvaluation@EvaluationPolicyRetrievalManager@dlp@sense@@AEAAJAEBUEvaluationPolicyRetrievalInputParams@23@AEAUEvaluationPolicyRetrievalOutputParams@23@AEBV?$shared_ptr@VDlpManager@dlp@sense@@@std@@AEAVvalue@json@web@@@Z",
-              "ea": "0x1801c2774",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?CallbackInternal@DlpFileDeleter@dlp@sense@@QEAAXXZ",
-              "ea": "0x1802227a5",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 3,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "Dlp_FilePath:UnicodeString",
-            "Dlp_FileSize:UInt64",
-            "Dlp_TrueFileTypeLatency:UInt64",
-            "Dlp_DprtTrueFileType:UnicodeString",
-            "Dlp_TrueFileTypeErrorDescription:UnicodeString",
-            "Dlp_DprtTrueFileTypeHr:Int32(HResult)"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?CheckDprtSupportedDlpFile@GenericEtwActionFactory@behavior@sense@@AEAA_NAEAV?$shared_ptr@UFileEntity@cyberData@sense@@@std@@V?$shared_ptr@UDlpData@dlp@sense@@@5@@Z",
-              "ea": "0x1807689f7",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
         {
           "level": 4,
           "keyword": "0x0",
@@ -530,260 +300,9 @@
               "confidence": "CallGraph-d1"
             }
           ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "ADSRemoveHResult:Int32(HResult)",
-            "EaRemoveHResult:Int32(HResult)"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?ExecuteImpl@RmsLabelingAction@behavior@sense@@AEAAXXZ",
-              "ea": "0x1807790d3",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "ADSWriteHResult:Int32(HResult)",
-            "EaWriteHResult:Int32(HResult)"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?ExecuteImpl@RmsLabelingAction@behavior@sense@@AEAAXXZ",
-              "ea": "0x180779308",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 3,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "FilePath:UnicodeString",
-            "EventSize:UInt64"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?GenerateDlpEvent@dlp@sense@@YAXV?$shared_ptr@VDlpManager@dlp@sense@@@std@@V?$shared_ptr@UDlpData@dlp@sense@@@4@V?$shared_ptr@UFileEntity@cyberData@sense@@@4@V?$shared_ptr@UProcessEntity@cyberData@sense@@@4@V?$shared_ptr@UAccountEntity@cyberData@sense@@@4@V?$shared_ptr@VFileLabelingActionConfiguration@GenericETW@sense@@@4@W4EventSource@FileEvent@cyberData@2@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@4@_K88E_N@Z",
-              "ea": "0x180218b30",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 3,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?OnConfigurationChange@DlpFileDeleter@dlp@sense@@QEAAXAEBV?$shared_ptr@VDlpManager@dlp@sense@@@std@@@Z",
-              "ea": "0x1802239fd",
-              "confidence": "CallGraph-d1"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?TryDelete@DlpFileDeleter@dlp@sense@@AEAAXXZ",
-              "ea": "0x180224de5",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 2,
-          "keyword": "0x0",
-          "fields": [
-            "errorCode:Int32",
-            "message:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?ReportSyncAppData@SyncAppScheduler@dlp@sense@@AEAAXXZ",
-              "ea": "0x180233071",
-              "confidence": "CallGraph-d2"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?TryDeleteExpiredArchiveResidueFolder@DlpFileDeleter@dlp@sense@@AEAAXXZ",
-              "ea": "0x1802256ff",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 2,
-          "keyword": "0x0",
-          "fields": [
-            "errorCode:Int32",
-            "message:AnsiString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?RunDeletion@DlpFileDeleter@dlp@sense@@AEAAXXZ",
-              "ea": "0x180223d52",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "ErrorCode:UInt32",
-            "FileSize:UInt64",
-            "CurrentDeleteCount:UInt32"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?TryDelete@DlpFileDeleter@dlp@sense@@AEAAXXZ",
-              "ea": "0x18022486e",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "FilePath:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?TryDeleteExpiredArchiveResidueFolder@DlpFileDeleter@dlp@sense@@AEAAXXZ",
-              "ea": "0x1802252c2",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "filePath:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?TryDeleteExpiredArchiveResidueFolder@DlpFileDeleter@dlp@sense@@AEAAXXZ",
-              "ea": "0x18022558f",
-              "confidence": "CallGraph-d1"
-            }
-          ]
         }
       ],
       "fieldSummary": [
-        {
-          "fieldName": "ADSRemoveHResult",
-          "type": "Int32(HResult)",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "ADSWriteHResult",
-          "type": "Int32(HResult)",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "CurrentDeleteCount",
-          "type": "UInt32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "Dlp_DprtTrueFileType",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "Dlp_DprtTrueFileTypeHr",
-          "type": "Int32(HResult)",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "Dlp_FilePath",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "Dlp_FileSize",
-          "type": "UInt64",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "Dlp_TrueFileTypeErrorDescription",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "Dlp_TrueFileTypeLatency",
-          "type": "UInt64",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "EaRemoveHResult",
-          "type": "Int32(HResult)",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "EaWriteHResult",
-          "type": "Int32(HResult)",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "ErrorCode",
-          "type": "UInt32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "EventSize",
-          "type": "UInt64",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
         {
           "fieldName": "FilePath",
           "type": "UnicodeString",
@@ -806,96 +325,7 @@
           ]
         },
         {
-          "fieldName": "MaxPathsSize",
-          "type": "UInt32",
-          "seenIn": [
-            "MsSense.dll",
-            "SenseDlpProcessor.exe"
-          ]
-        },
-        {
           "fieldName": "TrueFileType",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "errorCode",
-          "type": "Int32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "errorCode",
-          "type": "Int32(HResult)",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "filePath",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "AnsiString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll",
-            "SenseDlpProcessor.exe"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "DefenderBridge",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "HResult:Int32(HResult)",
-            "PolicyName:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?OnPolicyRemoval@DefenderBridge@disruption@sense@@UEAAXAEBV?$shared_ptr@$$CBVIPolicy@Configuration@sense@@@std@@@Z",
-              "ea": "0x1807a07d7",
-              "confidence": "CallGraph-d1"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?OnPolicyUpdate@DefenderBridge@disruption@sense@@UEAA_NAEBV?$shared_ptr@$$CBVIPolicy@Configuration@sense@@@std@@@Z",
-              "ea": "0x1807a09e7",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "HResult",
-          "type": "Int32(HResult)",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "PolicyName",
           "type": "UnicodeString",
           "seenIn": [
             "MsSense.dll"
@@ -987,65 +417,6 @@
       ]
     },
     {
-      "eventName": "DeviceContain",
-      "variantCount": 2,
-      "variants": [
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?ApplyPolicy@DeviceContain@disruption@sense@@AEAA_NXZ",
-              "ea": "0x1807a10f9",
-              "confidence": "CallGraph-d1"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?OnPolicyRemoval@DeviceContain@disruption@sense@@UEAAXAEBV?$shared_ptr@$$CBVIPolicy@Configuration@sense@@@std@@@Z",
-              "ea": "0x1807a1e4e",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "ApplicationResult:UInt8(Boolean)"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?ApplyPolicy@DeviceContain@disruption@sense@@AEAA_NXZ",
-              "ea": "0x1807a1382",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "ApplicationResult",
-          "type": "UInt8(Boolean)",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
       "eventName": "DeviceContainPolicyApplied",
       "variantCount": 1,
       "variants": [
@@ -1088,6 +459,60 @@
         {
           "fieldName": "MatchedInterfacesCount",
           "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyHash",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyVersion",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "DeviceContainPolicyNoNetworks",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Enabled:UInt8(Boolean)",
+            "PolicyName:UnicodeString",
+            "PolicyVersion:UnicodeString",
+            "PolicyHash:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?ApplyPolicy@DeviceContain@disruption@sense@@AEAA_NXZ",
+              "ea": "0x1807a11b7",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Enabled",
+          "type": "UInt8(Boolean)",
           "seenIn": [
             "MsSense.dll"
           ]
@@ -1162,8 +587,860 @@
       ]
     },
     {
+      "eventName": "Dlp_ArchiveFileInfoEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Dlp_FileEventTime:UInt64",
+            "Dlp_FilePath:UnicodeString",
+            "Dlp_FileEventSource:UInt16",
+            "DLP_FileOriginalPath:UnicodeString",
+            "Dlp_FileStateMask:UInt32",
+            "Dlp_FileVolumeManufacturer:UnicodeString",
+            "Dlp_FileVolumeModel:UnicodeString",
+            "Dlp_FileVolumeSerialNumber:UnicodeString",
+            "Dlp_FileVolumeFriendlyName:UnicodeString",
+            "Dlp_FileVolumeHardwareId:UnicodeString",
+            "Dlp_FileVolumeInstancePath:UnicodeString",
+            "Dlp_FileVolumeDeviceId:UnicodeString",
+            "Dlp_ProcessId:UInt32",
+            "Dlp_ProcessStartKey:UInt64",
+            "Dlp_UserSid:SID",
+            "Dlp_TraceId:GUID",
+            "Dlp_ExtractedFilesInfo:UnicodeString",
+            "Dlp_IsSynchronousClassification:Bool32",
+            "Dlp_SyncClassificationReason:UInt8",
+            "Dlp_Aad_User_Id:UnicodeString",
+            "Dlp_Protection_UPNInfo:UnicodeString",
+            "Dlp_UpnSource:UInt16",
+            "FileOperation:UInt8",
+            "DiscoveryPolicyMatchTrace:UnicodeString",
+            "ShouldDropEvent:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?GenerateArchiveFileInfoEvent@ArchiveFileExtractAction@behavior@sense@@AEAAX_N@Z",
+              "ea": "0x1802bbcac",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DLP_FileOriginalPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "DiscoveryPolicyMatchTrace",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_Aad_User_Id",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_ExtractedFilesInfo",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileEventSource",
+          "type": "UInt16",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileEventTime",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FilePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileStateMask",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileVolumeDeviceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileVolumeFriendlyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileVolumeHardwareId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileVolumeInstancePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileVolumeManufacturer",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileVolumeModel",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileVolumeSerialNumber",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_IsSynchronousClassification",
+          "type": "Bool32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_ProcessId",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_ProcessStartKey",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_Protection_UPNInfo",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_SyncClassificationReason",
+          "type": "UInt8",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_TraceId",
+          "type": "GUID",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_UpnSource",
+          "type": "UInt16",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_UserSid",
+          "type": "SID",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "FileOperation",
+          "type": "UInt8",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "ShouldDropEvent",
+          "type": "Bool32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Dlp_FileEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Dlp_ReportIdentifier:UnicodeString",
+            "Dlp_FileEventTime:UInt64",
+            "Dlp_FileCreationTime:UInt64",
+            "Dlp_FileLastWriteTime:UInt64",
+            "Dlp_FilePath:UnicodeString",
+            "Dlp_FileAttributes:UInt32",
+            "Dlp_FileSha1:UnicodeString",
+            "Dlp_FileSha256:UnicodeString",
+            "Dlp_FileMd5:UnicodeString",
+            "Dlp_FileMarkOfTheWebInfoSize:UInt32",
+            "Dlp_FileMarkOfTheWebInfo:AnsiString",
+            "Dlp_FileEventSource:UInt16",
+            "DLP_FileOriginalPath:UnicodeString",
+            "Dlp_FileStateMask:UInt32",
+            "Dlp_FileSize:UInt64",
+            "Dlp_FileRemovableMedia:Bool32",
+            "Dlp_FileOnNetwork:Bool32",
+            "Dlp_FileVolumeGuid:UnicodeString",
+            "Dlp_FileVolumeManufacturer:UnicodeString",
+            "Dlp_FileVolumeModel:UnicodeString",
+            "Dlp_FileVolumeSerialNumber:UnicodeString",
+            "Dlp_FileVolumeFriendlyName:UnicodeString",
+            "Dlp_FileVolumeHardwareId:UnicodeString",
+            "Dlp_FileVolumeInstancePath:UnicodeString",
+            "Dlp_FileVolumeDeviceId:UnicodeString",
+            "Dlp_FileRequestSource:UInt8",
+            "Dlp_FileShareName:UnicodeString",
+            "Dlp_FileIpAddressLength:UInt32",
+            "DLP_FileIpAddress:Binary",
+            "Dlp_ProcessId:UInt32",
+            "Dlp_ProcessStartKey:UInt64",
+            "Dlp_UserName:UnicodeString",
+            "Dlp_UserDomainName:UnicodeString",
+            "Dlp_UserSid:SID",
+            "Dlp_Labels:UnicodeString",
+            "Dlp_Labels_Hr:Int32(HResult)",
+            "Dlp_CoAuthLabels:UnicodeString",
+            "Dlp_CoAuthLabels_Hr:Int32(HResult)",
+            "Dlp_AutoLabels:UnicodeString",
+            "Dlp_AutoLabels_Hr:Int32(HResult)",
+            "Dlp_Protection_UPN:UnicodeString",
+            "Dlp_Protection_UPN_Hr:Int32(HResult)",
+            "Dlp_UpnSource:UInt16",
+            "Dlp_Aad_Tenant_Id:UnicodeString",
+            "Dlp_Aad_Tenant_Id_Hr:Int32(HResult)",
+            "Dlp_Aad_User_Id:UnicodeString",
+            "Dlp_Protection_RmsProtection_Status:UInt32",
+            "Dlp_Protection_RmsProtection_Status_Hr:Int32(HResult)",
+            "Dlp_FileAccountSameAsProcessAcount:Bool32",
+            "Dlp_Ads_Status:UInt32",
+            "Dlp_PolicyEvaluationSource:UnicodeString",
+            "Dlp_LocalPolicyEvaluationResult:UnicodeString",
+            "Dlp_IsSynchronousClassification:Bool32",
+            "Dlp_SyncClassificationReason:UInt8",
+            "Dlp_FileLabelingActionStartTime:UInt64",
+            "Dlp_FileLabelingExecutionStartTime:UInt64",
+            "Dlp_TraceId:GUID",
+            "Dlp_AutoClassification_InformationTypes_Hr:Int32(HResult)",
+            "Dlp_AutoClassification_InformationTypes:UnicodeString",
+            "Dlp_AutoClassification_InformationTypes_Trace_Information:UnicodeString",
+            "Dlp_Trace_Information:UnicodeString",
+            "Dlp_PolicyId:UnicodeString",
+            "Dlp_DcsCorrelationId:UnicodeString",
+            "Dlp_DcsCorrelationTime:UnicodeString",
+            "Dlp_MatchedTriggerPowerAutomateFlowIds:UnicodeString",
+            "Dlp_MatchedPolicyRuleIds:UnicodeString",
+            "Dlp_ParentArchiveHash:UnicodeString",
+            "Dlp_OcrState:UInt32",
+            "Dlp_OcrState_Hr:Int32(HResult)",
+            "FileOperation:UInt8",
+            "DiscoveryPolicyMatchTrace:UnicodeString",
+            "ShouldDropEvent:Bool32",
+            "Dlp_IsSmartQueueEnabled:Bool32",
+            "Dlp_FilePriority:UInt32",
+            "Dlp_ClassificationFailureCode:UnicodeString",
+            "Dlp_ClassificationFailureReason:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?GenerateDlpEvent@dlp@sense@@YAXV?$shared_ptr@VDlpManager@dlp@sense@@@std@@V?$shared_ptr@UDlpData@dlp@sense@@@4@V?$shared_ptr@UFileEntity@cyberData@sense@@@4@V?$shared_ptr@UProcessEntity@cyberData@sense@@@4@V?$shared_ptr@UAccountEntity@cyberData@sense@@@4@V?$shared_ptr@VFileLabelingActionConfiguration@GenericETW@sense@@@4@W4EventSource@FileEvent@cyberData@2@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@4@_K88E_N@Z",
+              "ea": "0x1802197eb",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "DLP_FileIpAddress",
+          "type": "Binary",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "DLP_FileOriginalPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "DiscoveryPolicyMatchTrace",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_Aad_Tenant_Id",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_Aad_Tenant_Id_Hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_Aad_User_Id",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_Ads_Status",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_AutoClassification_InformationTypes",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_AutoClassification_InformationTypes_Hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_AutoClassification_InformationTypes_Trace_Information",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_AutoLabels",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_AutoLabels_Hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_ClassificationFailureCode",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_ClassificationFailureReason",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_CoAuthLabels",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_CoAuthLabels_Hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_DcsCorrelationId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_DcsCorrelationTime",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileAccountSameAsProcessAcount",
+          "type": "Bool32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileAttributes",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileCreationTime",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileEventSource",
+          "type": "UInt16",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileEventTime",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileIpAddressLength",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileLabelingActionStartTime",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileLabelingExecutionStartTime",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileLastWriteTime",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileMarkOfTheWebInfo",
+          "type": "AnsiString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileMarkOfTheWebInfoSize",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileMd5",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileOnNetwork",
+          "type": "Bool32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FilePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FilePriority",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileRemovableMedia",
+          "type": "Bool32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileRequestSource",
+          "type": "UInt8",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileSha1",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileSha256",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileShareName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileSize",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileStateMask",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileVolumeDeviceId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileVolumeFriendlyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileVolumeGuid",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileVolumeHardwareId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileVolumeInstancePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileVolumeManufacturer",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileVolumeModel",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FileVolumeSerialNumber",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_IsSmartQueueEnabled",
+          "type": "Bool32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_IsSynchronousClassification",
+          "type": "Bool32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_Labels",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_Labels_Hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_LocalPolicyEvaluationResult",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_MatchedPolicyRuleIds",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_MatchedTriggerPowerAutomateFlowIds",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_OcrState",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_OcrState_Hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_ParentArchiveHash",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_PolicyEvaluationSource",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_PolicyId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_ProcessId",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_ProcessStartKey",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_Protection_RmsProtection_Status",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_Protection_RmsProtection_Status_Hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_Protection_UPN",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_Protection_UPN_Hr",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_ReportIdentifier",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_SyncClassificationReason",
+          "type": "UInt8",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_TraceId",
+          "type": "GUID",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_Trace_Information",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_UpnSource",
+          "type": "UInt16",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_UserDomainName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_UserName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_UserSid",
+          "type": "SID",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "FileOperation",
+          "type": "UInt8",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "ShouldDropEvent",
+          "type": "Bool32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
       "eventName": "Dlp_OperationalInfoEvent",
-      "variantCount": 3,
+      "variantCount": 8,
       "variants": [
         {
           "level": 5,
@@ -1183,9 +1460,68 @@
               "confidence": "CallGraph-d1"
             },
             {
+              "binary": "MsSense.dll",
+              "function": "?TryDelete@DlpFileDeleter@dlp@sense@@AEAAXXZ",
+              "ea": "0x180224a2b",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MsSense.dll",
+              "function": "?TryDelete@DlpFileDeleter@dlp@sense@@AEAAXXZ",
+              "ea": "0x180224d69",
+              "confidence": "CallGraph-d1"
+            },
+            {
               "binary": "SenseDlpProcessor.exe",
               "function": "?AddFilePath@DlpFileDeleter@dlp@sense@@QEAAXAEBUFilePathInfo@23@@Z",
               "ea": "0x14012e539",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Operation:UnicodeString",
+            "FilePath:UnicodeString",
+            "ContextInformation:UnicodeString",
+            "Duration:UInt64",
+            "StatusCode:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?CallPolicyEvaluation@EvaluationPolicyRetrievalManager@dlp@sense@@AEAAJAEBUEvaluationPolicyRetrievalInputParams@23@AEAUEvaluationPolicyRetrievalOutputParams@23@AEBV?$shared_ptr@VDlpManager@dlp@sense@@@std@@AEAVvalue@json@web@@@Z",
+              "ea": "0x1801c2abf",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Operation:UnicodeString",
+            "ContextInformation:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?CallbackInternal@DlpFileDeleter@dlp@sense@@QEAAXXZ",
+              "ea": "0x180222813",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MsSense.dll",
+              "function": "?OnConfigurationChange@DlpFileDeleter@dlp@sense@@QEAAXAEBV?$shared_ptr@VDlpManager@dlp@sense@@@std@@@Z",
+              "ea": "0x180223a67",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MsSense.dll",
+              "function": "?TryDelete@DlpFileDeleter@dlp@sense@@AEAAXXZ",
+              "ea": "0x180224e49",
               "confidence": "CallGraph-d1"
             }
           ]
@@ -1215,13 +1551,74 @@
           "keyword": "0x0",
           "fields": [
             "Operation:UnicodeString",
+            "StatusCode:Int32(HResult)",
             "ContextInformation:UnicodeString"
           ],
           "callers": [
             {
               "binary": "MsSense.dll",
-              "function": "?TryDelete@DlpFileDeleter@dlp@sense@@AEAAXXZ",
-              "ea": "0x180224e49",
+              "function": "?RunDeletion@DlpFileDeleter@dlp@sense@@AEAAXXZ",
+              "ea": "0x180223dc0",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MsSense.dll",
+              "function": "?TryDeleteExpiredArchiveResidueFolder@DlpFileDeleter@dlp@sense@@AEAAXXZ",
+              "ea": "0x180225773",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Operation:UnicodeString",
+            "FileSize:UInt64",
+            "Duration:UInt64",
+            "StatusCode:Int32(HResult)",
+            "ContextInformation:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?TryCleanupTraceFiles@DlpFileDeleter@dlp@sense@@AEAAXXZ",
+              "ea": "0x18022460c",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Operation:UnicodeString",
+            "FilePath:UnicodeString",
+            "ContextInformation:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?TryDeleteExpiredArchiveResidueFolder@DlpFileDeleter@dlp@sense@@AEAAXXZ",
+              "ea": "0x1802253d9",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Operation:UnicodeString",
+            "FilePath:UnicodeString",
+            "StatusCode:Int32(HResult)",
+            "ContextInformation:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?TryDeleteExpiredArchiveResidueFolder@DlpFileDeleter@dlp@sense@@AEAAXXZ",
+              "ea": "0x180225639",
               "confidence": "CallGraph-d1"
             }
           ]
@@ -1276,10 +1673,171 @@
         },
         {
           "fieldName": "StatusCode",
+          "type": "Int32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "StatusCode",
           "type": "Int32(HResult)",
           "seenIn": [
             "MsSense.dll",
             "SenseDlpProcessor.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Dlp_RemoveRmsLabelingEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Dlp_FilePath:UnicodeString",
+            "ADSRemoveHResult:Int32(HResult)",
+            "EaRemoveHResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?ExecuteImpl@RmsLabelingAction@behavior@sense@@AEAAXXZ",
+              "ea": "0x180779139",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ADSRemoveHResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FilePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "EaRemoveHResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "Dlp_RmsLabelingEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Dlp_FilePath:UnicodeString",
+            "UserSID:UnicodeString",
+            "Dlp_LabelId:UnicodeString",
+            "Dlp_LabelRights:UInt64",
+            "ADSWriteHResult:Int32(HResult)",
+            "EaWriteHResult:Int32(HResult)"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?ExecuteImpl@RmsLabelingAction@behavior@sense@@AEAAXXZ",
+              "ea": "0x1807793c1",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "ADSWriteHResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_FilePath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_LabelId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Dlp_LabelRights",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "EaWriteHResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "UserSID",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "EtwEventListenerFailedToAddProvider",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "EtwSessionName:UnicodeString",
+            "ProviderId:GUID"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?AddProvider@EtwEventListener@sensorHub@sense@@MEAAKAEBU_GUID@@_KAEBV?$shared_ptr@U_EVENT_FILTER_DESCRIPTOR@@@std@@I_N3@Z",
+              "ea": "0x1802448f1",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "EtwSessionName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "ProviderId",
+          "type": "GUID",
+          "seenIn": [
+            "MsSense.dll"
           ]
         }
       ]
@@ -1337,82 +1895,6 @@
       "fieldSummary": [
         {
           "fieldName": "CompressedSnapshot",
-          "type": "AnsiString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "FirewallConfigurator",
-      "variantCount": 2,
-      "variants": [
-        {
-          "level": 3,
-          "keyword": "0x0",
-          "fields": [
-            "message:AnsiString",
-            "cmdId:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?OnOfflineFirewallCommand@FirewallConfigurator@1sense@@AEAAXAEBV?$shared_ptr@$$CBVCommand@cyberData@sense@@@std@@@Z",
-              "ea": "0x1803eecf3",
-              "confidence": "CallGraph-d2"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?OnOfflineFirewallCommand@FirewallConfigurator@1sense@@AEAAXAEBV?$shared_ptr@$$CBVCommand@cyberData@sense@@@std@@@Z",
-              "ea": "0x1803eedb3",
-              "confidence": "CallGraph-d2"
-            }
-          ]
-        },
-        {
-          "level": 2,
-          "keyword": "0x0",
-          "fields": [
-            "errorCode:Int32",
-            "message:AnsiString",
-            "cmdType:UnicodeString",
-            "cmdId:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?OnOfflineFirewallCommand@FirewallConfigurator@1sense@@AEAAXAEBV?$shared_ptr@$$CBVCommand@cyberData@sense@@@std@@@Z",
-              "ea": "0x1803eeeb6",
-              "confidence": "CallGraph-d2"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "cmdId",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "cmdType",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "errorCode",
-          "type": "Int32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
           "type": "AnsiString",
           "seenIn": [
             "MsSense.dll"
@@ -1645,36 +2127,6 @@
       ]
     },
     {
-      "eventName": "FirewallConfiguratorTaskQueue",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:AnsiString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?WorkingProc@FirewallTaskWorker@Tasks@FirewallConfigurator@sense@@MEAA_N_N@Z",
-              "ea": "0x180481111",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "message",
-          "type": "AnsiString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
       "eventName": "ForceCloseSmbSession",
       "variantCount": 1,
       "variants": [
@@ -1769,42 +2221,27 @@
       ]
     },
     {
-      "eventName": "GenericETW",
-      "variantCount": 2,
+      "eventName": "ForceDisconnectWtsSession",
+      "variantCount": 1,
       "variants": [
         {
           "level": 5,
           "keyword": "0x0",
           "fields": [
-            "message:UnicodeString",
-            "providerGuid:GUID",
-            "currentValue:UInt64",
-            "otherValue:UInt64"
+            "SessionId:UInt32",
+            "Domain:UnicodeString",
+            "User:UnicodeString",
+            "AccountSid:UnicodeString",
+            "ClientName:UnicodeString",
+            "RemoteIp:UnicodeString",
+            "AddressFamily:UInt32",
+            "IsRemote:UInt8(Boolean)"
           ],
           "callers": [
             {
               "binary": "MsSense.dll",
-              "function": "?CombineProviderInfo@Provider@GenericETW@sense@@AEAAXAEBV123@@Z",
-              "ea": "0x1803de5fd",
-              "confidence": "CallGraph-d2"
-            }
-          ]
-        },
-        {
-          "level": 2,
-          "keyword": "0x0",
-          "fields": [
-            "errorCode:Int32",
-            "message:UnicodeString",
-            "moduleName:UnicodeString",
-            "ruleId:GUID",
-            "otherModuleName:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?ReportDuplicatedRule@GetwStore@GenericETW@sense@@AEBAXAEBU_GUID@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@1@Z",
-              "ea": "0x1803dc50d",
+              "function": "_lambda_bc722678b3cd293006e0170e7127655a_::operator()",
+              "ea": "0x180799bfa",
               "confidence": "CallGraph-d1"
             }
           ]
@@ -1812,57 +2249,57 @@
       ],
       "fieldSummary": [
         {
-          "fieldName": "currentValue",
-          "type": "UInt64",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "errorCode",
-          "type": "Int32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
+          "fieldName": "AccountSid",
           "type": "UnicodeString",
           "seenIn": [
             "MsSense.dll"
           ]
         },
         {
-          "fieldName": "moduleName",
+          "fieldName": "AddressFamily",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientName",
           "type": "UnicodeString",
           "seenIn": [
             "MsSense.dll"
           ]
         },
         {
-          "fieldName": "otherModuleName",
+          "fieldName": "Domain",
           "type": "UnicodeString",
           "seenIn": [
             "MsSense.dll"
           ]
         },
         {
-          "fieldName": "otherValue",
-          "type": "UInt64",
+          "fieldName": "IsRemote",
+          "type": "UInt8(Boolean)",
           "seenIn": [
             "MsSense.dll"
           ]
         },
         {
-          "fieldName": "providerGuid",
-          "type": "GUID",
+          "fieldName": "RemoteIp",
+          "type": "UnicodeString",
           "seenIn": [
             "MsSense.dll"
           ]
         },
         {
-          "fieldName": "ruleId",
-          "type": "GUID",
+          "fieldName": "SessionId",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "User",
+          "type": "UnicodeString",
           "seenIn": [
             "MsSense.dll"
           ]
@@ -1870,46 +2307,27 @@
       ]
     },
     {
-      "eventName": "Geppetto",
-      "variantCount": 2,
+      "eventName": "ForceLogoffWtsSession",
+      "variantCount": 1,
       "variants": [
         {
-          "level": 4,
+          "level": 5,
           "keyword": "0x0",
           "fields": [
-            "message:UnicodeString",
-            "HResult:Int32(HResult)",
-            "PolicyName:UnicodeString",
-            "Enabled:UInt8(Boolean)",
-            "Tag:UInt32",
-            "Action:UInt32"
+            "SessionId:UInt32",
+            "Domain:UnicodeString",
+            "User:UnicodeString",
+            "AccountSid:UnicodeString",
+            "ClientName:UnicodeString",
+            "RemoteIp:UnicodeString",
+            "AddressFamily:UInt32",
+            "IsRemote:UInt8(Boolean)"
           ],
           "callers": [
             {
               "binary": "MsSense.dll",
-              "function": "?OnPolicyRemoval@Geppetto@disruption@sense@@UEAAXAEBV?$shared_ptr@$$CBVIPolicy@Configuration@sense@@@std@@@Z",
-              "ea": "0x1807b83b7",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "HResult:Int32(HResult)",
-            "PolicyName:UnicodeString",
-            "Enabled:UInt8(Boolean)",
-            "Tag:UInt32",
-            "Action:UInt32",
-            "DomainName:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?OnPolicyUpdate@Geppetto@disruption@sense@@UEAA_NAEBV?$shared_ptr@$$CBVIPolicy@Configuration@sense@@@std@@@Z",
-              "ea": "0x1807b87e4",
+              "function": "_lambda_bc722678b3cd293006e0170e7127655a_::operator()",
+              "ea": "0x180799d62",
               "confidence": "CallGraph-d1"
             }
           ]
@@ -1917,50 +2335,151 @@
       ],
       "fieldSummary": [
         {
-          "fieldName": "Action",
-          "type": "UInt32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "DomainName",
+          "fieldName": "AccountSid",
           "type": "UnicodeString",
           "seenIn": [
             "MsSense.dll"
           ]
         },
         {
-          "fieldName": "Enabled",
+          "fieldName": "AddressFamily",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Domain",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "IsRemote",
           "type": "UInt8(Boolean)",
           "seenIn": [
             "MsSense.dll"
           ]
         },
         {
-          "fieldName": "HResult",
-          "type": "Int32(HResult)",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "PolicyName",
+          "fieldName": "RemoteIp",
           "type": "UnicodeString",
           "seenIn": [
             "MsSense.dll"
           ]
         },
         {
-          "fieldName": "Tag",
+          "fieldName": "SessionId",
           "type": "UInt32",
           "seenIn": [
             "MsSense.dll"
           ]
         },
         {
-          "fieldName": "message",
+          "fieldName": "User",
           "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "GenericEtwCreateProcess",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "ProcessId:UInt32",
+            "CreatorProcessId:UInt32",
+            "InferredParentProcessId:UInt32",
+            "ProcessStartKey:UInt64",
+            "CreatorProcessStartKey:UInt64",
+            "InferredParentProcessStartKey:UInt64",
+            "CiIsMicrosoftRoot:UInt32",
+            "CiIsMicrosoftApplicationRoot:UInt32",
+            "AllowCapping:Bool32"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?CreateNewProcessEvent@EtwSecHandler@sensorHub@sense@@AEAA?AV?$shared_ptr@$$CBVEvent@cyberData@sense@@@std@@AEBV?$shared_ptr@VEtwEventData@sensorHub@sense@@@5@PEAU_TRACE_EVENT_INFO@@K_N@Z",
+              "ea": "0x180275f22",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "AllowCapping",
+          "type": "Bool32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "CiIsMicrosoftApplicationRoot",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "CiIsMicrosoftRoot",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "CreatorProcessId",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "CreatorProcessStartKey",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "InferredParentProcessId",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "InferredParentProcessStartKey",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessId",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "ProcessStartKey",
+          "type": "UInt64",
           "seenIn": [
             "MsSense.dll"
           ]
@@ -2343,6 +2862,57 @@
       ]
     },
     {
+      "eventName": "InternalOpticsCompressedEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Data:AnsiString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?ReportStatistics@Statistics@Common@sense@@AEAAXXZ",
+              "ea": "0x1800fa02d",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "RunPsScript.dll",
+              "function": "?ReportStatistics@Statistics@Common@sense@@AEAAXXZ",
+              "ea": "0x1800384d9",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseDlpProcessor.exe",
+              "function": "?ReportStatistics@Statistics@Common@sense@@AEAAXXZ",
+              "ea": "0x14007e09d",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "SenseIR.exe",
+              "function": "?ReportStatistics@Statistics@Common@sense@@AEAAXXZ",
+              "ea": "0x14008064d",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Data",
+          "type": "AnsiString",
+          "seenIn": [
+            "MsSense.dll",
+            "RunPsScript.dll",
+            "SenseDlpProcessor.exe",
+            "SenseIR.exe"
+          ]
+        }
+      ]
+    },
+    {
       "eventName": "IsolationAutoRecoveryHandler",
       "variantCount": 1,
       "variants": [
@@ -2539,25 +3109,117 @@
       ]
     },
     {
-      "eventName": "LogicResolver",
-      "variantCount": 2,
+      "eventName": "LmfGroupPolicyConflict",
+      "variantCount": 1,
       "variants": [
         {
-          "level": 4,
+          "level": 5,
           "keyword": "0x0",
           "fields": [
-            "message:AnsiString",
-            "message:UnicodeString"
+            "Diffs:UInt64"
           ],
           "callers": [
             {
               "binary": "MsSense.dll",
-              "function": "?ReportTelemetry@LogicPipelineResolver@behaviorV2@sense@@AEAAXAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
-              "ea": "0x180292dc7",
+              "function": "?OnGpoRegistryChange@AccountPolicyEnforcer@disruption@sense@@AEAAXW4RegistryChangeKind@wil@@@Z",
+              "ea": "0x18079b939",
               "confidence": "CallGraph-d1"
             }
           ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Diffs",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogCleared",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "SystemTime:UInt64",
+            "SubjectUserName:UnicodeString",
+            "SubjectDomainName:UnicodeString",
+            "BackupPath:UnicodeString",
+            "Channel:UnicodeString",
+            "ClientProcessId:UInt32",
+            "ClientProcessStartKey:UInt64"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?CollectEvent@LogCleared@sensorHub@sense@@UEAAXPEBU_EVT_VARIANT@@@Z",
+              "ea": "0x18045da26",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BackupPath",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
         },
+        {
+          "fieldName": "Channel",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientProcessId",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "ClientProcessStartKey",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "SubjectDomainName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "SubjectUserName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "SystemTime",
+          "type": "UInt64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "LogicResolver",
+      "variantCount": 1,
+      "variants": [
         {
           "level": 5,
           "keyword": "0x0",
@@ -2577,440 +3239,7 @@
       "fieldSummary": [
         {
           "fieldName": "message",
-          "type": "AnsiString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
           "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "LogonBouncer",
-      "variantCount": 5,
-      "variants": [
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:AnsiString",
-            "UserSid:UnicodeString",
-            "IsAudit:Bool32",
-            "UserName:UnicodeString",
-            "ClientIpAddress:UInt32",
-            "LdapPort:UInt16",
-            "Bound:Bool32",
-            "Ssl:Bool32",
-            "Udp:Bool32",
-            "GcPort:Bool32",
-            "GssApi:Bool32",
-            "SpnEgo:Bool32",
-            "Simple:Bool32",
-            "DigestMd5:Bool32",
-            "SigningOn:Bool32",
-            "SealingOn:Bool32",
-            "Result:Int32"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?ReportLdapConnectionTerminated@telemetry@disruption@sense@@YAXAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@_N0KG1111111111J@Z",
-              "ea": "0x1807aa20c",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:AnsiString",
-            "PolicyName:UnicodeString",
-            "PolicyVersion:UnicodeString",
-            "PolicyHash:UnicodeString",
-            "Result:Int32",
-            "PolicyJson:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?ReportPolicyApplication@telemetry@disruption@sense@@YAXAEBV?$shared_ptr@$$CBVLogonBouncerPolicy@cyberData@sense@@@std@@J@Z",
-              "ea": "0x1807aa547",
-              "confidence": "CallGraph-d1"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?ReportPolicyRemoval@telemetry@disruption@sense@@YAXAEBV?$shared_ptr@$$CBVLogonBouncerPolicy@cyberData@sense@@@std@@J@Z",
-              "ea": "0x1807aa763",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:AnsiString",
-            "SessionId:UInt64",
-            "ClientComputerName:UnicodeString",
-            "UserName:UnicodeString",
-            "DomainName:UnicodeString",
-            "AccountSid:UnicodeString",
-            "IsAudit:Bool32",
-            "ServerName:UnicodeString",
-            "TransportName:UnicodeString",
-            "Result:Int32"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?ReportSmbSessionTerminated@telemetry@disruption@sense@@YAX_KAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@111_N11J@Z",
-              "ea": "0x1807aa945",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:AnsiString",
-            "SessionId:UInt32",
-            "User:UnicodeString",
-            "Domain:UnicodeString",
-            "UserSid:UnicodeString",
-            "EnforcedSid:UnicodeString",
-            "IsAudit:Bool32",
-            "ClientName:UnicodeString",
-            "RemoteIp:UnicodeString",
-            "AddressFamily:UInt32",
-            "IsRemote:Bool32",
-            "Result:Int32"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?ReportTerminalSessionDisconnected@telemetry@disruption@sense@@YAXAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@0_NAEBUSessionInfo@wts@23@J@Z",
-              "ea": "0x1807aabb7",
-              "confidence": "CallGraph-d1"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?ReportTerminalSessionLoggedOff@telemetry@disruption@sense@@YAXAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@0_NAEBUSessionInfo@wts@23@J@Z",
-              "ea": "0x1807aae67",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:AnsiString",
-            "UserSid:UnicodeString",
-            "UserName:UnicodeString",
-            "DomainName:UnicodeString",
-            "IsAudit:Bool32",
-            "ShellId:UnicodeString",
-            "Name:UnicodeString",
-            "ResourceUri:UnicodeString",
-            "ClientIP:UnicodeString",
-            "ProcessId:UnicodeString",
-            "Result:Int32"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?ReportWinRmSessionTerminated@telemetry@disruption@sense@@YAXAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@00_N00000J@Z",
-              "ea": "0x1807ab138",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "AccountSid",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "AddressFamily",
-          "type": "UInt32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "Bound",
-          "type": "Bool32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "ClientComputerName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "ClientIP",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "ClientIpAddress",
-          "type": "UInt32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "ClientName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "DigestMd5",
-          "type": "Bool32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "Domain",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "DomainName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "EnforcedSid",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "GcPort",
-          "type": "Bool32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "GssApi",
-          "type": "Bool32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "IsAudit",
-          "type": "Bool32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "IsRemote",
-          "type": "Bool32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "LdapPort",
-          "type": "UInt16",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "Name",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "PolicyHash",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "PolicyJson",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "PolicyName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "PolicyVersion",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "ProcessId",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "RemoteIp",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "ResourceUri",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "Result",
-          "type": "Int32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "SealingOn",
-          "type": "Bool32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "ServerName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "SessionId",
-          "type": "UInt32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "SessionId",
-          "type": "UInt64",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "ShellId",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "SigningOn",
-          "type": "Bool32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "Simple",
-          "type": "Bool32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "SpnEgo",
-          "type": "Bool32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "Ssl",
-          "type": "Bool32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "TransportName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "Udp",
-          "type": "Bool32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "User",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "UserName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "UserSid",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "AnsiString",
           "seenIn": [
             "MsSense.dll"
           ]
@@ -3142,67 +3371,6 @@
       ]
     },
     {
-      "eventName": "MachineState",
-      "variantCount": 2,
-      "variants": [
-        {
-          "level": 3,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "GUID string:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?SendApplicationError@CrashCollector@machineStateCollection@sense@@CAXAEBV?$shared_ptr@V?$vector@EV?$allocator@E@std@@@std@@@std@@@Z",
-              "ea": "0x1803b3a83",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 2,
-          "keyword": "0x0",
-          "fields": [
-            "errorCode:Int32",
-            "message:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?ThreadProc@MachineStateWorker@machineStateCollection@sense@@AEAAXXZ",
-              "ea": "0x1803916d6",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "GUID string",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "errorCode",
-          "type": "Int32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
       "eventName": "ModulePersistenceDuration",
       "variantCount": 1,
       "variants": [
@@ -3241,6 +3409,128 @@
       ]
     },
     {
+      "eventName": "NetworkActivityEvent",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "bytesUsed:UInt32",
+            "bytesAllocated:UInt32",
+            "bytesUsedThisCallback:UInt32"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?ReportNetworkActivity@AggregatorClient@cyberComm@sense@@IEAAXIII@Z",
+              "ea": "0x18034e339",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "bytesAllocated",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "bytesUsed",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "bytesUsedThisCallback",
+          "type": "UInt32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OffboardingBlobEpochBlocked",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "Epoch:UnicodeString",
+            "BlobSha256:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?ShouldBlockOffboarding@OnboardingManager@Onboarding@sense@@AEBA_NAEBUOnboardingParametersParseResult@23@@Z",
+              "ea": "0x180478c0b",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BlobSha256",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "Epoch",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "OffboardingBlobEpochBlockedAudit",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "BlobEpoch:Int64",
+            "MaxEpochToBlock:Int32"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?ShouldBlockOffboarding@OffboardingEpochBlocker@disruption@sense@@UEAA_NV?$optional@_J@std@@@Z",
+              "ea": "0x1807b92f9",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "BlobEpoch",
+          "type": "Int64",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "MaxEpochToBlock",
+          "type": "Int32",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
       "eventName": "OffboardingBlobSha256Revoked",
       "variantCount": 1,
       "variants": [
@@ -3263,84 +3553,6 @@
       "fieldSummary": [
         {
           "fieldName": "BlobSha256",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "OffboardingEpochBlocker",
-      "variantCount": 2,
-      "variants": [
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "Enabled:UInt8(Boolean)",
-            "MaxEpochToBlock:Int32",
-            "AuditMode:UInt8(Boolean)"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?OnPolicyUpdate@OffboardingEpochBlocker@disruption@sense@@UEAA_NAEBV?$shared_ptr@$$CBVIPolicy@Configuration@sense@@@std@@@Z",
-              "ea": "0x1807b8f4d",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "BlobEpoch:Int64",
-            "MaxEpochToBlock:Int32"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?ShouldBlockOffboarding@OffboardingEpochBlocker@disruption@sense@@UEAA_NV?$optional@_J@std@@@Z",
-              "ea": "0x1807b9288",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "AuditMode",
-          "type": "UInt8(Boolean)",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "BlobEpoch",
-          "type": "Int64",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "Enabled",
-          "type": "UInt8(Boolean)",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "MaxEpochToBlock",
-          "type": "Int32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
           "type": "UnicodeString",
           "seenIn": [
             "MsSense.dll"
@@ -3450,97 +3662,6 @@
         {
           "fieldName": "Status",
           "type": "Int8",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "OnboardingManager",
-      "variantCount": 4,
-      "variants": [
-        {
-          "level": 3,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "BlobSha256:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?IsOffboardingBlobRevoked@OnboardingManager@Onboarding@sense@@AEAA_NAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
-              "ea": "0x18047069d",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?Onboard@OnboardingManager@Onboarding@sense@@AEAAJAEBUOnboardingParameters@23@AEA_N1111@Z",
-              "ea": "0x1804741a0",
-              "confidence": "CallGraph-d2"
-            }
-          ]
-        },
-        {
-          "level": 3,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "hr:Int32(HResult)"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?ParseOnboardingParameters@OnboardingParametersParser@Onboarding@sense@@UEAA?AUOnboardingParametersParseResult@23@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AEAUOnboardingParameters@23@_N@Z",
-              "ea": "0x18047ea49",
-              "confidence": "CallGraph-d2"
-            }
-          ]
-        },
-        {
-          "level": 3,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?ShouldBlockOffboarding@OnboardingManager@Onboarding@sense@@AEBA_NAEBUOnboardingParametersParseResult@23@@Z",
-              "ea": "0x180478ba7",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "BlobSha256",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "hr",
-          "type": "Int32(HResult)",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "UnicodeString",
           "seenIn": [
             "MsSense.dll"
           ]
@@ -3924,76 +4045,6 @@
       ]
     },
     {
-      "eventName": "PolicyDispatcher",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 2,
-          "keyword": "0x0",
-          "fields": [
-            "errorCode:Int32",
-            "message:UnicodeString",
-            "policyName:UnicodeString",
-            "policyVersion:UnicodeString",
-            "context:UnicodeString",
-            "errMsg:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?DispatchCallback@PolicyDispatcher@Configuration@sense@@AEBA?AUApplicationResult@123@AEBUPolicySubscriptionInfo@23@AEAV?$packaged_task@$$A6A_NXZ@std@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@7@22@Z",
-              "ea": "0x1803ffce4",
-              "confidence": "CallGraph-d2"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "context",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "errMsg",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "errorCode",
-          "type": "Int32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "policyName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "policyVersion",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
       "eventName": "PolicyDispatcherCriticalErrorEvent",
       "variantCount": 1,
       "variants": [
@@ -4041,170 +4092,6 @@
         {
           "fieldName": "policyVersion",
           "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "PolicySnapshot",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 5,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "policy name:UnicodeString",
-            "compressionDuration:Int64",
-            "settingRegDuration:Int64"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?SavePolicyToRegistry@PoliciesSnapshot@Configuration@sense@@AEAAXAEBV?$shared_ptr@$$CBVIPolicy@Configuration@sense@@@std@@@Z",
-              "ea": "0x18040629b",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "compressionDuration",
-          "type": "Int64",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "policy name",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "settingRegDuration",
-          "type": "Int64",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "ResourceManager",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "payloadName:UnicodeString",
-            "previousState:UnicodeString",
-            "newState:UnicodeString",
-            "previousActualState:UnicodeString",
-            "newActualState:UnicodeString",
-            "newResourceStates:UnicodeString",
-            "appliedEnforce:Bool32",
-            "traceInfo:AnsiString",
-            "optics:AnsiString",
-            "snapshot:AnsiString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?GenerateStateChangeEtw@ResourceManager@1sense@@CAXAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@0000AEBV?$shared_ptr@VPayload@ResourceManager@sense@@@4@_N2@Z",
-              "ea": "0x18031e594",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "appliedEnforce",
-          "type": "Bool32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "newActualState",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "newResourceStates",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "newState",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "optics",
-          "type": "AnsiString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "payloadName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "previousActualState",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "previousState",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "snapshot",
-          "type": "AnsiString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "traceInfo",
-          "type": "AnsiString",
           "seenIn": [
             "MsSense.dll"
           ]
@@ -4307,58 +4194,6 @@
         {
           "fieldName": "traceInfo",
           "type": "AnsiString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "RiskAssessment",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "Name:UnicodeString",
-            "Score:UInt32"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?OnPolicyRemoval@RiskAssessment@disruption@sense@@UEAAXAEBV?$shared_ptr@$$CBVIPolicy@Configuration@sense@@@std@@@Z",
-              "ea": "0x1807b972c",
-              "confidence": "CallGraph-d1"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?OnPolicyUpdate@RiskAssessment@disruption@sense@@UEAA_NAEBV?$shared_ptr@$$CBVIPolicy@Configuration@sense@@@std@@@Z",
-              "ea": "0x1807b990c",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "Name",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "Score",
-          "type": "UInt32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "UnicodeString",
           "seenIn": [
             "MsSense.dll"
           ]
@@ -4489,103 +4324,6 @@
         {
           "fieldName": "Tag",
           "type": "UInt32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "SafeBootGuard",
-      "variantCount": 2,
-      "variants": [
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "HResult:Int32(HResult)",
-            "Name:UnicodeString",
-            "Tag:UInt32",
-            "Priority:UInt32",
-            "Action:UInt32"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?HandleBcdConfiguration@SafeBootGuard@disruption@sense@@AEAAXAEBV?$shared_ptr@$$CBVSafeBootDisruptionPolicy@cyberData@sense@@@std@@AEBU_GUID@@@Z",
-              "ea": "0x1807ba964",
-              "confidence": "CallGraph-d1"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?HandleRegistryLimboConfiguration@SafeBootGuard@disruption@sense@@AEAAXAEBV?$shared_ptr@$$CBVSafeBootDisruptionPolicy@cyberData@sense@@@std@@@Z",
-              "ea": "0x1807bac0c",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?OnPolicyRemoval@SafeBootGuard@disruption@sense@@UEAAXAEBV?$shared_ptr@$$CBVIPolicy@Configuration@sense@@@std@@@Z",
-              "ea": "0x1807bae83",
-              "confidence": "CallGraph-d1"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?OnPolicyUpdate@SafeBootGuard@disruption@sense@@UEAA_NAEBV?$shared_ptr@$$CBVIPolicy@Configuration@sense@@@std@@@Z",
-              "ea": "0x1807bb043",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "Action",
-          "type": "UInt32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "HResult",
-          "type": "Int32(HResult)",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "Name",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "Priority",
-          "type": "UInt32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "Tag",
-          "type": "UInt32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "UnicodeString",
           "seenIn": [
             "MsSense.dll"
           ]
@@ -4771,72 +4509,9 @@
       ]
     },
     {
-      "eventName": "ScanUtils",
+      "eventName": "SecMgmt",
       "variantCount": 1,
       "variants": [
-        {
-          "level": 2,
-          "keyword": "0x0",
-          "fields": [
-            "errorCode:Int32",
-            "message:UnicodeString",
-            "modulePath:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?Initialize@DynamicMpModuleBase@sense@@IEAAJPEB_W@Z",
-              "ea": "0x180621adc",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "errorCode",
-          "type": "Int32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "modulePath",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "SecMgmt",
-      "variantCount": 4,
-      "variants": [
-        {
-          "level": 2,
-          "keyword": "0x0",
-          "fields": [
-            "errorCode:Int32",
-            "message:AnsiString",
-            "params:AnsiString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?writeLogError@TraceLoggingSecMgmt@SecurityManagement@sense@@SAXJV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z",
-              "ea": "0x1803caaa9",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
         {
           "level": 5,
           "keyword": "0x0",
@@ -4859,59 +4534,14 @@
             },
             {
               "binary": "MsSense.dll",
-              "function": "?writeLogVerbose@TraceLoggingSecMgmt@SecurityManagement@sense@@SAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z",
-              "ea": "0x1803cad8e",
-              "confidence": "CallGraph-d1"
-            },
-            {
-              "binary": "MsSense.dll",
               "function": "?writeLogWarning@TraceLoggingSecMgmt@SecurityManagement@sense@@SAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z",
               "ea": "0x1803cafc3",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:AnsiString",
-            "params:AnsiString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?writeLogInformation@TraceLoggingSecMgmt@SecurityManagement@sense@@SAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z",
-              "ea": "0x1803cac82",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 3,
-          "keyword": "0x0",
-          "fields": [
-            "message:AnsiString",
-            "params:AnsiString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?writeLogWarning@TraceLoggingSecMgmt@SecurityManagement@sense@@SAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z",
-              "ea": "0x1803caf52",
               "confidence": "CallGraph-d1"
             }
           ]
         }
       ],
       "fieldSummary": [
-        {
-          "fieldName": "errorCode",
-          "type": "Int32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
         {
           "fieldName": "message",
           "type": "AnsiString",
@@ -4967,230 +4597,26 @@
       ]
     },
     {
-      "eventName": "SenseCommandUriDownloader",
+      "eventName": "SecurityLogCleared",
       "variantCount": 1,
       "variants": [
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:AnsiString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?WorkingProc@CommandUriDownloader@cyberData@sense@@EEAA_N_N@Z",
-              "ea": "0x18072157e",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "message",
-          "type": "AnsiString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "SenseCommon",
-      "variantCount": 10,
-      "variants": [
-        {
-          "level": 2,
-          "keyword": "0x0",
-          "fields": [
-            "errorCode:UInt32",
-            "message:UnicodeString",
-            "EtwSessionName:UnicodeString",
-            "ProviderId:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?AddProviderToSession@TraceLogger@Common@sense@@AEAAJXZ",
-              "ea": "0x1805dc736",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "path:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?CanRunExe@UpdatableBinaryRunner@Common@sense@@CA_NAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AEBVVersion@23@@Z",
-              "ea": "0x1806131bd",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "filePath:UnicodeString",
-            "lastWriteTime:FileTime",
-            "deleteIfOlderThan:FileTime"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?DeleteFolderContent@FileUtils@Common@sense@@SAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@_NU_FILETIME@@11H@Z",
-              "ea": "0x180101549",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        },
-        {
-          "level": 3,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "filePath:UnicodeString",
-            "deleteResult:UInt32"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?DeleteFolderContent@FileUtils@Common@sense@@SAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@_NU_FILETIME@@11H@Z",
-              "ea": "0x1801015f4",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        },
         {
           "level": 5,
           "keyword": "0x0",
           "fields": [
-            "message:UnicodeString"
+            "SystemTime:UInt64",
+            "SubjectUserSid:UnicodeString",
+            "SubjectUserName:UnicodeString",
+            "SubjectDomainName:UnicodeString",
+            "SubjectLogonId:UInt64",
+            "ClientProcessId:UInt32",
+            "ClientProcessStartKey:UInt64"
           ],
           "callers": [
             {
               "binary": "MsSense.dll",
-              "function": "?GetStatus@Certificate@Common@sense@@QEBA?AW4CertificateStatus@23@AEBV?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@_NI1@Z",
-              "ea": "0x18036f12b",
-              "confidence": "CallGraph-d2"
-            }
-          ]
-        },
-        {
-          "level": 3,
-          "keyword": "0x0",
-          "fields": [
-            "message:AnsiString",
-            "SID:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?OpenOplockedFileWithImpersonation@FileUtils@Common@sense@@SAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@KKAEAVOplockedHandle@23@V?$shared_ptr@UAccountEntity@cyberData@sense@@@5@_N3@Z",
-              "ea": "0x180105155",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "nativePath:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?OpenOplockedFileWithImpersonation@FileUtils@Common@sense@@SAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@KKAEAVOplockedHandle@23@V?$shared_ptr@UAccountEntity@cyberData@sense@@@5@_N3@Z",
-              "ea": "0x1801053af",
-              "confidence": "CallGraph-d3"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?OpenOplockedFileWithImpersonation@FileUtils@Common@sense@@SAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@KKAEAVOplockedHandle@23@V?$shared_ptr@UAccountEntity@cyberData@sense@@@5@_N3@Z",
-              "ea": "0x180105467",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        },
-        {
-          "level": 2,
-          "keyword": "0x0",
-          "fields": [
-            "errorCode:Int32",
-            "message:UnicodeString",
-            "nativePath:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?OpenOplockedFileWithImpersonationEx@FileUtils@Common@sense@@CAJQEAXW4Elevation@23@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@KKAEAVOplockedHandle@23@_N@Z",
-              "ea": "0x180105649",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "Size:UInt64",
-            "Data:AnsiString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?ReportStatistics@Statistics@Common@sense@@AEAAXXZ",
-              "ea": "0x1800f9fd6",
-              "confidence": "CallGraph-d1"
-            },
-            {
-              "binary": "RunPsScript.dll",
-              "function": "?ReportStatistics@Statistics@Common@sense@@AEAAXXZ",
-              "ea": "0x180038482",
-              "confidence": "CallGraph-d1"
-            },
-            {
-              "binary": "SenseDlpProcessor.exe",
-              "function": "?ReportStatistics@Statistics@Common@sense@@AEAAXXZ",
-              "ea": "0x14007e046",
-              "confidence": "CallGraph-d1"
-            },
-            {
-              "binary": "SenseIR.exe",
-              "function": "?ReportStatistics@Statistics@Common@sense@@AEAAXXZ",
-              "ea": "0x1400805f6",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 3,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "_lambda_151754a6d5fdd0d4a63e945240d20b78_::operator()",
-              "ea": "0x1802f8fc0",
-              "confidence": "CallGraph-d3"
-            },
-            {
-              "binary": "SenseSampleUploader.exe",
-              "function": "?Refresh@VolumeMap@Common@sense@@QEAAXXZ",
-              "ea": "0x140050037",
+              "function": "?CollectEvent@SecurityLogCleared@sensorHub@sense@@UEAAXPEBU_EVT_VARIANT@@@Z",
+              "ea": "0x18045de85",
               "confidence": "CallGraph-d1"
             }
           ]
@@ -5198,116 +4624,50 @@
       ],
       "fieldSummary": [
         {
-          "fieldName": "Data",
-          "type": "AnsiString",
-          "seenIn": [
-            "MsSense.dll",
-            "RunPsScript.dll",
-            "SenseDlpProcessor.exe",
-            "SenseIR.exe"
-          ]
-        },
-        {
-          "fieldName": "EtwSessionName",
-          "type": "UnicodeString",
+          "fieldName": "ClientProcessId",
+          "type": "UInt32",
           "seenIn": [
             "MsSense.dll"
           ]
         },
         {
-          "fieldName": "ProviderId",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "SID",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "Size",
+          "fieldName": "ClientProcessStartKey",
           "type": "UInt64",
           "seenIn": [
-            "MsSense.dll",
-            "RunPsScript.dll",
-            "SenseDlpProcessor.exe",
-            "SenseIR.exe"
-          ]
-        },
-        {
-          "fieldName": "deleteIfOlderThan",
-          "type": "FileTime",
-          "seenIn": [
             "MsSense.dll"
           ]
         },
         {
-          "fieldName": "deleteResult",
-          "type": "UInt32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "errorCode",
-          "type": "Int32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "errorCode",
-          "type": "UInt32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "filePath",
+          "fieldName": "SubjectDomainName",
           "type": "UnicodeString",
           "seenIn": [
             "MsSense.dll"
           ]
         },
         {
-          "fieldName": "lastWriteTime",
-          "type": "FileTime",
+          "fieldName": "SubjectLogonId",
+          "type": "UInt64",
           "seenIn": [
             "MsSense.dll"
           ]
         },
         {
-          "fieldName": "message",
-          "type": "AnsiString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll",
-            "RunPsScript.dll",
-            "SenseDlpProcessor.exe",
-            "SenseIR.exe",
-            "SenseSampleUploader.exe"
-          ]
-        },
-        {
-          "fieldName": "nativePath",
+          "fieldName": "SubjectUserName",
           "type": "UnicodeString",
           "seenIn": [
             "MsSense.dll"
           ]
         },
         {
-          "fieldName": "path",
+          "fieldName": "SubjectUserSid",
           "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "SystemTime",
+          "type": "UInt64",
           "seenIn": [
             "MsSense.dll"
           ]
@@ -5315,404 +4675,28 @@
       ]
     },
     {
-      "eventName": "SenseCyberInvoker",
+      "eventName": "SenseService_StopEvent",
       "variantCount": 1,
       "variants": [
         {
           "level": 5,
           "keyword": "0x0",
           "fields": [
-            "message:AnsiString",
-            "isEmpty:UInt8(Boolean)"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?WorkingProc@CommandsInvokerV1@cyberComm@sense@@EEAA_N_N@Z",
-              "ea": "0x18072e2ec",
-              "confidence": "CallGraph-d3"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?WorkingProc@CommandsInvokerV2@cyberComm@sense@@EEAA_N_N@Z",
-              "ea": "0x18072fc0c",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "isEmpty",
-          "type": "UInt8(Boolean)",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "AnsiString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "SenseCyberReceiver",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:AnsiString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?Start@Receiver@cyberComm@sense@@UEAAXXZ",
-              "ea": "0x18071dab6",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "message",
-          "type": "AnsiString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "SenseCyberSampler",
-      "variantCount": 3,
-      "variants": [
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:AnsiString",
-            "cmd type:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?CommandValidation@OfflineCommandsSampler@cyberComm@sense@@SA_NV?$shared_ptr@VCommand@cyberData@sense@@@std@@AEBVvalue@json@web@@AEBV?$vector@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@V?$allocator@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@2@@5@@Z",
-              "ea": "0x18071ab0d",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        },
-        {
-          "level": 3,
-          "keyword": "0x0",
-          "fields": [
-            "message:AnsiString",
-            "Reason:UInt8",
-            "cmdJson:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?DispatchOfflineCommand@CommandsSampler@cyberComm@sense@@QEAAXAEBVvalue@json@web@@@Z",
-              "ea": "0x180712a16",
-              "confidence": "CallGraph-d2"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:AnsiString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?OnRegistryChange@OfflineCommandsSampler@cyberComm@sense@@AEAAXXZ",
-              "ea": "0x18071adbc",
-              "confidence": "CallGraph-d2"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?ValidateExpiration@OfflineCommandsSampler@cyberComm@sense@@CA_NAEBVvalue@json@web@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
-              "ea": "0x18071b218",
-              "confidence": "CallGraph-d2"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "Reason",
-          "type": "UInt8",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "cmd type",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "cmdJson",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "AnsiString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "SenseIR",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "shouldValidateCustomerScriptSignedByTenantStore:UInt8(Boolean)"
-          ],
-          "callers": [
-            {
-              "binary": "SenseIR.exe",
-              "function": "?ShouldValidateCustomerScriptSignedByTenantStore@RunPSScriptActionAdapter@IncidentResponse@sense@@AEBA_NAEBV?$shared_ptr@VSenseIrConfig@IncidentResponse@sense@@@std@@AEBV?$shared_ptr@URunPSScriptAction@Data@IncidentResponse@Wcd@@@5@_N@Z",
-              "ea": "0x1401c2d6e",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "message",
-          "type": "UnicodeString",
-          "seenIn": [
-            "SenseIR.exe"
-          ]
-        },
-        {
-          "fieldName": "shouldValidateCustomerScriptSignedByTenantStore",
-          "type": "UInt8(Boolean)",
-          "seenIn": [
-            "SenseIR.exe"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "SenseService",
-      "variantCount": 6,
-      "variants": [
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "folder name:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?CleanRedundantArtifactsFromPlatformDir@SenseUpdateUtils@Updatability@sense@@SAXXZ",
-              "ea": "0x18017c1ca",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?Cleanup@SenseService@Service@sense@@QEBAXXZ",
-              "ea": "0x1800c354a",
-              "confidence": "CallGraph-d3"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?InitComponents@SenseLifetimeManagerInitializerClientEnterprise@@UEAA?AV?$vector@V?$shared_ptr@VIRunnable@sense@@@std@@V?$allocator@V?$shared_ptr@VIRunnable@sense@@@std@@@2@@std@@XZ",
-              "ea": "0x18014172d",
-              "confidence": "CallGraph-d2"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?InitComponents@SenseLifetimeManagerInitializerClientEnterprise@@UEAA?AV?$vector@V?$shared_ptr@VIRunnable@sense@@@std@@V?$allocator@V?$shared_ptr@VIRunnable@sense@@@std@@@2@@std@@XZ",
-              "ea": "0x180141941",
-              "confidence": "CallGraph-d3"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?InitComponents@SenseLifetimeManagerInitializerClientEnterprise@@UEAA?AV?$vector@V?$shared_ptr@VIRunnable@sense@@@std@@V?$allocator@V?$shared_ptr@VIRunnable@sense@@@std@@@2@@std@@XZ",
-              "ea": "0x18014226d",
-              "confidence": "CallGraph-d2"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?InitComponents@SenseLifetimeManagerInitializerClientEnterprise@@UEAA?AV?$vector@V?$shared_ptr@VIRunnable@sense@@@std@@V?$allocator@V?$shared_ptr@VIRunnable@sense@@@std@@@2@@std@@XZ",
-              "ea": "0x180142969",
-              "confidence": "CallGraph-d2"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?InitComponents@SenseLifetimeManagerInitializerClientEnterprise@@UEAA?AV?$vector@V?$shared_ptr@VIRunnable@sense@@@std@@V?$allocator@V?$shared_ptr@VIRunnable@sense@@@std@@@2@@std@@XZ",
-              "ea": "0x180142bfd",
-              "confidence": "CallGraph-d2"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?InitComponents@SenseLifetimeManagerInitializerClientEnterprise@@UEAA?AV?$vector@V?$shared_ptr@VIRunnable@sense@@@std@@V?$allocator@V?$shared_ptr@VIRunnable@sense@@@std@@@2@@std@@XZ",
-              "ea": "0x180142f11",
-              "confidence": "CallGraph-d3"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?InitComponents@SenseLifetimeManagerInitializerClientEnterprise@@UEAA?AV?$vector@V?$shared_ptr@VIRunnable@sense@@@std@@V?$allocator@V?$shared_ptr@VIRunnable@sense@@@std@@@2@@std@@XZ",
-              "ea": "0x180143755",
-              "confidence": "CallGraph-d2"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?ServiceCtrlHandler@SenseService@Service@sense@@QEBAKKKPEAX0@Z",
-              "ea": "0x1800c58b9",
-              "confidence": "CallGraph-d2"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?ServiceStartInternal@SenseService@Service@sense@@QEBAXXZ",
-              "ea": "0x1800c63e5",
-              "confidence": "CallGraph-d2"
-            }
-          ]
-        },
-        {
-          "level": 3,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "control:UInt32"
+            "EventName:UnicodeString"
           ],
           "callers": [
             {
               "binary": "MsSense.dll",
               "function": "?ServiceCtrlHandler@SenseService@Service@sense@@QEBAKKKPEAX0@Z",
-              "ea": "0x1800c5724",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        },
-        {
-          "level": 3,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "StopServiceDelayTimeMs:UInt32"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?ServiceCtrlHandler@SenseService@Service@sense@@QEBAKKKPEAX0@Z",
-              "ea": "0x1800c5b35",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        },
-        {
-          "level": 2,
-          "keyword": "0x0",
-          "fields": [
-            "errorCode:Int32(HResult)",
-            "message:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?ServiceStartInternal@SenseService@Service@sense@@QEBAXXZ",
-              "ea": "0x1800c6219",
-              "confidence": "CallGraph-d2"
-            },
-            {
-              "binary": "MsSense.dll",
-              "function": "?ServiceStartInternal@SenseService@Service@sense@@QEBAXXZ",
-              "ea": "0x1800c6383",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        },
-        {
-          "level": 3,
-          "keyword": "0x0",
-          "fields": [
-            "message:AnsiString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?Stop@LifetimeManager@sense@@UEAAXXZ",
-              "ea": "0x180138b82",
-              "confidence": "CallGraph-d2"
+              "ea": "0x1800c590f",
+              "confidence": "CallGraph-d1"
             }
           ]
         }
       ],
       "fieldSummary": [
         {
-          "fieldName": "StopServiceDelayTimeMs",
-          "type": "UInt32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "control",
-          "type": "UInt32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "errorCode",
-          "type": "Int32(HResult)",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "folder name",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "AnsiString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
+          "fieldName": "EventName",
           "type": "UnicodeString",
           "seenIn": [
             "MsSense.dll"
@@ -5721,22 +4705,24 @@
       ]
     },
     {
-      "eventName": "SenseSubAuth",
+      "eventName": "ServiceWasInstalled",
       "variantCount": 1,
       "variants": [
         {
-          "level": 3,
+          "level": 5,
           "keyword": "0x0",
           "fields": [
-            "message:UnicodeString",
-            "KerberosAuth0:UnicodeString",
-            "MSV1_0Auth0:UnicodeString"
+            "ServiceName:UnicodeString",
+            "ImagePath:UnicodeString",
+            "ServiceType:UnicodeString",
+            "StartType:UnicodeString",
+            "AccountName:UnicodeString"
           ],
           "callers": [
             {
               "binary": "MsSense.dll",
-              "function": "?Install@SubAuthInstaller@disruption@sense@@QEAAXXZ",
-              "ea": "0x180796662",
+              "function": "?CollectEvent@ServiceWasInstalled@sensorHub@sense@@UEAAXPEBU_EVT_VARIANT@@@Z",
+              "ea": "0x18045e1d2",
               "confidence": "CallGraph-d1"
             }
           ]
@@ -5744,465 +4730,35 @@
       ],
       "fieldSummary": [
         {
-          "fieldName": "KerberosAuth0",
+          "fieldName": "AccountName",
           "type": "UnicodeString",
           "seenIn": [
             "MsSense.dll"
           ]
         },
         {
-          "fieldName": "MSV1_0Auth0",
+          "fieldName": "ImagePath",
           "type": "UnicodeString",
           "seenIn": [
             "MsSense.dll"
           ]
         },
         {
-          "fieldName": "message",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "SenseUpdate",
-      "variantCount": 6,
-      "variants": [
-        {
-          "level": 2,
-          "keyword": "0x0",
-          "fields": [
-            "errorCode:Int32(HResult)",
-            "message:UnicodeString",
-            "Log value1:UnicodeString",
-            "Log value2:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?LogUpdateError@UpdateLogger@Updatability@sense@@UEBAXAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@J0000@Z",
-              "ea": "0x18017b06b",
-              "confidence": "CallGraph-d1"
-            },
-            {
-              "binary": "MsSense.exe",
-              "function": "?LogUpdateError@UpdateLogger@Updatability@sense@@UEBAXAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@J0000@Z",
-              "ea": "0x1400348eb",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 2,
-          "keyword": "0x0",
-          "fields": [
-            "errorCode:Int32(HResult)",
-            "message:UnicodeString",
-            "Phase:AnsiString",
-            "NewVersion:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?LogUpdateFailure@UpdateLogger@Updatability@sense@@UEBAXW4UpdatePhase@23@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@1J@Z",
-              "ea": "0x18017b2ba",
-              "confidence": "CallGraph-d1"
-            },
-            {
-              "binary": "MsSense.exe",
-              "function": "?LogUpdateFailure@UpdateLogger@Updatability@sense@@UEBAXW4UpdatePhase@23@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@1J@Z",
-              "ea": "0x140034b3a",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?LogUpdateInfo@UpdateLogger@Updatability@sense@@UEBAXAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
-              "ea": "0x18017b3ae",
-              "confidence": "CallGraph-d1"
-            },
-            {
-              "binary": "MsSense.exe",
-              "function": "?LogUpdateInfo@UpdateLogger@Updatability@sense@@UEBAXAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
-              "ea": "0x140034c2e",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "Phase:AnsiString",
-            "NewVersion:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?LogUpdateStatus@UpdateLogger@Updatability@sense@@UEBAXW4UpdatePhase@23@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@1_N@Z",
-              "ea": "0x18017b4d3",
-              "confidence": "CallGraph-d1"
-            },
-            {
-              "binary": "MsSense.exe",
-              "function": "?LogUpdateStatus@UpdateLogger@Updatability@sense@@UEBAXW4UpdatePhase@23@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@1_N@Z",
-              "ea": "0x140034d53",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 3,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "Phase:AnsiString",
-            "NewVersion:UnicodeString",
-            "Error:Int32(HResult)"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?LogUpdateWarning@UpdateLogger@Updatability@sense@@UEBAXW4UpdatePhase@23@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@1J@Z",
-              "ea": "0x18017b7d4",
-              "confidence": "CallGraph-d1"
-            },
-            {
-              "binary": "MsSense.exe",
-              "function": "?LogUpdateWarning@UpdateLogger@Updatability@sense@@UEBAXW4UpdatePhase@23@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@1J@Z",
-              "ea": "0x140035054",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "version:UnicodeString",
-            "directory:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?ValidateSenseVersion@SenseUpdateUtils@Updatability@sense@@QEBAJAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@0@Z",
-              "ea": "0x18017df0d",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "Error",
-          "type": "Int32(HResult)",
-          "seenIn": [
-            "MsSense.dll",
-            "MsSense.exe"
-          ]
-        },
-        {
-          "fieldName": "Log value1",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll",
-            "MsSense.exe"
-          ]
-        },
-        {
-          "fieldName": "Log value2",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll",
-            "MsSense.exe"
-          ]
-        },
-        {
-          "fieldName": "NewVersion",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll",
-            "MsSense.exe"
-          ]
-        },
-        {
-          "fieldName": "Phase",
-          "type": "AnsiString",
-          "seenIn": [
-            "MsSense.dll",
-            "MsSense.exe"
-          ]
-        },
-        {
-          "fieldName": "directory",
+          "fieldName": "ServiceName",
           "type": "UnicodeString",
           "seenIn": [
             "MsSense.dll"
           ]
         },
         {
-          "fieldName": "errorCode",
-          "type": "Int32(HResult)",
-          "seenIn": [
-            "MsSense.dll",
-            "MsSense.exe"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll",
-            "MsSense.exe"
-          ]
-        },
-        {
-          "fieldName": "version",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "SensorHub",
-      "variantCount": 4,
-      "variants": [
-        {
-          "level": 3,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "EtwSessionName:UnicodeString",
-            "ProviderId:GUID"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?AddProvider@EtwEventListener@sensorHub@sense@@MEAAKAEBU_GUID@@_KAEBV?$shared_ptr@U_EVENT_FILTER_DESCRIPTOR@@@std@@I_N3@Z",
-              "ea": "0x180244897",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 2,
-          "keyword": "0x0",
-          "fields": [
-            "errorCode:Int32",
-            "message:UnicodeString",
-            "AdditionalHandlerName:UnicodeString",
-            "ProviderId:GUID",
-            "IsClassicProvider:UInt8(Boolean)"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?GetHandlersProviders@EtwEventListenerV2@sensorHub@sense@@AEBA?AV?$unordered_map@$$CBU_GUID@@UProviderInfo@GenericETW@sense@@UGuidHash@Common@4@U?$equal_to@$$CBU_GUID@@@std@@V?$allocator@U?$pair@$$CBU_GUID@@UProviderInfo@GenericETW@sense@@@std@@@8@@std@@XZ",
-              "ea": "0x18026d3a3",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "providerId:GUID",
-            "eventKey:UInt32",
-            "propertyName:UnicodeString",
-            "index:UInt16"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?GetPropertyData@EtwEventHelper@sensorHub@sense@@YAXPEAU_EVENT_RECORD@@PEAU_TRACE_EVENT_INFO@@GIPEB_W2IAEAV?$vector@EV?$allocator@E@std@@@std@@@Z",
-              "ea": "0x1802657d7",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:AnsiString",
-            "HandlerName:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "_lambda_8e554326d14587eb6af5fcb1d0feccb7_::operator()",
-              "ea": "0x1802495b7",
-              "confidence": "CallGraph-d2"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "AdditionalHandlerName",
+          "fieldName": "ServiceType",
           "type": "UnicodeString",
           "seenIn": [
             "MsSense.dll"
           ]
         },
         {
-          "fieldName": "EtwSessionName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "HandlerName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "IsClassicProvider",
-          "type": "UInt8(Boolean)",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "ProviderId",
-          "type": "GUID",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "errorCode",
-          "type": "Int32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "eventKey",
-          "type": "UInt32",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "index",
-          "type": "UInt16",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "AnsiString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "propertyName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "providerId",
-          "type": "GUID",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "SmbBouncer",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString",
-            "HResult:Int32(HResult)",
-            "Enabled:UInt8(Boolean)",
-            "PolicyName:UnicodeString",
-            "PolicyVersion:UnicodeString",
-            "PolicyHash:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?OnPolicyUpdate@SmbBouncer@disruption@sense@@UEAA_NAEBV?$shared_ptr@$$CBVIPolicy@Configuration@sense@@@std@@@Z",
-              "ea": "0x1807bc38a",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "Enabled",
-          "type": "UInt8(Boolean)",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "HResult",
-          "type": "Int32(HResult)",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "PolicyHash",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "PolicyName",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "PolicyVersion",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "message",
+          "fieldName": "StartType",
           "type": "UnicodeString",
           "seenIn": [
             "MsSense.dll"
@@ -6649,6 +5205,36 @@
       ]
     },
     {
+      "eventName": "SyncAppReport",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "SyncAppInfoAsJson:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?Report@SyncAppData@dlp@sense@@QEAAXXZ",
+              "ea": "0x18023183f",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "SyncAppInfoAsJson",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
       "eventName": "Sync_FileEvent",
       "variantCount": 1,
       "variants": [
@@ -6977,82 +5563,6 @@
       ]
     },
     {
-      "eventName": "Watchdog",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 4,
-          "keyword": "0x0",
-          "fields": [
-            "message:AnsiString",
-            "oldvalue:UInt8(Boolean)",
-            "newvalue:UInt8(Boolean)"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?OnConfigurationChange@Watchdog@sense@@AEAA_NXZ",
-              "ea": "0x1803d12a6",
-              "confidence": "CallGraph-d3"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "message",
-          "type": "AnsiString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "newvalue",
-          "type": "UInt8(Boolean)",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        },
-        {
-          "fieldName": "oldvalue",
-          "type": "UInt8(Boolean)",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
-      "eventName": "WdacPolicyController",
-      "variantCount": 1,
-      "variants": [
-        {
-          "level": 3,
-          "keyword": "0x0",
-          "fields": [
-            "message:UnicodeString"
-          ],
-          "callers": [
-            {
-              "binary": "MsSense.dll",
-              "function": "?OnPolicyUpdate@WdacPolicyController@disruption@sense@@UEAA_NAEBV?$shared_ptr@$$CBVIPolicy@Configuration@sense@@@std@@@Z",
-              "ea": "0x1807bd69d",
-              "confidence": "CallGraph-d1"
-            }
-          ]
-        }
-      ],
-      "fieldSummary": [
-        {
-          "fieldName": "message",
-          "type": "UnicodeString",
-          "seenIn": [
-            "MsSense.dll"
-          ]
-        }
-      ]
-    },
-    {
       "eventName": "WdacPolicyControllerPolicyApplied",
       "variantCount": 1,
       "variants": [
@@ -7099,14 +5609,51 @@
       ]
     },
     {
-      "eventName": "WfpGuardEventName",
+      "eventName": "WdacPolicyControllerPolicyReachedLimit",
       "variantCount": 1,
       "variants": [
         {
-          "level": 4,
+          "level": 5,
           "keyword": "0x0",
           "fields": [
-            "message:UnicodeString",
+            "PolicyName:UnicodeString",
+            "PolicyId:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?OnPolicyUpdate@WdacPolicyController@disruption@sense@@UEAA_NAEBV?$shared_ptr@$$CBVIPolicy@Configuration@sense@@@std@@@Z",
+              "ea": "0x1807bd710",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "PolicyId",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        }
+      ]
+    },
+    {
+      "eventName": "WfpConfiguratorPolicyApplied",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
             "HResult:Int32(HResult)",
             "Enabled:UInt8(Boolean)",
             "PolicyName:UnicodeString",
@@ -7116,8 +5663,8 @@
           "callers": [
             {
               "binary": "MsSense.dll",
-              "function": "?OnPolicyUpdate@WfpGuard@disruption@sense@@UEAA_NAEBV?$shared_ptr@$$CBVIPolicy@Configuration@sense@@@std@@@Z",
-              "ea": "0x1807c1d92",
+              "function": "?OnPolicyUpdate@WfpConfigurator@disruption@sense@@UEAA_NAEBV?$shared_ptr@$$CBVIPolicy@Configuration@sense@@@std@@@Z",
+              "ea": "0x1807bfb94",
               "confidence": "CallGraph-d1"
             }
           ]
@@ -7158,9 +5705,70 @@
           "seenIn": [
             "MsSense.dll"
           ]
+        }
+      ]
+    },
+    {
+      "eventName": "WfpConfiguratorPolicyRemoved",
+      "variantCount": 1,
+      "variants": [
+        {
+          "level": 5,
+          "keyword": "0x0",
+          "fields": [
+            "HResult:Int32(HResult)",
+            "Enabled:UInt8(Boolean)",
+            "PolicyName:UnicodeString",
+            "PolicyVersion:UnicodeString",
+            "PolicyHash:UnicodeString"
+          ],
+          "callers": [
+            {
+              "binary": "MsSense.dll",
+              "function": "?OnPolicyRemoval@WfpConfigurator@disruption@sense@@UEAAXAEBV?$shared_ptr@$$CBVIPolicy@Configuration@sense@@@std@@@Z",
+              "ea": "0x1807bf60b",
+              "confidence": "CallGraph-d1"
+            },
+            {
+              "binary": "MsSense.dll",
+              "function": "?OnPolicyUpdate@WfpConfigurator@disruption@sense@@UEAA_NAEBV?$shared_ptr@$$CBVIPolicy@Configuration@sense@@@std@@@Z",
+              "ea": "0x1807bfa02",
+              "confidence": "CallGraph-d1"
+            }
+          ]
+        }
+      ],
+      "fieldSummary": [
+        {
+          "fieldName": "Enabled",
+          "type": "UInt8(Boolean)",
+          "seenIn": [
+            "MsSense.dll"
+          ]
         },
         {
-          "fieldName": "message",
+          "fieldName": "HResult",
+          "type": "Int32(HResult)",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyHash",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyName",
+          "type": "UnicodeString",
+          "seenIn": [
+            "MsSense.dll"
+          ]
+        },
+        {
+          "fieldName": "PolicyVersion",
           "type": "UnicodeString",
           "seenIn": [
             "MsSense.dll"

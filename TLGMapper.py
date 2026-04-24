@@ -35,7 +35,9 @@ import ida_auto
 import idc
 import struct
 import csv
+import datetime
 import os
+import subprocess
 import traceback
 
 # ---------------------------------------------------------------------------
@@ -67,6 +69,25 @@ try:
     _EXEC_FLAG = ida_segment.SEGPERM_EXEC
 except AttributeError:
     _EXEC_FLAG = 1
+
+TOOL_VERSION = "1.0.0"
+
+
+def _get_git_version():
+    try:
+        repo_dir = os.path.abspath(os.path.dirname(__file__))
+        commit = subprocess.check_output(
+            ["git", "rev-parse", "--short", "HEAD"],
+            cwd=repo_dir,
+            stderr=subprocess.DEVNULL,
+        )
+        return commit.decode("utf-8").strip()
+    except Exception:
+        return "unknown"
+
+
+def _utc_timestamp():
+    return datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
 
 
 # ---------------------------------------------------------------------------
@@ -518,17 +539,32 @@ class TLGEventChooser(ida_kernwin.Choose):
 
 
 # ---------------------------------------------------------------------------
-# CSV output
+# Audit metadata and CSV output
 # ---------------------------------------------------------------------------
 
-def write_csv(results, path):
-    fieldnames = ["Caller", "InstructionEA", "Provider", "GUID",
-                  "Event", "Level", "Keyword", "Fields", "Confidence"]
+def make_audit_metadata(binary_name):
+    return {
+        "AuditTimestamp": _utc_timestamp(),
+        "ToolVersion": TOOL_VERSION,
+        "GitCommit": _get_git_version(),
+        "BinaryName": binary_name,
+    }
+
+
+def write_csv(results, path, audit_metadata):
+    fieldnames = [
+        "AuditTimestamp", "ToolVersion", "GitCommit", "BinaryName",
+        "Caller", "InstructionEA", "Provider", "GUID",
+        "Event", "Level", "Keyword", "Fields", "Confidence",
+    ]
     try:
         with open(path, "w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=fieldnames)
             writer.writeheader()
-            writer.writerows(results)
+            for row in results:
+                row_with_audit = dict(audit_metadata)
+                row_with_audit.update(row)
+                writer.writerow(row_with_audit)
         print(f"[+] CSV saved: {path}")
     except Exception as e:
         print(f"[!] CSV error: {e}")
@@ -606,13 +642,21 @@ def main():
         if results:
             TLGLinkedChooser(f"TLG linked — {binary_name}", results).Show()
 
-        # Batch CSV
+        # Batch CSV + audit metadata
         if len(idc.ARGV) > 1:
             output_dir = idc.ARGV[1]
             if not os.path.exists(output_dir):
-                try: os.makedirs(output_dir)
-                except: output_dir = "."
-            write_csv(results, os.path.join(output_dir, f"{binary_name}_tlg.csv"))
+                try:
+                    os.makedirs(output_dir)
+                except:
+                    output_dir = "."
+            audit_metadata = make_audit_metadata(binary_name)
+            print(f"[*] Audit metadata: {audit_metadata}")
+            write_csv(
+                results,
+                os.path.join(output_dir, f"{binary_name}_tlg.csv"),
+                audit_metadata,
+            )
 
     except Exception as e:
         print(f"[!] FATAL: {e}")

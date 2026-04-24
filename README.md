@@ -42,7 +42,9 @@ Walks every function in the binary via `DataRefsFrom` and `CodeRefsFrom`, then a
 - 🧰 **IDA Pro** (with IDAPython) — tested with IDA 8.x+
 - 💻 **x64 PE binary** — the script currently supports 64-bit binaries only
 
-No external Python packages are required; the script uses only IDA's built-in modules.
+No external Python packages are required; the script uses only IDA's built-in modules and the Python standard library, which simplifies supply chain review.
+
+The provider assets and metadata artifacts in this repository are documented in `misc/AllTraceLoggingProviders/note.md`.
 
 ## 🚀 Usage
 
@@ -126,6 +128,12 @@ https://github.com/user-attachments/assets/c25b7da1-351f-4150-9729-ca8d3fd07264
 - 🌳 Call-graph DFS is capped at depth 3 to avoid excessive traversal; deeply indirect event registration may be missed.
 - 🏷️ Type 2 (legacy) provider blobs do not carry an embedded GUID, so the GUID will be reported as `Unknown(Type2)`.
 - 🧱 The blob parser aborts after 128 consecutive unknown bytes, which may cause incomplete results in heavily obfuscated binaries.
+
+## 🧾 Enterprise Compliance & Provenance
+
+- This repository is designed for minimal supply chain exposure: only standard Python libraries and IDA built-ins are required.
+- The artifact collection under `TraceLoggingProviders/` is supported by provenance notes in `misc/AllTraceLoggingProviders/note.md`.
+- For enterprise adoption, this project now includes `scripts/validate.py`, a validation workflow, security guidance, and asset provenance documentation.
 
 ## ❗ Disclaimer
 This tool is provided "as is" without warranty of any kind, express or implied. The author assumes no responsibility for any damages, data loss, or other adverse effects resulting from the use or misuse of this tool. Use it at your own risk.
